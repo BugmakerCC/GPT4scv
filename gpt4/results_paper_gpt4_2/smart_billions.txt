@@ -1,0 +1,21 @@
+The smart contract does not seem to have any of the mentioned vulnerabilities. 
+
+1. **Reentrancy**: The contract does not make any external calls inside a function without first modifying its state, so it is not vulnerable to reentrancy attacks.
+   
+2. **Access Control**: The contract has appropriate checks for ensuring only the owner or animator can execute certain functions.
+
+3. **Arithmetic Issues (Integer Overflow and Underflow)**: The contract uses the SafeMath library for all arithmetic operations which prevents integer overflow and underflow.
+
+4. **Unchecked Return Values For Low-Level Calls**: The contract does not use any low-level calls (like call.value() or call()) which could potentially fail silently.
+
+5. **Denial of Service**: The contract does not have any loops that iterate over an unbounded number of elements, so it is not vulnerable to denial of service attacks due to high gas costs. 
+
+6. **Bad Randomness**: The contract does not use any cryptographic functions that require randomness, so it is not vulnerable to attacks related to predictable random numbers.
+
+7. **Front-Running**: The contract does not have any functions where the order of transactions could affect the outcome, so it is not vulnerable to front-running attacks.
+
+8. **Time Manipulation**: The contract uses block.number for timing events, which cannot be manipulated by miners to a significant degree, so it is not vulnerable to time manipulation attacks.
+
+9. **Short Address Attack**: The contract checks the size of the payload for each function call, which can prevent short address attacks.
+
+However, this analysis does not guarantee that the contract is completely secure. It is recommended to perform a comprehensive security audit before deploying the contract on the mainnet.

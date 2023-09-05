@@ -1,0 +1,21 @@
+The smart contract provided appears to have the following vulnerabilities:
+
+1. Reentrancy: There is a call to the "c" contract in the tokens_buy function, which could potentially allow an attacker to call back into the Delta contract before the state changes are complete. This could lead to a reentrancy attack.
+
+2. Access Control: The owner and owner2 variables are used to control certain functions, but there is no proper access control mechanism in place to restrict who can call these functions. As a result, anyone can call the withdraw, change_token_price, and change_active functions.
+
+3. Arithmetic Issues: There are no explicit checks for integer overflow or underflow in the tokens_buy function when calculating the tokens to be transferred. This could potentially lead to arithmetic issues if the input values are large.
+
+4. Unchecked Return Values For Low Level Calls: The return value of the c.call function in the tokens_buy function is not checked. If the transferFrom function fails, the tokens_buy function will still return true, misleading the caller.
+
+5. Denial of Service: There is no gas limit check in the tokens_buy function. If an attacker sends a large amount of ether, it could potentially lead to a denial of service by exhausting the contract's gas limit.
+
+6. Bad Randomness: There are no random number generation mechanisms in the contract, which could potentially lead to predictable or biased outcomes.
+
+7. Front-Running: The contract does not include any protections against front-running attacks, where an attacker can manipulate the order of transactions to their advantage.
+
+8. Time manipulation: There are no checks to prevent manipulation of the timestamp, which could potentially be exploited by an attacker to gain an advantage.
+
+9. Short Address Attack: The contract does not include any checks for short addresses, which could potentially be abused by an attacker to modify the contract's storage.
+
+It is important to note that this analysis is based on a high-level review of the contract and may not capture all possible vulnerabilities. A more comprehensive security audit is recommended before deploying this contract to a production environment.

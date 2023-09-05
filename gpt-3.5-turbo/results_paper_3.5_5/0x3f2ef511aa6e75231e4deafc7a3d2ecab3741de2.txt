@@ -1,0 +1,21 @@
+After reviewing the smart contract provided, here are the vulnerabilities that can be identified:
+
+1. Reentrancy: The contract does not appear to have any external calls that could lead to reentrancy vulnerabilities.
+
+2. Access Control: The contract uses a simple access control mechanism where the owner can withdraw funds. However, the owner can be changed by calling the `withdraw` function with a specific address. This may lead to unauthorized access if the owner address is changed.
+
+3. Arithmetic Issues: The contract does not perform any arithmetic operations that could result in integer overflow or underflow vulnerabilities.
+
+4. Unchecked Return Values For Low-Level Calls: The contract uses the `call` function to execute a low-level call to the `adr` address. However, it does not check the return value of the call, which can lead to silent failures if the called contract reverts or throws an exception.
+
+5. Denial of Service: The contract does not have any specific vulnerabilities related to denial of service attacks.
+
+6. Bad Randomness: The contract does not involve any randomness or random number generation, so this vulnerability is not relevant.
+
+7. Front-Running: The contract does not have any specific vulnerabilities related to front-running attacks.
+
+8. Time Manipulation: The contract does not rely on timestamps or time-dependent variables, so this vulnerability is not relevant.
+
+9. Short Address Attack: The contract does not have any specific vulnerabilities related to short address attacks.
+
+To summarize, the contract has potential vulnerabilities in access control and unchecked return values for low-level calls. It is recommended to address these vulnerabilities to ensure the security of the contract.

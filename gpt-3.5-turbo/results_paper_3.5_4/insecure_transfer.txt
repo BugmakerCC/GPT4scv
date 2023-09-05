@@ -1,0 +1,30 @@
+The given smart contract is vulnerable to an Integer Overflow Attack. 
+
+In the `transfer` function, the balance of the sender (`msg.sender`) is reduced by the `_value` amount using the statement `balanceOf[msg.sender] -= _value;`. However, if an attacker transfers a large `_value` to their own address, it can cause an integer overflow if the resulting balance exceeds the maximum value that can be stored in a `uint256` variable. This overflow can lead to unexpected behavior and result in the attacker having a much larger balance than intended.
+
+To fix this vulnerability, you should add a check to ensure that the resulting balance does not exceed the maximum value of `uint256` before performing the subtraction. One way to do this is by using the SafeMath library, which provides safe arithmetic operations.
+
+Here's an updated version of the smart contract that uses SafeMath to prevent integer overflow:
+
+```solidity
+pragma solidity ^0.4.0;
+
+import "./SafeMath.sol";
+
+contract IntegerOverflowAdd {
+    using SafeMath for uint256;
+    
+    mapping (address => uint256) public balanceOf;
+
+    // INSECURE
+    function transfer(address _to, uint256 _value) public{
+        /* Check if sender has balance */
+        require(balanceOf[msg.sender] >= _value);
+        
+        balanceOf[msg.sender] = balanceOf[msg.sender].sub(_value);
+        balanceOf[_to] = balanceOf[_to].add(_value);
+    }
+}
+```
+
+Make sure to also import the SafeMath library and deploy it along with the updated contract.

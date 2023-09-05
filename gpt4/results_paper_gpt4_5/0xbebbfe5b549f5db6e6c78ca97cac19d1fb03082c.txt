@@ -1,0 +1,15 @@
+The smart contract contains several vulnerabilities:
+
+1. Reentrancy: The function `withdraw` contains a reentrancy vulnerability. Although there is no direct callback to unknown contracts, the use of `transfer` allows the recipient to receive ether before the state (in this case, the `Deposits` mapping) is updated. This can allow an attacker to recursively call `withdraw` before the state is updated and drain the contract of ether.
+
+2. Arithmetic Issues: The function `deposit` allows for a potential integer underflow. If `msg.value` is less than `0.5 ether`, the function does not update the `Deposits` mapping. However, in the `withdraw` function, there is no check against withdrawing more ether than was deposited, allowing an underflow to occur.
+
+3. Unchecked Return Values For Low Level Calls: The `proxy` function in the `Proxy` contract uses a low-level `.call` method without checking the return value. This can lead to silent failures if the call fails.
+
+4. Access Control: There is an access control vulnerability in the `transferOwner` function. The function `onlyOwner` checks if `msg.sender` is the owner of the original `Proxy` contract, not the `VaultProxy` contract. This means that the original owner of the `Proxy` contract can change the owner of the `VaultProxy` contract.
+
+5. Denial of Service: The `withdraw` function could potentially be exploited by an attacker to deny service. For instance, if an attacker manages to set `Deposits[msg.sender]` to a very high value, they could drain the contract of all its funds, causing all subsequent `withdraw` calls to fail.
+
+6. Front-Running: The `deposit` function is susceptible to front-running. A malicious miner could see a transaction invoking this function in the pending transaction pool and insert their own transaction with a higher gas price, causing their transaction to be processed first.
+
+The contract does not appear to contain vulnerabilities related to bad randomness, time manipulation, or short address attack.

@@ -1,0 +1,21 @@
+The given smart contract contains several vulnerabilities:
+
+1. Reentrancy: The `WithdrawToHolder` function is vulnerable to a reentrancy attack because it first sends ether with `_addr.call.value(_wei)` and then decreases the sender's balance. An attacker can re-enter the function before the user's balance is decreased.
+
+2. Access Control: The `onlyOwner` modifier is supposed to restrict access to the owner only, but it's not working correctly. The reason is that the `if(owner == msg.sender)_;` statement does nothing. It should throw an exception if `msg.sender` is not the owner, like this `require(owner == msg.sender);`
+
+3. Arithmetic Issues: The contract does not handle potential overflows or underflows in the `Deposit` and `WithdrawToHolder` functions. SafeMath library should be used to prevent these issues.
+
+4. Unchecked Return Values For Low Level Calls: The low level `.call()` function is used in `WithdrawToken` and `WithdrawToHolder`. The return value of the `call()` function is not checked, which can lead to silent failing of the function.
+
+5. Denial of Service: The `changeOwner` function can be abused by the current owner to stop the contract from functioning by setting the `newOwner` to an address that will never call `confirmOwner()`.
+
+6. Bad randomness: Not applicable, as this contract does not involve randomness.
+
+7. Front-Running: Not applicable, as this contract does not involve transaction ordering.
+
+8. Time manipulation: Not applicable, as this contract does not depend on timestamps.
+
+9. Short Address Attack: Not directly applicable, but the contract does not validate the length of the address inputs, which can lead to unforeseen consequences.
+
+Please note that these are potential vulnerabilities and actual impact may vary based on the contract's use case and environment. It's always recommended to have a thorough security audit before deploying the contract on mainnet.

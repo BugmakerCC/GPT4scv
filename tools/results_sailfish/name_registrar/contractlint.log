@@ -1,0 +1,30 @@
+[INFO] | 2023-08-14 03:00:20 AM | analyzer.name_registrar | Analysis started at: 2023-08-14 03:00:20 AM
+[INFO] | 2023-08-14 03:00:20 AM | analyzer.name_registrar | Version constraints: ['^0.4.15']
+[INFO] | 2023-08-14 03:00:20 AM | analyzer.name_registrar | solc version: v0.4.15
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Callgraph generation started!
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Callgraph generation finished!
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Storage dependency graph generation started!
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Value Range Analysis started
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Generating return summary for register
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Return summary generated for register
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Range graph generated
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Processed function register
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Generating return summary for slitherConstructorVariables
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Return summary generated for slitherConstructorVariables
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Range graph generated
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Processed function slitherConstructorVariables
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Value Range Analysis took 0.000632 seconds
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Value Range Analysis finished
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Dependency detection started!
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Dependency detection finished!
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Static Analysis took 0.146349 seconds
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Dependency does not exist
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Symbolic execution is not needed!
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Analysis finished!
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Analysis took 0.146533 seconds
+[INFO] | 2023-08-14 03:00:21 AM | analyzer.name_registrar | Analysis finished at: 2023-08-14 03:00:21 AM

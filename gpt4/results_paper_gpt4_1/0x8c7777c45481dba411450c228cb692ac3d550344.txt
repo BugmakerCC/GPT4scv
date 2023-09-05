@@ -1,0 +1,13 @@
+This smart contract has a couple of vulnerabilities:
+
+1. Reentrancy: The function CashOut has a reentrancy vulnerability. The contract interacts with an external contract (via msg.sender.call.value(_am)()) before it adjusts its state (balances[msg.sender] -= _am). If the external contract calls back into CashOut, it could withdraw more Ether than it should be able to.
+
+2. Arithmetic Issue: There is a risk of integer underflow in the function CashOut. If _am > balances[msg.sender], balances[msg.sender] -= _am will underflow and result in a very large balance for the msg.sender.
+
+3. Unchecked Return Values For Low Level Calls: The return value of the low-level call, msg.sender.call.value(_am)() is not checked, meaning that the call could fail silently. If this happens, it would lead to the function concluding successfully and the log reflecting a cash out, but in reality, no transfer would have occurred.
+
+4. Access Control: There is no access control on functions. Anyone can call the AddMessage function in the Log contract. 
+
+5. Denial of Service (DoS): This contract is vulnerable to DoS by unexpected revert. An attacker can create a contract that always reverts in its fallback function and then make a deposit from that contract. When the contract tries to cash out, the call will always fail and the funds will be stuck in the contract.
+
+Overall, these vulnerabilities make the smart contract unsafe and susceptible to exploits and attacks.

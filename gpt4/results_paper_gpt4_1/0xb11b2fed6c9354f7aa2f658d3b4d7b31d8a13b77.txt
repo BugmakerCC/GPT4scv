@@ -1,0 +1,19 @@
+The smart contract provided is vulnerable to the following vulnerabilities:
+
+1. Reentrancy: In the `withdraw` function, the `msg.sender.transfer(amount)` line is exposed to a reentrancy vulnerability. This is because the balance is not deducted before the `transfer` function call. If the recipient is a contract, it can call the `withdraw` function again before the first call finishes, effectively withdrawing more than their balance.
+
+2. Access Control: The `onlyOwner` modifier is defined in both contracts but isn't used consistently. It is used in the `Proxy` contract for `transferOwner` and `withdraw` function, however, it is not used for the `proxy` function. This could allow an arbitrary account to execute a call with arbitrary data to an arbitrary address.
+
+3. Unchecked Return Values For Low Level Calls: In the `proxy` function, the return value of the `call` function is not checked which can lead to unexpected behavior.
+
+4. Denial of Service: The `withdraw` function could potentially be blocked by a malicious contract if the `msg.sender` is a contract itself. This is because if a contract receives Ether (without a function being called), it throws an exception unless the contract has a fallback function.
+
+5. Bad Randomness: Although not applicable in this contract, it's important to note that Solidity's timestamp and blockhash functions should not be used as a source of randomness because they are predictable.
+
+6. Front-Running: Not applicable in this contract.
+
+7. Time manipulation: Not applicable in this contract.
+
+8. Short Address Attack: Not applicable in this contract.
+
+9. Arithmetic Issues: Not applicable in this contract.

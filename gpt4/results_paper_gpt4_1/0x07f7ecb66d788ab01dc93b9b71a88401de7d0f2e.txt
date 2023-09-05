@@ -1,0 +1,19 @@
+This contract has several vulnerabilities:
+
+1. **Reentrancy**: The function `payout` uses the `transfer` function which is susceptible to reentrancy attacks. An attacker could continuously call this function and drain the contract's Ether. 
+
+2. **Arithmetic Issues**: The contract does not use SafeMath for its arithmetic operations which could lead to integer overflow or underflow issues.
+
+3. **Unchecked Return Values For Low Level Calls**: The contract uses low level calls like `call.value` in functions `donateToWhale` and `loseWager` without checking their return values, which could lead to unexpected behavior if the calls fail.
+
+4. **Denial of Service**: The contract's `play` function reverts the transaction if a condition is not met. An attacker could manipulate the conditions to always fail, causing a denial of service.
+
+5. **Bad Randomness**: The contract uses `keccak256` and `blockhash` for generating random numbers, which can be manipulated and predicted by miners.
+
+6. **Front-Running**: The contract's `wager` function uses `msg.value` to determine the bet amount. An attacker can see the transaction in the mempool and send a transaction with a higher gas price to win the bet.
+
+7. **Time Manipulation**: The contract uses `block.number` to determine the winner, which can be manipulated by miners.
+
+8. **Access Control**: The contract uses the `onlyOwner` modifier for critical functions. However, the owner's address is not set in the constructor, which means the owner of the contract is the address that deploys it. This could be exploited if the owner's private key is compromised.
+
+9. **Short Address Attack**: The contract does not check the length of the address in `transferAnyERC20Token` function. This can lead to a short address attack where an attacker can manipulate the amount of tokens transferred.

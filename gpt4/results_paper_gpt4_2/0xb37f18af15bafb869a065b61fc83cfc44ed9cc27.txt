@@ -1,0 +1,13 @@
+The smart contract has the following vulnerabilities:
+
+1. Reentrancy: The function `sendMoney` uses a low-level `.call.value()()` to send Ether. This is a security risk as the recipient contract could perform a reentrant call back into `SimpleWallet` before `sendMoney` has finished executing.
+
+2. Unchecked Return Values For Low Level Calls: The return value of `_target.call.value(_value)()` in the `sendMoney` function is not checked. If the call fails, the contract will not be aware.
+
+3. Denial of Service: If the `_target` in the `sendMoney` function is a contract that always throws an exception, `SimpleWallet` will be locked forever because it will no longer be able to perform any transactions.
+
+Possible improvements:
+
+- For Reentrancy, a popular mitigation is to use the Checks-Effects-Interactions pattern. This means you should first make any state changes before calling other contracts.
+- For Unchecked Return Values, you should always check the result of `call` and handle possible failure.
+- For Denial of Service, avoid calling unknown contracts or put such calls at the end of your function, and after you've made any changes to your contract's state.

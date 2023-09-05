@@ -1,0 +1,19 @@
+This contract contains several vulnerabilities:
+
+1. Reentrancy: The CashOut function is vulnerable to reentrancy attacks. The contract sends Ether with `msg.sender.call.value(_am)()` before reducing the sender's balance. An attacker could create a fallback function in their contract that calls CashOut, causing them to withdraw more Ether than they should.
+
+2. Access Control: The AddMessage function in the Log contract can be called by anyone, not just the ETH_FUND contract. This could allow an attacker to fill up the contract's storage, causing legitimate transactions to run out of gas.
+
+3. Arithmetic Issues: The contract does not check for integer overflow or underflow. This is not an immediate vulnerability, but it should be addressed to prevent potential issues in the future.
+
+4. Unchecked Return Values For Low Level Calls: The contract uses `call.value()()`, a low-level function, to send Ether. If this call fails, the contract will not be aware of the failure and continue execution as normal.
+
+5. Denial of Service (DoS): The contract could be vulnerable to a DoS attack where an attacker repeatedly calls AddMessage in the Log contract, causing legitimate transactions to run out of gas.
+
+6. Bad Randomness: Not applicable to this contract as it does not involve any randomness.
+
+7. Front-Running: Not applicable to this contract as it does not involve any transaction ordering dependence.
+
+8. Time manipulation: The contract uses the `now` keyword, which can be manipulated by miners to a certain degree. However, this does not seem to be a significant issue in this contract.
+
+9. Short Address Attack: Not applicable to this contract as it does not read from `msg.data` length.

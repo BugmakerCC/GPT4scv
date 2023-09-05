@@ -1,0 +1,19 @@
+After a careful review, I can spot the following vulnerabilities in your contract.
+
+1. Reentrancy: The contract is vulnerable to a reentrancy attack. The method `multiplicate(address adr)` calls `adr.transfer()`, sending Ether to an external contract, and there is no mechanism to prevent the called contract from calling back into the vulnerable contract. An attacker could create a malicious contract that, when called by `multiplicate`, calls back into `multiplicate` before the first call has finished.
+
+2. Access Control: The contract authorizes only the `Owner` to withdraw funds and execute commands, which is a good practice. However, the contract does not include any function to change the ownership, which could be a problem if the owner loses access to their account. 
+
+3. Arithmetic Issues: The contract does not seem to have integer overflow or underflow vulnerabilities. 
+
+4. Unchecked Return Values For Low Level Calls: The contract uses a low-level call in the `Command` function without checking its return value. This might lead to unexpected behavior.
+
+5. Denial of Service: The contract is potentially vulnerable to a DOS attack. If the `multiplicate` function is called with `msg.value` >= `this.balance`, it tries to transfer more Ether than the contract owns. The transfer will fail, but the Ether sent in the call will still be stuck in the contract.
+
+6. Bad Randomness: The contract does not seem to rely on randomness.
+
+7. Front-Running: The contract does not seem to be vulnerable to front-running as it does not have any transactions that depend on the order of execution.
+
+8. Time manipulation: The contract does not seem to rely on block timestamps, so it is not vulnerable to timestamp manipulation.
+
+9. Short Address Attack: The contract does not seem to be vulnerable to short address attacks as it does not perform raw `msg.data` operations.

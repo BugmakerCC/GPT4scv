@@ -1,0 +1,19 @@
+The smart contract has the following vulnerabilities:
+
+1. Reentrancy: The cash function is vulnerable to a reentrancy attack because it calls an external contract (winner.send(subpot)) before it updates its state (rounds[roundIndex].isCashed[subpotIndex] = true). An attacker could recursively call the cash function within a fallback function to drain the contract.
+
+2. Access Control: There are no access control measures in place to restrict who can call certain functions. For example, any address can call the cash function, potentially allowing an attacker to steal funds.
+
+3. Arithmetic Issues: The contract does not use SafeMath or equivalent to prevent integer overflows and underflows. For example, this could be exploited in the line where ticket count is calculated (var ticketsCount = value/ticketPrice;).
+
+4. Unchecked Return Values For Low Level Calls: The contract does not check the return value of the send function which can fail due to out of gas exceptions. This could cause funds to be lost.
+
+5. Denial of Service: An attacker could potentially initiate a DoS attack by repeatedly calling the cash function, causing the contract to run out of gas.
+
+6. Bad Randomness: The contract uses blockhash for randomness in the calculateWinner function which is predictable and can be manipulated by miners.
+
+7. Front-Running: Due to the public nature of transactions on the blockchain, an attacker could potentially observe a transaction calling the cash function and then submit their own transaction with a higher gas price to front-run the original transaction.
+
+8. Time manipulation: The contract relies on block.number for timing. Miners have a degree of control over this value and could potentially manipulate it for their advantage.
+
+9. Short Address Attack: The contract does not check the length of the address variables. This could potentially allow an attacker to pass a short address and cause the remaining bytes to be interpreted as part of the value of a transaction.

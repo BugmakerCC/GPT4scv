@@ -1,0 +1,19 @@
+The smart contract has several security vulnerabilities:
+
+1. Reentrancy: This contract is vulnerable to a reentrancy attack in the `sell` function. The `msg.sender.transfer` call can include a fallback function that calls back into the sell function before the balance has been updated.
+
+2. Access Control: There is no access control. Anybody can call the `buy` or `sell` function, which may not be the intended behavior.
+
+3. Arithmetic Issues: There is a potential for integer overflow or underflow in the `buy` and `sell` functions. For example, if `numTokens * PRICE_PER_TOKEN` exceeds the maximum integer value for `uint256`, it will wrap around to a small number, and the user can get tokens for almost no cost. 
+
+4. Unchecked Return Values: The contract does not check the return value of `msg.sender.transfer`. If the transfer fails, the contract continues execution normally.
+
+5. Denial of Service: An attacker could create a contract that always fails when receiving Ether (for example, by using a fallback function that always throws). If such a contract buys tokens and then sells them, the `sell` function will be unable to send Ether to the contract, effectively locking all users' funds.
+
+6. Bad Randomness: Not applicable, the contract does not use randomness.
+
+7. Front-Running: Possible if an attacker sees a transaction in the mempool and quickly submits another transaction with a higher gas price, buying tokens before the original transaction and then selling them back at a higher price.
+
+8. Time manipulation: Not applicable, the contract does not depend on timestamps.
+
+9. Short Address Attack: Not applicable, the contract does not take address inputs from users.

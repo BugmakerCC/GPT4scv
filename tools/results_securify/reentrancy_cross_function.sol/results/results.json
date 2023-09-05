@@ -1,0 +1,70 @@
+{
+  "/sb/reentrancy_cross_function.sol:Reentrancy_cross_function": {
+    "results": {
+      "TODReceiver": {
+        "violations": [],
+        "warnings": [
+          23
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnhandledException": {
+        "violations": [],
+        "warnings": [
+          23
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODTransfer": {
+        "violations": [],
+        "warnings": [
+          23
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "DAO": {
+        "violations": [
+          23
+        ],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODAmount": {
+        "violations": [],
+        "warnings": [],
+        "safe": [
+          23
+        ],
+        "conflicts": []
+      },
+      "MissingInputValidation": {
+        "violations": [
+          13
+        ],
+        "warnings": [
+          20
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "DAOConstantGas": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnrestrictedEtherFlow": {
+        "violations": [],
+        "warnings": [],
+        "safe": [
+          23
+        ],
+        "conflicts": []
+      }
+    }
+  }
+}

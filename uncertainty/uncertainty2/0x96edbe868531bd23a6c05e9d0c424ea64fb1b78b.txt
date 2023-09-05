@@ -1,0 +1,19 @@
+Analyzing the smart contract, here are the vulnerabilities detected:
+
+1. Reentrancy: The smart contract has a reentrancy vulnerability in the `Collect` function. The contract calls an external function - `msg.sender.call.value(_am)()` - before it reduces the `balance` of the account. The external call can potentially call the `Collect` function again before `acc.balance-=_am;` is executed, leading to a reentrancy attack.
+
+2. Access Control: There's a lack of proper access control management. For instance, any user can call the `SetMinSum` and `SetLogFile` functions and set these values. This can lead to unauthorized changes in the contract settings.
+
+3. Arithmetic Issues: This contract might be vulnerable to underflow attacks when subtracting from `acc.balance`. If `_am` is larger than `acc.balance`, it will underflow and become a very large number.
+
+4. Unchecked Return Values For Low Level Calls: The contract uses low level calls (`msg.sender.call.value(_am)()`) but doesn't check the return value. This could lead to unexpected behavior if the call fails.
+
+5. Denial of Service: Not explicitly present, but if the contract has many users, a loop over all users (if it would exist) could run out of gas.
+
+6. Bad Randomness: Not present in the contract.
+
+7. Front-Running: Not present in this contract.
+
+8. Time Manipulation: The contract uses the `now` function for time locking which can be manipulated by miners to a certain degree.
+
+9. Short Address Attack: The contract doesn't check the length of the address inputs, therefore it could potentially be vulnerable to a short address attack.

@@ -1,0 +1,11 @@
+This contract has a Denial of Service (DoS) vulnerability due to the gas limit. The functions `insertNnumbers()`, `clear()` and `clearDOS()` can be exploited to make the contract unusable.
+
+In the `insertNnumbers()` function, the for loop will consume gas for each iteration. If the 'numbers' input is sufficiently large, the function could consume all the gas provided in a transaction, causing the function to fail. 
+
+Similarly, in the `clear()` and `clearDOS()` functions, the `require(numElements>1500)` statement could potentially cause a DoS attack. If the 'numElements' variable is less than or equal to 1500, the function will always fail and throw an exception, making it impossible to clear the array.
+
+Also, the `clearDOS()` function attempts to deallocate the whole array at once which can be a potential vulnerability if the array size is large, because it could exceed the block gas limit, causing the transaction to invariably fail. 
+
+It is advised to delete elements in a loop, with a check to prevent gas limit issues. 
+
+There are no signs of Reentrancy, Access Control, Arithmetic Issues, Unchecked Return Values For Low Level Calls, Bad Randomness, Front-Running, Time manipulation or Short Address Attack vulnerabilities in this contract.

@@ -1,0 +1,21 @@
+This smart contract demonstrates a couple of potential vulnerabilities:
+
+1. Reentrancy: This contract does not appear to be vulnerable to reentrancy attacks. There are no external calls that pass control flow to an untrusted contract while the contract state is in an inconsistent state.
+
+2. Access Control: The contract utilises simple access control through the `onlyOwner` modifier. This restricts the execution of certain functions to the address that is currently set as the `owner`. However, if the owner address is compromised, this could lead to unauthorized access.
+
+3. Arithmetic Issues: There does not appear to be any arithmetic operations that could lead to overflows or underflows.
+
+4. Unchecked Return Values: The `execute` function in the `Owned` contract uses a low-level `.call.value()()`, but does not check its return value. As a result, if the called contract throws an error, this contract would not detect it. This is a potential vulnerability.
+
+5. Denial of Service: There does not seem to be any obvious DoS vulnerabilities.
+
+6. Bad Randomness: There is no use of randomness in this contract.
+
+7. Front-running: There doesn't appear to be any front-running vulnerability, as the contract does not depend on transaction ordering or timing.
+
+8. Time Manipulation: The contract uses `now` (alias for `block.timestamp`), but it doesn't seem to be a security risk in this context as it is only used for logging purposes.
+
+9. Short Address Attack: This contract does not handle incoming Ether or tokens, so it is not vulnerable to short address attacks. 
+
+One additional point of concern is the use of `string` for `wedaddress` which is expected to be an Ethereum address. Using `address` type could be more appropriate and safer.

@@ -1,0 +1,19 @@
+The smart contract has several vulnerabilities:
+
+1. **Reentrancy**: The `withdraw()` function in the VaultProxy contract is vulnerable to a reentrancy attack. The contract sends ether with `msg.sender.transfer(amount);` before it reduces the balance with `Deposits[msg.sender] -= amount;`. This allows a malicious contract to recursively call the `withdraw()` function and drain the contract of its ether. The balance check will always pass because it is done after the ether transfer.
+
+2. **Unchecked Return Values For Low Level Calls**: The `proxy()` function in the Proxy contract uses a low level `.call()` without checking its return value. If this call fails for any reason, the contract will not be aware of it and continue execution. This can result in unexpected behavior.
+
+3. **Access Control**: The `transferOwner()` function in the Proxy contract can only be called by the current owner of the contract. However, the `Owner` in the VaultProxy contract can be different from the `Owner` in the Proxy contract, because the `Vault()` function in the VaultProxy contract can change the `Owner` to the sender of the transaction. This can lead to privilege escalation and unauthorized access.
+
+4. **Arithmetic Issues**: The `deposit()` function in the VaultProxy contract is susceptible to integer overflow and underflow. The contract doesn't check if `Deposits[msg.sender] + msg.value` is greater than `Deposits[msg.sender]` before adding `msg.value` to `Deposits[msg.sender]`. If `msg.value` is a very large number, this addition could overflow and reset `Deposits[msg.sender]` to a smaller number.
+
+5. **Denial of Service**: If a contract becomes the owner of this contract and the fallback function of that contract consumes more than the gas limit, it could block the functionality of the `withdraw()` function and lock the funds in the contract.
+
+6. **Bad Randomness**: Not applicable in this contract.
+
+7. **Front-Running**: Not applicable in this contract.
+
+8. **Time manipulation**: Not applicable in this contract.
+
+9. **Short Address Attack**: Not applicable in this contract.

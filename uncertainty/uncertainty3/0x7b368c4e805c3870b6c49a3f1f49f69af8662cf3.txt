@@ -1,0 +1,21 @@
+This smart contract has the following vulnerabilities:
+
+1. Reentrancy: The function `Collect(uint _am)` is vulnerable to reentrancy attack because it makes an external call to an arbitrary address (msg.sender) with `.call.value(_am)()`, and the state variable `acc.balance` isn't updated until after this call. An attacker can recursively call the `Collect()` function before `acc.balance` has been updated, effectively withdrawing more Ether than they should be able to.
+
+2. Access Control: The smart contract does not have any access control mechanisms in place. This means any address can call any public function, including `Put()`, `Collect()` and `AddMessage()`. 
+
+3. Arithmetic Issues: The contract does not handle potential overflows or underflows. While this contract may not be directly vulnerable, it's a good practice to use SafeMath library or solidity 0.8.0 and above which handles this automatically.
+
+4. Unchecked Return Values For Low Level Calls: The contract checks the return value of the low level `.call()` function. 
+
+5. Denial of Service: The contract is not directly vulnerable to a typical Denial of Service attack. However, the `Collect()` function can be blocked from executing if the `msg.sender` is a contract that has a fallback function which always throws an exception.
+
+6. Bad Randomness: The contract does not rely on randomness. 
+
+7. Front-Running: The contract may be vulnerable to front-running as transaction ordering can affect the result of `Collect()` function.
+
+8. Time manipulation: The contract relies on `now` (alias for `block.timestamp`) in `Put()` and `Collect()` functions. Miners have a slight ability to manipulate it.
+
+9. Short Address Attack: There is no explicit protection against short address attacks. However, this attack is more about the interaction with the contract, specifically if the input data is not correctly formatted by the calling entity. As such, it may be worth considering input validation to mitigate this issue. 
+
+Please note that these are potential vulnerabilities and the real impact depends on how the contract is used. It's recommended to use well-audited design patterns and libraries, ensure proper testing, and consider formal verification for high-value contracts.

@@ -1,0 +1,21 @@
+This smart contract has a few vulnerabilities:
+
+1. Reentrancy: In the `CashOut` function, the balance of the user is decreased after the call to the user's address. This could allow a user to recursively call the `CashOut` function before the first call has finished, effectively draining the contract's Ether.
+
+2. Unchecked Return Values For Low Level Calls: The `call.value()` function is a low level function that doesn't throw an exception when it fails but returns false instead. If the function call fails, the error is not checked and the execution continues.
+
+3. Denial of Service: An attacker can force the contract to fail by making the fallback function of the caller consume all gas, or by causing the `call.value()` function to fail by calling it with an address that has no associated code.
+
+4. Access Control: The `AddMessage` function in the Log contract is public, which allows any address to add messages to the log.
+
+5. Bad Randomness: Although there's no randomness in this contract, it's still important to remember that `now` (alias for `block.timestamp`) should not be used for generating random numbers, as it can be manipulated by miners.
+
+6. Arithmetic Issues: No checks for overflows or underflows in mathematical operations. However, this isn't an issue in this particular contract.
+
+7. Front-Running: Not applicable to this contract.
+
+8. Time manipulation: The `now` keyword is used to set `LastMsg.Time` in the `AddMessage` function, which could be manipulated by miners.
+
+9. Short Address Attack: This contract doesn't seem to be vulnerable to this attack. 
+
+Overall, the most critical vulnerabilities in this contract are reentrancy and unchecked return values for low level calls.

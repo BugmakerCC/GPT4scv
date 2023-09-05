@@ -1,0 +1,342 @@
+{
+    "file": "auction.sol",
+    "global_structs": [
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0x15"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0x16"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x17"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "currentFrontrunner",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "currentBid",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "DosAuction",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x15",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x16",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x17",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "currentFrontrunner",
+            "addrs": [
+                "0x2",
+                "0x4"
+            ]
+        },
+        {
+            "name": "currentBid",
+            "addrs": [
+                "0x2",
+                "0x6"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4",
+            "instructions": [
+                "CLR_0 = msg.value",
+                "RTMP_6 = CLR_0 > currentBid",
+                "CONDITION RTMP_6 0x3 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3",
+            "instructions": [
+                "CLR_1 = msg.sender",
+                "currentFrontrunner = CLR_1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6",
+            "instructions": [
+                "CLR_2 = msg.value",
+                "RTMP_7 = CLR_2 > currentBid",
+                "CONDITION RTMP_7 0x5 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5",
+            "instructions": [
+                "CLR_3 = msg.value",
+                "currentBid = CLR_3"
+            ]
+        }
+    ],
+    "root_addr": "0x18",
+    "dest_addrs": [
+        "0x1b"
+    ],
+    "normal_blocks": [
+        {
+            "scope": "bid",
+            "addr": "0x18",
+            "instructions": [
+                "NOP",
+                "JUMP 0x19"
+            ]
+        },
+        {
+            "scope": "bid",
+            "addr": "0x19",
+            "instructions": [
+                "CLR_4 = msg.value",
+                "TMP_0 = CLR_4 > currentBid",
+                "CONDITION TMP_0 0x19_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "bid",
+            "addr": "0x19_r0",
+            "instructions": [
+                "JUMP 0x1a"
+            ]
+        },
+        {
+            "scope": "bid",
+            "addr": "0x1a",
+            "instructions": [
+                "TMP_2 = currentFrontrunner != 0",
+                "CONDITION TMP_2 0x1b 0x1c"
+            ]
+        },
+        {
+            "scope": "bid",
+            "addr": "0x1b",
+            "instructions": [
+                "CLR_5 = this.balance",
+                "WRP_0 = CLR_5 - currentBid",
+                "this.balance = WRP_0",
+                "TMP_3 = NEW_VAL unknown"
+            ]
+        },
+        {
+            "scope": "bid",
+            "addr": "0x1c",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "RequireTrap",
+            "addr": "0xRequireTrap",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

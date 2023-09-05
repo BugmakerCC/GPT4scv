@@ -1,0 +1,30 @@
+{
+    "tod_symex_path_1.json": {
+        "file_name": "",
+        "from_function": "withdraw",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 27\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 28\nCall context: \nNone\nREF_3 -> balances[msg.sender]\nTMP_3 = amount >= REF_3\nTMP_4 = SOLIDITY_CALL require(bool)(TMP_3)\""
+        ],
+        "executable_instructions": 18,
+        "state_variable": "balances",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_2.json": {
+        "file_name": "",
+        "from_function": "withdraw",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 33\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 34\nCall context: \nNone\nREF_3 -> balances[msg.sender]\nTMP_3 = amount >= REF_3\nTMP_4 = SOLIDITY_CALL require(bool)(TMP_3)\""
+        ],
+        "executable_instructions": 18,
+        "state_variable": "balances",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    }
+}

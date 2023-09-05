@@ -1,0 +1,11 @@
+The smart contract has several vulnerabilities. Here they are:
+
+1. Reentrancy: The function `withdraw` and `sendMoney` are potentially vulnerable to a reentrancy attack because they call an external contract (with `msg.sender.transfer(_value)` and `_target.call.value(_value)(_data)`) after changing the state. An attacker could create a contract that calls `withdraw` or `sendMoney` function while it is still being executed (i.e., before it finishes and the state is saved), causing funds to be transferred multiple times.
+
+2. Unchecked Return Values For Low Level Calls: The low level call `_target.call.value(_value)(_data)` does not check the return value. This could allow to silently fail.
+
+3. Denial of Service: If the owner of the contract becomes a contract which throws an exception in its fallback function, then `withdrawAll` and `withdraw` functions will get stuck because `msg.sender.transfer(_value)` will always fail.
+
+4. Access Control: Although this contract seems to correctly implement the `onlyOwner` modifier on critical functions, remember that this only provides protection if the contract owner is secured. If the private key of owner is compromised, the contract will have a vulnerability.
+
+The contract does not seem to have Arithmetic Issues, Bad Randomness, Front-Running, Time manipulation, and Short Address Attack vulnerabilities. However, these vulnerabilities should be kept in mind when writing new code or updating the contract.

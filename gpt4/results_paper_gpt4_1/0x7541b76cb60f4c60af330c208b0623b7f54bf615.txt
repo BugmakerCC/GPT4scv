@@ -1,0 +1,21 @@
+This contract has multiple potential vulnerabilities:
+
+1. Reentrancy: The contract is vulnerable to a Reentrancy attack in the `Collect` function. This occurs when `msg.sender.call.value(_am)()` is used to send ether before updating the state `acc.balance-=_am;`. An attacker could create a fallback function in their contract to repeatedly call `Collect` function before `acc.balance` is updated, draining the contract of Ether.
+
+2. Access Control: There's no access control in `AddMessage` function in `Log` contract. Any address can call this function to add a message to the log. There should be some form of access control to prevent unauthorized usage.
+
+3. Arithmetic Issues: The contract uses arithmetic operations such as `acc.balance += msg.value;` and `acc.balance-=_am;`. If these operations hit the upper or lower limits of uint256, it will result in integer overflow or underflow respectively. SafeMath library should be used for arithmetic operations.
+
+4. Unchecked return values: The low-level call `msg.sender.call.value(_am)()` in `Collect` function doesn't check the return value. If this call fails for any reason, the contract will still continue executing without any error. The return value should be checked and handled appropriately.
+
+5. Denial of Service: The `Put` function doesn't limit the number of times it can be called. If a malicious user repeatedly calls this function with a small amount of Ether, the contract may reach the gas limit.
+
+6. Bad Randomness: Not applicable, as there is no usage of randomness in this contract.
+
+7. Front-Running: Not applicable, as there is no transaction ordering dependence in this contract.
+
+8. Time Manipulation: The contract uses `now` for timing which can be manipulated by miners to a certain degree. Although this might not pose a significant risk in this contract, it's still a good practice to be aware of this vulnerability.
+
+9. Short Address Attack: Not applicable, as there is no direct transfer of tokens or Ether from addresses received as function parameters.
+
+These vulnerabilities should be addressed to make the contract more secure.

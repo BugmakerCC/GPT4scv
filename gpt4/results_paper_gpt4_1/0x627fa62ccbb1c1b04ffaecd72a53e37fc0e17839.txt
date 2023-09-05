@@ -1,0 +1,13 @@
+The contract seems to have the following vulnerabilities:
+
+1. Reentrancy: This contract is vulnerable to a reentrancy attack in the `WithdrawToHolder` function. In this function, external call to `_addr` is done before the state `Holders[_addr]` is updated. This allows the callee to reenter the function and drain the contract's funds.
+
+2. Access Control: The contract seems to have a flaw in the `onlyOwner` modifier. If the condition `owner == msg.sender` is not met, it simply does nothing instead of throwing an error or reverting the transaction. This means that any function with the `onlyOwner` modifier can be called by any address, not just the owner.
+
+3. Unchecked Return Values: `token.call` in `WithdrawToken` function. The return value of this low level call is not checked, which could lead to silent failures.
+
+4. Arithmetic Issues: The smart contract does not handle underflows in `Holders[_addr]-=_wei`. If `_wei` is greater than `Holders[_addr]`, it will underflow and the result will be a very large number.
+
+5. Denial of Service: While not a classic example of DOS, the functions `WithdrawTokenToHolder` and `WithdrawToHolder` set `Holders[_to]=0` or `Holders[_addr]-=_wei` before attempting the transfer. If the transfer fails for any reason, the user's balance in `Holders` map has already been decreased or set to zero.
+
+Please note that these issues should be addressed immediately to improve the security of the contract.

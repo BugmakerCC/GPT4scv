@@ -1,0 +1,13 @@
+The provided smart contract appears to have a Denial of Service (DoS) vulnerability, specifically "DoS with Unexpected Revert". 
+
+In the `refundAll` function, the contract iterates through all `refundAddresses` and attempts to send them their respective refunds. If any of the `send` calls fail, the entire operation will be reverted due to the `require` statement. This means that if just one address causes the `send` to fail (for example, if the address is a contract that always throws in its fallback function), no one will be able to receive their refunds. 
+
+This vulnerability can be mitigated by swapping the `send` and `require` with a `call` function, and checking its return value. If the `call` fails, the contract could just continue to the next address instead of reverting the whole transaction. 
+
+Additionally, the `refundAll` function could be vulnerable to a gas limit issue. The loop iterates over an array of arbitrary length. If this array is too large, then calling `refundAll` could exceed the block gas limit, making it impossible to call this function. 
+
+To fix this, you could implement a pulling system where each user triggers their own refunds, or batch the refunds into smaller groups. This would ensure that the function doesn't exceed the block gas limit. 
+
+Moreover, the refund function is public and not restricted in any way, which could lead to an access control issue, if the function is not intended to be called by anyone. 
+
+Finally, it's important to note that the provided contract is using an old version of Solidity (0.4.24). It's recommended to use the latest version for more security and efficiency features.

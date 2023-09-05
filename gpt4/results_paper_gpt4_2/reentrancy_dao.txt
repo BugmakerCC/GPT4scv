@@ -1,0 +1,18 @@
+The primary vulnerability in this smart contract is the Reentrancy vulnerability. In the `withdrawAll()` function, an external contract is called before the state (credit[msg.sender]) is updated. This allows for a recursive call, where the external contract can call `withdrawAll()` again before the first call has finished. This can lead to the contract's funds being drained.
+
+To fix this, the state should be updated before the external call is made. Here's the updated `withdrawAll()` function:
+
+```
+function withdrawAll() public {
+    uint oCredit = credit[msg.sender];
+    if (oCredit > 0) {
+        credit[msg.sender] = 0; // Moved this line before the external call
+        balance -= oCredit;
+
+        bool callResult = msg.sender.call.value(oCredit)();
+        require (callResult);
+    }
+}
+```
+
+Other vulnerabilities like Access Control, Arithmetic Issues, Unchecked Return Values For Low Level Calls, Denial of Service, Bad Randomness, Front-Running, Time manipulation, and Short Address Attack do not appear to be present in this contract, but a comprehensive audit should be done to confirm.

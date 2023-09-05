@@ -1,0 +1,19 @@
+This contract has several vulnerabilities:
+
+1. **Reentrancy**: The contract makes use of the `.send()` function to transfer ethers. This function will call the fallback function of the receiving contract which can make a call back to the sending contract before the first function call finishes. In this contract, it can happen in the `join()` and `init()` functions. This can lead to reentrancy attacks.
+
+2. **Integer Underflow/Overflow**: The contract does not implement SafeMath or any other form of arithmetic operation checking. This can lead to potential integer underflow/overflow vulnerabilities.
+
+3. **Bad Randomness**: The `rand()` function uses block variables (`block.number` and `blockhash`) that are publicly visible and can be manipulated by miners. This makes the randomness predictable and can be exploited by an attacker.
+
+4. **Unchecked Return Values For Low Level Calls**: The contract uses `.send()` function which can fail silently. The return value of these functions are not checked which could lead to loss of funds or incorrect state changes.
+
+5. **Access Control**: The contract uses a simple address check to restrict access to owner-only functions. However, the contract does not have a function to check if the owner address has been set to a non-zero address. This can lead to a situation where the owner address is not set and the contract becomes unusable.
+
+6. **Denial of Service**: The contract is vulnerable to a denial of service attack. If an attacker manages to cause the `join()` function to always revert, no other user will be able to join the contract.
+
+7. **Front-Running**: As the `join()` function can be called by anyone who can see the transaction in the mempool, an attacker can front-run the transaction and join before the intended user.
+
+8. **Timestamp Dependence**: Although not directly used in the contract, the block variables used in the `rand()` function can be manipulated by miners, leading to potential vulnerabilities.
+
+9. **Short Address Attack**: The contract does not check the length of the address inputs which can lead to a short address attack.

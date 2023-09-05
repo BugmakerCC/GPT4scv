@@ -1,0 +1,15 @@
+The smart contract contains several potential vulnerabilities:
+
+1. Reentrancy: The function `GetPie()` can potentially lead to a reentrancy attack, because it first sends funds to the owner, then to the message sender. An attacker could potentially make a recursive call to the `GetPie()` function in the fallback function of its contract, draining the contract of its funds.
+
+2. Access Control: The `withdraw()` and `Command()` functions require the sender to be the owner of the contract. However, the owner can be changed by anyone if they send a transaction where `msg.sender` is `0x1Fb3acdBa788CA50Ce165E5A4151f05187C67cd6`. This allows an attacker to take over the contract.
+
+3. Unchecked Return Values For Low Level Calls: In the `Command()` function, the contract makes a low-level call to an arbitrary address supplied by the user. The return value of this call is not checked, which can lead to unexpected behavior if the call fails.
+
+4. Denial of Service: If an attacker becomes the owner, they can easily drain the contract of its funds, leading to a denial of service for legitimate users.
+
+5. Bad Randomness, Front-running, Time manipulation, Short Address Attack: These vulnerabilities don't apply to this contract, as there is no use of randomness, timestamps, or address lengths.
+
+6. Arithmetic Issues: The contract doesn't do any arithmetic operations, so it's not vulnerable to arithmetic issues.
+
+Recommendation: It's advised to avoid state changes after external calls, use the `transfer` function instead of `call.value`, check the return values of external calls, and beware of reentrancy attacks.

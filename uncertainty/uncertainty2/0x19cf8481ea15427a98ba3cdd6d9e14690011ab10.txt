@@ -1,0 +1,19 @@
+The contract seems to have the following vulnerabilities:
+
+1. Reentrancy: The `refundTRA` function calls `msg.sender.transfer(ETHValue)` after making changes to the state but before it has finished executing. An attacker could potentially re-enter the contract before it finishes executing.
+
+2. Arithmetic Issues: The contract uses SafeMath for arithmetics, which is a good practice. However, some operations do not use SafeMath. For example, `totalSupply -= _value` and `totalSupply += numTokens` in `createDaoPOLSKAtokens`. This can lead to underflow and overflow issues.
+
+3. Unchecked Return Values For Low Level Calls: The contract uses `send` in `PartialFundsTransfer` and `finalize` without checking the return value. If the send operation fails, the contract will not be aware of it.
+
+4. Bad Randomness: The contract doesn't seem to use randomness, so this vulnerability is not applicable.
+
+5. Front-Running: The contract seems susceptible to a front-running attack as there are no measures in place to prevent one party from seeing another party's transaction and then placing their own transaction that will get mined beforehand.
+
+6. Time manipulation: The contract uses block numbers for timing in `finalize`, which is vulnerable to manipulation by miners.
+
+7. Short Address Attack: The contract does not seem to have protection against the short address attack. 
+
+8. Access Control: The contract uses a simple access control mechanism where only the `owner` can perform certain operations. If the private key of the owner is compromised, the entire contract could be at risk.
+
+9. Denial of Service: The contract doesn't seem to have protection against DoS attacks, especially in the functions that transfer funds. It uses loops in several places, which can run out of gas if the number of iterations is large.

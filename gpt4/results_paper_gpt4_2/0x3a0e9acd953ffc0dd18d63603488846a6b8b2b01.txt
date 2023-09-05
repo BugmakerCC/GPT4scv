@@ -1,0 +1,21 @@
+The given smart contract seems to have multiple vulnerabilities listed in the nine common vulnerabilities.
+
+1. Reentrancy: The `WithdrawToHolder` function is vulnerable to a reentrancy attack because it calls an external contract `_addr.call.value(_wei)` before it reduces the balance `Holders[_addr]-=_wei`. An attacker could recursively call the `WithdrawToHolder` function before `Holders[_addr]-=_wei` has a chance to execute.
+
+2. Access Control: The onlyOwner modifier doesn't actually prevent non-owners from executing the functions it is applied to. The logic in `modifier onlyOwner` does nothing if `msg.sender` is not the owner, it should be `require(owner == msg.sender);`.
+
+3. Arithmetic Issues: There are no safe math functions to prevent integer overflow or underflow. This could occur in the `Deposit` function where it increases `Holders[msg.sender]+=msg.value;`.
+
+4. Unchecked Return Values for Low-Level Calls: The contract uses low-level `.call()` function in `WithdrawToken` and `WithdrawToHolder` functions, but it does not check the return value of these calls. This could allow fail silently.
+
+5. Denial of Service: The `changeOwner` function could potentially enable DoS if the newOwner is a contract that throws in its fallback function. The `confirmOwner` function wouldn't be able to execute `owner = newOwner`.
+
+6. Bad Randomness: Not applicable as there is no randomness in this contract.
+
+7. Front-Running: Not directly applicable as there are no direct transaction ordering dependencies, but front-running attacks could potentially be a problem due to Ethereum's transaction model.
+
+8. Time Manipulation: Not applicable as there is no dependency on time or block timestamp.
+
+9. Short Address Attack: Not applicable as the contract does not interact with user-supplied byte arrays that could be of a shorter length than expected.
+
+The contract needs significant improvements to mitigate these vulnerabilities.

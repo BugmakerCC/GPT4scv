@@ -1,0 +1,7 @@
+The given smart contract has an Arithmetic Issue vulnerability, specifically an Integer Overflow issue.
+
+The `add` function in the contract is designed to add the value of `deposit` to the current `balance`. However, there is no check in place to handle potential overflows. 
+
+In Solidity, the `uint` type is a 256-bit unsigned integer, which means it has a range of 0 to (2^256) - 1. If a `deposit` is added that would push `balance` above this maximum value, the value will overflow and wrap around to zero. This could be exploited by a malicious user to manipulate the `balance` of the contract.
+
+To fix this vulnerability, the contract should include a check to ensure that adding the `deposit` does not cause `balance` to exceed the maximum value for a `uint`. This could be done using the SafeMath library provided by OpenZeppelin, which is a library of secure mathematical operations that has been widely adopted in the Ethereum community.

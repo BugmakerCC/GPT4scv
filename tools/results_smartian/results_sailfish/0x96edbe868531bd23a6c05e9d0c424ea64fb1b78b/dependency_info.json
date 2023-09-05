@@ -1,0 +1,40 @@
+{
+    "0x96edbe868531bd23a6c05e9d0c424ea64fb1b78b.sol": [
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "Collect",
+                "SetLogFile"
+            ],
+            "from_function": "SetLogFile",
+            "to_function": "Collect",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 6\nFunction: SetLogFile\nNode: \nEXPRESSION Log = LogFile(_log)\nIRS: \nLog := TMP_0\"",
+                        "\"BlockID: 17\nFunction: Collect\nNode: \nEXPRESSION Log.AddMessage(msg.sender,_am,Collect)\nIRS: \nHIGH_LEVEL_CALL, dest:Log(LogFile), function:AddMessage, arguments:['msg.sender', '_am', 'Collect']  \""
+                    ],
+                    "state_variable": "Log"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "Collect",
+                "SetMinSum"
+            ],
+            "First_function": "SetMinSum",
+            "Second_function": "Collect",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 3\nFunction: SetMinSum\nNode: \nEXPRESSION MinSum = _val\nIRS: \nMinSum := _val\"",
+                        "\"BlockID: 13\nFunction: Collect\nNode: \nIF acc.balance >= MinSum && acc.balance >= _am && now > acc.unlockTime\nIRS: \nCONDITION TMP_9\""
+                    ],
+                    "state_variable": "MinSum"
+                }
+            ]
+        }
+    ]
+}

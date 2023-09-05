@@ -1,0 +1,50 @@
+{
+    "docker": {
+        "command": null,
+        "detach": true,
+        "entrypoint": "'/sb/bin/do_solidity.sh' '/sb/0x07f7ecb66d788ab01dc93b9b71a88401de7d0f2e.sol' '0' '/sb/bin' '0'",
+        "image": "smartbugs/honeybadger:ff30c9a",
+        "user": 0,
+        "volumes": {
+            "C:\\Users\\10976\\AppData\\Local\\Temp\\tmp13dzsxu8": {
+                "bind": "/sb",
+                "mode": "rw"
+            }
+        }
+    },
+    "filename": "all\\0x07f7ecb66d788ab01dc93b9b71a88401de7d0f2e.sol",
+    "platform": {
+        "cpu": "12th Gen Intel(R) Core(TM) i7-12700H",
+        "python": "3.11.1.final.0 (64 bit)",
+        "release": "10",
+        "smartbugs": "2.0.7",
+        "system": "Windows",
+        "version": "10.0.22621"
+    },
+    "result": {
+        "duration": 35.331787109375,
+        "exit_code": 0,
+        "logs": "result.log",
+        "output": null,
+        "start": 1679643039.8456178
+    },
+    "runid": "20230324_0728",
+    "solc": "0.4.26",
+    "tool": {
+        "bin": "scripts",
+        "command": null,
+        "cpu_quota": null,
+        "entrypoint": "'$BIN/do_solidity.sh' '$FILENAME' '$TIMEOUT' '$BIN' '$MAIN'",
+        "id": "honeybadger",
+        "image": "smartbugs/honeybadger:ff30c9a",
+        "info": "An analysis tool to detect honeypots in Ethereum smart contracts",
+        "mem_limit": null,
+        "mode": "solidity",
+        "name": "HoneyBadger",
+        "origin": "https://github.com/christoftorres/HoneyBadger",
+        "output": null,
+        "parser": "parser.py",
+        "solc": true,
+        "version": "#ff30c9a"
+    }
+}

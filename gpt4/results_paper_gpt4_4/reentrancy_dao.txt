@@ -1,0 +1,32 @@
+This contract suffers from a Reentrancy vulnerability. The problem is that it calls an external contract (in this case, `msg.sender`) while its own state isn't finalized yet. This allows the called contract to call back (`re-enter`) the calling contract and modify the state.
+
+Here's how it happens in this contract:
+
+1. User invokes `withdrawAll()`.
+2. The contract checks if the user has any credit (line 14).
+3. If yes, it reduces the balance (line 16).
+4. It sends the amount to the user (line 18).
+5. If the user is a contract, it can call `withdrawAll()` again.
+6. Go to 2.
+
+This means that the user can drain the contract while their `credit[msg.sender]` is still not zeroed out.
+
+To fix this, the contract should first set `credit[msg.sender]` to zero, then transfer the amount.
+
+So instead of:
+
+```solidity
+balance -= oCredit;
+bool callResult = msg.sender.call.value(oCredit)();
+require (callResult);
+credit[msg.sender] = 0;
+```
+
+It should be:
+
+```solidity
+credit[msg.sender] = 0;
+balance -= oCredit;
+bool callResult = msg.sender.call.value(oCredit)();
+require (callResult);
+```

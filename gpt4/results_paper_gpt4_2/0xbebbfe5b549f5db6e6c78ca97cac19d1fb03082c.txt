@@ -1,0 +1,23 @@
+Upon reviewing the given smart contract code, the following vulnerabilities are detected:
+
+1. Reentrancy: The function `withdraw()` is vulnerable to reentrancy attacks as it makes an external call to `msg.sender.transfer(amount)` before the state, `Deposits[msg.sender]`, has been updated. An attacker may exploit this to drain the contract's funds.
+
+2. Access Control: Anyone can call the `proxy()` function in the `Proxy` contract. This could allow an attacker to make arbitrary calls to other contracts.
+
+3. Unchecked Return Values For Low Level Calls: The `proxy()` function in the `Proxy` contract doesn't check the return value of the `call.value()` function. If that call fails, the contract won't know and won't be able to react appropriately.
+
+4. Arithmetic Issues: There are no checks for overflows or underflows when updating the `Deposits` mapping in the `deposit()` function.
+
+5. Front-Running: The `deposit()` function of the `VaultProxy` contract is vulnerable to front-running. An attacker could observe a transaction calling this function and then create another transaction with a higher gas price, causing it to be mined before the original transaction.
+
+The following vulnerabilities were not found in the code:
+
+1. Denial of Service: No susceptibility to this attack was found.
+
+2. Bad Randomness: The contract does not rely on randomness, so it is not susceptible to this attack.
+
+3. Time Manipulation: The contract does not rely on timestamps, so it is not susceptible to this attack.
+
+4. Short Address Attack: As the contract does not take address inputs from users, it is not susceptible to this attack. 
+
+It's suggested to fix the detected vulnerabilities to make the contract secure.

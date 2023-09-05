@@ -1,0 +1,31 @@
+The smart contract seems to have a Reentrancy vulnerability in the `execute` function, where external calls are made to an arbitrary address before state changes. This can allow an attacker to repeatedly call the function before the state (in this case, the `m_txs[_h]` state) is changed, draining the contract's funds.
+
+Here's the problematic part:
+
+```solidity
+if (m_txs[_h].to != 0 || m_txs[_h].value != 0 || m_txs[_h].data.length != 0) {
+    address created;
+    if (m_txs[_h].to == 0) {
+        created = create(m_txs[_h].value, m_txs[_h].data);
+    } else {
+        if (!m_txs[_h].to.call.value(m_txs[_h].value)(m_txs[_h].data))
+            throw;
+    }
+
+    MultiTransact(msg.sender, _h, m_txs[_h].value, m_txs[_h].to, m_txs[_h].data, created);
+    delete m_txs[_h];
+    return true;
+}
+```
+
+Before making an external call to `_to.call.value(_value)(_data)`, the state `m_txs[_h]` should be deleted or modified.
+
+In addition, the smart contract seems to have an Access Control vulnerability. `Onlyowner` and `Onlymanyowners` are defined but never used, which means that any address can use the functions in this contract. This could lead to unauthorized access and manipulation of the contract's state.
+
+Lastly, the contract suffers from a Time manipulation (timestamp dependence) vulnerability. The `today` function returns the current day based on the `now` keyword which can be manipulated by miners. This can be a problem where the function is used in `underLimit` to reset daily spending limits.
+
+```solidity
+function today() private constant returns (uint) { return now / 1 days; }
+```
+
+These vulnerabilities should be addressed to ensure the secure operation of the smart contract.

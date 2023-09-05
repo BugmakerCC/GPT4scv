@@ -1,0 +1,58 @@
+{
+    "tod_symex_path_1.json": {
+        "file_name": "",
+        "from_function": "participate",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 108\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 112\nCall context: \nNone\nREF_0 -> winner[msg.sender]\nTMP_4 = REF_0 == false\nTMP_5 = SOLIDITY_CALL require(bool)(TMP_4)\""
+        ],
+        "executable_instructions": 104,
+        "state_variable": "winner",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_2.json": {
+        "file_name": "",
+        "from_function": "participate",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 131\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 135\nCall context: \nNone\nREF_0 -> winner[msg.sender]\nTMP_4 = REF_0 == false\nTMP_5 = SOLIDITY_CALL require(bool)(TMP_4)\""
+        ],
+        "executable_instructions": 104,
+        "state_variable": "winner",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_3.json": {
+        "file_name": "",
+        "from_function": "fallback",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 154\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 161\nCall context: \nNone\nREF_0 -> winner[msg.sender]\nTMP_4 = REF_0 == false\nTMP_5 = SOLIDITY_CALL require(bool)(TMP_4)\""
+        ],
+        "executable_instructions": 110,
+        "state_variable": "winner",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_4.json": {
+        "file_name": "",
+        "from_function": "fallback",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 180\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 187\nCall context: \nNone\nREF_0 -> winner[msg.sender]\nTMP_4 = REF_0 == false\nTMP_5 = SOLIDITY_CALL require(bool)(TMP_4)\""
+        ],
+        "executable_instructions": 110,
+        "state_variable": "winner",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    }
+}

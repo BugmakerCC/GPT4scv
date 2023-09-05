@@ -1,0 +1,11 @@
+This smart contract has at least two vulnerabilities:
+
+1. Reentrancy: The contract is vulnerable to Reentrancy in the "Collect" function. The contract sends ether with "msg.sender.call.value(_am)()" before it reduces the balance of the caller with "balances[msg.sender]-=_am". This allows the caller to start new calls to the contract before the first call is finished, which could lead to the withdrawal of more Ether than the caller has balance for.
+
+   To fix this issue, you should update the balance before sending the Ether. This way, if the caller tries to start a new call before the first one is finished, the balance will already have been reduced and the new call will fail.
+
+2. Access Control: The contract is missing access control at several points. The functions "SetMinSum", "SetLogFile", and "Initialized" can be called by anyone. This can lead to unauthorized changes to the contract state.
+
+   To fix this issue, you should implement a modifier that only allows a specific address (like the contract creator) to call these functions. This way, you can ensure that only authorized users can change the contract state.
+
+The contract doesn't seem to be affected by the other vulnerabilities mentioned. However, the contract could benefit from more checks and safeguards. For example, it doesn't check if the "LogFile" contract at the given address is actually a "LogFile" contract. This could lead to unexpected behavior if a different contract is given.

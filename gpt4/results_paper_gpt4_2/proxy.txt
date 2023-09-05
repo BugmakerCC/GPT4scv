@@ -1,0 +1,25 @@
+This smart contract has a potential reentrancy vulnerability in the `forward` function where it calls `callee.delegatecall(_data)`. 
+
+Delegatecall is a low level function in Solidity that can change the state of the calling contract (Proxy), if the callee is a malicious contract. This is particularly dangerous because the callee contract could potentially be designed to recursively call the `forward` function, causing a reentrancy attack.
+
+It is recommended to avoid using delegatecall to untrusted contracts. If the use of delegatecall is unavoidable, it is necessary to implement a reentrancy guard to prevent recursive calls.
+
+Moreover, there is also an access control vulnerability in this contract. The `forward` function can be called by anyone because there is no access control implemented. This can potentially allow an attacker to forward calls to any arbitrary contract. 
+
+A possible fix is to add a modifier to restrict access to the `forward` function to only the owner of the contract:
+
+```
+modifier onlyOwner() {
+  require(msg.sender == owner, "Only the contract owner can call this function");
+  _;
+}
+```
+Then apply this modifier to the `forward` function:
+
+```
+function forward(address callee, bytes _data) public onlyOwner {
+  ...
+}
+```
+
+This will ensure that only the contract owner can forward calls to other contracts.

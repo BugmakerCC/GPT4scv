@@ -1,0 +1,112 @@
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Analysis started at: 2023-08-14 02:57:01 AM
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Version constraints: ['^0.4.23']
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | solc version: v0.4.23
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Callgraph generation started!
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Callgraph generation finished!
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Value Range Analysis started
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for DranMe
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for DranMe
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Range graph generated
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function DranMe
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for getLength
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for getLength
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function getLength
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for getPlayerCount
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for getPlayerCount
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function getPlayerCount
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for getPrize
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for getPrize
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function getPrize
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for becomePlayer
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for becomePlayer
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Range graph generated
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function becomePlayer
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for unlockSecret
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for unlockSecret
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Range graph generated
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function unlockSecret
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for fallback
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for fallback
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function fallback
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for slitherConstructorVariables
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for slitherConstructorVariables
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Range graph generated
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function slitherConstructorVariables
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for onlyOwner
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for onlyOwner
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function onlyOwner
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for onlyPlayers
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for onlyPlayers
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function onlyPlayers
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for onlyWinner
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for onlyWinner
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function onlyWinner
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for manipulateSecret
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for manipulateSecret
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Range graph generated
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function manipulateSecret
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for setSecret
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for setSecret
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Range graph generated
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function setSecret
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for winPrize
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for winPrize
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function winPrize
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for callFirstTarget
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for callFirstTarget
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function callFirstTarget
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for callSecondTarget
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for callSecondTarget
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function callSecondTarget
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for setSeed
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for setSeed
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Range graph generated
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function setSeed
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for addSeed
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for addSeed
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Range graph generated
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function addSeed
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for guessSeed
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for guessSeed
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Range graph generated
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function guessSeed
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for checkSecret
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for checkSecret
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function checkSecret
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Generating return summary for claimPrize
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Return summary generated for claimPrize
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Processed function claimPrize
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Value Range Analysis took 0.005153 seconds
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Value Range Analysis finished
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Dependency detection started!
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | TOD dependency detected in file 0xb620cee6b52f96f3c6b253e6eea556aa2d214a99.sol in contract DrainMe in by composing functions manipulateSecret and DranMe
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | TOD dependency detected in file 0xb620cee6b52f96f3c6b253e6eea556aa2d214a99.sol in contract DrainMe in by composing functions manipulateSecret and becomePlayer
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | TOD dependency detected in file 0xb620cee6b52f96f3c6b253e6eea556aa2d214a99.sol in contract DrainMe in by composing functions callFirstTarget and becomePlayer
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | TOD dependency detected in file 0xb620cee6b52f96f3c6b253e6eea556aa2d214a99.sol in contract DrainMe in by composing functions callSecondTarget and becomePlayer
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Dependency detection finished!
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Static Analysis took 0.615302 seconds
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Dependency exists
+[INFO] | 2023-08-14 02:57:01 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Invoking symbolic executor!
+[INFO] | 2023-08-14 02:57:02 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Symbolic execution took 0.744463 seconds
+[INFO] | 2023-08-14 02:57:02 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Symbolic execution finished!
+[INFO] | 2023-08-14 02:57:02 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Analysis finished!
+[INFO] | 2023-08-14 02:57:02 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Analysis took 1.360204 seconds
+[INFO] | 2023-08-14 02:57:02 AM | analyzer.0xb620cee6b52f96f3c6b253e6eea556aa2d214a99 | Analysis finished at: 2023-08-14 02:57:02 AM

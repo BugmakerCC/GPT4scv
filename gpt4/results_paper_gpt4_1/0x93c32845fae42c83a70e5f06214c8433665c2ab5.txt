@@ -1,0 +1,19 @@
+Upon analysis, the smart contract contains the following vulnerabilities:
+
+1. Reentrancy: The `Collect` function is vulnerable to a reentrancy attack. The balance of the account is decremented after the external call, which could potentially allow the attacker to reenter the function and drain the contract of its funds if the called contract also interacts with this contract.
+
+2. Access Control: The `AddMessage` function in the `Log` contract is public which means any address can call it. This could potentially allow an attacker to fill up the contract's storage, leading to a Denial of Service attack.
+
+3. Arithmetic Issues: The smart contract does not handle potential integer overflow or underflows. For example, in the `Put` function, the balance of the account is increased with `+=` but there are no checks or safeguards in place to handle an overflow.
+
+4. Unchecked Return Values: The contract does not check the return value of `msg.sender.call.value(_am)()`. If this low level call fails, the balance is not updated, potentially leading to accounting errors.
+
+5. Denial of Service: As mentioned in Access Control, the `AddMessage` function could be exploited to perform a Denial of Service attack by filling up the contract's storage.
+
+6. Bad Randomness: This contract does not use any randomized values, so this is not a vulnerability in this case.
+
+7. Front-Running: This contract doesn't seem to have any transaction ordering dependencies that could lead to a front-running attack.
+
+8. Time Manipulation: This contract is dependent on the `now` keyword (alias for `block.timestamp`), making it vulnerable to minor manipulation by miners.
+
+9. Short Address Attack: This contract does not seem to be vulnerable to a short address attack as it does not take address input from users. However, it is always a good practice to use `msg.sender` instead of taking an address as a parameter.

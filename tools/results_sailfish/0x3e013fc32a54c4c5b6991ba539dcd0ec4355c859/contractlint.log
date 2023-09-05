@@ -1,0 +1,42 @@
+[INFO] | 2023-08-14 02:57:05 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Analysis started at: 2023-08-14 02:57:05 AM
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Version constraints: ['^0.4.18']
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | solc version: v0.4.18
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Callgraph generation started!
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Callgraph generation finished!
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Value Range Analysis started
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Generating return summary for fallback
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Return summary generated for fallback
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Processed function fallback
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Generating return summary for withdraw
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Return summary generated for withdraw
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Processed function withdraw
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Generating return summary for Command
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Return summary generated for Command
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Processed function Command
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Generating return summary for multiplicate
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Return summary generated for multiplicate
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Processed function multiplicate
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Generating return summary for slitherConstructorVariables
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Return summary generated for slitherConstructorVariables
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Range graph generated
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Processed function slitherConstructorVariables
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Value Range Analysis took 0.000981 seconds
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Value Range Analysis finished
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Dependency detection started!
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Dependency detection finished!
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Static Analysis took 0.179852 seconds
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Dependency does not exist
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Symbolic execution is not needed!
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Analysis finished!
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Analysis took 0.180030 seconds
+[INFO] | 2023-08-14 02:57:06 AM | analyzer.0x3e013fc32a54c4c5b6991ba539dcd0ec4355c859 | Analysis finished at: 2023-08-14 02:57:06 AM

@@ -1,0 +1,1760 @@
+{
+    "parity_wallet_bug_1.sol": [
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "initMultiowned"
+            ],
+            "First_function": "initMultiowned",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 12\nFunction: initMultiowned\nNode: \nEXPRESSION m_required = _required\nIRS: \nm_required := _required\"",
+                        "\"BlockID: 214\nFunction: execute\nNode: \nIF (_data.length == 0 && underLimit(_value)) || m_required == 1\nIRS: \nCONDITION TMP_91\""
+                    ],
+                    "state_variable": "m_required"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 8\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(msg.sender)] = 1\nIRS: \nREF_2 := 1\"",
+                        "\"BlockID: 231\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 11\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(_owners[i])] = 2 + i\nIRS: \nREF_7 := TMP_9\"",
+                        "\"BlockID: 231\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 8\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(msg.sender)] = 1\nIRS: \nREF_2 := 1\"",
+                        "\"BlockID: 238\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 11\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(_owners[i])] = 2 + i\nIRS: \nREF_7 := TMP_9\"",
+                        "\"BlockID: 238\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "initMultiowned"
+            ],
+            "First_function": "initMultiowned",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 12\nFunction: initMultiowned\nNode: \nEXPRESSION m_required = _required\nIRS: \nm_required := _required\"",
+                        "\"BlockID: 214\nFunction: execute\nNode: \nIF (_data.length == 0 && underLimit(_value)) || m_required == 1\nIRS: \nCONDITION TMP_91\""
+                    ],
+                    "state_variable": "m_required"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 8\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(msg.sender)] = 1\nIRS: \nREF_2 := 1\"",
+                        "\"BlockID: 231\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 11\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(_owners[i])] = 2 + i\nIRS: \nREF_7 := TMP_9\"",
+                        "\"BlockID: 231\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 8\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(msg.sender)] = 1\nIRS: \nREF_2 := 1\"",
+                        "\"BlockID: 238\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 11\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(_owners[i])] = 2 + i\nIRS: \nREF_7 := TMP_9\"",
+                        "\"BlockID: 238\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 8\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(msg.sender)] = 1\nIRS: \nREF_2 := 1\"",
+                        "\"BlockID: 250\nFunction: confirmAndCheck\nNode: \nIF ownerIndex == 0\nIRS: \nCONDITION TMP_123\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 11\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(_owners[i])] = 2 + i\nIRS: \nREF_7 := TMP_9\"",
+                        "\"BlockID: 250\nFunction: confirmAndCheck\nNode: \nIF ownerIndex == 0\nIRS: \nCONDITION TMP_123\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 8\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(msg.sender)] = 1\nIRS: \nREF_2 := 1\"",
+                        "\"BlockID: 255\nFunction: confirmAndCheck\nNode: \nIF pending.ownersDone & ownerIndexBit == 0\nIRS: \nCONDITION TMP_128\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 11\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(_owners[i])] = 2 + i\nIRS: \nREF_7 := TMP_9\"",
+                        "\"BlockID: 255\nFunction: confirmAndCheck\nNode: \nIF pending.ownersDone & ownerIndexBit == 0\nIRS: \nCONDITION TMP_128\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "changeOwner"
+            ],
+            "First_function": "changeOwner",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 21\nFunction: changeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_from)] = 0\nIRS: \nREF_15 := 0\"",
+                        "\"BlockID: 231\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 22\nFunction: changeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_to)] = ownerIndex\nIRS: \nREF_16 := ownerIndex\"",
+                        "\"BlockID: 231\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 21\nFunction: changeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_from)] = 0\nIRS: \nREF_15 := 0\"",
+                        "\"BlockID: 238\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 22\nFunction: changeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_to)] = ownerIndex\nIRS: \nREF_16 := ownerIndex\"",
+                        "\"BlockID: 238\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "changeOwner"
+            ],
+            "First_function": "changeOwner",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 21\nFunction: changeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_from)] = 0\nIRS: \nREF_15 := 0\"",
+                        "\"BlockID: 231\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 22\nFunction: changeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_to)] = ownerIndex\nIRS: \nREF_16 := ownerIndex\"",
+                        "\"BlockID: 231\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 21\nFunction: changeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_from)] = 0\nIRS: \nREF_15 := 0\"",
+                        "\"BlockID: 238\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 22\nFunction: changeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_to)] = ownerIndex\nIRS: \nREF_16 := ownerIndex\"",
+                        "\"BlockID: 238\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 21\nFunction: changeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_from)] = 0\nIRS: \nREF_15 := 0\"",
+                        "\"BlockID: 250\nFunction: confirmAndCheck\nNode: \nIF ownerIndex == 0\nIRS: \nCONDITION TMP_123\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 22\nFunction: changeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_to)] = ownerIndex\nIRS: \nREF_16 := ownerIndex\"",
+                        "\"BlockID: 250\nFunction: confirmAndCheck\nNode: \nIF ownerIndex == 0\nIRS: \nCONDITION TMP_123\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 21\nFunction: changeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_from)] = 0\nIRS: \nREF_15 := 0\"",
+                        "\"BlockID: 255\nFunction: confirmAndCheck\nNode: \nIF pending.ownersDone & ownerIndexBit == 0\nIRS: \nCONDITION TMP_128\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 22\nFunction: changeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_to)] = ownerIndex\nIRS: \nREF_16 := ownerIndex\"",
+                        "\"BlockID: 255\nFunction: confirmAndCheck\nNode: \nIF pending.ownersDone & ownerIndexBit == 0\nIRS: \nCONDITION TMP_128\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 41\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 241\nFunction: confirm\nNode: \nIF m_txs[_h].to != 0 || m_txs[_h].value != 0 || m_txs[_h].data.length != 0\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 41\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 242\nFunction: confirm\nNode: \nIF m_txs[_h].to == 0\nIRS: \nCONDITION TMP_114\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 41\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 243\nFunction: confirm\nNode: \nIF ! m_txs[_h].to.call.value(m_txs[_h].value)(m_txs[_h].data)\nIRS: \nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 31\nFunction: confirmAndCheck\nNode: \nEXPRESSION m_pendingIndex[pending.index] = _operation\nIRS: \nREF_79 := _operation\"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 37\nFunction: confirmAndCheck\nNode: \nEXPRESSION delete m_pendingIndex[m_pending[_operation].index]\nIRS: \nREF_84 = delete REF_84 \"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 43\nFunction: clearPending\nNode: \nEXPRESSION delete m_pendingIndex\nIRS: \nm_pendingIndex = delete m_pendingIndex \"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "addOwner"
+            ],
+            "First_function": "addOwner",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 52\nFunction: addOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_owner)] = m_numOwners\nIRS: \nREF_18 := m_numOwners\"",
+                        "\"BlockID: 231\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 82\nFunction: reorganizeOwners\nNode: \nEXPRESSION m_ownerIndex[m_owners[free]] = free\nIRS: \nREF_95 := free\"",
+                        "\"BlockID: 231\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 52\nFunction: addOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_owner)] = m_numOwners\nIRS: \nREF_18 := m_numOwners\"",
+                        "\"BlockID: 238\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 82\nFunction: reorganizeOwners\nNode: \nEXPRESSION m_ownerIndex[m_owners[free]] = free\nIRS: \nREF_95 := free\"",
+                        "\"BlockID: 238\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "addOwner"
+            ],
+            "First_function": "addOwner",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 52\nFunction: addOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_owner)] = m_numOwners\nIRS: \nREF_18 := m_numOwners\"",
+                        "\"BlockID: 231\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 82\nFunction: reorganizeOwners\nNode: \nEXPRESSION m_ownerIndex[m_owners[free]] = free\nIRS: \nREF_95 := free\"",
+                        "\"BlockID: 231\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 52\nFunction: addOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_owner)] = m_numOwners\nIRS: \nREF_18 := m_numOwners\"",
+                        "\"BlockID: 238\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 82\nFunction: reorganizeOwners\nNode: \nEXPRESSION m_ownerIndex[m_owners[free]] = free\nIRS: \nREF_95 := free\"",
+                        "\"BlockID: 238\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 52\nFunction: addOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_owner)] = m_numOwners\nIRS: \nREF_18 := m_numOwners\"",
+                        "\"BlockID: 250\nFunction: confirmAndCheck\nNode: \nIF ownerIndex == 0\nIRS: \nCONDITION TMP_123\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 82\nFunction: reorganizeOwners\nNode: \nEXPRESSION m_ownerIndex[m_owners[free]] = free\nIRS: \nREF_95 := free\"",
+                        "\"BlockID: 250\nFunction: confirmAndCheck\nNode: \nIF ownerIndex == 0\nIRS: \nCONDITION TMP_123\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 52\nFunction: addOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_owner)] = m_numOwners\nIRS: \nREF_18 := m_numOwners\"",
+                        "\"BlockID: 255\nFunction: confirmAndCheck\nNode: \nIF pending.ownersDone & ownerIndexBit == 0\nIRS: \nCONDITION TMP_128\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 82\nFunction: reorganizeOwners\nNode: \nEXPRESSION m_ownerIndex[m_owners[free]] = free\nIRS: \nREF_95 := free\"",
+                        "\"BlockID: 255\nFunction: confirmAndCheck\nNode: \nIF pending.ownersDone & ownerIndexBit == 0\nIRS: \nCONDITION TMP_128\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 71\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 241\nFunction: confirm\nNode: \nIF m_txs[_h].to != 0 || m_txs[_h].value != 0 || m_txs[_h].data.length != 0\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 71\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 242\nFunction: confirm\nNode: \nIF m_txs[_h].to == 0\nIRS: \nCONDITION TMP_114\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 71\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 243\nFunction: confirm\nNode: \nIF ! m_txs[_h].to.call.value(m_txs[_h].value)(m_txs[_h].data)\nIRS: \nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 61\nFunction: confirmAndCheck\nNode: \nEXPRESSION m_pendingIndex[pending.index] = _operation\nIRS: \nREF_79 := _operation\"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 67\nFunction: confirmAndCheck\nNode: \nEXPRESSION delete m_pendingIndex[m_pending[_operation].index]\nIRS: \nREF_84 = delete REF_84 \"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 73\nFunction: clearPending\nNode: \nEXPRESSION delete m_pendingIndex\nIRS: \nm_pendingIndex = delete m_pendingIndex \"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "removeOwner"
+            ],
+            "First_function": "removeOwner",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 111\nFunction: removeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_owner)] = 0\nIRS: \nREF_21 := 0\"",
+                        "\"BlockID: 231\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 118\nFunction: reorganizeOwners\nNode: \nEXPRESSION m_ownerIndex[m_owners[free]] = free\nIRS: \nREF_95 := free\"",
+                        "\"BlockID: 231\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 111\nFunction: removeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_owner)] = 0\nIRS: \nREF_21 := 0\"",
+                        "\"BlockID: 238\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 118\nFunction: reorganizeOwners\nNode: \nEXPRESSION m_ownerIndex[m_owners[free]] = free\nIRS: \nREF_95 := free\"",
+                        "\"BlockID: 238\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "removeOwner"
+            ],
+            "First_function": "removeOwner",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 111\nFunction: removeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_owner)] = 0\nIRS: \nREF_21 := 0\"",
+                        "\"BlockID: 231\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 118\nFunction: reorganizeOwners\nNode: \nEXPRESSION m_ownerIndex[m_owners[free]] = free\nIRS: \nREF_95 := free\"",
+                        "\"BlockID: 231\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 111\nFunction: removeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_owner)] = 0\nIRS: \nREF_21 := 0\"",
+                        "\"BlockID: 238\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 118\nFunction: reorganizeOwners\nNode: \nEXPRESSION m_ownerIndex[m_owners[free]] = free\nIRS: \nREF_95 := free\"",
+                        "\"BlockID: 238\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 111\nFunction: removeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_owner)] = 0\nIRS: \nREF_21 := 0\"",
+                        "\"BlockID: 250\nFunction: confirmAndCheck\nNode: \nIF ownerIndex == 0\nIRS: \nCONDITION TMP_123\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 118\nFunction: reorganizeOwners\nNode: \nEXPRESSION m_ownerIndex[m_owners[free]] = free\nIRS: \nREF_95 := free\"",
+                        "\"BlockID: 250\nFunction: confirmAndCheck\nNode: \nIF ownerIndex == 0\nIRS: \nCONDITION TMP_123\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 111\nFunction: removeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_owner)] = 0\nIRS: \nREF_21 := 0\"",
+                        "\"BlockID: 255\nFunction: confirmAndCheck\nNode: \nIF pending.ownersDone & ownerIndexBit == 0\nIRS: \nCONDITION TMP_128\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 118\nFunction: reorganizeOwners\nNode: \nEXPRESSION m_ownerIndex[m_owners[free]] = free\nIRS: \nREF_95 := free\"",
+                        "\"BlockID: 255\nFunction: confirmAndCheck\nNode: \nIF pending.ownersDone & ownerIndexBit == 0\nIRS: \nCONDITION TMP_128\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 105\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 241\nFunction: confirm\nNode: \nIF m_txs[_h].to != 0 || m_txs[_h].value != 0 || m_txs[_h].data.length != 0\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 105\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 242\nFunction: confirm\nNode: \nIF m_txs[_h].to == 0\nIRS: \nCONDITION TMP_114\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 105\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 243\nFunction: confirm\nNode: \nIF ! m_txs[_h].to.call.value(m_txs[_h].value)(m_txs[_h].data)\nIRS: \nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 95\nFunction: confirmAndCheck\nNode: \nEXPRESSION m_pendingIndex[pending.index] = _operation\nIRS: \nREF_79 := _operation\"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 101\nFunction: confirmAndCheck\nNode: \nEXPRESSION delete m_pendingIndex[m_pending[_operation].index]\nIRS: \nREF_84 = delete REF_84 \"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 107\nFunction: clearPending\nNode: \nEXPRESSION delete m_pendingIndex\nIRS: \nm_pendingIndex = delete m_pendingIndex \"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "changeRequirement"
+            ],
+            "First_function": "changeRequirement",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 145\nFunction: changeRequirement\nNode: \nEXPRESSION m_required = _newRequired\nIRS: \nm_required := _newRequired\"",
+                        "\"BlockID: 214\nFunction: execute\nNode: \nIF (_data.length == 0 && underLimit(_value)) || m_required == 1\nIRS: \nCONDITION TMP_91\""
+                    ],
+                    "state_variable": "m_required"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "changeRequirement"
+            ],
+            "First_function": "changeRequirement",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 145\nFunction: changeRequirement\nNode: \nEXPRESSION m_required = _newRequired\nIRS: \nm_required := _newRequired\"",
+                        "\"BlockID: 214\nFunction: execute\nNode: \nIF (_data.length == 0 && underLimit(_value)) || m_required == 1\nIRS: \nCONDITION TMP_91\""
+                    ],
+                    "state_variable": "m_required"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 140\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 241\nFunction: confirm\nNode: \nIF m_txs[_h].to != 0 || m_txs[_h].value != 0 || m_txs[_h].data.length != 0\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 140\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 242\nFunction: confirm\nNode: \nIF m_txs[_h].to == 0\nIRS: \nCONDITION TMP_114\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 140\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 243\nFunction: confirm\nNode: \nIF ! m_txs[_h].to.call.value(m_txs[_h].value)(m_txs[_h].data)\nIRS: \nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 130\nFunction: confirmAndCheck\nNode: \nEXPRESSION m_pendingIndex[pending.index] = _operation\nIRS: \nREF_79 := _operation\"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 136\nFunction: confirmAndCheck\nNode: \nEXPRESSION delete m_pendingIndex[m_pending[_operation].index]\nIRS: \nREF_84 = delete REF_84 \"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 142\nFunction: clearPending\nNode: \nEXPRESSION delete m_pendingIndex\nIRS: \nm_pendingIndex = delete m_pendingIndex \"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "initDaylimit"
+            ],
+            "First_function": "initDaylimit",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 151\nFunction: initDaylimit\nNode: \nEXPRESSION m_lastDay = today()\nIRS: \nm_lastDay := TMP_71\"",
+                        "\"BlockID: 233\nFunction: underLimit\nNode: \nIF today() > m_lastDay\nIRS: \nCONDITION TMP_147\""
+                    ],
+                    "state_variable": "m_lastDay"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 152\nFunction: initDaylimit\nNode: \nEXPRESSION m_dailyLimit = _limit\nIRS: \nm_dailyLimit := _limit\"",
+                        "\"BlockID: 235\nFunction: underLimit\nNode: \nIF m_spentToday + _value >= m_spentToday && m_spentToday + _value <= m_dailyLimit\nIRS: \nCONDITION TMP_153\""
+                    ],
+                    "state_variable": "m_dailyLimit"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "initDaylimit"
+            ],
+            "First_function": "initDaylimit",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 151\nFunction: initDaylimit\nNode: \nEXPRESSION m_lastDay = today()\nIRS: \nm_lastDay := TMP_71\"",
+                        "\"BlockID: 233\nFunction: underLimit\nNode: \nIF today() > m_lastDay\nIRS: \nCONDITION TMP_147\""
+                    ],
+                    "state_variable": "m_lastDay"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 152\nFunction: initDaylimit\nNode: \nEXPRESSION m_dailyLimit = _limit\nIRS: \nm_dailyLimit := _limit\"",
+                        "\"BlockID: 235\nFunction: underLimit\nNode: \nIF m_spentToday + _value >= m_spentToday && m_spentToday + _value <= m_dailyLimit\nIRS: \nCONDITION TMP_153\""
+                    ],
+                    "state_variable": "m_dailyLimit"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "setDailyLimit"
+            ],
+            "First_function": "setDailyLimit",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 153\nFunction: setDailyLimit\nNode: \nEXPRESSION m_dailyLimit = _newLimit\nIRS: \nm_dailyLimit := _newLimit\"",
+                        "\"BlockID: 235\nFunction: underLimit\nNode: \nIF m_spentToday + _value >= m_spentToday && m_spentToday + _value <= m_dailyLimit\nIRS: \nCONDITION TMP_153\""
+                    ],
+                    "state_variable": "m_dailyLimit"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "setDailyLimit"
+            ],
+            "First_function": "setDailyLimit",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 153\nFunction: setDailyLimit\nNode: \nEXPRESSION m_dailyLimit = _newLimit\nIRS: \nm_dailyLimit := _newLimit\"",
+                        "\"BlockID: 235\nFunction: underLimit\nNode: \nIF m_spentToday + _value >= m_spentToday && m_spentToday + _value <= m_dailyLimit\nIRS: \nCONDITION TMP_153\""
+                    ],
+                    "state_variable": "m_dailyLimit"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 161\nFunction: confirmAndCheck\nNode: \nEXPRESSION m_pendingIndex[pending.index] = _operation\nIRS: \nREF_79 := _operation\"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 167\nFunction: confirmAndCheck\nNode: \nEXPRESSION delete m_pendingIndex[m_pending[_operation].index]\nIRS: \nREF_84 = delete REF_84 \"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "resetSpentToday"
+            ],
+            "First_function": "resetSpentToday",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 170\nFunction: resetSpentToday\nNode: \nEXPRESSION m_spentToday = 0\nIRS: \nm_spentToday := 0\"",
+                        "\"BlockID: 235\nFunction: underLimit\nNode: \nIF m_spentToday + _value >= m_spentToday && m_spentToday + _value <= m_dailyLimit\nIRS: \nCONDITION TMP_153\""
+                    ],
+                    "state_variable": "m_spentToday"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "resetSpentToday"
+            ],
+            "First_function": "resetSpentToday",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 170\nFunction: resetSpentToday\nNode: \nEXPRESSION m_spentToday = 0\nIRS: \nm_spentToday := 0\"",
+                        "\"BlockID: 235\nFunction: underLimit\nNode: \nIF m_spentToday + _value >= m_spentToday && m_spentToday + _value <= m_dailyLimit\nIRS: \nCONDITION TMP_153\""
+                    ],
+                    "state_variable": "m_spentToday"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 178\nFunction: confirmAndCheck\nNode: \nEXPRESSION m_pendingIndex[pending.index] = _operation\nIRS: \nREF_79 := _operation\"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 184\nFunction: confirmAndCheck\nNode: \nEXPRESSION delete m_pendingIndex[m_pending[_operation].index]\nIRS: \nREF_84 = delete REF_84 \"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "initWallet"
+            ],
+            "First_function": "initWallet",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 196\nFunction: initMultiowned\nNode: \nEXPRESSION m_required = _required\nIRS: \nm_required := _required\"",
+                        "\"BlockID: 214\nFunction: execute\nNode: \nIF (_data.length == 0 && underLimit(_value)) || m_required == 1\nIRS: \nCONDITION TMP_91\""
+                    ],
+                    "state_variable": "m_required"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 192\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(msg.sender)] = 1\nIRS: \nREF_2 := 1\"",
+                        "\"BlockID: 231\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 195\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(_owners[i])] = 2 + i\nIRS: \nREF_7 := TMP_9\"",
+                        "\"BlockID: 231\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 192\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(msg.sender)] = 1\nIRS: \nREF_2 := 1\"",
+                        "\"BlockID: 238\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 195\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(_owners[i])] = 2 + i\nIRS: \nREF_7 := TMP_9\"",
+                        "\"BlockID: 238\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 188\nFunction: initDaylimit\nNode: \nEXPRESSION m_lastDay = today()\nIRS: \nm_lastDay := TMP_71\"",
+                        "\"BlockID: 233\nFunction: underLimit\nNode: \nIF today() > m_lastDay\nIRS: \nCONDITION TMP_147\""
+                    ],
+                    "state_variable": "m_lastDay"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 189\nFunction: initDaylimit\nNode: \nEXPRESSION m_dailyLimit = _limit\nIRS: \nm_dailyLimit := _limit\"",
+                        "\"BlockID: 235\nFunction: underLimit\nNode: \nIF m_spentToday + _value >= m_spentToday && m_spentToday + _value <= m_dailyLimit\nIRS: \nCONDITION TMP_153\""
+                    ],
+                    "state_variable": "m_dailyLimit"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "initWallet"
+            ],
+            "First_function": "initWallet",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 196\nFunction: initMultiowned\nNode: \nEXPRESSION m_required = _required\nIRS: \nm_required := _required\"",
+                        "\"BlockID: 214\nFunction: execute\nNode: \nIF (_data.length == 0 && underLimit(_value)) || m_required == 1\nIRS: \nCONDITION TMP_91\""
+                    ],
+                    "state_variable": "m_required"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 192\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(msg.sender)] = 1\nIRS: \nREF_2 := 1\"",
+                        "\"BlockID: 231\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 195\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(_owners[i])] = 2 + i\nIRS: \nREF_7 := TMP_9\"",
+                        "\"BlockID: 231\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 192\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(msg.sender)] = 1\nIRS: \nREF_2 := 1\"",
+                        "\"BlockID: 238\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 195\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(_owners[i])] = 2 + i\nIRS: \nREF_7 := TMP_9\"",
+                        "\"BlockID: 238\nFunction: onlyowner\nNode: \nIF isOwner(msg.sender)\nIRS: \nCONDITION TMP_159\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 192\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(msg.sender)] = 1\nIRS: \nREF_2 := 1\"",
+                        "\"BlockID: 250\nFunction: confirmAndCheck\nNode: \nIF ownerIndex == 0\nIRS: \nCONDITION TMP_123\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 195\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(_owners[i])] = 2 + i\nIRS: \nREF_7 := TMP_9\"",
+                        "\"BlockID: 250\nFunction: confirmAndCheck\nNode: \nIF ownerIndex == 0\nIRS: \nCONDITION TMP_123\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 192\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(msg.sender)] = 1\nIRS: \nREF_2 := 1\"",
+                        "\"BlockID: 255\nFunction: confirmAndCheck\nNode: \nIF pending.ownersDone & ownerIndexBit == 0\nIRS: \nCONDITION TMP_128\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 195\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(_owners[i])] = 2 + i\nIRS: \nREF_7 := TMP_9\"",
+                        "\"BlockID: 255\nFunction: confirmAndCheck\nNode: \nIF pending.ownersDone & ownerIndexBit == 0\nIRS: \nCONDITION TMP_128\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 188\nFunction: initDaylimit\nNode: \nEXPRESSION m_lastDay = today()\nIRS: \nm_lastDay := TMP_71\"",
+                        "\"BlockID: 233\nFunction: underLimit\nNode: \nIF today() > m_lastDay\nIRS: \nCONDITION TMP_147\""
+                    ],
+                    "state_variable": "m_lastDay"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 189\nFunction: initDaylimit\nNode: \nEXPRESSION m_dailyLimit = _limit\nIRS: \nm_dailyLimit := _limit\"",
+                        "\"BlockID: 235\nFunction: underLimit\nNode: \nIF m_spentToday + _value >= m_spentToday && m_spentToday + _value <= m_dailyLimit\nIRS: \nCONDITION TMP_153\""
+                    ],
+                    "state_variable": "m_dailyLimit"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "kill"
+            ],
+            "First_function": "kill",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 205\nFunction: confirmAndCheck\nNode: \nEXPRESSION m_pendingIndex[pending.index] = _operation\nIRS: \nREF_79 := _operation\"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 211\nFunction: confirmAndCheck\nNode: \nEXPRESSION delete m_pendingIndex[m_pending[_operation].index]\nIRS: \nREF_84 = delete REF_84 \"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "execute"
+            ],
+            "First_function": "execute",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 385\nFunction: underLimit\nNode: \nEXPRESSION m_lastDay = today()\nIRS: \nm_lastDay := TMP_148\"",
+                        "\"BlockID: 233\nFunction: underLimit\nNode: \nIF today() > m_lastDay\nIRS: \nCONDITION TMP_147\""
+                    ],
+                    "state_variable": "m_lastDay"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 384\nFunction: underLimit\nNode: \nEXPRESSION m_spentToday += _value\nIRS: \nm_spentToday = m_spentToday + _value\"",
+                        "\"BlockID: 235\nFunction: underLimit\nNode: \nIF m_spentToday + _value >= m_spentToday && m_spentToday + _value <= m_dailyLimit\nIRS: \nCONDITION TMP_153\""
+                    ],
+                    "state_variable": "m_spentToday"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 388\nFunction: underLimit\nNode: \nEXPRESSION m_spentToday = 0\nIRS: \nm_spentToday := 0\"",
+                        "\"BlockID: 235\nFunction: underLimit\nNode: \nIF m_spentToday + _value >= m_spentToday && m_spentToday + _value <= m_dailyLimit\nIRS: \nCONDITION TMP_153\""
+                    ],
+                    "state_variable": "m_spentToday"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "execute"
+            ],
+            "First_function": "execute",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 416\nFunction: execute\nNode: \nEXPRESSION m_txs[o_hash].data = _data\nIRS: \nREF_42 := _data\"",
+                        "\"BlockID: 217\nFunction: execute\nNode: \nIF m_txs[o_hash].to == 0 && m_txs[o_hash].value == 0 && m_txs[o_hash].data.length == 0\nIRS: \nCONDITION TMP_103\""
+                    ],
+                    "state_variable": "m_txs.data"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 416\nFunction: execute\nNode: \nEXPRESSION m_txs[o_hash].data = _data\nIRS: \nREF_42 := _data\"",
+                        "\"BlockID: 241\nFunction: confirm\nNode: \nIF m_txs[_h].to != 0 || m_txs[_h].value != 0 || m_txs[_h].data.length != 0\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "m_txs.data"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 414\nFunction: execute\nNode: \nEXPRESSION m_txs[o_hash].to = _to\nIRS: \nREF_38 := _to\"",
+                        "\"BlockID: 217\nFunction: execute\nNode: \nIF m_txs[o_hash].to == 0 && m_txs[o_hash].value == 0 && m_txs[o_hash].data.length == 0\nIRS: \nCONDITION TMP_103\""
+                    ],
+                    "state_variable": "m_txs.to"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 414\nFunction: execute\nNode: \nEXPRESSION m_txs[o_hash].to = _to\nIRS: \nREF_38 := _to\"",
+                        "\"BlockID: 241\nFunction: confirm\nNode: \nIF m_txs[_h].to != 0 || m_txs[_h].value != 0 || m_txs[_h].data.length != 0\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "m_txs.to"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 414\nFunction: execute\nNode: \nEXPRESSION m_txs[o_hash].to = _to\nIRS: \nREF_38 := _to\"",
+                        "\"BlockID: 242\nFunction: confirm\nNode: \nIF m_txs[_h].to == 0\nIRS: \nCONDITION TMP_114\""
+                    ],
+                    "state_variable": "m_txs.to"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 414\nFunction: execute\nNode: \nEXPRESSION m_txs[o_hash].to = _to\nIRS: \nREF_38 := _to\"",
+                        "\"BlockID: 243\nFunction: confirm\nNode: \nIF ! m_txs[_h].to.call.value(m_txs[_h].value)(m_txs[_h].data)\nIRS: \nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+                    ],
+                    "state_variable": "m_txs.to"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 415\nFunction: execute\nNode: \nEXPRESSION m_txs[o_hash].value = _value\nIRS: \nREF_40 := _value\"",
+                        "\"BlockID: 217\nFunction: execute\nNode: \nIF m_txs[o_hash].to == 0 && m_txs[o_hash].value == 0 && m_txs[o_hash].data.length == 0\nIRS: \nCONDITION TMP_103\""
+                    ],
+                    "state_variable": "m_txs.value"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 415\nFunction: execute\nNode: \nEXPRESSION m_txs[o_hash].value = _value\nIRS: \nREF_40 := _value\"",
+                        "\"BlockID: 241\nFunction: confirm\nNode: \nIF m_txs[_h].to != 0 || m_txs[_h].value != 0 || m_txs[_h].data.length != 0\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "m_txs.value"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 415\nFunction: execute\nNode: \nEXPRESSION m_txs[o_hash].value = _value\nIRS: \nREF_40 := _value\"",
+                        "\"BlockID: 243\nFunction: confirm\nNode: \nIF ! m_txs[_h].to.call.value(m_txs[_h].value)(m_txs[_h].data)\nIRS: \nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+                    ],
+                    "state_variable": "m_txs.value"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 433\nFunction: underLimit\nNode: \nEXPRESSION m_lastDay = today()\nIRS: \nm_lastDay := TMP_148\"",
+                        "\"BlockID: 233\nFunction: underLimit\nNode: \nIF today() > m_lastDay\nIRS: \nCONDITION TMP_147\""
+                    ],
+                    "state_variable": "m_lastDay"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 432\nFunction: underLimit\nNode: \nEXPRESSION m_spentToday += _value\nIRS: \nm_spentToday = m_spentToday + _value\"",
+                        "\"BlockID: 235\nFunction: underLimit\nNode: \nIF m_spentToday + _value >= m_spentToday && m_spentToday + _value <= m_dailyLimit\nIRS: \nCONDITION TMP_153\""
+                    ],
+                    "state_variable": "m_spentToday"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 436\nFunction: underLimit\nNode: \nEXPRESSION m_spentToday = 0\nIRS: \nm_spentToday := 0\"",
+                        "\"BlockID: 235\nFunction: underLimit\nNode: \nIF m_spentToday + _value >= m_spentToday && m_spentToday + _value <= m_dailyLimit\nIRS: \nCONDITION TMP_153\""
+                    ],
+                    "state_variable": "m_spentToday"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 443\nFunction: confirm\nNode: \nEXPRESSION delete m_txs[_h]\nIRS: \nREF_70 = delete REF_70 \"",
+                        "\"BlockID: 241\nFunction: confirm\nNode: \nIF m_txs[_h].to != 0 || m_txs[_h].value != 0 || m_txs[_h].data.length != 0\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 443\nFunction: confirm\nNode: \nEXPRESSION delete m_txs[_h]\nIRS: \nREF_70 = delete REF_70 \"",
+                        "\"BlockID: 242\nFunction: confirm\nNode: \nIF m_txs[_h].to == 0\nIRS: \nCONDITION TMP_114\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 443\nFunction: confirm\nNode: \nEXPRESSION delete m_txs[_h]\nIRS: \nREF_70 = delete REF_70 \"",
+                        "\"BlockID: 243\nFunction: confirm\nNode: \nIF ! m_txs[_h].to.call.value(m_txs[_h].value)(m_txs[_h].data)\nIRS: \nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 449\nFunction: confirmAndCheck\nNode: \nEXPRESSION m_pendingIndex[pending.index] = _operation\nIRS: \nREF_79 := _operation\"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 455\nFunction: confirmAndCheck\nNode: \nEXPRESSION delete m_pendingIndex[m_pending[_operation].index]\nIRS: \nREF_84 = delete REF_84 \"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "execute",
+                "confirm"
+            ],
+            "First_function": "confirm",
+            "Second_function": "execute",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 268\nFunction: confirm\nNode: \nEXPRESSION delete m_txs[_h]\nIRS: \nREF_70 = delete REF_70 \"",
+                        "\"BlockID: 241\nFunction: confirm\nNode: \nIF m_txs[_h].to != 0 || m_txs[_h].value != 0 || m_txs[_h].data.length != 0\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 268\nFunction: confirm\nNode: \nEXPRESSION delete m_txs[_h]\nIRS: \nREF_70 = delete REF_70 \"",
+                        "\"BlockID: 242\nFunction: confirm\nNode: \nIF m_txs[_h].to == 0\nIRS: \nCONDITION TMP_114\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 268\nFunction: confirm\nNode: \nEXPRESSION delete m_txs[_h]\nIRS: \nREF_70 = delete REF_70 \"",
+                        "\"BlockID: 243\nFunction: confirm\nNode: \nIF ! m_txs[_h].to.call.value(m_txs[_h].value)(m_txs[_h].data)\nIRS: \nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 275\nFunction: confirmAndCheck\nNode: \nEXPRESSION m_pendingIndex[pending.index] = _operation\nIRS: \nREF_79 := _operation\"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 281\nFunction: confirmAndCheck\nNode: \nEXPRESSION delete m_pendingIndex[m_pending[_operation].index]\nIRS: \nREF_84 = delete REF_84 \"",
+                        "\"BlockID: 252\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "confirm",
+                "initMultiowned"
+            ],
+            "First_function": "initMultiowned",
+            "Second_function": "confirm",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 8\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(msg.sender)] = 1\nIRS: \nREF_2 := 1\"",
+                        "\"BlockID: 272\nFunction: confirmAndCheck\nNode: \nIF ownerIndex == 0\nIRS: \nCONDITION TMP_123\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 11\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(_owners[i])] = 2 + i\nIRS: \nREF_7 := TMP_9\"",
+                        "\"BlockID: 272\nFunction: confirmAndCheck\nNode: \nIF ownerIndex == 0\nIRS: \nCONDITION TMP_123\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 8\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(msg.sender)] = 1\nIRS: \nREF_2 := 1\"",
+                        "\"BlockID: 277\nFunction: confirmAndCheck\nNode: \nIF pending.ownersDone & ownerIndexBit == 0\nIRS: \nCONDITION TMP_128\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 11\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(_owners[i])] = 2 + i\nIRS: \nREF_7 := TMP_9\"",
+                        "\"BlockID: 277\nFunction: confirmAndCheck\nNode: \nIF pending.ownersDone & ownerIndexBit == 0\nIRS: \nCONDITION TMP_128\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "confirm",
+                "changeOwner"
+            ],
+            "First_function": "changeOwner",
+            "Second_function": "confirm",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 41\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 262\nFunction: confirm\nNode: \nIF m_txs[_h].to != 0 || m_txs[_h].value != 0 || m_txs[_h].data.length != 0\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 41\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 263\nFunction: confirm\nNode: \nIF m_txs[_h].to == 0\nIRS: \nCONDITION TMP_114\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 41\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 264\nFunction: confirm\nNode: \nIF ! m_txs[_h].to.call.value(m_txs[_h].value)(m_txs[_h].data)\nIRS: \nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 21\nFunction: changeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_from)] = 0\nIRS: \nREF_15 := 0\"",
+                        "\"BlockID: 272\nFunction: confirmAndCheck\nNode: \nIF ownerIndex == 0\nIRS: \nCONDITION TMP_123\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 22\nFunction: changeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_to)] = ownerIndex\nIRS: \nREF_16 := ownerIndex\"",
+                        "\"BlockID: 272\nFunction: confirmAndCheck\nNode: \nIF ownerIndex == 0\nIRS: \nCONDITION TMP_123\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 21\nFunction: changeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_from)] = 0\nIRS: \nREF_15 := 0\"",
+                        "\"BlockID: 277\nFunction: confirmAndCheck\nNode: \nIF pending.ownersDone & ownerIndexBit == 0\nIRS: \nCONDITION TMP_128\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 22\nFunction: changeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_to)] = ownerIndex\nIRS: \nREF_16 := ownerIndex\"",
+                        "\"BlockID: 277\nFunction: confirmAndCheck\nNode: \nIF pending.ownersDone & ownerIndexBit == 0\nIRS: \nCONDITION TMP_128\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 31\nFunction: confirmAndCheck\nNode: \nEXPRESSION m_pendingIndex[pending.index] = _operation\nIRS: \nREF_79 := _operation\"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 37\nFunction: confirmAndCheck\nNode: \nEXPRESSION delete m_pendingIndex[m_pending[_operation].index]\nIRS: \nREF_84 = delete REF_84 \"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 43\nFunction: clearPending\nNode: \nEXPRESSION delete m_pendingIndex\nIRS: \nm_pendingIndex = delete m_pendingIndex \"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "confirm",
+                "addOwner"
+            ],
+            "First_function": "addOwner",
+            "Second_function": "confirm",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 71\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 262\nFunction: confirm\nNode: \nIF m_txs[_h].to != 0 || m_txs[_h].value != 0 || m_txs[_h].data.length != 0\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 71\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 263\nFunction: confirm\nNode: \nIF m_txs[_h].to == 0\nIRS: \nCONDITION TMP_114\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 71\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 264\nFunction: confirm\nNode: \nIF ! m_txs[_h].to.call.value(m_txs[_h].value)(m_txs[_h].data)\nIRS: \nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 52\nFunction: addOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_owner)] = m_numOwners\nIRS: \nREF_18 := m_numOwners\"",
+                        "\"BlockID: 272\nFunction: confirmAndCheck\nNode: \nIF ownerIndex == 0\nIRS: \nCONDITION TMP_123\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 82\nFunction: reorganizeOwners\nNode: \nEXPRESSION m_ownerIndex[m_owners[free]] = free\nIRS: \nREF_95 := free\"",
+                        "\"BlockID: 272\nFunction: confirmAndCheck\nNode: \nIF ownerIndex == 0\nIRS: \nCONDITION TMP_123\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 52\nFunction: addOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_owner)] = m_numOwners\nIRS: \nREF_18 := m_numOwners\"",
+                        "\"BlockID: 277\nFunction: confirmAndCheck\nNode: \nIF pending.ownersDone & ownerIndexBit == 0\nIRS: \nCONDITION TMP_128\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 82\nFunction: reorganizeOwners\nNode: \nEXPRESSION m_ownerIndex[m_owners[free]] = free\nIRS: \nREF_95 := free\"",
+                        "\"BlockID: 277\nFunction: confirmAndCheck\nNode: \nIF pending.ownersDone & ownerIndexBit == 0\nIRS: \nCONDITION TMP_128\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 61\nFunction: confirmAndCheck\nNode: \nEXPRESSION m_pendingIndex[pending.index] = _operation\nIRS: \nREF_79 := _operation\"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 67\nFunction: confirmAndCheck\nNode: \nEXPRESSION delete m_pendingIndex[m_pending[_operation].index]\nIRS: \nREF_84 = delete REF_84 \"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 73\nFunction: clearPending\nNode: \nEXPRESSION delete m_pendingIndex\nIRS: \nm_pendingIndex = delete m_pendingIndex \"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "confirm",
+                "removeOwner"
+            ],
+            "First_function": "removeOwner",
+            "Second_function": "confirm",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 105\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 262\nFunction: confirm\nNode: \nIF m_txs[_h].to != 0 || m_txs[_h].value != 0 || m_txs[_h].data.length != 0\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 105\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 263\nFunction: confirm\nNode: \nIF m_txs[_h].to == 0\nIRS: \nCONDITION TMP_114\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 105\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 264\nFunction: confirm\nNode: \nIF ! m_txs[_h].to.call.value(m_txs[_h].value)(m_txs[_h].data)\nIRS: \nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 111\nFunction: removeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_owner)] = 0\nIRS: \nREF_21 := 0\"",
+                        "\"BlockID: 272\nFunction: confirmAndCheck\nNode: \nIF ownerIndex == 0\nIRS: \nCONDITION TMP_123\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 118\nFunction: reorganizeOwners\nNode: \nEXPRESSION m_ownerIndex[m_owners[free]] = free\nIRS: \nREF_95 := free\"",
+                        "\"BlockID: 272\nFunction: confirmAndCheck\nNode: \nIF ownerIndex == 0\nIRS: \nCONDITION TMP_123\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 111\nFunction: removeOwner\nNode: \nEXPRESSION m_ownerIndex[uint256(_owner)] = 0\nIRS: \nREF_21 := 0\"",
+                        "\"BlockID: 277\nFunction: confirmAndCheck\nNode: \nIF pending.ownersDone & ownerIndexBit == 0\nIRS: \nCONDITION TMP_128\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 118\nFunction: reorganizeOwners\nNode: \nEXPRESSION m_ownerIndex[m_owners[free]] = free\nIRS: \nREF_95 := free\"",
+                        "\"BlockID: 277\nFunction: confirmAndCheck\nNode: \nIF pending.ownersDone & ownerIndexBit == 0\nIRS: \nCONDITION TMP_128\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 95\nFunction: confirmAndCheck\nNode: \nEXPRESSION m_pendingIndex[pending.index] = _operation\nIRS: \nREF_79 := _operation\"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 101\nFunction: confirmAndCheck\nNode: \nEXPRESSION delete m_pendingIndex[m_pending[_operation].index]\nIRS: \nREF_84 = delete REF_84 \"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 107\nFunction: clearPending\nNode: \nEXPRESSION delete m_pendingIndex\nIRS: \nm_pendingIndex = delete m_pendingIndex \"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "confirm",
+                "changeRequirement"
+            ],
+            "First_function": "changeRequirement",
+            "Second_function": "confirm",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 140\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 262\nFunction: confirm\nNode: \nIF m_txs[_h].to != 0 || m_txs[_h].value != 0 || m_txs[_h].data.length != 0\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 140\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 263\nFunction: confirm\nNode: \nIF m_txs[_h].to == 0\nIRS: \nCONDITION TMP_114\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 140\nFunction: clearPending\nNode: \nEXPRESSION delete m_txs[m_pendingIndex[i]]\nIRS: \nREF_99 = delete REF_99 \"",
+                        "\"BlockID: 264\nFunction: confirm\nNode: \nIF ! m_txs[_h].to.call.value(m_txs[_h].value)(m_txs[_h].data)\nIRS: \nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 130\nFunction: confirmAndCheck\nNode: \nEXPRESSION m_pendingIndex[pending.index] = _operation\nIRS: \nREF_79 := _operation\"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 136\nFunction: confirmAndCheck\nNode: \nEXPRESSION delete m_pendingIndex[m_pending[_operation].index]\nIRS: \nREF_84 = delete REF_84 \"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 142\nFunction: clearPending\nNode: \nEXPRESSION delete m_pendingIndex\nIRS: \nm_pendingIndex = delete m_pendingIndex \"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "confirm",
+                "setDailyLimit"
+            ],
+            "First_function": "setDailyLimit",
+            "Second_function": "confirm",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 161\nFunction: confirmAndCheck\nNode: \nEXPRESSION m_pendingIndex[pending.index] = _operation\nIRS: \nREF_79 := _operation\"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 167\nFunction: confirmAndCheck\nNode: \nEXPRESSION delete m_pendingIndex[m_pending[_operation].index]\nIRS: \nREF_84 = delete REF_84 \"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "confirm",
+                "resetSpentToday"
+            ],
+            "First_function": "resetSpentToday",
+            "Second_function": "confirm",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 178\nFunction: confirmAndCheck\nNode: \nEXPRESSION m_pendingIndex[pending.index] = _operation\nIRS: \nREF_79 := _operation\"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 184\nFunction: confirmAndCheck\nNode: \nEXPRESSION delete m_pendingIndex[m_pending[_operation].index]\nIRS: \nREF_84 = delete REF_84 \"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "confirm",
+                "initWallet"
+            ],
+            "First_function": "initWallet",
+            "Second_function": "confirm",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 192\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(msg.sender)] = 1\nIRS: \nREF_2 := 1\"",
+                        "\"BlockID: 272\nFunction: confirmAndCheck\nNode: \nIF ownerIndex == 0\nIRS: \nCONDITION TMP_123\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 195\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(_owners[i])] = 2 + i\nIRS: \nREF_7 := TMP_9\"",
+                        "\"BlockID: 272\nFunction: confirmAndCheck\nNode: \nIF ownerIndex == 0\nIRS: \nCONDITION TMP_123\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 192\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(msg.sender)] = 1\nIRS: \nREF_2 := 1\"",
+                        "\"BlockID: 277\nFunction: confirmAndCheck\nNode: \nIF pending.ownersDone & ownerIndexBit == 0\nIRS: \nCONDITION TMP_128\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 195\nFunction: initMultiowned\nNode: \nEXPRESSION m_ownerIndex[uint256(_owners[i])] = 2 + i\nIRS: \nREF_7 := TMP_9\"",
+                        "\"BlockID: 277\nFunction: confirmAndCheck\nNode: \nIF pending.ownersDone & ownerIndexBit == 0\nIRS: \nCONDITION TMP_128\""
+                    ],
+                    "state_variable": "m_ownerIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "confirm",
+                "kill"
+            ],
+            "First_function": "kill",
+            "Second_function": "confirm",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 205\nFunction: confirmAndCheck\nNode: \nEXPRESSION m_pendingIndex[pending.index] = _operation\nIRS: \nREF_79 := _operation\"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 211\nFunction: confirmAndCheck\nNode: \nEXPRESSION delete m_pendingIndex[m_pending[_operation].index]\nIRS: \nREF_84 = delete REF_84 \"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "confirm",
+                "execute"
+            ],
+            "First_function": "execute",
+            "Second_function": "confirm",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 247\nFunction: confirm\nNode: \nEXPRESSION delete m_txs[_h]\nIRS: \nREF_70 = delete REF_70 \"",
+                        "\"BlockID: 262\nFunction: confirm\nNode: \nIF m_txs[_h].to != 0 || m_txs[_h].value != 0 || m_txs[_h].data.length != 0\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 247\nFunction: confirm\nNode: \nEXPRESSION delete m_txs[_h]\nIRS: \nREF_70 = delete REF_70 \"",
+                        "\"BlockID: 263\nFunction: confirm\nNode: \nIF m_txs[_h].to == 0\nIRS: \nCONDITION TMP_114\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 247\nFunction: confirm\nNode: \nEXPRESSION delete m_txs[_h]\nIRS: \nREF_70 = delete REF_70 \"",
+                        "\"BlockID: 264\nFunction: confirm\nNode: \nIF ! m_txs[_h].to.call.value(m_txs[_h].value)(m_txs[_h].data)\nIRS: \nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 220\nFunction: execute\nNode: \nEXPRESSION m_txs[o_hash].data = _data\nIRS: \nREF_42 := _data\"",
+                        "\"BlockID: 262\nFunction: confirm\nNode: \nIF m_txs[_h].to != 0 || m_txs[_h].value != 0 || m_txs[_h].data.length != 0\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "m_txs.data"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 218\nFunction: execute\nNode: \nEXPRESSION m_txs[o_hash].to = _to\nIRS: \nREF_38 := _to\"",
+                        "\"BlockID: 262\nFunction: confirm\nNode: \nIF m_txs[_h].to != 0 || m_txs[_h].value != 0 || m_txs[_h].data.length != 0\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "m_txs.to"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 218\nFunction: execute\nNode: \nEXPRESSION m_txs[o_hash].to = _to\nIRS: \nREF_38 := _to\"",
+                        "\"BlockID: 263\nFunction: confirm\nNode: \nIF m_txs[_h].to == 0\nIRS: \nCONDITION TMP_114\""
+                    ],
+                    "state_variable": "m_txs.to"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 218\nFunction: execute\nNode: \nEXPRESSION m_txs[o_hash].to = _to\nIRS: \nREF_38 := _to\"",
+                        "\"BlockID: 264\nFunction: confirm\nNode: \nIF ! m_txs[_h].to.call.value(m_txs[_h].value)(m_txs[_h].data)\nIRS: \nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+                    ],
+                    "state_variable": "m_txs.to"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 219\nFunction: execute\nNode: \nEXPRESSION m_txs[o_hash].value = _value\nIRS: \nREF_40 := _value\"",
+                        "\"BlockID: 262\nFunction: confirm\nNode: \nIF m_txs[_h].to != 0 || m_txs[_h].value != 0 || m_txs[_h].data.length != 0\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "m_txs.value"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 219\nFunction: execute\nNode: \nEXPRESSION m_txs[o_hash].value = _value\nIRS: \nREF_40 := _value\"",
+                        "\"BlockID: 264\nFunction: confirm\nNode: \nIF ! m_txs[_h].to.call.value(m_txs[_h].value)(m_txs[_h].data)\nIRS: \nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+                    ],
+                    "state_variable": "m_txs.value"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 253\nFunction: confirmAndCheck\nNode: \nEXPRESSION m_pendingIndex[pending.index] = _operation\nIRS: \nREF_79 := _operation\"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 259\nFunction: confirmAndCheck\nNode: \nEXPRESSION delete m_pendingIndex[m_pending[_operation].index]\nIRS: \nREF_84 = delete REF_84 \"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "confirm",
+                "confirm"
+            ],
+            "First_function": "confirm",
+            "Second_function": "confirm",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 464\nFunction: confirm\nNode: \nEXPRESSION delete m_txs[_h]\nIRS: \nREF_70 = delete REF_70 \"",
+                        "\"BlockID: 262\nFunction: confirm\nNode: \nIF m_txs[_h].to != 0 || m_txs[_h].value != 0 || m_txs[_h].data.length != 0\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 464\nFunction: confirm\nNode: \nEXPRESSION delete m_txs[_h]\nIRS: \nREF_70 = delete REF_70 \"",
+                        "\"BlockID: 263\nFunction: confirm\nNode: \nIF m_txs[_h].to == 0\nIRS: \nCONDITION TMP_114\""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 464\nFunction: confirm\nNode: \nEXPRESSION delete m_txs[_h]\nIRS: \nREF_70 = delete REF_70 \"",
+                        "\"BlockID: 264\nFunction: confirm\nNode: \nIF ! m_txs[_h].to.call.value(m_txs[_h].value)(m_txs[_h].data)\nIRS: \nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+                    ],
+                    "state_variable": "m_txs"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 471\nFunction: confirmAndCheck\nNode: \nEXPRESSION m_pendingIndex[pending.index] = _operation\nIRS: \nREF_79 := _operation\"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 477\nFunction: confirmAndCheck\nNode: \nEXPRESSION delete m_pendingIndex[m_pending[_operation].index]\nIRS: \nREF_84 = delete REF_84 \"",
+                        "\"BlockID: 274\nFunction: confirmAndCheck\nNode: \nEXPRESSION pending.index = m_pendingIndex.length ++\nIRS: \nREF_77 = REF_77 + 1\""
+                    ],
+                    "state_variable": "m_pendingIndex"
+                }
+            ]
+        }
+    ]
+}

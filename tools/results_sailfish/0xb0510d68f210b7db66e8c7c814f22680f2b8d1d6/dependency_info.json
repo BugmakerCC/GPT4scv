@@ -1,0 +1,382 @@
+{
+    "0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6.sol": [
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "fundPuppets",
+                "setExtra"
+            ],
+            "from_function": "setExtra",
+            "to_function": "fundPuppets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 29\nFunction: setExtra\nNode: \nEXPRESSION extra[_id] = _newExtra\nIRS: \nREF_12 := _newExtra\"",
+                        "\"BlockID: 34\nFunction: fundPuppets\nNode: \nEXPRESSION extra[1].call.value(_share).gas(800000)()\nIRS: \nTMP_24(bool) = LOW_LEVEL_CALL, dest:REF_18, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "extra"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 29\nFunction: setExtra\nNode: \nEXPRESSION extra[_id] = _newExtra\nIRS: \nREF_12 := _newExtra\"",
+                        "\"BlockID: 35\nFunction: fundPuppets\nNode: \nEXPRESSION extra[2].call.value(_share).gas(800000)()\nIRS: \nTMP_27(bool) = LOW_LEVEL_CALL, dest:REF_22, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "extra"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 29\nFunction: setExtra\nNode: \nEXPRESSION extra[_id] = _newExtra\nIRS: \nREF_12 := _newExtra\"",
+                        "\"BlockID: 36\nFunction: fundPuppets\nNode: \nEXPRESSION extra[3].call.value(_share).gas(800000)()\nIRS: \nTMP_30(bool) = LOW_LEVEL_CALL, dest:REF_26, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "extra"
+                }
+            ]
+        },
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "fundPuppets",
+                "setExtra"
+            ],
+            "from_function": "setExtra",
+            "to_function": "fundPuppets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 29\nFunction: setExtra\nNode: \nEXPRESSION extra[_id] = _newExtra\nIRS: \nREF_12 := _newExtra\"",
+                        "\"BlockID: 35\nFunction: fundPuppets\nNode: \nEXPRESSION extra[2].call.value(_share).gas(800000)()\nIRS: \nTMP_27(bool) = LOW_LEVEL_CALL, dest:REF_22, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "extra"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 29\nFunction: setExtra\nNode: \nEXPRESSION extra[_id] = _newExtra\nIRS: \nREF_12 := _newExtra\"",
+                        "\"BlockID: 36\nFunction: fundPuppets\nNode: \nEXPRESSION extra[3].call.value(_share).gas(800000)()\nIRS: \nTMP_30(bool) = LOW_LEVEL_CALL, dest:REF_26, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "extra"
+                }
+            ]
+        },
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "fundPuppets",
+                "setExtra"
+            ],
+            "from_function": "setExtra",
+            "to_function": "fundPuppets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 29\nFunction: setExtra\nNode: \nEXPRESSION extra[_id] = _newExtra\nIRS: \nREF_12 := _newExtra\"",
+                        "\"BlockID: 36\nFunction: fundPuppets\nNode: \nEXPRESSION extra[3].call.value(_share).gas(800000)()\nIRS: \nTMP_30(bool) = LOW_LEVEL_CALL, dest:REF_26, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "extra"
+                }
+            ]
+        },
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "fundPuppets",
+                "fundPuppets"
+            ],
+            "from_function": "fundPuppets",
+            "to_function": "fundPuppets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 53\nFunction: fundPuppets\nNode: \nEXPRESSION _share = SafeMath.div(msg.value,4)\nIRS: \n_share := TMP_18\"",
+                        "\"BlockID: 34\nFunction: fundPuppets\nNode: \nEXPRESSION extra[1].call.value(_share).gas(800000)()\nIRS: \nTMP_24(bool) = LOW_LEVEL_CALL, dest:REF_18, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "_share"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 53\nFunction: fundPuppets\nNode: \nEXPRESSION _share = SafeMath.div(msg.value,4)\nIRS: \n_share := TMP_18\"",
+                        "\"BlockID: 35\nFunction: fundPuppets\nNode: \nEXPRESSION extra[2].call.value(_share).gas(800000)()\nIRS: \nTMP_27(bool) = LOW_LEVEL_CALL, dest:REF_22, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "_share"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 53\nFunction: fundPuppets\nNode: \nEXPRESSION _share = SafeMath.div(msg.value,4)\nIRS: \n_share := TMP_18\"",
+                        "\"BlockID: 36\nFunction: fundPuppets\nNode: \nEXPRESSION extra[3].call.value(_share).gas(800000)()\nIRS: \nTMP_30(bool) = LOW_LEVEL_CALL, dest:REF_26, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "_share"
+                }
+            ]
+        },
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "fundPuppets",
+                "fundPuppets"
+            ],
+            "from_function": "fundPuppets",
+            "to_function": "fundPuppets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 60\nFunction: fundPuppets\nNode: \nEXPRESSION _share = SafeMath.div(msg.value,4)\nIRS: \n_share := TMP_18\"",
+                        "\"BlockID: 35\nFunction: fundPuppets\nNode: \nEXPRESSION extra[2].call.value(_share).gas(800000)()\nIRS: \nTMP_27(bool) = LOW_LEVEL_CALL, dest:REF_22, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "_share"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 60\nFunction: fundPuppets\nNode: \nEXPRESSION _share = SafeMath.div(msg.value,4)\nIRS: \n_share := TMP_18\"",
+                        "\"BlockID: 36\nFunction: fundPuppets\nNode: \nEXPRESSION extra[3].call.value(_share).gas(800000)()\nIRS: \nTMP_30(bool) = LOW_LEVEL_CALL, dest:REF_26, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "_share"
+                }
+            ]
+        },
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "fundPuppets",
+                "fundPuppets"
+            ],
+            "from_function": "fundPuppets",
+            "to_function": "fundPuppets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 67\nFunction: fundPuppets\nNode: \nEXPRESSION _share = SafeMath.div(msg.value,4)\nIRS: \n_share := TMP_18\"",
+                        "\"BlockID: 36\nFunction: fundPuppets\nNode: \nEXPRESSION extra[3].call.value(_share).gas(800000)()\nIRS: \nTMP_30(bool) = LOW_LEVEL_CALL, dest:REF_26, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "_share"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fundPuppets",
+                "setExtra"
+            ],
+            "First_function": "setExtra",
+            "Second_function": "fundPuppets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 29\nFunction: setExtra\nNode: \nEXPRESSION extra[_id] = _newExtra\nIRS: \nREF_12 := _newExtra\"",
+                        "\"BlockID: 33\nFunction: fundPuppets\nNode: \nEXPRESSION extra[0].call.value(_share).gas(800000)()\nIRS: \nTMP_21(bool) = LOW_LEVEL_CALL, dest:REF_14, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "extra"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fundPuppets",
+                "setExtra"
+            ],
+            "First_function": "setExtra",
+            "Second_function": "fundPuppets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 29\nFunction: setExtra\nNode: \nEXPRESSION extra[_id] = _newExtra\nIRS: \nREF_12 := _newExtra\"",
+                        "\"BlockID: 33\nFunction: fundPuppets\nNode: \nEXPRESSION extra[0].call.value(_share).gas(800000)()\nIRS: \nTMP_21(bool) = LOW_LEVEL_CALL, dest:REF_14, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "extra"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 29\nFunction: setExtra\nNode: \nEXPRESSION extra[_id] = _newExtra\nIRS: \nREF_12 := _newExtra\"",
+                        "\"BlockID: 34\nFunction: fundPuppets\nNode: \nEXPRESSION extra[1].call.value(_share).gas(800000)()\nIRS: \nTMP_24(bool) = LOW_LEVEL_CALL, dest:REF_18, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "extra"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fundPuppets",
+                "setExtra"
+            ],
+            "First_function": "setExtra",
+            "Second_function": "fundPuppets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 29\nFunction: setExtra\nNode: \nEXPRESSION extra[_id] = _newExtra\nIRS: \nREF_12 := _newExtra\"",
+                        "\"BlockID: 33\nFunction: fundPuppets\nNode: \nEXPRESSION extra[0].call.value(_share).gas(800000)()\nIRS: \nTMP_21(bool) = LOW_LEVEL_CALL, dest:REF_14, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "extra"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 29\nFunction: setExtra\nNode: \nEXPRESSION extra[_id] = _newExtra\nIRS: \nREF_12 := _newExtra\"",
+                        "\"BlockID: 34\nFunction: fundPuppets\nNode: \nEXPRESSION extra[1].call.value(_share).gas(800000)()\nIRS: \nTMP_24(bool) = LOW_LEVEL_CALL, dest:REF_18, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "extra"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 29\nFunction: setExtra\nNode: \nEXPRESSION extra[_id] = _newExtra\nIRS: \nREF_12 := _newExtra\"",
+                        "\"BlockID: 35\nFunction: fundPuppets\nNode: \nEXPRESSION extra[2].call.value(_share).gas(800000)()\nIRS: \nTMP_27(bool) = LOW_LEVEL_CALL, dest:REF_22, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "extra"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fundPuppets",
+                "setExtra"
+            ],
+            "First_function": "setExtra",
+            "Second_function": "fundPuppets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 29\nFunction: setExtra\nNode: \nEXPRESSION extra[_id] = _newExtra\nIRS: \nREF_12 := _newExtra\"",
+                        "\"BlockID: 33\nFunction: fundPuppets\nNode: \nEXPRESSION extra[0].call.value(_share).gas(800000)()\nIRS: \nTMP_21(bool) = LOW_LEVEL_CALL, dest:REF_14, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "extra"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 29\nFunction: setExtra\nNode: \nEXPRESSION extra[_id] = _newExtra\nIRS: \nREF_12 := _newExtra\"",
+                        "\"BlockID: 34\nFunction: fundPuppets\nNode: \nEXPRESSION extra[1].call.value(_share).gas(800000)()\nIRS: \nTMP_24(bool) = LOW_LEVEL_CALL, dest:REF_18, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "extra"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 29\nFunction: setExtra\nNode: \nEXPRESSION extra[_id] = _newExtra\nIRS: \nREF_12 := _newExtra\"",
+                        "\"BlockID: 35\nFunction: fundPuppets\nNode: \nEXPRESSION extra[2].call.value(_share).gas(800000)()\nIRS: \nTMP_27(bool) = LOW_LEVEL_CALL, dest:REF_22, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "extra"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 29\nFunction: setExtra\nNode: \nEXPRESSION extra[_id] = _newExtra\nIRS: \nREF_12 := _newExtra\"",
+                        "\"BlockID: 36\nFunction: fundPuppets\nNode: \nEXPRESSION extra[3].call.value(_share).gas(800000)()\nIRS: \nTMP_30(bool) = LOW_LEVEL_CALL, dest:REF_26, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "extra"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fundPuppets",
+                "fundPuppets"
+            ],
+            "First_function": "fundPuppets",
+            "Second_function": "fundPuppets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 81\nFunction: fundPuppets\nNode: \nEXPRESSION _share = SafeMath.div(msg.value,4)\nIRS: \n_share := TMP_18\"",
+                        "\"BlockID: 33\nFunction: fundPuppets\nNode: \nEXPRESSION extra[0].call.value(_share).gas(800000)()\nIRS: \nTMP_21(bool) = LOW_LEVEL_CALL, dest:REF_14, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "_share"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fundPuppets",
+                "fundPuppets"
+            ],
+            "First_function": "fundPuppets",
+            "Second_function": "fundPuppets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 88\nFunction: fundPuppets\nNode: \nEXPRESSION _share = SafeMath.div(msg.value,4)\nIRS: \n_share := TMP_18\"",
+                        "\"BlockID: 33\nFunction: fundPuppets\nNode: \nEXPRESSION extra[0].call.value(_share).gas(800000)()\nIRS: \nTMP_21(bool) = LOW_LEVEL_CALL, dest:REF_14, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "_share"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 88\nFunction: fundPuppets\nNode: \nEXPRESSION _share = SafeMath.div(msg.value,4)\nIRS: \n_share := TMP_18\"",
+                        "\"BlockID: 34\nFunction: fundPuppets\nNode: \nEXPRESSION extra[1].call.value(_share).gas(800000)()\nIRS: \nTMP_24(bool) = LOW_LEVEL_CALL, dest:REF_18, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "_share"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fundPuppets",
+                "fundPuppets"
+            ],
+            "First_function": "fundPuppets",
+            "Second_function": "fundPuppets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 95\nFunction: fundPuppets\nNode: \nEXPRESSION _share = SafeMath.div(msg.value,4)\nIRS: \n_share := TMP_18\"",
+                        "\"BlockID: 33\nFunction: fundPuppets\nNode: \nEXPRESSION extra[0].call.value(_share).gas(800000)()\nIRS: \nTMP_21(bool) = LOW_LEVEL_CALL, dest:REF_14, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "_share"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 95\nFunction: fundPuppets\nNode: \nEXPRESSION _share = SafeMath.div(msg.value,4)\nIRS: \n_share := TMP_18\"",
+                        "\"BlockID: 34\nFunction: fundPuppets\nNode: \nEXPRESSION extra[1].call.value(_share).gas(800000)()\nIRS: \nTMP_24(bool) = LOW_LEVEL_CALL, dest:REF_18, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "_share"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 95\nFunction: fundPuppets\nNode: \nEXPRESSION _share = SafeMath.div(msg.value,4)\nIRS: \n_share := TMP_18\"",
+                        "\"BlockID: 35\nFunction: fundPuppets\nNode: \nEXPRESSION extra[2].call.value(_share).gas(800000)()\nIRS: \nTMP_27(bool) = LOW_LEVEL_CALL, dest:REF_22, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "_share"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fundPuppets",
+                "fundPuppets"
+            ],
+            "First_function": "fundPuppets",
+            "Second_function": "fundPuppets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 102\nFunction: fundPuppets\nNode: \nEXPRESSION _share = SafeMath.div(msg.value,4)\nIRS: \n_share := TMP_18\"",
+                        "\"BlockID: 33\nFunction: fundPuppets\nNode: \nEXPRESSION extra[0].call.value(_share).gas(800000)()\nIRS: \nTMP_21(bool) = LOW_LEVEL_CALL, dest:REF_14, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "_share"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 102\nFunction: fundPuppets\nNode: \nEXPRESSION _share = SafeMath.div(msg.value,4)\nIRS: \n_share := TMP_18\"",
+                        "\"BlockID: 34\nFunction: fundPuppets\nNode: \nEXPRESSION extra[1].call.value(_share).gas(800000)()\nIRS: \nTMP_24(bool) = LOW_LEVEL_CALL, dest:REF_18, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "_share"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 102\nFunction: fundPuppets\nNode: \nEXPRESSION _share = SafeMath.div(msg.value,4)\nIRS: \n_share := TMP_18\"",
+                        "\"BlockID: 35\nFunction: fundPuppets\nNode: \nEXPRESSION extra[2].call.value(_share).gas(800000)()\nIRS: \nTMP_27(bool) = LOW_LEVEL_CALL, dest:REF_22, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "_share"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 102\nFunction: fundPuppets\nNode: \nEXPRESSION _share = SafeMath.div(msg.value,4)\nIRS: \n_share := TMP_18\"",
+                        "\"BlockID: 36\nFunction: fundPuppets\nNode: \nEXPRESSION extra[3].call.value(_share).gas(800000)()\nIRS: \nTMP_30(bool) = LOW_LEVEL_CALL, dest:REF_26, function:call, arguments:[] value:_share gas:800000\""
+                    ],
+                    "state_variable": "_share"
+                }
+            ]
+        }
+    ]
+}

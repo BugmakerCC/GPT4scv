@@ -1,0 +1,57 @@
+{
+    "rubixi.sol": [
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "fallback"
+            ],
+            "First_function": "fallback",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 74\nFunction: addPayout\nNode: \nEXPRESSION participants.push(Participant(msg.sender,(msg.value * pyramidMultiplier) \/ 100))\nIRS: \nPUSH TMP_6 in participants\"",
+                        "\"BlockID: 8\nFunction: addPayout\nNode: \nIF participants.length == 10\nIRS: \nCONDITION TMP_8\""
+                    ],
+                    "state_variable": "participants"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 74\nFunction: addPayout\nNode: \nEXPRESSION participants.push(Participant(msg.sender,(msg.value * pyramidMultiplier) \/ 100))\nIRS: \nPUSH TMP_6 in participants\"",
+                        "\"BlockID: 10\nFunction: addPayout\nNode: \nIF participants.length == 25\nIRS: \nCONDITION TMP_9\""
+                    ],
+                    "state_variable": "participants"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 76\nFunction: addPayout\nNode: \nEXPRESSION pyramidMultiplier = 200\nIRS: \npyramidMultiplier := 200\"",
+                        "\"BlockID: 7\nFunction: addPayout\nNode: \nEXPRESSION participants.push(Participant(msg.sender,(msg.value * pyramidMultiplier) \/ 100))\nIRS: \nPUSH TMP_6 in participants\""
+                    ],
+                    "state_variable": "pyramidMultiplier"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 78\nFunction: addPayout\nNode: \nEXPRESSION pyramidMultiplier = 150\nIRS: \npyramidMultiplier := 150\"",
+                        "\"BlockID: 7\nFunction: addPayout\nNode: \nEXPRESSION participants.push(Participant(msg.sender,(msg.value * pyramidMultiplier) \/ 100))\nIRS: \nPUSH TMP_6 in participants\""
+                    ],
+                    "state_variable": "pyramidMultiplier"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 81\nFunction: addPayout\nNode: \nEXPRESSION balance += (msg.value * (100 - _fee)) \/ 100\nIRS: \nbalance = balance + TMP_12\"",
+                        "\"BlockID: 16\nFunction: addPayout\nNode: \nIF_LOOP balance > participants[payoutOrder].payout\nIRS: \nCONDITION TMP_15\""
+                    ],
+                    "state_variable": "balance"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 85\nFunction: addPayout\nNode: \nEXPRESSION balance -= participants[payoutOrder].payout\nIRS: \nbalance = balance - REF_11\"",
+                        "\"BlockID: 16\nFunction: addPayout\nNode: \nIF_LOOP balance > participants[payoutOrder].payout\nIRS: \nCONDITION TMP_15\""
+                    ],
+                    "state_variable": "balance"
+                }
+            ]
+        }
+    ]
+}

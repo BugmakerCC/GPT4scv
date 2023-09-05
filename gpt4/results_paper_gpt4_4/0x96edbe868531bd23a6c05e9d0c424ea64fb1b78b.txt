@@ -1,0 +1,19 @@
+1. Reentrancy: The smart contract is vulnerable to a reentrancy attack. The function `Collect(uint _am)` uses a call function `msg.sender.call.value(_am)()` and then reduces the balance `acc.balance-=_am;`. An attacker can recursively call the `Collect` function before the balance is adjusted.
+
+2. Access Control: There is no proper access control in place for functions `SetMinSum`, `SetLogFile`, and `Initialized`. Any user can call these functions which could lead to unauthorized activities.
+
+3. Arithmetic Issues: There is a potential for underflow in the `Collect` function. If the `acc.balance` is less than `_am`, subtracting `_am` from `acc.balance` could result in a big number due to underflow.
+
+4. Unchecked Return Values For Low-Level Calls: The contract does not check the return value of the low-level call `msg.sender.call.value(_am)()` in the `Collect` function. If this call fails, no exception is raised, and execution continues.
+
+5. Denial of Service: The contract does not seem to have a Denial of Service vulnerability. 
+
+6. Bad Randomness: The contract does not use randomness, so it does not have a Bad Randomness vulnerability.
+
+7. Front-Running: The contract does not seem to have a Front-Running vulnerability. 
+
+8. Time manipulation: The contract is vulnerable to time manipulation attacks as it uses `now` for the `unlockTime`. An attacker could potentially manipulate the timestamp when creating a block.
+
+9. Short Address Attack: The contract does not seem to have a Short Address Attack vulnerability. It doesn't rely on `msg.data.length` or similar constructs that are vulnerable to short address attacks.
+
+Please note that this analysis is based on the provided contract and does not consider the entire contract ecosystem, including how the contract interacts with others. Other vulnerabilities may exist outside of this contract.

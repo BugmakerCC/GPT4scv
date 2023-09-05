@@ -1,0 +1,21 @@
+Here are the vulnerabilities detected in the given smart contract:
+
+1. Reentrancy: The contract does not have any explicit checks to prevent reentrancy attacks, where an external contract can call back into the contract before the completion of the previous call.
+
+2. Access Control: The contract uses a modifier `onlyOwner` to restrict certain functions to be callable only by the contract owner. However, there are no checks in place to ensure that only the contract owner can modify the `owner` variable.
+
+3. Arithmetic Issues: There are no explicit checks for integer overflow or underflow in the contract. This can lead to unexpected behavior and potential vulnerabilities.
+
+4. Unchecked Return Values For Low Level Calls: The contract uses the `call` function to make external calls to the `whale` contract, but it does not check the return value of the call. This can lead to silent failures, where errors in the external contract are not handled properly.
+
+5. Denial of Service: There are no checks in place to limit the amount of gas that can be consumed by certain functions. This can lead to potential DoS attacks where an attacker can consume all the available gas and prevent other transactions from being processed.
+
+6. Bad Randomness: The contract uses `blockhash` to generate random numbers for determining winners. However, `blockhash` is not a reliable source of randomness as it can be manipulated by miners.
+
+7. Front-Running: There are no checks in place to prevent front-running attacks, where an attacker can exploit the time delay between the transaction submission and its inclusion in a block to manipulate the outcome of the game.
+
+8. Time manipulation: The contract uses `block.number` to compare with the stored timestamp of the player's wager. However, `block.number` can be manipulated by miners, allowing them to cheat the game.
+
+9. Short Address Attack: The contract does not have any checks in place to prevent short address attacks, where an attacker can manipulate the input data to exploit vulnerabilities in the contract.
+
+It is recommended to address these vulnerabilities by implementing appropriate security measures and best practices.

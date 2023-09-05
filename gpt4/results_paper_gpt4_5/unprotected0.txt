@@ -1,0 +1,24 @@
+This smart contract has an Access Control vulnerability. The function `changeOwner` should only be called by the current owner of the contract. However, there's no check to verify that the sender of the transaction is indeed the owner, so anyone can call this function and change the ownership of the contract. 
+
+Here's the vulnerable part of the contract:
+
+```solidity
+ function changeOwner(address _newOwner)
+     public
+ {
+    owner = _newOwner;
+ }
+```
+
+It can be fixed by applying the `onlyowner` modifier to `changeOwner` function like so:
+
+```solidity
+ function changeOwner(address _newOwner)
+     public
+     onlyowner
+ {
+    owner = _newOwner;
+ }
+```
+
+The other mentioned vulnerabilities (Reentrancy, Arithmetic Issues, Unchecked Return Values For Low Level Calls, Denial of Service, Bad Randomness, Front-Running, Time manipulation, Short Address Attack) do not seem to be present in this contract.

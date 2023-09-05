@@ -1,0 +1,39 @@
+This smart contract is vulnerable to the Unchecked Return Values vulnerability (SWC-104). Here's the analysis of each vulnerability:
+
+1. Reentrancy: There is no direct vulnerability related to reentrancy in this contract. However, it's always important to be cautious when interacting with external contracts to ensure reentrancy attacks are not possible.
+
+2. Access Control: There is no access control mechanism implemented in this contract. Anyone can call the `callchecked` and `callnotchecked` functions.
+
+3. Arithmetic Issues: There are no arithmetic operations in this contract, so there is no vulnerability related to integer overflow or underflow.
+
+4. Unchecked Return Values For Low-Level Calls: This vulnerability is present in the `callnotchecked` function. The contract uses the `callee.call()` function to make an external call but does not check the return value. This can lead to silent failures if the external call fails and returns false.
+
+5. Denial of Service: There are no explicit denial of service vulnerabilities in this contract.
+
+6. Bad Randomness: There are no randomness-related functionalities in this contract.
+
+7. Front-Running: There are no functionalities in the contract that can be exploited for front-running attacks.
+
+8. Time Manipulation: There are no timestamp dependencies in this contract.
+
+9. Short Address Attack: There are no off-chain issues or client vulnerabilities in this contract.
+
+To fix the vulnerability related to unchecked return values, you should check the return value of the `callee.call()` function in the `callnotchecked` function and handle the failure case appropriately.
+
+Here's an updated version of the contract that includes the fix:
+
+```solidity
+pragma solidity 0.4.25;
+
+contract ReturnValue {
+  function callchecked(address callee) public {
+    require(callee.call());
+  }
+
+  function callnotchecked(address callee) public {
+    require(callee.call());
+  }
+}
+```
+
+In this updated version, the return value of the `callee.call()` function is checked using `require()`, ensuring that the contract will revert if the external call fails.

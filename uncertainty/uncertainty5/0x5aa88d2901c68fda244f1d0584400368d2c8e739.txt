@@ -1,0 +1,19 @@
+1. Reentrancy: The `multiplicate()` function is vulnerable to a reentrancy attack. It sends ETH with `adr.transfer(this.balance+msg.value);` before updating the contract balance. An attacker could recursively call the `multiplicate()` function to drain the contract's funds.
+
+2. Access Control: The contract only restricts some critical functions to the contract owner (`withdraw()`, `Command()`), but the `multiplicate()` function can be called by anyone.
+
+3. Arithmetic Issues: This contract seems to be free from integer overflow and underflow issues. 
+
+4. Unchecked Return Values For Low Level Calls: The `Command()` function uses a low level `.call()` function without checking its return value.
+
+5. Denial of Service: The `multiplicate()` function could potentially lead to a denial of service attack. If `this.balance` is higher than `msg.value`, the function will not do anything, and the funds sent with the function call will be stuck in the contract.
+
+6. Bad Randomness: There is no randomness in this contract, so it's free from this issue.
+
+7. Front-running: This contract seems to be free from front-running issues.
+
+8. Time manipulation: There is no dependency on block timestamp in this contract, so it's free from this issue.
+
+9. Short Address Attack: This contract does not seem to have any short address attack vulnerability since it does not handle user addresses in a vulnerable way.
+
+It is recommended to fix the identified vulnerabilities before deploying this contract.

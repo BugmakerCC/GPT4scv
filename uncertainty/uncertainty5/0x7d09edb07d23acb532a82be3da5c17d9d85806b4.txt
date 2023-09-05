@@ -1,0 +1,23 @@
+The smart contract has several potential vulnerabilities:
+
+1. Reentrancy: The functions `payout`, `donateToWhale`, and `loseWager` are vulnerable to reentrancy attacks because they call an external contract (`whale`) before the state is finalized. An attacker could recursively call the contract before `totalDonated` is updated or the `Win`, `Donate`, or `Lose` events are emitted.
+
+2. Arithmetic Issues: This contract does not seem to have any integer overflow or underflow issues.
+
+3. Unchecked Return Values: The contract does not check the return value of the `whale.call.value(amount)(bytes4(keccak256("donate()")));` call. If this call fails, the contract will not be aware of it and `totalDonated` will be wrong.
+
+4. Access Control: The contract appears to have solid access control mechanisms in place with the `onlyOwner`, `isOpenToPublic`, `onlyRealPeople`, and `onlyPlayers` modifiers. However, the use of `onlyRealPeople` could potentially block contracts from interacting with this contract.
+
+5. Denial of Service: In the `payout` function, if the `winner` is a contract that throws an exception in its fallback function, the `payout` function will be locked, causing a denial of service.
+
+6. Bad Randomness: The `play` function's use of `blockhash` for randomness could potentially be manipulated by miners.
+
+7. Front-Running: The contract could be vulnerable to front-running as attackers could see the transaction in the mempool before it's mined and place a bet with a higher gas price to get it mined first.
+
+8. Time manipulation: The contract uses `block.number` as a timestamp, which can be manipulated by miners to a certain degree.
+
+9. Short Address Attack: The contract does not seem to be vulnerable to a short address attack as it does not take address lengths from user input. 
+
+10. The contract allows the owner to transfer any ERC20 token sent to the contract. If the owner is a malicious actor, this could lead to loss of tokens.
+
+Please note these are potential vulnerabilities and their exploitation would depend on various factors like user behavior, miner behavior, and blockchain state.

@@ -1,0 +1,19 @@
+This smart contract contains several potential vulnerabilities:
+
+1. Reentrancy: The `tokens_buy()` function sends Ether to the `owner2` address after calling the external contract `c`. If the `owner2` is a malicious contract that calls back `tokens_buy()`, it could trigger a reentrancy attack.
+
+2. Arithmetic Issues: There is no safe math library used in this contract. This can lead to integer overflow and underflow issues. For instance, `msg.value*10**18/token_price` and `msg.value * 3 / 10` operations are vulnerable to underflow and overflow.
+
+3. Unchecked Return Values: The contract doesn't check the return value of the `owner.send(balance);` and `owner2.send(sum2);` functions. If these functions fail, the contract will continue its execution which could lead to unexpected behavior.
+
+4. Denial of Service: The `withdraw` function sends all funds to `owner` without checking if the transfer was successful or not. If the `owner` is a contract that always throws, it will block the funds in the contract forever.
+
+5. Access Control: There is no access control for the `tokens_buy()` function. Anyone can call this function and buy tokens. 
+
+6. Bad Randomness, Front-Running, Time manipulation, and Short Address Attack: These vulnerabilities are not present in this contract. 
+
+7. The contract also lacks events which would be helpful to track state changes on the blockchain.
+
+8. Lastly, the use of `throw` has been deprecated in recent Solidity versions. The contract should use `revert()`, `require()` and `assert()` functions to throw an exception. For example, `onlyOwner` modifier should use `require(msg.sender == owner)` instead of `if (msg.sender != owner) { throw; }`. 
+
+Remember, it's always a good practice to use the latest version of Solidity and follow the best practices to avoid common pitfalls and vulnerabilities.

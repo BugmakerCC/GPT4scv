@@ -1,0 +1,21 @@
+The provided smart contract contains the following vulnerabilities:
+
+1. Reentrancy: There is a potential reentrancy vulnerability in the "execute" function of the "Owned" contract. The contract calls an external contract (_dst.call.value(_value)(_data)) and this external contract can potentially make a callback to the original contract before the original function call in the original contract has finished executing.
+
+2. Arithmetic Issues: There are potential arithmetic issues in the "fill" function, where variables are incremented without checking for overflows (acc += amount; totalToDistribute += acc;). This can lead to integer overflow or underflow vulnerabilities.
+
+3. Unchecked Return Values For Low Level Calls: The return value of the "_dst.call.value(_value)(_data)" in the "execute" function is not checked. If this call fails for any reason, the contract will not be able to detect it.
+
+4. Access Control: The contract does manage permissions with the "onlyOwner" modifier, but there is no functionality to add or remove additional owners or administrators. This can be a potential security risk if the owner key is lost or compromised.
+
+5. Denial of Service: The contract does not seem to have any potential Denial of Service vulnerabilities.
+
+6. Bad Randomness: The contract does not seem to have any potential Bad Randomness vulnerabilities.
+
+7. Front-Running: The contract does not seem to have any potential Front-Running vulnerabilities.
+
+8. Time manipulation: The contract does not seem to have any potential Time manipulation vulnerabilities.
+
+9. Short Address Attack: The contract does not seem to have any potential Short Address Attack vulnerabilities. 
+
+However, this is a high level analysis and a thorough review of the contract should be performed for a complete understanding of potential vulnerabilities.

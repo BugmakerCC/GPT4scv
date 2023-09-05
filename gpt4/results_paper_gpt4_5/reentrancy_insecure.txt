@@ -1,0 +1,24 @@
+This contract has the following vulnerabilities:
+
+1. Reentrancy: This contract is vulnerable to a reentrancy attack. During the execution of the `withdrawBalance` function, external contract code is called before the state (user's balance) is updated. This allows a malicious contract to recursively call `withdrawBalance`, draining the contract of Ether.
+
+To fix this issue, the state should be updated before calling the external contract. This pattern is called the Checks-Effects-Interactions pattern.
+
+Here's how the function should be updated:
+
+```solidity
+function withdrawBalance() public {
+    uint amountToWithdraw = userBalances[msg.sender];
+    userBalances[msg.sender] = 0; // state is updated before the call
+    (bool success, ) = msg.sender.call.value(amountToWithdraw)("");
+    require(success);
+}
+```
+
+2. Access Control: The `withdrawBalance` function is public, meaning that anyone can call it and potentially withdraw funds if the user balance conditions are met. Access control should be implemented to ensure that only the appropriate users can call this function.
+
+3. Unchecked Return Values For Low Level Calls: The contract is using a low-level call function. If the call function fails, then all the money will be locked in the contract. Solidity provides a send() function that checks the return value and throws an exception if the call fails.
+
+4. Denial of Service: If an attacker's contract always fails in fallback function, then the attacker can lock all the funds in the victim contract.
+
+The other vulnerabilities (Arithmetic Issues, Bad Randomness, Front-Running, Time manipulation, Short Address Attack) are not present or applicable in this contract.

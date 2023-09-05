@@ -1,0 +1,15 @@
+Upon analyzing the contract, I found a few potential vulnerabilities.
+
+1. Reentrancy: The `msg.sender.transfer(this.balance)` function call can potentially be exploited by reentrancy. An attacker could create a fallback function in their contract to call the Roulette contract again before the `transfer` function completes. This could allow the attacker to drain the contract's Ether.
+
+2. DoS with (Unexpected) revert: In case the transaction fails to transfer the funds, the contract has no way to recover from it. This could lead to the contract being stuck in an undesirable state.
+
+3. Time manipulation: The contract is using `now` for determining the winner which can be manipulated by miners to some extent. 
+
+4. Bad Randomness: The use of `now` for generating randomness is not secure. `now` is equivalent to `block.timestamp` and can be manipulated by miners.
+
+5. No proper Access Control: There is no proper access control mechanism in place. Any user can call the fallback function and play the game. This could potentially lead to unauthorized access and misuse of the contract.
+
+Note: The contract does not seem to have vulnerabilities related to Integer Overflow/Underflow, Unchecked Return Values, Front-Running, and Short Address Attack. 
+
+It is essential to address these vulnerabilities and ensure that exceptions are handled properly, randomness is generated securely, and access is controlled adequately.

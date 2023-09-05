@@ -1,0 +1,18 @@
+The smart contract provided has a Reentrancy vulnerability, which is a common pitfall in Ethereum smart contracts. This vulnerability lets an attacker repeatedly call the `withdraw` function before the first call finishes, draining the contract of Ether.
+
+In the `withdraw` function, after checking that credit of `msg.sender` is greater than or equal to the `amount`, it sends the `amount` to `msg.sender` through a low-level `.call.value()`. However, it updates `credit[msg.sender]` after this line. 
+
+This opens up a risk of Reentrancy attack, because `.call.value()` can actually trigger code execution of the fallback function in the calling contract. If the calling contract's fallback function calls `withdraw` function again, it will withdraw more Ether, because `credit[msg.sender]` has not been updated yet.
+
+Here is a potential fix for this vulnerability by updating `credit[msg.sender]` before sending the Ether:
+
+```
+function withdraw(uint amount) {
+    if (credit[msg.sender]>= amount) {
+      credit[msg.sender]-=amount;
+      bool res = msg.sender.call.value(amount)();
+    }
+}
+```
+
+Note: Using `.call.value()` is discouraged in general due to the potential security vulnerabilities it can open up. It's recommended to use the `transfer()` function instead, which only forwards 2300 gas and prevents reentrancy attacks.

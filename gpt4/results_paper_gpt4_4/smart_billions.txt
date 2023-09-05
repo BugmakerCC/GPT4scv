@@ -1,0 +1,19 @@
+1. Reentrancy: The contract doesn't seem to contain reentrancy vulnerability. It uses simple transfers rather than calls with no recursive calls to external contracts which would have potentially allowed for reentrancy.
+
+2. Access Control: The contract uses access control for the owner and animator roles. It has a modifier for onlyOwner and onlyAnimator functions. However, these could be more secure by implementing a method for transferring ownership, where the new owner has to accept the transfer.
+
+3. Arithmetic Issues: The contract uses SafeMath library to prevent integer underflow and overflow issues, which is a good practice.
+
+4. Unchecked Return Values For Low Level Calls: The contract doesn't seem to have any low level calls (call, delegatecall, callcode), hence this vulnerability doesn't exist.
+
+5. Denial of Service: A potential DoS vulnerability can occur with the function 'pay()' where it depends on the 'this.balance' state variable. This can cause the function to fail if the contract balance is unexpectedly changed.
+
+6. Bad Randomness: The contract seems to use the blockhash for a pseudo-random number, which could be manipulated by miners for their advantage.
+
+7. Front-Running: The contract might be vulnerable to front-running attack as the transactions are public in the Ethereum network and malicious users can see the transactions in the mempool before they are mined and front run these transactions.
+
+8. Time manipulation: This contract could be vulnerable to time manipulation attacks as it uses block.timestamp (alias for now) and block.number. Miners do have some level of control over these values and can manipulate them within some limits.
+
+9. Short Address Attack: The contract does not appear to be vulnerable to short address attack because it does not take address input from the user that might be malformed. 
+
+Please note that this is a preliminary analysis and further thorough testing should be performed.

@@ -1,0 +1,19 @@
+The smart contract has the following vulnerabilities:
+
+1. Reentrancy: The `CashOut` function is vulnerable to a reentrancy attack because it calls an external contract (with `msg.sender.call.value(_am)()`) before it updates the state (`balances[msg.sender]-=_am;`). An attacker can make a recursive call to drain the contract.
+
+2. Access Control: There is no restriction on who can call the `AddMessage` function in the `Log` contract. An attacker can call this function to put misleading information in the log.
+
+3. Arithmetic Issues: This contract doesn't have any arithmetic issues such as integer overflow and underflow because it doesn't have any arithmetic operations that could potentially overflow or underflow.
+
+4. Unchecked Return Values For Low Level Calls: The return value of the low level call `msg.sender.call.value(_am)()` isn't checked. If this call fails, the contract won't be aware and will continue to execute.
+
+5. Denial of Service: An attacker could potentially make the fallback function run out of gas by sending lots of Ether to it, but this seems unlikely because it doesn't do anything complex.
+
+6. Bad Randomness: The contract doesn't use randomness, so it's not vulnerable to bad randomness.
+
+7. Front-Running: This contract isn't vulnerable to front-running because it doesn't have transaction ordering dependence.
+
+8. Time Manipulation: The `Log` contract does depend on timestamps (with `LastMsg.Time = now;`), so it may be vulnerable to miner manipulation of timestamps.
+
+9. Short Address Attack: This contract doesn't seem to be vulnerable to a short address attack because it doesn't use `msg.data.length` or similar.

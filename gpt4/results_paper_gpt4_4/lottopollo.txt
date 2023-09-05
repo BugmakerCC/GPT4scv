@@ -1,0 +1,14 @@
+The contract is vulnerable to two types of vulnerabilities:
+
+1. Time Manipulation: The contract uses the timestamp for two critical operations, which makes it vulnerable to time manipulation attacks. The 'now' keyword in Solidity returns the timestamp of the current block, which can be manipulated by miners within a certain range. In the 'payOut' function, the condition 'now - rand > 24 hours' is dependent on the timestamp. Similarly, in the 'randomGen' function, the 'block.timestamp' is used to generate a random number, which can be manipulated by a miner to some extent.
+
+Recommendations:
+- Avoid using timestamps for critical operations in your smart contract. If randomness is required, consider using an oracle service like Chainlink VRF.
+
+2. Unchecked Return Values For Low Level Calls: The contract uses the 'send' function to transfer ether. However, the return value of 'send' is not checked. 'send' returns false in case of failure but does not revert the transaction, so it's important to handle the failure case manually in the code.
+
+Recommendations:
+- Always check the return value of 'send' and 'transfer' functions and handle failure cases accordingly. 
+- Consider using 'transfer' instead of 'send' as 'transfer' throws an exception on failure, reverting the transaction.
+
+Note: The contract does not seem to have access control vulnerability, arithmetic issues, reentrancy, denial of service, bad randomness, front-running, or short address attack vulnerabilities based on the code provided. However, a comprehensive audit would be required to confirm this.

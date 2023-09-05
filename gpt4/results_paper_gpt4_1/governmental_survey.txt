@@ -1,0 +1,21 @@
+Looking at the provided smart contract, the following vulnerabilities can be identified:
+
+1. Reentrancy: This vulnerability is present in the `resetInvestment()` function of the `Governmental` contract. When the `send()` function is used, the control is handed over to an external contract which can lead to re-entry into the `resetInvestment()` function before the state variables `lastInvestor` and `jackpot` are set to their initial values. This means the attacker can drain the contract funds.
+
+2. Access Control: The `resetInvestment()` function is open to any address, not just the owner or lastInvestor. This means that any user can call the function and potentially drain the contract balance.
+
+3. Arithmetic Issues: There do not appear to be any arithmetic issues as all the math operations are straightforward with no chances of overflow or underflow.
+
+4. Unchecked Return Values For Low Level Calls: The `send()` function's return value is not checked in the `resetInvestment()` function, which can lead to lost funds if the send operation fails.
+
+5. Denial of Service: The `resetInvestment()` function could potentially cause a denial of service if the `send()` function fails and throws an exception.
+
+6. Bad Randomness: It doesn't seem like this contract relies on randomness, so this vulnerability isn't applicable here.
+
+7. Front-Running: The contract could be vulnerable to front-running attacks but it's not explicit in this example.
+
+8. Time manipulation: The `resetInvestment()` function of the `Governmental` contract is dependent on the `block.timestamp` variable which can be manipulated by miners to some extent.
+
+9. Short Address Attack: There's no direct interaction with user-provided addresses that could be manipulated to be shorter than expected, so this vulnerability isn't applicable here. 
+
+The `Attacker` contract seems to be designed to exploit the reentrancy vulnerability by recursively calling the `attack()` function and then calling `resetInvestment()` function to drain the funds.

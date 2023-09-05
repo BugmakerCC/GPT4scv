@@ -1,0 +1,207 @@
+[INFO] | 2023-08-14 02:56:26 AM | analyzer.parity_wallet_bug_2 | Analysis started at: 2023-08-14 02:56:26 AM
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Version constraints: ['^0.4.9']
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | solc version: v0.4.9
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Callgraph generation started!
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Callgraph generation finished!
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Storage dependency graph generation started!
+[WARNING] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Issues with getting the high level call destination address
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Value Range Analysis started
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for revoke
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for revoke
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function revoke
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for changeOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for changeOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function changeOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for addOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for addOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function addOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for removeOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for removeOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function removeOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for changeRequirement
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for changeRequirement
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function changeRequirement
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for isOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for isOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function isOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for hasConfirmed
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for hasConfirmed
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function hasConfirmed
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for setDailyLimit
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for setDailyLimit
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function setDailyLimit
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for execute
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for execute
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function execute
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for confirm
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for confirm
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function confirm
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for fallback
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for fallback
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function fallback
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for revoke
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for revoke
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function revoke
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for getOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for getOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function getOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for isOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for isOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function isOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for hasConfirmed
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for hasConfirmed
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function hasConfirmed
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for create
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for create
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function create
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for confirmAndCheck
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for confirmAndCheck
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Range graph generated
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function confirmAndCheck
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for reorganizeOwners
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for reorganizeOwners
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Range graph generated
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function reorganizeOwners
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for today
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for today
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function today
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for clearPending
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for clearPending
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function clearPending
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for slitherConstructorVariables
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for slitherConstructorVariables
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Range graph generated
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function slitherConstructorVariables
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for only_uninitialized
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for only_uninitialized
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function only_uninitialized
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for onlymanyowners
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for onlymanyowners
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Range graph generated
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function onlymanyowners
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for onlyowner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for onlyowner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function onlyowner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for changeOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for changeOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Range graph generated
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function changeOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for addOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for addOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Range graph generated
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function addOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for confirm
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for confirm
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function confirm
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for removeOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for removeOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Range graph generated
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function removeOwner
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for initDaylimit
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for initDaylimit
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Range graph generated
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function initDaylimit
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for underLimit
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for underLimit
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Range graph generated
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function underLimit
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for changeRequirement
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for changeRequirement
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Range graph generated
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function changeRequirement
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for initMultiowned
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for initMultiowned
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Range graph generated
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function initMultiowned
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for setDailyLimit
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for setDailyLimit
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Range graph generated
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function setDailyLimit
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for resetSpentToday
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for resetSpentToday
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Range graph generated
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function resetSpentToday
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for kill
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for kill
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function kill
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for execute
+[WARNING] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | No lvalue eligible assignment, is this some bug!
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for execute
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Range graph generated
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function execute
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Generating return summary for initWallet
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Return summary generated for initWallet
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Range graph generated
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Processed function initWallet
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Value Range Analysis took 0.018990 seconds
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Value Range Analysis finished
+[INFO] | 2023-08-14 02:56:27 AM | analyzer.parity_wallet_bug_2 | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:56:28 AM | analyzer.parity_wallet_bug_2 | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:56:28 AM | analyzer.parity_wallet_bug_2 | Dependency detection started!
+[INFO] | 2023-08-14 02:56:28 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and initMultiowned
+[INFO] | 2023-08-14 02:56:29 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and initMultiowned
+[INFO] | 2023-08-14 02:56:29 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and changeOwner
+[INFO] | 2023-08-14 02:56:31 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and changeOwner
+[INFO] | 2023-08-14 02:56:31 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and addOwner
+[INFO] | 2023-08-14 02:56:33 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and addOwner
+[INFO] | 2023-08-14 02:56:33 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and removeOwner
+[INFO] | 2023-08-14 02:56:35 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and removeOwner
+[INFO] | 2023-08-14 02:56:35 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and changeRequirement
+[INFO] | 2023-08-14 02:56:36 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and changeRequirement
+[INFO] | 2023-08-14 02:56:36 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and initDaylimit
+[INFO] | 2023-08-14 02:56:37 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and initDaylimit
+[INFO] | 2023-08-14 02:56:37 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and setDailyLimit
+[INFO] | 2023-08-14 02:56:37 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and setDailyLimit
+[INFO] | 2023-08-14 02:56:37 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and resetSpentToday
+[INFO] | 2023-08-14 02:56:37 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and resetSpentToday
+[INFO] | 2023-08-14 02:56:38 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and initWallet
+[INFO] | 2023-08-14 02:56:39 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and initWallet
+[INFO] | 2023-08-14 02:56:40 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and kill
+[INFO] | 2023-08-14 02:56:40 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and execute
+[INFO] | 2023-08-14 02:56:42 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and execute
+[INFO] | 2023-08-14 02:56:43 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions execute and confirm
+[INFO] | 2023-08-14 02:56:43 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions confirm and initMultiowned
+[INFO] | 2023-08-14 02:56:44 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions confirm and changeOwner
+[INFO] | 2023-08-14 02:56:45 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions confirm and addOwner
+[INFO] | 2023-08-14 02:56:46 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions confirm and removeOwner
+[INFO] | 2023-08-14 02:56:47 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions confirm and changeRequirement
+[INFO] | 2023-08-14 02:56:47 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions confirm and setDailyLimit
+[INFO] | 2023-08-14 02:56:47 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions confirm and resetSpentToday
+[INFO] | 2023-08-14 02:56:48 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions confirm and initWallet
+[INFO] | 2023-08-14 02:56:48 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions confirm and kill
+[INFO] | 2023-08-14 02:56:49 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions confirm and execute
+[INFO] | 2023-08-14 02:56:50 AM | analyzer.parity_wallet_bug_2 | TOD dependency detected in file parity_wallet_bug_2.sol in contract WalletLibrary in by composing functions confirm and confirm
+[INFO] | 2023-08-14 02:56:50 AM | analyzer.parity_wallet_bug_2 | Dependency detection finished!
+[INFO] | 2023-08-14 02:56:50 AM | analyzer.parity_wallet_bug_2 | Static Analysis took 23.456753 seconds
+[INFO] | 2023-08-14 02:56:50 AM | analyzer.parity_wallet_bug_2 | Dependency exists
+[INFO] | 2023-08-14 02:56:50 AM | analyzer.parity_wallet_bug_2 | Invoking symbolic executor!
+[INFO] | 2023-08-14 02:56:58 AM | analyzer.parity_wallet_bug_2 | Symbolic execution took 8.275474 seconds
+[INFO] | 2023-08-14 02:56:58 AM | analyzer.parity_wallet_bug_2 | Symbolic execution finished!
+[INFO] | 2023-08-14 02:56:58 AM | analyzer.parity_wallet_bug_2 | Analysis finished!
+[INFO] | 2023-08-14 02:56:58 AM | analyzer.parity_wallet_bug_2 | Analysis took 31.732707 seconds
+[INFO] | 2023-08-14 02:56:58 AM | analyzer.parity_wallet_bug_2 | Analysis finished at: 2023-08-14 02:56:58 AM

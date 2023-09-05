@@ -1,0 +1,19 @@
+1. Reentrancy: This contract is vulnerable to a reentrancy attack. The `multiplicate` function sends ether with `adr.transfer(this.balance+msg.value)`. If the recipient contract's fallback function calls back into the `multiplicate` function, it can drain the contract's balance.
+
+2. Access Control: The contract is only using the `require(msg.sender == Owner);` to restrict access which means only the owner can withdraw or command the contract. However, the owner is set to `msg.sender` at contract deployment and can't be changed which can be risky if the owner's address is compromised.
+
+3. Arithmetic Issues: The contract does not check for integer underflow or overflow which could lead to balance discrepancies.
+
+4. Unchecked Return Values For Low Level Calls: The contract uses low level `adr.call.value(msg.value)(data);` in the `Command` function. The return value of this call is not checked which can lead to unexpected behavior if the called contract throws an error.
+
+5. Denial of Service: The contract can be made unusable if an attacker repeatedly calls the `multiplicate` function with ether until the balance of the contract is drained.
+
+6. Bad Randomness: Not applicable in this contract as it does not use any randomness.
+
+7. Front-Running: Not applicable in this contract as it does not rely on transaction ordering.
+
+8. Time manipulation: Not applicable in this contract as it does not use any timestamp or block number.
+
+9. Short Address Attack: Not applicable in this contract as it does not take address inputs from users. 
+
+It's recommended to fix these vulnerabilities before using this contract in a production environment.

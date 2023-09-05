@@ -1,0 +1,30 @@
+[INFO] | 2023-08-14 02:58:36 AM | analyzer.unchecked_return_value | Analysis started at: 2023-08-14 02:58:36 AM
+[INFO] | 2023-08-14 02:58:36 AM | analyzer.unchecked_return_value | Version constraints: ['0.4.25']
+[INFO] | 2023-08-14 02:58:36 AM | analyzer.unchecked_return_value | solc version: v0.4.25
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Callgraph generation started!
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Callgraph generation finished!
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Value Range Analysis started
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Generating return summary for callchecked
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Return summary generated for callchecked
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Processed function callchecked
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Generating return summary for callnotchecked
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Return summary generated for callnotchecked
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Processed function callnotchecked
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Value Range Analysis took 0.000380 seconds
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Value Range Analysis finished
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Dependency detection started!
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Dependency detection finished!
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Static Analysis took 0.080965 seconds
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Dependency does not exist
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Symbolic execution is not needed!
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Analysis finished!
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Analysis took 0.081151 seconds
+[INFO] | 2023-08-14 02:58:37 AM | analyzer.unchecked_return_value | Analysis finished at: 2023-08-14 02:58:37 AM

@@ -1,0 +1,18 @@
+The smart contract provided has an Arithmetic Issues vulnerability, more specifically an Integer Overflow issue. 
+
+In the `run` function, the `input` value is added to the `count` without any checks. If a sufficiently large value is provided as `input`, the `count` can overflow. 
+
+For example, if `count` is near the maximum value of `uint256` (which is 2^256 - 1) and a large `input` is added to it, the `count` will wrap around to a small value, much less than the original `count` value. This is known as integer overflow.
+
+To mitigate this issue, the contract should check whether an overflow occurs and if it does, revert the transaction. An example of a safe addition function that includes this check is:
+
+```solidity
+function safeAdd(uint a, uint b) internal pure returns (uint256) {
+  uint256 c = a + b;
+  require(c >= a, "SafeMath: addition overflow");
+
+  return c;
+}
+```
+
+In this function, `c` is expected to be larger or equal to `a` since we are adding `b` to `a`. If `c` is less than `a`, it means an overflow has occurred and the transaction is reverted with an error message.

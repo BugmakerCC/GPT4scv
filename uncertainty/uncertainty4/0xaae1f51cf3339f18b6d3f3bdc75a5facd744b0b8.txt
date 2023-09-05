@@ -1,0 +1,13 @@
+Here are the vulnerabilities present in the given smart contract:
+
+1. Reentrancy: This vulnerability is present in the `Collect` function in the `DEP_BANK` contract. The contract interacts with an external contract (in this case the sender of the message) before it resolves its internal state (subtracting the collected amount from the balance). This means that if the called contract has a fallback function, it can call `Collect` again before the first call is finished, and withdraw more Ether than it should be able to. 
+
+2. Unchecked Return Values For Low Level Calls: The `call.value()` function in the `Collect` method is a low-level call that can fail silently. The contract does not handle the potential failure of this call, which can lead to unexpected behavior. 
+
+3. Access Control: The `SetMinSum` and `SetLogFile` functions are public and can be called by any address. The `intitalized` variable is used to prevent changes after initialization, but there is no control over who can initialize the contract, and it can be initialized with incorrect values. 
+
+4. Denial of Service: The `Collect` function sends Ether before updating the balance. If the send fails, the balance is not updated, and the function can be called again, potentially causing a denial of service. 
+
+5. Arithmetic Issues: Although not explicitly shown in the contract, it's possible that arithmetic issues like underflows and overflows could occur. Safe math operations should be used to prevent this.
+
+6. The other vulnerabilities (Bad Randomness, Front-Running, Time manipulation, and Short Address Attack) are not present in the provided contract.

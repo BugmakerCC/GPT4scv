@@ -1,0 +1,19 @@
+The smart contract has the following vulnerabilities:
+
+1. Reentrancy: The `participate()` function sends Ether with `msg.sender.transfer(win)`. If the contract calling this function has a fallback function, it could potentially call `participate()` again before the first call is finished. This is a classic reentrancy vulnerability and can be solved by applying the checks-effects-interactions pattern - i.e., effects (changing state variables) should be done before interactions (calling external contracts).
+
+2. Access Control: The `kill()` and `forceReseed()` functions can only be called by the owner of the contract. However, the owner is not declared as `private`, which means it could be overwritten by a malicious contract that inherits from this one. The owner should be made private to prevent this.
+
+3. Bad Randomness: The contract uses `block.timestamp`, `block.difficulty`, `block.gaslimit`, and `block.coinbase` in the `reseed()` function to seed the `secretSeed`, which is used to determine the winning number. These are all public variables and can be influenced to some extent by miners. Also, using `blockhash` for randomness is risky because it only works for the last 256 blocks.
+
+4. Unchecked Return Values: The contract does not check the return value of `msg.sender.transfer(win)`. If this call fails for any reason, the contract will continue running as if nothing happened.
+
+5. Denial of Service: If a contract is the recipient of the `msg.sender.transfer(win)`, and it has a fallback function that always throws an error, it would be able to block the lottery payout indefinitely.
+
+6. Arithmetic Issue: If a user sends a very high amount of Ether, the calculation `uint win=msg.value*7;` can overflow. This should be checked with a require statement.
+
+7. Front-Running: Since the lucky number is determined by public variables and a public seed, a user could potentially watch the contract's transactions and then submit their own transaction with a higher gas price to get it mined first.
+
+8. Time Manipulation: The `reseed()` function is called every 1000 blocks by checking `block.number-lastReseed>1000`. A miner could potentially manipulate the time when `reseed()` is called by skipping or including certain transactions.
+
+9. There doesn't seem to be any obvious vulnerability to Short Address Attack in the contract. But it's crucial to validate the length of the address before interacting with it to avoid this kind of attack.

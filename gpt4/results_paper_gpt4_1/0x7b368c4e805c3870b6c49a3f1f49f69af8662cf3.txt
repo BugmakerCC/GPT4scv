@@ -1,0 +1,19 @@
+The smart contract provided has the following vulnerabilities:
+
+1. Reentrancy: The `Collect` function is vulnerable to reentrancy attack because it makes an external call to the sender before updating the state of the contract. An attacker can reenter the contract and drain it before the state is updated.
+
+2. Arithmetic Issues: There's no safe math library used for arithmetic operations. This could lead to integer overflow or underflow.
+
+3. Unchecked Return Values For Low Level Calls: In the `Collect` function, the low-level `.call.value()` method is used without checking its return value.
+
+4. Denial of Service: An attacker could create a contract that always fails when receiving Ether, and then becomes the receiver. In this case, the `Collect` function would be stuck since the `msg.sender.call.value(_am)()` will always fail but the balance update won't be executed.
+
+5. Access Control: The `Put` and `Collect` functions are public and can be called by any address. Also, the `AddMessage` function in the `Log` contract is public and can be called by any address.
+
+6. Bad Randomness: Not applicable in this contract.
+
+7. Front-Running: Not applicable in this contract.
+
+8. Time manipulation: Not applicable in this contract.
+
+9. Short Address Attack: Not applicable in this contract.

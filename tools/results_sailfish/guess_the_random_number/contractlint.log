@@ -1,0 +1,34 @@
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Analysis started at: 2023-08-14 02:57:28 AM
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Version constraints: ['^0.4.21']
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | solc version: v0.4.21
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Callgraph generation started!
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Callgraph generation finished!
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Value Range Analysis started
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Generating return summary for GuessTheRandomNumberChallenge
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Return summary generated for GuessTheRandomNumberChallenge
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Range graph generated
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Processed function GuessTheRandomNumberChallenge
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Generating return summary for isComplete
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Return summary generated for isComplete
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Processed function isComplete
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Generating return summary for guess
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Return summary generated for guess
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Processed function guess
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Value Range Analysis took 0.001034 seconds
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Value Range Analysis finished
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Dependency detection started!
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Dependency detection finished!
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Static Analysis took 0.188802 seconds
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Dependency does not exist
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Symbolic execution is not needed!
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Analysis finished!
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Analysis took 0.188988 seconds
+[INFO] | 2023-08-14 02:57:28 AM | analyzer.guess_the_random_number | Analysis finished at: 2023-08-14 02:57:28 AM

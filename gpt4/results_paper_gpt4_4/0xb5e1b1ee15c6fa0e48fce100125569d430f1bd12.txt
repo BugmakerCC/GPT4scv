@@ -1,0 +1,15 @@
+This contract appears to have a few potential vulnerabilities. 
+
+1. Reentrancy: The CashOut function is vulnerable to a reentrancy attack because it uses a call.value()() function to transfer ether. If the recipient contract's fallback function calls back into the CashOut function, it could withdraw more ether than it should.
+
+2. Arithmetic Issues: The Deposit function could potentially overflow if an attacker deposits a large enough value.
+
+3. Unchecked Return Values For Low Level Calls: The return value of the call.value()() function in the CashOut method is not checked. If the call fails (for example, if the recipient contract's fallback function reverts), the user's balance won't be updated.
+
+4. Access Control: The AddMessage function in the Log contract doesn't have any access controls. Anyone can call this function and add a message to the log.
+
+5. Denial of Service: If the recipient contract's fallback function consumes all available gas or reverts in a call from CashOut, it will prevent the user from withdrawing their funds, effectively locking them in the contract.
+
+6. Time Manipulation: The AddMessage function in the Log contract uses the now keyword, which is equivalent to block.timestamp. This value can be manipulated by miners to some degree.
+
+The contract does not appear to be vulnerable to front-running, bad randomness, or short address attacks. However, it is always possible that a more comprehensive analysis might reveal additional vulnerabilities.

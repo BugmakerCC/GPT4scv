@@ -1,0 +1,21 @@
+Looking at this smart contract, a few vulnerabilities stand out:
+
+1. Reentrancy: The `Collect` function is susceptible to a reentrancy attack because it calls an external contract `msg.sender.call.value(_am)()` before it updates the state `balances[msg.sender]-=_am;`. An attacker can make a recursive call back into `Collect` before `balances[msg.sender]` has been decremented, effectively withdrawing more Ether than they should be able to.
+
+2. Access Control: The `SetMinSum`, `SetLogFile`, and `Initialized` functions can be called by any address, not only the contract owner. This could allow an attacker to modify the contract's state.
+
+3. Unchecked Return Values For Low Level Calls: The return value of `msg.sender.call.value(_am)()` in `Collect` function is not checked, which can lead to unexpected contract behavior.
+
+4. Denial of Service (DoS): If an attacker is able to make the `msg.sender.call.value(_am)()` call fail (for example by creating a contract that always throws in its fallback function), they can permanently lock the funds of a specific address in the contract.
+
+5. Bad Randomness: Although not an explicit vulnerability in this contract, it's worth noting that using `now` for critical logic can lead to manipulations by miners.
+
+6. Integer Underflow: This contract does not seem to have this vulnerability.
+
+7. Front-Running: This contract does not appear to be vulnerable to front-running attacks.
+
+8. Time manipulation: The contract uses `now` keyword to get the current timestamp, this can be manipulated by the miners to some extent, however, it does not affect the contract's critical logic.
+
+9. Short Address Attack: This contract does not seem to have this vulnerability. 
+
+Please note that it's always recommended to use well-tested libraries for handling operations such as arithmetic and to avoid using low-level calls unless absolutely necessary.

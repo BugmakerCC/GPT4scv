@@ -1,0 +1,16 @@
+The smart contract provided has an unchecked return value for low level calls vulnerability. 
+
+In Solidity, .call() is a low-level function that is used to interact with other contracts. It returns a boolean indicating whether the call was successful or not, and it does not propagate exceptions, instead it returns false. If the return value is not checked, it could lead to unexpected behavior.
+
+In the provided smart contract, the callnotchecked function does not check the return value of the callee.call() function. If this function call fails for any reason, the failure will not be caught and the contract will continue running as if nothing happened. This could lead to potential issues in the contract's operation.
+
+The callchecked function, on the other hand, uses the require function to ensure that callee.call() is successful. This is a good practice as it helps prevent unexpected contract behavior.
+
+Here is the updated function that checks the return value:
+
+```
+function callnotchecked(address callee) public {
+    bool success = callee.call();
+    require(success, "Low-level call failed");
+}
+```

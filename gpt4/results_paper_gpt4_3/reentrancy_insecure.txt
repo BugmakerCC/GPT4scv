@@ -1,0 +1,26 @@
+The provided smart contract has a Reentrancy vulnerability. 
+
+The function `withdrawBalance()` first sends ether to the user with the `call.value` function. If the fallback function of the caller's contract contains a function call to `withdrawBalance()`, it can be called again before the state variable `userBalances[msg.sender]` is set to 0. This allows the user to drain more ether than they should be able to, according to their balance.
+
+This vulnerability can be mitigated by following the Checks-Effects-Interactions pattern, where you first perform any checks (for example, require statements), then make any changes to your contract's state variables, and finally interact with other contracts.
+
+In the given contract, the state variable `userBalances[msg.sender]` should be set to 0 before the ether is sent to the user. Here is the corrected version of the smart contract:
+
+```solidity
+pragma solidity ^0.5.0;
+
+contract Reentrancy_secure {
+
+    mapping (address => uint) private userBalances;
+
+    function withdrawBalance() public {
+        uint amountToWithdraw = userBalances[msg.sender];
+        userBalances[msg.sender] = 0;
+        
+        (bool success, ) = msg.sender.call.value(amountToWithdraw)("");
+        require(success);
+    }
+}
+```
+
+However, note that using `call.value` is still risky. It is recommended to use `transfer` or `send` for sending ether as they only provide a limited amount of gas to the callee, preventing reentrancy.

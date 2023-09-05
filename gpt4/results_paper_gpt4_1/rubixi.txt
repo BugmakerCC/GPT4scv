@@ -1,0 +1,19 @@
+The smart contract has the following vulnerabilities:
+
+1. Bad Randomness: The contract does not include any randomness, therefore, this vulnerability is not present.
+
+2. Arithmetic Issues: There are potential overflow and underflow vulnerabilities in the addPayout function where the contract multiplies msg.value by pyramidMultiplier and divides by 100. If msg.value is very large, this could cause an overflow. There are no checks for this. 
+
+3. Denial of Service: The contract is vulnerable to a DoS attack in the addPayout function. If an attacker creates a participant with an address of a malicious contract that always throws an exception in its fallback function, the payout loop will be stuck at this participant because .send() will always fail. 
+
+4. Access Control: The contract function DynamicPyramid() that is intended to be a constructor is not declared as one. This allows anyone to call the function and become the contract owner.
+
+5. Unchecked Return Values For Low Level Calls: The contract uses .send() in a few places without checking the return value. If .send() fails for any reason, the contract will not be aware and will continue to execute.
+
+6. Reentrancy: There's no reentrancy vulnerability as there's no recursive call to external contracts.
+
+7. Front-Running: There's no transaction ordering dependency, hence no front-running vulnerability exists.
+
+8. Time manipulation: The contract does not rely on block.timestamp or now to make important decisions, hence no time manipulation vulnerability exists.
+
+9. Short Address Attack: This contract is not vulnerable to a short address attack as it does not take address arguments from external callers.

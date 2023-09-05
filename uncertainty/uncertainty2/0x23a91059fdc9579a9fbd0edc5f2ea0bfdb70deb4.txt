@@ -1,0 +1,19 @@
+The given smart contract has the following vulnerabilities:
+
+1. Reentrancy: In the `CashOut` function, the contract sends money before updating the internal state `balances[msg.sender]-=_am;`. This pattern is vulnerable to reentrancy attacks. If the `msg.sender` is a contract, it can call `CashOut` again before the `balances[msg.sender]-=_am;` is executed.
+
+2. Access Control: There are no access control mechanisms in place. Anyone can call the `AddMessage` function in the `Log` contract, which can lead to unauthorized operations.
+
+3. Unchecked Return Values For Low-Level Calls: The return value of `msg.sender.call.value(_am)()` is not checked. If this call fails for some reason, the contract will not be aware of the failure and continue execution.
+
+4. Denial of Service: If some malicious contract intentionally fails the `msg.sender.call.value(_am)()` call, it can lock up all funds of the victim in the contract.
+
+5. Arithmetic Issues: The contract does not check for overflows or underflows in arithmetic operations. For example, `balances[msg.sender] += msg.value;` could potentially overflow.
+
+6. Bad Randomness: Not applicable in this contract, as there is no use of randomness.
+
+7. Front-Running: Not applicable in this contract, as there is no transaction ordering dependence.
+
+8. Time manipulation: Not applicable in this contract, as there is no use of `now` or `block.timestamp` for crucial logic.
+
+9. Short Address Attack: Not applicable in this contract, as there is no external call with msg.data which is not in multiple of 32.

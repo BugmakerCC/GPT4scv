@@ -1,0 +1,3 @@
+[INFO] | 2023-08-14 03:00:23 AM | analyzer.etherpot_lotto | Analysis started at: 2023-08-14 03:00:23 AM
+[INFO] | 2023-08-14 03:00:23 AM | analyzer.etherpot_lotto | Version constraints: ['^0.4.0']
+[INFO] | 2023-08-14 03:00:23 AM | analyzer.etherpot_lotto | solc version: v0.4.0

@@ -1,0 +1,17 @@
+1. Reentrancy: The smart contract uses the .send() function to transfer ether, which could potentially make it vulnerable to a reentrancy attack. However, there are no external calls to untrusted contracts in the same transaction after the transfer, so it doesn't seem possible to exploit this vulnerability.
+
+2. Access Control: There's a potential access control vulnerability because the 'onlyWizard' modifier is used to protect some functions ('sweepCommission' and 'transferOwnership'). However, this is not necessarily a vulnerability if the 'wizardAddress' is trusted and securely stored.
+
+3. Arithmetic Issues: The contract does not use SafeMath or similar to prevent overflows and underflows. There is a risk of integer overflow in the 'claimThrone' function where the new claim price is calculated.
+
+4. Unchecked return values: The contract does not check the return value of the .send() function, which might lead to unexpected behavior if the ether transfer fails.
+
+5. Denial of Service: If the currentMonarch or the wizardAddress account becomes a contract that always throws exceptions, it could cause a Denial of Service (DoS) on the 'claimThrone' function.
+
+6. Bad Randomness: There is no use of randomness in this contract, so it's not vulnerable to attacks related to bad randomness.
+
+7. Front-Running: The contract could be vulnerable to a front-running attack where an attacker watches the pending transactions pool and then submits a transaction with a higher gas price to claim the throne before the original transaction gets a chance to be mined.
+
+8. Time manipulation: The contract uses block.timestamp (alias for now) which can be manipulated by miners to a certain degree. But it seems not to have a critical impact on the contract's logic.
+
+9. Short Address Attack: This contract does not take input directly from msg.sender without checking the length of the input, so it's not vulnerable to Short Address Attacks.

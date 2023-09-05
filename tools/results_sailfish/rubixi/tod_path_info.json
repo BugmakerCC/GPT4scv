@@ -1,0 +1,82 @@
+{
+    "tod_symex_path_1.json": {
+        "file_name": "",
+        "from_function": "fallback",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 288\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 298\nCall context: ,init\nTrue\npyramidMultiplier := 200\""
+        ],
+        "executable_instructions": 93,
+        "state_variable": "participants",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_2.json": {
+        "file_name": "",
+        "from_function": "fallback",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 310\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 322\nCall context: ,init\nTrue\npyramidMultiplier := 150\""
+        ],
+        "executable_instructions": 96,
+        "state_variable": "participants",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_3.json": {
+        "file_name": "",
+        "from_function": "fallback",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 332\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 342\nCall context: ,init\nTrue\npyramidMultiplier := 200\""
+        ],
+        "executable_instructions": 93,
+        "state_variable": "pyramidMultiplier",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_4.json": {
+        "file_name": "",
+        "from_function": "fallback",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 354\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 364\nCall context: ,init\nTrue\npyramidMultiplier := 200\""
+        ],
+        "executable_instructions": 93,
+        "state_variable": "pyramidMultiplier",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_5.json": {
+        "file_name": "",
+        "from_function": "fallback",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 376\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 128,
+        "state_variable": "balance",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_6.json": {
+        "file_name": "",
+        "from_function": "fallback",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 398\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 128,
+        "state_variable": "balance",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    }
+}

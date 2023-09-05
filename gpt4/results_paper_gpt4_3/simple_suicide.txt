@@ -1,0 +1,24 @@
+This contract contains the `Access Control` vulnerability. The `sudicideAnyone` function allows any caller to destroy the contract using the `selfdestruct` function. This function sends all remaining Ether stored in the contract to the `msg.sender` address, which can be anyone who calls the function. 
+
+There is no access control mechanism in place to restrict who can call this function. Typically, such a function should only be callable by the contract owner or other trusted addresses, and not by arbitrary addresses. 
+
+This vulnerability could be fixed by adding a modifier to check that `msg.sender` is the contract owner before allowing the function to execute. 
+
+For example:
+
+```
+contract SimpleSuicide {
+  address private owner;
+
+  function SimpleSuicide() public {
+    owner = msg.sender;
+  }
+
+  function sudicideAnyone() public {
+    require(msg.sender == owner);
+    selfdestruct(owner);
+  }
+
+}
+```
+In this updated contract, the `SimpleSuicide` constructor sets the `owner` variable to the address that deployed the contract. The `sudicideAnyone` function then checks that `msg.sender` is the `owner` before proceeding with the `selfdestruct` call.

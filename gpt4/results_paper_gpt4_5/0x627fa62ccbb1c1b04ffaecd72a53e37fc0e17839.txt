@@ -1,0 +1,21 @@
+After examining the smart contract, I could identify the following vulnerabilities:
+
+1. Reentrancy: The `WithdrawToHolder` function is vulnerable to a reentrancy attack. The `Holders[_addr]-=_wei;` statement should be before the `if(_addr.call.value(_wei)())`.
+
+2. Access Control: The `onlyOwner` modifier is missing the require statement. It should be `require(owner == msg.sender);` instead of `if(owner == msg.sender)_;`.
+
+3. Arithmetic Issues: There is no safety check for underflow when the code `Holders[_addr]-=_wei;` is executed. If `_wei` is larger than `Holders[_addr]`, it will underflow.
+
+4. Unchecked Return Values For Low Level Calls: The low-level call `token.call(bytes4(sha3("transfer(address,uint256)")),to,amount);` in the `WithdrawToken` function does not check the return value. 
+
+5. Denial of Service: Not present.
+
+6. Bad Randomness: Not present.
+
+7. Front-Running: Not present.
+
+8. Time manipulation: Not present.
+
+9. Short Address Attack: Not present.
+
+To fix these vulnerabilities, consider using `transfer` or `send` instead of `call.value()()`, which prevents reentrancy by limiting the amount of gas forwarded to other contracts. You should also use safe math operations to prevent arithmetic issues and always check the return value of external calls. Furthermore, you should use the `require` statement to enforce access control.

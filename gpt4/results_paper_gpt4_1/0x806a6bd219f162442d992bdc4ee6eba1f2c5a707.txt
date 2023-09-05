@@ -1,0 +1,19 @@
+This contract seems to have several vulnerabilities:
+
+1. Reentrancy: The `GetPie` function has a reentrancy vulnerability. The contract transfers ether to the sender and owner without taking into account the possible callback. The `withdraw` function might be vulnerable as well, depending on the nature of the owner address.
+
+2. Access Control: The contract allows the owner to be changed in the `withdraw` function, which is a major security flaw. This allows anyone who knows the hardcoded address to become the owner and take control of the contract.
+
+3. Arithmetic Issues: There's no apparent Arithmetic Issues in the provided code.
+
+4. Unchecked Return Values For Low Level Calls: The low level `call` function in `Command` does not check for its return value. If the called contract throws an exception, this will not be caught.
+
+5. Denial of Service: The `GetPie` function could potentially cause a denial of service if the contract's balance is continuously greater than 1 ether.
+
+6. Bad Randomness: There's no apparent Bad Randomness in the provided code.
+
+7. Front-Running: There's no apparent Front-Running in the provided code.
+
+8. Time manipulation: There's no apparent Time manipulation in the provided code.
+
+9. Short Address Attack: There's no apparent Short Address Attack in the provided code. However, the `Command` function is prone to this attack if the `adr` argument is not validated off-chain.

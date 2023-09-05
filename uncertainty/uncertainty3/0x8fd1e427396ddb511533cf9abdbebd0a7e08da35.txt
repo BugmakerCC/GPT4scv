@@ -1,0 +1,19 @@
+The smart contract has several vulnerabilities:
+
+1. **Reentrancy**: The function `WithdrawToHolder` allows for a reentrancy attack. The contract sends ether with `_addr.call.value(_wei)`, and only after that, it updates its state with `Holders[_addr]-=_wei`. If `_addr` is a malicious contract, it can call back `WithdrawToHolder` before `Holders[_addr]-=_wei` is executed, leading to the contract sending more ether than it should.
+
+2. **Unchecked Return Values For Low Level Calls**: The contract uses the `call` function in `WithdrawToken` and `WithdrawToHolder`, but it doesn't check the return value. This can lead to funds being locked in the contract if the call fails.
+
+3. **Access Control**: The `onlyOwner` modifier has a bug. The `if (owner == msg.sender)_;` should be `require(owner == msg.sender);`. In its current form, the modifier doesn't restrict the access to `onlyOwner` functions as it should.
+
+4. **Arithmetic Issues**: There's a potential underflow in `Holders[_addr]-=_wei`. If `_wei` is bigger than `Holders[_addr]`, the value of `Holders[_addr]` will underflow and become an extremely large number.
+
+5. **Denial of Service**: If a malicious contract becomes a holder, it can block the `WithdrawToHolder` function by always failing when it receives ether with `_addr.call.value(_wei)`. This will make the function fail and the contract won't be able to send ether to any holder.
+
+6. **Bad Randomness**: Not applicable. The contract doesn't rely on randomness.
+
+7. **Front-Running**: Not applicable. The contract doesn't have transactions where the order matters.
+
+8. **Time manipulation**: Not applicable. The contract doesn't rely on time or block timestamps.
+
+9. **Short Address Attack**: Not applicable. The contract doesn't take user input for addresses. All address inputs are either from `msg.sender` or function arguments.

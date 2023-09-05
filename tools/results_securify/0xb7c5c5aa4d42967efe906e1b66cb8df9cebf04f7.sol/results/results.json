@@ -1,0 +1,70 @@
+{
+  "/sb/0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.sol:keepMyEther": {
+    "results": {
+      "TODReceiver": {
+        "violations": [],
+        "warnings": [
+          24
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnhandledException": {
+        "violations": [
+          24
+        ],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODTransfer": {
+        "violations": [],
+        "warnings": [
+          24
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "DAO": {
+        "violations": [
+          24
+        ],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODAmount": {
+        "violations": [],
+        "warnings": [],
+        "safe": [
+          24
+        ],
+        "conflicts": []
+      },
+      "MissingInputValidation": {
+        "violations": [
+          16
+        ],
+        "warnings": [
+          22
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "DAOConstantGas": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnrestrictedEtherFlow": {
+        "violations": [],
+        "warnings": [],
+        "safe": [
+          24
+        ],
+        "conflicts": []
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+The smart contract provided has several vulnerabilities:
+
+1. **Reentrancy**: The contract is vulnerable to reentrancy attacks because it sends funds with `owner2.send(sum2);` and `owner.send(balance);` before it updates the contract state. An attacker can create a fallback function to call the `tokens_buy()` function, triggering a loop that drains the contract's funds.
+
+2. **Access Control**: The contract does not have a proper access control mechanism. It uses the `onlyOwner` modifier to restrict access to certain functions, but the contract does not have a mechanism to change the owner.
+
+3. **Unchecked Return Values For Low Level Calls**: The contract uses the low-level `call` function to transfer tokens and does not check the return value. If the `transferFrom` function fails for any reason, such as insufficient balance, the contract will not catch the error.
+
+4. **Arithmetic Issues**: The contract does not use the SafeMath library or equivalent measures to prevent integer overflow or underflow. The line `uint tokens_buy = msg.value*10**18/token_price;` is especially concerning because if `token_price` is set to a low value, the multiplication can cause an overflow.
+
+5. **Denial of Service**: The owner can set the `active` variable to 0, which would prevent anyone from buying tokens. This can be used to launch a denial of service attack on the contract.
+
+6. **Bad Randomness**: The contract does not use any randomness, so this is not an issue.
+
+7. **Front-Running**: The contract does not have any protection against front-running attacks.
+
+8. **Time manipulation**: The contract does not depend on time or block timestamps, so it is not vulnerable to time manipulation attacks.
+
+9. **Short Address Attack**: The contract does not check the length of the input data so it could be vulnerable to short address attacks. However, this is typically exploited in off-chain transactions, which are not applicable here.

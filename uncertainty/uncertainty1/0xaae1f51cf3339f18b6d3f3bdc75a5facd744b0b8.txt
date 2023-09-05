@@ -1,0 +1,21 @@
+Upon analyzing the given smart contract, the following vulnerabilities are detected:
+
+1. Reentrancy: The Collect function in the DEP_BANK contract is vulnerable to reentrancy attack because it makes an external call to an address using the call.value() syntax before it reduces the balance of the caller. An attacker can re-enter the function and drain more funds than they should be able to.
+
+2. Access Control: The SetMinSum, SetLogFile, and Initialized functions don't have any access control mechanisms. This means that anyone can call these functions and affect the state of the contract. This can lead to unauthorized changes in the contract behavior.
+
+3. Unchecked Return Values For Low Level Calls: The contract does not check the return value of the call method in the Collect function. If this call fails for some reason, the contract will not be able to detect it, which can cause unexpected behavior.
+
+4. Denial of Service: The contract can become a victim of a Denial of Service (DoS) attack if an attacker purposely fails the call in Collect function, thereby making the contract's ETH stuck.
+
+5. Bad Randomness: The contract does not seem to have any randomness related issues.
+
+6. Front-Running: The contract does not seem to have any front-running related issues.
+
+7. Time manipulation: The contract does not seem to have any time manipulation related issues.
+
+8. Short Address Attack: The contract does not seem to have any short address attack related issues.
+
+9. Arithmetic Issues: The contract does not seem to have any arithmetic related issues. However, it is generally recommended to use SafeMath library for arithmetic operations to prevent any possible overflows or underflows.
+
+Please note that the contract also uses an outdated version of Solidity (0.4.19), updating to the latest version will provide additional security features and checks.

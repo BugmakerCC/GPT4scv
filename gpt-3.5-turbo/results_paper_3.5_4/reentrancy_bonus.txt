@@ -1,0 +1,20 @@
+The given smart contract is vulnerable to the Reentrancy vulnerability. 
+
+In the `withdrawReward` function, the contract transfers the `amountToWithdraw` to the `recipient` using a low-level call. After the transfer, the contract checks if the call was successful (`success`) and then resets the `rewardsForA` balance for the `recipient` to zero.
+
+However, before resetting the balance, the `withdrawReward` function can be called again by the `recipient` if they have maliciously implemented a contract that triggers the `fallback` function. This allows the recipient to re-enter the `withdrawReward` function while still in the previous execution context. In each subsequent call, the `recipient` can repeatedly withdraw the same reward amount, draining the contract balance.
+
+To fix this vulnerability, it is recommended to use the "Checks-Effects-Interactions" pattern, where all external calls are made after state changes have been made and no further state changes are possible. In this case, the contract should reset the `rewardsForA` balance to zero before making the external call to transfer the reward to the `recipient`.
+
+Here's an updated version of the `withdrawReward` function that follows the pattern:
+
+```solidity
+function withdrawReward(address recipient) public {
+    uint amountToWithdraw = rewardsForA[recipient];
+    rewardsForA[recipient] = 0;
+
+    require(recipient.call.value(amountToWithdraw)(""));
+}
+```
+
+By resetting the balance before making the external call, the contract ensures that the `recipient` cannot re-enter the function and repeatedly withdraw the reward.

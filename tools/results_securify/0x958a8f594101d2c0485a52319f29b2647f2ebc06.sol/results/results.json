@@ -1,0 +1,77 @@
+{
+  "/sb/0x958a8f594101d2c0485a52319f29b2647f2ebc06.sol:Owned": {
+    "results": {
+      "TODReceiver": {
+        "violations": [],
+        "warnings": [],
+        "safe": [
+          54
+        ],
+        "conflicts": []
+      },
+      "UnhandledException": {
+        "violations": [
+          54
+        ],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODTransfer": {
+        "violations": [],
+        "warnings": [],
+        "safe": [
+          54
+        ],
+        "conflicts": []
+      },
+      "DAO": {
+        "violations": [],
+        "warnings": [
+          54
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODAmount": {
+        "violations": [],
+        "warnings": [],
+        "safe": [
+          54
+        ],
+        "conflicts": []
+      },
+      "MissingInputValidation": {
+        "violations": [
+          36
+        ],
+        "warnings": [
+          31,
+          43,
+          24
+        ],
+        "safe": [
+          52
+        ],
+        "conflicts": []
+      },
+      "DAOConstantGas": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnrestrictedEtherFlow": {
+        "violations": [],
+        "warnings": [],
+        "safe": [
+          54
+        ],
+        "conflicts": []
+      }
+    }
+  },
+  "/sb/0x958a8f594101d2c0485a52319f29b2647f2ebc06.sol:Marriage": {
+    "results": {}
+  }
+}

@@ -1,0 +1,21 @@
+Here is an analysis of the smart contract for the vulnerabilities you mentioned:
+
+1. Reentrancy: The contract does not have any external function calls that could potentially introduce reentrancy vulnerabilities.
+
+2. Access Control: The contract does not have any explicit access control mechanisms. This means that anyone can call the `sendToWinner` and `withdrawLeftOver` functions.
+
+3. Arithmetic Issues: The contract does not perform any arithmetic operations.
+
+4. Unchecked Return Values For Low Level Calls: The contract uses the `send` function to transfer funds to the winner and the `this.balance` to withdraw leftover funds. Both of these functions do not return a value, so there are no return values to check.
+
+5. Denial of Service: There are no issues related to gas limit reached, unexpected throw, or unexpected kill in this contract. However, the lack of access control could potentially result in unauthorized users withdrawing leftover funds, which could be considered a breach in access control.
+
+6. Bad Randomness: The contract does not involve any randomness.
+
+7. Front-Running: The contract does not have any interactions with other contracts or external transactions that could introduce front-running vulnerabilities.
+
+8. Time Manipulation: The contract does not rely on timestamps for any critical functionality.
+
+9. Short Address Attack: The contract does not have any off-chain issues or client vulnerabilities.
+
+Overall, the contract does not have significant vulnerabilities. However, it lacks access control, allowing anyone to call the functions and potentially withdraw leftover funds. It is recommended to implement access control mechanisms to prevent unauthorized access to these functions.

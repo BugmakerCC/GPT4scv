@@ -1,0 +1,17 @@
+1. **Reentrancy**: There is a potential reentrancy vulnerability in the payout function. The winner.transfer(ethToTransfer); allows for external calls before the state (in this case, the balance) is updated, which could open the possibility for a reentrancy attack.
+
+2. **Access Control**: The contract uses the onlyOwner modifier to restrict access to certain functions. However, the owner is not defined in the constructor, which means it could be potentially manipulated.
+
+3. **Arithmetic Issues**: No arithmetic issues were found in this contract.
+
+4. **Unchecked Return Values For Low Level Calls**: The low level call whale.call.value(amount)(bytes4(keccak256("donate()"))); in the donateToWhale and loseWager functions does not check the return value, which could potentially fail silently.
+
+5. **Denial of Service**: The contract does not seem to have denial of service vulnerabilities.
+
+6. **Bad Randomness**: The winning number is generated using the blockhash and msg.sender, which could potentially be manipulated by a miner.
+
+7. **Front-Running**: There might be a front-running vulnerability in the play function because the result of the game is determined by information that is available to miners before the transaction is mined.
+
+8. **Time manipulation**: The contract uses block.number for timestamps which can be manipulated by miners to a certain degree.
+
+9. **Short Address Attack**: The contract does not seem to have short address attack vulnerabilities because the length of the address is not directly used in any calculations. However, it's always good to ensure that user inputs are validated properly.

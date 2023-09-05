@@ -1,0 +1,36 @@
+The provided smart contract is susceptible to the Reentrancy vulnerability.
+
+Reentrancy vulnerability occurs when an external contract is called within the current contract without properly handling the execution flow. In this case, the `withdrawAll()` function allows the user to withdraw their entire credit balance. However, it does not protect against reentrancy attacks.
+
+An attacker can create a malicious contract that calls the `withdrawAll()` function repeatedly before the balance is updated, allowing them to drain the contract's balance.
+
+To fix this vulnerability, you should consider using the "Checks-Effects-Interactions" pattern. This pattern involves performing all necessary checks and updates before interacting with external contracts.
+
+Here's an updated version of the smart contract with the fix:
+
+```solidity
+pragma solidity ^0.4.19;
+
+contract ReentrancyDAO {
+    mapping (address => uint) credit;
+    uint balance;
+
+    function withdrawAll() public {
+        uint oCredit = credit[msg.sender];
+        if (oCredit > 0) {
+            credit[msg.sender] = 0;
+            balance -= oCredit;
+
+            bool callResult = msg.sender.call.value(oCredit)();
+            require(callResult);
+        }
+    }
+
+    function deposit() public payable {
+        credit[msg.sender] += msg.value;
+        balance += msg.value;
+    }
+}
+```
+
+In the updated version, the contract first updates the credit balance and then subtracts the credit from the contract's balance. This ensures that the attacker cannot repeatedly call the `withdrawAll()` function and drain the contract's balance.

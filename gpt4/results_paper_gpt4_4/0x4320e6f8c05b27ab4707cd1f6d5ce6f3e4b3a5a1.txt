@@ -1,0 +1,21 @@
+The smart contract provided has several potential vulnerabilities:
+
+1. Reentrancy: The 'Collect' function is vulnerable to reentrancy because it calls an external contract (with 'msg.sender.call.value(_am)()') before it updates the state (with 'balances[msg.sender]-=_am;'). This means a malicious contract could continuously call the 'Collect' function and drain the contract's Ether before the balance gets updated.
+
+2. Access Control: The functions 'SetMinSum', 'SetLogFile', and 'Initialized' can be called by anyone because there are no access control checks. This could allow a malicious user to alter the state of the contract in unintended ways. 
+
+3. Arithmetic Issues: Potential for integer underflow exists in the 'Collect' function when the balance is subtracted. If the subtraction results in a negative number, it will underflow and become a very large number due to the unsigned integer data type.
+
+4. Unchecked Return Values For Low Level Calls: The return value of 'msg.sender.call.value(_am)()' in the 'Collect' function is not checked, which could allow for silent failing sends.
+
+5. Denial of Service: The 'Collect' function could potentially be exploited in a way that it could run out of gas if a malicious contract's fallback function consumes a lot of gas.
+
+6. Bad Randomness: Not applicable as there are no random number generations in the contract.
+
+7. Front-Running: Not directly applicable as there are no transactions depending on the order of other transactions.
+
+8. Time manipulation: Not directly applicable as there are no critical operations dependent on timestamps.
+
+9. Short Address Attack: While not a direct vulnerability in the contract, if the user input is not validated in the calling function, it could potentially lead to a Short Address Attack. 
+
+Please note that this analysis does not guarantee the contract is free from other security issues, hidden bugs or logic errors.

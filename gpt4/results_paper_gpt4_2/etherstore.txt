@@ -1,0 +1,16 @@
+This smart contract has a Reentrancy vulnerability. 
+
+The function `withdrawFunds` makes a call to an external contract (the contract of `msg.sender`) before it reduces the balance of `msg.sender` (`balances[msg.sender] -= _weiToWithdraw`). 
+
+An attacker could create a malicious contract that, when called by `withdrawFunds`, re-enters `withdrawFunds` before the first call to `withdrawFunds` has finished. This would allow the attacker to drain more Ether than they should be able to, because `balances[msg.sender]` is only reduced after the call to the external contract.
+
+To fix this vulnerability, the state variable (`balances[msg.sender]`) should be updated before calling the external contract:
+
+```
+balances[msg.sender] -= _weiToWithdraw;
+require(msg.sender.call.value(_weiToWithdraw)());
+```
+
+Other vulnerabilities like Access Control, Arithmetic Issues, Unchecked Return Values For Low Level Calls, Denial of Service, Bad Randomness, Front-Running, Time manipulation, Short Address Attack do not seem to be present in this contract. However, a more thorough analysis might be necessary to confirm this. 
+
+Please note that using `call.value()` is also a security risk because it forwards all remaining gas and can invoke fallback functions in recipient contracts. Using `transfer()` or `send()` is safer because they limit gas sent to the recipient to a set amount, preventing reentrancy attacks. But, as shown in this contract, even if using `transfer()` or `send()`, the state variable (`balances[msg.sender]`) should be updated before calling the external contract.

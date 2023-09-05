@@ -1,0 +1,17 @@
+The smart contract provided appears to have several vulnerabilities:
+
+1.  **Reentrancy:** The contract may be vulnerable to reentrancy attacks in the `payout` and `loseWager` functions. In both of these functions, the contract makes an external call to transfer funds before it modifies its state, which could be exploited to initiate a recursive call. 
+
+2. **Access Control:** There are several checks for `onlyOwner` and `isOpenToPublic` which is good, but still need to ensure that these checks are correctly implemented and sufficient.
+
+3. **Unchecked Return Values For Low Level Calls:** The contract uses `call` in the `donateToWhale` and `loseWager` functions without checking the return value. If these calls fail, the contract will continue execution without being aware of the failure.
+
+4. **Bad Randomness:** The contract uses `blockhash` and `msg.sender` to generate a "random" number in the `play` function. This is a poor source of randomness because miners can manipulate `blockhash`, and `msg.sender` is predictable.
+
+5. **Front-Running:** The `play` function could potentially be vulnerable to front-running attacks, as the result of the function depends on public variables (`blockhash` and `msg.sender`). A malicious user could watch the transaction pool and submit their own transaction with a higher gas price to ensure it gets mined first.
+
+6. **Timestamp Dependence:** The contract uses `block.number` in the `play` function. This can be manipulated by miners to some degree.
+
+7. **Integer Underflow:** In the `play` function, if `difficulty` is less than 2, the expression `difficulty / 2` could result in zero, leading to an underflow.
+
+To mitigate these vulnerabilities, consider using the Checks-Effects-Interactions pattern for handling external calls, check the return values of all low level calls, use a safe and unpredictable source of randomness, prevent front-running by making the function results independent of public variables, and use SafeMath to prevent underflows and overflows.

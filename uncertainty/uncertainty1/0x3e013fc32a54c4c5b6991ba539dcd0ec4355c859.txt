@@ -1,0 +1,19 @@
+1. Reentrancy: The contract is vulnerable to a reentrancy attack because it calls an external function before updating the state. In the `multiplicate` function, the contract transfers ether to address `adr` before the `this.balance` can update. An attacker can call back into the contract before `this.balance` has been updated.
+
+2. Access Control: The contract is vulnerable here as well. The `withdraw` and `Command` functions can only be called by the `Owner` but there is no function to change the `Owner`, if the owner loses his private key the funds will be locked forever in the contract.
+
+3. Arithmetic Issues: There don't appear to be any arithmetic issues in this contract. 
+
+4. Unchecked Return Values For Low Level Calls: The contract uses a low-level `call` function in the `Command` function without checking its return value. If this call fails, the contract will not be notified.
+
+5. Denial of Service: The contract does not seem to have any typical DoS vulnerabilities. 
+
+6. Bad Randomness: There is no randomness in this contract.
+
+7. Front-Running: As the contract does not depend on transaction ordering or external data, it is not vulnerable to front-running.
+
+8. Time manipulation: The contract does not depend on block timestamps, so it is not vulnerable to time manipulation.
+
+9. Short Address Attack: The contract does not make any assumptions about the length of `msg.sender`, so it is not vulnerable to a short address attack.
+
+In conclusion, the contract is vulnerable to reentrancy and unchecked return values for low-level calls. It also has a potential risk related to access control.

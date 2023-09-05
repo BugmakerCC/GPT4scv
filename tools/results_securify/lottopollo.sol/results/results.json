@@ -1,0 +1,81 @@
+{
+  "/sb/lottopollo.sol:lottopollo": {
+    "results": {
+      "TODReceiver": {
+        "violations": [
+          16
+        ],
+        "warnings": [
+          13
+        ],
+        "safe": [
+          16
+        ],
+        "conflicts": []
+      },
+      "UnhandledException": {
+        "violations": [
+          13,
+          16
+        ],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODTransfer": {
+        "violations": [],
+        "warnings": [
+          13
+        ],
+        "safe": [
+          16
+        ],
+        "conflicts": []
+      },
+      "DAO": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODAmount": {
+        "violations": [
+          16
+        ],
+        "warnings": [],
+        "safe": [
+          13
+        ],
+        "conflicts": []
+      },
+      "MissingInputValidation": {
+        "violations": [],
+        "warnings": [
+          24,
+          10,
+          28
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "DAOConstantGas": {
+        "violations": [],
+        "warnings": [
+          13,
+          16
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnrestrictedEtherFlow": {
+        "violations": [],
+        "warnings": [],
+        "safe": [
+          13,
+          16
+        ],
+        "conflicts": []
+      }
+    }
+  }
+}

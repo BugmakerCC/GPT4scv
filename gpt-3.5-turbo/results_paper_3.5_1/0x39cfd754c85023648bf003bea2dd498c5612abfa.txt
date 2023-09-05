@@ -1,0 +1,21 @@
+Here are the vulnerabilities detected in the given smart contract:
+
+1. Reentrancy: The contract is susceptible to reentrancy attacks as it makes an external call to `WithdrawToken` contract function without ensuring that the called contract's code will not call back into the calling contract.
+
+2. Access Control: The contract does have an access control mechanism in place with the `onlyOwner` modifier, but it is not used consistently throughout the contract.
+
+3. Arithmetic Issues: There are no specific arithmetic issues present in the contract.
+
+4. Unchecked Return Values For Low Level Calls: The contract makes a low-level call to the `WithdrawToken` function without checking the return value, which can result in silent failures if the called contract does not execute successfully.
+
+5. Denial of Service: The contract does not have any explicit checks or mechanisms to prevent denial of service attacks such as gas limit reached, unexpected throw, unexpected kill, or breached access control.
+
+6. Bad Randomness: There are no randomness-related issues in the contract.
+
+7. Front-Running: The contract does not have any explicit checks or mechanisms to prevent front-running attacks such as time-of-check vs time-of-use (TOCTOU) or transaction ordering dependence (TOD).
+
+8. Time Manipulation: The contract does not have any explicit checks or mechanisms to prevent time manipulation attacks.
+
+9. Short Address Attack: The contract does not have any off-chain or client vulnerabilities related to short address attack.
+
+Overall, the contract is vulnerable to reentrancy attacks and has some issues related to access control and unchecked return values for low-level calls.

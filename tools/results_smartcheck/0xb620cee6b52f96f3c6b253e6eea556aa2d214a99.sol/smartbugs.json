@@ -1,0 +1,50 @@
+{
+    "docker": {
+        "command": null,
+        "detach": true,
+        "entrypoint": "'/sb/bin/do_solidity.sh' '/sb/0xb620cee6b52f96f3c6b253e6eea556aa2d214a99.sol' '/sb/bin'",
+        "image": "smartbugs/smartcheck",
+        "user": 0,
+        "volumes": {
+            "C:\\Users\\10976\\AppData\\Local\\Temp\\tmphhp_9s4l": {
+                "bind": "/sb",
+                "mode": "rw"
+            }
+        }
+    },
+    "filename": "all\\0xb620cee6b52f96f3c6b253e6eea556aa2d214a99.sol",
+    "platform": {
+        "cpu": "12th Gen Intel(R) Core(TM) i7-12700H",
+        "python": "3.11.1.final.0 (64 bit)",
+        "release": "10",
+        "smartbugs": "2.0.7",
+        "system": "Windows",
+        "version": "10.0.22621"
+    },
+    "result": {
+        "duration": 2.4124574661254883,
+        "exit_code": 0,
+        "logs": "result.log",
+        "output": null,
+        "start": 1679495191.9050565
+    },
+    "runid": "20230322_1417",
+    "solc": "0.4.26",
+    "tool": {
+        "bin": "scripts",
+        "command": null,
+        "cpu_quota": null,
+        "entrypoint": "'$BIN/do_solidity.sh' '$FILENAME' '$BIN'",
+        "id": "smartcheck",
+        "image": "smartbugs/smartcheck",
+        "info": "Securify automatically checks for vulnerabilities and bad coding practices. It runs lexical and syntactical analysis on Solidity source code.",
+        "mem_limit": null,
+        "mode": "solidity",
+        "name": "Smartcheck",
+        "origin": "https://github.com/smartdec/smartcheck",
+        "output": null,
+        "parser": "parser.py",
+        "solc": true,
+        "version": null
+    }
+}

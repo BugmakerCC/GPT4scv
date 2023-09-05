@@ -1,0 +1,21 @@
+The smart contract provided has a number of vulnerabilities:
+
+1. Reentrancy: The contract has multiple `call.value()` placed in the contract, which is a potential for reentrancy attacks. In the `withdraw()` function, `if (!requests[0].requester.call.value(this.balance)())`, if the caller is a contract, it can call `withdraw()` again before the first call finishes, resulting in more Ether being withdrawn than should be possible. The same issue can be observed in the `request()` and `cancel()` functions.
+
+2. Access Control: The smart contract does not implement any access controls for critical functions such as `upgrade()`, `reset()`, `suspend()`, `restart()`, and `withdraw()`. Any user can call these functions, which can lead to unauthorized contract behavior.
+
+3. Arithmetic Issues: The contract does not use SafeMath library for arithmetic operations. This leaves the contract vulnerable to underflow and overflow attacks.
+
+4. Unchecked Return Values For Low Level Calls: Low-level calls are used in the contract without checking their return values. This can lead to unexpected contract behavior.
+
+5. Denial of Service: If an attacker manages to keep the `requestCnt` always increasing by continuously calling the `request()` function, it might cause a Denial of Service because the `deliver()` function will not be able to find the correct `requestId` to respond to.
+
+6. Bad Randomness: Not applicable since there is no randomness in this contract.
+
+7. Front-Running: Not applicable since there is no transaction ordering dependency in this contract.
+
+8. Time manipulation: Not applicable since there is no timestamp dependency in this contract.
+
+9. Short Address Attack: Not applicable as there are no off-chain issues or client vulnerabilities in this contract. 
+
+Recommendations to fix these vulnerabilities would be to use reentrancy guards, implement access controls, use SafeMath library for arithmetic operations, check the return value of low-level calls, avoid using `call.value()` and manage state variables to prevent a Denial of Service attack.

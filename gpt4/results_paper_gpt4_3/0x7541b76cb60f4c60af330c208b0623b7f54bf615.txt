@@ -1,0 +1,15 @@
+This smart contract has a few potential vulnerabilities:
+
+1. Reentrancy: The `Collect` function is vulnerable to a reentrancy attack. Although the balance gets deducted after the `call.value`, an attacker could re-enter the function and drain more funds than their balance. This is because the state of the contract (the balance of the account) is not updated until after the external call.
+
+2. Access Control: There is no explicit access control in place to restrict who can call the `Put` and `Collect` functions. This could potentially allow an attacker to deposit or withdraw funds from other accounts.
+
+3. Arithmetic Issues: The `Put` and `Collect` functions have potential arithmetic issues. For `Put`, it directly adds `msg.value` to `acc.balance` without checking for overflows. For `Collect`, it directly subtracts `_am` from `acc.balance` without checking for underflows.
+
+4. Unchecked Return Values: The low-level call `msg.sender.call.value(_am)()` in the `Collect` function doesn't check the return value. If this call fails for any reason, the contract continues its execution as if nothing happened.
+
+5. Denial of Service: An attacker could potentially cause a denial of service attack by forcing the contract to execute an infinite loop or causing the gas to reach its limit.
+
+6. Bad Randomness, Front-Running, Time manipulation, and Short Address Attack vulnerabilities do not seem to be present in this contract.
+
+Please note that this is a brief analysis and it's always recommended to conduct a full audit for any smart contract before deployment.

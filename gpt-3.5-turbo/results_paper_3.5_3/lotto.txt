@@ -1,0 +1,21 @@
+Here is a step-by-step analysis of the smart contract for the mentioned vulnerabilities:
+
+1. Reentrancy: The `sendToWinner()` function does not have any recursive calls or external contract calls, so it is not vulnerable to reentrancy.
+
+2. Access Control: There is no explicit access control mechanism implemented in this contract. It is important to consider who can call `sendToWinner()` and `withdrawLeftOver()` functions. If these functions should only be called by specific addresses, an access control mechanism should be added.
+
+3. Arithmetic Issues: There are no arithmetic operations in this contract, so it is not vulnerable to arithmetic issues.
+
+4. Unchecked Return Values For Low-Level Calls: The contract uses the `send()` function, which returns a boolean value indicating the success or failure of the call. However, the return value is not checked, making it susceptible to silent failing sends. It is recommended to use the `transfer()` or `call.value()` methods, which automatically revert in case of failure.
+
+5. Denial of Service: The contract does not have any explicit gas limit checks or access control breaches that could lead to denial of service vulnerabilities.
+
+6. Bad Randomness: There is no randomness generation in this contract, so it is not vulnerable to bad randomness.
+
+7. Front-Running: The contract does not have any sensitive operations that could be exploited by front-running attacks.
+
+8. Time Manipulation: The contract does not have any timestamp-dependent logic, so it is not vulnerable to time manipulation.
+
+9. Short Address Attack: The contract does not have any off-chain issues or client vulnerabilities that could lead to short address attacks.
+
+Overall, the contract does not exhibit any significant vulnerabilities, but it lacks certain security measures like access control and proper handling of return values for low-level calls. These issues should be addressed to ensure the contract's security.

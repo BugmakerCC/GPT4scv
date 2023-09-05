@@ -1,0 +1,9 @@
+This smart contract contains an Access Control vulnerability (specifically a Constructor Misuse vulnerability). The constructor function is misspelled as `missing()` instead of the correct `constructor()`. This is an issue because the `missing()` function will never be called when the contract is created, hence the `owner` variable will never be set. This means that the `onlyowner` modifier will always fail, because `msg.sender` will never be equal to `owner` (which is `address(0)`). 
+
+This will result in two different issues:
+
+1. Denial of Service: The `withdraw()` function will always fail because the `onlyowner` modifier is never fulfilled. Hence, any ether sent to the contract will be locked there forever.
+
+2. Anyone can become the owner: If someone else detects this issue, they can call the `missing()` function to become the `owner` of the contract, which is a serious access control issue.
+
+To fix this, you should rename the `missing()` function to `constructor()` and make it `public`, then the contract would work as expected.

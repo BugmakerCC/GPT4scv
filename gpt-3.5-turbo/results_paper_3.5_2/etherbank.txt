@@ -1,0 +1,22 @@
+The provided smart contract is vulnerable to the Reentrancy vulnerability. Here's the explanation:
+
+In the `withdrawBalance` function, the contract transfers the user's balance to the user's address using `msg.sender.call.value(amountToWithdraw)()`.
+
+This transfer is done before setting the user's balance to zero, which means that if the user's address is a malicious contract, it can call back the `withdrawBalance` function recursively before the balance is set to zero.
+
+By calling the `withdrawBalance` function recursively, the malicious contract will receive the balance multiple times, resulting in a reentrancy attack.
+
+To fix this vulnerability, the contract should follow the "Checks-Effects-Interactions" pattern, which means that all state changes should be done before any external calls. In this case, the balance should be set to zero before transferring the balance to the user's address.
+
+Here's the modified `withdrawBalance` function:
+
+```solidity
+function withdrawBalance() {
+    uint amountToWithdraw = userBalances[msg.sender];
+    userBalances[msg.sender] = 0;
+    
+    if (!(msg.sender.call.value(amountToWithdraw)())) { throw; }
+}
+```
+
+By moving the `userBalances[msg.sender] = 0;` statement before the external call, we ensure that the balance is set to zero before any external call is made, preventing reentrancy attacks.

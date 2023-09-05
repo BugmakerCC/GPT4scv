@@ -1,0 +1,21 @@
+The provided smart contract code has several security vulnerabilities:
+
+1. Reentrancy: The `WithdrawToHolder` and `WitdrawTokenToHolder` functions are vulnerable to reentrancy attacks because they call external contracts (`_addr.call.value(_wei)()` and `WithdrawToken(_token,_amount,_to)` respectively) before updating the state (`Holders[_addr]-=_wei;` and `Holders[_to]=0;` respectively).
+
+2. Access Control: The contract seems to be using an access control mechanism with the `onlyOwner` modifier. However, this modifier is incorrectly implemented because it doesn't revert the transaction when the `msg.sender` is not the `owner`. The `if(owner == msg.sender)_;` should be replaced with `require(owner == msg.sender);`.
+
+3. Arithmetic Issues: The `Holders[msg.sender]+=msg.value;` and `Holders[_addr]-=_wei;` can be vulnerable to integer overflow and underflow if not properly checked. 
+
+4. Unchecked Return Values: The low-level calls in `WithdrawToHolder` and `WithdrawToken` functions do not check the return value. If these calls fail, the contract will not be aware of it.
+
+5. Denial of Service: The `changeOwner` function can be used to permanently lock the contract if an address that does not contain any code is set as the `newOwner`. The contract will be unable to call `confirmOwner` and the access control will be permanently locked.
+
+6. Bad Randomness: Not applicable in this contract as it doesn't use any randomness.
+
+7. Front-Running: Not directly applicable, but the owner could potentially front-run `WitdrawTokenToHolder` or `WithdrawToHolder` transactions, emptying an account before a legitimate withdrawal.
+
+8. Time manipulation: Not applicable as this contract does not rely on timestamps or block numbers for functionality.
+
+9. Short Address Attack: Not directly applicable as the contract does not parse the input data in a way that could be exploited with a short address attack.
+
+Please note that this analysis does not guarantee the contract is safe. It is always recommended to have contracts audited by a professional security firm.

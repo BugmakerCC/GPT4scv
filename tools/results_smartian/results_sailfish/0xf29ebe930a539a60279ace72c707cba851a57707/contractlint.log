@@ -1,0 +1,34 @@
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Analysis started at: 2023-08-14 02:57:26 AM
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Version constraints: ['^0.4.24']
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | solc version: v0.4.24
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Callgraph generation started!
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Callgraph generation finished!
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Value Range Analysis started
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Generating return summary for go
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Return summary generated for go
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Processed function go
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Generating return summary for fallback
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Return summary generated for fallback
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Processed function fallback
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Generating return summary for slitherConstructorVariables
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Return summary generated for slitherConstructorVariables
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Range graph generated
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Processed function slitherConstructorVariables
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Value Range Analysis took 0.000684 seconds
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Value Range Analysis finished
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Dependency detection started!
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Dependency detection finished!
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Static Analysis took 0.141353 seconds
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Dependency does not exist
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Symbolic execution is not needed!
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Analysis finished!
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Analysis took 0.141537 seconds
+[INFO] | 2023-08-14 02:57:26 AM | analyzer.0xf29ebe930a539a60279ace72c707cba851a57707 | Analysis finished at: 2023-08-14 02:57:26 AM

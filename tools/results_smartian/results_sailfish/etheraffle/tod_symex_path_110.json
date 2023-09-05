@@ -1,0 +1,1194 @@
+{
+    "file": "etheraffle.sol",
+    "global_structs": [
+        {
+            "name": "Contestant",
+            "fields": {
+                "addr": [
+                    "integer"
+                ],
+                "raffleId": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0x8a2"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0x8a3"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x8a4"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "prize",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x3"
+            ]
+        },
+        {
+            "name": "fee",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x6"
+            ]
+        },
+        {
+            "name": "totalTickets",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x5"
+            ]
+        },
+        {
+            "name": "pricePerTicket",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x4"
+            ]
+        },
+        {
+            "name": "contestants",
+            "type": [
+                "array",
+                "integer",
+                "Contestant"
+            ],
+            "init": []
+        },
+        {
+            "name": "gaps",
+            "type": [
+                "array",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "raffleId",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x21"
+            ]
+        },
+        {
+            "name": "blockNumber",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x20"
+            ]
+        },
+        {
+            "name": "nextTicket",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x1f"
+            ]
+        },
+        {
+            "name": "feeAddress",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x7"
+            ]
+        },
+        {
+            "name": "paused",
+            "type": [
+                "boolean"
+            ],
+            "init": [
+                "0x1e"
+            ]
+        },
+        {
+            "name": "Ethraffle_v4b",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x3",
+            "instructions": [
+                "prize = 2500000000000000000"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x4",
+            "instructions": [
+                "TMP_64 = 2500000000000000000 + fee",
+                "pricePerTicket = TMP_64"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x5",
+            "instructions": [
+                "totalTickets = 50"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x6",
+            "instructions": [
+                "fee = 30000000000000000"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x7",
+            "instructions": [
+                "feeAddress = msg_sender"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x1e",
+            "instructions": [
+                "paused = false"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x1f",
+            "instructions": [
+                "nextTicket = 0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x20",
+            "instructions": [
+                "CLR_0 = block.number",
+                "blockNumber = CLR_0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x21",
+            "instructions": [
+                "raffleId = 1"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x8a2",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x8a3",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x8a4",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "contestants",
+            "addrs": [
+                "0x2",
+                "0x9",
+                "0xb",
+                "0x36",
+                "0x51"
+            ]
+        },
+        {
+            "name": "gaps",
+            "addrs": [
+                "0x2",
+                "0xd",
+                "0x1a",
+                "0x3a",
+                "0x55"
+            ]
+        },
+        {
+            "name": "paused",
+            "addrs": [
+                "0x2",
+                "0xf",
+                "0x1d"
+            ]
+        },
+        {
+            "name": "raffleId",
+            "addrs": [
+                "0x2",
+                "0x11",
+                "0x23",
+                "0x3e"
+            ]
+        },
+        {
+            "name": "nextTicket",
+            "addrs": [
+                "0x2",
+                "0x14",
+                "0x28",
+                "0x2d",
+                "0x43",
+                "0x48"
+            ]
+        },
+        {
+            "name": "blockNumber",
+            "addrs": [
+                "0x2",
+                "0x17",
+                "0x31",
+                "0x4c"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb",
+            "instructions": [
+                "RTMP_69 = 0 < 50",
+                "RTMP_70 = 0 < 50",
+                "RTMP_71 = RTMP_69 || RTMP_70",
+                "CONDITION RTMP_71 0xa 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa",
+            "instructions": [
+                "CLR_1 = contestants[U]",
+                "REF_32 = CLR_1",
+                "CLR_2 = REF_32.raffleId",
+                "REF_33 = CLR_2",
+                "REF_32.raffleId = 0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xd",
+            "instructions": [
+                "RTMP_72 = 0 < 50",
+                "RTMP_73 = 0 < 50",
+                "RTMP_74 = RTMP_72 || RTMP_73",
+                "CONDITION RTMP_74 0xc 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xc",
+            "instructions": [
+                "gaps = 0",
+                "gaps = 0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xf",
+            "instructions": [
+                "CLR_3 = msg.sender",
+                "RTMP_75 = CLR_3 == feeAddress",
+                "CONDITION RTMP_75 0xe 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xe",
+            "instructions": [
+                "paused = true"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x11",
+            "instructions": [
+                "CLR_4 = msg.sender",
+                "RTMP_77 = CLR_4 == feeAddress",
+                "CONDITION RTMP_77 0x12 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x12",
+            "instructions": [
+                "RTMP_78 = 0 < 50",
+                "RTMP_79 = 0 < 50",
+                "RTMP_80 = RTMP_78 || RTMP_79",
+                "CONDITION RTMP_80 0x1 0x10"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x10",
+            "instructions": [
+                "TMP_76 = raffleId + 1",
+                "raffleId = TMP_76"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x14",
+            "instructions": [
+                "CLR_5 = msg.sender",
+                "RTMP_81 = CLR_5 == feeAddress",
+                "CONDITION RTMP_81 0x15 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x15",
+            "instructions": [
+                "RTMP_82 = 0 < 50",
+                "RTMP_83 = 0 < 50",
+                "RTMP_84 = RTMP_82 || RTMP_83",
+                "CONDITION RTMP_84 0x1 0x13"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x13",
+            "instructions": [
+                "nextTicket = 0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x17",
+            "instructions": [
+                "CLR_6 = msg.sender",
+                "RTMP_85 = CLR_6 == feeAddress",
+                "CONDITION RTMP_85 0x18 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x18",
+            "instructions": [
+                "RTMP_86 = 0 < 50",
+                "RTMP_87 = 0 < 50",
+                "RTMP_88 = RTMP_86 || RTMP_87",
+                "CONDITION RTMP_88 0x1 0x16"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x16",
+            "instructions": [
+                "CLR_7 = block.number",
+                "blockNumber = CLR_7"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1a",
+            "instructions": [
+                "CLR_8 = msg.sender",
+                "RTMP_89 = CLR_8 == feeAddress",
+                "CONDITION RTMP_89 0x1b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1b",
+            "instructions": [
+                "RTMP_90 = 0 < 50",
+                "RTMP_91 = 0 < 50",
+                "RTMP_92 = RTMP_90 || RTMP_91",
+                "CONDITION RTMP_92 0x1 0x19"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x19",
+            "instructions": [
+                "REF_34 = NEW_VAL integer",
+                "gaps.length = 0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1d",
+            "instructions": [
+                "CLR_9 = msg.sender",
+                "RTMP_94 = CLR_9 == feeAddress",
+                "CONDITION RTMP_94 0x1c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1c",
+            "instructions": [
+                "TMP_93 = ! paused",
+                "paused = TMP_93"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x23",
+            "instructions": [
+                "CLR_10 = msg.value",
+                "RTMP_96 = CLR_10 >= pricePerTicket",
+                "CLR_11 = msg.value",
+                "RTMP_97 = CLR_11 >= pricePerTicket",
+                "RTMP_98 = RTMP_96 || RTMP_97",
+                "CONDITION RTMP_98 0x1 0x24"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x24",
+            "instructions": [
+                "RTMP_99 = nextTicket < 50",
+                "CONDITION RTMP_99 0x1 0x25"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x25",
+            "instructions": [
+                "RTMP_95 = paused == true",
+                "CONDITION RTMP_95 0x1 0x26"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x26",
+            "instructions": [
+                "RTMP_100 = nextTicket == 50",
+                "CONDITION RTMP_100 0x22 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x22",
+            "instructions": [
+                "TMP_65 = raffleId + 1",
+                "raffleId = TMP_65"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2d",
+            "instructions": [
+                "CLR_12 = msg.value",
+                "RTMP_115 = CLR_12 >= pricePerTicket",
+                "CLR_13 = msg.value",
+                "RTMP_116 = CLR_13 >= pricePerTicket",
+                "RTMP_117 = RTMP_115 || RTMP_116",
+                "CONDITION RTMP_117 0x2e 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2e",
+            "instructions": [
+                "RTMP_118 = nextTicket < 50",
+                "CONDITION RTMP_118 0x2f 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2f",
+            "instructions": [
+                "RTMP_114 = paused == true",
+                "CONDITION RTMP_114 0x1 0x2c"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2c",
+            "instructions": [
+                "TMP_113 = nextTicket + 1",
+                "nextTicket = TMP_113"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x31",
+            "instructions": [
+                "CLR_14 = msg.value",
+                "RTMP_108 = CLR_14 >= pricePerTicket",
+                "CLR_15 = msg.value",
+                "RTMP_109 = CLR_15 >= pricePerTicket",
+                "RTMP_110 = RTMP_108 || RTMP_109",
+                "CONDITION RTMP_110 0x1 0x32"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x32",
+            "instructions": [
+                "RTMP_111 = nextTicket < 50",
+                "CONDITION RTMP_111 0x1 0x33"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x33",
+            "instructions": [
+                "RTMP_107 = paused == true",
+                "CONDITION RTMP_107 0x1 0x34"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x34",
+            "instructions": [
+                "RTMP_112 = nextTicket == 50",
+                "CONDITION RTMP_112 0x30 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x30",
+            "instructions": [
+                "CLR_16 = block.number",
+                "blockNumber = CLR_16"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x36",
+            "instructions": [
+                "CLR_17 = msg.value",
+                "RTMP_120 = CLR_17 >= pricePerTicket",
+                "CLR_18 = msg.value",
+                "RTMP_121 = CLR_18 >= pricePerTicket",
+                "RTMP_122 = RTMP_120 || RTMP_121",
+                "CONDITION RTMP_122 0x37 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x37",
+            "instructions": [
+                "RTMP_123 = nextTicket < 50",
+                "CONDITION RTMP_123 0x38 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x38",
+            "instructions": [
+                "RTMP_119 = paused == true",
+                "CONDITION RTMP_119 0x1 0x35"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x35",
+            "instructions": [
+                "CLR_19 = contestants[U]",
+                "REF_35 = CLR_19",
+                "contestants[0] = U",
+                "contestants[1] = U",
+                "contestants[2] = U",
+                "contestants[3] = U",
+                "contestants[4] = U",
+                "contestants[5] = U",
+                "contestants[6] = U",
+                "contestants[7] = U",
+                "contestants[8] = U",
+                "contestants[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3a",
+            "instructions": [
+                "CLR_20 = msg.value",
+                "RTMP_126 = CLR_20 >= pricePerTicket",
+                "CLR_21 = msg.value",
+                "RTMP_127 = CLR_21 >= pricePerTicket",
+                "RTMP_128 = RTMP_126 || RTMP_127",
+                "CONDITION RTMP_128 0x3b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3b",
+            "instructions": [
+                "RTMP_129 = nextTicket < 50",
+                "CONDITION RTMP_129 0x3c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3c",
+            "instructions": [
+                "RTMP_125 = paused == true",
+                "CONDITION RTMP_125 0x1 0x39"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x39",
+            "instructions": [
+                "REF_36 = NEW_VAL integer",
+                "TMP_124 = REF_36 - 1",
+                "NCV_0 = NEW_VAL integer",
+                "gaps.length = NCV_0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3e",
+            "instructions": [
+                "CLR_22 = msg.value",
+                "RTMP_96 = CLR_22 >= pricePerTicket",
+                "CLR_23 = msg.value",
+                "RTMP_97 = CLR_23 >= pricePerTicket",
+                "RTMP_98 = RTMP_96 || RTMP_97",
+                "CONDITION RTMP_98 0x1 0x3f"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3f",
+            "instructions": [
+                "RTMP_99 = nextTicket < 50",
+                "CONDITION RTMP_99 0x1 0x40"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x40",
+            "instructions": [
+                "RTMP_95 = paused == true",
+                "CONDITION RTMP_95 0x1 0x41"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x41",
+            "instructions": [
+                "RTMP_100 = nextTicket == 50",
+                "CONDITION RTMP_100 0x3d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3d",
+            "instructions": [
+                "TMP_65 = raffleId + 1",
+                "raffleId = TMP_65"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x48",
+            "instructions": [
+                "CLR_24 = msg.value",
+                "RTMP_115 = CLR_24 >= pricePerTicket",
+                "CLR_25 = msg.value",
+                "RTMP_116 = CLR_25 >= pricePerTicket",
+                "RTMP_117 = RTMP_115 || RTMP_116",
+                "CONDITION RTMP_117 0x49 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x49",
+            "instructions": [
+                "RTMP_118 = nextTicket < 50",
+                "CONDITION RTMP_118 0x4a 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4a",
+            "instructions": [
+                "RTMP_114 = paused == true",
+                "CONDITION RTMP_114 0x1 0x47"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x47",
+            "instructions": [
+                "TMP_113 = nextTicket + 1",
+                "nextTicket = TMP_113"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4c",
+            "instructions": [
+                "CLR_26 = msg.value",
+                "RTMP_108 = CLR_26 >= pricePerTicket",
+                "CLR_27 = msg.value",
+                "RTMP_109 = CLR_27 >= pricePerTicket",
+                "RTMP_110 = RTMP_108 || RTMP_109",
+                "CONDITION RTMP_110 0x1 0x4d"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4d",
+            "instructions": [
+                "RTMP_111 = nextTicket < 50",
+                "CONDITION RTMP_111 0x1 0x4e"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4e",
+            "instructions": [
+                "RTMP_107 = paused == true",
+                "CONDITION RTMP_107 0x1 0x4f"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4f",
+            "instructions": [
+                "RTMP_112 = nextTicket == 50",
+                "CONDITION RTMP_112 0x4b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4b",
+            "instructions": [
+                "CLR_28 = block.number",
+                "blockNumber = CLR_28"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x51",
+            "instructions": [
+                "CLR_29 = msg.value",
+                "RTMP_120 = CLR_29 >= pricePerTicket",
+                "CLR_30 = msg.value",
+                "RTMP_121 = CLR_30 >= pricePerTicket",
+                "RTMP_122 = RTMP_120 || RTMP_121",
+                "CONDITION RTMP_122 0x52 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x52",
+            "instructions": [
+                "RTMP_123 = nextTicket < 50",
+                "CONDITION RTMP_123 0x53 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x53",
+            "instructions": [
+                "RTMP_119 = paused == true",
+                "CONDITION RTMP_119 0x1 0x50"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x50",
+            "instructions": [
+                "CLR_31 = contestants[U]",
+                "REF_35 = CLR_31",
+                "contestants[0] = U",
+                "contestants[1] = U",
+                "contestants[2] = U",
+                "contestants[3] = U",
+                "contestants[4] = U",
+                "contestants[5] = U",
+                "contestants[6] = U",
+                "contestants[7] = U",
+                "contestants[8] = U",
+                "contestants[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x55",
+            "instructions": [
+                "CLR_32 = msg.value",
+                "RTMP_126 = CLR_32 >= pricePerTicket",
+                "CLR_33 = msg.value",
+                "RTMP_127 = CLR_33 >= pricePerTicket",
+                "RTMP_128 = RTMP_126 || RTMP_127",
+                "CONDITION RTMP_128 0x56 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x56",
+            "instructions": [
+                "RTMP_129 = nextTicket < 50",
+                "CONDITION RTMP_129 0x57 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x57",
+            "instructions": [
+                "RTMP_125 = paused == true",
+                "CONDITION RTMP_125 0x1 0x54"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x54",
+            "instructions": [
+                "REF_36 = NEW_VAL integer",
+                "TMP_124 = REF_36 - 1",
+                "NCV_1 = NEW_VAL integer",
+                "gaps.length = NCV_1"
+            ]
+        }
+    ],
+    "root_addr": "0x8a5",
+    "dest_addrs": [
+        "0x8b0"
+    ],
+    "normal_blocks": [
+        {
+            "scope": "buyTickets",
+            "addr": "0x8a5",
+            "instructions": [
+                "NOP",
+                "seed2 = NEW_VAL integer",
+                "randHash = NEW_VAL integer",
+                "winningNumber = NEW_VAL integer",
+                "currTicket = NEW_VAL integer",
+                "seed1 = NEW_VAL integer",
+                "winningAddress = NEW_VAL integer",
+                "moneySent = NEW_VAL integer",
+                "seed3 = NEW_VAL integer",
+                "JUMP 0x8a6"
+            ]
+        },
+        {
+            "scope": "buyTickets",
+            "addr": "0x8a6",
+            "instructions": [
+                "CONDITION paused 0x8a8 0x8a7"
+            ]
+        },
+        {
+            "scope": "buyTickets",
+            "addr": "0x8a7",
+            "instructions": [
+                "NOP",
+                "JUMP 0x8a9"
+            ]
+        },
+        {
+            "scope": "buyTickets",
+            "addr": "0x8a9",
+            "instructions": [
+                "CLR_34 = msg.value",
+                "moneySent = CLR_34",
+                "JUMP 0x8aa"
+            ]
+        },
+        {
+            "scope": "buyTickets",
+            "addr": "0x8aa",
+            "instructions": [
+                "NOP",
+                "TMP_2 = moneySent >= pricePerTicket",
+                "TMP_3 = nextTicket < totalTickets",
+                "TMP_4 = TMP_2 && TMP_3",
+                "CONDITION TMP_4 0x8ab 0x8ac"
+            ]
+        },
+        {
+            "scope": "buyTickets",
+            "addr": "0x8ab",
+            "instructions": [
+                "currTicket = 0",
+                "REF_1 = LENGTH gaps",
+                "TMP_5 = REF_1 > 0",
+                "CONDITION TMP_5 0x8ad 0x8ae"
+            ]
+        },
+        {
+            "scope": "buyTickets",
+            "addr": "0x8ac",
+            "instructions": [
+                "NOP",
+                "JUMP 0x8af"
+            ]
+        },
+        {
+            "scope": "buyTickets",
+            "addr": "0x8af",
+            "instructions": [
+                "TMP_11 = nextTicket == totalTickets",
+                "CONDITION TMP_11 0x8b0 0x8a8"
+            ]
+        },
+        {
+            "scope": "buyTickets",
+            "addr": "0x8ad",
+            "instructions": [
+                "REF_2 = LENGTH gaps",
+                "TMP_6 = REF_2 - 1",
+                "CLR_35 = gaps[TMP_6]",
+                "REF_3 = CLR_35",
+                "currTicket = REF_3",
+                "REF_4 = LENGTH gaps",
+                "TMP_7 = REF_4",
+                "REF_4 = REF_4 - 1",
+                "JUMP 0x8b1"
+            ]
+        },
+        {
+            "scope": "buyTickets",
+            "addr": "0x8ae",
+            "instructions": [
+                "TMP_8 = nextTicket",
+                "nextTicket = nextTicket + 1",
+                "currTicket = TMP_8",
+                "JUMP 0x8b1"
+            ]
+        },
+        {
+            "scope": "buyTickets",
+            "addr": "0x8b1",
+            "instructions": [
+                "NOP",
+                "JUMP 0x8b2"
+            ]
+        },
+        {
+            "scope": "buyTickets",
+            "addr": "0x8b2",
+            "instructions": [
+                "CLR_36 = contestants[currTicket]",
+                "REF_5 = CLR_36",
+                "TMP_9 = NEW_VAL Contestant",
+                "contestants[currTicket] = TMP_9",
+                "NOP",
+                "JUMP 0x8b3"
+            ]
+        },
+        {
+            "scope": "buyTickets",
+            "addr": "0x8b3",
+            "instructions": [
+                "moneySent = moneySent - pricePerTicket",
+                "JUMP 0x8aa"
+            ]
+        },
+        {
+            "scope": "buyTickets",
+            "addr": "0x8b0",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "buyTickets",
+            "addr": "0x8a8",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Analysis started at: 2023-08-14 02:54:20 AM
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Version constraints: ['^0.4.19']
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | solc version: v0.4.19
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Callgraph generation started!
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Callgraph generation finished!
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Value Range Analysis started
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Generating return summary for withdrawAll
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Return summary generated for withdrawAll
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Range graph generated
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Processed function withdrawAll
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Generating return summary for deposit
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Return summary generated for deposit
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Range graph generated
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Processed function deposit
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Value Range Analysis took 0.000817 seconds
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Value Range Analysis finished
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:54:20 AM | analyzer.reentrancy_dao | Dependency detection started!
+[INFO] | 2023-08-14 02:54:21 AM | analyzer.reentrancy_dao | DAO dependency detected in file reentrancy_dao.sol in contract ReentrancyDAO in by composing functions withdrawAll and withdrawAll
+[INFO] | 2023-08-14 02:54:21 AM | analyzer.reentrancy_dao | DAO dependency detected in file reentrancy_dao.sol in contract ReentrancyDAO in by composing functions withdrawAll and deposit
+[INFO] | 2023-08-14 02:54:21 AM | analyzer.reentrancy_dao | TOD dependency detected in file reentrancy_dao.sol in contract ReentrancyDAO in by composing functions withdrawAll and withdrawAll
+[INFO] | 2023-08-14 02:54:21 AM | analyzer.reentrancy_dao | TOD dependency detected in file reentrancy_dao.sol in contract ReentrancyDAO in by composing functions withdrawAll and deposit
+[INFO] | 2023-08-14 02:54:21 AM | analyzer.reentrancy_dao | Dependency detection finished!
+[INFO] | 2023-08-14 02:54:21 AM | analyzer.reentrancy_dao | Static Analysis took 0.302251 seconds
+[INFO] | 2023-08-14 02:54:21 AM | analyzer.reentrancy_dao | Dependency exists
+[INFO] | 2023-08-14 02:54:21 AM | analyzer.reentrancy_dao | Invoking symbolic executor!
+[INFO] | 2023-08-14 02:54:22 AM | analyzer.reentrancy_dao | Symbolic execution took 1.653911 seconds
+[INFO] | 2023-08-14 02:54:22 AM | analyzer.reentrancy_dao | Symbolic execution finished!
+[INFO] | 2023-08-14 02:54:22 AM | analyzer.reentrancy_dao | Analysis finished!
+[INFO] | 2023-08-14 02:54:22 AM | analyzer.reentrancy_dao | Analysis took 1.956606 seconds
+[INFO] | 2023-08-14 02:54:22 AM | analyzer.reentrancy_dao | Analysis finished at: 2023-08-14 02:54:22 AM

@@ -1,0 +1,15 @@
+This contract seems to have a few vulnerabilities.
+
+1. Reentrancy: The contract is vulnerable to a reentrancy attack in the `CashOut` function. The contract calls an external contract (`msg.sender.call.value(_am)()`) before it updates the state (`balances[msg.sender]-=_am;`). An attacker can make a recursive call to the `CashOut` function and drain the contract's funds.
+
+2. Arithmetic Issues: Although not directly visible, if balances[msg.sender] gets too high, it might cause an integer overflow. Proper checks need to be in place.
+
+3. Unchecked Return Values For Low Level Calls: The return value of the `msg.sender.call.value(_am)()` is not checked. If this call fails for any reason, the contract will not be aware of it.
+
+4. Access Control: There seems no proper access control measures in place. For instance, anyone can call the `AddMessage` function in the `Log` contract which can lead to incorrect log entries. Access to sensitive functions should be restricted.
+
+5. Denial of Service: An attacker can intentionally fail the `msg.sender.call.value(_am)()` function call, for example by throwing an exception in the fallback function, which will cause the `CashOut` function to be stuck.
+
+6. Time manipulation: The `Log` contract depends on `now` for timestamping log entries. Miners can slightly manipulate block timestamps, which could potentially affect the integrity of log entries.
+
+The other vulnerabilities listed are not applicable to this contract.

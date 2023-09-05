@@ -1,0 +1,17 @@
+1. Reentrancy: The "GetFreebie" and "withdraw" function could potentially be exploited through a reentrancy attack because they call an external contract (in this case the owner) before the state (balance) is updated.
+
+2. Access Control: The contract allows any address to become the owner if they know the specific hardcoded address. This is a serious access control issue, as an attacker who knows the address can gain owner privileges.
+
+3. Arithmetic Issues: There are no obvious arithmetic issues in this contract.
+
+4. Unchecked Return Values For Low Level Calls: The "Command" function uses a low level call without checking its return value. If the call fails, the contract will not be aware of this.
+
+5. Denial of Service: The "GetFreebie" function could potentially be exploited to cause a DOS attack. If an attacker sends more than 1 ether, they can drain the contract of all its funds.
+
+6. Bad Randomness: There are no randomness related issues in this contract.
+
+7. Front-Running: There are no obvious front-running issues in this contract.
+
+8. Time Manipulation: There are no time related issues in this contract.
+
+9. Short Address Attack: There are no short address related issues in this contract.

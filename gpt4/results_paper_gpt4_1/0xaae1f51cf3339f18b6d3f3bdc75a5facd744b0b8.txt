@@ -1,0 +1,13 @@
+The DEP_BANK contract contains the following vulnerabilities:
+
+1. Reentrancy: In the Collect function, the contract sends Ether (msg.sender.call.value(_am)()) before it reduces the balance of the sender (balances[msg.sender]-=_am;). This ordering allows for a reentrancy attack. A malicious contract could fallback on its function to call the Collect function again before the first call is finished, and withdraw more ether than it should.
+
+2. Unchecked Return Values For Low Level Calls: msg.sender.call.value(_am)() can fail silently. If the call fails for whatever reason (the recipient is a contract which throws an exception in its fallback function, the recipient is a contract which consumes all the gas, etc.), the contract's state would not revert. 
+
+3. Access Control: The contract has functions like SetMinSum, SetLogFile, and Initialized that can be called by any address because they lack a modifier to restrict access to only the owner. This can lead to unauthorized changes in the contract's state.
+
+4. Denial of Service: If an attacker creates a contract with a fallback function that always throws, and then sends Ether from that contract to this contract, it will make the Collect function unavailable for all users, because msg.sender.call.value(_am)() will always throw an exception.
+
+5. Time manipulation: The contract uses the 'now' keyword to get the current timestamp for logging. Miners have slight control over this value, which can lead to time manipulation attacks.
+
+The contract does not appear to have vulnerabilities related to Arithmetic Issues, Bad Randomness, Front-Running, or Short Address Attack. However, the absence of these vulnerabilities in this analysis does not mean they could not be introduced with changes to the contract, so always be vigilant.

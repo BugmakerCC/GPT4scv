@@ -1,0 +1,21 @@
+Upon examining the provided smart contract, the following vulnerabilities have been identified:
+
+1. Reentrancy: The function `Collect(uint _am)` is vulnerable to a reentrancy attack. This is because it uses `call.value()()`, which allows for control flow to be transferred back to the caller's contract. If the caller's contract has a fallback function, it could be called multiple times before the state of the `MONEY_BOX` contract is updated, leading to potential funds theft.
+
+2. Access Control: The contract lacks proper access controls. Functions like `SetMinSum(uint _val)`, `SetLogFile(address _log)` and `Initialized()` can be called by anyone, not just the contract owner. This could allow malicious actors to manipulate the contract.
+
+3. Arithmetic Issues: Potential for integer underflow exists in the `Collect(uint _am)` function. If the `_am` value is greater than `acc.balance`, the subtraction operation could underflow, leading to incorrect balances.
+
+4. Unchecked Return Values For Low Level Calls: The return value of `msg.sender.call.value(_am)()` in the `Collect(uint _am)` function is not checked, which could lead to funds being stuck in the contract if the call fails.
+
+5. Denial of Service: There's a potential Denial of Service (DoS) attack vector. If the address in `msg.sender` for the `Collect(uint _am)` function is a contract and it fails, it could block all ether for the user in this contract.
+
+6. Bad Randomness: Not applicable. The contract does not use any randomness that could be manipulated.
+
+7. Front-Running: Not applicable. The contract does not contain any transactions that could be front-run.
+
+8. Time manipulation: The `Put(uint _lockTime)` function uses `now` (alias for `block.timestamp`). Miners have some control over this value, which could potentially be manipulated to their advantage.
+
+9. Short Address Attack: Not applicable. The contract does not involve any off-chain transactions or client interactions that could be vulnerable to short address attacks.
+
+Please note that using `throw` is deprecated, consider using `require` or `revert` instead. Also, it's always a good practice to include a function that allows owner to withdraw funds in case of an emergency.

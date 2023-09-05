@@ -1,0 +1,19 @@
+1. Reentrancy: The `redeem` function is vulnerable to reentrancy attacks. The contract sends out funds with `msg.sender.transfer(this.balance)` before its internal state is updated which can lead to reentrancy attacks. 
+
+2. Access Control: The `withdraw` function only checks if the `msg.sender` is the owner of the contract before executing, but the owner can be changed in the same function by anyone knowing the hardcoded address, which is a security issue.
+
+3. Arithmetic Issues: No issues found.
+
+4. Unchecked Return Values For Low Level Calls: In the `Command` function, a low-level `call` is used without checking its return value, which could be false if the call fails. This could lead to unexpected behavior.
+
+5. Denial of Service: No Denial of Service issues found.
+
+6. Bad Randomness: No issues related to randomness found.
+
+7. Front-Running: The contract doesn't have explicit front-running vulnerabilities, but Ethereum itself is vulnerable to front-running, so all transactions might be at risk.
+
+8. Time manipulation: No issues related to time manipulation found.
+
+9. Short Address Attack: No issues related to short address attacks found. 
+
+Please note that this analysis relies on the provided code only. It's possible that interactions with other contracts could open additional vulnerabilities. This is especially relevant for the `Command` function, which can interact with arbitrary addresses and execute any code.

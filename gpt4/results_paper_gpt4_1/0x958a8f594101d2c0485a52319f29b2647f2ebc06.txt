@@ -1,0 +1,13 @@
+The contract seems to have the following vulnerabilities:
+
+1. Reentrancy: The contract's `sendMessage` function transfers Ether to the owner when a message with a value greater than 0 is sent. If the owner is a malicious contract, it could potentially make a recursive call back into `sendMessage` before the first invocation of the function has finished executing. This could lead to a reentrancy attack. 
+
+2. Access Control: The `changeOwner` function in the `Owned` contract allows the owner to change the owner to a new address. However, the `acceptOwnership` function, which is supposed to require the new owner to accept the ownership, only checks if the caller is the new owner but doesn't actually require them to call the function. This means the contract can be taken over by a new owner without their consent.
+
+3. Unchecked Return Values: The `execute` function in the `Owned` contract makes a low-level call with the `.call` function but does not check the return value. This could potentially lead to silent failures if the call fails.
+
+4. Time Manipulation: The contract uses `now` for timestamps - this can be manipulated by miners up to a certain extent.
+
+5. Short Address Attack: The contract does not validate the length of the address inputs. This means it could potentially be susceptible to a short address attack.
+
+The contract does not seem to have vulnerabilities related to Arithmetic Issues, Denial of Service, Bad Randomness, or Front-Running.

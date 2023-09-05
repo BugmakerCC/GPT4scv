@@ -1,0 +1,13 @@
+This smart contract has several security issues:
+
+1. **Access Control:** The contract is vulnerable to unauthorized access to the `migrateTo` function. This is because the `initWallet` function which sets the `creator` of the contract is a public function, anyone can call it to become the `creator`. This allows an attacker to steal all the funds in the contract by becoming the `creator` and then calling the `migrateTo` function. This vulnerability could be fixed by correctly implementing the constructor to restrict who can become the `creator`.
+
+2. **Unchecked Return Values For Low Level Calls:** The `withdraw` and `migrateTo` functions use the `.transfer` method to send ether. However, they do not check the return value of these calls. If these calls fail for whatever reason (for example, the recipient contract throws an exception), this will not be caught, which could lead to unexpected behaviour.
+
+3. **Denial of Service:** An attacker could intentionally cause the `migrateTo` function to fail by causing the `to.transfer(this.balance);` call to throw an exception. This could be done by creating a contract that throws an exception in its fallback function, and then setting this contract as the `to` address. This would make it impossible for anyone to withdraw funds from the contract, effectively locking up all the funds.
+
+4. **Arithmetic Issues:** While the `deposit` function has a check to prevent overflow, the `withdraw` function doesn't have a underflow check when deducting the `amount` from `balances[msg.sender]`. This could lead to an integer underflow if `amount` is larger than `balances[msg.sender]`, making `balances[msg.sender]` a very large number.
+
+5. **Reentrancy:** This contract is not vulnerable to a reentrancy attack, as it correctly updates the balance before transferring the funds.
+
+6. **Bad Randomness, Front-Running, Time manipulation, Short Address Attack:** These vulnerabilities do not apply to this contract, as it does not make use of random numbers, timestamps, transaction ordering or address lengths.

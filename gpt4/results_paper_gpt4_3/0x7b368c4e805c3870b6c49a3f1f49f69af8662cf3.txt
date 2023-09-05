@@ -1,0 +1,19 @@
+1. Reentrancy: The contract is vulnerable to Reentrancy in the 'Collect' function. It allows external calls to unknown addresses (msg.sender.call.value(_am)()) before internal state (acc.balance) is updated, which might lead to reentrancy attack.
+
+2. Access Control: There is no proper access control in place. Any address can call 'Put', 'Collect', and 'AddMessage' functions. This could allow malicious users to interact with the contract in unintended ways.
+
+3. Arithmetic Issues: There is a possibility for an integer underflow in the 'Collect' function when the balance gets updated (acc.balance-=_am). The contract should check whether balance is greater than or equal to _am before subtraction.
+
+4. Unchecked Return Values For Low Level Calls: The return value of the low-level call (msg.sender.call.value(_am)()) is not checked. If the call fails, the contract will not be aware of this failure.
+
+5. Denial of Service: There is no obvious Denial of Service vulnerability.
+
+6. Bad Randomness: There is no usage of randomness in the contract.
+
+7. Front-Running: There is no obvious Front-Running vulnerability.
+
+8. Time manipulation: The contract uses 'now' for time manipulation. The miner could manipulate this value potentially causing a security threat.
+
+9. Short Address Attack: There is no obvious Short Address Attack vulnerability.
+
+In conclusion, the contract has several vulnerabilities that need to be addressed. It needs proper access control, secure handling of external calls, checks for arithmetic operations, and a safer way to handle time-based conditions.

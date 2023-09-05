@@ -1,0 +1,11 @@
+The smart contract has the following vulnerabilities:
+
+1. Reentrancy: The `Collect` function is susceptible to a reentrancy attack because it calls an external contract (i.e., `msg.sender.call.value(_am)()`) before it updates the state (i.e., `acc.balance-=_am;`). An attacker could create a malicious contract that re-enters the `Collect` function before `acc.balance` is updated, effectively draining the contract's funds.
+
+2. Arithmetic Issues: The `Put` function uses `acc.balance += msg.value;` without checking for integer overflows. An attacker could potentially exploit this to wrap the balance around to a lower value.
+
+3. Unchecked Return Values: The `Collect` function does not check the return value of `msg.sender.call.value(_am)()`. If this call fails for any reason, the contract's state will be left inconsistent, as `acc.balance` would not have been decreased as expected.
+
+4. Access Control: The `AddMessage` function in the `Log` contract is publicly accessible, which means any address can add a message to the log. This could lead to spamming or other misuse. 
+
+The contract does not appear to have vulnerabilities related to Denial of Service, Bad Randomness, Front-Running, Time manipulation, or Short Address Attack.

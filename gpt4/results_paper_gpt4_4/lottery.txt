@@ -1,0 +1,15 @@
+This contract has several vulnerabilities:
+
+1. Bad Randomness: The contract is using the block number to determine if a bet is won or lost. This is a bad source of randomness since miners (and smart contract callers) can manipulate it to a certain extent. 
+
+2. Front-Running: Since the outcome of the bet depends on the block number, any user could see the current block number and decide whether or not to place a bet based on the likelihood of winning, creating an opportunity for front-running.
+
+3. Access Control: There are no access control checks on the makeBet() function. Any address can call this function and potentially manipulate the outcome or drain the contract's balance.
+
+4. Denial of Service: The makeBet() function sends ether back to the caller if the bet is won. If the fallback function of the caller's address purposely fails, it could block the execution of the makeBet() function. This is known as a denial of service attack.
+
+5. Unchecked Return Values For Low Level Calls: While the contract checks the return value of the `send` function in the `makeBet` function, there's a problem with how it's handled. If `send` fails, the contract should not just `throw`, but handle the failure in a way that doesn't lock up the contract or lose data.
+
+6. Time Manipulation: The contract's outcome can be manipulated by miners to a certain extent as they have control over when the transactions are mined.
+
+No issues found regarding Reentrancy, Arithmetic Issues and Short Address Attack in this contract.

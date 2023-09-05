@@ -1,0 +1,19 @@
+The contract has several vulnerabilities:
+
+1. Reentrancy: The `Collect` function is vulnerable to reentrancy attacks because it calls an external contract (`msg.sender.call.value(_am)()`) before it updates the state (`balances[msg.sender]-=_am;`). An attacker could exploit this by creating a fallback function in their contract that calls `Collect` again before the first call has finished.
+
+2. Access Control: The `SetMinSum` and `SetLogFile` functions can be accessed by anyone until the contract is initialized. An attacker could call these functions to set the minimum sum to a very high value or change the log file, potentially causing loss of funds or data.
+
+3. Denial of Service: If an attacker contract throws an exception in its fallback function, the `Collect` function will be unable to send funds to it, effectively locking those funds in the contract.
+
+4. Bad Randomness: Not applicable in this contract.
+
+5. Front-Running: Not applicable in this contract.
+
+6. Time Manipulation: Not applicable in this contract.
+
+7. Short Address Attack: Not applicable in this contract.
+
+8. Arithmetic Issues: The contract does not check for underflows or overflows in its arithmetic operations. This could potentially lead to incorrect balances. For example, if the `_am` value in the `Collect` function is larger than `balances[msg.sender]`, the subtraction operation would underflow, resulting in a very large balance for the `msg.sender`.
+
+9. Unchecked Return Values for Low Level Calls: The contract does not check the return value of the `msg.sender.call.value(_am)()` call in the `Collect` function. If this call fails, the contract will continue execution as if it succeeded. This could result in inconsistent state where the balance of `msg.sender` is reduced even though the funds were not sent.

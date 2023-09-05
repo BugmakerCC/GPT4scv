@@ -1,0 +1,21 @@
+Looking at the provided smart contract, we can identify several potential vulnerabilities:
+
+1. Reentrancy: The Collect function contains a reentrancy vulnerability. The contract calls an external contract (the sender) before it reduces the balance of the sender. If the fallback function of the sender's contract calls the Collect function again, it could withdraw more ether than it has in its balance.
+
+2. Access Control: There are no permission controls on the SetMinSum and SetLogFile functions. Anyone can call these functions and change the MinSum and LogFile. This could allow an attacker to prevent deposits or change the logging system.
+
+3. Arithmetic Issues: Although the contract correctly checks that balances[msg.sender] >= _am before allowing a withdrawal, it doesn't handle potential underflows when subtracting _am from balances[msg.sender].
+
+4. Unchecked Return Values For Low Level Calls: The contract uses call.value() without checking the return value. If the call fails due to an exception in the receiving contract, the contract will not be able to catch this error.
+
+5. Denial of Service: If an attacker manipulates the balance mapping or MinSum, they could potentially cause a denial of service.
+
+6. Bad Randomness: Not applicable in this contract.
+
+7. Front-Running: Not applicable in this contract.
+
+8. Time manipulation: The contract uses "now" in the AddMessage function. This value can be manipulated by miners, so it could be a potential security risk if the contract logic was dependent on it.
+
+9. Short Address Attack: Not applicable in this contract.
+
+The contract should be revised to mitigate these vulnerabilities.

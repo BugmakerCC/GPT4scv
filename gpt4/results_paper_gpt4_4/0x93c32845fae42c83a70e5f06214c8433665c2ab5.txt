@@ -1,0 +1,19 @@
+This contract has a couple of vulnerabilities:
+
+1. Reentrancy: The contract is vulnerable to a reentrancy attack in the `Collect` function. The contract first sends ether with `msg.sender.call.value(_am)()` and then subtracts the value `_am` from the balance `acc.balance-=_am;`. An attacker can make a recursive call to the `Collect` function in the fallback function of their contract and drain all the ether.
+
+2. Access Control: There's no access control for the `AddMessage` function in the `Log` contract. Anybody can add a message to the log. This is not necessarily a security vulnerability, but the author may want to restrict who can add messages.
+
+3. Arithmetic Issues: The contract does not check for overflows or underflows. This can be exploited by an attacker to cause an overflow or underflow.
+
+4. Unchecked Return Values: The return value of `msg.sender.call.value(_am)()` in the `Collect` function is not checked. If the call fails, the contract will continue to execute and the balance will not be updated properly.
+
+5. Denial of Service: An attacker can keep the contract busy by continuously calling the `Put` function. This can be used to prevent other users from interacting with the contract.
+
+6. Bad Randomness: There's no randomness involved in this contract, so this issue is not applicable.
+
+7. Front-Running: The contract is not vulnerable to front-running as it doesn't have any transactions that depend on the order of execution.
+
+8. Time Manipulation: The contract uses the `now` keyword to get the current block timestamp. This can be manipulated by miners to some extent, but it doesn't seem to be a serious issue in this contract.
+
+9. Short Address Attack: The contract does not seem to be vulnerable to a short address attack as it doesn't take addresses as inputs.

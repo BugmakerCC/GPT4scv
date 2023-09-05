@@ -1,0 +1,21 @@
+There are several potential vulnerabilities in this contract:
+
+1. Reentrancy: The functions `WitdrawTokenToHolder` and `WithdrawToHolder` may be susceptible to reentrancy attacks due to a state change after external calls. The update of the `Holders[_addr]` balance should happen before the `WithdrawToken` or `_addr.call.value(_wei)()` calls to prevent recursive callbacks.
+
+2. Access Control: The contract uses a simple `onlyOwner` modifier, which could be vulnerable if the owner's address is compromised. An improvement would be to use a multisig contract for owner operations or at least a 2FA mechanism.
+
+3. Arithmetic Issues: The contract doesn't seem to have integer overflow or underflow checks. For example, in the `Holders[msg.sender]+=msg.value;` line, there should be a check to prevent underflow/overflow.
+
+4. Unchecked Return Values For Low Level Calls: The contract seems to have unchecked return values for low-level calls in `WithdrawToHolder` when using `_addr.call.value(_wei)()`. It's recommended to check the return value of this call.
+
+5. Denial of Service: The contract doesn't seem to have a mechanism to prevent DoS attacks. An attacker could potentially flood the contract with transactions and make it unresponsive.
+
+6. Bad Randomness: This contract does not seem to use randomness.
+
+7. Front-Running: This contract does not seem to have protections against front-running.
+
+8. Time manipulation: This contract does not seem to depend on timestamps, hence no timestamp dependency issues.
+
+9. Short Address Attack: The contract seems to be vulnerable to short address attacks since it doesn't validate the length of the address in the `changeOwner`, `WithdrawToken`, `WitdrawTokenToHolder`, and `WithdrawToHolder` functions.
+
+Please note that this analysis only covers the provided code. To perform a thorough investigation, the entire codebase would need to be reviewed.

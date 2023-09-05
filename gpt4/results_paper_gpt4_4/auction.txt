@@ -1,0 +1,16 @@
+The provided smart contract has a Denial of Service (DoS) vulnerability. 
+
+In the function `bid()`, when a new bid is received, the contract tries to send back the funds to the previous frontrunner. If this operation fails, the whole transaction is reverted. An attacker can exploit this by becoming the frontrunner and implementing a fallback function that always fails, hence making it impossible for anyone else to place a new bid.
+
+The fallback function could look like this:
+```solidity
+function () public payable {
+  revert();
+}
+```
+
+This kind of vulnerability is known as a DoS with Unexpected Revert. The contract assumes that `currentFrontrunner.send(currentBid)` will always succeed and does not handle the case where it might not.
+
+To fix this vulnerability, instead of sending the funds immediately, the contract could keep track of the funds owed to each address. Then, users could withdraw their funds manually. This pattern is known as the Withdrawal Pattern.
+
+No other vulnerabilities from the list are apparent in this contract. However, without seeing the entire contract, including how it is initialized and whether there are other functions or contracts involved, it is not possible to definitively say that there are no other vulnerabilities.

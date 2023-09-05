@@ -1,0 +1,19 @@
+The smart contract has a few vulnerabilities:
+
+1. Reentrancy: The `withdraw` function is vulnerable to reentrancy attacks. After checking that the `amount` is less than or equal to `Deposits[msg.sender]`, it sends `amount` Ether to `msg.sender` before deducting the `amount` from `Deposits[msg.sender]`. An attacker can use their contract as `msg.sender` and in the fallback function, call `withdraw` again before the first `withdraw` has a chance to deduct the `amount`, thus draining the contract of more Ether than they are supposed to get.
+
+2. Access Control: The `transferOwner` function in the `Proxy` contract can be called by anyone since the `onlyOwner` modifier checks `msg.sender` against the `Owner` of the `Proxy` contract, but `Owner` is not set in the `Proxy` contract. This means anyone can become the owner and gain control of the contract.
+
+3. Unchecked Return Values For Low Level Calls: The call to `target.call.value(msg.value)(data);` in the `proxy` function does not check the return value. If the call fails for any reason, an exception will not be thrown and the function will continue execution, possibly leading to unpredictable behavior.
+
+4. Denial of Service: If an attacker sets the `Owner` to a contract that throws an exception in its fallback function, `withdraw` could be blocked, creating a Denial of Service condition. 
+
+5. Bad Randomness: Not applicable in this contract.
+
+6. Front-Running: Not directly applicable in this contract. However, in a scenario where multiple users are trying to become the owner by calling `Vault`, miners could manipulate transaction order.
+
+7. Time manipulation: Not directly applicable in this contract.
+
+8. Short Address Attack: Not directly applicable in this contract. 
+
+9. Arithmetic Issues: Not directly applicable in this contract. However, it's generally a good practice to use SafeMath library for arithmetic operations to prevent overflow and underflow attacks.

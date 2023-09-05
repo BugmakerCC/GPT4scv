@@ -1,0 +1,18 @@
+The provided smart contract has a Reentrancy vulnerability. This is specifically in the `withdraw` function. Here is how the vulnerability works:
+
+The `withdraw` function first checks if the credit of the caller is greater or equal to the requested amount. If it is, it sends the requested amount to the caller and then subtracts the amount from the caller's credit. 
+
+However, the problem lies in the fact that the contract's state is not updated (credit is not reduced) before the `call.value` function is called. Thus, the receiver of the `call.value` can call the `withdraw` function again before the first call is finished, and since the state has not been updated yet, they can withdraw more than their credit. This is the classic reentrancy attack, also known as the DAO attack.
+
+To fix this, the state should be updated before calling external contracts. Here's a secure version of the function:
+
+```
+function withdraw(uint amount) {
+  if (credit[msg.sender]>= amount) {
+    credit[msg.sender]-=amount;
+    bool res = msg.sender.call.value(amount)();
+  }
+}
+```
+
+This code ensures that the state is updated before the external call is made, preventing the reentrancy attack. However, it's still recommended to use the `transfer` function instead of `call.value` due to the latter's potential security issues.

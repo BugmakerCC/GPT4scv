@@ -1,0 +1,19 @@
+This smart contract contains several potential vulnerabilities:
+
+1. Bad Randomness: The `deal` function of the `Deck` library uses `block.timestamp` and `block.number` for generating 'random' numbers. This is insecure as miners can manipulate these values to some extent. 
+
+2. Denial of Service: The `msg.sender.send` command is used in several places in the contract. If the recipient contract throws an exception or consumes a large amount of gas, the send operation would fail. The contract does not handle such cases. This can result in a denial of service if the recipient contract is malicious or faulty.
+
+3. Reentrancy: Although the contract does not appear to have reentrancy vulnerabilities at first glance, the use of `msg.sender.send` without proper precautions could potentially lead to reentrancy attacks. If the recipient contract of the send operation includes a fallback function that calls back into the sending contract, it could result in reentrancy. However, as the state variable `games[msg.sender].state` is updated before the `send` operations, the risk of reentrancy is mitigated in this contract.
+
+4. Access Control: There are no explicit access control measures implemented in this contract. There are a few functions that should have been restricted to the owner of the contract such as setting the `minBet` and `maxBet` values. 
+
+5. Arithmetic Issues: The contract does not seem to use a safe math library for arithmetic operations. This can lead to integer underflow and overflow vulnerabilities. 
+
+6. Front-Running: This contract is also susceptible to front-running attacks. Since Ethereum miners can see all pending transactions, they could potentially manipulate the order of transactions to their advantage.
+
+7. Unchecked Return Values: The return value of `msg.sender.send` is not checked. If this function call fails for any reason, the contract will not be aware of the failure and will continue its execution.
+
+8. Time manipulation: As mentioned before, the contract relies on `block.timestamp` for randomness which can be manipulated by miners to some extent.
+
+9. Short Address Attack: This contract does not seem to have any explicit protections against the short address attack. This type of attack typically involves a malformed address, where the attacker supplies less than the required 20 bytes for an address.

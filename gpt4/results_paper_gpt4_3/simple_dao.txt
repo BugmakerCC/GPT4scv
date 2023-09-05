@@ -1,0 +1,20 @@
+The given smart contract has a Reentrancy vulnerability. This vulnerability allows a caller to reenter the `withdraw` function before it finishes executing, which could lead to funds being drained from the contract.
+
+The issue lies in the following lines of code:
+
+```solidity
+bool res = msg.sender.call.value(amount)();
+credit[msg.sender]-=amount;
+```
+
+Here, the contract sends ether to an address before it deducts the amount from the sender's balance. An attacker can use this to their advantage by causing a fallback function to call the `withdraw` function again before the `credit[msg.sender]-=amount;` statement is executed.
+
+To fix this vulnerability, the balance should be updated before calling the external contract:
+
+```solidity
+credit[msg.sender] -= amount;
+(bool success, ) = msg.sender.call.value(amount)("");
+require(success, "Transfer failed.");
+```
+
+This contract does not appear to have the other mentioned vulnerabilities such as Access Control, Arithmetic Issues, Unchecked Return Values For Low Level Calls, Denial of Service, Bad Randomness, Front-Running, Time manipulation, or Short Address Attack.

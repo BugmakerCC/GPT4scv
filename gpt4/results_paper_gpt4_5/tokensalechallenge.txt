@@ -1,0 +1,19 @@
+This contract appears to have the following vulnerabilities:
+
+1) Reentrancy: The 'sell' function is vulnerable as it first changes the state of the contract (by reducing the balance of a user's tokens) and then sends ether. If the calling contract is malicious, it could re-enter into the 'sell' function before the first call is finished, and siphon off more ether than it should be able to.
+
+2) Arithmetic Issues: The 'buy' and 'sell' functions are vulnerable to integer overflow and underflow. In the 'buy' function, if 'numTokens' is a very large number, the multiplication with 'PRICE_PER_TOKEN' could overflow. In the 'sell' function, if the 'balanceOf[msg.sender]' is less than 'numTokens', the subtraction could underflow.
+
+3) Unchecked Return Values For Low Level Calls: The 'sell' function uses a low-level '.transfer()' function to send Ether. If this fails, the contract doesn't check for this and doesn't handle the failure.
+
+4) Denial of Service: If a called contract consumes all gas or throws, it could prevent the 'sell' function from completing, effectively blocking a user from selling their tokens.
+
+5) Bad Randomness: No randomness is used in this contract.
+
+6) Front-Running: Since all transactions are public on the blockchain before they are mined, a malicious miner could see a transaction where someone is buying or selling tokens, and insert their own transaction before it, potentially manipulating prices.
+
+7) Time manipulation: There is no time manipulation in this contract.
+
+8) Short Address Attack: This contract does not appear to be vulnerable to a short address attack, as it does not take addresses as inputs from external calls.
+
+9) Access Control: There is no access control in this contract, anyone can call the 'buy' and 'sell' functions.

@@ -1,0 +1,36 @@
+Upon reviewing the provided smart contract, I have identified the following vulnerabilities:
+
+1. Access Control: The `changeOwner` function does not have any access control mechanism. Any account can call this function and change the owner of the contract.
+
+2. Reentrancy: Although not explicitly present in the contract, if the `owner` address is a contract and the `changeOwner` function is called, it could potentially allow reentrancy attacks if the contract's fallback function includes external calls.
+
+To address these vulnerabilities, you can make the following modifications to the contract:
+
+1. Implement Access Control: You can create a modifier, such as `onlyOwner`, to restrict the execution of certain functions to only the contract owner.
+
+2. Use the `onlyOwner` Modifier: Apply the `onlyOwner` modifier to the `changeOwner` function to ensure that only the contract owner can change the owner address.
+
+Here's an updated version of the contract with the suggested modifications:
+
+``` solidity
+pragma solidity ^0.4.15;
+
+contract Unprotected {
+    address private owner;
+
+    modifier onlyOwner {
+        require(msg.sender == owner);
+        _;
+    }
+
+    function Unprotected() public {
+        owner = msg.sender;
+    }
+
+    function changeOwner(address _newOwner) public onlyOwner {
+        owner = _newOwner;
+    }
+}
+```
+
+By implementing these changes, you can mitigate the access control vulnerability and reduce the risk of reentrancy attacks.

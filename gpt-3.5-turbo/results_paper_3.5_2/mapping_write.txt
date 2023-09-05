@@ -1,0 +1,21 @@
+Upon reviewing the smart contract, here are the vulnerabilities that can be identified:
+
+1. Reentrancy: The contract does not have any external calls that can be exploited for reentrancy attacks.
+
+2. Access Control: There is no access control mechanism implemented in the contract. Anyone can call the `set` and `get` functions.
+
+3. Arithmetic Issues: There are no arithmetic operations performed in the contract, so there is no risk of integer overflow or underflow.
+
+4. Unchecked Return Values For Low-Level Calls: The contract does not make any low-level calls, so there are no return values to be checked.
+
+5. Denial of Service: There are no gas limit-related issues, unexpected throws, or kill functions that can lead to denial of service attacks. However, access control is not enforced, which can be considered a breach.
+
+6. Bad Randomness: The contract does not involve any randomness.
+
+7. Front-Running: The contract does not involve any time-sensitive transactions that can be front-run.
+
+8. Time Manipulation: The contract does not rely on timestamps, so time manipulation is not a concern.
+
+9. Short Address Attack: The contract does not have any off-chain interactions or client vulnerabilities.
+
+Overall, the main vulnerability in this contract is the lack of access control, allowing anyone to modify the mapping.

@@ -1,0 +1,15 @@
+The smart contract provided has several vulnerabilities:
+
+1. Reentrancy: This contract is vulnerable to reentrancy attack in the `claimThrone` function. This function sends ether to the current monarch's address (`currentMonarch.etherAddress.send(compensation)`) and the logic of the contract continues to execute after that. If the current monarch is a contract, it can call `claimThrone` function again before the first call is finished, making it possible to drain ether from the contract.
+
+2. Arithmetic Issues: This contract doesn't use SafeMath or any other form of overflow/underflow protection. This leaves it vulnerable to integer overflow and underflow bugs. For instance, in the `claimThrone` function, the new `currentClaimPrice` is calculated using multiplication and division without any checks for overflow.
+
+3. Unchecked Return Values: The return values of `send` function are not checked. If a send fails (for instance, due to a throw in a fallback function), the contract will not be aware and will continue execution.
+
+4. Denial of Service: This contract uses `send` to transfer ether which has a gas limit of 2300. If the fallback function of the recipient contract consumes more than 2300 gas (for example by triggering an event), the send will fail and the `claimThrone` function will be stuck.
+
+5. Access Control: The contract contains functions that can only be executed by the wizard (the owner of the contract). However, there are no checks that the `wizardAddress` is not a zero address, which might lead to loss of control over the contract.
+
+6. There is no evidence of Bad Randomness, Front-Running, Time manipulation, or Short Address Attack vulnerabilities in the contract.
+
+These are just potential vulnerabilities. Actual impact depends on the usage of this contract and the context in which it's used. For instance, reentrancy might not be exploitable if the contract is only used by EOA (Externally Owned Accounts). However, it's generally a good practice to protect against these vulnerabilities in the contract itself.

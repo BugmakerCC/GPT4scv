@@ -1,0 +1,15 @@
+The given smart contract has several vulnerabilities:
+
+1. Reentrancy: The function `CashOut` is susceptible to Reentrancy attack. When `msg.sender.call.value(_am)()` is called, it makes an external call to the caller's contract which can then call back the `CashOut` function before the balance is updated. This can lead to a situation where the user can withdraw more Ether than they should be able to.
+
+2. Access Control: The function `AddMessage` in the `Log` contract is public and can be called by anyone. If this function is only supposed to be called by the `ETH_VAULT` contract, then it would be advisable to add an access control mechanism to prevent unauthorized usage.
+
+3. Arithmetic Issues: The `Deposit` function uses `+=` for adding the deposited amount to the balance. If the sum of `balances[msg.sender]` and `msg.value` exceeds the maximum value that a uint can hold, it will wrap around to 0. This is known as an integer overflow. Similar issue can occur with `-=` in `CashOut` function leading to underflow. 
+
+4. Unchecked Return Values For Low Level Calls: The return value of `msg.sender.call.value(_am)()` is not checked which can lead to unexpected behavior if the call fails.
+
+5. Denial of Service: If the contract balance is not enough to satisfy a `CashOut` request, then the entire contract can be blocked. 
+
+6. Time Manipulation: The `AddMessage` function uses `now` for timestamp, which can be manipulated by miners.
+
+The other vulnerabilities such as Bad Randomness, Front-Running, and Short Address Attack do not seem to be present in this contract. However, it is always a good practice to double-check and test thoroughly.

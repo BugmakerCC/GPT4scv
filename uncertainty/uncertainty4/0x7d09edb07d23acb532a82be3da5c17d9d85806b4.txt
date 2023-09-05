@@ -1,0 +1,19 @@
+Here are the vulnerabilities found in the provided smart contract:
+
+1. Reentrancy: The contract is vulnerable to a reentrancy attack because it calls external contracts (i.e., `whale.call.value(amount)(bytes4(keccak256("donate()")));`) before updating its own state. An attacker could exploit this by recursively calling the `donateToWhale` function before its state is updated, and potentially drain the contract's funds.
+
+2. Access Control: The contract uses `msg.sender` for access control in multiple places, this is good but it also uses `tx.origin` in the constructor which can be a security risk. It's possible to manipulate `tx.origin` to bypass the `onlyRealPeople` modifier.
+
+3. Arithmetic Issues: There are no visible arithmetic issues such as integer overflow or underflow in the contract.
+
+4. Unchecked Return Values For Low Level Calls: The contract uses low level `call` function in `donateToWhale` and `loseWager` functions. It doesn't check the return value of these calls, which could fail silently.
+
+5. Denial of Service: The contract doesn't appear to have any obvious denial-of-service vulnerabilities.
+
+6. Bad Randomness: The contract generates a random number in the `play` function using `blockhash` and `msg.sender`. This could be manipulated by miners as they have some control over these variables.
+
+7. Front-Running: The contract could be vulnerable to a front-running attack because an attacker could see the transactions in the mempool and then place a bet with a higher gas price to get it mined first.
+
+8. Time Manipulation: The contract uses `block.number` and `blockhash` for gameplay which could be manipulated by miners.
+
+9. Short Address Attack: The contract doesn't appear to be vulnerable to a short address attack as it doesn't directly interact with user-provided addresses. However, it could be good to add checks to ensure the length of the address.

@@ -1,0 +1,27 @@
+This smart contract contains a Reentrancy vulnerability specifically in the `withdraw` function. 
+
+Reentrancy occurs when a called contract (in this case `msg.sender.call.value(_amount)()`) is able to call back (re-enter) the calling contract before its execution is finished. 
+
+Here is how it happens:
+
+1. The contract checks if the `msg.sender` balance is greater than or equal to `_amount`.
+2. Then it sends `_amount` to the `msg.sender`.
+3. And only after that it reduces the `msg.sender`'s balance by `_amount`.
+
+This is a problem because Solidity does not handle reentrant calls in a atomic (indivisible) manner, which means that after the contract sends `_amount` to `msg.sender`, but before it has a chance to reduce the `msg.sender`'s balance, the `msg.sender` can call the `withdraw` function again, and if its balance is still greater than `_amount`, it will be able to withdraw it again.
+
+In order to mitigate the Reentrancy vulnerability, the contract should first reduce the `msg.sender`'s balance, and only then send the `_amount`:
+
+```
+  function withdraw(uint _amount) public {
+    if(balances[msg.sender] >= _amount) {
+      balances[msg.sender] -= _amount;
+      
+      if(!msg.sender.call.value(_amount)()) {
+        throw;
+      }
+    }
+  }
+```
+
+Please note that the other vulnerabilities mentioned are not present in this contract.

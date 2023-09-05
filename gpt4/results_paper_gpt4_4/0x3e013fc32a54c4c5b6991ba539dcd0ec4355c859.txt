@@ -1,0 +1,19 @@
+This contract might have the following vulnerabilities:
+
+1. Reentrancy: The `multiplicate()` function transfers Ether to an external address. If `adr` is a malicious contract, it can call `multiplicate()` again while the first call has not finished. This can lead to the contract's Ether being drained. This vulnerability is also known as a recursive call vulnerability.
+
+2. Access Control: The `withdraw()` and `Command()` functions are only protected by a simple `require(msg.sender == Owner);` condition. If the `Owner` address is compromised, the attacker can withdraw all Ether from the contract or call arbitrary functions on other contracts.
+
+3. Arithmetic Issues: The `multiplicate()` function performs an addition operation without checking for overflows. If `this.balance + msg.value` exceeds the maximum value for a `uint256`, the result will wrap around to a small number, potentially leading to unexpected behaviors.
+
+4. Unchecked Return Values For Low Level Calls: The `Command()` function uses `adr.call.value(msg.value)(data);` without checking the return value. This can lead to the contract failing silently.
+
+5. Denial of Service: If the `Owner` address is a contract that throws an exception in its fallback function, the `withdraw()` function will be unusable.
+
+6. Bad Randomness: Not a problem in this contract.
+
+7. Front-Running: Not a problem in this contract.
+
+8. Time manipulation: Not a problem in this contract.
+
+9. Short Address Attack: Not a problem in this contract.

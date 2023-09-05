@@ -1,0 +1,15 @@
+The smart contract you provided seems to have the following vulnerabilities:
+
+1. Bad Randomness: The contract uses `block.number % 2` to determine if a bet is won. This is a very predictable random source which can be exploited by miners. A miner could potentially manipulate the block number to influence the outcome of the bet.
+
+2. Denial Of Service: If the contract tries to send ether with `msg.sender.send(msg.value)` and it fails, it throws an exception which could lead to a denial of service if the contract balance is insufficient. 
+
+3. Time Manipulation: The contract uses `block.number` as a source of randomness. Since block number changes with time, a miner could potentially manipulate the time to influence the outcome of the bet.
+
+4. Access Control: The `getBets()` and `destroy()` functions are only accessible by the `organizer`. If the `organizer` loses access to their account, no one will be able to retrieve bet data or destroy the contract.
+
+5. Unchecked Return Values For Low-Level Calls: The contract uses `msg.sender.send(msg.value)` without checking the return value. If the send function fails, the contract will not be aware.
+
+6. Front-Running: Since the outcome of the bet is determined by the current block number and the payment is immediately sent out, someone could observe the transaction and quickly make a bet knowing the outcome.
+
+The contract doesn't appear to have the reentrancy, arithmetic issues, or short address attack vulnerabilities.

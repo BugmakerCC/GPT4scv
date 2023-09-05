@@ -1,0 +1,39 @@
+The smart contract appears to have the following vulnerabilities:
+
+1. Integer overflow and underflow: The contract uses the SafeMath library which prevents integer overflow and underflow.
+
+2. Reentrancy: The contract uses the `transfer` function instead of `call.value()()`, which mitigates reentrancy attacks.
+
+3. Gas limit: There are functions such as `addHashes`, `putHashes`, `houseKeeping` that can consume a lot of gas if the input size is large. This may lead to denial of service if the contract runs out of gas.
+
+4. Front-Running: Since the contract interacts with the Ethereum blockchain, it is vulnerable to front-running attacks. Miners can reorder or delay transactions to their advantage.
+
+5. Access control: The contract uses the `onlyOwner` and `onlyAnimator` modifiers to restrict access to certain functions. However, it does not prevent the owner from being a malicious actor. 
+
+6. Timestamp Dependence: The contract uses `block.number` for various calculations and conditions. This can be manipulated by miners to some extent, which can potentially affect the contract's behavior.
+
+7. Bad randomness: The `play` and `playSystem` functions use `sha3` for generating a random number. However, `sha3` is deterministic and can be predicted. Therefore, the randomness in this contract is weak.
+
+8. Unchecked return values: The contract does not check the return values of the `transfer` function. If a transfer fails, the contract will not be aware of it.
+
+9. Short address attack: The contract does not check the length of the addresses. This makes it vulnerable to short address attacks.
+
+10. The contract does not have a self-destruction function which can be a vulnerability. 
+
+11. The contract does not have a function to update the contract which can be a vulnerability.
+
+12. This contract does not handle the case when a function call fails. This can leave the contract in an inconsistent state.
+
+13. The contract does not have a function to withdraw funds which can be a vulnerability.
+
+14. The contract does not have a function to stop the contract in case of an emergency which can be a vulnerability. 
+
+15. This contract does not verify whether the address is a contract or an EOA (Externally Owned Account) which can be a vulnerability. 
+
+16. This contract handles value based on user inputs in `invest`, `investDirect`, `disinvest`, `payDividend` and `playSystem` functions which can be a vulnerability. 
+
+17. This contract does not have an event to log important actions which can be a vulnerability. 
+
+18. The contract does not have a limit on the number of loops in `houseKeeping`, `commitDividend` and `putHashes` functions which can be a vulnerability.
+
+19. The contract does not check whether the `msg.value` is zero in `invest` and `playSystem` functions which can be a vulnerability.

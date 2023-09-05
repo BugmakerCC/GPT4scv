@@ -1,0 +1,16 @@
+The smart contract has the following vulnerabilities:
+
+1. Reentrancy: In the "Collect" function, the state (acc.balance) is not updated before the external call "msg.sender.call.value(_am)()". This could allow an attacker to recursively call the "Collect" function before the state is updated, draining the contract of its funds.
+
+2. Timestamp Dependence: The use of "now" in the Put function and Collect function makes the contract susceptible to minor manipulation by miners. A miner could potentially delay a block to affect the outcome of the "now" call.
+
+3. Unchecked Low Level Calls: The execution of the low level "call" function in the "Collect" function does not check its return value. If the call failed for any reason, the contract would not be notified, leading to unexpected behavior.
+
+4. Access Control: There is no access control mechanism in place to restrict who can call the functions in the contract. Anyone can call the "Put" and "Collect" functions.
+
+To mitigate these vulnerabilities:
+
+1. For reentrancy, always update the state before making an external call.
+2. Avoid using "now" for critical logic. If it's absolutely necessary, consider using a mechanism to mitigate miner manipulation, such as a commitment scheme.
+3. Always check the return value of low level "call" functions.
+4. Implement access controls to restrict who can call certain functions in your contract.

@@ -1,0 +1,3 @@
+[INFO] | 2023-08-14 02:58:45 AM | analyzer.mishandled | Analysis started at: 2023-08-14 02:58:45 AM
+[INFO] | 2023-08-14 02:58:45 AM | analyzer.mishandled | Version constraints: ['^0.4.0']
+[INFO] | 2023-08-14 02:58:45 AM | analyzer.mishandled | solc version: v0.4.0

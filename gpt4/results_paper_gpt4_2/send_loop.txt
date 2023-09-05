@@ -1,0 +1,29 @@
+Looking at your smart contract, it appears to be vulnerable to the Denial of Service (DoS) attack. This is because it uses the `send()` function in a loop to send refunds to all addresses in `refundAddresses`. If one of these sends fails, for instance, if a contract at one of these addresses executes a fallback function that exceeds the gas stipend, then the entire `refundAll()` function will revert. This could potentially lock all funds in the contract.
+
+The `require()` statement used here will throw an exception if the condition is not met, in this case if the `send()` function call fails. This will cause all state changes (like balance updates) in the current call to be reverted, which can be exploited by an attacker to block the loop.
+
+This vulnerability can be mitigated by using the withdrawal pattern. Rather than pushing the funds to recipients, allow them to withdraw their funds themselves. This would isolate each address's interaction with the contract, preventing a single failing transaction from blocking all others. 
+
+Here is a modified version of your contract implementing the withdrawal pattern:
+
+```
+pragma solidity 0.4.24;
+
+contract Refunder {
+    address[] private refundAddresses;
+    mapping (address => uint) public refunds;
+    
+    constructor() {
+        refundAddresses.push(0x79B483371E87d664cd39491b5F06250165e4b184);
+        refundAddresses.push(0x79B483371E87d664cd39491b5F06250165e4b185);
+    }
+    
+    function withdrawRefund() public {
+        uint refund = refunds[msg.sender];
+        refunds[msg.sender] = 0;
+        require(msg.sender.send(refund)); 
+    }
+}
+```
+
+This contract still has the potential for a DoS attack if an attacker's contract throws in its fallback function, but now only that attacker's withdrawal would be blocked, not everyone's.

@@ -1,0 +1,7 @@
+The smart contract provided contains two main vulnerabilities:
+
+1. Uninitialized Storage Pointer (part of Access Control): In the `register` function, `NameRecord newRecord;` is declared without being initialized, which means it points to the zero slot in the storage. As a result, `newRecord.name = _name;` and `newRecord.mappedAddress = _mappedAddress;` will overwrite some important values, such as `unlocked`, leading to unintended consequences. 
+
+2. Incorrect Check Condition (part of Access Control): The `require(unlocked);` statement is placed at the end of the `register` function, meaning that the function's operations will be performed before the `require` statement checks if the contract is unlocked. If the `unlocked` variable is `false`, the function will revert all changes, but the gas costs for the operations will still be paid. This could lead to a Denial of Service (DoS) if an attacker repeatedly calls the function, causing the contract owner to pay high gas costs. To fix this, `require(unlocked);` should be placed at the start of the function.
+
+The other vulnerabilities (Reentrancy, Arithmetic Issues, Unchecked Return Values For Low Level Calls, Bad Randomness, Front-Running, Time manipulation, Short Address Attack) do not seem to be present in this contract.

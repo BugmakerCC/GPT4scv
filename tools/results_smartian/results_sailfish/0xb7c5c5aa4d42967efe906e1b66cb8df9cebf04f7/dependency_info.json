@@ -1,0 +1,58 @@
+{
+    "0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.sol": [
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "withdraw",
+                "withdraw"
+            ],
+            "from_function": "withdraw",
+            "to_function": "withdraw",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 7\nFunction: withdraw\nNode: \nEXPRESSION msg.sender.call.value(balances[msg.sender])()\nIRS: \nTMP_1(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:REF_3 \"",
+                        "\"BlockID: 5\nFunction: withdraw\nNode: \nEXPRESSION balances[msg.sender] = 0\nIRS: \nREF_4 := 0\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "withdraw",
+                "fallback"
+            ],
+            "First_function": "fallback",
+            "Second_function": "withdraw",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 2\nFunction: fallback\nNode: \nEXPRESSION balances[msg.sender] += msg.value\nIRS: \nREF_0 = REF_0 + msg.value\"",
+                        "\"BlockID: 4\nFunction: withdraw\nNode: \nEXPRESSION msg.sender.call.value(balances[msg.sender])()\nIRS: \nTMP_1(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:REF_3 \""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "withdraw",
+                "withdraw"
+            ],
+            "First_function": "withdraw",
+            "Second_function": "withdraw",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 11\nFunction: withdraw\nNode: \nEXPRESSION balances[msg.sender] = 0\nIRS: \nREF_4 := 0\"",
+                        "\"BlockID: 4\nFunction: withdraw\nNode: \nEXPRESSION msg.sender.call.value(balances[msg.sender])()\nIRS: \nTMP_1(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:REF_3 \""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        }
+    ]
+}

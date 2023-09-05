@@ -1,0 +1,13 @@
+This smart contract has multiple vulnerabilities:
+
+1. Reentrancy: This smart contract is vulnerable to reentrancy attack in the `GetPie` function. After the `Owner.transfer(this.balance)` is called, the state of the contract has not been changed yet, so the attacker can recursively call `GetPie` function again before the state is changed.
+
+2. Access Control: The contract is missing a modifier to restrict access to only the owner for the `GetPie` and `Command` functions. Although the `withdraw` and `Command` functions are protected by the `require(msg.sender == Owner);` statement, `GetPie` function is not. This may allow an attacker to exploit the contract by sending more than 1 ether.
+
+3. Unchecked Return Values For Low Level Calls: The `adr.call.value(msg.value)(data);` in `Command` function is a low-level call that does not check its return value. If the call fails, the contract will not be aware of it.
+
+4. Denial of Service: The `withdraw` function can be exploited by an attacker to permanently keep the contract from functioning properly. If the owner of the contract becomes an address that does not contain a corresponding private key, then the ether in the contract can be locked forever.
+
+5. Arithmetic Issues, Bad Randomness, Front-Running, Time manipulation and Short Address Attack vulnerabilities are not visible in this contract.
+
+It's recommended to use `pull payment` rather than `push payment` to prevent reentrancy, and always restrict access to sensitive functions. Low level calls should be replaced with safer high-level calls where possible or the return value should be checked. Ensure the ownership of the contract cannot be arbitrarily changed to prevent a potential DoS attack.

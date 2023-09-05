@@ -1,0 +1,16 @@
+The provided smart contract has a Reentrancy vulnerability. This vulnerability occurs when the contract's state is altered after an external call. 
+
+In the `withdrawAll` function, the contract sends Ether before setting `credit[msg.sender]` to 0. This allows the receiver of the Ether to call the contract again before `credit[msg.sender]` is set to 0. If the receiver is a malicious contract, it can exploit this to drain the contract of all its Ether. 
+
+Here is how this may happen: 
+
+1. Malicious contract deposits 1 Ether to the contract
+2. Malicious contract calls `withdrawAll`
+3. The contract sends 1 Ether to the malicious contract
+4. The malicious contract's fallback function is executed, which calls `withdrawAll` again
+5. The contract sends 1 Ether to the malicious contract again
+6. This repeats until the contract is drained of all its Ether
+
+To fix this, `credit[msg.sender]` should be set to 0 before calling `msg.sender.call.value(oCredit)()`. 
+
+The rest of the vulnerabilities (Access Control, Arithmetic Issues, Unchecked Return Values For Low Level Calls, Denial of Service, Bad Randomness, Front-Running, Time manipulation, Short Address Attack) are not present in the contract.

@@ -1,0 +1,19 @@
+This contract has several vulnerabilities:
+
+1. Reentrancy: The contract is vulnerable to reentrancy attacks due to the use of the `send` function. It's in the `cash` function, where the winner is sent the `subpot`. If the recipient contract has a fallback function, it can call `cash` again before the first call is finished. The `send` function should be replaced with `transfer` and state variables should be updated before transferring Ether.
+
+2. Arithmetic Issues: The contract does not check for overflows and underflows in arithmetic operations. For example, in the `cash` function, there is an operation `subpotsCount++` without checking for overflow. This can be mitigated by using SafeMath library for arithmetic operations.
+
+3. Unchecked Return Values For Low Level Calls: There are no checks after `send` function calls. If a `send` function fails, the contract may continue executing, leaving it in an inconsistent state. This can be mitigated by checking the return value of `send` and reverting if it fails.
+
+4. Access Control: The contract does not have any access control mechanisms. Anybody can call the `cash` function and give the lottery prize to the calculated winner. This function should be callable only by the owner or a trusted party.
+
+5. Bad Randomness: The contract uses block variables such as block number and block hash for randomness, which can be influenced by miners. This can be mitigated by using a secure source of randomness.
+
+6. Time manipulation: The contract is vulnerable to time manipulation as it uses block variables for timing, which can be influenced by miners.
+
+7. Front-Running: Since blockchain transactions are public, anyone can see the lottery's state and calculate the winner before the `cash` transaction is mined. They can then perform a front-running attack by sending a transaction with a higher gas price to influence the outcome.
+
+8. The contract does not seem to be vulnerable to a Short Address Attack, as it does not take any address as an input from an external source.
+
+9. Denial of Service (DoS): The contract is vulnerable to a DoS attack. If the `cash` function is called with a `roundIndex` and `subpotIndex` that have already been cashed, the function will keep failing due to the check `if(rounds[roundIndex].isCashed[subpotIndex]) return;`. This can block payouts to legitimate winners.

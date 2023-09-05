@@ -1,0 +1,10 @@
+The given smart contract has an Arithmetic Issue vulnerability, specifically an Integer Underflow. In the `run` function, `count` is decremented by `input`. If `input` is greater than `count`, `count` will underflow and be set to a very large number. 
+
+There is also an Unchecked Return Value vulnerability since the `run` function doesn't return anything. 
+
+Lastly, there is an Access Control vulnerability. The `init` function can be called by any address, which can lead to unauthorized access.
+
+To fix these issues, you should:
+1. Check if `input` is less than or equal to `count` before subtracting to prevent underflow.
+2. The function `run` should have a return type to indicate success or failure.
+3. Add a modifier or additional checks to the `init` function to ensure that only authorized addresses can call it.

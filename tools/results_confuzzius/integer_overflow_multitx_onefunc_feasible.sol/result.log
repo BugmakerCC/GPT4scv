@@ -1,0 +1,60 @@
+2023-03-24 16:03:40,339 - Main     - INFO - [1mInitializing seed to 1427655.0[0m
+2023-03-24 16:03:40,379 - Fuzzer   - INFO - [1mFuzzing contract [1mIntegerOverflowMultiTxOneFuncFeasible[0m[0m
+2023-03-24 16:03:40,404 - Analysis - INFO - [1mGeneration number 0 	 Code coverage: 90.57% (96/106) 	 Branch coverage: 91.67% (11/12) 	 Transactions: 7 (6 unique)   	 Time: 0.020370006561279297[0m
+2023-03-24 16:03:40,424 - Analysis - INFO - [1mGeneration number 1 	 Code coverage: 90.57% (96/106) 	 Branch coverage: 91.67% (11/12) 	 Transactions: 13 (9 unique)   	 Time: 0.040320396423339844[0m
+2023-03-24 16:03:40,433 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:03:40,433 - Detector - INFO - [1m[31m          !!! Integer underflow detected !!!          [0m
+2023-03-24 16:03:40,433 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:03:40,433 - Detector - INFO - [1m[31mSWC-ID:   101[0m
+2023-03-24 16:03:40,433 - Detector - INFO - [1m[31mSeverity: High[0m
+2023-03-24 16:03:40,433 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:03:40,433 - Detector - INFO - [1m[31mSource code line:[0m
+2023-03-24 16:03:40,433 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:03:40,433 - Detector - INFO - [1m[31m/sb/integer_overflow_multitx_onefunc_feasible.sol:22:1[0m
+2023-03-24 16:03:40,433 - Detector - INFO - [1m[31mcount -= input[0m
+2023-03-24 16:03:40,433 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:03:40,433 - Detector - INFO - [1m[31mTransaction sequence:[0m
+2023-03-24 16:03:40,433 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:03:40,433 - Detector - INFO - [1m[31mTransaction 1 - run(uint256):[0m
+2023-03-24 16:03:40,433 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:03:40,433 - Detector - INFO - [1m[31mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:03:40,433 - Detector - INFO - [1m[31mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:03:40,433 - Detector - INFO - [1m[31mValue:     0 Wei[0m
+2023-03-24 16:03:40,434 - Detector - INFO - [1m[31mGas Limit: 4500000[0m
+2023-03-24 16:03:40,434 - Detector - INFO - [1m[31mInput:     0xa444f5e934910a0436d45cc1935c4fb86745077f[0m
+2023-03-24 16:03:40,434 - Detector - INFO - [1m[31m           29d3912943d12431d0c8fd99f2a0b147[0m
+2023-03-24 16:03:40,434 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:03:40,434 - Detector - INFO - [1m[31mTransaction 2 - run(uint256):[0m
+2023-03-24 16:03:40,434 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:03:40,434 - Detector - INFO - [1m[31mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:03:40,434 - Detector - INFO - [1m[31mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:03:40,434 - Detector - INFO - [1m[31mValue:     0 Wei[0m
+2023-03-24 16:03:40,434 - Detector - INFO - [1m[31mGas Limit: 4500000[0m
+2023-03-24 16:03:40,434 - Detector - INFO - [1m[31mInput:     0xa444f5e9ffffffffffffffffffffffffffffffff[0m
+2023-03-24 16:03:40,434 - Detector - INFO - [1m[31m           ffffffffffffffffffffffffffffffff[0m
+2023-03-24 16:03:40,434 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:03:40,452 - Analysis - INFO - [1mGeneration number 2 	 Code coverage: 99.06% (105/106) 	 Branch coverage: 100.00% (12/12) 	 Transactions: 21 (12 unique)   	 Time: 0.0684051513671875[0m
+2023-03-24 16:03:40,495 - Analysis - INFO - [1mGeneration number 3 	 Code coverage: 99.06% (105/106) 	 Branch coverage: 100.00% (12/12) 	 Transactions: 33 (16 unique)   	 Time: 0.11096429824829102[0m
+2023-03-24 16:03:40,550 - Analysis - INFO - [1mGeneration number 4 	 Code coverage: 99.06% (105/106) 	 Branch coverage: 100.00% (12/12) 	 Transactions: 49 (21 unique)   	 Time: 0.1665172576904297[0m
+2023-03-24 16:03:40,626 - Analysis - INFO - [1mGeneration number 5 	 Code coverage: 99.06% (105/106) 	 Branch coverage: 100.00% (12/12) 	 Transactions: 70 (25 unique)   	 Time: 0.24236249923706055[0m
+2023-03-24 16:03:40,719 - Analysis - INFO - [1mGeneration number 6 	 Code coverage: 99.06% (105/106) 	 Branch coverage: 100.00% (12/12) 	 Transactions: 94 (29 unique)   	 Time: 0.3352639675140381[0m
+2023-03-24 16:03:40,821 - Analysis - INFO - [1mGeneration number 7 	 Code coverage: 99.06% (105/106) 	 Branch coverage: 100.00% (12/12) 	 Transactions: 120 (34 unique)   	 Time: 0.43764209747314453[0m
+2023-03-24 16:03:40,935 - Analysis - INFO - [1mGeneration number 8 	 Code coverage: 99.06% (105/106) 	 Branch coverage: 100.00% (12/12) 	 Transactions: 150 (40 unique)   	 Time: 0.551257848739624[0m
+2023-03-24 16:03:41,050 - Analysis - INFO - [1mGeneration number 9 	 Code coverage: 99.06% (105/106) 	 Branch coverage: 100.00% (12/12) 	 Transactions: 180 (46 unique)   	 Time: 0.6665847301483154[0m
+2023-03-24 16:03:41,169 - Analysis - INFO - [1mGeneration number 10 	 Code coverage: 99.06% (105/106) 	 Branch coverage: 100.00% (12/12) 	 Transactions: 210 (52 unique)   	 Time: 0.7852623462677002[0m
+2023-03-24 16:03:41,169 - Analysis - INFO - [1m-----------------------------------------------------[0m
+2023-03-24 16:03:41,169 - Analysis - INFO - Number of generations: 	 10
+2023-03-24 16:03:41,169 - Analysis - INFO - Number of transactions: 	 210 (52 unique)
+2023-03-24 16:03:41,169 - Analysis - INFO - Transactions per second: 	 267
+2023-03-24 16:03:41,169 - Analysis - INFO - Total code coverage: 	 99.06% (105/106)
+2023-03-24 16:03:41,169 - Analysis - INFO - Total branch coverage: 	 100.00% (12/12)
+2023-03-24 16:03:41,169 - Analysis - INFO - Total execution time: 	 0.79 seconds
+2023-03-24 16:03:41,170 - Analysis - INFO - Total memory consumption: 	 55.48 MB
+
+     ______            ______                _           
+    / ____/___  ____  / ____/_  __________  (_)_  _______
+   / /   / __ \/ __ \/ /_  / / / /_  /_  / / / / / / ___/
+  / /___/ /_/ / / / / __/ / /_/ / / /_/ /_/ / /_/ (__  ) 
+  \____/\____/_/ /_/_/    \__,_/ /___/___/_/\__,_/____/  
+
+delteed file

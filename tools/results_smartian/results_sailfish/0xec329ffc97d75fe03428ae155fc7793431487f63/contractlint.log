@@ -1,0 +1,93 @@
+[INFO] | 2023-08-14 03:00:15 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Analysis started at: 2023-08-14 03:00:15 AM
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Version constraints: ['^0.4.11']
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | solc version: v0.4.11
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Callgraph generation started!
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Callgraph generation finished!
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Storage dependency graph generation started!
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Value Range Analysis started
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Generating return summary for slitherConstructorConstantVariables
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Return summary generated for slitherConstructorConstantVariables
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Range graph generated
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Processed function slitherConstructorConstantVariables
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Generating return summary for Owned
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Return summary generated for Owned
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Range graph generated
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Processed function Owned
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Generating return summary for onlyOwner
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Return summary generated for onlyOwner
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | State variable assignement do not exist
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Processed function onlyOwner
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Generating return summary for transfer
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Return summary generated for transfer
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | State variable assignement do not exist
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Processed function transfer
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Generating return summary for balanceOf
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Return summary generated for balanceOf
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | State variable assignement do not exist
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Processed function balanceOf
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Generating return summary for Owned
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Return summary generated for Owned
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Range graph generated
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Processed function Owned
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Generating return summary for TokenSender
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Return summary generated for TokenSender
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Range graph generated
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Processed function TokenSender
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Generating return summary for hasTerminated
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Return summary generated for hasTerminated
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | State variable assignement do not exist
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Processed function hasTerminated
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Generating return summary for nTransfers
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Return summary generated for nTransfers
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | State variable assignement do not exist
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Processed function nTransfers
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Generating return summary for gas
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Return summary generated for gas
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | State variable assignement do not exist
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Processed function gas
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Generating return summary for onlyOwner
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Return summary generated for onlyOwner
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | State variable assignement do not exist
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Processed function onlyOwner
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Generating return summary for changeOwner
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Return summary generated for changeOwner
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Range graph generated
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Processed function changeOwner
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Generating return summary for execute
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Return summary generated for execute
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | State variable assignement do not exist
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Processed function execute
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Generating return summary for run
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Return summary generated for run
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Generating return summary for gas
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Return summary generated for gas
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Range graph generated
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Processed function run
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Generating return summary for changeOwner
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Return summary generated for changeOwner
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Range graph generated
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Processed function changeOwner
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Generating return summary for execute
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Return summary generated for execute
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | State variable assignement do not exist
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Processed function execute
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Generating return summary for fill
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Return summary generated for fill
+[WARNING] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | No lvalue eligible assignment, is this some bug!
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Range graph generated
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Processed function fill
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Value Range Analysis took 0.006449 seconds
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Value Range Analysis finished
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Dependency detection started!
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Dependency detection finished!
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Static Analysis took 0.510753 seconds
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Dependency does not exist
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Symbolic execution is not needed!
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Analysis finished!
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Analysis took 0.510935 seconds
+[INFO] | 2023-08-14 03:00:16 AM | analyzer.0xec329ffc97d75fe03428ae155fc7793431487f63 | Analysis finished at: 2023-08-14 03:00:16 AM

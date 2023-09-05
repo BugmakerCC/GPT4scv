@@ -1,0 +1,19 @@
+This contract is vulnerable to the Reentrancy attack. The Reentrancy vulnerability occurs when a function makes an external call to another untrusted contract before it resolves any effects. In this contract, the external call is made using the `call.value()` function.
+
+Here's the problematic line:
+
+```solidity
+require(msg.sender.call.value(_weiToWithdraw)());
+```
+
+This line transfers the Ether before updating the `balances` mapping and `lastWithdrawTime` mapping. An attacker can create a malicious contract that calls `withdrawFunds` again when it receives Ether, creating a loop that drains the contract's Ether.
+
+To fix this issue, the state changes should be done before the external call:
+
+```solidity
+balances[msg.sender] -= _weiToWithdraw;
+lastWithdrawTime[msg.sender] = now;
+require(msg.sender.call.value(_weiToWithdraw)());
+```
+
+This contract does not seem to exhibit the other vulnerabilities mentioned (Access Control, Arithmetic Issues, Unchecked Return Values For Low Level Calls, Denial of Service, Bad Randomness, Front-Running, Time manipulation, Short Address Attack). However, without the complete context, it's difficult to be sure. It's also worth noting that while this contract does not appear to have these vulnerabilities, a contract that interacts with this one could potentially exploit some of these vulnerabilities.

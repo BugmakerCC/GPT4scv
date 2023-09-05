@@ -1,0 +1,17 @@
+Looking through the smart contract, we can see several potential vulnerabilities:
+
+1. Reentrancy: The `Collect` function is susceptible to a reentrancy attack because it first sends Ether to an address, and then updates the balance. This means an attacker could recursively call the `Collect` function before the balance is updated, draining the contract of Ether.
+
+2. Arithmetic Issue: The 'Put' function is using addition to increase `acc.balance`. If it overflows, it could reset to a lower value.
+
+3. Unchecked Return Values: When Ether is sent using the `call.value` function in `Collect`, the return value is not checked. This could lead to unhandled exceptions.
+
+4. Denial of Service: The contract does not seem to be susceptible to a basic Denial of Service attack. However, the `Collect` function could be used to block funds by setting a future `unlockTime`.
+
+5. Access Control: There are no permissions set on the `Put`, `Collect`, and `AddMessage` functions. This means anyone can call these functions, potentially leading to unauthorized actions.
+
+6. Time Manipulation: The contract uses `now` (alias for `block.timestamp`) in `Put` and `Collect`. Miners can manipulate this value by up to 900 seconds.
+
+The contract does not seem to be vulnerable to Front-Running, Bad Randomness, or Short Address Attack. However, without knowing the context in which this contract is used, it's hard to be sure. 
+
+It's important to note that this analysis might not be exhaustive and the contract could have other vulnerabilities.

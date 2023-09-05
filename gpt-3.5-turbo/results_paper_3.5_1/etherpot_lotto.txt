@@ -1,0 +1,21 @@
+Here are the vulnerabilities found in the given smart contract:
+
+1. Reentrancy: The contract does not have any code that calls external contracts. Therefore, it is not vulnerable to reentrancy attacks.
+
+2. Access Control: The contract does not have any access control mechanisms. This means that anyone can call the functions and potentially manipulate the state of the contract.
+
+3. Arithmetic Issues: The contract does not perform any arithmetic operations that can lead to integer overflow or underflow.
+
+4. Unchecked Return Values For Low Level Calls: The contract does not make any low-level calls to other contracts, so there are no unchecked return values.
+
+5. Denial of Service: The contract does not have any gas limit reached vulnerabilities, unexpected throws, unexpected kills, or access control breaches.
+
+6. Bad Randomness: The contract uses the blockhash of a specific block to calculate the winner, which is not a secure way to generate random numbers. An attacker could potentially manipulate the blockhash to their advantage.
+
+7. Front-Running: The contract does not have any time-of-check vs time-of-use (TOCTOU) vulnerabilities, race conditions, or transaction ordering dependence.
+
+8. Time Manipulation: The contract does not rely on timestamps for any critical functionality, so time manipulation is not a vulnerability.
+
+9. Short Address Attack: The contract does not have any off-chain issues or client vulnerabilities.
+
+Overall, the contract is relatively secure, but it does have vulnerabilities related to access control and randomness generation. It is recommended to add access control mechanisms and use a more secure source of randomness for the winner calculation.

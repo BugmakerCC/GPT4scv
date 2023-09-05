@@ -1,0 +1,17 @@
+1. Bad Randomness: `shuffle()` function uses `now` and blockhash for generating random number which can be influenced by miners. This is a critical issue.
+
+2. Reentrancy: In the `play()` function, the winner is allowed to withdraw the contract's balance. However, the state variable `secretNumber` is only updated after the transfer function. If the fallback function of the sender's contract triggers another `play()` function within the same transaction, it can drain the contract's balance.
+
+3. Denial of Service: The `kill()` function can make the contract useless when the owner calls it after 1 day of the last played game. This can be used to lock the funds of the players.
+
+4. Access Control: The `kill()` function can only be accessed by the contract's owner, but there's no function for changing the ownership. If the owner loses access to their account, the contract can't be killed.
+
+5. Front-Running: Since the secret number is generated based on the information in the blockchain, a miner could potentially manipulate the transaction order to win the game.
+
+6. Time Manipulation: This contract relies on the `now` keyword for multiple operations. A miner could potentially influence the timestamp of the block to their advantage.
+
+7. Arithmetic Issues: There isn't any overflow or underflow checks in the contract.
+
+8. Unchecked Return Values For Low Level Calls: The `transfer` function does not check for its return value. If it fails, the contract will not be aware.
+
+9. Short Address Attack: This contract does not verify the length of the address which could lead to a short address attack.

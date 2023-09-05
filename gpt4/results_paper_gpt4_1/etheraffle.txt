@@ -1,0 +1,19 @@
+Upon analyzing the given smart contract, the following vulnerabilities can be detected:
+
+1. Reentrancy: This contract does not seem to have a reentrancy vulnerability as it does not make any external calls after updating the state.
+
+2. Access Control: The contract has access control vulnerability. The functions `endRaffle`, `togglePause` and `kill` can only be called by the `feeAddress`, which is set during contract creation and can't be changed. If the owner's address is compromised, it can lead to a loss of control over the contract.
+
+3. Arithmetic Issues: No obvious arithmetic issues or under/overflows are found in the contract.
+
+4. Unchecked Return Values: This contract does not check the return value of `transfer()`, so if a transfer fails, the contract will continue running.
+
+5. Denial of Service: The contract is vulnerable to gas limit DoS attacks. The `getRefund` and `endRaffle` functions have loops that can iterate over an arbitrarily large number of contestants. If the number of contestants is too large, these functions may exceed the block gas limit.
+
+6. Bad Randomness: The contract uses a weak source of randomness in the `chooseWinner` function. It relies on block variables (`block.coinbase` and `block.difficulty`) and `msg.sender`, which can be manipulated by miners or users to some extent.
+
+7. Front-Running: The `buyTickets` function may be vulnerable to front-running, as a malicious miner could see a transaction in the transaction pool and insert their own transaction to buy the last ticket.
+
+8. Time Manipulation: Doesn't seem to have a time manipulation vulnerability since the contract does not rely on `block.timestamp`.
+
+9. Short Address Attack: This contract does not seem to be vulnerable to short address attacks as it does not take address inputs from function calls.

@@ -1,0 +1,14 @@
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+Analysing /sb/etherpot_lotto.sol:Lotto...
+Vulnerability: Reentrancy. Maybe in function: _fallthrough. PC: 0x163. Line number: 141.
+Vulnerability: Unchecked Low Level Call. Maybe in function: _fallthrough. PC: 0x163. Line number: 141.
+Vulnerability: Integer Overflow. Maybe in function: cash(uint256,uint256). PC: 0xc55. Line number: 73.
+If a = 286284763252935964282266023038115119437166249169515756402733746626921240599
+and b = 6800
+Vulnerability: Integer Overflow. Maybe in function: getBuyers(uint256,address). PC: 0x8b7. Line number: 120.
+If a = 32
+and b = 10855508365998393320959779844564491361244061062403802878699148500741855903739
+Vulnerability: Integer Overflow. Maybe in function: getBuyers(uint256,address). PC: 0x4f4. Line number: 119.
+If a = 32
+and b = 61514547407324228818772085785865451047049679353621549645961841504203850121215

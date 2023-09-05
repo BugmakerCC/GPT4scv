@@ -1,0 +1,19 @@
+This smart contract appears to have several potential vulnerabilities:
+
+1. Reentrancy: The contract has potential reentrancy vulnerabilities in the `claimThrone` and `sweepCommission` functions where it uses the `send` function. An attacker can potentially exploit this by making a fallback function that calls `claimThrone` or `sweepCommission` again before the first call is finished.
+
+2. Arithmetic Issues: The contract doesn't handle potential overflows or underflows in the `claimThrone` function when it calculates the `rawNewClaimPrice`. This could lead to potential integer overflow issues.
+
+3. Unchecked Return Values For Low Level Calls: The contract uses `send` in the `claimThrone` and `sweepCommission` functions but does not check the return value. This is risky because `send` can fail silently. It would be safer to use `transfer` which throws an exception on failure.
+
+4. Access Control: The `sweepCommission` and `transferOwnership` functions can only be called by the `wizardAddress`. However, the contract does not provide a function to verify who the current `wizardAddress` is, which might lead to potential access control issues.
+
+5. Denial of Service: The contract does not limit the size of the `pastMonarchs` array, which could potentially lead to a denial of service if an attacker continuously calls `claimThrone` to increase the size of the array and reach the gas limit.
+
+6. Bad Randomness: There is no bad randomness issue visible in this contract.
+
+7. Front-Running: The contract could potentially be vulnerable to front-running attacks because anyone can see the `currentClaimPrice` and attempt to claim the throne before someone else by paying a higher gas price.
+
+8. Time manipulation: The contract uses `block.timestamp` in the `KingOfTheEtherThrone` and `claimThrone` functions, potentially making it vulnerable to miner manipulation.
+
+9. Short Address Attack: There are no visible issues related to Short Address Attack in this contract. All addresses come from `msg.sender`, which should always be a valid address.

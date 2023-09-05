@@ -1,0 +1,17 @@
+The smart contract provided has a Reentrancy vulnerability. 
+
+The `airDrop` function in the `ModifierEntrancy` contract can be called recursively. This is due to the fact that before the balance of the caller is updated, the `supportsToken` modifier checks if the caller contract supports the token, and during this call, the attacker contract can call the `airDrop` function again. 
+
+Here is how it works: 
+
+1. The `attack` contract calls the `call` function, providing the address of the `ModifierEntrancy` contract as a parameter.
+2. The `call` function of the `attack` contract calls the `airDrop` function of the `ModifierEntrancy` contract.
+3. The `airDrop` function of the `ModifierEntrancy` contract, before executing, checks the modifiers `hasNoBalance` and `supportsToken`.
+4. The `supportsToken` modifier calls the `supportsToken` function of the `attack` contract.
+5. The `supportsToken` function of the `attack` contract calls the `airDrop` function of the `ModifierEntrancy` contract again.
+
+This recursive call can lead to a reentrancy attack where the balance of the attacker can be increased more than it should be.
+
+To fix this vulnerability, do not call external contracts while state variables are being updated. You should update state variables first and then call the external function or use the Checks-Effects-Interactions pattern. 
+
+No other vulnerabilities from your list are present in this contract.

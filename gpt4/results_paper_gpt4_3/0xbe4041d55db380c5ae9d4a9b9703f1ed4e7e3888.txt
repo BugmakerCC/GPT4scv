@@ -1,0 +1,21 @@
+Looking at the provided smart contract, I want to highlight the following potential vulnerabilities:
+
+1. Reentrancy: The Collect function of the MONEY_BOX contract is vulnerable to a reentrancy attack. The state of the contract (acc.balance-=_am;) is updated after the external call (msg.sender.call.value(_am)()). An attacker could make a recursive call back into the Collect function before the state has been updated.
+
+2. Access Control: There is no proper access control in place. The SetMinSum, SetLogFile and Initialized functions could be called by anyone, allowing an attacker to change the log file address or the minimum sum after the contract has been initialized. 
+
+3. Arithmetic Issues: There is a potential for an underflow in the Collect function where the balance of the account is reduced by the amount (_am). If _am is greater than acc.balance, this could result in an underflow.
+
+4. Unchecked Return Values For Low Level Calls: The return value of the low-level call in the Collect function is not checked. If the call fails for any reason, the contract will not be aware of this and will continue execution.
+
+5. Denial of Service: An attacker could potentially keep the contract busy by repeatedly calling the Put function, thus preventing others from interacting with it.
+
+6. Bad Randomness: This contract does not seem to use randomness.
+
+7. Front-Running: Front-running is possible since Ethereum miners can see all pending transactions and could potentially manipulate the order in which they are processed.
+
+8. Time manipulation: The contract relies on the 'now' keyword for time tracking. 'now' is actually the timestamp of the block and can be manipulated by miners to a certain degree.
+
+9. Short Address Attack: This contract is not vulnerable to a short address attack as it does not take addresses as an external input. 
+
+Please note that these findings are based on a cursory review and a more in-depth analysis could potentially reveal additional issues. It is also important to consider that vulnerability detection is not an exact science and is heavily dependent on the specific use cases and operational environment of the contract.

@@ -1,0 +1,21 @@
+The smart contract you've provided does indeed have some vulnerabilities. Let's break them down:
+
+1. Bad Randomness: The line `secretNumber = uint8(sha3(now, block.blockhash(block.number-1))) % 20 + 1;` is problematic because it uses `now` (alias for `block.timestamp`) and `blockhash` for generating randomness which can be manipulated by miners. This could potentially lead to predictability of the `secretNumber`.
+
+2. Time Manipulation: As mentioned above, the usage of `now` (alias for `block.timestamp`) could cause vulnerabilities. Miners can slightly manipulate the timestamp of the blocks they mine, allowing them to possibly change the outcome of `shuffle()` or the condition in `kill()`.
+
+3. Access Control: There's no proper access control on the `kill()` function. If the owner’s address is compromised, the attacker could potentially destroy the contract.
+
+4. Denial of Service: The function `kill()` can make the contract unavailable by self-destructing it. Also, the `play()` function sends all the balance to the player if the condition `number == secretNumber` is met, which could also drain the contract.
+
+5. Integer Underflow: There's a potential integer underflow in `block.number-1`. If the contract is deployed in the first block, `block.number-1` will underflow.
+
+6. Unchecked Return Values: The transfer function in this line `msg.sender.transfer(this.balance);` could fail, but the failure isn't checked or handled.
+
+7. Reentrancy: While this contract doesn't have a direct reentrancy vulnerability, if the `msg.sender.transfer(this.balance);` is replaced with a call function, it might introduce a reentrancy vulnerability as there's a state change after the transfer/call.
+
+8. Front-Running: There's a potential for front-running attacks as players can see others' guesses before making their own.
+
+9. Short Address Attack: This contract doesn't have a direct short address attack vulnerability, but generally, the absence of input validation can lead to such an attack.
+
+The contract should be updated to address these vulnerabilities.

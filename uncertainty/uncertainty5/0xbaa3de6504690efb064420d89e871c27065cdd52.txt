@@ -1,0 +1,21 @@
+This smart contract has several vulnerabilities:
+
+1. Reentrancy: This vulnerability occurs in the withdraw() function in the VaultProxy contract. After the condition check (if (amount>0 && Deposits[msg.sender]>=amount)), the contract interacts with an external contract (msg.sender) and then updates the state (by deducting the withdrawn amount from Deposits[msg.sender]). This can lead to reentrancy attacks where the external contract can reenter the withdraw function before the state is updated.
+
+2. Access Control: The modifier onlyOwner is declared in the Proxy contract, but not in the VaultProxy contract. Therefore, any address can call the withdraw function in the VaultProxy contract.
+
+3. Unchecked Return Values: The contract uses a low level call (target.call.value(msg.value)(data)) in the proxy function, but it does not check the return value of this call. If this call fails, the contract will not be aware and will continue execution.
+
+4. Denial of Service: The contract does not limit the amount of gas that can be used in the proxy function. An attacker can cause a denial of service attack by using up all available gas.
+
+5. Bad Randomness: Not present in this contract.
+
+6. Front-Running: Not present in this contract.
+
+7. Time Manipulation: Not present in this contract.
+
+8. Short Address Attack: Not present in this contract.
+
+9. Arithmetic Issues: If the deposit() function is called with a value greater than 0.25 ether, the contract will increase the Deposits[msg.sender] by msg.value. However, there is no check to ensure this operation does not cause an integer overflow. If an overflow occurs, the Deposits[msg.sender] could be set to a lower value than expected.
+
+To fix these issues, consider using the SafeMath library for arithmetic operations, implement reentrancy guards, check return values of external calls, limit the amount of gas that can be used in the proxy function, and implement proper access control for the withdraw function.

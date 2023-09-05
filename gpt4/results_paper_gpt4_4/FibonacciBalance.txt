@@ -1,0 +1,19 @@
+This contract may have the following vulnerabilities:
+
+1. **Reentrancy**: The `withdraw()` function implements a `delegatecall` to a library. The `delegatecall` function allows the called contract to have control over the calling contract's state, which can lead to reentrancy if not properly handled. Also, `delegatecall` is followed by a `transfer` function which can also lead to reentrancy vulnerability. In this case, if the called contract has a fallback function that calls back the `withdraw()` function, it can drain the contract's Ether.
+
+2. **Unchecked Return Values For Low Level Calls**: The `require(fibonacciLibrary.delegatecall(fibSig, withdrawalCounter));` and `require(fibonacciLibrary.delegatecall(msg.data));` are low level calls whose return values are not checked, which can lead to unexpected behaviour if they fail.
+
+3. **Access Control**: There is no access control on the `withdraw()` function. Any address can call this function and potentially drain the contract's Ether.
+
+4. **Arithmetic Issues**: The `calculatedFibNumber * 1 ether` operation in the `withdraw()` function can potentially overflow, causing unexpected results.
+
+5. **Denial of Service**: If the `withdraw()` function is called with a large value for `withdrawalCounter`, it can lead to high gas consumption due to the recursive calculation of the Fibonacci number, which could block other users from interacting with the contract.
+
+6. **Bad Randomness**: There is no randomness involved in this contract.
+
+7. **Front-Running**: There is no transaction ordering dependency in this contract.
+
+8. **Time manipulation**: There is no timestamp dependency in this contract.
+
+9. **Short Address Attack**: There is no direct interaction with user-provided addresses, so this attack is not directly applicable. However, the `delegatecall` function uses an address (`fibonacciLibrary`) which, if not correctly provided, can lead to unexpected behaviour.

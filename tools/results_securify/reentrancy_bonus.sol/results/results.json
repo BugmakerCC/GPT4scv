@@ -1,0 +1,73 @@
+{
+  "/sb/reentrancy_bonus.sol:Reentrancy_bonus": {
+    "results": {
+      "TODReceiver": {
+        "violations": [],
+        "warnings": [
+          18
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnhandledException": {
+        "violations": [],
+        "warnings": [
+          18
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODTransfer": {
+        "violations": [],
+        "warnings": [
+          18
+        ],
+        "safe": [
+          18
+        ],
+        "conflicts": []
+      },
+      "DAO": {
+        "violations": [
+          18
+        ],
+        "warnings": [
+          18
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODAmount": {
+        "violations": [],
+        "warnings": [],
+        "safe": [
+          18
+        ],
+        "conflicts": []
+      },
+      "MissingInputValidation": {
+        "violations": [
+          15,
+          22
+        ],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "DAOConstantGas": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnrestrictedEtherFlow": {
+        "violations": [],
+        "warnings": [],
+        "safe": [
+          18
+        ],
+        "conflicts": []
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+    "0x958a8f594101d2c0485a52319f29b2647f2ebc06.sol": [
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "sendMessage",
+                "acceptOwnership"
+            ],
+            "First_function": "acceptOwnership",
+            "Second_function": "sendMessage",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 22\nFunction: acceptOwnership\nNode: \nEXPRESSION owner = newOwner\nIRS: \nowner := newOwner\"",
+                        "\"BlockID: 58\nFunction: sendMessage\nNode: \nEXPRESSION owner.transfer(this.balance)\nIRS: \nTransfer dest:owner value:REF_10\""
+                    ],
+                    "state_variable": "owner"
+                }
+            ]
+        }
+    ]
+}

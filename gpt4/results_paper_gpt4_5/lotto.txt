@@ -1,0 +1,9 @@
+This smart contract contains some vulnerabilities.
+
+1. Unchecked Return Values For Low Level Calls: The contract uses the `send()` method twice but does not check the return value of these calls. The `send()` method can fail for several reasons, such as the recipient contract throwing an exception, the call stack depth limit being reached, or the recipient contract consuming all the gas. In any of these cases, the `send()` method will return false but the contract does not handle this. It's recommended to always handle the possibility of a transfer failing.
+
+2. Denial of Service: The contract is vulnerable to a denial of service attack. If the winner is a contract that always fails (for example, by having a fallback function that throws an exception), then `sendToWinner()` will always fail and `payedOut` will never be set to `true`. As a result, the `withdrawLeftOver()` function can never be called, effectively locking all funds in the contract.
+
+3. Access Control: The contract does not appear to have any access control mechanisms in place. This means that any address can call `sendToWinner()` and `withdrawLeftOver()`. For `withdrawLeftOver()`, this may result in an arbitrary address being able to withdraw all remaining funds in the contract.
+
+4. Reentrancy: Although this contract does not currently exhibit a reentrancy vulnerability, it's worth noting because it is such a common issue. Reentrancy can occur when a contract calls an external contract and then continues execution afterwards. The external contract can potentially call back into the calling contract before the first call has finished, potentially leading to unexpected behavior. This contract does not exhibit this vulnerability because it does not continue execution after calling an external contract.

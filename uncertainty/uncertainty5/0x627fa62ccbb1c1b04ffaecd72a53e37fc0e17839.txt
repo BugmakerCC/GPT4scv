@@ -1,0 +1,21 @@
+The smart contract has the following vulnerabilities:
+
+1. Reentrancy: The function `WithdrawToHolder` is vulnerable to reentrancy attack. This function first sends the ether to the `_addr` and then reduces the balance. An attacker can create a fallback function in their contract to call `WithdrawToHolder` again while the first call is not finished. This way, they can drain the contract's ether.
+
+2. Access Control: The contract `Ownable` has a function `changeOwner` which allows the owner to change the owner address. But the `onlyOwner` modifier which is supposed to restrict access to only the owner does not work properly because it does not revert the transaction when the condition is not met. It just skips to the end of the function. This means, any address can change the owner.
+
+3. Arithmetic Issues: There are no checks for integer overflow and underflow. However, in this contract it seems there is no risk of overflow or underflow.
+
+4. Unchecked Return Values For Low Level Calls: The contract uses `.call.value()` in the `WithdrawToHolder` function. This is a low-level call and its return value should be checked to see if the transaction is successful. The return value is not checked in this contract.
+
+5. Denial of Service: This contract does not seem to have any DoS vulnerabilities.
+
+6. Bad Randomness: This contract does not use any randomness.
+
+7. Front-Running: This contract does not seem to have any front-running vulnerabilities.
+
+8. Time manipulation: This contract does not use any timestamp.
+
+9. Short Address Attack: This contract does not seem to have any short address vulnerabilities. 
+
+Please note that a thorough audit by a professional firm is also recommended before deploying the contract.

@@ -1,0 +1,19 @@
+1. Reentrancy: The contract is vulnerable to reentrancy attacks. In the `GetFreebie` and `withdraw` functions, the contract transfers ether to an address before updating its state. This could allow an attacker to continuously call these functions and drain the contract of its funds.
+
+2. Access Control: The contract is vulnerable to an access control issue. The `withdraw` function allows the `Owner` address to be changed to a specific hardcoded address. If the owner of that address is malicious, they can take control of the contract.
+
+3. Arithmetic Issues: There doesn't seem to be any arithmetic operations that could lead to overflows or underflows.
+
+4. Unchecked Return Values for Low Level Calls: The `Command` function performs a low level `call` without checking its return value. If the call fails for any reason, the contract won't be aware of it and may continue to execute as if it was successful.
+
+5. Denial of Service: There doesn't seem to be any potential Denial of Service vulnerabilities in this contract.
+
+6. Bad Randomness: There doesn't seem to be any randomness in this contract, so it's not vulnerable to bad randomness.
+
+7. Front-Running: There doesn't appear to be any front-running vulnerabilities in this contract.
+
+8. Time Manipulation: There's no reliance on time or block timestamps in this contract, so it's not vulnerable to time manipulation.
+
+9. Short Address Attack: This contract doesn't seem to be vulnerable to a short address attack as it doesn't take address inputs from users. 
+
+Remember that this analysis is not exhaustive and other vulnerabilities may exist. Always make sure to have a professional security audit done before deploying a smart contract.

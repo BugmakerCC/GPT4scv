@@ -1,0 +1,17 @@
+1. Reentrancy: The contract seems to be vulnerable to reentrancy attacks. Specifically, the `WithdrawToHolder` function sends Ether with `_addr.call.value(_wei);` before it decreases the balance of `_addr` with `Holders[_addr]-=_wei;`. An attacker can create a fallback function to call `WithdrawToHolder` again before the `Holders[_addr]-=_wei;` has been executed.
+
+2. Access Control: The contract uses the `onlyOwner` modifier to restrict access to certain functions. However, the implementation of `onlyOwner` modifier is incorrect as it doesn't revert the transaction when `msg.sender` is not the owner. It simply skips the function body, potentially leading to unexpected behavior.
+
+3. Arithmetic Issues: There doesn't seem to be any integer overflow or underflow vulnerabilities as the contract doesn't perform any unsafe arithmetic operations.
+
+4. Unchecked Return Values For Low Level Calls: The contract uses low level `.call()` method in `WithdrawToHolder` and `WithdrawToken` functions without checking the return values, which is a potential security risk. If these calls fail, the contract will not be aware of it.
+
+5. Denial of Service: The contract doesn't seem to be vulnerable to Denial of Service attacks.
+
+6. Bad Randomness: The contract doesn't use randomness so there's no bad randomness vulnerability.
+
+7. Front-Running: The contract doesn't seem to be vulnerable to front-running.
+
+8. Time manipulation: The contract doesn't rely on block timestamps (`now`) so there's no timestamp dependence vulnerability.
+
+9. Short Address Attack: The contract doesn't take any measures to prevent a short address attack, although Solidity as of 0.4.22 has protection against it.

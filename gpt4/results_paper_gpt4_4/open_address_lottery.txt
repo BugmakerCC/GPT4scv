@@ -1,0 +1,21 @@
+After analyzing the provided smart contract code, I've identified the following potential vulnerabilities:
+
+1. Reentrancy: The contract does not appear to have a reentrancy vulnerability since it does not make any external calls in the middle of a function execution.
+
+2. Access control: There's a potential access control vulnerability in the `forceReseed()` function and `kill()` function. Only the contract owner should be able to call these functions, and while there is a `require(msg.sender==owner)` statement, it would be more secure to use an explicit modifier for this.
+
+3. Arithmetic issues: The contract is potentially vulnerable to an integer underflow at `block.number-lastReseed>1000` in the `participate()` function, if `lastReseed` is greater than `block.number`. However, under normal circumstances, this should never happen as the `block.number` is always increasing.
+
+4. Unchecked return values: The contract does not check the return value of the `msg.sender.transfer(win)` call in the `participate()` function. This could potentially lead to unexpected behavior if the transfer fails.
+
+5. Denial of Service: The contract could potentially be vulnerable to a DoS attack if an attacker repeatedly calls the `participate()` function and the contract's balance is not enough to cover the potential winnings. This could drain the contract's funds and prevent legitimate users from winning.
+
+6. Bad randomness: The contract relies on block variables (like `block.coinbase`, `block.difficulty`, `block.gaslimit`, `block.timestamp`) to generate a random number in the `reseed()` function. This could potentially be manipulated by a miner and is not a reliable source of randomness.
+
+7. Front-Running: There's a potential for front-running attacks because the result of the lottery is determinable before the transaction is mined. An attacker can see if they are going to win the lottery by calling `luckyNumberOfAddress()` and if they are not going to win, they can choose not to broadcast their transaction.
+
+8. Time Manipulation: The contract could be vulnerable to time manipulation attacks as it uses `block.timestamp` for generating a random seed. A miner can slightly adjust the timestamp to affect the outcome of the lottery.
+
+9. Short Address Attack: The contract does not appear to be vulnerable to short address attacks, as it does not directly interact with user-supplied input in a manner that would expose it to such attacks. 
+
+Please note that this analysis is not exhaustive, and the contract may contain other vulnerabilities. Also, it is always recommended to get your smart contract audited by a professional security firm before deploying it on the mainnet.

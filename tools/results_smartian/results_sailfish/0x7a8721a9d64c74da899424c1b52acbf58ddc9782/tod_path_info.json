@@ -1,0 +1,30 @@
+{
+    "tod_symex_path_1.json": {
+        "file_name": "",
+        "from_function": "CashOut",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 84\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 86\nCall context: \nTrue\nTMP_9(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:_am \""
+        ],
+        "executable_instructions": 47,
+        "state_variable": "balances",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_2.json": {
+        "file_name": "",
+        "from_function": "CashOut",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 92\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 94\nCall context: \nTrue\nTMP_9(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:_am \""
+        ],
+        "executable_instructions": 47,
+        "state_variable": "balances",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    }
+}

@@ -1,0 +1,19 @@
+This smart contract appears to have several vulnerabilities:
+
+1. Reentrancy: The `fundPuppets` function in the `Splitter` contract and the fallback function in the `Puppet` contract include a `call.value()` function which can lead to reentrancy attacks. An attacker can create a contract which will fallback to a function that calls the `fundPuppets` function again. This could lead to the attacker draining the contract of its funds.
+
+2. Access Control: The function `setExtra` in the `Splitter` contract allows any account to change the address of the `extra` mapping. This could allow an attacker to redirect funds to their own address.
+
+3. Arithmetic Issues: The contract uses the `SafeMath` library to prevent overflow and underflow issues which is good, but it is not used consistently throughout the contract. For example, the `_share` variable in the `fundPuppets` function is not protected.
+
+4. Unchecked Return Values: The contract doesn't check the return value of the `call.value()` function. If these calls fail, the contract will not be aware of it and will continue execution.
+
+5. Denial of Service: An attacker can force the `fundPuppets` function to run out of gas by creating a Puppet contract with a fallback function that consumes a lot of gas.
+
+6. Bad Randomness: This vulnerability is not present in this contract.
+
+7. Front-Running: The contract does not appear to be vulnerable to front-running as there are no functions that rely on external data inputs that could be exploited by a miner or a full node.
+
+8. Time manipulation: This vulnerability is not present in this contract as there are no functions that rely on block timestamps.
+
+9. Short Address Attack: This vulnerability is not present in this contract as all addresses are either set in the constructor or through functions that check that the address is not 0.

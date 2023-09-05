@@ -1,0 +1,19 @@
+This smart contract has several vulnerabilities:
+
+1. Reentrancy: The contract is vulnerable to a reentrancy attack. The function 'join' calls 'send' before it changes the state (balance). An attacker could exploit this by creating a fallback function that calls 'join' again when 'send' is called. This could drain the contract's Ether.
+
+2. Bad Randomness: The contract uses the block number and block hash to generate a random number in the 'rand' function. This is not secure because miners can manipulate these values to influence the output.
+
+3. Denial of Service: The 'join' function sends Ether back if the sent amount is larger than 1 Ether. An attacker could continuously send more than 1 Ether to keep the contract busy and prevent other users from interacting with it.
+
+4. Arithmetic Issues: The contract does not check for overflows or underflows when it performs arithmetic operations. This could lead to unexpected behavior.
+
+5. Access Control: The contract has functions that should only be called by the owner, such as 'changeOwner', 'changeMultiplier', and 'changeFee'. However, these functions do not have any access controls, so anyone can call them.
+
+6. Unchecked Return Values: The contract does not check the return value of 'send'. If 'send' fails, the contract will continue executing, which could lead to unexpected behavior.
+
+7. Time manipulation: Although not evident in this contract, it is possible to use block.timestamp for critical logic, which can be manipulated by miners to some extent.
+
+8. Front-Running: Transactions on the Ethereum network are public, so an attacker could see a transaction and then create a new one with a higher gas price to get it mined first.
+
+9. Short Address Attack: This contract does not check the length of the address. An attacker could send less than 20 bytes to manipulate the contract's behavior.

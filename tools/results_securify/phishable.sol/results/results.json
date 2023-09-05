@@ -1,0 +1,70 @@
+{
+  "/sb/phishable.sol:Phishable": {
+    "results": {
+      "TODReceiver": {
+        "violations": [],
+        "warnings": [
+          20
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnhandledException": {
+        "violations": [],
+        "warnings": [
+          20
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODTransfer": {
+        "violations": [],
+        "warnings": [
+          20
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "DAO": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODAmount": {
+        "violations": [
+          20
+        ],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "MissingInputValidation": {
+        "violations": [
+          17
+        ],
+        "warnings": [
+          9
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "DAOConstantGas": {
+        "violations": [],
+        "warnings": [
+          20
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnrestrictedEtherFlow": {
+        "violations": [],
+        "warnings": [],
+        "safe": [
+          20
+        ],
+        "conflicts": []
+      }
+    }
+  }
+}

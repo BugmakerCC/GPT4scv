@@ -1,0 +1,27 @@
+This smart contract is vulnerable to the integer overflow vulnerability. 
+
+In the `run` function, the `count` variable is multiplied by the `input` parameter without any checks for potential overflow. If the value of `input` is large enough, the multiplication can result in an overflow.
+
+An integer overflow occurs when the result of an arithmetic operation exceeds the maximum value that can be stored in the data type used for the operation. In Solidity, an overflow does not throw an exception but wraps around to the minimum value of the data type.
+
+In this case, if the result of the multiplication exceeds the maximum value that can be stored in a `uint`, the overflowed value will be stored in the `count` variable. This can lead to unexpected behavior and could be exploited by an attacker to manipulate the state of the contract.
+
+To fix this vulnerability, you should add a check to ensure that the multiplication does not result in an overflow. One way to do this is by using the SafeMath library, which provides safe arithmetic operations that prevent overflows and underflows. Here's an example of how to protect against the overflow vulnerability using SafeMath:
+
+```solidity
+pragma solidity ^0.4.19;
+
+import "./SafeMath.sol";
+
+contract IntegerOverflowMul {
+    using SafeMath for uint256;
+
+    uint public count = 2;
+
+    function run(uint256 input) public {
+        count = count.mul(input);
+    }
+}
+```
+
+By using the `mul` function from the SafeMath library, the multiplication operation is checked for overflow, and an exception is thrown if an overflow is detected. This prevents the vulnerability and ensures the safe execution of the smart contract.

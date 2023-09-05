@@ -1,0 +1,19 @@
+This smart contract seems to be vulnerable to the following vulnerabilities:
+
+1. Re-entrancy: The `CashOut` function is vulnerable to a re-entrancy attack because it calls an external contract (which can be a malicious contract designed to drain funds) before it updates the state (balances[msg.sender]-=_am). This means that the external call can be used to call `CashOut` again before the state is updated, allowing multiple withdrawals in a single transaction.
+
+2. Access Control: The `AddMessage` function in the `Log` contract is public and doesn't have any access control measures in place, meaning that anyone can call it and potentially fill the storage with junk data.
+
+3. Unchecked Return Values for Low Level Calls: The contract uses a low-level call (msg.sender.call.value(_am)()), but doesn't check its return value. If the call fails, the state won't be updated and the contract will continue to work as if everything was fine.
+
+4. Gas limit attacks (Denial of Service): The `AddMessage` function can be called repeatedly until the gas limit is reached, potentially causing the contract to become stuck in a state where no further transactions can be processed.
+
+5. Bad Randomness: While this contract doesn't explicitly use random numbers, the reliance on `block.number` for checking the last action could be considered as a source of randomness that can be manipulated by miners.
+
+6. Front Running: While there's no explicit use of price or sensitive data that could be front-run, the lack of access control and re-entrancy vulnerability could be used in combination with a front-running attack.
+
+7. Time Manipulation: The contract uses `block.number` as a way of ensuring that only one action can be performed per block. However, this can be manipulated by miners, potentially allowing multiple actions within a single block.
+
+8. Short Address Attack: The contract doesn't check the length of the address when receiving ETH. If a user sends ETH from a short address, the contract will accept it but might send it to a different address when withdrawing because the short address gets padded with zeroes.
+
+So, code review should be conducted to remove these vulnerabilities from the smart contract.

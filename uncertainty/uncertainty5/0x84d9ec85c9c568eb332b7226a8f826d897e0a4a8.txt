@@ -1,0 +1,21 @@
+Upon examining the provided smart contract, below are the potential vulnerabilities that I found:
+
+1. Reentrancy: The function `execute` in `Owned` contract can be exploited with reentrancy attack as it allows arbitrary calls to other contracts or addresses. The contract does not employ mechanisms such as checks-effects-interactions pattern or reentrancy guard to prevent such an attack.
+
+2. Access Control: The contract is vulnerable to an access control issue where an arbitrary address can accept ownership if the owner mistakenly calls `changeOwner` with the wrong address.
+
+3. Arithmetic Issues: There doesn't seem to be an arithmetic issue in this contract as it does not perform any arithmetic operations like addition or subtraction.
+
+4. Unchecked Return Values For Low Level Calls: The `execute` function in the `Owned` contract makes a low-level call without checking its return value. This could lead to silent failures.
+
+5. Denial of Service: The contract does not seem to be vulnerable to the denial of service attack as it does not rely on loops or have functions that could potentially lock the contract.
+
+6. Bad Randomness: The contract does not seem to be vulnerable to the bad randomness attack as it does not rely on block variables for randomness.
+
+7. Front-Running: There doesn't seem to be a front-running issue as the contract does not have functions that are vulnerable to transaction order dependence.
+
+8. Time manipulation: The contract uses `now` keyword (alias for `block.timestamp`) in `writeIndex` function which could be manipulated by miners to some extent, however, it doesn't seem to be a significant issue in this particular contract context.
+
+9. Short Address Attack: The contract does not seem to be vulnerable to this attack as it does not handle raw transfer of tokens.
+
+Please note that it's recommended to use higher level calls such as `transfer` instead of lower level calls such as `call.value` to prevent reentrancy attacks. It's also recommended to use the Ownable contract from OpenZeppelin library for secure and standardized ownership control.

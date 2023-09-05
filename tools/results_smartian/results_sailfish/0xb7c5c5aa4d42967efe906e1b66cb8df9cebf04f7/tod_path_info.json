@@ -1,0 +1,32 @@
+{
+    "tod_symex_path_1.json": {
+        "file_name": "",
+        "from_function": "withdraw",
+        "to_function": "fallback",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 23\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 24\nCall context: \nNone\nREF_3 -> balances[msg.sender]\nTMP_1(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:REF_3 \""
+        ],
+        "executable_instructions": 12,
+        "state_variable": "balances",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_2.json": {
+        "file_name": "",
+        "from_function": "withdraw",
+        "to_function": "withdraw",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 30\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 31\nCall context: \nNone\nREF_3 -> balances[msg.sender]\nTMP_1(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:REF_3 \""
+        ],
+        "executable_instructions": 12,
+        "state_variable": "balances",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    }
+}

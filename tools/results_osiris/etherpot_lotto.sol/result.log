@@ -1,0 +1,4 @@
+WARNING:root:You are using solc version 0.4.26. The supported version is 0.4.21.
+INFO:root:Contract /sb/etherpot_lotto.sol:Lotto:
+INFO:symExec:Running, please wait...
+Segmentation fault

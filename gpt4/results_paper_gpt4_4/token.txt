@@ -1,0 +1,9 @@
+This contract has an Arithmetic Issue. 
+
+The issue lies in the `transfer()` function, where it attempts to check that the sender has enough tokens to send by using the statement `require(balances[msg.sender] - _value >= 0);`. However, if `_value` is greater than `balances[msg.sender]`, an underflow will occur because unsigned integers in Solidity are not allowed to be negative. 
+
+In the case of an underflow, the result wraps around and becomes very large, which means the `require` statement will pass when it should not. 
+
+To fix this, use SafeMath library for subtraction, or in this case, we can simply check if the sender's balance is greater than or equal to the `_value`, like this: `require(balances[msg.sender] >= _value);`
+
+The contract does not seem to have other vulnerabilities mentioned. It doesn't have reentrancy because there are no external contract calls. Access control is not applicable because all functions are public and no privileged permissions are given. Unchecked return values, denial of service, bad randomness, front-running, time manipulation, and short address attacks also do not apply to this contract.

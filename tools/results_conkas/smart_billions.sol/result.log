@@ -1,0 +1,72 @@
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+Analysing /sb/smart_billions.sol:BasicToken...
+Nothing to analyse
+Analysing /sb/smart_billions.sol:ERC20...
+Nothing to analyse
+Analysing /sb/smart_billions.sol:ERC20Basic...
+Nothing to analyse
+Analysing /sb/smart_billions.sol:SafeMath...
+Analysing /sb/smart_billions.sol:SmartBillions...
+Vulnerability: Integer Overflow. Maybe in function: _fallthrough. PC: 0x2705. Line number: 737.
+If a = 115792089237316195423570985008687907853269984665640564039457584007913129639934
+and b = 10
+Vulnerability: Integer Underflow. Maybe in function: _fallthrough. PC: 0x390c. Line number: 364.
+If a = 411376139330301510538742295639337626245683966408394965837152254
+and b = 115792089210356660132559675515531431508545993329629665300883419921775356542975
+Vulnerability: Integer Overflow. Maybe in function: _fallthrough. PC: 0x2b6b. Line number: 639.
+If a = 101051993584849178915136821395265346177868384823507754984078593667947067386055
+and b = 14740095665945961384986061790905649111762965496648786174950339383382744499000
+Vulnerability: Integer Overflow. Maybe in function: _fallthrough. PC: 0x103f. Line number: 401.
+If a = 115792089237316195423570985008687907853269984665640564039457584007913129627648
+and b = 81920
+Vulnerability: Integer Overflow. Maybe in function: _fallthrough. PC: 0x10ee. Line number: 410.
+If a = 88715098387007398795062487007210692101854672807010361044272357516363110061170
+and b = 60557064826150099271915217611743156429831752137056479852411874201262714574330
+Vulnerability: Integer Overflow. Maybe in function: _fallthrough. PC: 0x19fc. Line number: 468.
+If a = 60851113542818458105227729427337538821684131388988870985932918580893224339787
+and b = 4294967295
+Vulnerability: Integer Overflow. Maybe in function: _fallthrough. PC: 0x1292. Line number: 416.
+If a = 28948022309329048855696586822941143189447627741865227488477743823557069111301
+and b = 5
+Vulnerability: Integer Overflow. Maybe in function: _fallthrough. PC: 0x14f7. Line number: 422.
+If a = 28948022309329048855892746158635872174139375796301150853347149870715679801343
+and b = 10
+Vulnerability: Integer Underflow. Maybe in function: _fallthrough. PC: 0x3fa7. Line number: 345.
+If a = 1
+and b = 2
+Vulnerability: Integer Underflow. Maybe in function: _fallthrough. PC: 0x1066. Line number: 403.
+If a = 41857386869544752927459898643493624929287585378469107594928307921987761821814
+and b = 99753434939076025647950850253174727341163656647436846091434344807426143984648
+Vulnerability: Integer Overflow. Maybe in function: addHashes(uint256). PC: 0x2ef7. Line number: 675.
+If a = 62258169526830428036751353775728398187878748772552990522916158355432599341059
+and b = 66314850276177677387270938156721607873875837365723195964233459263250645530628
+Vulnerability: Integer Underflow. Maybe in function: _fallthrough. PC: 0x4602. Line number: 723.
+If a = 115787892921617453429625495955482953629673527755715028807402077953209856425984
+and b = 4294811647
+Vulnerability: Integer Overflow. Maybe in function: _fallthrough. PC: 0x3f66. Line number: 339.
+If a = 115792089237316195423570985008687907853269984665640564039457584007913129639932
+and b = 81920
+Vulnerability: Integer Overflow. Maybe in function: _fallthrough. PC: 0x14de. Line number: 421.
+If a = 28948022309329048855892746252171976963317496166410141009864396001978282409984
+and b = 16
+Vulnerability: Integer Overflow. Maybe in function: _fallthrough. PC: 0x139b. Line number: 418.
+If a = 28948022309329048855868226323518122741583762613975736062926496176023344775167
+and b = 5
+Vulnerability: Integer Underflow. Maybe in function: _fallthrough. PC: 0x3f92. Line number: 344.
+If a = 4194302
+and b = 4194304
+Vulnerability: Reentrancy. Maybe in function: _fallthrough. PC: 0x4888. Line number: 382.
+Vulnerability: Transaction Ordering Dependence. Maybe in function: _fallthrough. PC: 0x46f1. Line number: 372.
+Vulnerability: Integer Overflow. Maybe in function: _fallthrough. PC: 0x2cc3. Line number: 652.
+If a = 1
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+Vulnerability: Reentrancy. Maybe in function: _fallthrough. PC: 0x46f1. Line number: 372.
+Vulnerability: Integer Overflow. Maybe in function: _fallthrough. PC: 0x12b2. Line number: 417.
+If a = 28948022309329048855108108535248641867838022488509182707851601571420278095871
+and b = 5
+Vulnerability: Integer Overflow. Maybe in function: _fallthrough. PC: 0x48c2. Line number: 719.
+If a = 1766847064778384329583297500742918515827483896875618958121606201292619776
+and b = 61514547604473267463936512002826458731520075522532055170934893812730008961275
+Analysing /sb/smart_billions.sol:StandardToken...
+Nothing to analyse

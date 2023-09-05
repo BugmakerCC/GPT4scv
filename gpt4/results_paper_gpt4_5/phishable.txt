@@ -1,0 +1,9 @@
+This contract has at least three vulnerabilities:
+
+1. Reentrancy: The `withdrawAll` function makes an external call to `_recipient` before it finishes execution. If the `_recipient` contract also has a function that calls back to `withdrawAll`, it could drain all the funds from the contract. This is a classic example of a reentrancy attack.
+
+2. Access Control: The `withdrawAll` function uses `tx.origin` to check that the transaction is made by the owner of the contract. However, `tx.origin` represents the original sender of the transaction, which can be a malicious contract. Instead, `msg.sender` should be used to ensure that only the owner can call this function.
+
+3. Denial of Service: The `withdrawAll` function transfers all the balance of the contract to the `_recipient`. If the `_recipient` is a contract that refuses to accept the transfer or throws an exception, it could cause the `withdrawAll` function to fail indefinitely, effectively blocking all future withdrawals.
+
+It doesn't have Arithmetic issues, Unchecked return values for low level calls, Bad randomness, Front-running, Time manipulation, and Short address attack vulnerabilities.

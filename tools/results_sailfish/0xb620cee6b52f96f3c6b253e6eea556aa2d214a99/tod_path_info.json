@@ -1,0 +1,58 @@
+{
+    "tod_symex_path_1.json": {
+        "file_name": "",
+        "from_function": "manipulateSecret",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 232\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 230\nCall context: \nTrue\namount := 0\nTransfer dest:msg.sender value:amount\""
+        ],
+        "executable_instructions": 70,
+        "state_variable": "owner",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_2.json": {
+        "file_name": "",
+        "from_function": "manipulateSecret",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 249\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 251\nCall context: \nNone\nREF_20 -> approvedPlayers[msg.sender]\nTMP_60 = SOLIDITY_CALL require(bool)(REF_20)\""
+        ],
+        "executable_instructions": 38,
+        "state_variable": "approvedPlayers",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_3.json": {
+        "file_name": "",
+        "from_function": "callFirstTarget",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 264\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 266\nCall context: \nNone\nREF_20 -> approvedPlayers[msg.sender]\nTMP_60 = SOLIDITY_CALL require(bool)(REF_20)\""
+        ],
+        "executable_instructions": 35,
+        "state_variable": "approvedPlayers",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_4.json": {
+        "file_name": "",
+        "from_function": "callSecondTarget",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 273\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 275\nCall context: \nNone\nREF_20 -> approvedPlayers[msg.sender]\nTMP_60 = SOLIDITY_CALL require(bool)(REF_20)\""
+        ],
+        "executable_instructions": 35,
+        "state_variable": "approvedPlayers",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    }
+}

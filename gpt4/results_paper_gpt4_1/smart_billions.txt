@@ -1,0 +1,21 @@
+The smart contract provided is quite extensive and has a number of potential areas for vulnerabilities. Based on the provided vulnerabilities, the following potential exploitations could be present:
+
+1. Reentrancy: There are multiple functions that involve transferring funds. Any of these functions could potentially be vulnerable to reentrancy attacks. Specifically, the functions `pay()`, `coldStore()`, `payWallet()`, `invest()`, `disinvest()`, and `playSystem()` could potentially be vulnerable.
+
+2. Access Control: The contract has functions that are restricted to the owner or the animator. If these roles are not properly controlled or if the functions do not properly implement the restrictions, this could lead to unauthorized access and manipulation of the contract. 
+
+3. Arithmetic Issues: The contract uses the SafeMath library for arithmetic operations which should protect against overflow and underflow issues.
+
+4. Unchecked Return Values For Low Level Calls: The contract calls `transfer()` method multiple times. If these calls fail, the contract does not properly handle these failures which could lead to unexpected behaviour.
+
+5. Denial of Service: The contract contains a number of loops (e.g., `for` loops in `commitDividend()`, `addHashes()`, `putHashes()`) that could potentially be exploited to force the contract to consume all available gas, causing a Denial of Service.
+
+6. Bad Randomness: The contract uses `block.blockhash()` for generating random numbers which can be manipulated by miners.
+
+7. Front-Running: The contract may be vulnerable to front-running attacks as state variables like `hashNext` and `hashBetSum` are publicly visible and are used in conditions for betting.
+
+8. Time manipulation: The contract uses block numbers (`block.number`) as a measure of time, which can be manipulated by miners to some extent.
+
+9. Short Address Attack: The contract does not seem to have protection against the short address attack. This could pose a risk in functions where the address is an input parameter.
+
+It's important to note that a manual review would be required to confirm these potential vulnerabilities and determine if there are any additional issues.

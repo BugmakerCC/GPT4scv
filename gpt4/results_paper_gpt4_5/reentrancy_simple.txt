@@ -1,0 +1,23 @@
+The provided smart contract code has a Reentrancy vulnerability.
+
+Here's how: 
+
+The function `withdrawBalance()` allows the contract to send all of the user's balance to the user's address. If the user's address is a contract, the fallback function of that contract will be called. The balance of the user is only set to zero after this call. 
+
+This means if the fallback function of the malicious contract which calls `withdrawBalance()` again, it will be able to drain more Ether from the contract than it should be allowed to. This is because the balance state isn't updated until after the external call, and so calling `withdrawBalance()` multiple times in a row can continuously drain the contract of more Ether.
+
+Fixing this issue involves making sure the state of the contract is updated before making external calls. The `withdrawBalance()` function should be updated to:
+
+```solidity
+function withdrawBalance(){
+    uint amount = userBalance[msg.sender];
+    userBalance[msg.sender] = 0;
+    if( ! (msg.sender.call.value(amount)() ) ){
+        throw;
+    }
+}
+```
+
+In this fixed version of the function, the user's balance is set to zero before the external call is made, preventing the Reentrancy attack.
+
+The contract doesn't seem to have the other mentioned vulnerabilities: Access Control, Arithmetic Issues, Unchecked Return Values For Low Level Calls, Denial of Service, Bad Randomness, Front-Running, Time manipulation, Short Address Attack. However, please note that this analysis is based on the provided code snippet only and there might be other vulnerabilities in the full contract or in the contract interaction which are not covered in this analysis.

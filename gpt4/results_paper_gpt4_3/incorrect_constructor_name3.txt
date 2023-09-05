@@ -1,0 +1,21 @@
+This contract has an Access Control vulnerability due to the incorrect constructor name. In Solidity 0.4.22 and above, constructors are defined using the "constructor" keyword, but this contract is using the function name "Constructor" instead. This means that the function intended as the constructor can be called by anyone, not just at the time of contract creation, allowing an arbitrary user to take ownership of the contract.
+
+Here's how the vulnerability works:
+
+1. The contract is created, but since there's no proper constructor, the "owner" variable remains uninitialized and defaults to address 0.
+
+2. Any user can call the "Constructor" function, setting themselves as the owner.
+
+3. The new owner now has exclusive access to the withdraw function, and can drain any funds sent to the contract.
+
+To fix this vulnerability, the constructor should be correctly defined using the "constructor" keyword:
+
+```solidity
+    constructor()
+        public
+    {
+        owner = msg.sender;
+    }
+```
+
+This contract does not appear to have the other vulnerabilities listed. However, it would be a good practice to also add a check in the withdraw function to prevent underflows by ensuring the contract balance is greater than zero before the transfer.

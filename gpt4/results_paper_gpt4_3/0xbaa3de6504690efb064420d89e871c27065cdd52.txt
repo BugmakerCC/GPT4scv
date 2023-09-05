@@ -1,0 +1,21 @@
+The contract shows the following vulnerabilities:
+
+1. Reentrancy: The function `withdraw()` is susceptible to a reentrancy attack because it calls an external contract (via the `.transfer()` function) after updating the state (decreasing the balance). An attacker can make a recursive call to `withdraw()` before the first call is finished, possibly draining the contract's funds.
+
+2. Function visibility: The function `transferOwner()` in the Proxy contract should be only callable by the owner of the contract, but because of incorrect implementation of the `onlyOwner` modifier, any address can change the owner.
+
+3. Unchecked Return Values For Low Level Calls: The `.call.value()` function in the `proxy` function of the Proxy contract does not check the return value. If this call fails, the contract will not be aware and will continue execution.
+
+4. Access Control: The `onlyOwner` modifier in the Proxy contract does not prevent the function execution if `msg.sender` is not the owner. The if-statement simply skips over the `_` placeholder if the sender is not the owner, but the function will continue executing. It should throw an error instead.
+
+5. Bad Randomness: Not applicable here.
+
+6. Front-Running: Not applicable here.
+
+7. Time manipulation: Not applicable here.
+
+8. Short Address Attack: Not applicable here.
+
+9. Arithmetic Issues: Although not a clear overflow or underflow issue, the deposit function only accepts deposits greater than 0.25 ether, thus causing potential loss of funds if a user sends less than the required amount.
+
+The function `Vault` is not used at all and it seems useless. It might be a mistake in the contract design.

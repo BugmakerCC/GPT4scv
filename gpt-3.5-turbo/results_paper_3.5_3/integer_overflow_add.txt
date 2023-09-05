@@ -1,0 +1,25 @@
+The provided smart contract is susceptible to the vulnerability known as Arithmetic Issues, specifically integer overflow.
+
+In the `run` function, the `count` variable is incremented by the `input` parameter. However, there is no check to ensure that the addition operation does not result in an overflow. If the `input` value is large enough, it can cause the `count` variable to wrap around to zero, potentially leading to unexpected behavior.
+
+To address this vulnerability, you can add a check to ensure that the addition operation does not result in an overflow. One way to achieve this is by using the SafeMath library, which provides safe arithmetic operations.
+
+Here's an updated version of the smart contract that uses the SafeMath library:
+
+```solidity
+pragma solidity ^0.4.19;
+
+import "./SafeMath.sol";
+
+contract IntegerOverflowAdd {
+    using SafeMath for uint256;
+
+    uint public count = 1;
+
+    function run(uint256 input) public {
+        count = count.add(input);
+    }
+}
+```
+
+By using the `add` function from the SafeMath library, the addition operation is checked for overflow, and an exception will be thrown if an overflow occurs. This helps to mitigate the risk of integer overflow vulnerabilities.

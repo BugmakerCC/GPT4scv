@@ -1,0 +1,25 @@
+The smart contract provided is vulnerable to `Reentrancy` attack. The `attack` contract demonstrates how this vulnerability can be exploited. 
+
+Here is how it works:
+
+1. The `attack` contract first calls the `airDrop()` function of the `ModifierEntrancy` contract.
+2. Because the `attack` contract has not been called before, `hasBeenCalled` is `false`. So, the `supportsToken()` function of the `attack` contract calls `airDrop()` on the `ModifierEntrancy` contract again, before the first `airDrop()` call has completed.
+3. This reentrancy allows the `attack` contract to get more tokens than it should because the `tokenBalance` of the `attack` contract is not updated until after the `airDrop()` function has completed.
+
+The other vulnerabilities mentioned do not appear to be present. 
+
+- The contract does not have any access control issues since it does not have any functions or variables that are meant to be restricted but are not.
+
+- The contract does not appear to have any arithmetic issues.
+
+- The contract does not make any low level calls without checking their return values.
+
+- The contract does not appear to be vulnerable to a denial of service attack.
+
+- The contract does not use randomness, so it is not vulnerable to bad randomness.
+
+- The contract does not allow for front-running since it does not have any functions that depend on the order of transactions.
+
+- The contract does not depend on timestamps, so it is not vulnerable to time manipulation.
+
+- The contract does not seem to be vulnerable to a short address attack since it does not take address inputs from users.

@@ -1,0 +1,13 @@
+The smart contract does indeed have vulnerabilities:
+
+1. Time Manipulation: The contract uses the `block.timestamp` for generating a random number and inside the `payOut` function. This is risky as miners have some level of control over the timestamp and could potentially manipulate this to their advantage. These instances are located in the `randomGen` function and in the `payOut` function.
+
+2. Access Control: There are no restrictions on who can call the `draw` function. This could potentially allow an attacker to drain funds from the contract.
+
+3. Unchecked Return Values For Low Level Calls: The contract uses `send` to transfer ether, but it does not check the return value. This means that if the send fails, the contract will not be aware and will continue execution.
+
+4. Bad Randomness: The contract uses `block.timestamp` to generate a random number. This is not a secure source of randomness and can potentially be manipulated by miners.
+
+5. Denial of Service: The contract could be vulnerable to a denial of service attack if an attacker is able to force the `send` function to fail repeatedly, blocking the contract from sending ether. 
+
+Please consider these vulnerabilities and revise your smart contract accordingly.

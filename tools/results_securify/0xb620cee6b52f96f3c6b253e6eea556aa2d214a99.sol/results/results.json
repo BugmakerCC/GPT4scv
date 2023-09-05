@@ -1,0 +1,93 @@
+{
+  "/sb/0xb620cee6b52f96f3c6b253e6eea556aa2d214a99.sol:DrainMe": {
+    "results": {
+      "TODReceiver": {
+        "violations": [
+          136,
+          132
+        ],
+        "warnings": [],
+        "safe": [
+          99,
+          105
+        ],
+        "conflicts": []
+      },
+      "UnhandledException": {
+        "violations": [
+          132,
+          99,
+          105
+        ],
+        "warnings": [
+          136,
+          80
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODTransfer": {
+        "violations": [],
+        "warnings": [
+          99,
+          105
+        ],
+        "safe": [],
+        "conflicts": [
+          136,
+          132
+        ]
+      },
+      "DAO": {
+        "violations": [],
+        "warnings": [
+          132,
+          99,
+          105
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODAmount": {
+        "violations": [
+          136
+        ],
+        "warnings": [
+          132
+        ],
+        "safe": [
+          99,
+          105
+        ],
+        "conflicts": []
+      },
+      "MissingInputValidation": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "DAOConstantGas": {
+        "violations": [],
+        "warnings": [
+          136
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnrestrictedEtherFlow": {
+        "violations": [],
+        "warnings": [
+          136,
+          132,
+          80
+        ],
+        "safe": [
+          99,
+          105
+        ],
+        "conflicts": []
+      }
+    }
+  }
+}

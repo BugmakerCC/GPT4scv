@@ -1,0 +1,24 @@
+This contract is susceptible to the Reentrancy vulnerability. The issue lies in the `withdraw` function, where an external call `msg.sender.call.value(amount)()` is made before the `credit[msg.sender]-=amount;` line. 
+
+Here's how an attacker could exploit this:
+
+1. They call `donate` to deposit some amount.
+2. Now, they call `withdraw` to get their amount back. 
+3. Instead of a normal address, the attacker controls a contract address (let's call it `EvilContract`) which has a fallback function. This fallback function calls `withdraw` on `SimpleDAO`. 
+4. When `withdraw` is called the first time, it sends the funds to `EvilContract` which immediately calls `withdraw` back. 
+5. Since `credit[msg.sender]` has not been decreased yet, the contract thinks the attacker has the original amount available.
+6. This process can be repeated until the `SimpleDAO` contract is drained.
+
+To mitigate this, the state variable `credit[msg.sender]` should be updated before the external call. The updated `withdraw` function would look like this:
+
+```solidity
+function withdraw(uint amount) {
+    if (credit[msg.sender]>= amount) {
+      credit[msg.sender]-=amount;
+      
+      bool res = msg.sender.call.value(amount)();
+    }
+  }
+```
+
+This ensures that if a callback is initiated, the balance is already reduced and no more funds can be withdrawn. Additionally, the return value of the low-level call should be checked to handle any possible failures appropriately.

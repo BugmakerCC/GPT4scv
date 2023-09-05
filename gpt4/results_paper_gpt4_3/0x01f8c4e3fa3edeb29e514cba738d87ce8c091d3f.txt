@@ -1,0 +1,21 @@
+This contract contains several vulnerabilities:
+
+1. Reentrancy: In the "Collect" function, there is a call to an external contract (msg.sender.call.value(_am)()) before the internal state (balances[msg.sender]) is updated. This opens the contract to a reentrancy attack. An attacker can recursively call the "Collect" function before the first invocation of the function finishes, potentially draining the contract's Ether.
+
+2. Access Control: The contract lacks proper access control mechanisms. For example, the "SetMinSum" and "SetLogFile" functions can be called by any address before the contract is initialized. A malicious user could set the minimum sum to a very high amount or change the log file to an address they control.
+
+3. Arithmetic Issues: The contract is vulnerable to an underflow attack. In the "Collect" function, if _am is greater than balances[msg.sender], the subtraction operation would underflow, leading to an extremely large balance for the msg.sender.
+
+4. Unchecked Return Values: The contract doesn't check the return value of the call function in the "Collect" function. If the call were to fail, the contract's state would not reflect this. 
+
+5. Denial of Service: The contract is vulnerable to a Denial of Service (DoS) attack. By repeatedly calling the "Collect" function, an attacker might cause the contract to run out of gas.
+
+6. Bad Randomness: Not applicable.
+
+7. Front-Running: Not applicable.
+
+8. Time Manipulation: While the contract uses the "now" keyword (which is an alias for "block.timestamp") in the "AddMessage" function of the "LogFile" contract, there doesn't seem to be any critical logic dependent on it, so it's not a vulnerability in this case.
+
+9. Short Address Attack: Not applicable. 
+
+To fix these vulnerabilities, the contract should use the checks-effects-interactions pattern to avoid reentrancy, implement appropriate access controls, use SafeMath to prevent underflows and overflows, check the return value of calls, and consider using a pull payment system to avoid DoS attacks.

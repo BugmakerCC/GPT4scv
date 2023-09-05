@@ -1,0 +1,11 @@
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+Analysing /sb/reentrancy_insecure.sol:Reentrancy_insecure...
+Vulnerability: Transaction Ordering Dependence. Maybe in function: withdrawBalance(). PC: 0xad. Line number: 17.
+Vulnerability: Reentrancy. Maybe in function: withdrawBalance(). PC: 0xad. Line number: 17.
+Vulnerability: Integer Overflow. Maybe in function: withdrawBalance(). PC: 0xca. Line number: .
+If a = 128
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639745
+Vulnerability: Integer Overflow. Maybe in function: withdrawBalance(). PC: 0xc7. Line number: .
+If a = 115792089237316195423570985008687907853269984665640564039457584007913129639934
+and b = 63

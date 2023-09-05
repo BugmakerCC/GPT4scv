@@ -1,0 +1,73 @@
+2023-03-24 16:15:43,653 - Main     - INFO - [1mInitializing seed to 1427655.0[0m
+2023-03-24 16:15:43,692 - Fuzzer   - INFO - [1mFuzzing contract [1mSimpleDAO[0m[0m
+2023-03-24 16:15:43,740 - Analysis - INFO - [1mGeneration number 0 	 Code coverage: 83.04% (191/230) 	 Branch coverage: 94.44% (17/18) 	 Transactions: 11 (10 unique)   	 Time: 0.042359352111816406[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31m            !!! Reentrancy detected !!!              [0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31mSWC-ID:   107[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31mSeverity: High[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31mSource code line:[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31m/sb/simple_dao.sol:19:1[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31mmsg.sender.call.value(amount)()[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31mTransaction sequence:[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31mTransaction - withdraw(uint256):[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31mValue:     0 Wei[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31mGas Limit: 4500000[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31mInput:     0x2e1a7d4d00000000000000000000000000000000[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31m           00000000000000000000000000000000[0m
+2023-03-24 16:15:43,780 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:15:43,788 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33m        !!! Unhandled exception detected !!!         [0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33mSWC-ID:   104[0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33mSeverity: Medium[0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33mSource code line:[0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33m/sb/simple_dao.sol:19:1[0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33mmsg.sender.call.value(amount)()[0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33mTransaction sequence:[0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33mTransaction - withdraw(uint256):[0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33mInput:     0x2e1a7d4d00000000000000000000000000000000[0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33m           00000000000000000000000000000000[0m
+2023-03-24 16:15:43,789 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:15:43,808 - Analysis - INFO - [1mGeneration number 1 	 Code coverage: 99.57% (229/230) 	 Branch coverage: 100.00% (18/18) 	 Transactions: 24 (17 unique)   	 Time: 0.11061620712280273[0m
+2023-03-24 16:15:43,910 - Analysis - INFO - [1mGeneration number 2 	 Code coverage: 99.57% (229/230) 	 Branch coverage: 100.00% (18/18) 	 Transactions: 45 (25 unique)   	 Time: 0.21276354789733887[0m
+2023-03-24 16:15:44,074 - Analysis - INFO - [1mGeneration number 3 	 Code coverage: 99.57% (229/230) 	 Branch coverage: 100.00% (18/18) 	 Transactions: 79 (35 unique)   	 Time: 0.37684082984924316[0m
+2023-03-24 16:15:44,263 - Analysis - INFO - [1mGeneration number 4 	 Code coverage: 99.57% (229/230) 	 Branch coverage: 100.00% (18/18) 	 Transactions: 118 (45 unique)   	 Time: 0.5660524368286133[0m
+2023-03-24 16:15:44,471 - Analysis - INFO - [1mGeneration number 5 	 Code coverage: 99.57% (229/230) 	 Branch coverage: 100.00% (18/18) 	 Transactions: 158 (55 unique)   	 Time: 0.7736785411834717[0m
+2023-03-24 16:15:44,702 - Analysis - INFO - [1mGeneration number 6 	 Code coverage: 99.57% (229/230) 	 Branch coverage: 100.00% (18/18) 	 Transactions: 201 (64 unique)   	 Time: 1.0044751167297363[0m
+2023-03-24 16:15:44,898 - Analysis - INFO - [1mGeneration number 7 	 Code coverage: 99.57% (229/230) 	 Branch coverage: 100.00% (18/18) 	 Transactions: 242 (73 unique)   	 Time: 1.2004749774932861[0m
+2023-03-24 16:15:45,091 - Analysis - INFO - [1mGeneration number 8 	 Code coverage: 99.57% (229/230) 	 Branch coverage: 100.00% (18/18) 	 Transactions: 285 (83 unique)   	 Time: 1.3936302661895752[0m
+2023-03-24 16:15:45,303 - Analysis - INFO - [1mGeneration number 9 	 Code coverage: 99.57% (229/230) 	 Branch coverage: 100.00% (18/18) 	 Transactions: 330 (91 unique)   	 Time: 1.6053829193115234[0m
+2023-03-24 16:15:45,517 - Analysis - INFO - [1mGeneration number 10 	 Code coverage: 99.57% (229/230) 	 Branch coverage: 100.00% (18/18) 	 Transactions: 375 (100 unique)   	 Time: 1.8195087909698486[0m
+2023-03-24 16:15:45,517 - Analysis - INFO - [1m-----------------------------------------------------[0m
+2023-03-24 16:15:45,517 - Analysis - INFO - Number of generations: 	 10
+2023-03-24 16:15:45,517 - Analysis - INFO - Number of transactions: 	 375 (100 unique)
+2023-03-24 16:15:45,517 - Analysis - INFO - Transactions per second: 	 206
+2023-03-24 16:15:45,517 - Analysis - INFO - Total code coverage: 	 99.57% (229/230)
+2023-03-24 16:15:45,517 - Analysis - INFO - Total branch coverage: 	 100.00% (18/18)
+2023-03-24 16:15:45,517 - Analysis - INFO - Total execution time: 	 1.82 seconds
+2023-03-24 16:15:45,518 - Analysis - INFO - Total memory consumption: 	 55.99 MB
+
+     ______            ______                _           
+    / ____/___  ____  / ____/_  __________  (_)_  _______
+   / /   / __ \/ __ \/ /_  / / / /_  /_  / / / / / / ___/
+  / /___/ /_/ / / / / __/ / /_/ / / /_/ /_/ / /_/ (__  ) 
+  \____/\____/_/ /_/_/    \__,_/ /___/___/_/\__,_/____/  
+
+delteed file

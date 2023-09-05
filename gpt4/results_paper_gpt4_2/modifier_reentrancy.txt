@@ -1,0 +1,7 @@
+The smart contract has a Reentrancy vulnerability. 
+
+Reentrancy happens when during the execution of a function, the control is transferred to an external contract (through a call, delegatecall, send, etc.) and then the external contract calls back into the function. This vulnerability typically occurs when external contract calls are made before the state of the contract is properly updated, allowing for state changes to be made in the second (or later) invocation of the function that were not reflected in the first.
+
+In this contract, the reentrancy vulnerability is found in the `supportsToken()` function in the `attack` contract. Here, the function first checks if `hasBeenCalled` is false. If it is, it sets `hasBeenCalled` to true, and then calls the `airDrop()` function of the `ModifierEntrancy` contract (which is the contract that is under attack). This call to the `airDrop()` function can potentially lead to reentrancy if the `ModifierEntrancy` contract interacts with the `attack` contract again before its state is finalized.
+
+To fix the vulnerability, you could use the Checks-Effects-Interactions (CEI) pattern, which recommends that any interaction with external contracts should be the very last thing in the function. This can prevent reentrancy by ensuring that the state of the contract is finalized before any external calls are made.

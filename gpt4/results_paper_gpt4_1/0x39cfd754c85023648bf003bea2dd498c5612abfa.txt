@@ -1,0 +1,19 @@
+This smart contract has several vulnerabilities:
+
+1. Reentrancy: The contract's WithdrawToHolder function is vulnerable to a reentrancy attack. It sends ether to an address before it updates the balance of the address. An attacker could exploit this by causing the called contract to fall back into the vulnerable contract before the state (Holders[_addr]) is updated.
+
+2. Access Control: The contract's onlyOwner modifier doesn't throw an exception or revert the transaction if the caller isn't the owner. This means that any address can execute functions that are supposed to be restricted to the owner.
+
+3. Unchecked Low Level Calls: The contract uses low level calls (`_addr.call.value(_wei)`, `token.call(bytes4(sha3("transfer(address,uint256)")),to,amount)`) without checking the return values. If these calls fail, the contract will continue executing, which could lead to unexpected behavior.
+
+4. Arithmetic Issues: The contract doesn't check for underflows when it updates balances (Holders[_addr]-=_wei). If `_wei` is greater than `Holders[_addr]`, the balance will underflow and become a very large number.
+
+5. Denial of Service: The contract doesn't limit the gas of the `_addr.call.value(_wei)` call, which could lead to a denial of service if the call consumes all the available gas.
+
+6. Bad Randomness: Not applicable in this contract.
+
+7. Front-Running: Not applicable in this contract.
+
+8. Time manipulation: Not applicable in this contract.
+
+9. Short Address Attack: Not applicable in this contract.

@@ -1,0 +1,11 @@
+This contract has a couple of vulnerabilities:
+
+1. Access Control: The contract uses `tx.origin` for authorization, which is a potential security risk. It's generally advised to use `msg.sender` for authorization because `tx.origin` can be manipulated by an externally owned account (EOA) contract call.
+
+2. Reentrancy: The `withdrawAll` function sends ether with `transfer` without updating the contract's state beforehand. This could potentially be a reentrancy vulnerability if the recipient is a contract, although in this specific case the `transfer` function does have a fixed gas stipend of 2300 gas which prevents reentrancy.
+
+3. Denial of Service: If the owner's address becomes a contract that throws on fallback, it will not be able to withdraw the ether, causing a potential denial of service.
+
+4. Unchecked Return Values For Low Level Calls: Even though `transfer` is considered safer than `call.value()()`, it's still a low level call whose return value is not being checked here. If the transfer fails for any reason, the contract will not be aware of it.
+
+5. The contract is also vulnerable to attacks where the owner address is a short address. This is because the EVM does not check for correct padding of short address bytes. This could be exploited by an attacker to make the contract send funds to an address that they control.

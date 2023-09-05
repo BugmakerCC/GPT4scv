@@ -1,0 +1,50 @@
+{
+    "docker": {
+        "command": "'/sb/bin/do_solidity.sh' '/sb/reentrancy_cross_function.sol' '0' '/sb/bin' '0'",
+        "detach": true,
+        "entrypoint": null,
+        "image": "smartbugs/confuzzius:4315fb7",
+        "user": 0,
+        "volumes": {
+            "C:\\Users\\10976\\AppData\\Local\\Temp\\tmp8b_h9pis": {
+                "bind": "/sb",
+                "mode": "rw"
+            }
+        }
+    },
+    "filename": "all\\reentrancy_cross_function.sol",
+    "platform": {
+        "cpu": "12th Gen Intel(R) Core(TM) i7-12700H",
+        "python": "3.11.1.final.0 (64 bit)",
+        "release": "10",
+        "smartbugs": "2.0.7",
+        "system": "Windows",
+        "version": "10.0.22621"
+    },
+    "result": {
+        "duration": 3.4168312549591064,
+        "exit_code": 0,
+        "logs": "result.log",
+        "output": "result.tar",
+        "start": 1679674305.95874
+    },
+    "runid": "20230324_1600",
+    "solc": "0.4.26",
+    "tool": {
+        "bin": "scripts",
+        "command": "'$BIN/do_solidity.sh' '$FILENAME' '$TIMEOUT' '$BIN' '$MAIN'",
+        "cpu_quota": null,
+        "entrypoint": null,
+        "id": "confuzzius",
+        "image": "smartbugs/confuzzius:4315fb7",
+        "info": "A data dependency-aware hybrid fuzzer for Ethereum smart contracts",
+        "mem_limit": null,
+        "mode": "solidity",
+        "name": "ConFuzzius",
+        "origin": "https://github.com/christoftorres/ConFuzzius",
+        "output": "/root/results.json",
+        "parser": "parser.py",
+        "solc": true,
+        "version": "#4315fb7 v0.0.1"
+    }
+}

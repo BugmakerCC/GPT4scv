@@ -1,0 +1,15 @@
+The smart contract seems to have a few vulnerabilities:
+
+1. **Unchecked Return Values For Low Level Calls:** In the `execute` function of the `Owned` contract, the return value of the `call` function is not checked. This could lead to silent failing sends if the `call` function fails.
+
+2. **Reentrancy:** The `execute` function in the `Owned` contract is also susceptible to a re-entrancy attack. The contract calls an external contract (_dst) which could potentially call back into the contract before the original call is finished.
+
+3. **Denial of Service:** In the `run` function of the `TokenSender` contract, there's a loop which relies on the gas limit. If a large amount of transfers are added, the function could run out of gas and become unusable, causing a denial of service.
+
+4. **Integer Underflow:** The `run` function in the `TokenSender` contract is also susceptible to integer underflow. If `mNext` is 0 and the function is called, the while loop condition will underflow because `mNext` is decremented without a check to ensure it is greater than 0.
+
+5. **Access Control:** The contract relies heavily on the `onlyOwner` modifier for critical functions like `changeOwner`, `execute`, `fill` and `run`. If the owner address is compromised, it could lead to serious issues. It's also not clear how the owner is set initially - this could pose a risk if not properly handled.
+
+6. **Arithmetic Issues:** In the `fill` function, there's a potential for integer overflow in the line `totalToDistribute += acc;` if the sum of all `amount`s in `data` is large enough.
+
+Please note that these are potential vulnerabilities and a deeper analysis would be needed to confirm them.

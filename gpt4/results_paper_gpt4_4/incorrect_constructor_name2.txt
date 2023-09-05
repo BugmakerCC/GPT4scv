@@ -1,0 +1,39 @@
+This contract has an Access Control vulnerability because it uses an incorrect constructor name. In Solidity versions < 0.4.22, constructors were defined by creating a function with the same name as the contract. However, in Solidity 0.4.22+ a new constructor keyword was introduced. 
+
+In this contract, it seems like the function "missing()" is meant to be the constructor and set the owner of the contract to the sender. But since it's not using the constructor keyword or the contract name, it's not treated as a constructor. This means that anyone could call this function and change the owner of the contract at any point after deployment. 
+
+As the function "withdraw()" can only be called by the owner, this means that whoever calls the "missing()" function can withdraw funds from the contract. 
+
+To fix this, the constructor should be defined either using the contract name (if Solidity version < 0.4.22 is used) or using the constructor keyword (for Solidity version >= 0.4.22). 
+
+The corrected smart contract would look like this:
+
+```Solidity
+pragma solidity ^0.4.24;
+
+contract Missing{
+    address private owner;
+
+    modifier onlyowner {
+        require(msg.sender==owner);
+        _;
+    }
+    
+    constructor()
+        public
+    {
+        owner = msg.sender;
+    }
+
+    function () payable {}
+
+    function withdraw()
+        public
+        onlyowner
+    {
+       owner.transfer(this.balance);
+    }
+}
+```
+
+There doesn't appear to be any of the other vulnerabilities mentioned in this contract, but a full audit might reveal other issues.

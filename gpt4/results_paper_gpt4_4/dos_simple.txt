@@ -1,0 +1,9 @@
+The given smart contract seems to have a Denial of Service (DoS) vulnerability related to the gas limit. This vulnerability is found in the 'ifillArray' function. 
+
+In Ethereum, every operation costs a certain amount of gas, and a block has a gas limit which sets the maximum amount of gas all transactions in the block combined are allowed to consume.
+
+Here, the function 'ifillArray' is pushing the address of the sender to the 'listAddresses' array up to 350 times in a loop. If the length of 'listAddresses' array is less than 1500, this could lead to a situation where the gas required to execute this function exceeds the block gas limit, especially when the 'listAddresses' array is already nearly 1500 in length. 
+
+Once the gas limit is reached, execution will stop and all changes will be reverted, leaving the contract in a state where no further transactions can be processed, thus causing a denial of service.
+
+The contract does not seem to have issues related to Reentrancy, Access Control, Arithmetic, Unchecked Return Values, Bad Randomness, Front-Running, Time manipulation, or Short Address Attack. However, without knowing the complete context of the contract's use, there might still be potential risks related to these vulnerabilities.

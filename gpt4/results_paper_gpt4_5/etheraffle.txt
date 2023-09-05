@@ -1,0 +1,17 @@
+1. Reentrancy: This contract does not seem to have a reentrancy vulnerability. There is no nested external contract call with a state change after the call.
+
+2. Access Control: The contract has a potential access control vulnerability. The functions `endRaffle()`, `togglePause()`, and `kill()` can only be called by the owner of the contract (the address that deployed it). If the owner’s private key gets compromised, the attacker can pause the contract and prevent users from buying tickets or they can kill the contract and make it completely unusable.
+
+3. Arithmetic Issues: There doesn't seem to be any obvious arithmetic issues. All calculations appear to be handled correctly.
+
+4. Unchecked Return Values For Low Level Calls: The contract uses `.transfer()` function for sending ether which throws an exception on failure, so there is no unchecked return values vulnerability.
+
+5. Denial of Service: The `endRaffle()` function could potentially be used to carry out a Denial of Service attack by the owner of the contract by constantly ending the raffle, preventing users from buying tickets.
+
+6. Bad Randomness: The contract is vulnerable to bad randomness in the `chooseWinner()` function. It uses the `block.coinbase`, `msg.sender`, and `block.difficulty` as seed for generating random numbers which can be manipulated by miners.
+
+7. Front-Running: The contract is vulnerable to front-running. Since Ethereum transactions are public on the blockchain, a miner or a participant can see the transaction of a new ticket purchase and then place their own transaction with a higher gas price to buy a ticket, potentially influencing the outcome of the raffle.
+
+8. Time manipulation: The contract is vulnerable to time manipulation as it relies on `block.number` for keeping track of the raffle. Miners can manipulate this value.
+
+9. Short Address Attack: This contract doesn't appear to be vulnerable to a short address attack as it does not take address inputs from external calls.

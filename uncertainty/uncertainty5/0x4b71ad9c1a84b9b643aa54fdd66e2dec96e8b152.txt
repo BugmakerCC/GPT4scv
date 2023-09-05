@@ -1,0 +1,17 @@
+1. Reentrancy: The smart contract is vulnerable to reentrancy as the `caddress.call` is invoked inside a loop which means it can be recursively called before the function completes execution. 
+
+2. Access Control: The smart contract lacks any form of access control which would restrict who can call the `transfer` function. This could result in unauthorized transactions.
+
+3. Arithmetic Issues: There are no arithmetic operations in this contract, so there are no arithmetic issues.
+
+4. Unchecked Return Values For Low Level Calls: The smart contract does not check the return value of `caddress.call`. If this call fails, the contract will not be aware of the failure and continue execution.
+
+5. Denial of Service: This contract is vulnerable to a gas limit DoS attack. If the `_tos` array is very large, the contract will run out of gas and fail.
+
+6. Bad Randomness: The contract does not use randomness so this vulnerability is not present.
+
+7. Front-Running: This contract might be vulnerable to front-running if the correct circumstances arise. An attacker could see the pending transactions and manipulate the outcome by timing their own transactions.
+
+8. Time manipulation: This contract does not depend on timestamps or block numbers so this vulnerability is not present.
+
+9. Short Address Attack: This contract might be vulnerable to short address attack since it doesn't check the length of the address inputs.

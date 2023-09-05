@@ -1,0 +1,49 @@
+Upon reviewing the provided smart contract, I have identified the following vulnerabilities:
+
+1. Denial of Service (DoS): The `emptyCreditors` function can be used to perform a DoS attack by adding a large number of creditors to the `creditorAddresses` array. Once the array length exceeds 1500, the `creditorAddresses` array is emptied, and the `win` flag is set to true. This can cause excessive gas consumption and potentially block the execution of other functions in the contract.
+
+2. Gas Limit Reached: Adding a large number of creditors using the `addCreditors` function can also lead to a gas limit reached vulnerability. Since the loop iterates 350 times, it can consume a significant amount of gas if executed with a large number of creditors.
+
+To mitigate these vulnerabilities, I would suggest the following changes:
+
+1. Limit the number of creditors that can be added in a single transaction to prevent excessive gas consumption.
+2. Implement a mechanism to prevent DoS attacks by adding a cap on the number of creditors that can be added or using a more efficient data structure to store the creditors' addresses.
+
+Here is the modified version of the smart contract with the suggested changes:
+
+```
+pragma solidity ^0.4.25;
+
+contract DosGas {
+    address[] creditorAddresses;
+    bool win = false;
+    uint constant MAX_CREDITORS = 500;
+
+    function emptyCreditors() public {
+        if (creditorAddresses.length > MAX_CREDITORS) {
+            delete creditorAddresses;
+            win = true;
+        }
+    }
+
+    function addCreditors() public returns (bool) {
+        require(creditorAddresses.length + 350 <= MAX_CREDITORS, "Max creditors limit reached");
+        
+        for (uint i = 0; i < 350; i++) {
+            creditorAddresses.push(msg.sender);
+        }
+        
+        return true;
+    }
+
+    function iWin() public view returns (bool) {
+        return win;
+    }
+
+    function numberCreditors() public view returns (uint) {
+        return creditorAddresses.length;
+    }
+}
+```
+
+These changes will help mitigate the DoS and gas limit reached vulnerabilities by limiting the number of creditors that can be added and preventing excessive gas consumption.

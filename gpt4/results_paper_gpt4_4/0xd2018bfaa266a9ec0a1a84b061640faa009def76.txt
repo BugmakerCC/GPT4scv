@@ -1,0 +1,19 @@
+The smart contract seems to have the following vulnerabilities:
+
+1. Reentrancy: The functions `Get()` and `withdraw()` are vulnerable to reentrancy attacks. Both functions first transfer ETH to an address and then update the contract's state. This could be exploited by an attacker setting up a fallback function in their contract to call `Get()` or `withdraw()` again before the first call is finished.
+
+2. Access Control: The contract contains a critical function `Command(address adr,bytes data)` that allows the contract owner to interact with any address using the contract's balance. If the contract owner's address is compromised, it can lead to serious consequences.
+
+3. Unchecked Return Values For Low Level Calls: The contract uses `adr.call.value(msg.value)(data);` without checking the return value. If this call fails, the contract won't know and will continue executing.
+
+4. Arithmetic Issues: This contract does not seem to have any arithmetic issues. 
+
+5. Denial of Service: The contract may become unusable if an attacker can force the contract to throw an exception during the execution of `Get()` or `withdraw()`.
+
+6. Bad Randomness: This contract does not seem to use any randomness.
+
+7. Front-Running: This contract does not seem to be vulnerable to front-running.
+
+8. Time manipulation: This contract does not seem to depend on time.
+
+9. Short Address Attack: The contract does not seem to be vulnerable to short address attacks as it does not take addresses as input from users. However, if the contract is used by another contract which does not make proper address length checks, it could potentially be at risk.

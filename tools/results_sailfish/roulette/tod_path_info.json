@@ -1,0 +1,16 @@
+{
+    "tod_symex_path_1.json": {
+        "file_name": "",
+        "from_function": "fallback",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 19\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 21\nCall context: \nTrue\nTMP_2 = now != pastBlockTime\nTMP_3 = SOLIDITY_CALL require(bool)(TMP_2)\""
+        ],
+        "executable_instructions": 15,
+        "state_variable": "pastBlockTime",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    }
+}

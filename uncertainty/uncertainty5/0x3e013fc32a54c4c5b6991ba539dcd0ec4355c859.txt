@@ -1,0 +1,19 @@
+This contract has several vulnerabilities:
+
+1. Reentrancy: The "multiplicate" function is susceptible to a reentrancy attack because it calls an external contract (through the call to adr.transfer) after the contract's balance is checked but before it is updated.
+
+2. Access Control: The "Command" function can be used by the contract owner to make arbitrary external calls with a specified data payload. This is a significant security risk.
+
+3. Arithmetic Issues: The "multiplicate" function is vulnerable to an underflow attack. If this.balance is less than msg.value, then this.balance + msg.value will result in a very large number due to underflow.
+
+4. Unchecked Return Values For Low Level Calls: The "Command" function does not check the return value of the low-level call function. If the call fails, the contract will not be aware of it.
+
+5. Denial of Service: The "withdraw" and "multiplicate" functions are vulnerable to a denial of service attack. If the address set as the Owner becomes a contract that throws an exception in its fallback function, or the adr in "multiplicate" function throws an exception, the "withdraw" and "multiplicate" functions will be permanently blocked.
+
+6. Bad Randomness: This contract does not use any randomness.
+
+7. Front-Running: This contract does not seem to be vulnerable to front-running. 
+
+8. Time manipulation: This contract does not rely on timestamps or block numbers, so it is not vulnerable to time manipulation.
+
+9. Short Address Attack: This contract does not seem to be vulnerable to a short address attack. It does not manipulate addresses, nor does it slice or manually compute lengths of addresses.

@@ -1,0 +1,58 @@
+{
+    "tod_symex_path_1.json": {
+        "file_name": "",
+        "from_function": "Collect",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 104\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 106\nCall context: \nTrue\nTMP_8(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:_am \""
+        ],
+        "executable_instructions": 72,
+        "state_variable": "MinSum",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_2.json": {
+        "file_name": "",
+        "from_function": "Collect",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 112\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 114\nCall context: \nTrue\nTMP_8(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:_am \""
+        ],
+        "executable_instructions": 72,
+        "state_variable": "balances",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_3.json": {
+        "file_name": "",
+        "from_function": "Collect",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 120\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 122\nCall context: \nTrue\nTMP_8(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:_am \""
+        ],
+        "executable_instructions": 72,
+        "state_variable": "balances",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_4.json": {
+        "file_name": "",
+        "from_function": "Collect",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 128\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 130\nCall context: \nTrue\nTMP_8(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:_am \""
+        ],
+        "executable_instructions": 72,
+        "state_variable": "balances",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    }
+}

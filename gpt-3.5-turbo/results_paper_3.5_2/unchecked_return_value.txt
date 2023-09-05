@@ -1,0 +1,26 @@
+The provided smart contract does not have all the mentioned vulnerabilities. However, it does have one vulnerability, which is the "Unchecked Return Values For Low Level Calls" (SWC-104).
+
+In the `callnotchecked` function, the `callee.call()` statement does not check the return value for success or failure. This can lead to unexpected behavior if the called contract reverts or throws an exception.
+
+To fix this vulnerability, you should always check the return value of low-level calls and handle any potential errors appropriately. Here's an updated version of the contract that addresses this issue:
+
+```solidity
+pragma solidity 0.4.25;
+
+contract ReturnValue {
+  function callchecked(address callee) public returns (bool) {
+    require(callee.call());
+    return true;
+  }
+
+  function callnotchecked(address callee) public returns (bool) {
+    bool success;
+    bytes memory data;
+    (success, data) = callee.call();
+    require(success);
+    return true;
+  }
+}
+```
+
+In the `callnotchecked` function, we added a `bool success` variable to capture the return value of the `callee.call()` statement. Then, we check the `success` variable and require it to be true before proceeding. This ensures that any failure or exception thrown by the called contract is properly handled.

@@ -1,0 +1,32 @@
+{
+    "tod_symex_path_1.json": {
+        "file_name": "",
+        "from_function": "withdrawBalance",
+        "to_function": "addToBalance",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 42\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 43\nCall context: \nNone\nREF_4 -> userBalance[msg.sender]\nTMP_1(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:REF_4 \""
+        ],
+        "executable_instructions": 14,
+        "state_variable": "userBalance",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_2.json": {
+        "file_name": "",
+        "from_function": "withdrawBalance",
+        "to_function": "withdrawBalance",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 55\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 56\nCall context: \nNone\nREF_4 -> userBalance[msg.sender]\nTMP_1(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:REF_4 \""
+        ],
+        "executable_instructions": 14,
+        "state_variable": "userBalance",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    }
+}

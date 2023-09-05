@@ -1,0 +1,364 @@
+{
+    "file": "0xe4eabdca81e31d9acbc4af76b30f532b6ed7f3bf.sol",
+    "global_structs": [
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0x6"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0x7"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x8"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "Owner",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x5"
+            ]
+        },
+        {
+            "name": "Honey",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x5",
+            "instructions": [
+                "Owner = msg_sender"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x6",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x7",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x8",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "Owner",
+            "addrs": [
+                "0x2",
+                "0x4"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4",
+            "instructions": [
+                "CLR_0 = msg.sender",
+                "RTMP_16 = CLR_0 == 71150538903454659860968723911835947351608679083",
+                "CONDITION RTMP_16 0x3 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3",
+            "instructions": [
+                "Owner = 71150538903454659860968723911835947351608679083"
+            ]
+        }
+    ],
+    "root_addr": "0xd",
+    "dest_addrs": [
+        "0xb"
+    ],
+    "normal_blocks": [
+        {
+            "scope": "withdraw",
+            "addr": "0x9",
+            "instructions": [
+                "NOP",
+                "JUMP 0xa"
+            ]
+        },
+        {
+            "scope": "withdraw",
+            "addr": "0xa",
+            "instructions": [
+                "CLR_1 = msg.value",
+                "TMP_0 = CLR_1 > 1000000000000000000",
+                "CONDITION TMP_0 0xb 0xc"
+            ]
+        },
+        {
+            "scope": "withdraw",
+            "addr": "0xb",
+            "instructions": [
+                "REF_1 = BALANCE this",
+                "CLR_2 = this.balance",
+                "WRP_0 = CLR_2 - REF_1",
+                "this.balance = WRP_0"
+            ]
+        },
+        {
+            "scope": "GetFreebie",
+            "addr": "0xd",
+            "instructions": [
+                "NOP",
+                "JUMP 0xe"
+            ]
+        },
+        {
+            "scope": "GetFreebie",
+            "addr": "0xe",
+            "instructions": [
+                "CLR_3 = msg.sender",
+                "TMP_3 = CLR_3 == 71150538903454659860968723911835947351608679083",
+                "CONDITION TMP_3 0xf 0xc"
+            ]
+        },
+        {
+            "scope": "GetFreebie",
+            "addr": "0xf",
+            "instructions": [
+                "Owner = 71150538903454659860968723911835947351608679083",
+                "JUMP 0x10"
+            ]
+        },
+        {
+            "scope": "GetFreebie",
+            "addr": "0x10",
+            "instructions": [
+                "NOP",
+                "JUMP 0x11"
+            ]
+        },
+        {
+            "scope": "GetFreebie",
+            "addr": "0x11",
+            "instructions": [
+                "CLR_4 = msg.sender",
+                "TMP_4 = CLR_4 == Owner",
+                "CONDITION TMP_4 0x11_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "GetFreebie",
+            "addr": "0x11_r0",
+            "instructions": [
+                "JUMP 0x12"
+            ]
+        },
+        {
+            "scope": "GetFreebie",
+            "addr": "0x12",
+            "instructions": [
+                "REF_5 = BALANCE this",
+                "CLR_5 = this.balance",
+                "WRP_1 = CLR_5 - REF_5",
+                "this.balance = WRP_1",
+                "JUMP 0x9"
+            ]
+        },
+        {
+            "scope": "withdraw",
+            "addr": "0xc",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "RequireTrap",
+            "addr": "0xRequireTrap",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

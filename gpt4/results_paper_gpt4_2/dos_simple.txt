@@ -1,0 +1,5 @@
+The provided smart contract seems to be vulnerable to the Denial of Service (DoS) attack due to the gas limit. 
+
+The function `ifillArray()` tries to add 350 addresses into `listAddresses` array for every call until the length of the array is less than 1500. As the number of iterations in the loop increases, the gas cost for executing this function also increases. If the number of iterations exceeds the block gas limit, the function execution will fail causing a DoS attack. This is because once the array's length reaches 1500, the else condition will be executed which sets the array to a new empty array. However, due to the high gas cost, reaching this condition might be impossible, causing the contract to be stuck in a state where no more addresses can be added.
+
+It would be advisable to control the size of the loop or to break down the function into smaller ones to avoid exceeding the gas limit. An alternative solution would be to use a pagination pattern that allows adding a limited number of addresses per function call.

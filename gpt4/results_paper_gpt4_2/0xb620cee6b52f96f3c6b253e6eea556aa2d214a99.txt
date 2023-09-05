@@ -1,0 +1,19 @@
+The smart contract has several vulnerabilities:
+
+1. Reentrancy: The functions `manipulateSecret`, `callFirstTarget`, `callSecondTarget`, `winPrize`, and `claimPrize` may potentially lead to reentrancy attacks because they involve transferring funds (Ether) to external addresses without controlling the state of the contract. An attacker can recursively call these functions and drain the contract's funds.
+
+2. Access Control: The modifier `onlyPlayers` uses a mapping `approvedPlayers` to control the access. If an attacker can find a way to be added to this mapping, they can exploit the functions that use this modifier.
+
+3. Arithmetic Issues: There can be an integer overflow or underflow in the function `guessSeed` where it has a division operation. If the values of `seed[0]` and `seed[1]` are not controlled properly, it can lead to unexpected results.
+
+4. Unchecked Return Values For Low Level Calls: The `callFirstTarget` and `callSecondTarget` functions use low-level call() function. The return value of the call() function is not checked, which can lead to unexpected behavior.
+
+5. Denial of Service: The function `claimPrize` can be potentially exploited to perform a Denial of Service attack. If the address of the winner is a contract that has a fallback function consuming more than the gas stipend, the transfer function will fail, blocking the funds in the contract.
+
+6. Bad Randomness (Predictable Randomness): The function `unlockSecret` uses `blockhash(block.number-1)` to generate a random number, which is predictable and can be influenced by miners.
+
+7. Time Manipulation: Although there are no explicit dependencies on block.timestamp, the block.number used in `unlockSecret` can be influenced by miners to some extent.
+
+8. Front-Running: Front running can be a potential issue because sensitive functions like `setSecret`, `becomePlayer`, `manipulateSecret`, etc. are public and their transactions can be seen in the mempool before they are mined.
+
+9. Short Address Attack: The contract does not check the length of the address, so a short address attack is possible. An attacker can craft an input with a shorter address and extra data, which gets misinterpreted and could lead to loss of funds.

@@ -1,0 +1,40 @@
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Analysis started at: 2023-08-14 02:59:51 AM
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Version constraints: ['^0.4.16']
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | solc version: v0.4.16
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Callgraph generation started!
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Callgraph generation finished!
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Value Range Analysis started
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Generating return summary for EthTxOrderDependenceMinimal
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Return summary generated for EthTxOrderDependenceMinimal
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Range graph generated
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Processed function EthTxOrderDependenceMinimal
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Generating return summary for setReward
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Return summary generated for setReward
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Range graph generated
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Processed function setReward
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Generating return summary for claimReward
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Return summary generated for claimReward
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Range graph generated
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Processed function claimReward
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Value Range Analysis took 0.000953 seconds
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Value Range Analysis finished
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Dependency detection started!
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | TOD dependency detected in file eth_tx_order_dependence_minimal.sol in contract EthTxOrderDependenceMinimal in by composing functions setReward and setReward
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | TOD dependency detected in file eth_tx_order_dependence_minimal.sol in contract EthTxOrderDependenceMinimal in by composing functions setReward and claimReward
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | TOD dependency detected in file eth_tx_order_dependence_minimal.sol in contract EthTxOrderDependenceMinimal in by composing functions claimReward and setReward
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | TOD dependency detected in file eth_tx_order_dependence_minimal.sol in contract EthTxOrderDependenceMinimal in by composing functions claimReward and claimReward
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Dependency detection finished!
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Static Analysis took 0.238600 seconds
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Dependency exists
+[INFO] | 2023-08-14 02:59:51 AM | analyzer.eth_tx_order_dependence_minimal | Invoking symbolic executor!
+[INFO] | 2023-08-14 02:59:52 AM | analyzer.eth_tx_order_dependence_minimal | Symbolic execution took 0.844809 seconds
+[INFO] | 2023-08-14 02:59:52 AM | analyzer.eth_tx_order_dependence_minimal | Symbolic execution finished!
+[INFO] | 2023-08-14 02:59:52 AM | analyzer.eth_tx_order_dependence_minimal | Analysis finished!
+[INFO] | 2023-08-14 02:59:52 AM | analyzer.eth_tx_order_dependence_minimal | Analysis took 1.083871 seconds
+[INFO] | 2023-08-14 02:59:52 AM | analyzer.eth_tx_order_dependence_minimal | Analysis finished at: 2023-08-14 02:59:52 AM

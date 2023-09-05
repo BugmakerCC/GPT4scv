@@ -1,0 +1,341 @@
+{
+    "file": "wallet_03_wrong_constructor.sol",
+    "global_structs": [
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0x7"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0x8"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x9"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "creator",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "balances",
+            "type": [
+                "array",
+                "integer",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "Wallet",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x7",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x8",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x9",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "creator",
+            "addrs": [
+                "0x2",
+                "0x3"
+            ]
+        },
+        {
+            "name": "balances",
+            "addrs": [
+                "0x2",
+                "0x5",
+                "0x6"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3",
+            "instructions": [
+                "CLR_0 = msg.sender",
+                "creator = CLR_0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5",
+            "instructions": [
+                "CLR_1 = msg.sender",
+                "CLR_2 = balances[CLR_1]",
+                "REF_9 = CLR_2",
+                "CLR_3 = msg.value",
+                "TMP_14 = REF_9 + CLR_3",
+                "CLR_4 = msg.sender",
+                "CLR_5 = balances[CLR_4]",
+                "REF_10 = CLR_5",
+                "RTMP_15 = TMP_14 > REF_10",
+                "CONDITION RTMP_15 0x4 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4",
+            "instructions": [
+                "CLR_6 = msg.sender",
+                "CLR_7 = balances[CLR_6]",
+                "REF_8 = CLR_7",
+                "CLR_8 = msg.value",
+                "TMP_13 = REF_8 + CLR_8",
+                "CLR_9 = msg.sender",
+                "balances[CLR_9] = TMP_13"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6",
+            "instructions": [
+                "CLR_10 = msg.sender",
+                "balances[CLR_10] = U"
+            ]
+        }
+    ],
+    "root_addr": "0xa",
+    "dest_addrs": [
+        "0xb"
+    ],
+    "normal_blocks": [
+        {
+            "scope": "withdraw",
+            "addr": "0xa",
+            "instructions": [
+                "NOP",
+                "amount = NEW_VAL integer",
+                "JUMP 0xb"
+            ]
+        },
+        {
+            "scope": "withdraw",
+            "addr": "0xb",
+            "instructions": [
+                "CLR_11 = msg.sender",
+                "CLR_12 = balances[CLR_11]",
+                "REF_3 = CLR_12",
+                "TMP_3 = amount <= REF_3",
+                "CONDITION TMP_3 0xb_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "withdraw",
+            "addr": "0xb_r0",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "withdraw",
+            "addr": "0xc",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "RequireTrap",
+            "addr": "0xRequireTrap",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

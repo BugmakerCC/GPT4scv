@@ -1,0 +1,104 @@
+[INFO] | 2023-08-14 02:57:38 AM | analyzer.etheraffle | Analysis started at: 2023-08-14 02:57:38 AM
+[INFO] | 2023-08-14 02:57:38 AM | analyzer.etheraffle | Version constraints: ['^0.4.16']
+[INFO] | 2023-08-14 02:57:38 AM | analyzer.etheraffle | solc version: v0.4.16
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Callgraph generation started!
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Callgraph generation finished!
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Value Range Analysis started
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Generating return summary for slitherConstructorConstantVariables
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Return summary generated for slitherConstructorConstantVariables
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Range graph generated
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Processed function slitherConstructorConstantVariables
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Generating return summary for Ethraffle_v4b
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Return summary generated for Ethraffle_v4b
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Range graph generated
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Processed function Ethraffle_v4b
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Generating return summary for chooseWinner
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Return summary generated for chooseWinner
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Range graph generated
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Processed function chooseWinner
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Generating return summary for getRefund
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Return summary generated for getRefund
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Range graph generated
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Processed function getRefund
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Generating return summary for endRaffle
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Return summary generated for endRaffle
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Range graph generated
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Processed function endRaffle
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Generating return summary for togglePause
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Return summary generated for togglePause
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Range graph generated
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Processed function togglePause
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Generating return summary for kill
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Return summary generated for kill
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Processed function kill
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Generating return summary for slitherConstructorVariables
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Return summary generated for slitherConstructorVariables
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Range graph generated
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Processed function slitherConstructorVariables
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Generating return summary for buyTickets
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Return summary generated for buyTickets
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Range graph generated
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Processed function buyTickets
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Generating return summary for fallback
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Return summary generated for fallback
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Range graph generated
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Processed function fallback
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Value Range Analysis took 0.005625 seconds
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Value Range Analysis finished
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | Dependency detection started!
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions fallback and fallback
+[INFO] | 2023-08-14 02:57:39 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions fallback and fallback
+[INFO] | 2023-08-14 02:57:40 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions fallback and fallback
+[INFO] | 2023-08-14 02:57:40 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions fallback and buyTickets
+[INFO] | 2023-08-14 02:57:40 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions fallback and buyTickets
+[INFO] | 2023-08-14 02:57:40 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions fallback and buyTickets
+[INFO] | 2023-08-14 02:57:41 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions fallback and getRefund
+[INFO] | 2023-08-14 02:57:41 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions fallback and getRefund
+[INFO] | 2023-08-14 02:57:41 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions fallback and getRefund
+[INFO] | 2023-08-14 02:57:41 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions fallback and endRaffle
+[INFO] | 2023-08-14 02:57:41 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions fallback and endRaffle
+[INFO] | 2023-08-14 02:57:41 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions fallback and endRaffle
+[INFO] | 2023-08-14 02:57:42 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions fallback and endRaffle
+[INFO] | 2023-08-14 02:57:42 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions fallback and togglePause
+[INFO] | 2023-08-14 02:57:42 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions fallback and togglePause
+[INFO] | 2023-08-14 02:57:42 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions fallback and togglePause
+[INFO] | 2023-08-14 02:57:42 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions fallback and togglePause
+[INFO] | 2023-08-14 02:57:42 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions buyTickets and fallback
+[INFO] | 2023-08-14 02:57:42 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions buyTickets and fallback
+[INFO] | 2023-08-14 02:57:43 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions buyTickets and fallback
+[INFO] | 2023-08-14 02:57:43 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions buyTickets and buyTickets
+[INFO] | 2023-08-14 02:57:43 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions buyTickets and buyTickets
+[INFO] | 2023-08-14 02:57:43 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions buyTickets and buyTickets
+[INFO] | 2023-08-14 02:57:44 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions buyTickets and getRefund
+[INFO] | 2023-08-14 02:57:44 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions buyTickets and getRefund
+[INFO] | 2023-08-14 02:57:44 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions buyTickets and getRefund
+[INFO] | 2023-08-14 02:57:44 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions buyTickets and endRaffle
+[INFO] | 2023-08-14 02:57:44 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions buyTickets and endRaffle
+[INFO] | 2023-08-14 02:57:44 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions buyTickets and endRaffle
+[INFO] | 2023-08-14 02:57:45 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions buyTickets and endRaffle
+[INFO] | 2023-08-14 02:57:45 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions buyTickets and togglePause
+[INFO] | 2023-08-14 02:57:45 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions buyTickets and togglePause
+[INFO] | 2023-08-14 02:57:45 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions buyTickets and togglePause
+[INFO] | 2023-08-14 02:57:45 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions buyTickets and togglePause
+[INFO] | 2023-08-14 02:57:45 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions getRefund and fallback
+[INFO] | 2023-08-14 02:57:45 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions getRefund and buyTickets
+[INFO] | 2023-08-14 02:57:45 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions getRefund and endRaffle
+[INFO] | 2023-08-14 02:57:45 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions endRaffle and fallback
+[INFO] | 2023-08-14 02:57:45 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions endRaffle and buyTickets
+[INFO] | 2023-08-14 02:57:45 AM | analyzer.etheraffle | TOD dependency detected in file etheraffle.sol in contract Ethraffle_v4b in by composing functions endRaffle and endRaffle
+[INFO] | 2023-08-14 02:57:45 AM | analyzer.etheraffle | Dependency detection finished!
+[INFO] | 2023-08-14 02:57:45 AM | analyzer.etheraffle | Static Analysis took 7.146099 seconds
+[INFO] | 2023-08-14 02:57:45 AM | analyzer.etheraffle | Dependency exists
+[INFO] | 2023-08-14 02:57:45 AM | analyzer.etheraffle | Invoking symbolic executor!
+[INFO] | 2023-08-14 02:58:14 AM | analyzer.etheraffle | Symbolic execution took 29.433357 seconds
+[INFO] | 2023-08-14 02:58:14 AM | analyzer.etheraffle | Symbolic execution finished!
+[INFO] | 2023-08-14 02:58:14 AM | analyzer.etheraffle | Analysis finished!
+[INFO] | 2023-08-14 02:58:14 AM | analyzer.etheraffle | Analysis took 36.579900 seconds
+[INFO] | 2023-08-14 02:58:14 AM | analyzer.etheraffle | Analysis finished at: 2023-08-14 02:58:14 AM

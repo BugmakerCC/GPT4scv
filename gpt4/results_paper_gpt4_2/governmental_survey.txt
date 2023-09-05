@@ -1,0 +1,19 @@
+The smart contract appears to have multiple vulnerabilities:
+
+1. Reentrancy: The 'resetInvestment' function in the Governmental contract sends ether to arbitrary addresses (lastInvestor and owner) without first resetting its state. This can be exploited by a malicious contract to recursively call the function, draining the contract's balance. This vulnerability is exacerbated by the Attacker contract, which can recursively call the 'attack' function to drain the contract's gas.
+
+2. Access Control: There is no access control in the contract. Anyone can call the 'invest' and 'resetInvestment' functions, even though these actions should only be performed by the owner or certain authorized addresses.
+
+3. Arithmetic Issues: The contract does not check for overflows or underflows in the 'invest' function when updating the 'jackpot' state variable.
+
+4. Unchecked Return Values For Low Level Calls: The 'send' function in 'resetInvestment' does not check the return value. If the call fails, the contract will not be alerted and will continue execution.
+
+5. Denial of Service: The Attacker contract can cause a Denial of Service (DoS) attack by recursively calling the 'attack' function until the contract's gas is depleted.
+
+6. Bad Randomness: Not applicable in this case.
+
+7. Front-Running: Not applicable in this case.
+
+8. Time manipulation: The 'resetInvestment' function relies on the 'block.timestamp' variable for its logic. This variable can be manipulated by miners, which may lead to unexpected behavior.
+
+9. Short Address Attack: Not applicable in this case.

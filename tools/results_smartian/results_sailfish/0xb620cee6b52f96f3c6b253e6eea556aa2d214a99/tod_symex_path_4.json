@@ -1,0 +1,556 @@
+{
+    "file": "0xb620cee6b52f96f3c6b253e6eea556aa2d214a99.sol",
+    "global_structs": [
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0x33"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0x34"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x35"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "owner",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "players",
+            "type": [
+                "array",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "approvedPlayers",
+            "type": [
+                "array",
+                "integer",
+                "boolean"
+            ],
+            "init": []
+        },
+        {
+            "name": "secret",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "balance",
+            "type": [
+                "array",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "firstTarget",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0xb"
+            ]
+        },
+        {
+            "name": "secondTarget",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0xa"
+            ]
+        },
+        {
+            "name": "seed",
+            "type": [
+                "array",
+                "integer"
+            ],
+            "init": [
+                "0x9"
+            ]
+        },
+        {
+            "name": "winner",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x8"
+            ]
+        },
+        {
+            "name": "DrainMe",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x8",
+            "instructions": [
+                "winner = 0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x9",
+            "instructions": [
+                "TMP_84 = initarray 951828771 158769871220",
+                "seed = TMP_84"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xa",
+            "instructions": [
+                "secondTarget = 161234925590943663737428450470618394316285069158"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xb",
+            "instructions": [
+                "firstTarget = 400315728203553136467948436962946751939839776107"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x33",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x34",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x35",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "owner",
+            "addrs": [
+                "0x2",
+                "0x3",
+                "0x15"
+            ]
+        },
+        {
+            "name": "players",
+            "addrs": [
+                "0x2",
+                "0x5"
+            ]
+        },
+        {
+            "name": "approvedPlayers",
+            "addrs": [
+                "0x2",
+                "0x7"
+            ]
+        },
+        {
+            "name": "winner",
+            "addrs": [
+                "0x2",
+                "0xd"
+            ]
+        },
+        {
+            "name": "secret",
+            "addrs": [
+                "0x2",
+                "0x10"
+            ]
+        },
+        {
+            "name": "seed",
+            "addrs": [
+                "0x2",
+                "0x12",
+                "0x14"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3",
+            "instructions": [
+                "CLR_0 = msg.sender",
+                "owner = CLR_0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5",
+            "instructions": [
+                "CLR_1 = msg.value",
+                "RTMP_82 = CLR_1 >= 20000000000000000",
+                "CONDITION RTMP_82 0x4 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4",
+            "instructions": [
+                "CLR_2 = msg.sender",
+                "players = CLR_2"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7",
+            "instructions": [
+                "CLR_3 = msg.value",
+                "RTMP_83 = CLR_3 >= 20000000000000000",
+                "CONDITION RTMP_83 0x6 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6",
+            "instructions": [
+                "CLR_4 = msg.sender",
+                "CLR_5 = approvedPlayers[CLR_4]",
+                "REF_21 = CLR_5",
+                "CLR_6 = msg.sender",
+                "approvedPlayers[CLR_6] = true"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xd",
+            "instructions": [
+                "CLR_7 = msg.value",
+                "RTMP_85 = CLR_7 >= 10000000000000000",
+                "CONDITION RTMP_85 0xe 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xe",
+            "instructions": [
+                "CLR_8 = msg.sender",
+                "CLR_9 = approvedPlayers[CLR_8]",
+                "REF_22 = CLR_9",
+                "RTMP_86 = REF_22 == true",
+                "CONDITION RTMP_86 0xc 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xc",
+            "instructions": [
+                "CLR_10 = msg.sender",
+                "winner = CLR_10"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x10",
+            "instructions": [
+                "CLR_11 = msg.sender",
+                "RTMP_87 = CLR_11 == owner",
+                "CONDITION RTMP_87 0xf 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xf",
+            "instructions": [
+                "secret = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x12",
+            "instructions": [
+                "CLR_12 = msg.sender",
+                "CLR_13 = approvedPlayers[CLR_12]",
+                "REF_24 = CLR_13",
+                "RTMP_88 = REF_24 == true",
+                "CONDITION RTMP_88 0x11 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x11",
+            "instructions": [
+                "CLR_14 = seed[U]",
+                "REF_23 = CLR_14",
+                "seed[0] = U",
+                "seed[1] = U",
+                "seed[2] = U",
+                "seed[3] = U",
+                "seed[4] = U",
+                "seed[5] = U",
+                "seed[6] = U",
+                "seed[7] = U",
+                "seed[8] = U",
+                "seed[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x14",
+            "instructions": [
+                "CLR_15 = msg.sender",
+                "CLR_16 = approvedPlayers[CLR_15]",
+                "REF_26 = CLR_16",
+                "RTMP_89 = REF_26 == true",
+                "CONDITION RTMP_89 0x13 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x13",
+            "instructions": [
+                "REF_25 = NEW_VAL integer",
+                "seed.length = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x15",
+            "instructions": [
+                "owner = winner"
+            ]
+        }
+    ],
+    "root_addr": "0x36",
+    "dest_addrs": [
+        "0x37"
+    ],
+    "normal_blocks": [
+        {
+            "scope": "callSecondTarget",
+            "addr": "0x36",
+            "instructions": [
+                "NOP",
+                "JUMP 0x37"
+            ]
+        },
+        {
+            "scope": "callSecondTarget",
+            "addr": "0x37",
+            "instructions": [
+                "CLR_17 = msg.sender",
+                "CLR_18 = approvedPlayers[CLR_17]",
+                "REF_20 = CLR_18",
+                "CONDITION REF_20 0x37_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "callSecondTarget",
+            "addr": "0x37_r0",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "callSecondTarget",
+            "addr": "0x38",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "RequireTrap",
+            "addr": "0xRequireTrap",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

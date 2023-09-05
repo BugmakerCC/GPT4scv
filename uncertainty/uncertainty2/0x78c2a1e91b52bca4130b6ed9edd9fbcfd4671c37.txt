@@ -1,0 +1,19 @@
+1. Reentrancy: The `redeem` function is vulnerable to a reentrancy attack. It first calls `Owner.transfer(this.balance)` and then `msg.sender.transfer(this.balance)`. An attacker could become the owner and recursively call `redeem`, draining the contract's balance.
+
+2. Access Control: The `withdraw` function is vulnerable to an access control attack. It changes the contract's owner to a hardcoded address before checking if `msg.sender == Owner`. This gives control to the hardcoded address.
+
+3. Arithmetic Issues: There are no arithmetic operations in the contract, so it is not vulnerable to Integer Overflow/Underflow attacks.
+
+4. Unchecked Return Values For Low Level Calls: The low level call in the `Command` function doesn't check its return value. If it fails, the contract will not be aware.
+
+5. Denial of Service: The contract is not vulnerable to DOS attacks as there isn't any loop that could consume more gas than expected.
+
+6. Bad Randomness: This contract doesn't use randomness, so it's not vulnerable to bad randomness.
+
+7. Front-Running: There is no scenario where transaction order could be exploited for gain, so it's not vulnerable to front-running.
+
+8. Time manipulation: This contract doesn't use time or block variables, so it's not vulnerable to time manipulation.
+
+9. Short Address Attack: This contract doesn't take addresses as an input from users, so it's not vulnerable to short address attacks.
+
+Overall, the contract is vulnerable to Reentrancy and Access Control attacks, and fails to check the return value of a low level call.

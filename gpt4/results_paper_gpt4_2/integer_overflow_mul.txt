@@ -1,0 +1,14 @@
+The smart contract provided is vulnerable to Arithmetic Issues, specifically Integer Overflow. This issue occurs when an arithmetic operation reaches the maximum size of the integer type, which causes it to roll over to its minimum possible value.
+
+In the provided smart contract, the function `run(uint256 input)` is vulnerable. The `count` variable is multiplied by an input and is not checked to ensure it does not exceed the maximum value for its type (`uint256`). If a large enough value is provided as input, the result of the multiplication will exceed the maximum `uint256` value, which will cause an integer overflow. The `count` variable will then hold an incorrect value, potentially leading to logical errors in the contract.
+
+To fix this issue, the contract should include a require statement to check if an overflow would occur before the multiplication operation, and revert the transaction if it would:
+
+```solidity
+function run(uint256 input) public {
+    require(input == 0 || count <= uint256(-1) / input);
+    count *= input;
+}
+```
+
+This statement checks if the multiplication would result in a value larger than the largest `uint256` value. If it would, the transaction is reverted. If the input is zero, no overflow can occur, so the multiplication is safe.

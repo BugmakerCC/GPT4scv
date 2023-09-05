@@ -1,0 +1,28 @@
+Upon analyzing the provided smart contract, it is vulnerable to the Reentrancy attack. Here's the explanation:
+
+1. Reentrancy Attack: The contract uses the "call" function to transfer funds to the caller's address. However, this function can execute arbitrary code in the receiving contract, including calling back into the "withdrawBalance" function before the balance is set to zero. This allows an attacker to repeatedly call the "withdrawBalance" function and drain the contract's balance.
+
+To fix this vulnerability, you should use the "transfer" or "send" functions instead of "call" to transfer funds. These functions limit the amount of gas sent to the receiving contract, preventing reentrancy attacks.
+
+Here's the fixed version:
+
+```solidity
+pragma solidity ^0.5.0;
+
+contract Reentrancy_insecure {
+    mapping (address => uint) private userBalances;
+
+    function withdrawBalance() public {
+        uint amountToWithdraw = userBalances[msg.sender];
+        
+        require(amountToWithdraw > 0); // Check if the user has balance before transferring
+        
+        userBalances[msg.sender] = 0; // Set the balance to zero before transferring
+        
+        msg.sender.transfer(amountToWithdraw); // Use transfer to send funds
+        
+    }
+}
+```
+
+Remember to thoroughly test and validate the updated contract before deploying it.

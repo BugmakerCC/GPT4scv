@@ -1,0 +1,35 @@
+The given smart contract has at least two potential vulnerabilities:
+
+1. Access Control: The `forward` function is not protected with any access control mechanism. This means that anyone can call this function, thereby potentially leading to unauthorized actions.
+
+2. Reentrancy: The contract is also at risk of a Reentrancy attack because it uses a low-level call (`delegatecall`). An attacker could create a malicious contract that, when called by the `forward` function, calls back into the `forward` function before the first call is finished. This could lead to unexpected behavior or even a loop that consumes all the gas.
+
+To fix the Access Control vulnerability, you could add a modifier that ensures only the owner of the contract can call the `forward` function:
+
+```
+modifier onlyOwner {
+    require(msg.sender == owner);
+    _;
+}
+
+function forward(address callee, bytes _data) public onlyOwner {
+...
+}
+```
+
+To mitigate the Reentrancy attack, you could use a mutex or reentrancy guard that prevents the same function from being re-entered while it's still being executed:
+
+```
+bool private locked = false;
+
+modifier noReentrancy {
+    require(!locked);
+    locked = true;
+    _;
+    locked = false;
+}
+
+function forward(address callee, bytes _data) public onlyOwner noReentrancy {
+...
+}
+```

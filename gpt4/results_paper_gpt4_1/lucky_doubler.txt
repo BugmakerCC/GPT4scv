@@ -1,0 +1,19 @@
+This contract appears to have several vulnerabilities. 
+
+1. Reentrancy: The contract contains a reentrancy vulnerability in the `join` function where it sends ETH to a user's address. Since `.send()` does not limit the amount of gas forwarded to the recipient, the recipient could potentially call back into the contract before the state is updated. This vulnerability can be fixed by using the Checks-Effects-Interactions pattern.
+
+2. Bad Randomness: The `rand` function uses the blockhash of the previous block to generate a pseudo-random number. However, this is not truly random and can be predicted by miners. 
+
+3. Integer Overflow and Underflow: This contract does not use SafeMath to perform arithmetic operations. This leaves the contract vulnerable to integer overflow and underflow attacks. It's especially risky in the lines where it calculates the payout amount and the balance. 
+
+4. Access Control: The contract contains several onlyOwner functions, including `changeOwner`, `changeMultiplier`, and `changeFee`. If the owner is compromised, an attacker could change these critical parameters.
+
+5. Denial of Service: If a user's fallback function consumes a lot of gas or fails, it could prevent the `join` function from executing successfully and make the contract get stuck. 
+
+6. Unchecked Return Values: The contract uses `.send()` function to transfer ether which may fail silently. The contract does not check the return value of the `.send()` call, which can lead to unexpected behavior. 
+
+7. Timestamp Dependence: Although this contract does not directly use block.timestamp, it uses block.number and blockhash for randomness which can be manipulated by miners to a certain extent. 
+
+8. Short Address Attack: This contract does not validate the length of the input address. If the input address is not long enough, the contract may behave unexpectedly. 
+
+9. Front Running: The order of transactions within a block can be manipulated by miners. Since the `join` function relies on the order of transactions, this contract is vulnerable to front-running attacks.

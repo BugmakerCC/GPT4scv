@@ -1,0 +1,76 @@
+{
+    "0xb620cee6b52f96f3c6b253e6eea556aa2d214a99.sol": [
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "manipulateSecret",
+                "DranMe"
+            ],
+            "First_function": "DranMe",
+            "Second_function": "manipulateSecret",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 2\nFunction: DranMe\nNode: \nEXPRESSION owner = msg.sender\nIRS: \nowner := msg.sender\"",
+                        "\"BlockID: 14\nFunction: manipulateSecret\nNode: \nIF msg.sender != owner || unlockSecret()\nIRS: \nCONDITION TMP_10\""
+                    ],
+                    "state_variable": "owner"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "manipulateSecret",
+                "becomePlayer"
+            ],
+            "First_function": "becomePlayer",
+            "Second_function": "manipulateSecret",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 12\nFunction: becomePlayer\nNode: \nEXPRESSION approvedPlayers[msg.sender] = true\nIRS: \nREF_4 := true\"",
+                        "\"BlockID: 18\nFunction: onlyPlayers\nNode: \nEXPRESSION require(bool)(approvedPlayers[msg.sender])\nIRS: \nTMP_60 = SOLIDITY_CALL require(bool)(REF_20)\""
+                    ],
+                    "state_variable": "approvedPlayers"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "callFirstTarget",
+                "becomePlayer"
+            ],
+            "First_function": "becomePlayer",
+            "Second_function": "callFirstTarget",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 12\nFunction: becomePlayer\nNode: \nEXPRESSION approvedPlayers[msg.sender] = true\nIRS: \nREF_4 := true\"",
+                        "\"BlockID: 27\nFunction: onlyPlayers\nNode: \nEXPRESSION require(bool)(approvedPlayers[msg.sender])\nIRS: \nTMP_60 = SOLIDITY_CALL require(bool)(REF_20)\""
+                    ],
+                    "state_variable": "approvedPlayers"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "callSecondTarget",
+                "becomePlayer"
+            ],
+            "First_function": "becomePlayer",
+            "Second_function": "callSecondTarget",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 12\nFunction: becomePlayer\nNode: \nEXPRESSION approvedPlayers[msg.sender] = true\nIRS: \nREF_4 := true\"",
+                        "\"BlockID: 31\nFunction: onlyPlayers\nNode: \nEXPRESSION require(bool)(approvedPlayers[msg.sender])\nIRS: \nTMP_60 = SOLIDITY_CALL require(bool)(REF_20)\""
+                    ],
+                    "state_variable": "approvedPlayers"
+                }
+            ]
+        }
+    ]
+}

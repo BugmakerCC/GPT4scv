@@ -1,0 +1,72 @@
+{
+  "/sb/reentrance.sol:Reentrance": {
+    "results": {
+      "TODReceiver": {
+        "violations": [],
+        "warnings": [
+          23
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnhandledException": {
+        "violations": [
+          23
+        ],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODTransfer": {
+        "violations": [],
+        "warnings": [],
+        "safe": [
+          23
+        ],
+        "conflicts": []
+      },
+      "DAO": {
+        "violations": [
+          23
+        ],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODAmount": {
+        "violations": [],
+        "warnings": [
+          23
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "MissingInputValidation": {
+        "violations": [
+          16,
+          10,
+          12
+        ],
+        "warnings": [
+          20
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "DAOConstantGas": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnrestrictedEtherFlow": {
+        "violations": [],
+        "warnings": [],
+        "safe": [
+          23
+        ],
+        "conflicts": []
+      }
+    }
+  }
+}

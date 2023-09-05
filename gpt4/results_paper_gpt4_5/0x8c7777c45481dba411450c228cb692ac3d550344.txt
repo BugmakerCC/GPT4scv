@@ -1,0 +1,23 @@
+This contract suffers from a reentrancy vulnerability in the CashOut function. The contract calls an external contract (in this case, the contract of the address of the person calling CashOut) before it updates the state (in this case, the balances mapping). This allows the external contract to call CashOut again before the first call has finished, allowing it to withdraw more ether than it should be able to. This is also known as a recursive call vulnerability.
+
+The contract also does not check the return value of the call to the external contract in the CashOut function. This means that if this call fails for any reason (for example, if the external contract throws an exception), the state of the contract will still be updated as if the call succeeded. This is an instance of unchecked return values for low level calls.
+
+Here is a safer version of the CashOut function that fixes these issues:
+
+```
+function CashOut(uint _am)
+public
+{
+    require(_am<=balances[msg.sender]);
+
+    uint bal = balances[msg.sender];
+    balances[msg.sender] -= _am;
+
+    (bool success, ) = msg.sender.call.value(_am)("");
+    require(success);
+
+    TransferLog.AddMessage(msg.sender,_am,"CashOut");
+}
+```
+
+This version of CashOut first checks that the caller has enough ether in their balance, then deducts the amount they want to cash out from their balance. It then sends the ether to the caller, and if this call fails for any reason, it throws an exception and reverts all state changes. Only if the call succeeds does it add a message to the log. This ensures that the state of the contract always accurately represents the true state of the ether it controls.

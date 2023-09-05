@@ -1,0 +1,19 @@
+1. Reentrancy: The Collect function is vulnerable to a reentrancy attack because it calls an external contract (msg.sender) before it updates the state (balances[msg.sender]). An attacker can recursively call the function before the state is updated.
+
+2. Access Control: There are no restrictions on who can call the SetMinSum, SetLogFile, and Initialized functions. Any user can call these functions and change important parameters of the contract.
+
+3. Arithmetic Issues: There are no checks for integer overflow or underflow on the arithmetic operations.
+
+4. Unchecked Return Values For Low Level Calls: In the Collect function, the low level call (msg.sender.call.value(_am)()) doesn't handle the return value. If this call fails, the contract won't be aware and will continue to execute.
+
+5. Denial of Service: There are no apparent DOS vulnerabilities in this contract.
+
+6. Bad Randomness: There is no use of randomness in this contract.
+
+7. Front-Running: There are no apparent front-running vulnerabilities in this contract.
+
+8. Time Manipulation: The contract uses the 'now' keyword in the AddMessage function of the LogFile contract, which can be manipulated by miners.
+
+9. Short Address Attack: There is no direct interaction with user-provided addresses, so there's no risk of a short address attack.
+
+Overall, this contract is vulnerable to reentrancy, access control, unchecked return values, arithmetic issues, and time manipulation vulnerabilities.

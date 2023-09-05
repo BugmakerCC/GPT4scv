@@ -1,0 +1,19 @@
+Upon analyzing the smart contract, some of the vulnerabilities can be identified as follows:
+
+1. Reentrancy: The method `Collect` is vulnerable to reentrancy attack because it directly calls `msg.sender.call.value(_am)()` before updating the balance `balances[msg.sender]-=_am;`. An attacker could create a fallback function to repeatedly call `Collect` method before it has a chance to deduct the balance. This could drain the contract's Ether.
+
+2. Access Control: There is no access control over who can call `SetMinSum`, `SetLogFile` and `Initialized` methods. This means that anyone can set the minimum sum, log file and change the initialization status of the contract. This could potentially lead to unauthorized changes and exploitation of the contract.
+
+3. Arithmetic Issues: There might be potential arithmetic issues but without specific details it's hard to define. It's always good to use SafeMath library to perform arithmetic operations in Solidity to prevent overflows and underflows.
+
+4. Unchecked Return Values For Low Level Calls: Although the return value of `msg.sender.call.value(_am)()` is checked, it's worth mentioning that low level calls can be dangerous because they might silently fail or throw an exception that is not caught in the contract.
+
+5. Denial of Service: The contract does not appear to be vulnerable to a Denial of Service attack.
+
+6. Bad Randomness: The contract does not use any randomness so it is not vulnerable to bad randomness attacks.
+
+7. Front-Running: The contract does not appear to be vulnerable to front-running attacks.
+
+8. Time manipulation: The contract does not rely on block timestamps (`now` keyword) for critical functionalities, so it is not vulnerable to time manipulation.
+
+9. Short Address Attack: The contract does not appear to be vulnerable to a short address attack. However, it's always a good practice to use `msg.data.length` to check the length of the input data in order to prevent short address attacks.

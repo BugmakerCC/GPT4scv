@@ -1,0 +1,11 @@
+Looking at the code, we can identify the following vulnerabilities:
+
+1. Access Control: The function `newOwner` lacks the `onlyOwner` modifier, allowing any external account to add a new owner. This may lead to unauthorized access and permission escalation.
+
+2. Reentrancy: The function `withdrawAll` is susceptible to reentrancy attack as it does not use the Checks-Effects-Interactions pattern. This could allow an attacker, who is an owner, to repeatedly invoke the function and drain the contract balance before the balance is updated.
+
+3. Denial of Service: If an owner is malicious, they can prevent other owners from withdrawing funds by continuously invoking `withdrawAll` function to drain the contract balance.
+
+4. The contract does not seem to have vulnerabilities related to Arithmetic Issues, Unchecked Return Values For Low Level Calls, Bad Randomness, Front-Running, Time Manipulation, or Short Address Attack.
+
+This analysis is just a preliminary one, a deeper analysis with a more comprehensive toolset might reveal additional vulnerabilities. It's also important to note that the solidity version used in the contract is ^0.4.23, which is outdated. Using an outdated compiler version can also introduce additional vulnerabilities.

@@ -1,0 +1,1182 @@
+{
+    "file": "0xe09b1ab8111c2729a76f16de96bc86a7af837928.sol",
+    "global_structs": [
+        {
+            "name": "Bet",
+            "fields": {
+                "amount": [
+                    "integer"
+                ],
+                "blockNumber": [
+                    "integer"
+                ],
+                "betMask": [
+                    "boolean"
+                ],
+                "player": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0xa7"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0xa8"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0xa9"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "DONATING_X",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x3"
+            ]
+        },
+        {
+            "name": "JACKPOT_FEE",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0xa"
+            ]
+        },
+        {
+            "name": "JACKPOT_MODULO",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x9"
+            ]
+        },
+        {
+            "name": "DEV_FEE",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x8"
+            ]
+        },
+        {
+            "name": "WIN_X",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x7"
+            ]
+        },
+        {
+            "name": "MIN_BET",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x6"
+            ]
+        },
+        {
+            "name": "MAX_BET",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x5"
+            ]
+        },
+        {
+            "name": "BET_EXPIRATION_BLOCKS",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x4"
+            ]
+        },
+        {
+            "name": "bets",
+            "type": [
+                "array",
+                "integer",
+                "Bet"
+            ],
+            "init": []
+        },
+        {
+            "name": "donateAmount",
+            "type": [
+                "array",
+                "integer",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "totalAmountToWhale",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x12"
+            ]
+        },
+        {
+            "name": "owner",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0xb"
+            ]
+        },
+        {
+            "name": "lockedInBets",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x11"
+            ]
+        },
+        {
+            "name": "autoPlayBot",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0xc"
+            ]
+        },
+        {
+            "name": "devFeeSize",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x10"
+            ]
+        },
+        {
+            "name": "secretSigner",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0xe"
+            ]
+        },
+        {
+            "name": "jackpotSize",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0xf"
+            ]
+        },
+        {
+            "name": "whale",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0xd"
+            ]
+        },
+        {
+            "name": "FiftyFlip",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ERC20Interface",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x3",
+            "instructions": [
+                "DONATING_X = 20"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x4",
+            "instructions": [
+                "BET_EXPIRATION_BLOCKS = 250"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x5",
+            "instructions": [
+                "MAX_BET = 1000000000000000000"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x6",
+            "instructions": [
+                "MIN_BET = 10000000000000000"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x7",
+            "instructions": [
+                "WIN_X = 1900"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x8",
+            "instructions": [
+                "DEV_FEE = 20"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x9",
+            "instructions": [
+                "JACKPOT_MODULO = 1000"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xa",
+            "instructions": [
+                "JACKPOT_FEE = 10"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xb",
+            "instructions": [
+                "owner = msg_sender"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xc",
+            "instructions": [
+                "autoPlayBot = U"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xd",
+            "instructions": [
+                "whale = U"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xe",
+            "instructions": [
+                "secretSigner = U"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xf",
+            "instructions": [
+                "jackpotSize = 0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x10",
+            "instructions": [
+                "devFeeSize = 0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x11",
+            "instructions": [
+                "lockedInBets = 0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x12",
+            "instructions": [
+                "totalAmountToWhale = 0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xa7",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xa8",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xa9",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "donateAmount",
+            "addrs": [
+                "0x2",
+                "0x13",
+                "0x3c"
+            ]
+        },
+        {
+            "name": "jackpotSize",
+            "addrs": [
+                "0x2",
+                "0x15",
+                "0x33"
+            ]
+        },
+        {
+            "name": "devFeeSize",
+            "addrs": [
+                "0x2",
+                "0x1b",
+                "0x3e",
+                "0x42"
+            ]
+        },
+        {
+            "name": "lockedInBets",
+            "addrs": [
+                "0x2",
+                "0x21",
+                "0x2d",
+                "0x39"
+            ]
+        },
+        {
+            "name": "totalAmountToWhale",
+            "addrs": [
+                "0x2",
+                "0x27"
+            ]
+        },
+        {
+            "name": "autoPlayBot",
+            "addrs": [
+                "0x2",
+                "0x46"
+            ]
+        },
+        {
+            "name": "secretSigner",
+            "addrs": [
+                "0x2",
+                "0x48"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x13",
+            "instructions": [
+                "CLR_0 = msg.sender",
+                "CLR_1 = donateAmount[CLR_0]",
+                "REF_62 = CLR_1",
+                "CLR_2 = msg.value",
+                "TMP_180 = REF_62 + CLR_2",
+                "CLR_3 = msg.sender",
+                "donateAmount[CLR_3] = TMP_180"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x15",
+            "instructions": [
+                "CLR_4 = bets[U]",
+                "REF_63 = CLR_4",
+                "CLR_5 = REF_63.player",
+                "REF_64 = CLR_5",
+                "RTMP_181 = REF_64 == 0",
+                "CONDITION RTMP_181 0x16 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x16",
+            "instructions": [
+                "CLR_6 = this.balance",
+                "REF_65 = CLR_6",
+                "TMP_182 = lockedInBets + jackpotSize",
+                "RTMP_183 = REF_65 >= TMP_182",
+                "CONDITION RTMP_183 0x17 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x17",
+            "instructions": [
+                "CLR_7 = msg.value",
+                "RTMP_184 = CLR_7 <= 1000000000000000000",
+                "CONDITION RTMP_184 0x18 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x18",
+            "instructions": [
+                "CLR_8 = msg.value",
+                "RTMP_185 = CLR_8 >= 10000000000000000",
+                "CONDITION RTMP_185 0x19 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x19",
+            "instructions": [
+                "CLR_9 = this.balance",
+                "REF_66 = CLR_9",
+                "TMP_186 = REF_66 - lockedInBets",
+                "RTMP_187 = TMP_186 >= 2",
+                "RTMP_188 = 0 >= 2",
+                "RTMP_189 = RTMP_187 || RTMP_188",
+                "CONDITION RTMP_189 0x14 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x14",
+            "instructions": [
+                "jackpotSize = jackpotSize"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1b",
+            "instructions": [
+                "CLR_10 = bets[U]",
+                "REF_67 = CLR_10",
+                "CLR_11 = REF_67.player",
+                "REF_68 = CLR_11",
+                "RTMP_190 = REF_68 == 0",
+                "CONDITION RTMP_190 0x1c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1c",
+            "instructions": [
+                "CLR_12 = this.balance",
+                "REF_69 = CLR_12",
+                "TMP_191 = lockedInBets + jackpotSize",
+                "RTMP_192 = REF_69 >= TMP_191",
+                "CONDITION RTMP_192 0x1d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1d",
+            "instructions": [
+                "CLR_13 = msg.value",
+                "RTMP_193 = CLR_13 <= 1000000000000000000",
+                "CONDITION RTMP_193 0x1e 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1e",
+            "instructions": [
+                "CLR_14 = msg.value",
+                "RTMP_194 = CLR_14 >= 10000000000000000",
+                "CONDITION RTMP_194 0x1f 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1f",
+            "instructions": [
+                "CLR_15 = this.balance",
+                "REF_70 = CLR_15",
+                "TMP_195 = REF_70 - lockedInBets",
+                "RTMP_196 = TMP_195 >= 2",
+                "RTMP_197 = 0 >= 2",
+                "RTMP_198 = RTMP_196 || RTMP_197",
+                "CONDITION RTMP_198 0x1a 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1a",
+            "instructions": [
+                "devFeeSize = devFeeSize"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x21",
+            "instructions": [
+                "CLR_16 = bets[U]",
+                "REF_71 = CLR_16",
+                "CLR_17 = REF_71.player",
+                "REF_72 = CLR_17",
+                "RTMP_199 = REF_72 == 0",
+                "CONDITION RTMP_199 0x22 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x22",
+            "instructions": [
+                "CLR_18 = this.balance",
+                "REF_73 = CLR_18",
+                "TMP_200 = lockedInBets + jackpotSize",
+                "RTMP_201 = REF_73 >= TMP_200",
+                "CONDITION RTMP_201 0x23 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x23",
+            "instructions": [
+                "CLR_19 = msg.value",
+                "RTMP_202 = CLR_19 <= 1000000000000000000",
+                "CONDITION RTMP_202 0x24 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x24",
+            "instructions": [
+                "CLR_20 = msg.value",
+                "RTMP_203 = CLR_20 >= 10000000000000000",
+                "CONDITION RTMP_203 0x25 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x25",
+            "instructions": [
+                "CLR_21 = this.balance",
+                "REF_74 = CLR_21",
+                "TMP_204 = REF_74 - lockedInBets",
+                "RTMP_205 = TMP_204 >= 2",
+                "RTMP_206 = 0 >= 2",
+                "RTMP_207 = RTMP_205 || RTMP_206",
+                "CONDITION RTMP_207 0x20 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x20",
+            "instructions": [
+                "lockedInBets = lockedInBets"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x27",
+            "instructions": [
+                "CLR_22 = bets[U]",
+                "REF_75 = CLR_22",
+                "CLR_23 = REF_75.player",
+                "REF_76 = CLR_23",
+                "RTMP_208 = REF_76 == 0",
+                "CONDITION RTMP_208 0x28 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x28",
+            "instructions": [
+                "CLR_24 = this.balance",
+                "REF_77 = CLR_24",
+                "TMP_209 = lockedInBets + jackpotSize",
+                "RTMP_210 = REF_77 >= TMP_209",
+                "CONDITION RTMP_210 0x29 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x29",
+            "instructions": [
+                "CLR_25 = msg.value",
+                "RTMP_211 = CLR_25 <= 1000000000000000000",
+                "CONDITION RTMP_211 0x2a 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2a",
+            "instructions": [
+                "CLR_26 = msg.value",
+                "RTMP_212 = CLR_26 >= 10000000000000000",
+                "CONDITION RTMP_212 0x2b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2b",
+            "instructions": [
+                "CLR_27 = this.balance",
+                "REF_78 = CLR_27",
+                "TMP_213 = REF_78 - lockedInBets",
+                "RTMP_214 = TMP_213 >= 2",
+                "RTMP_215 = 0 >= 2",
+                "RTMP_216 = RTMP_214 || RTMP_215",
+                "CONDITION RTMP_216 0x26 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x26",
+            "instructions": [
+                "totalAmountToWhale = totalAmountToWhale"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2d",
+            "instructions": [
+                "CLR_28 = bets[U]",
+                "REF_79 = CLR_28",
+                "CLR_29 = REF_79.blockNumber",
+                "REF_80 = CLR_29",
+                "CLR_30 = block.number",
+                "RTMP_217 = REF_80 < CLR_30",
+                "CONDITION RTMP_217 0x2e 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2e",
+            "instructions": [
+                "CLR_31 = bets[U]",
+                "REF_81 = CLR_31",
+                "CLR_32 = REF_81.blockNumber",
+                "REF_82 = CLR_32",
+                "CLR_33 = block.number",
+                "TMP_218 = CLR_33 - 250",
+                "RTMP_219 = REF_82 >= TMP_218",
+                "CONDITION RTMP_219 0x2f 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2f",
+            "instructions": [
+                "CLR_34 = bets[U]",
+                "REF_83 = CLR_34",
+                "CLR_35 = REF_83.player",
+                "REF_84 = CLR_35",
+                "RTMP_220 = REF_84 != 0",
+                "CONDITION RTMP_220 0x30 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x30",
+            "instructions": [
+                "CLR_36 = bets[U]",
+                "REF_85 = CLR_36",
+                "CLR_37 = REF_85.amount",
+                "REF_86 = CLR_37",
+                "RTMP_221 = REF_86 != 0",
+                "CONDITION RTMP_221 0x31 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x31",
+            "instructions": [
+                "CLR_38 = this.balance",
+                "REF_87 = CLR_38",
+                "TMP_222 = lockedInBets + jackpotSize",
+                "RTMP_223 = REF_87 >= TMP_222",
+                "CONDITION RTMP_223 0x2c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2c",
+            "instructions": [
+                "lockedInBets = lockedInBets"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x33",
+            "instructions": [
+                "CLR_39 = bets[U]",
+                "REF_90 = CLR_39",
+                "CLR_40 = REF_90.blockNumber",
+                "REF_91 = CLR_40",
+                "CLR_41 = block.number",
+                "RTMP_225 = REF_91 < CLR_41",
+                "CONDITION RTMP_225 0x34 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x34",
+            "instructions": [
+                "CLR_42 = bets[U]",
+                "REF_92 = CLR_42",
+                "CLR_43 = REF_92.blockNumber",
+                "REF_93 = CLR_43",
+                "CLR_44 = block.number",
+                "TMP_226 = CLR_44 - 250",
+                "RTMP_227 = REF_93 >= TMP_226",
+                "CONDITION RTMP_227 0x35 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x35",
+            "instructions": [
+                "CLR_45 = bets[U]",
+                "REF_88 = CLR_45",
+                "CLR_46 = REF_88.player",
+                "REF_89 = CLR_46",
+                "RTMP_224 = REF_89 != 0",
+                "CONDITION RTMP_224 0x36 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x36",
+            "instructions": [
+                "CLR_47 = bets[U]",
+                "REF_94 = CLR_47",
+                "CLR_48 = REF_94.amount",
+                "REF_95 = CLR_48",
+                "RTMP_228 = REF_95 != 0",
+                "CONDITION RTMP_228 0x37 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x37",
+            "instructions": [
+                "CLR_49 = this.balance",
+                "REF_96 = CLR_49",
+                "TMP_229 = lockedInBets + jackpotSize",
+                "RTMP_230 = REF_96 >= TMP_229",
+                "CONDITION RTMP_230 0x32 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x32",
+            "instructions": [
+                "jackpotSize = 0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x39",
+            "instructions": [
+                "CLR_50 = bets[U]",
+                "REF_97 = CLR_50",
+                "CLR_51 = REF_97.amount",
+                "REF_98 = CLR_51",
+                "RTMP_231 = REF_98 != 0",
+                "CONDITION RTMP_231 0x3a 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3a",
+            "instructions": [
+                "CLR_52 = this.balance",
+                "REF_99 = CLR_52",
+                "TMP_232 = lockedInBets + jackpotSize",
+                "RTMP_233 = REF_99 >= TMP_232",
+                "CONDITION RTMP_233 0x3b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3b",
+            "instructions": [
+                "CLR_53 = bets[U]",
+                "REF_100 = CLR_53",
+                "CLR_54 = REF_100.blockNumber",
+                "REF_101 = CLR_54",
+                "TMP_234 = REF_101 + 250",
+                "CLR_55 = block.number",
+                "RTMP_235 = CLR_55 > TMP_234",
+                "CONDITION RTMP_235 0x38 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x38",
+            "instructions": [
+                "lockedInBets = lockedInBets"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3c",
+            "instructions": [
+                "CLR_56 = msg.sender",
+                "donateAmount[CLR_56] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3e",
+            "instructions": [
+                "CLR_57 = this.balance",
+                "REF_102 = CLR_57",
+                "TMP_236 = lockedInBets + jackpotSize",
+                "RTMP_237 = REF_102 >= TMP_236",
+                "CONDITION RTMP_237 0x3f 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3f",
+            "instructions": [
+                "CLR_58 = this.balance",
+                "REF_103 = CLR_58",
+                "RTMP_238 = devFeeSize <= REF_103",
+                "CONDITION RTMP_238 0x40 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x40",
+            "instructions": [
+                "CLR_59 = msg.sender",
+                "RTMP_239 = CLR_59 == owner",
+                "CONDITION RTMP_239 0x3d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3d",
+            "instructions": [
+                "devFeeSize = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x42",
+            "instructions": [
+                "CLR_60 = this.balance",
+                "REF_104 = CLR_60",
+                "RTMP_240 = devFeeSize <= REF_104",
+                "CONDITION RTMP_240 0x43 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x43",
+            "instructions": [
+                "CLR_61 = this.balance",
+                "REF_105 = CLR_61",
+                "TMP_241 = lockedInBets + jackpotSize",
+                "RTMP_242 = REF_105 >= TMP_241",
+                "CONDITION RTMP_242 0x44 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x44",
+            "instructions": [
+                "CLR_62 = msg.sender",
+                "RTMP_243 = CLR_62 == autoPlayBot",
+                "CONDITION RTMP_243 0x41 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x41",
+            "instructions": [
+                "devFeeSize = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x46",
+            "instructions": [
+                "CLR_63 = msg.sender",
+                "RTMP_244 = CLR_63 == owner",
+                "CONDITION RTMP_244 0x45 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x45",
+            "instructions": [
+                "autoPlayBot = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x48",
+            "instructions": [
+                "CLR_64 = msg.sender",
+                "RTMP_245 = CLR_64 == owner",
+                "CONDITION RTMP_245 0x47 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x47",
+            "instructions": [
+                "secretSigner = U"
+            ]
+        }
+    ],
+    "root_addr": "0xaa",
+    "dest_addrs": [
+        "0xab"
+    ],
+    "normal_blocks": [
+        {
+            "scope": "wager",
+            "addr": "0xaa",
+            "instructions": [
+                "NOP",
+                "v = NEW_VAL integer",
+                "player = NEW_VAL integer",
+                "bet = NEW_VAL Bet",
+                "r = NEW_VAL integer",
+                "bMask = NEW_VAL boolean",
+                "donate_amount = NEW_VAL integer",
+                "s = NEW_VAL integer",
+                "signatureHash = NEW_VAL integer",
+                "ticketID = NEW_VAL integer",
+                "ticketLastBlock = NEW_VAL integer",
+                "amount = NEW_VAL integer",
+                "JUMP 0xab"
+            ]
+        },
+        {
+            "scope": "wager",
+            "addr": "0xab",
+            "instructions": [
+                "TMP_149 = NEW_VAL unknown",
+                "REF_61 = BALANCE TMP_149",
+                "TMP_150 = lockedInBets + jackpotSize",
+                "TMP_151 = TMP_150 + devFeeSize",
+                "TMP_152 = REF_61 >= TMP_151",
+                "CONDITION TMP_152 0xab_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "wager",
+            "addr": "0xab_r0",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "wager",
+            "addr": "0xac",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "RequireTrap",
+            "addr": "0xRequireTrap",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

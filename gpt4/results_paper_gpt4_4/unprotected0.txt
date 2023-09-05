@@ -1,0 +1,7 @@
+This contract has an Access Control vulnerability.
+
+In this smart contract, the `changeOwner` function is not protected by the `onlyowner` modifier, which means that any address can change the owner of the contract. 
+
+The `onlyowner` modifier is defined to allow only the current owner of the contract to execute the function it is attached to. However, the `changeOwner` function, which is supposed to change the owner of the contract, is not using this modifier. As a result, any user can call this function and change the owner of the contract, thus gaining control over it. 
+
+To fix this vulnerability, the `changeOwner` function should be modified to include the `onlyowner` modifier, as shown in the commented out `changeOwner_fixed` function. This will ensure that only the current owner can change the owner of the contract.

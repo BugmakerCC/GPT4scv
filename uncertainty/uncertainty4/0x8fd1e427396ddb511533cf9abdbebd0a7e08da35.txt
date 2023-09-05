@@ -1,0 +1,24 @@
+1. Reentrancy: The contract is vulnerable to reentrancy attacks. This happens because the contract calls an external contract (`WithdrawToken` and `_addr.call.value(_wei)`) before it updates its state (`Holders[_addr]-=_wei;` and `Holders[_to]=0;`). An attacker can use this to recursively call the external contract before the state update occurs.
+
+2. Access Control: The contract doesn't have proper access control checks. The contract uses `onlyOwner` modifier but it doesn't throw an error when the caller is not the owner. The `onlyOwner` modifier should be implemented as follows:
+
+```
+modifier onlyOwner {
+    require(msg.sender == owner, "Caller is not owner");
+    _;
+}
+```
+
+3. Arithmetic Issues: There's no check for arithmetic underflow when the contract subtracts `_wei` from `Holders[_addr]`.
+
+4. Unchecked Return Values For Low Level Calls: The contract uses low-level calls such as `token.call` and `_addr.call.value(_wei)` without checking their return values. If these calls fail, the contract will not be able to detect it.
+
+5. Denial of Service (DoS): The contract doesn't limit gas usage, which can be exploited to make the contract run out of gas and stop functioning.
+
+6. Bad Randomness: This doesn't seem to apply to this contract.
+
+7. Front-Running: This doesn't seem to apply to this contract.
+
+8. Time Manipulation: This doesn't seem to apply to this contract.
+
+9. Short Address Attack: This contract doesn't check the length of the address inputs. An attacker can supply a shorter address and the missing bytes will be assumed to be zero, which can lead to unexpected behaviors.

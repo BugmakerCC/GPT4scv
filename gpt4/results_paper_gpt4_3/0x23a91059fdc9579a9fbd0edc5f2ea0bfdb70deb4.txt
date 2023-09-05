@@ -1,0 +1,11 @@
+This smart contract contains at least two known vulnerabilities:
+
+1. Reentrancy: The function `CashOut(uint _am)` is vulnerable to reentrancy attack, as it directly calls `msg.sender.call.value(_am)()` before it reduces the sender's balance `balances[msg.sender]-=_am;`. This means that a contract calling this function can reenter and drain the contract before the balance is reduced.
+
+2. Gas Limit: The function `AddMessage(address _adr,uint _val,string _data)` in `Log` contract is storing a lot of information for each transaction (address, value, data, and timestamp). This data is being stored in an array, which grows indefinitely as more messages are added. If the contract's operation grows, it may hit the gas limit. 
+
+To fix the reentrancy vulnerability, you could use the Checks-Effects-Interactions pattern, by moving the `balances[msg.sender]-=_am;` line before the `msg.sender.call.value(_am)()` line. 
+
+For the gas limit issue, consider using a more gas-efficient data storage structure or limiting the amount of stored data. 
+
+Please note that this analysis might not be exhaustive and the contract could have more vulnerabilities. It's recommended to use formal verification tools or get an audit from a professional security firm.

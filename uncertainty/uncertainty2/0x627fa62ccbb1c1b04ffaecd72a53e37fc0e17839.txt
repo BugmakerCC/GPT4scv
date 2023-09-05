@@ -1,0 +1,19 @@
+The contract has the following vulnerabilities:
+
+1. Reentrancy: The contract is vulnerable to a reentrancy attack in the `WithdrawToHolder` function. The contract first sends ether to the recipient and then reduces the balance of the holder. This means that a malicious contract can, in its fallback function, call `WithdrawToHolder` again before the original call has finished, effectively draining the contract of more ether than it intended to send.
+
+2. Access Control: The contract does not provide a mechanism to accept or deny a new owner in `changeOwner` function. This means that anyone could potentially take over the contract.
+
+3. Arithmetic Issues: The contract does not check for overflow/underflow in `Deposit` and `WithdrawToHolder` functions. This can lead to unexpected behaviour if the values go beyond the limits of the `uint` type.
+
+4. Unchecked Return Values For Low Level Calls: The contract uses low-level `.call` function without checking its return value in `WithdrawToken` and `WithdrawToHolder` functions. If these calls fail for any reason, the contract will not be able to detect it.
+
+5. Denial of Service: The contract is potentially vulnerable to a denial of service attack. If a malicious contract refuses to accept the transfer in `WithdrawToHolder`, it can block the entire operation.
+
+6. Bad Randomness: This does not apply as there is no randomness involved in this contract.
+
+7. Front-running: This does not apply as there is no time-sensitive operations or price-related transactions in this contract.
+
+8. Time manipulation: This does not apply as the contract does not rely on block timestamps.
+
+9. Short Address Attack: This does not apply as the contract does not take address inputs from users, only from the owner.

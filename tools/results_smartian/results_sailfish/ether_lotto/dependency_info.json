@@ -1,0 +1,29 @@
+{
+    "ether_lotto.sol": [
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "play",
+                "play"
+            ],
+            "First_function": "play",
+            "Second_function": "play",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 23\nFunction: play\nNode: \nEXPRESSION pot += msg.value\nIRS: \npot = pot + msg.value\"",
+                        "\"BlockID: 10\nFunction: play\nNode: \nEXPRESSION msg.sender.transfer(pot - FEE_AMOUNT)\nIRS: \nTransfer dest:msg.sender value:TMP_7\""
+                    ],
+                    "state_variable": "pot"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 29\nFunction: play\nNode: \nEXPRESSION pot = 0\nIRS: \npot := 0\"",
+                        "\"BlockID: 10\nFunction: play\nNode: \nEXPRESSION msg.sender.transfer(pot - FEE_AMOUNT)\nIRS: \nTransfer dest:msg.sender value:TMP_7\""
+                    ],
+                    "state_variable": "pot"
+                }
+            ]
+        }
+    ]
+}

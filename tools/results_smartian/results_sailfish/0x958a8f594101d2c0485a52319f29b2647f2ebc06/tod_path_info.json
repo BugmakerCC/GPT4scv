@@ -1,0 +1,17 @@
+{
+    "tod_symex_path_1.json": {
+        "file_name": "",
+        "from_function": "sendMessage",
+        "to_function": "acceptOwnership",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 199\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 205\nCall context: \nTrue\nREF_10 -> BALANCE this\nTransfer dest:owner value:REF_10\""
+        ],
+        "executable_instructions": 85,
+        "state_variable": "owner",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "tokensalechallenge.sol": [
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "sell",
+                "buy"
+            ],
+            "First_function": "buy",
+            "Second_function": "sell",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 6\nFunction: buy\nNode: \nEXPRESSION balanceOf[msg.sender] += numTokens\nIRS: \nREF_1 = REF_1 + numTokens\"",
+                        "\"BlockID: 8\nFunction: sell\nNode: \nEXPRESSION require(bool)(balanceOf[msg.sender] >= numTokens)\nIRS: \nTMP_8 = SOLIDITY_CALL require(bool)(TMP_7)\""
+                    ],
+                    "state_variable": "balanceOf"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "sell",
+                "sell"
+            ],
+            "First_function": "sell",
+            "Second_function": "sell",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 13\nFunction: sell\nNode: \nEXPRESSION balanceOf[msg.sender] -= numTokens\nIRS: \nREF_3 = REF_3 - numTokens\"",
+                        "\"BlockID: 8\nFunction: sell\nNode: \nEXPRESSION require(bool)(balanceOf[msg.sender] >= numTokens)\nIRS: \nTMP_8 = SOLIDITY_CALL require(bool)(TMP_7)\""
+                    ],
+                    "state_variable": "balanceOf"
+                }
+            ]
+        }
+    ]
+}

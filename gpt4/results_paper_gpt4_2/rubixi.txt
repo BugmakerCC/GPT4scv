@@ -1,0 +1,19 @@
+This smart contract has several vulnerabilities:
+
+1. Wrong Constructor: The constructor function name is `DynamicPyramid()`, which is not the same as the contract name `Rubixi`. This means that the constructor function will not be called when the contract is deployed. This issue allows anyone to call the `DynamicPyramid()` function and become the owner of the contract, which is an Access Control vulnerability.
+
+2. Reentrancy: The `addPayout()` function has a potential reentrancy vulnerability. Specifically, the function sends ether to earlier participants with `participants[payoutOrder].etherAddress.send(payoutToSend);` before it updates the balance and payoutOrder. If the called contract has a fallback function that calls back into `addPayout()`, it could drain the contract's funds.
+
+3. Arithmetic Issue: There are potential integer overflow and underflow vulnerabilities. For example, if `_fee` in the `addPayout()` function is large enough, it could cause `(msg.value * (100 - _fee)) / 100` to underflow. Additionally, `payoutOrder += 1;` could potentially overflow.
+
+4. Unchecked Return Value: The return value of the `.send()` function is not checked. If the send fails, the contract will not be aware and will continue executing.
+
+5. Denial of Service: If a participant's address is a contract that throws in its fallback function, it will block the `addPayout()` function, causing a denial of service for the rest of the participants. 
+
+6. Bad Randomness: This contract does not generate randomness, so it is not subject to Bad Randomness vulnerability.
+
+7. Front Running: This contract does not depend on transaction ordering, so it is not subject to Front Running vulnerability.
+
+8. Time Manipulation: This contract does not depend on block timestamp, so it is not subject to Time Manipulation vulnerability.
+
+9. Short Address Attack: This contract does not take input from `msg.data` directly, so it is not subject to Short Address Attack vulnerability. However, it is important to keep in mind that the Ethereum client that interacts with this contract should still be careful to pad shorter addresses to 32 bytes when calling functions in this contract.

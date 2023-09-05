@@ -1,0 +1,9 @@
+This smart contract is vulnerable to the eighth vulnerability, Time manipulation, also known as timestamp dependence. 
+
+The function `isSaleFinished()` checks whether the current time (as per the block.timestamp) is greater than or equal to a predefined time (1546300800). However, the block.timestamp can be manipulated by the miners (within a range of 900 seconds or 15 minutes). Hence, miners could potentially manipulate the timestamp to influence the result of `isSaleFinished()`. 
+
+This could potentially allow them to prematurely end the sale or delay it, depending on their intentions and potential benefit. This is why relying on block.timestamp for critical contract logic is a bad practice. 
+
+It's important to note that this contract does not have other functions and we don't have the full context of how `isSaleFinished()` is being used. But based on this function alone, the Time manipulation vulnerability is present. 
+
+There are no other vulnerabilities from the list present in this contract.

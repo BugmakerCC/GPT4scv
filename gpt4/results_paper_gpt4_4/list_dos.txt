@@ -1,0 +1,15 @@
+The provided smart contract does exhibit some of the mentioned vulnerabilities:
+
+1. **Reentrancy**: The function `lendGovernmentMoney` uses the `send` method to transfer ethers which can potentially lead to reentrancy attacks. If the recipient is a contract, it could call `lendGovernmentMoney` again before the first call is finished.
+
+2. **Unchecked Return Values For Low Level Calls**: The return value of `send` method is not checked in multiple places in the contract. If the `send` fails, the state of the contract will not revert and this could lead to unexpected behavior.
+
+3. **Arithmetic Issues**: The contract does not use SafeMath or any other form of checking for overflows and underflows. This could potentially lead to integer overflow or underflow, especially in calculation of interest amount (amount * 110 / 100).
+
+4. **Access Control**: The function `inheritToNextGeneration` is only callable by the current owner (corruptElite). However, there is no check to prevent the owner from transferring ownership to the zero address, which could potentially lock the contract.
+
+5. **Denial of Service**: If the last creditor in the list is a contract that always throws an exception, then every time `lendGovernmentMoney` is called, it will fail when trying to send ether to the last creditor, causing a Denial of Service.
+
+6. **Time Manipulation**: The contract is dependent on `block.timestamp` which can be manipulated by miners to a certain degree, This can potentially lead to attacks.
+
+The contract does not exhibit vulnerabilities related to Bad Randomness, Front-Running, and Short Address Attack.

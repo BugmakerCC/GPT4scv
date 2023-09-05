@@ -1,0 +1,13 @@
+This smart contract has a few vulnerabilities:
+
+1. Reentrancy: The `Collect` function contains a reentrancy vulnerability. Before the balance of the account is updated (`acc.balance-=_am;`), ether is sent to the caller (`if(msg.sender.call.value(_am)())`). If the caller is a contract, it could call `Collect` again before `acc.balance-=_am;` is executed.
+
+2. Arithmetic issues: The contract does not handle potential overflow and underflow issues. For instance, when adding `msg.value` to `acc.balance` in the `Put` function, if `msg.value` and `acc.balance` are extremely large, their sum could overflow and wrap around to a small number.
+
+3. Unchecked return values for low level calls: The return value of `msg.sender.call.value(_am)()` in the `Collect` function is not checked. If this call fails, the contract will continue to execute and no error will be thrown.
+
+4. Access Control: There's no access control on the `Put` and `Collect` functions. Anyone can call these functions and potentially manipulate account balances.
+
+5. Time manipulation: The contract relies on `now` (alias for `block.timestamp`) to set the `unlockTime` in the `Put` function and to verify if the `unlockTime` has passed in the `Collect` function. Miners can manipulate this to a certain degree.
+
+The contract does not appear to have the other vulnerabilities listed. However, please note that a formal verification would be needed to be completely sure.

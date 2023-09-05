@@ -1,0 +1,57 @@
+2023-03-24 16:01:57,247 - Main     - INFO - [1mInitializing seed to 1427655.0[0m
+2023-03-24 16:01:57,299 - Fuzzer   - INFO - [1mFuzzing contract [1mWhaleGiveaway1[0m[0m
+2023-03-24 16:01:57,343 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:01:57,343 - Detector - INFO - [1m[33m        !!! Unhandled exception detected !!!         [0m
+2023-03-24 16:01:57,343 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:01:57,343 - Detector - INFO - [1m[33mSWC-ID:   104[0m
+2023-03-24 16:01:57,343 - Detector - INFO - [1m[33mSeverity: Medium[0m
+2023-03-24 16:01:57,343 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:01:57,343 - Detector - INFO - [1m[33mSource code line:[0m
+2023-03-24 16:01:57,343 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:01:57,343 - Detector - INFO - [1m[33m/sb/0x7a4349a749e59a5736efb7826ee3496a2dfd5489.sol:44:9[0m
+2023-03-24 16:01:57,343 - Detector - INFO - [1m[33madr.call.value(msg.value)(data)[0m
+2023-03-24 16:01:57,343 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:01:57,343 - Detector - INFO - [1m[33mTransaction sequence:[0m
+2023-03-24 16:01:57,343 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:01:57,343 - Detector - INFO - [1m[33mTransaction - Command(address,bytes):[0m
+2023-03-24 16:01:57,343 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:01:57,343 - Detector - INFO - [1m[33mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:01:57,343 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:01:57,343 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2023-03-24 16:01:57,344 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:01:57,344 - Detector - INFO - [1m[33mInput:     0xba21d62a000000000000000000000000cafebabe[0m
+2023-03-24 16:01:57,344 - Detector - INFO - [1m[33m           cafebabecafebabecafebabecafebabe0000000000[0m
+2023-03-24 16:01:57,344 - Detector - INFO - [1m[33m           000000000000000000000000000000000000000000[0m
+2023-03-24 16:01:57,344 - Detector - INFO - [1m[33m           000000000040000000000000000000000000000000[0m
+2023-03-24 16:01:57,344 - Detector - INFO - [1m[33m           00000000000000000000000000000000215815e8d7[0m
+2023-03-24 16:01:57,344 - Detector - INFO - [1m[33m           791ce8f74efe60d912ad326d7db5d995640e898b95[0m
+2023-03-24 16:01:57,344 - Detector - INFO - [1m[33m           160d207ff5c1abb300000000000000000000000000[0m
+2023-03-24 16:01:57,344 - Detector - INFO - [1m[33m           000000000000000000000000000000000000[0m
+2023-03-24 16:01:57,344 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:01:57,367 - Analysis - INFO - [1mGeneration number 0 	 Code coverage: 77.94% (364/467) 	 Branch coverage: 70.00% (21/30) 	 Transactions: 11 (10 unique)   	 Time: 0.060663700103759766[0m
+2023-03-24 16:01:57,414 - Analysis - INFO - [1mGeneration number 1 	 Code coverage: 77.94% (364/467) 	 Branch coverage: 70.00% (21/30) 	 Transactions: 18 (11 unique)   	 Time: 0.1078343391418457[0m
+2023-03-24 16:01:57,517 - Analysis - INFO - [1mGeneration number 2 	 Code coverage: 93.15% (435/467) 	 Branch coverage: 83.33% (25/30) 	 Transactions: 25 (14 unique)   	 Time: 0.21081161499023438[0m
+2023-03-24 16:01:57,612 - Analysis - INFO - [1mGeneration number 3 	 Code coverage: 93.15% (435/467) 	 Branch coverage: 83.33% (25/30) 	 Transactions: 32 (16 unique)   	 Time: 0.3055129051208496[0m
+2023-03-24 16:01:57,693 - Analysis - INFO - [1mGeneration number 4 	 Code coverage: 93.15% (435/467) 	 Branch coverage: 83.33% (25/30) 	 Transactions: 35 (16 unique)   	 Time: 0.386890172958374[0m
+2023-03-24 16:01:57,795 - Analysis - INFO - [1mGeneration number 5 	 Code coverage: 93.15% (435/467) 	 Branch coverage: 83.33% (25/30) 	 Transactions: 39 (17 unique)   	 Time: 0.4889087677001953[0m
+2023-03-24 16:01:57,878 - Analysis - INFO - [1mGeneration number 6 	 Code coverage: 93.15% (435/467) 	 Branch coverage: 83.33% (25/30) 	 Transactions: 42 (17 unique)   	 Time: 0.571875810623169[0m
+2023-03-24 16:01:58,022 - Analysis - INFO - [1mGeneration number 7 	 Code coverage: 95.29% (445/467) 	 Branch coverage: 86.67% (26/30) 	 Transactions: 48 (19 unique)   	 Time: 0.7157382965087891[0m
+2023-03-24 16:01:58,222 - Analysis - INFO - [1mGeneration number 8 	 Code coverage: 95.29% (445/467) 	 Branch coverage: 86.67% (26/30) 	 Transactions: 56 (22 unique)   	 Time: 0.9159023761749268[0m
+2023-03-24 16:01:58,586 - Analysis - INFO - [1mGeneration number 9 	 Code coverage: 95.29% (445/467) 	 Branch coverage: 86.67% (26/30) 	 Transactions: 69 (25 unique)   	 Time: 1.2796449661254883[0m
+2023-03-24 16:01:59,198 - Analysis - INFO - [1mGeneration number 10 	 Code coverage: 95.29% (445/467) 	 Branch coverage: 86.67% (26/30) 	 Transactions: 90 (30 unique)   	 Time: 1.8922951221466064[0m
+2023-03-24 16:01:59,229 - Analysis - INFO - [1m-----------------------------------------------------[0m
+2023-03-24 16:01:59,229 - Analysis - INFO - Number of generations: 	 10
+2023-03-24 16:01:59,229 - Analysis - INFO - Number of transactions: 	 90 (30 unique)
+2023-03-24 16:01:59,229 - Analysis - INFO - Transactions per second: 	 47
+2023-03-24 16:01:59,229 - Analysis - INFO - Total code coverage: 	 95.29% (445/467)
+2023-03-24 16:01:59,229 - Analysis - INFO - Total branch coverage: 	 86.67% (26/30)
+2023-03-24 16:01:59,229 - Analysis - INFO - Total execution time: 	 1.92 seconds
+2023-03-24 16:01:59,229 - Analysis - INFO - Total memory consumption: 	 65.61 MB
+
+     ______            ______                _           
+    / ____/___  ____  / ____/_  __________  (_)_  _______
+   / /   / __ \/ __ \/ /_  / / / /_  /_  / / / / / / ___/
+  / /___/ /_/ / / / / __/ / /_/ / / /_/ /_/ / /_/ (__  ) 
+  \____/\____/_/ /_/_/    \__,_/ /___/___/_/\__,_/____/  
+
+delteed file

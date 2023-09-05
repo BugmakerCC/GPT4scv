@@ -1,0 +1,13 @@
+The smart contract provided can potentially have the following vulnerabilities:
+
+1. Reentrancy: This contract is susceptible to a reentrancy attack because it uses a low level `.call()` function. This could allow an attacker to re-enter the function and drain funds if the called contract is malicious.
+
+2. Unchecked Return Values For Low Level Calls: The return value of `caddress.call()` is not checked in the contract. If this call fails, the contract will not be aware and will continue execution.
+
+3. Access Control: There is no access control implemented in the 'transfer' function. Without any access control or onlyOwner modifier, anyone can call this function which can potentially lead to unauthorised actions.
+
+4. Denial of Service (DoS): If the `caddress.call()` function throws an exception, it will stop the execution of the entire loop, causing a denial of service for the remaining addresses in the `_tos` array.
+
+5. Front-Running: Since the transactions are public on the blockchain, anyone can view a transaction and its data. Attackers can use this to their advantage and place a transaction with a higher gas price to get it executed before the original transaction.
+
+It's recommended to use `transfer()` or `send()` instead of `call()` for transferring ether, check the return value of external calls, implement access control for sensitive functions, and handle potential exceptions properly to prevent DoS. Front running can be prevented by designing the contract in a way that the order of transactions won't affect the outcome or by using commit-reveal schemes.

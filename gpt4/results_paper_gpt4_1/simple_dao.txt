@@ -1,0 +1,22 @@
+This smart contract is vulnerable to the Reentrancy attack. 
+
+The vulnerability lies in the 'withdraw' function. When a user withdraws, the smart contract sends the funds first with the line 'msg.sender.call.value(amount)()', and then it updates the internal balance with 'credit[msg.sender]-=amount;'. 
+
+This allows for a potential Reentrancy attack. A malicious contract could call the 'withdraw' function, and then in the fallback function, call 'withdraw' again. Since the internal balance has not been updated yet, the malicious contract would be able to withdraw more Ether than it should.
+
+To mitigate this vulnerability, the contract should always update its state before calling external contracts.
+
+Here's how the updated 'withdraw' function would look like:
+
+```solidity
+function withdraw(uint amount) {
+    if (credit[msg.sender]>= amount) {
+      credit[msg.sender]-=amount;
+      
+      bool res = msg.sender.call.value(amount)();
+      require(res);
+    }
+  }
+```
+
+This contract doesn't appear to have the other vulnerabilities mentioned. However, it's important to note that the .call.value() function is inherently risky and should be avoided in favor of the safer .transfer() function, which automatically throws on failure and prevents reentrancy attacks. Also note that the contract doesn't have any access control measures, which is a vulnerability in itself.

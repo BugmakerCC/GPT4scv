@@ -1,0 +1,19 @@
+The smart contract has several vulnerabilities:
+
+1. Reentrancy: The contract is vulnerable to reentrancy attack in the `fundPuppets` and `Puppet` fallback function. The `call.value()` functions are called before the state changes without any mutex or reentrancy guard in place. If the called contract is malicious, it could call back into the `fundPuppets` or `Puppet` fallback function before the initial call is finished, potentially leading to unexpected behavior.
+
+2. Access Control: Only the `owner` can execute certain functions (like `withdraw`, `newPuppet`, `fundPuppets`), but there is no function to change the `owner` if needed. Also, any user can set `extra` addresses in `setExtra` function which can lead to loss of funds if a malicious user sets it to an address under their control.
+
+3. Arithmetic Issues: The contract uses SafeMath library for arithmetic operations which protects it from integer overflow and underflow vulnerabilities.
+
+4. Unchecked Return Values For Low-Level Calls: The low-level `.call()` function is used without any checks for its return value. If the call fails, the contract will continue executing without any notice of the failure, which could lead to unexpected behavior.
+
+5. Denial of Service: The `fundPuppets` function may fail if any of the `extra` addresses run out of gas or throw an error, potentially blocking the execution of the entire function.
+
+6. Bad Randomness: Not applicable as the contract does not use randomness.
+
+7. Front-Running: Not directly applicable as contract does not deal with time of check vs time of use or transaction ordering dependencies.
+
+8. Time manipulation: Not applicable as there is no timestamp dependence.
+
+9. Short Address Attack: The contract does not seem to be vulnerable to short address attacks as it does not take address inputs from external users. However, if `setExtra` function is used by an attacker to set a short address, it may lead to loss of funds.

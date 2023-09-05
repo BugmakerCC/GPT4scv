@@ -1,0 +1,33 @@
+After carefully reviewing the provided smart contract, I have identified a vulnerability present in the code. The vulnerability is related to the Arithmetic Issues category, specifically an integer overflow vulnerability.
+
+The vulnerability can be found in the `add` function where the `balance` variable is increased by the `deposit` parameter. However, there is no check in place to ensure that an integer overflow does not occur.
+
+An integer overflow happens when the result of an arithmetic operation exceeds the maximum value that can be stored in the variable type. In this case, if the `balance` variable already holds the maximum value and a large `deposit` value is passed to the `add` function, an overflow will occur. This can lead to unexpected behavior and potential security risks.
+
+To address this vulnerability, it is recommended to implement checks to prevent integer overflow. One way to do this is by using the SafeMath library, which provides safe arithmetic operations that prevent overflows and underflows. By using the SafeMath library, the addition operation can be safely performed, and an exception will be thrown if an overflow is detected.
+
+Here is an updated version of the smart contract that uses the SafeMath library to prevent integer overflows:
+
+```solidity
+pragma solidity 0.4.25;
+
+library SafeMath {
+    function add(uint256 a, uint256 b) internal pure returns (uint256) {
+        uint256 c = a + b;
+        require(c >= a, "SafeMath: addition overflow");
+        return c;
+    }
+}
+
+contract Overflow_Add {
+    using SafeMath for uint256;
+    
+    uint public balance = 1;
+
+    function add(uint256 deposit) public {
+        balance = balance.add(deposit);
+    }
+}
+```
+
+In this updated version, the `SafeMath` library is imported and used to perform the addition operation in the `add` function. The `SafeMath.add` function checks for overflow and throws an exception if detected, ensuring the integrity of the `balance` variable.

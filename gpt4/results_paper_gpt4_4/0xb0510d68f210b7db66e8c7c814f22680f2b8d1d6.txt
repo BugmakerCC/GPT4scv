@@ -1,0 +1,19 @@
+Here are the potential vulnerabilities I found in the smart contract:
+
+1. Reentrancy vulnerability: The contract uses the low-level call function to send Ether. This can potentially allow contracts that receive Ether from this contract to call back into this contract before the first call is finished, in a reentrancy attack. This is specifically visible in the fundPuppets function in the Splitter contract and the fallback function in the Puppet contract.
+
+2. Denial of Service: The contract could be vulnerable to a Denial of Service (DoS) attack due to the use of the low-level call function without checking its return value. If one of the calls fails (e.g., because of the gas limit is reached, or the recipient contract throws an exception), the execution of the function will continue, potentially leading to undesired results. 
+
+3. Access control: There are no access control mechanisms in place for the setExtra function, meaning anyone could potentially modify the extra mapping. Furthermore, the only access control for the newPuppet function and the fundPuppets function is that msg.sender must be the owner, but this still leaves the contract open to attacks if the owner's account is compromised.
+
+4. Arithmetic Issues: While the contract makes use of the SafeMath library to protect against overflow and underflow in the division of Ether among the puppets in the fundPuppets function, it does not check for potential division by zero errors.
+
+5. Unchecked Return Values For Low Level Calls: The contract uses low-level call functions in multiple places (e.g., in the fundPuppets function and the fallback function in the Puppet contract) without checking the return values. If these calls fail, the contract will not be aware of it and will continue executing.
+
+6. Bad randomness: Not applicable as the contract does not appear to use any form of randomness.
+
+7. Front-Running: Not applicable as the contract does not appear to involve any transactions where the order of execution could be exploited.
+
+8. Time manipulation: Not applicable as the contract does not appear to depend on timestamps or block numbers.
+
+9. Short Address Attack: Not applicable as the contract does not appear to interact with user-supplied addresses in a way that would make it vulnerable to a short address attack.

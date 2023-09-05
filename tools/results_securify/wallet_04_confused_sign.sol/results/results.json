@@ -1,0 +1,81 @@
+{
+  "/sb/wallet_04_confused_sign.sol:Wallet": {
+    "results": {
+      "TODReceiver": {
+        "violations": [],
+        "warnings": [
+          30,
+          38
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnhandledException": {
+        "violations": [],
+        "warnings": [
+          30,
+          38
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODTransfer": {
+        "violations": [],
+        "warnings": [
+          38
+        ],
+        "safe": [
+          30
+        ],
+        "conflicts": []
+      },
+      "DAO": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODAmount": {
+        "violations": [
+          38
+        ],
+        "warnings": [
+          30
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "MissingInputValidation": {
+        "violations": [
+          36
+        ],
+        "warnings": [
+          27,
+          22
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "DAOConstantGas": {
+        "violations": [
+          30
+        ],
+        "warnings": [
+          38
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnrestrictedEtherFlow": {
+        "violations": [],
+        "warnings": [
+          38
+        ],
+        "safe": [
+          30
+        ],
+        "conflicts": []
+      }
+    }
+  }
+}

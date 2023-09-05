@@ -1,0 +1,7 @@
+The smart contract provided has at least two vulnerabilities.
+
+1. Wrong Constructor Name: The intended constructor function `DynamicPyramid()` does not match the contract name `Rubixi`. This means that the function can be called by anyone, not just at contract creation. This is a critical vulnerability as it allows any user to call this function and change the `creator` address. The new `creator` can then change the contract’s rules, collect all fees, etc. This is an example of an Access Control vulnerability.
+
+2. Unchecked Return Value: In many places where `.send()` is used, the return value is not checked. This can lead to failed transactions being silently ignored. For instance, in the `addPayout(uint _fee)` function, if the `.send()` fails, the balance is still deducted and the payoutOrder is still incremented. This can lead to Denial of Service for the rightful recipients of the payout.
+
+Additionally, the contract may be vulnerable to Reentrancy attacks, as it calls external contracts (via the `.send()` function) after changing its state. However, as `.send()` only forwards 2300 gas (which is not enough to call another contract), this might not be exploitable.

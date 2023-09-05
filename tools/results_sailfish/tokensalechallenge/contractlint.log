@@ -1,0 +1,46 @@
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Analysis started at: 2023-08-14 02:58:39 AM
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Version constraints: ['^0.4.21']
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | solc version: v0.4.21
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Callgraph generation started!
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Callgraph generation finished!
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Value Range Analysis started
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Generating return summary for slitherConstructorConstantVariables
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Return summary generated for slitherConstructorConstantVariables
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Range graph generated
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Processed function slitherConstructorConstantVariables
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Generating return summary for TokenSaleChallenge
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Return summary generated for TokenSaleChallenge
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Processed function TokenSaleChallenge
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Generating return summary for isComplete
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Return summary generated for isComplete
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Processed function isComplete
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Generating return summary for buy
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Return summary generated for buy
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Range graph generated
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Processed function buy
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Generating return summary for sell
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Return summary generated for sell
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Range graph generated
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Processed function sell
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Value Range Analysis took 0.001785 seconds
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Value Range Analysis finished
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Dependency detection started!
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | TOD dependency detected in file tokensalechallenge.sol in contract TokenSaleChallenge in by composing functions sell and buy
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | TOD dependency detected in file tokensalechallenge.sol in contract TokenSaleChallenge in by composing functions sell and sell
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Dependency detection finished!
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Static Analysis took 0.232614 seconds
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Dependency exists
+[INFO] | 2023-08-14 02:58:39 AM | analyzer.tokensalechallenge | Invoking symbolic executor!
+[INFO] | 2023-08-14 02:58:40 AM | analyzer.tokensalechallenge | Symbolic execution took 0.739972 seconds
+[INFO] | 2023-08-14 02:58:40 AM | analyzer.tokensalechallenge | Symbolic execution finished!
+[INFO] | 2023-08-14 02:58:40 AM | analyzer.tokensalechallenge | Analysis finished!
+[INFO] | 2023-08-14 02:58:40 AM | analyzer.tokensalechallenge | Analysis took 0.973006 seconds
+[INFO] | 2023-08-14 02:58:40 AM | analyzer.tokensalechallenge | Analysis finished at: 2023-08-14 02:58:40 AM

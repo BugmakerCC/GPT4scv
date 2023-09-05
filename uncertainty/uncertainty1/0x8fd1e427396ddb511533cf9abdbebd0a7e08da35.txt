@@ -1,0 +1,13 @@
+The smart contract seems to be vulnerable to the following issues:
+
+1. Reentrancy: The functions `WithdrawTokenToHolder` and `WithdrawToHolder` can be subjected to reentrancy attacks, as the state change (`Holders[_to]=0;` and `Holders[_addr]-=_wei;`) is done after the external calls (`WithdrawToken(_token,_amount,_to);` and `_addr.call.value(_wei);`).
+
+2. Unchecked Return Values For Low Level Calls: In the function `WithdrawToken`, low-level call is used without checking the return value. If the call fails, it will silently fail and the contract will continue execution.
+
+3. Access Control: The `onlyOwner` modifier is defined but it doesn't actually modify the function behavior, as it lacks a require statement. Therefore, any address can call the `onlyOwner` functions.
+
+4. Arithmetic Issues: In the `WithdrawToHolder` function there is a subtraction operation without checks for underflow. If `_wei` is larger than `Holders[_addr]`, it will result in an underflow.
+
+5. Denial of Service: The `WithdrawTokenToHolder` and `WithdrawToHolder` functions can be blocked by having the receiving address be a contract that always throws exceptions.
+
+To fix the above vulnerabilities, always use `require` to check conditions, use `SafeMath` library to perform arithmetic operations, update the state before making external calls, and use Solidity's `transfer` function instead of lower-level `call.value`.

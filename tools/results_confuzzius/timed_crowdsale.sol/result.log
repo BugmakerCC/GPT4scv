@@ -1,0 +1,50 @@
+2023-03-24 16:08:25,678 - Main     - INFO - [1mInitializing seed to 1427655.0[0m
+2023-03-24 16:08:25,714 - Fuzzer   - INFO - [1mFuzzing contract [1mTimedCrowdsale[0m[0m
+2023-03-24 16:08:25,723 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:08:25,724 - Detector - INFO - [1m[32m          !!! Block dependency detected !!!          [0m
+2023-03-24 16:08:25,724 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:08:25,724 - Detector - INFO - [1m[32mSWC-ID:   120[0m
+2023-03-24 16:08:25,724 - Detector - INFO - [1m[32mSeverity: Low[0m
+2023-03-24 16:08:25,724 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:08:25,724 - Detector - INFO - [1m[32mSource code line:[0m
+2023-03-24 16:08:25,724 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:08:25,724 - Detector - INFO - [1m[32m/sb/timed_crowdsale.sol:13:1[0m
+2023-03-24 16:08:25,724 - Detector - INFO - [1m[32mblock.timestamp[0m
+2023-03-24 16:08:25,724 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:08:25,724 - Detector - INFO - [1m[32mTransaction sequence:[0m
+2023-03-24 16:08:25,724 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:08:25,724 - Detector - INFO - [1m[32mTransaction - isSaleFinished():[0m
+2023-03-24 16:08:25,724 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:08:25,724 - Detector - INFO - [1m[32mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:08:25,724 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:08:25,724 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2023-03-24 16:08:25,724 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:08:25,724 - Detector - INFO - [1m[32mInput:     0x6d6f385c[0m
+2023-03-24 16:08:25,724 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:08:25,731 - Analysis - INFO - [1mGeneration number 0 	 Code coverage: 98.41% (62/63) 	 Branch coverage: 100.00% (6/6) 	 Transactions: 5 (4 unique)   	 Time: 0.012678384780883789[0m
+2023-03-24 16:08:25,742 - Analysis - INFO - [1mGeneration number 1 	 Code coverage: 98.41% (62/63) 	 Branch coverage: 100.00% (6/6) 	 Transactions: 9 (5 unique)   	 Time: 0.02361893653869629[0m
+2023-03-24 16:08:25,752 - Analysis - INFO - [1mGeneration number 2 	 Code coverage: 98.41% (62/63) 	 Branch coverage: 100.00% (6/6) 	 Transactions: 13 (6 unique)   	 Time: 0.03302574157714844[0m
+2023-03-24 16:08:25,761 - Analysis - INFO - [1mGeneration number 3 	 Code coverage: 98.41% (62/63) 	 Branch coverage: 100.00% (6/6) 	 Transactions: 16 (7 unique)   	 Time: 0.04188847541809082[0m
+2023-03-24 16:08:25,772 - Analysis - INFO - [1mGeneration number 4 	 Code coverage: 98.41% (62/63) 	 Branch coverage: 100.00% (6/6) 	 Transactions: 20 (9 unique)   	 Time: 0.05339765548706055[0m
+2023-03-24 16:08:25,780 - Analysis - INFO - [1mGeneration number 5 	 Code coverage: 98.41% (62/63) 	 Branch coverage: 100.00% (6/6) 	 Transactions: 23 (9 unique)   	 Time: 0.06112194061279297[0m
+2023-03-24 16:08:25,788 - Analysis - INFO - [1mGeneration number 6 	 Code coverage: 98.41% (62/63) 	 Branch coverage: 100.00% (6/6) 	 Transactions: 26 (9 unique)   	 Time: 0.06887173652648926[0m
+2023-03-24 16:08:25,795 - Analysis - INFO - [1mGeneration number 7 	 Code coverage: 98.41% (62/63) 	 Branch coverage: 100.00% (6/6) 	 Transactions: 28 (9 unique)   	 Time: 0.07596755027770996[0m
+2023-03-24 16:08:25,802 - Analysis - INFO - [1mGeneration number 8 	 Code coverage: 98.41% (62/63) 	 Branch coverage: 100.00% (6/6) 	 Transactions: 31 (9 unique)   	 Time: 0.08347630500793457[0m
+2023-03-24 16:08:25,811 - Analysis - INFO - [1mGeneration number 9 	 Code coverage: 98.41% (62/63) 	 Branch coverage: 100.00% (6/6) 	 Transactions: 34 (9 unique)   	 Time: 0.09238815307617188[0m
+2023-03-24 16:08:25,820 - Analysis - INFO - [1mGeneration number 10 	 Code coverage: 98.41% (62/63) 	 Branch coverage: 100.00% (6/6) 	 Transactions: 38 (9 unique)   	 Time: 0.10170388221740723[0m
+2023-03-24 16:08:25,821 - Analysis - INFO - [1m-----------------------------------------------------[0m
+2023-03-24 16:08:25,821 - Analysis - INFO - Number of generations: 	 10
+2023-03-24 16:08:25,821 - Analysis - INFO - Number of transactions: 	 38 (9 unique)
+2023-03-24 16:08:25,821 - Analysis - INFO - Transactions per second: 	 373
+2023-03-24 16:08:25,821 - Analysis - INFO - Total code coverage: 	 98.41% (62/63)
+2023-03-24 16:08:25,821 - Analysis - INFO - Total branch coverage: 	 100.00% (6/6)
+2023-03-24 16:08:25,821 - Analysis - INFO - Total execution time: 	 0.10 seconds
+2023-03-24 16:08:25,822 - Analysis - INFO - Total memory consumption: 	 54.56 MB
+
+     ______            ______                _           
+    / ____/___  ____  / ____/_  __________  (_)_  _______
+   / /   / __ \/ __ \/ /_  / / / /_  /_  / / / / / / ___/
+  / /___/ /_/ / / / / __/ / /_/ / / /_/ /_/ / /_/ (__  ) 
+  \____/\____/_/ /_/_/    \__,_/ /___/___/_/\__,_/____/  
+
+delteed file

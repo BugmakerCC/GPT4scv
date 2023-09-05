@@ -1,0 +1,21 @@
+This smart contract has multiple potential vulnerabilities:
+
+1. Reentrancy: In the `GetPie` and `withdraw` functions, it is not safe to call the `transfer` method before changing the state. An attacker might be able to recursively call the `GetPie` or `withdraw` function before the contract state is updated, draining the contract balance.
+
+2. Access Control: The contract does not have a proper access control mechanism. The `Command` function allows the `Owner` to execute any function on any contract without any restrictions. An attacker who gains ownership can misuse this function.
+
+3. Arithmetic Issues: There is no check for arithmetic overflows or underflows in this contract.
+
+4. Unchecked Return Values For Low Level Calls: The `adr.call.value(msg.value)(data)` in the `Command` function is a low-level call that ignores the return value. If this call fails, the contract will not be aware of it, leading to unexpected behavior.
+
+5. Denial of Service: By sending repeated `GetPie` requests with `msg.value>1 ether`, a malicious actor could potentially drain the contract of its funds, effectively causing a denial of service.
+
+6. Bad Randomness: The contract does not use any randomness, so this vulnerability does not apply.
+
+7. Front-Running: There doesn't seem to be a specific front-running vulnerability in this contract.
+
+8. Time manipulation: The contract does not use any time or block information, so this vulnerability does not apply.
+
+9. Short Address Attack: This contract does not take any address as input from users, so it is not vulnerable to short address attacks.
+
+Recommendations for fixing these issues would include implementing safe arithmetic operations, checking the return values of external calls, and implementing a better access control mechanism. Also, the state should be changed before transferring funds to prevent reentrancy attacks.

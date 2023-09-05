@@ -1,0 +1,50 @@
+The smart contract has two vulnerabilities:
+
+1. Time Manipulation: The contract uses `now` (alias for `block.timestamp`) and `block.timestamp` in the payout calculation and as a seed for a pseudorandom number generator. An attacker can manipulate these values because they are set by the miner of the block. This can lead to unpredicted behavior of the contract. 
+
+2. Unchecked Return Values For Low Level Calls: `msg.sender.send( msg.value )` and `leader.send( this.balance )` are used without checking the return value. These methods return false when they fail. If the contract does not deal with the failure, it could continue execution with an incorrect state. 
+
+Suggested fixes:
+
+1. Time Manipulation: Instead of relying on block.timestamp for critical calculations, consider an alternative mechanism. 
+2. Unchecked Return Values For Low Level Calls: Always check the return value of `send`, `call` and `transfer` methods. If you ignore the return value, make sure to handle the potential failure later in the code.
+
+Here is the revised code:
+
+```solidity
+pragma solidity ^0.4.0;
+
+contract lottopollo {
+  address leader;
+  uint    timestamp;
+
+  function payOut(uint rand) internal {
+    if ( rand> 0 && now - rand > 24 hours ) {
+      // Check return value of send
+      if(!msg.sender.send( msg.value )) {
+        revert();
+      }
+
+      if ( this.balance > 0 ) {
+        // Check return value of send
+        if(!leader.send( this.balance )) {
+          revert();
+        }
+      }
+    }
+    else if ( msg.value >= 1 ether ) {
+      leader = msg.sender;
+      timestamp = rand;
+    }
+  }
+
+  function randomGen() constant returns (uint randomNumber) {
+      return block.timestamp;   
+    }
+
+  function draw(uint seed){
+    uint randomNumber=randomGen(); 
+    payOut(randomNumber);
+  }
+}
+```

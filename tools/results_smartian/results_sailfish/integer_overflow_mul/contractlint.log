@@ -1,0 +1,30 @@
+[INFO] | 2023-08-14 02:58:31 AM | analyzer.integer_overflow_mul | Analysis started at: 2023-08-14 02:58:31 AM
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Version constraints: ['^0.4.19']
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | solc version: v0.4.19
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Callgraph generation started!
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Callgraph generation finished!
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Value Range Analysis started
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Generating return summary for run
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Return summary generated for run
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Range graph generated
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Processed function run
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Generating return summary for slitherConstructorVariables
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Return summary generated for slitherConstructorVariables
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Range graph generated
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Processed function slitherConstructorVariables
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Value Range Analysis took 0.000509 seconds
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Value Range Analysis finished
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Dependency detection started!
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Dependency detection finished!
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Static Analysis took 0.083006 seconds
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Dependency does not exist
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Symbolic execution is not needed!
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Analysis finished!
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Analysis took 0.083185 seconds
+[INFO] | 2023-08-14 02:58:32 AM | analyzer.integer_overflow_mul | Analysis finished at: 2023-08-14 02:58:32 AM

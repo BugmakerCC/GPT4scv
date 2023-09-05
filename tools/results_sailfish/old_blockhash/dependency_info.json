@@ -1,0 +1,75 @@
+{
+    "old_blockhash.sol": [
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "settle",
+                "lockInGuess"
+            ],
+            "First_function": "lockInGuess",
+            "Second_function": "settle",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 7\nFunction: lockInGuess\nNode: \nEXPRESSION guesses[msg.sender].block = block.number + 1\nIRS: \nREF_5 := TMP_6\"",
+                        "\"BlockID: 9\nFunction: settle\nNode: \nEXPRESSION require(bool)(block.number > guesses[msg.sender].block)\nIRS: \nTMP_8 = SOLIDITY_CALL require(bool)(TMP_7)\""
+                    ],
+                    "state_variable": "guesses.block"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 7\nFunction: lockInGuess\nNode: \nEXPRESSION guesses[msg.sender].block = block.number + 1\nIRS: \nREF_5 := TMP_6\"",
+                        "\"BlockID: 10\nFunction: settle\nNode: \nNEW VARIABLE answer = blockhash(uint256)(guesses[msg.sender].block)\nIRS: \nTMP_9 = SOLIDITY_CALL blockhash(uint256)(REF_9)\""
+                    ],
+                    "state_variable": "guesses.block"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 7\nFunction: lockInGuess\nNode: \nEXPRESSION guesses[msg.sender].block = block.number + 1\nIRS: \nREF_5 := TMP_6\"",
+                        "\"BlockID: 12\nFunction: settle\nNode: \nIF guesses[msg.sender].guess == answer\nIRS: \nCONDITION TMP_10\""
+                    ],
+                    "state_variable": "guesses.block"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 6\nFunction: lockInGuess\nNode: \nEXPRESSION guesses[msg.sender].guess = hash\nIRS: \nREF_3 := hash\"",
+                        "\"BlockID: 12\nFunction: settle\nNode: \nIF guesses[msg.sender].guess == answer\nIRS: \nCONDITION TMP_10\""
+                    ],
+                    "state_variable": "guesses.guess"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "settle",
+                "settle"
+            ],
+            "First_function": "settle",
+            "Second_function": "settle",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 18\nFunction: settle\nNode: \nEXPRESSION guesses[msg.sender].block = 0\nIRS: \nREF_11 := 0\"",
+                        "\"BlockID: 9\nFunction: settle\nNode: \nEXPRESSION require(bool)(block.number > guesses[msg.sender].block)\nIRS: \nTMP_8 = SOLIDITY_CALL require(bool)(TMP_7)\""
+                    ],
+                    "state_variable": "guesses.block"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 18\nFunction: settle\nNode: \nEXPRESSION guesses[msg.sender].block = 0\nIRS: \nREF_11 := 0\"",
+                        "\"BlockID: 10\nFunction: settle\nNode: \nNEW VARIABLE answer = blockhash(uint256)(guesses[msg.sender].block)\nIRS: \nTMP_9 = SOLIDITY_CALL blockhash(uint256)(REF_9)\""
+                    ],
+                    "state_variable": "guesses.block"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 18\nFunction: settle\nNode: \nEXPRESSION guesses[msg.sender].block = 0\nIRS: \nREF_11 := 0\"",
+                        "\"BlockID: 12\nFunction: settle\nNode: \nIF guesses[msg.sender].guess == answer\nIRS: \nCONDITION TMP_10\""
+                    ],
+                    "state_variable": "guesses.block"
+                }
+            ]
+        }
+    ]
+}

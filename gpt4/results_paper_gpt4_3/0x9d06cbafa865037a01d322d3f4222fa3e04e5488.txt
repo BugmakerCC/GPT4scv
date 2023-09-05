@@ -1,0 +1,21 @@
+Based on the provided smart contract, the detected vulnerabilities are as follows:
+
+1. Reentrancy: This contract is vulnerable to Reentrancy attack because the contract interacts with an external contract (by calling the `transferFrom` method) before it finishes its own execution. An attacker could create a malicious contract that recursively calls the `tokens_buy` function when `transferFrom` is called, draining ether from the contract. 
+
+2. Access Control: This contract is vulnerable to access control issues because it lacks proper access controls for the change of `token_price` and `active` variables. Although the `onlyOwner` modifier is used, it doesn't prevent anyone who knows the owner's address from executing these functions.
+
+3. Arithmetic Issues: No overflow/underflow protection is present in the contract. For instance, in the `tokens_buy` function, the multiplication could potentially lead to an integer overflow.
+
+4. Unchecked Return Values For Low Level Calls: The return value of the `transferFrom` function is not checked in the `tokens_buy` function. If this call fails, tokens would be deducted but not transferred, causing a loss for the user.
+
+5. Denial of Service: The contract is vulnerable to a denial of service attack, since the `owner.send(balance);` function in the `withdraw` function can be blocked by an attacker, preventing the contract from proceeding.
+
+6. Bad Randomness: Not applicable as the contract does not use random number generation.
+
+7. Front-Running: Not applicable as the contract does not involve transaction ordering.
+
+8. Time manipulation: Not applicable as the contract does not rely on block timestamp.
+
+9. Short Address Attack: Not applicable as the contract does not take address length into account when performing operations. 
+
+For fixing these vulnerabilities, consider using `SafeMath` library for arithmetic operations, checking return values of external calls, using `msg.sender.transfer` instead of `send`, adding reentrancy guard, and implementing proper access control mechanisms.

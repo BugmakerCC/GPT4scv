@@ -1,0 +1,19 @@
+The provided smart contract contains several vulnerabilities:
+
+1. Reentrancy: This contract is vulnerable to reentrancy attacks. In the `fundPuppets` function, the contract sends Ether to four different external contracts. If one of these external contracts is malicious and implements a fallback function that calls back into the `fundPuppets` function, it could potentially drain the contract of all its Ether.
+   
+2. Unchecked Return Values for Low-Level Calls: The return value of the `call` function is not checked in multiple places. This could lead to unexpected behavior, if those calls fail for any reason.
+
+3. Access Control: The `withdraw` function in both contracts only checks if the sender is the owner, but it does not check if the contract has enough balance to transfer. If the contract's balance is less than the amount to be withdrawn, this function will fail.
+
+4. Arithmetic Issues: The contract uses the SafeMath library to protect against integer overflow and underflow issues. However, it does not use SafeMath for all arithmetic operations, such as the division operation in `fundPuppets` function, which could potentially lead to issues.
+
+5. Denial of Service: The `fundPuppets` function can run out of gas if the number of puppets is large since it involves multiple external calls. This could potentially block the function from being executed.
+
+6. Bad Randomness: The contract does not seem to rely on randomness, so it does not seem to have this vulnerability.
+
+7. Front-running: The contract seems to be vulnerable to front-running. For example, a malicious actor can see a transaction that calls the `setExtra` function and then submit a transaction with a higher gas price to change the address before the original transaction is mined.
+
+8. Time Manipulation: The contract does not seem to rely on timestamps or block numbers, so it does not seem to have this vulnerability.
+
+9. Short Address Attack: The contract does not seem to be vulnerable to this attack as it does not take address inputs from external sources.

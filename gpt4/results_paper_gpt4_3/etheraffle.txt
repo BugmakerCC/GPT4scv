@@ -1,0 +1,19 @@
+The detected vulnerabilities are:
+
+1. Bad Randomness: In the function chooseWinner(), the randomness is predictable because it uses several publicly available variables such as block.coinbase, msg.sender, and block.difficulty for generating the random hash. An attacker who can manipulate or predict these parameters can potentially manipulate the random number generation.
+
+2. Access Control: The contract lacks proper access control mechanisms. Although the contract checks whether the message sender is the feeAddress for functions like endRaffle(), togglePause(), and kill(), it doesn't implement other access control measures, such as role-based access control, to restrict who can call these functions.
+
+3. Denial of Service: The function endRaffle() can be used by the contract owner to pause the contract, refund everyone's money, and start a new raffle. If the owner keeps calling this function, it could lead to a denial of service where legitimate users are unable to take part in the raffles because they keep getting refunded and the raffles keep getting restarted.
+
+4. Arithmetic Issues: Potential for integer underflow and overflow issues. For example, when calculating the pricePerTicket, there are no checks to make sure the calculation doesn't result in overflow or underflow errors.
+
+5. Reentrancy: When the contract sends money using the transfer() function, there's a risk of a reentrancy attack. If the recipient is a malicious contract, it could call back into the calling contract before the first call is finished, potentially causing unexpected behavior.
+
+6. Unchecked Return Values For Low Level Calls: When the contract sends ether using the transfer() function, it doesn't check the return value. If the transfer fails for some reason, the contract would not be aware of it.
+
+7. Time manipulation: The contract relies on block.number for certain operations, which can be manipulated by miners to some extent.
+
+8. Front-Running: Since transactions on the blockchain are public, a malicious actor could see a transaction when it is broadcast to the network and before it is confirmed, and then broadcast a similar transaction with a higher gas price, causing their transaction to be confirmed first.
+
+9. Short Address Attack: The contract doesn't check the length of the address when transferring ether. This could potentially allow an attacker who supplies a short address to cause the transfer to fail, but still have the ether deducted from the sender's balance.

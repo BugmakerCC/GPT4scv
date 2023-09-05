@@ -1,0 +1,21 @@
+The provided smart contract has a Reentrancy vulnerability, which is one of the most common security issues with smart contracts. 
+
+In the 'withdrawBalance' function, the balance of the user is first transferred, and then the balance is set to 0. If the call stack depth limit is reached or if the called contract fails in any way, the balance would not be set to 0. This would allow the user to re-enter the function and withdraw more Ether than they should.
+
+The contract should be updated to set the user balance to 0 before attempting to transfer the funds. 
+
+Here is an example of how the withdrawBalance function can be updated to prevent this vulnerability:
+
+```solidity
+function withdrawBalance() {  
+    uint amountToWithdraw = userBalances[msg.sender];
+    userBalances[msg.sender] = 0;
+    if (!(msg.sender.call.value(amountToWithdraw)())) { throw; }
+}  
+```
+
+In addition to the above, the contract does not check for Arithmetic Issues like overflow and underflow in addToBalance function. It's recommended to use SafeMath library functions for such arithmetic operations.
+
+Also, it is recommended to avoid the use of `throw;` because it consumes all the remaining gas. Instead, you can use `require();` or `revert();` to handle failed conditions.
+
+Note: The pragma solidity version ^0.4.0 is also outdated, you should use the latest version to get the benefit of all updates and security features if possible.

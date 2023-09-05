@@ -1,0 +1,27 @@
+The provided smart contract is vulnerable to Integer Overflow/Underflow.
+
+In the `transfer` function, there is no check for integer overflow/underflow when updating the balances. If the balance of `_to` or `_value` exceeds the maximum value that can be stored in a `uint256`, it will wrap around to zero, resulting in an incorrect balance.
+
+To fix this vulnerability, you can add a check for integer overflow/underflow before updating the balances. Here's an updated version of the contract:
+
+```solidity
+pragma solidity ^0.4.0;
+
+contract IntegerOverflowAdd {
+    mapping (address => uint256) public balanceOf;
+
+    // SECURE
+    function transfer(address _to, uint256 _value) public {
+        /* Check if sender has balance */
+        require(balanceOf[msg.sender] >= _value);
+        
+        /* Check for integer overflow/underflow */
+        require(balanceOf[_to] + _value >= balanceOf[_to]);
+        
+        balanceOf[msg.sender] -= _value;
+        balanceOf[_to] += _value;
+    }
+}
+```
+
+In the updated version, we added a check to ensure that the updated balance of `_to` does not overflow/underflow. By verifying if `balanceOf[_to] + _value` is greater than or equal to the previous balance of `_to`, we prevent any possibility of integer overflow/underflow.

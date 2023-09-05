@@ -1,0 +1,21 @@
+Looking at this contract, a number of potential vulnerabilities can be detected. 
+
+1. Reentrancy: The contract does not seem to be at risk of a reentrancy attack as there are no fallback functions that make an outgoing transfer.
+
+2. Access Control: The contract properly defines its access controls, it uses the onlyOwner and onlyManyOwners modifiers to restrict access to certain functions.
+
+3. Arithmetic Issues: The contract does not seem to be vulnerable to arithmetic issues, it uses the SafeMath library to prevent overflows and underflows.
+
+4. Unchecked Return Values For Low Level Calls: This contract does contain low level calls (.call.value()). However, it checks the return value of the call and reverts the transaction if the call fails, which is a good practice.
+
+5. Denial of Service: The contract does not seem to be vulnerable to a DoS attack as there are no loops that interact with external contracts in a way that could be manipulated to halt the execution of the contract.
+
+6. Bad Randomness: The contract does not use any randomness so it is not vulnerable in this.
+
+7. Front-Running: The contract does not have any transactions that could be exploited by a front-running attack.
+
+8. Time manipulation: The contract does not rely on the timestamp or block number for critical functionality, so it is not vulnerable to time manipulation attacks.
+
+9. Short Address Attack: The contract does not seem to be vulnerable to a short address attack as it does not directly interact with user-supplied addresses.
+
+Please note that this is not an exhaustive audit and further testing and review is recommended.

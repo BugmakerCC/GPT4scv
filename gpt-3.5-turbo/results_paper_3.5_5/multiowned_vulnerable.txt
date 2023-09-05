@@ -1,0 +1,21 @@
+Here is the analysis of the smart contract for the vulnerabilities you mentioned:
+
+1. Reentrancy: The contract seems to be safe from reentrancy attacks as there are no external calls made within the contract's functions.
+
+2. Access Control: The contract implements access control using the `onlyOwner` modifier, which restricts certain functions to be called only by the owner.
+
+3. Arithmetic Issues: There are no arithmetic operations in the contract that could lead to overflow or underflow issues.
+
+4. Unchecked Return Values For Low-Level Calls: The contract does not make any low-level calls, so there is no risk of unchecked return values.
+
+5. Denial of Service: There are no gas limit reached vulnerabilities, unexpected throws, or unexpected kills in the contract. Access control is properly implemented, which prevents unauthorized actions.
+
+6. Bad Randomness: The contract does not have any randomness-related functionalities, so this vulnerability does not apply.
+
+7. Front-Running: The contract does not have any time-of-check vs time-of-use (TOCTOU) vulnerabilities or transaction ordering dependence issues.
+
+8. Time Manipulation: The contract does not rely on timestamps for any critical operations, so time manipulation is not a concern.
+
+9. Short Address Attack: The contract does not have any off-chain issues or client vulnerabilities.
+
+Overall, the smart contract does not seem to have any of the mentioned vulnerabilities. However, it is always recommended to conduct a thorough security audit to ensure the contract's safety.

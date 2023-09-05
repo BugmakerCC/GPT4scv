@@ -1,0 +1,10 @@
+After analyzing the given smart contract, it appears that it is vulnerable to Bad Randomness, specifically the old blockhash vulnerability. 
+
+Bad Randomness - The problem lies in the use of `blockhash()` function to generate a pseudo-random number. This function returns the hash of the given block number, and in Ethereum, the block hashes are public, making them predictable. Furthermore, the `blockhash()` function only works for the 256 most recent blocks, and returns zero for all others. An attacker can take advantage of this by making a guess of zero and waiting for more than 256 blocks to pass before calling `settle()`.
+
+Here is a possible scenario for the attack: 
+1. The attacker locks in their guess using `lockInGuess()`, and they guess zero.
+2. They wait for more than 256 blocks to pass. Once this happens, `blockhash(guesses[msg.sender].block)` will return zero as the block number will be more than 256 blocks in the past.
+3. The attacker calls `settle()`. Since their guess (zero) matches the answer (also zero), they win and get 2 Ether.
+
+To mitigate this, it is recommended to use a more secure method to generate random numbers in Ethereum. Some options include using an oracle or commit-reveal schemes.

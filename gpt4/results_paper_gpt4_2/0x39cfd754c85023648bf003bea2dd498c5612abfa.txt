@@ -1,0 +1,21 @@
+After analyzing the given contract, here are the vulnerabilities I found:
+
+1. Reentrancy: The `WithdrawToHolder` function is vulnerable to reentrancy attacks. This is because it first sends the Ether (`_addr.call.value(_wei)`) before setting the balance of `_addr` to zero (`Holders[_addr]-=_wei;`). An attacker could re-enter the smart contract at the call.value function and withdraw more Ether than they should.
+
+2. Access Control: There is a potential access control vulnerability in the `onlyOwner` modifier. This is because it doesn't revert the transaction if the condition is not met (`if(owner == msg.sender)_;`). This means any address can call the functions that are supposed to be restricted to the owner. 
+
+3. Arithmetic Issues: The contract doesn't check for underflows when subtracting from `Holders[_addr]` in the `WithdrawToHolder` function. If `_wei` is greater than `Holders[_addr]`, the result will underflow, leading to a large balance being assigned to `_addr`.
+
+4. Unchecked Return Values For Low Level Calls: The contract uses `.call` in the `WithdrawToken` and `WithdrawToHolder` functions but does not check the return values. If these calls fail due to the called contract throwing an exception, the calling contract will not be aware and will continue executing.
+
+5. Denial of Service: The contract doesn't have a check for gas limit reached. This could potentially lock up the contract if a malicious contract deliberately runs out of gas.
+
+6. Bad Randomness: Not applicable as the contract doesn't involve any randomness.
+
+7. Front-Running: Not applicable as the contract doesn't involve any transaction ordering dependence.
+
+8. Time manipulation: Not applicable as the contract doesn't involve any timestamp dependence.
+
+9. Short Address Attack: Not applicable as the contract doesn't involve any off-chain interaction or client vulnerabilities. 
+
+Please note that this analysis might not be exhaustive, and it's always a good idea to conduct a thorough security audit before deploying a smart contract.

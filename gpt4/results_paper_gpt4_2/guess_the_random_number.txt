@@ -1,0 +1,19 @@
+The smart contract provided has the following vulnerabilities:
+
+1. Bad Randomness: The `answer` variable is determined by hashing the blockhash of the previous block and the current time. This is not truly random because miners can potentially manipulate these values. This is known as the "Miner’s Dilemma". 
+
+2. Reentrancy: While the `guess` function does not display a traditional reentrancy vulnerability (because it does not have a call to an external contract in the middle of its execution), it could still be a potential issue if the `guess` function is called as part of a fallback function in a contract that calls this one. 
+
+3. Denial of Service: The contract sends ether to `msg.sender` in the `guess` function. If the `msg.sender` is a contract with a fallback function that runs out of gas or throws an exception, then the `guess` function will be unable to complete. This could potentially lock up all funds in this contract.
+
+4. Access Control: There are no access controls in place in this contract. Anyone can call the `guess` function and potentially drain the contract of its funds if they guess the answer correctly.
+
+5. Arithmetic Issues: It doesn't seem like there are any integer overflow or underflow issues in this contract.
+
+6. Unchecked Return Values For Low Level Calls: There is no low-level call in this contract so there is no unchecked return values for low-level calls.
+
+7. Front-Running: There is possibility of front-running, a malicious miner could see a guess transaction in the mempool and push a transaction with a higher gas price to guess the same number.
+
+8. Time manipulation: The current time `now` (alias for `block.timestamp`) is used in generating the answer. This is a weak source of randomness because miners can manipulate it within a certain range.
+
+9. Short Address Attack: It doesn't seem like there are any short address attacks in this contract because the contract does not take an address as an input.

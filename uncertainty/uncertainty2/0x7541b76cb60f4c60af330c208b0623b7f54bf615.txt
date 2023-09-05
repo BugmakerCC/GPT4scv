@@ -1,0 +1,21 @@
+The smart contract provided has a number of potential vulnerabilities:
+
+1. Reentrancy: The reentrancy vulnerability is present in the `Collect` function of the `U_BANK` contract where it makes an external call to `msg.sender` before it updates the state of `balance`. An attacker could potentially re-enter the contract and drain it of funds.
+
+2. Access Control: There's no proper access control implemented in the contract. For instance, the `Put` function which is supposed to be an internal function is marked as public, allowing anyone to call it.
+
+3. Arithmetic Issues: The contract doesn't handle potential arithmetic issues such as underflows and overflows. This could be exploited by an attacker to manipulate balances.
+
+4. Unchecked Return Values: The contract doesn't check the return value of the external call in the `Collect` function. This could lead to unexpected behavior if the call fails.
+
+5. Denial of Service: The `Collect` function could potentially be exploited for a denial of service attack. If an attacker is able to cause the `msg.sender.call.value(_am)()` call to always fail, legitimate users would not be able to withdraw their funds.
+
+6. Bad Randomness: Although the contract doesn't use any randomness, it's worth mentioning that using `now` for critical logic could be manipulated by miners to some extent.
+
+7. Front-Running: There's a potential for front-running in the `Collect` function, where a malicious miner could see a transaction broadcasted and then orders his own transaction before it.
+
+8. Time Manipulation: The contract uses `now` (block timestamp) for logic in the `Put` and `Collect` functions, which could be manipulated by miners to some extent.
+
+9. Short Address Attack: The contract doesn't seem to be vulnerable to a short address attack as it doesn't take address inputs from users.
+
+In conclusion, this contract has some serious vulnerabilities and should not be used in a production environment without proper fixes and testing.

@@ -1,0 +1,102 @@
+[INFO] | 2023-08-14 02:54:36 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Analysis started at: 2023-08-14 02:54:36 AM
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Version constraints: ['^0.4.18']
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | solc version: v0.4.18
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Callgraph generation started!
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Callgraph generation finished!
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Value Range Analysis started
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Generating return summary for confirmOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Return summary generated for confirmOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Range graph generated
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Processed function confirmOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Generating return summary for slitherConstructorVariables
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Return summary generated for slitherConstructorVariables
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Range graph generated
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Processed function slitherConstructorVariables
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Generating return summary for onlyOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Return summary generated for onlyOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Processed function onlyOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Generating return summary for confirmOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Return summary generated for confirmOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Range graph generated
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Processed function confirmOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Generating return summary for slitherConstructorVariables
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Return summary generated for slitherConstructorVariables
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Range graph generated
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Processed function slitherConstructorVariables
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Generating return summary for onlyOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Return summary generated for onlyOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Processed function onlyOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Generating return summary for confirmOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Return summary generated for confirmOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Range graph generated
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Processed function confirmOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Generating return summary for initTokenBank
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Return summary generated for initTokenBank
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Range graph generated
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Processed function initTokenBank
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Generating return summary for Deposit
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Return summary generated for Deposit
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Range graph generated
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Processed function Deposit
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Generating return summary for Bal
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Return summary generated for Bal
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Processed function Bal
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Generating return summary for slitherConstructorVariables
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Return summary generated for slitherConstructorVariables
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Range graph generated
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Processed function slitherConstructorVariables
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Generating return summary for onlyOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Return summary generated for onlyOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Processed function onlyOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Generating return summary for changeOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Return summary generated for changeOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Range graph generated
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Processed function changeOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Generating return summary for changeOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Return summary generated for changeOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Range graph generated
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Processed function changeOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Generating return summary for WithdrawToken
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Return summary generated for WithdrawToken
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Processed function WithdrawToken
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Generating return summary for fallback
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Return summary generated for fallback
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Range graph generated
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Processed function fallback
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Generating return summary for changeOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Return summary generated for changeOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Range graph generated
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Processed function changeOwner
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Generating return summary for WithdrawToken
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Return summary generated for WithdrawToken
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Processed function WithdrawToken
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Generating return summary for WithdrawToHolder
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Return summary generated for WithdrawToHolder
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Range graph generated
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Processed function WithdrawToHolder
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Generating return summary for WitdrawTokenToHolder
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Return summary generated for WitdrawTokenToHolder
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Range graph generated
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Processed function WitdrawTokenToHolder
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Value Range Analysis took 0.005405 seconds
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Value Range Analysis finished
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Dependency detection started!
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Dependency detection finished!
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Static Analysis took 0.410564 seconds
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Dependency does not exist
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Symbolic execution is not needed!
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Analysis finished!
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Analysis took 0.410756 seconds
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01 | Analysis finished at: 2023-08-14 02:54:37 AM

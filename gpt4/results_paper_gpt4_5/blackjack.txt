@@ -1,0 +1,19 @@
+This contract has several vulnerabilities:
+
+1. Bad Randomness: The `deal` function in the `Deck` library uses `block.blockhash(b)`, `player`, `cardNumber`, and `timestamp` to generate a pseudo-random number. However, it's not truly random because miners can manipulate these values to their advantage. This can lead to predictable outcomes and is a major vulnerability.
+
+2. Reentrancy: The contract makes external calls (with `send` function) before it modifies its state. This can lead to reentrancy attacks. This issue is present in the `checkGameResult` function where the `send` function is called before updating the `games[msg.sender].state`.
+
+3. Arithmetic Issues: There are no safe math operations in this contract. This can lead to integer overflow or underflow.
+
+4. Unchecked Return Values For Low Level Calls: The `send` function is used in this contract but the return value of `send` is not checked. If the call fails, the contract won't know about it. This problem is present in the `checkGameResult` function.
+
+5. Access Control: There is no function access control in this contract which can lead to unauthorized access and manipulation of contract functions.
+
+6. Denial of Service: If a player becomes a malicious actor, they can deny service to the contract by refusing to finish their game. The contract does not have a mechanism to handle unfinished games.
+
+7. Time Manipulation: As mentioned in the Bad Randomness point, the contract uses `block.timestamp` in `deal` function which can be manipulated by miners.
+
+8. Front-Running: Front-running can occur in this contract because players can see the transactions in the mempool before they get mined. This can allow a player to front-run another player's move.
+
+9. Short Address Attack: The contract does not check the length of the input address which can lead to short address attacks.

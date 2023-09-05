@@ -1,0 +1,21 @@
+This smart contract has several potential vulnerabilities:
+
+1. Reentrancy: The function `Collect(uint _am)` is vulnerable to reentrancy attack because it calls an external contract (via `msg.sender.call.value(_am)()`) before it adjusts the state (`acc.balance-=_am;`). An attacker can create a fallback function in their contract to recursively call the `Collect` function, draining the contract's funds.
+
+2. Time Manipulation: This contract uses `now` (alias for `block.timestamp`) to set the `unlockTime`. This could be manipulated by miners to some degree as they have control over the block timestamp within a certain range which could potentially be exploited.
+
+3. Access Control: There is no access control in place for the `Put` and `Collect` functions. Any address can call these functions and potentially manipulate the state of the contract.
+
+4. Unchecked Return Values For Low-Level Calls: The low-level `call` function is used without checking its return value. If the call fails, no exception is thrown, and the contract will continue execution. This potentially ignores failures that could lead to severe vulnerabilities.
+
+5. Arithmetic Issues: There's no protection against underflow when `_am` is subtracted from `acc.balance`. If `_am` is greater than `acc.balance`, it will underflow and result in a very large balance for the user.
+
+6. Denial of Service: If an attacker's contract always fails in a fallback function, the `Collect` function will be stuck, preventing legitimate users from withdrawing their funds.
+
+7. Bad Randomness: Not applicable as this contract does not use randomness.
+
+8. Front-Running: Not directly applicable, but a miner could potentially front-run a `Collect` transaction if they see it in the mempool, withdraw the funds before the original transaction, and cause the original transaction to fail.
+
+9. Short Address Attack: Not directly applicable as this contract does not directly interact with token transfers or raw addresses.
+
+Please note that this is a preliminary analysis and further detailed audit is recommended to ensure full security of the contract.

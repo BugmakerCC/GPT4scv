@@ -1,0 +1,620 @@
+2023-03-24 16:14:12,512 - Main     - INFO - [1mInitializing seed to 1427655.0[0m
+2023-03-24 16:14:12,808 - Fuzzer   - INFO - [1mFuzzing contract [1mSmartBillions[0m[0m
+2023-03-24 16:14:12,873 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:12,873 - Detector - INFO - [1m[32m          !!! Block dependency detected !!!          [0m
+2023-03-24 16:14:12,873 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:12,873 - Detector - INFO - [1m[32mSWC-ID:   120[0m
+2023-03-24 16:14:12,873 - Detector - INFO - [1m[32mSeverity: Low[0m
+2023-03-24 16:14:12,873 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:12,873 - Detector - INFO - [1m[32mSource code line:[0m
+2023-03-24 16:14:12,873 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:12,873 - Detector - INFO - [1m[32m/sb/smart_billions.sol:647:1[0m
+2023-03-24 16:14:12,874 - Detector - INFO - [1m[32mblock.number[0m
+2023-03-24 16:14:12,874 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:12,874 - Detector - INFO - [1m[32mTransaction sequence:[0m
+2023-03-24 16:14:12,874 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:12,874 - Detector - INFO - [1m[32mTransaction - playRandom(address):[0m
+2023-03-24 16:14:12,874 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:12,874 - Detector - INFO - [1m[32mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:14:12,874 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:12,874 - Detector - INFO - [1m[32mValue:     1 Wei[0m
+2023-03-24 16:14:12,874 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:14:12,874 - Detector - INFO - [1m[32mInput:     0x2406e9fa000000000000000000000000cafebabe[0m
+2023-03-24 16:14:12,874 - Detector - INFO - [1m[32m           cafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:14:12,874 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:13,127 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33m          !!! Assertion failure detected !!!         [0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33mSWC-ID:   110[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33mSeverity: Medium[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33mSource code line:[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33m/sb/smart_billions.sol:11:1[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33massert(b <= a)[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33mTransaction sequence:[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33mTransaction - transferFrom(address,address,uint256):[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33mInput:     0x23b872dd000000000000000000000000deadbeef[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33m           deadbeefdeadbeefdeadbeefdeadbeef0000000000[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33m           00000000000000cafebabecafebabecafebabecafe[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33m           babecafebabeffffffffffffffffffffffffffffff[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33m           ffffffffffffffffffffffffffffffffff[0m
+2023-03-24 16:14:13,128 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,632 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,632 - Detector - INFO - [1m[33m          !!! Assertion failure detected !!!         [0m
+2023-03-24 16:14:13,632 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,632 - Detector - INFO - [1m[33mSWC-ID:   110[0m
+2023-03-24 16:14:13,633 - Detector - INFO - [1m[33mSeverity: Medium[0m
+2023-03-24 16:14:13,633 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,633 - Detector - INFO - [1m[33mSource code line:[0m
+2023-03-24 16:14:13,633 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,633 - Detector - INFO - [1m[33m/sb/smart_billions.sol:155:1[0m
+2023-03-24 16:14:13,633 - Detector - INFO - [1m[33muint[] public hashes[0m
+2023-03-24 16:14:13,633 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,633 - Detector - INFO - [1m[33mTransaction sequence:[0m
+2023-03-24 16:14:13,633 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,633 - Detector - INFO - [1m[33mTransaction - hashes(uint256):[0m
+2023-03-24 16:14:13,633 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,633 - Detector - INFO - [1m[33mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:14:13,633 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:13,633 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2023-03-24 16:14:13,633 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:14:13,633 - Detector - INFO - [1m[33mInput:     0x501895ae00000000000000000000000000000000[0m
+2023-03-24 16:14:13,633 - Detector - INFO - [1m[33m           00000000000000000000000000000002[0m
+2023-03-24 16:14:13,633 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,674 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,674 - Detector - INFO - [1m[33m          !!! Assertion failure detected !!!         [0m
+2023-03-24 16:14:13,674 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,674 - Detector - INFO - [1m[33mSWC-ID:   110[0m
+2023-03-24 16:14:13,674 - Detector - INFO - [1m[33mSeverity: Medium[0m
+2023-03-24 16:14:13,674 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,674 - Detector - INFO - [1m[33mSource code line:[0m
+2023-03-24 16:14:13,675 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,675 - Detector - INFO - [1m[33m/sb/smart_billions.sol:172:1[0m
+2023-03-24 16:14:13,675 - Detector - INFO - [1m[33massert(msg.sender == owner)[0m
+2023-03-24 16:14:13,675 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,675 - Detector - INFO - [1m[33mTransaction sequence:[0m
+2023-03-24 16:14:13,675 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,675 - Detector - INFO - [1m[33mTransaction - setInvestStart(uint256):[0m
+2023-03-24 16:14:13,675 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,675 - Detector - INFO - [1m[33mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:14:13,675 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:13,675 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2023-03-24 16:14:13,675 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:14:13,675 - Detector - INFO - [1m[33mInput:     0xe76ece01de2ef02f49c82e549323249fa84576e2[0m
+2023-03-24 16:14:13,675 - Detector - INFO - [1m[33m           ac0308862ec058bf6ac0489087219ba4[0m
+2023-03-24 16:14:13,675 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,733 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,733 - Detector - INFO - [1m[33m          !!! Assertion failure detected !!!         [0m
+2023-03-24 16:14:13,734 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,734 - Detector - INFO - [1m[33mSWC-ID:   110[0m
+2023-03-24 16:14:13,734 - Detector - INFO - [1m[33mSeverity: Medium[0m
+2023-03-24 16:14:13,734 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,734 - Detector - INFO - [1m[33mSource code line:[0m
+2023-03-24 16:14:13,734 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,734 - Detector - INFO - [1m[33m/sb/smart_billions.sol:172:1[0m
+2023-03-24 16:14:13,734 - Detector - INFO - [1m[33massert(msg.sender == owner)[0m
+2023-03-24 16:14:13,734 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,734 - Detector - INFO - [1m[33mTransaction sequence:[0m
+2023-03-24 16:14:13,734 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,734 - Detector - INFO - [1m[33mTransaction - setBetMax(uint256):[0m
+2023-03-24 16:14:13,734 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,734 - Detector - INFO - [1m[33mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:14:13,734 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:13,734 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2023-03-24 16:14:13,734 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:14:13,734 - Detector - INFO - [1m[33mInput:     0x0751076dffffffffffffffffffffffffffffffff[0m
+2023-03-24 16:14:13,734 - Detector - INFO - [1m[33m           fffffffffffffffffffffffffffffffd[0m
+2023-03-24 16:14:13,734 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,761 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,762 - Detector - INFO - [1m[33m          !!! Assertion failure detected !!!         [0m
+2023-03-24 16:14:13,762 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,762 - Detector - INFO - [1m[33mSWC-ID:   110[0m
+2023-03-24 16:14:13,762 - Detector - INFO - [1m[33mSeverity: Medium[0m
+2023-03-24 16:14:13,762 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,762 - Detector - INFO - [1m[33mSource code line:[0m
+2023-03-24 16:14:13,762 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,762 - Detector - INFO - [1m[33m/sb/smart_billions.sol:172:1[0m
+2023-03-24 16:14:13,763 - Detector - INFO - [1m[33massert(msg.sender == owner)[0m
+2023-03-24 16:14:13,763 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,763 - Detector - INFO - [1m[33mTransaction sequence:[0m
+2023-03-24 16:14:13,763 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,763 - Detector - INFO - [1m[33mTransaction - changeOwner(address):[0m
+2023-03-24 16:14:13,763 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:13,763 - Detector - INFO - [1m[33mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:14:13,763 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:13,763 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2023-03-24 16:14:13,763 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:14:13,763 - Detector - INFO - [1m[33mInput:     0xa6f9dae1000000000000000000000000deadbeef[0m
+2023-03-24 16:14:13,763 - Detector - INFO - [1m[33m           deadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:14:13,763 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:14,061 - Analysis - INFO - [1mGeneration number 0 	 Code coverage: 50.65% (3345/6604) 	 Branch coverage: 62.22% (280/450) 	 Transactions: 115 (114 unique)   	 Time: 1.2254729270935059[0m
+2023-03-24 16:14:14,818 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:14,818 - Detector - INFO - [1m[33m          !!! Assertion failure detected !!!         [0m
+2023-03-24 16:14:14,818 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:14,818 - Detector - INFO - [1m[33mSWC-ID:   110[0m
+2023-03-24 16:14:14,818 - Detector - INFO - [1m[33mSeverity: Medium[0m
+2023-03-24 16:14:14,818 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:14,818 - Detector - INFO - [1m[33mSource code line:[0m
+2023-03-24 16:14:14,818 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:14,818 - Detector - INFO - [1m[33m/sb/smart_billions.sol:146:1[0m
+2023-03-24 16:14:14,818 - Detector - INFO - [1m[33muint[] public dividends[0m
+2023-03-24 16:14:14,818 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:14,818 - Detector - INFO - [1m[33mTransaction sequence:[0m
+2023-03-24 16:14:14,818 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:14,818 - Detector - INFO - [1m[33mTransaction - dividends(uint256):[0m
+2023-03-24 16:14:14,818 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:14,818 - Detector - INFO - [1m[33mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:14:14,818 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:14,819 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2023-03-24 16:14:14,819 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:14:14,819 - Detector - INFO - [1m[33mInput:     0x814b3fe0d802cc0da9f586467982745d87b04b6a[0m
+2023-03-24 16:14:14,819 - Detector - INFO - [1m[33m           89954e36b3adff1add7104391d363d18[0m
+2023-03-24 16:14:14,819 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:15,803 - Analysis - INFO - [1mGeneration number 1 	 Code coverage: 51.91% (3428/6604) 	 Branch coverage: 64.67% (291/450) 	 Transactions: 234 (163 unique)   	 Time: 2.9675469398498535[0m
+2023-03-24 16:14:16,096 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:16,096 - Detector - INFO - [1m[33m          !!! Assertion failure detected !!!         [0m
+2023-03-24 16:14:16,096 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:16,096 - Detector - INFO - [1m[33mSWC-ID:   110[0m
+2023-03-24 16:14:16,096 - Detector - INFO - [1m[33mSeverity: Medium[0m
+2023-03-24 16:14:16,096 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:16,096 - Detector - INFO - [1m[33mSource code line:[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33m/sb/smart_billions.sol:177:1[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33massert(msg.sender == animator)[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33mTransaction sequence:[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33mTransaction 1 - changeAnimator(address):[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33mInput:     0x40c73d17000000000000000000000000deadbeef[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33m           deadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33mTransaction 2 - animator():[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33mValue:     1 Wei[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33mInput:     0x31c2b6e6[0m
+2023-03-24 16:14:16,097 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:18,961 - Analysis - INFO - [1mGeneration number 2 	 Code coverage: 52.27% (3452/6604) 	 Branch coverage: 65.56% (295/450) 	 Transactions: 451 (228 unique)   	 Time: 6.125383138656616[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32m          !!! Block dependency detected !!!          [0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32mSWC-ID:   120[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32mSeverity: Low[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32mSource code line:[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32m/sb/smart_billions.sol:517:1[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32mblock.number[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32mTransaction sequence:[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32mTransaction 1 - won():[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32mValue:     1 Wei[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32mInput:     0x12c8052f[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32mTransaction 2 - playRandom(address):[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:23,044 - Detector - INFO - [1m[32mValue:     1 Wei[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32mInput:     0x2406e9fa000000000000000000000000cafebabe[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32m           cafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32mTransaction 3 - hashBetSum():[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32mInput:     0xde469071[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32mTransaction 4 - betOf(address):[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32mInput:     0x4288d759000000000000000000000000cafebabe[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32m           cafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:14:23,045 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:23,648 - Analysis - INFO - [1mGeneration number 3 	 Code coverage: 54.33% (3588/6604) 	 Branch coverage: 66.22% (298/450) 	 Transactions: 740 (298 unique)   	 Time: 10.812034845352173[0m
+2023-03-24 16:14:29,215 - Analysis - INFO - [1mGeneration number 4 	 Code coverage: 54.33% (3588/6604) 	 Branch coverage: 66.22% (298/450) 	 Transactions: 1083 (378 unique)   	 Time: 16.379299640655518[0m
+2023-03-24 16:14:30,358 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:30,358 - Detector - INFO - [1m[33m          !!! Assertion failure detected !!!         [0m
+2023-03-24 16:14:30,358 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:30,358 - Detector - INFO - [1m[33mSWC-ID:   110[0m
+2023-03-24 16:14:30,358 - Detector - INFO - [1m[33mSeverity: Medium[0m
+2023-03-24 16:14:30,358 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:30,358 - Detector - INFO - [1m[33mSource code line:[0m
+2023-03-24 16:14:30,358 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:30,358 - Detector - INFO - [1m[33m/sb/smart_billions.sol:279:1[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33massert(_who != address(0))[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mTransaction sequence:[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mTransaction 1:[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mInput:     0x[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mTransaction 2 - betBlockNumberOf(address):[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mInput:     0x8eecddcf000000000000000000000000deadbeef[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33m           deadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mTransaction 3 - changeAnimator(address):[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mInput:     0x40c73d1700000000000000000000000000000000[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33m           00000000000000000000000000000000[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mTransaction 4 - playSystem(uint256,address):[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mValue:     1 Wei[0m
+2023-03-24 16:14:30,359 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:14:30,360 - Detector - INFO - [1m[33mInput:     0x26699576ffffffffffffffffffffffffffffffff[0m
+2023-03-24 16:14:30,360 - Detector - INFO - [1m[33m           fffffffffffffffffffffffffffffffe0000000000[0m
+2023-03-24 16:14:30,360 - Detector - INFO - [1m[33m           00000000000000cafebabecafebabecafebabecafe[0m
+2023-03-24 16:14:30,360 - Detector - INFO - [1m[33m           babecafebabe[0m
+2023-03-24 16:14:30,360 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:14:34,964 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-3018243998228255782[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:14:36,292 - Analysis - INFO - [1mGeneration number 5 	 Code coverage: 55.95% (3695/6604) 	 Branch coverage: 66.89% (301/450) 	 Transactions: 1462 (466 unique)   	 Time: 23.456586360931396[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32m          !!! Block dependency detected !!!          [0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32mSWC-ID:   120[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32mSeverity: Low[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32mSource code line:[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32m/sb/smart_billions.sol:552:1[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32mblock.number[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32mTransaction sequence:[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32mTransaction 1 - playSystem(uint256,address):[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32mValue:     1 Wei[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32mInput:     0x266995763160459a40fa927d990a720315a19b1a[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32m           79e85eecd6193d71dc7a15d5141c3b060000000000[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32m           00000000000000ffffffffffffffffffffffffffff[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32m           ffffffffffff[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32mTransaction 2:[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2023-03-24 16:14:38,602 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32mInput:     0x00000000[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32mTransaction 3:[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32mInput:     0x00000000[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32mTransaction 4 - playSystem(uint256,address):[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32mInput:     0x2669957640461b363d447c68db32f6339551fa66[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32m           d38bb87fa5513e2688bc8f0a35a9e8470000000000[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32m           00000000000000ffffffffffffffffffffffffffff[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32m           ffffffffffff[0m
+2023-03-24 16:14:38,603 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:39,881 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:39,881 - Detector - INFO - [1m[32m          !!! Block dependency detected !!!          [0m
+2023-03-24 16:14:39,881 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:39,881 - Detector - INFO - [1m[32mSWC-ID:   120[0m
+2023-03-24 16:14:39,881 - Detector - INFO - [1m[32mSeverity: Low[0m
+2023-03-24 16:14:39,881 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:39,881 - Detector - INFO - [1m[32mSource code line:[0m
+2023-03-24 16:14:39,881 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:39,881 - Detector - INFO - [1m[32m/sb/smart_billions.sol:646:1[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32mblock.number[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32mTransaction sequence:[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32mTransaction 1 - changeAnimator(address):[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32mInput:     0x40c73d17000000000000000000000000cafebabe[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32m           cafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32mTransaction 2 - playSystem(uint256,address):[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32mValue:     1 Wei[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32mInput:     0x2669957621089bcde70bea8b0cb90da3623fde87[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32m           cdd4fed80cfe47751403ef77b7fd96300000000000[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32m           00000000000000deadbeefdeadbeefdeadbeefdead[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32m           beefdeadbeef[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32mTransaction 3 - playRandom(address):[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:39,882 - Detector - INFO - [1m[32mValue:     1 Wei[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32mInput:     0x2406e9fa000000000000000000000000ffffffff[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32m           ffffffffffffffffffffffffffffffff[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32mTransaction 4 - changeAnimator(address):[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32mInput:     0x40c73d17000000000000000000000000cafebabe[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32m           cafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32mTransaction 5 - walletBlockOf(address):[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32mInput:     0x785ce7ca000000000000000000000000cafebabe[0m
+2023-03-24 16:14:39,883 - Detector - INFO - [1m[32m           cafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:14:39,884 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:40,971 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:40,971 - Detector - INFO - [1m[32m          !!! Block dependency detected !!!          [0m
+2023-03-24 16:14:40,971 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:40,971 - Detector - INFO - [1m[32mSWC-ID:   120[0m
+2023-03-24 16:14:40,971 - Detector - INFO - [1m[32mSeverity: Low[0m
+2023-03-24 16:14:40,971 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:40,971 - Detector - INFO - [1m[32mSource code line:[0m
+2023-03-24 16:14:40,971 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:40,971 - Detector - INFO - [1m[32m/sb/smart_billions.sol:550:1[0m
+2023-03-24 16:14:40,971 - Detector - INFO - [1m[32mblock.number[0m
+2023-03-24 16:14:40,971 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:40,971 - Detector - INFO - [1m[32mTransaction sequence:[0m
+2023-03-24 16:14:40,971 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mTransaction 1 - playSystem(uint256,address):[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mFrom:      0xffffffffffffffffffffffffffffffffffffffff[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mValue:     1 Wei[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mInput:     0x2669957600000000000000000000000000000000[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32m           000000000000000000000000000000020000000000[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32m           00000000000000cafebabecafebabecafebabecafe[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32m           babecafebabe[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mTransaction 2:[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mFrom:      0xffffffffffffffffffffffffffffffffffffffff[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mInput:     0x[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mTransaction 3:[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mInput:     0x00000000[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mTransaction 4 - playSystem(uint256,address):[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mFrom:      0xffffffffffffffffffffffffffffffffffffffff[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32mInput:     0x26699576f21bc293c30b74452a5488b7b5aa5db9[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32m           0382fc4981a52c8c1c5511f92c13a6b60000000000[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32m           00000000000000ffffffffffffffffffffffffffff[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32m           ffffffffffff[0m
+2023-03-24 16:14:40,972 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:14:43,905 - Analysis - INFO - [1mGeneration number 6 	 Code coverage: 58.54% (3866/6604) 	 Branch coverage: 68.22% (307/450) 	 Transactions: 1879 (559 unique)   	 Time: 31.069056510925293[0m
+2023-03-24 16:14:44,367 - Analysis - ERROR - [91m[1mValidation error in [91m[1m8599389632438195441[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:14:52,354 - Analysis - INFO - [1mGeneration number 7 	 Code coverage: 58.54% (3866/6604) 	 Branch coverage: 68.22% (307/450) 	 Transactions: 2340 (658 unique)   	 Time: 39.518391609191895[0m
+2023-03-24 16:14:54,222 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-5189265539163831025[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:14:57,053 - Analysis - ERROR - [91m[1mValidation error in [91m[1m6399663894406992787[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:14:58,685 - Analysis - ERROR - [91m[1mValidation error in [91m[1m8124049672192556698[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:01,874 - Analysis - INFO - [1mGeneration number 8 	 Code coverage: 58.54% (3866/6604) 	 Branch coverage: 68.22% (307/450) 	 Transactions: 2809 (761 unique)   	 Time: 49.038869857788086[0m
+2023-03-24 16:15:02,727 - Analysis - ERROR - [91m[1mValidation error in [91m[1m5805579028593067764[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:02,849 - Analysis - ERROR - [91m[1mValidation error in [91m[1m2032102607341704407[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:02,883 - Analysis - ERROR - [91m[1mValidation error in [91m[1m2032102607341704407[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32m          !!! Block dependency detected !!!          [0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32mSWC-ID:   120[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32mSeverity: Low[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32mSource code line:[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32m/sb/smart_billions.sol:618:1[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32mblock.number[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32mTransaction sequence:[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32mTransaction 1 - playSystem(uint256,address):[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32mValue:     1 Wei[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32mInput:     0x26699576ac9aabac947a242331d09008459d7516[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32m           0c9f0b83c034ee5746761156ef4e49cf0000000000[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32m           00000000000000cafebabecafebabecafebabecafe[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32m           babecafebabe[0m
+2023-03-24 16:15:03,385 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32mTransaction 2:[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32mInput:     0x[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32mTransaction 3:[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32mValue:     5000000000000000001 Wei[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32mInput:     0x[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32mTransaction 4 - playSystem(uint256,address):[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32mInput:     0x26699576a27fd51c48ae37c5a223387a93c35c06[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32m           e4be86a9f61dcfad1bf0411a1fb32e300000000000[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32m           00000000000000ffffffffffffffffffffffffffff[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32m           ffffffffffff[0m
+2023-03-24 16:15:03,386 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:03,687 - Analysis - ERROR - [91m[1mValidation error in [91m[1m8561233430548316053[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:05,565 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-4698882719685425267[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:06,012 - Analysis - ERROR - [91m[1mValidation error in [91m[1m2387778360738033232[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:07,900 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-7322532825391698656[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:08,121 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-2516923078901315301[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:08,654 - Analysis - ERROR - [91m[1mValidation error in [91m[1m4775789513849646303[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:09,213 - Analysis - ERROR - [91m[1mValidation error in [91m[1m9123930849551335414[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32m          !!! Block dependency detected !!!          [0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32mSWC-ID:   120[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32mSeverity: Low[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32mSource code line:[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32m/sb/smart_billions.sol:361:1[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32mblock.number[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32mTransaction sequence:[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32mTransaction 1 - playSystem(uint256,address):[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32mFrom:      0xffffffffffffffffffffffffffffffffffffffff[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32mValue:     288230376151711744 Wei[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32mInput:     0x26699576136dd354d1e6de27bb322dcec67807c1[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32m           cf083830d8826f082374dff499e973430000000000[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32m           00000000000000cafebabecafebabecafebabecafe[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32m           babecafebabe[0m
+2023-03-24 16:15:09,727 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32mTransaction 2:[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32mInput:     0x00000000[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32mTransaction 3:[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32mInput:     0x00000000[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32mTransaction 4 - playSystem(uint256,address):[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32mInput:     0x2669957662e83fca098955be6fc446ef0719bee3[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32m           aacd8a9f287b0fe06d4b224d44e7825b0000000000[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32m           00000000000000cafebabecafebabecafebabecafe[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32m           babecafebabe[0m
+2023-03-24 16:15:09,728 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:15:11,585 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-3611394966023119380[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:11,739 - Analysis - ERROR - [91m[1mValidation error in [91m[1m1915175345014926886[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:11,900 - Analysis - INFO - [1mGeneration number 9 	 Code coverage: 60.37% (3987/6604) 	 Branch coverage: 69.33% (312/450) 	 Transactions: 3267 (866 unique)   	 Time: 59.06439757347107[0m
+2023-03-24 16:15:13,426 - Analysis - ERROR - [91m[1mValidation error in [91m[1m1744562093935776352[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:13,595 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-490279712567701638[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:14,167 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-7512171010567923812[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:14,654 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1496658013049251808[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:15,011 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-5064133498108776457[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:15,048 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-5064133498108776457[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:15,152 - Analysis - ERROR - [91m[1mValidation error in [91m[1m879210015548733827[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:15,153 - Analysis - ERROR - [91m[1mValidation error in [91m[1m879210015548733827[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:15,804 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-888071708022289743[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:15,830 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-888071708022289743[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:16,799 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-313904263976015375[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:17,035 - Analysis - ERROR - [91m[1mValidation error in [91m[1m975318842316762619[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:17,059 - Analysis - ERROR - [91m[1mValidation error in [91m[1m975318842316762619[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:17,419 - Analysis - ERROR - [91m[1mValidation error in [91m[1m2770940902319934797[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:18,329 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1235194390936346336[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:19,002 - Analysis - ERROR - [91m[1mValidation error in [91m[1m7077520163911600700[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:19,231 - Analysis - ERROR - [91m[1mValidation error in [91m[1m1805495172088800549[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:19,767 - Analysis - ERROR - [91m[1mValidation error in [91m[1m545568735889402707[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:20,350 - Analysis - ERROR - [91m[1mValidation error in [91m[1m4019286252202522949[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:20,807 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-121270569280032041[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:20,931 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-897525511345010271[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:20,954 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-897525511345010271[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:20,954 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1031008851889420348[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:21,046 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-1352718448785006377[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:21,487 - Analysis - ERROR - [91m[1mValidation error in [91m[1m6480440237032839613[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:21,645 - Analysis - ERROR - [91m[1mValidation error in [91m[1m-4751062365620868386[0m[0m : Sender account balance cannot afford txn (ignoring for now)[0m[0m
+2023-03-24 16:15:22,638 - Analysis - INFO - [1mGeneration number 10 	 Code coverage: 60.37% (3987/6604) 	 Branch coverage: 69.33% (312/450) 	 Transactions: 3703 (970 unique)   	 Time: 69.80213022232056[0m
+2023-03-24 16:15:23,253 - Analysis - INFO - [1m-----------------------------------------------------[0m
+2023-03-24 16:15:23,253 - Analysis - INFO - Number of generations: 	 10
+2023-03-24 16:15:23,253 - Analysis - INFO - Number of transactions: 	 3703 (970 unique)
+2023-03-24 16:15:23,253 - Analysis - INFO - Transactions per second: 	 53
+2023-03-24 16:15:23,253 - Analysis - INFO - Total code coverage: 	 60.37% (3987/6604)
+2023-03-24 16:15:23,253 - Analysis - INFO - Total branch coverage: 	 69.33% (312/450)
+2023-03-24 16:15:23,253 - Analysis - INFO - Total execution time: 	 70.42 seconds
+2023-03-24 16:15:23,254 - Analysis - INFO - Total memory consumption: 	 134.13 MB
+
+     ______            ______                _           
+    / ____/___  ____  / ____/_  __________  (_)_  _______
+   / /   / __ \/ __ \/ /_  / / / /_  /_  / / / / / / ___/
+  / /___/ /_/ / / / / __/ / /_/ / / /_/ /_/ / /_/ (__  ) 
+  \____/\____/_/ /_/_/    \__,_/ /___/___/_/\__,_/____/  
+
+delteed file

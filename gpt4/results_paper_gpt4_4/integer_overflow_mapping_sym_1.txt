@@ -1,0 +1,26 @@
+This contract has an Arithmetic Issue vulnerability, specifically an Integer Underflow. 
+
+The function `init` subtracts the value `v` from the value at map index `k`. If the value `v` is greater than the current value at map index `k`, this will result in an integer underflow. 
+
+An Integer Underflow occurs when an arithmetic operation attempts to create a numeric value that is below the minimum value in the range of values that can be represented within a given number of bits. In such cases, the value wraps around to the maximum number that can be represented. 
+
+This can be exploited by an attacker to manipulate the values in the `map` mapping. 
+
+It's recommended to use SafeMath or similar libraries to avoid this kind of vulnerability. Here is an example of how to prevent the underflow:
+
+```solidity
+pragma solidity ^0.4.11;
+
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol";
+
+contract IntegerOverflowMappingSym1 {
+    using SafeMath for uint256;
+    mapping(uint256 => uint256) map;
+
+    function init(uint256 k, uint256 v) public {
+        require(map[k] >= v, "Underflow detected");
+        map[k] = map[k].sub(v);
+    }
+}
+```
+This modified version of the contract uses SafeMath for subtraction, which will revert the transaction if an underflow is about to happen, thereby preventing it.

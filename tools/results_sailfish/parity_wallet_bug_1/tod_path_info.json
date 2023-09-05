@@ -1,0 +1,2724 @@
+{
+    "tod_symex_path_1.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1029\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 1014\nCall context: \nTrue\nNEW VARIABLE None\nTMP_92 = _to == 0\nCONDITION TMP_92\""
+        ],
+        "executable_instructions": 555,
+        "state_variable": "m_required",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_2.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1125\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 484,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_3.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1221\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 484,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_4.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1317\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 506,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_5.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1413\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 506,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_6.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1509\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 1494\nCall context: \nTrue\nNEW VARIABLE None\nTMP_92 = _to == 0\nCONDITION TMP_92\""
+        ],
+        "executable_instructions": 555,
+        "state_variable": "m_required",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_7.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1605\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 484,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_8.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1701\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 484,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_9.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1797\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 506,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_10.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1893\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 506,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_11.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1989\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 2043\nCall context: execute\nFalse\nEND_IF None\""
+        ],
+        "executable_instructions": 595,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_12.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 2085\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 2139\nCall context: execute\nFalse\nEND_IF None\""
+        ],
+        "executable_instructions": 595,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_13.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 2181\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 2240\nCall context: execute\nTrue\nEmit Confirmation(msg.sender._operation)\""
+        ],
+        "executable_instructions": 623,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_14.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 2277\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 2336\nCall context: execute\nTrue\nEmit Confirmation(msg.sender._operation)\""
+        ],
+        "executable_instructions": 623,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_15.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 2373\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 484,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_16.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 2469\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 484,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_17.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 2565\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 506,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_18.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 2661\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 506,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_19.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 2757\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 484,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_20.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 2853\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 484,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_21.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 2949\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 506,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_22.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 3045\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 506,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_23.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 3141\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 3195\nCall context: execute\nFalse\nEND_IF None\""
+        ],
+        "executable_instructions": 595,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_24.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 3237\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 3291\nCall context: execute\nFalse\nEND_IF None\""
+        ],
+        "executable_instructions": 595,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_25.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 3333\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 3392\nCall context: execute\nTrue\nEmit Confirmation(msg.sender._operation)\""
+        ],
+        "executable_instructions": 623,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_26.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 3429\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 3488\nCall context: execute\nTrue\nEmit Confirmation(msg.sender._operation)\""
+        ],
+        "executable_instructions": 623,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_27.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 3525\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 3562\nCall context: execute\nTrue\nNEW VARIABLE None\nREF_50 -> m_txs[_h]\nREF_51 -> REF_50.to\nTMP_114 = REF_51 == 0\nCONDITION TMP_114\""
+        ],
+        "executable_instructions": 672,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_28.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 3621\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 3660\nCall context: execute\nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 679,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_29.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "to_function": "changeOwner",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 3709\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 3798\nCall context: execute\nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 825,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_30.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 3855\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 3911\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_31.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 3951\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 4007\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_32.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 4047\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 4103\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_33.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 4143\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 484,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_34.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 4239\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 484,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_35.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 4335\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 506,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_36.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 4431\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 506,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_37.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 4527\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 484,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_38.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 4623\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 484,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_39.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 4719\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 506,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_40.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 4815\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 506,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_41.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 4911\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 4965\nCall context: execute\nFalse\nEND_IF None\""
+        ],
+        "executable_instructions": 595,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_42.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 5007\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 5061\nCall context: execute\nFalse\nEND_IF None\""
+        ],
+        "executable_instructions": 595,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_43.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 5103\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 5162\nCall context: execute\nTrue\nEmit Confirmation(msg.sender._operation)\""
+        ],
+        "executable_instructions": 623,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_44.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 5199\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 5258\nCall context: execute\nTrue\nEmit Confirmation(msg.sender._operation)\""
+        ],
+        "executable_instructions": 623,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_45.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 5295\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 5332\nCall context: execute\nTrue\nNEW VARIABLE None\nREF_50 -> m_txs[_h]\nREF_51 -> REF_50.to\nTMP_114 = REF_51 == 0\nCONDITION TMP_114\""
+        ],
+        "executable_instructions": 672,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_46.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 5391\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 5430\nCall context: execute\nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 679,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_47.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "to_function": "addOwner",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 5481\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 5583\nCall context: execute\nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 876,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_48.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 5640\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 5696\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_49.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 5736\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 5792\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_50.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 5832\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 5888\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_51.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 5928\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 484,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_52.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 6024\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 484,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_53.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 6120\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 506,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_54.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 6216\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 506,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_55.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 6312\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 484,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_56.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 6408\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 484,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_57.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 6504\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 506,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_58.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 6600\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 506,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_59.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 6696\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 6750\nCall context: execute\nFalse\nEND_IF None\""
+        ],
+        "executable_instructions": 595,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_60.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 6792\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 6846\nCall context: execute\nFalse\nEND_IF None\""
+        ],
+        "executable_instructions": 595,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_61.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 6888\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 6947\nCall context: execute\nTrue\nEmit Confirmation(msg.sender._operation)\""
+        ],
+        "executable_instructions": 623,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_62.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 6984\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 7043\nCall context: execute\nTrue\nEmit Confirmation(msg.sender._operation)\""
+        ],
+        "executable_instructions": 623,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_63.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 7080\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 7117\nCall context: execute\nTrue\nNEW VARIABLE None\nREF_50 -> m_txs[_h]\nREF_51 -> REF_50.to\nTMP_114 = REF_51 == 0\nCONDITION TMP_114\""
+        ],
+        "executable_instructions": 672,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_64.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 7176\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 7215\nCall context: execute\nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 679,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_65.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "to_function": "removeOwner",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 7264\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 7363\nCall context: execute\nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 862,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_66.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 7420\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 7476\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_67.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 7516\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 7572\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_68.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 7612\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 7668\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_69.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 7708\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 7693\nCall context: \nTrue\nNEW VARIABLE None\nTMP_92 = _to == 0\nCONDITION TMP_92\""
+        ],
+        "executable_instructions": 555,
+        "state_variable": "m_required",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_70.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 7804\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 7789\nCall context: \nTrue\nNEW VARIABLE None\nTMP_92 = _to == 0\nCONDITION TMP_92\""
+        ],
+        "executable_instructions": 555,
+        "state_variable": "m_required",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_71.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 7900\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 7937\nCall context: execute\nTrue\nNEW VARIABLE None\nREF_50 -> m_txs[_h]\nREF_51 -> REF_50.to\nTMP_114 = REF_51 == 0\nCONDITION TMP_114\""
+        ],
+        "executable_instructions": 672,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_72.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 7996\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 8035\nCall context: execute\nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 679,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_73.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "to_function": "changeRequirement",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 8081\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 8167\nCall context: execute\nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 798,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_74.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 8224\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 8280\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_75.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 8320\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 8376\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_76.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 8416\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 8472\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_77.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 8512\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 8543\nCall context: execute\nTrue\nm_spentToday := 0\""
+        ],
+        "executable_instructions": 519,
+        "state_variable": "m_lastDay",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_78.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 8608\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 8621\nCall context: execute\nTrue\nm_spentToday = m_spentToday + _value\nRETURN true\""
+        ],
+        "executable_instructions": 539,
+        "state_variable": "m_dailyLimit",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_79.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 8704\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 8735\nCall context: execute\nTrue\nm_spentToday := 0\""
+        ],
+        "executable_instructions": 519,
+        "state_variable": "m_lastDay",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_80.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 8800\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 8813\nCall context: execute\nTrue\nm_spentToday = m_spentToday + _value\nRETURN true\""
+        ],
+        "executable_instructions": 539,
+        "state_variable": "m_dailyLimit",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_81.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 8896\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 8909\nCall context: execute\nTrue\nm_spentToday = m_spentToday + _value\nRETURN true\""
+        ],
+        "executable_instructions": 539,
+        "state_variable": "m_dailyLimit",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_82.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 8992\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 9005\nCall context: execute\nTrue\nm_spentToday = m_spentToday + _value\nRETURN true\""
+        ],
+        "executable_instructions": 539,
+        "state_variable": "m_dailyLimit",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_83.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 9088\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 9144\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_84.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 9184\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 9240\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_85.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 9280\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 9293\nCall context: execute\nTrue\nm_spentToday = m_spentToday + _value\nRETURN true\""
+        ],
+        "executable_instructions": 539,
+        "state_variable": "m_spentToday",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_86.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 9376\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 9389\nCall context: execute\nTrue\nm_spentToday = m_spentToday + _value\nRETURN true\""
+        ],
+        "executable_instructions": 539,
+        "state_variable": "m_spentToday",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_87.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 9472\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 9528\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_88.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 9568\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 9624\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_89.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 9664\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 9649\nCall context: \nTrue\nNEW VARIABLE None\nTMP_92 = _to == 0\nCONDITION TMP_92\""
+        ],
+        "executable_instructions": 555,
+        "state_variable": "m_required",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_90.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 9760\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 484,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_91.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 9856\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 484,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_92.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 9952\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 506,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_93.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 10048\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 506,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_94.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 10144\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 10175\nCall context: execute\nTrue\nm_spentToday := 0\""
+        ],
+        "executable_instructions": 519,
+        "state_variable": "m_lastDay",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_95.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 10240\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 10253\nCall context: execute\nTrue\nm_spentToday = m_spentToday + _value\nRETURN true\""
+        ],
+        "executable_instructions": 539,
+        "state_variable": "m_dailyLimit",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_96.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 10336\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 10321\nCall context: \nTrue\nNEW VARIABLE None\nTMP_92 = _to == 0\nCONDITION TMP_92\""
+        ],
+        "executable_instructions": 555,
+        "state_variable": "m_required",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_97.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 10432\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 484,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_98.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 10528\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 484,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_99.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 10624\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 506,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_100.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 10720\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [],
+        "executable_instructions": 506,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_101.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 10816\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 10870\nCall context: execute\nFalse\nEND_IF None\""
+        ],
+        "executable_instructions": 595,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_102.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 10912\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 10966\nCall context: execute\nFalse\nEND_IF None\""
+        ],
+        "executable_instructions": 595,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_103.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 11008\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 11067\nCall context: execute\nTrue\nEmit Confirmation(msg.sender._operation)\""
+        ],
+        "executable_instructions": 623,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_104.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 11104\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 11163\nCall context: execute\nTrue\nEmit Confirmation(msg.sender._operation)\""
+        ],
+        "executable_instructions": 623,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_105.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 11200\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 11231\nCall context: execute\nTrue\nm_spentToday := 0\""
+        ],
+        "executable_instructions": 519,
+        "state_variable": "m_lastDay",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_106.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 11296\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 11309\nCall context: execute\nTrue\nm_spentToday = m_spentToday + _value\nRETURN true\""
+        ],
+        "executable_instructions": 539,
+        "state_variable": "m_dailyLimit",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_107.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 11392\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 11448\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_108.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 11488\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 11544\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_109.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 11584\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 11615\nCall context: execute\nTrue\nm_spentToday := 0\""
+        ],
+        "executable_instructions": 519,
+        "state_variable": "m_lastDay",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_110.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 11680\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 11693\nCall context: execute\nTrue\nm_spentToday = m_spentToday + _value\nRETURN true\""
+        ],
+        "executable_instructions": 539,
+        "state_variable": "m_spentToday",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_111.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 11776\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 11789\nCall context: execute\nTrue\nm_spentToday = m_spentToday + _value\nRETURN true\""
+        ],
+        "executable_instructions": 539,
+        "state_variable": "m_spentToday",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_112.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 11872\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 11859\nCall context: \nTrue\nREF_37 -> m_txs[o_hash]\nREF_38 -> REF_37.to\nREF_38 := _to\nREF_39 -> m_txs[o_hash]\nREF_40 -> REF_39.value\nREF_40 := _value\nREF_41 -> m_txs[o_hash]\nREF_42 -> REF_41.data\nREF_42 := _data\""
+        ],
+        "executable_instructions": 576,
+        "state_variable": "m_txs.data",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_113.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 11968\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 12005\nCall context: execute\nTrue\nNEW VARIABLE None\nREF_50 -> m_txs[_h]\nREF_51 -> REF_50.to\nTMP_114 = REF_51 == 0\nCONDITION TMP_114\""
+        ],
+        "executable_instructions": 672,
+        "state_variable": "m_txs.data",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_114.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 12064\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 12051\nCall context: \nTrue\nREF_37 -> m_txs[o_hash]\nREF_38 -> REF_37.to\nREF_38 := _to\nREF_39 -> m_txs[o_hash]\nREF_40 -> REF_39.value\nREF_40 := _value\nREF_41 -> m_txs[o_hash]\nREF_42 -> REF_41.data\nREF_42 := _data\""
+        ],
+        "executable_instructions": 576,
+        "state_variable": "m_txs.to",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_115.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 12160\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 12197\nCall context: execute\nTrue\nNEW VARIABLE None\nREF_50 -> m_txs[_h]\nREF_51 -> REF_50.to\nTMP_114 = REF_51 == 0\nCONDITION TMP_114\""
+        ],
+        "executable_instructions": 672,
+        "state_variable": "m_txs.to",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_116.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 12256\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 12295\nCall context: execute\nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 679,
+        "state_variable": "m_txs.to",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_117.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "to_function": "execute",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 12352\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 12486\nCall context: execute\nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 955,
+        "state_variable": "m_txs.to",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_118.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 12543\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 12530\nCall context: \nTrue\nREF_37 -> m_txs[o_hash]\nREF_38 -> REF_37.to\nREF_38 := _to\nREF_39 -> m_txs[o_hash]\nREF_40 -> REF_39.value\nREF_40 := _value\nREF_41 -> m_txs[o_hash]\nREF_42 -> REF_41.data\nREF_42 := _data\""
+        ],
+        "executable_instructions": 576,
+        "state_variable": "m_txs.value",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_119.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 12639\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 12676\nCall context: execute\nTrue\nNEW VARIABLE None\nREF_50 -> m_txs[_h]\nREF_51 -> REF_50.to\nTMP_114 = REF_51 == 0\nCONDITION TMP_114\""
+        ],
+        "executable_instructions": 672,
+        "state_variable": "m_txs.value",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_120.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "to_function": "execute",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 12735\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 12869\nCall context: execute\nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 955,
+        "state_variable": "m_txs.value",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_121.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 12926\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 12957\nCall context: execute\nTrue\nm_spentToday := 0\""
+        ],
+        "executable_instructions": 519,
+        "state_variable": "m_lastDay",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_122.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 13022\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 13035\nCall context: execute\nTrue\nm_spentToday = m_spentToday + _value\nRETURN true\""
+        ],
+        "executable_instructions": 539,
+        "state_variable": "m_spentToday",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_123.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 13118\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 13131\nCall context: execute\nTrue\nm_spentToday = m_spentToday + _value\nRETURN true\""
+        ],
+        "executable_instructions": 539,
+        "state_variable": "m_spentToday",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_124.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 13214\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 13251\nCall context: execute\nTrue\nNEW VARIABLE None\nREF_50 -> m_txs[_h]\nREF_51 -> REF_50.to\nTMP_114 = REF_51 == 0\nCONDITION TMP_114\""
+        ],
+        "executable_instructions": 672,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_125.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 13310\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 13349\nCall context: execute\nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 679,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_126.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "to_function": "execute",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 13406\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 13540\nCall context: execute\nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 955,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_127.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 13597\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 13653\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_128.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 13693\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 13749\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_129.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 13789\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 13826\nCall context: execute\nTrue\nNEW VARIABLE None\nREF_50 -> m_txs[_h]\nREF_51 -> REF_50.to\nTMP_114 = REF_51 == 0\nCONDITION TMP_114\""
+        ],
+        "executable_instructions": 672,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_130.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 13885\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 13924\nCall context: execute\nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 679,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_131.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "to_function": "confirm",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 13977\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 14057\nCall context: execute\nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 824,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_132.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 14114\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 14170\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_133.json": {
+        "file_name": "",
+        "from_function": "execute",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 14210\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 14266\nCall context: execute\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 613,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_134.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 14302\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 14308\nCall context: onlymanyowners\nFalse\nEND_IF None\""
+        ],
+        "executable_instructions": 476,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_135.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 14340\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 14346\nCall context: onlymanyowners\nFalse\nEND_IF None\""
+        ],
+        "executable_instructions": 476,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_136.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 14378\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 14389\nCall context: onlymanyowners\nTrue\nEmit Confirmation(msg.sender._operation)\""
+        ],
+        "executable_instructions": 504,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_137.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 14416\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 14427\nCall context: onlymanyowners\nTrue\nEmit Confirmation(msg.sender._operation)\""
+        ],
+        "executable_instructions": 504,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_138.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 14454\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 14443\nCall context: \nTrue\nNEW VARIABLE None\nREF_50 -> m_txs[_h]\nREF_51 -> REF_50.to\nTMP_114 = REF_51 == 0\nCONDITION TMP_114\""
+        ],
+        "executable_instructions": 553,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_139.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 14492\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 14483\nCall context: \nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 560,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_140.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "to_function": "changeOwner",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 14526\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 14563\nCall context: \nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 706,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_141.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 14610\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 14616\nCall context: onlymanyowners\nFalse\nEND_IF None\""
+        ],
+        "executable_instructions": 476,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_142.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 14648\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 14654\nCall context: onlymanyowners\nFalse\nEND_IF None\""
+        ],
+        "executable_instructions": 476,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_143.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 14686\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 14697\nCall context: onlymanyowners\nTrue\nEmit Confirmation(msg.sender._operation)\""
+        ],
+        "executable_instructions": 504,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_144.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 14724\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 14735\nCall context: onlymanyowners\nTrue\nEmit Confirmation(msg.sender._operation)\""
+        ],
+        "executable_instructions": 504,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_145.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 14762\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 14770\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_146.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 14800\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 14808\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_147.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 14838\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 14846\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_148.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 14876\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 14865\nCall context: \nTrue\nNEW VARIABLE None\nREF_50 -> m_txs[_h]\nREF_51 -> REF_50.to\nTMP_114 = REF_51 == 0\nCONDITION TMP_114\""
+        ],
+        "executable_instructions": 553,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_149.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 14914\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 14905\nCall context: \nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 560,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_150.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "to_function": "addOwner",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 14950\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15000\nCall context: \nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 757,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_151.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15047\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15053\nCall context: onlymanyowners\nFalse\nEND_IF None\""
+        ],
+        "executable_instructions": 476,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_152.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15085\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15091\nCall context: onlymanyowners\nFalse\nEND_IF None\""
+        ],
+        "executable_instructions": 476,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_153.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15123\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15134\nCall context: onlymanyowners\nTrue\nEmit Confirmation(msg.sender._operation)\""
+        ],
+        "executable_instructions": 504,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_154.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15161\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15172\nCall context: onlymanyowners\nTrue\nEmit Confirmation(msg.sender._operation)\""
+        ],
+        "executable_instructions": 504,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_155.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15199\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15207\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_156.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15237\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15245\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_157.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15275\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15283\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_158.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15313\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15302\nCall context: \nTrue\nNEW VARIABLE None\nREF_50 -> m_txs[_h]\nREF_51 -> REF_50.to\nTMP_114 = REF_51 == 0\nCONDITION TMP_114\""
+        ],
+        "executable_instructions": 553,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_159.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15351\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15342\nCall context: \nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 560,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_160.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "to_function": "removeOwner",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 15385\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15432\nCall context: \nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 743,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_161.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15479\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15485\nCall context: onlymanyowners\nFalse\nEND_IF None\""
+        ],
+        "executable_instructions": 476,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_162.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15517\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15523\nCall context: onlymanyowners\nFalse\nEND_IF None\""
+        ],
+        "executable_instructions": 476,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_163.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15555\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15566\nCall context: onlymanyowners\nTrue\nEmit Confirmation(msg.sender._operation)\""
+        ],
+        "executable_instructions": 504,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_164.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15593\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15604\nCall context: onlymanyowners\nTrue\nEmit Confirmation(msg.sender._operation)\""
+        ],
+        "executable_instructions": 504,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_165.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15631\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15639\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_166.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15669\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15677\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_167.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15707\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15715\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_168.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15745\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15734\nCall context: \nTrue\nNEW VARIABLE None\nREF_50 -> m_txs[_h]\nREF_51 -> REF_50.to\nTMP_114 = REF_51 == 0\nCONDITION TMP_114\""
+        ],
+        "executable_instructions": 553,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_169.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15783\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15774\nCall context: \nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 560,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_170.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "to_function": "changeRequirement",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 15814\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15848\nCall context: \nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 679,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_171.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15895\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15903\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_172.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15933\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15941\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_173.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 15971\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 15979\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_174.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 16009\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 16017\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_175.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 16047\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 16055\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_176.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 16085\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 16093\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_177.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 16123\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 16131\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_178.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 16161\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 16167\nCall context: onlymanyowners\nFalse\nEND_IF None\""
+        ],
+        "executable_instructions": 476,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_179.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 16199\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 16205\nCall context: onlymanyowners\nFalse\nEND_IF None\""
+        ],
+        "executable_instructions": 476,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_180.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 16237\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 16248\nCall context: onlymanyowners\nTrue\nEmit Confirmation(msg.sender._operation)\""
+        ],
+        "executable_instructions": 504,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_181.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 16275\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 16286\nCall context: onlymanyowners\nTrue\nEmit Confirmation(msg.sender._operation)\""
+        ],
+        "executable_instructions": 504,
+        "state_variable": "m_ownerIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_182.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 16313\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 16321\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_183.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 16351\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 16359\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_184.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 16389\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 16378\nCall context: \nTrue\nNEW VARIABLE None\nREF_50 -> m_txs[_h]\nREF_51 -> REF_50.to\nTMP_114 = REF_51 == 0\nCONDITION TMP_114\""
+        ],
+        "executable_instructions": 553,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_185.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 16427\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 16418\nCall context: \nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 560,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_186.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "to_function": "execute",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 16469\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 16551\nCall context: \nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 836,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_187.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 16598\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 16587\nCall context: \nTrue\nNEW VARIABLE None\nREF_50 -> m_txs[_h]\nREF_51 -> REF_50.to\nTMP_114 = REF_51 == 0\nCONDITION TMP_114\""
+        ],
+        "executable_instructions": 553,
+        "state_variable": "m_txs.data",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_188.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 16636\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 16625\nCall context: \nTrue\nNEW VARIABLE None\nREF_50 -> m_txs[_h]\nREF_51 -> REF_50.to\nTMP_114 = REF_51 == 0\nCONDITION TMP_114\""
+        ],
+        "executable_instructions": 553,
+        "state_variable": "m_txs.to",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_189.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 16674\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 16665\nCall context: \nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 560,
+        "state_variable": "m_txs.to",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_190.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "to_function": "execute",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 16716\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 16798\nCall context: \nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 836,
+        "state_variable": "m_txs.to",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_191.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 16845\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 16834\nCall context: \nTrue\nNEW VARIABLE None\nREF_50 -> m_txs[_h]\nREF_51 -> REF_50.to\nTMP_114 = REF_51 == 0\nCONDITION TMP_114\""
+        ],
+        "executable_instructions": 553,
+        "state_variable": "m_txs.value",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_192.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "to_function": "execute",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 16887\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 16969\nCall context: \nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 836,
+        "state_variable": "m_txs.value",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_193.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 17016\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 17024\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_194.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 17054\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 17062\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_195.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 17092\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 17081\nCall context: \nTrue\nNEW VARIABLE None\nREF_50 -> m_txs[_h]\nREF_51 -> REF_50.to\nTMP_114 = REF_51 == 0\nCONDITION TMP_114\""
+        ],
+        "executable_instructions": 553,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_196.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 17130\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 17121\nCall context: \nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 560,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_197.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "to_function": "confirm",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 17168\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 17196\nCall context: \nFalse\nREF_56 -> m_txs[_h]\nREF_57 -> REF_56.to\nREF_60 -> m_txs[_h]\nREF_61 -> REF_60.value\nREF_62 -> m_txs[_h]\nREF_63 -> REF_62.data\nTMP_117(bool) = LOW_LEVEL_CALL, dest:REF_57, function:call, arguments:['REF_63'] value:REF_61 \""
+        ],
+        "executable_instructions": 705,
+        "state_variable": "m_txs",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_198.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 17243\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 17251\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_199.json": {
+        "file_name": "",
+        "from_function": "confirm",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 17281\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 17289\nCall context: onlymanyowners\nTrue\nREF_74 -> pending.yetNeeded\nREF_74 := m_required\nREF_75 -> pending.ownersDone\nREF_75 := 0\nREF_76 -> pending.index\nREF_77 -> LENGTH m_pendingIndex\nTMP_125 := REF_77\nREF_77 = REF_77 + 1\nREF_76 := TMP_125\nREF_78 -> pending.index\nREF_79 -> m_pendingIndex[REF_78]\nREF_79 := _operation\""
+        ],
+        "executable_instructions": 494,
+        "state_variable": "m_pendingIndex",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    }
+}

@@ -1,0 +1,21 @@
+Here is an analysis of the smart contract for the vulnerabilities you mentioned:
+
+1. Reentrancy: The contract does not have any external contract calls, so it is not vulnerable to reentrancy attacks.
+
+2. Access Control: The contract does not have any access control mechanisms, so anyone can call the `Put` and `Collect` functions.
+
+3. Arithmetic Issues: The contract does not perform any arithmetic operations that could lead to integer overflow or underflow.
+
+4. Unchecked Return Values For Low Level Calls: The contract uses the `call.value` syntax to send ether, but it does not check the return value. This can be a vulnerability if the called contract has a fallback function that reverts or if it has a gas limit that is lower than the gas sent with the call.
+
+5. Denial of Service: The contract does not have any gas limit checks, so it is vulnerable to gas limit reached attacks. Additionally, there are no checks for unexpected throws or kills, and the access control is not properly enforced.
+
+6. Bad Randomness: The contract does not have any randomness generation mechanisms.
+
+7. Front-Running: The contract does not have any transaction ordering dependence vulnerabilities.
+
+8. Time Manipulation: The contract uses the `now` keyword to check the current time, which can be manipulated by miners to some extent.
+
+9. Short Address Attack: The contract does not have any off-chain issues or client vulnerabilities.
+
+In summary, the contract is vulnerable to access control issues, unchecked return values for low level calls, gas limit reached attacks, and time manipulation. It does not have vulnerabilities related to reentrancy, arithmetic issues, bad randomness, front-running, or short address attacks.

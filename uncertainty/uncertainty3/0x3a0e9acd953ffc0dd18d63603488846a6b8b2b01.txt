@@ -1,0 +1,21 @@
+The given smart contract seems to have the following vulnerabilities:
+
+1. Reentrancy: The functions `WithdrawToken` and `WithdrawToHolder` can potentially be exploited for a reentrancy attack because they call external contracts (with `token.call` and `_addr.call.value(_wei)` respectively) after the state changes. The external contracts could call back into these functions before they end execution, potentially causing unexpected behavior.
+
+2. Access Control: The contract uses a simple access control mechanism (the `onlyOwner` modifier) which may not provide sufficient control or security. It would be more secure to use a role-based access control mechanism.
+
+3. Arithmetic Issues: There is no check against underflow when the `Holders[_addr]-=_wei;` operation is performed in `WithdrawToHolder` function. If `_wei` is larger than `Holders[_addr]`, it would underflow and result in a very large balance.
+
+4. Unchecked Return Values For Low Level Calls: The contract makes low-level calls with `token.call` and `_addr.call.value(_wei)`, but doesn't check their return values. If these calls fail, the contract won't be aware.
+
+5. Denial of Service: If an attacker becomes the owner, they could prevent withdrawals by always causing the `token.call` and `_addr.call.value(_wei)` calls to fail, thereby denying service to legitimate users.
+
+6. Bad Randomness: Does not apply as this contract does not make use of random numbers.
+
+7. Front-Running: Does not apply as this contract does not have transaction ordering dependence.
+
+8. Time Manipulation: Does not apply as this contract does not rely on timestamps or block numbers.
+
+9. Short Address Attack: Does not apply as the contract does not take in user-provided addresses as input.
+
+In conclusion, this contract has potential vulnerabilities related to reentrancy, access control, arithmetic issues, unchecked return values, and denial of service. These should be addressed for better security.

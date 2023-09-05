@@ -1,0 +1,17 @@
+The provided smart contract has the following vulnerabilities:
+
+1. Bad Randomness: The contract uses `blockhash` as a source of randomness. This is a known security risk, as `blockhash` is not truly random and can be influenced by miners to a certain extent. 
+
+2. Time manipulation: The contract relies on `block.number` to determine when a guess should be settled. This introduces a time manipulation vulnerability, as miners have some control over when transactions are included in blocks.
+
+3. Denial of Service: In the `settle` function, if `msg.sender.transfer(2 ether)` fails, the contract will be stuck. It would be safer to use a pattern like the withdrawal pattern, where each address is associated with a balance, and users call a separate function to withdraw their winnings.
+
+4. Access Control: The contract does not properly restrict who can call the `lockInGuess` and `settle` functions. This could allow an attacker to disrupt the normal operation of the contract.
+
+5. Unchecked Return Values For Low Level Calls: Although not a low level call, the `msg.sender.transfer(2 ether)` does not check the return value. If the call were to fail, the contract would not be aware and continue running.
+
+6. Reentrancy: While there doesn't appear to be a reentrancy vulnerability in this particular contract, it's worth noting that calling external contracts, as in `msg.sender.transfer(2 ether)`, can sometimes introduce reentrancy vulnerabilities.
+
+7. Front-Running: There is a potential for front-running, where someone sees a guess being made and quickly makes a transaction with a higher gas fee to 'jump the queue' and get their transaction mined first.
+
+8. Arithmetic Issues, Short Address Attack: The provided contract does not appear to have these vulnerabilities.

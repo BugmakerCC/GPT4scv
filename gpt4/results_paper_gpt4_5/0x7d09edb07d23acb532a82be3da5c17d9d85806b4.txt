@@ -1,0 +1,21 @@
+The following vulnerabilities have been detected in the smart contract:
+
+1. Reentrancy: The contract uses a `call.value()` method in the `donateToWhale()` and `loseWager()` functions without following the Checks-Effects-Interactions pattern, leading to a potential reentrancy vulnerability.
+
+2. Bad Randomness: The `play()` function uses the `keccak256` hash of the `blockhash` and `msg.sender` to generate a "random" number. However, this is not truly random and might be predictable, especially when considering miner manipulation.
+
+3. Access Control: The contract uses the `onlyOwner()` modifier to restrict access to certain functions. However, the owner is set in the constructor and cannot be changed afterwards. If the owner's private key is compromised, this could lead to unauthorized access and potential abuse.
+
+4. Arithmetic Issues: There are no checks for integer overflow or underflow. For instance, the `donateToWhale()` and `loseWager()` functions simply add the amount to `totalDonated` without checking for overflow.
+
+5. Unchecked Return Values For Low Level Calls: The contract uses low-level `call.value()` methods in the `donateToWhale()` and `loseWager()` functions. It doesn't check the return value of these calls, which might fail silently.
+
+6. Front-Running: The outcome of a bet can be observed before it gets confirmed, allowing a miner to manipulate the result of the bet.
+
+7. Time Manipulation: The contract uses `block.number` as a timestamp in `wager()`. Miners can manipulate `block.number` to a certain extent.
+
+8. Denial of Service: If the whale address becomes a contract that throws an exception in its fallback function, it would halt the `donateToWhale()` and `loseWager()` functions, causing a Denial of Service.
+
+9. Short Address Attack: This contract does not seem to be vulnerable to Short Address Attack as it doesn't interact with token contracts in a way that could expose it to this vulnerability.
+
+Conclusively, the contract has several security issues that could be exploited by attackers or result in unexpected behavior. It is recommended to address these issues before deploying the contract.

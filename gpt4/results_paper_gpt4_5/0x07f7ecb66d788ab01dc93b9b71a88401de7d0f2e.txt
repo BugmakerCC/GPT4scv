@@ -1,0 +1,15 @@
+The smart contract has three potential vulnerabilities:
+
+1. Reentrancy: The smart contract uses the `call.value()` function in `donateToWhale` and `loseWager`. This opens up the possibility for a reentrancy attack where a malicious contract can repeatedly call the function before the first call is finished, draining the contract of Ether.
+
+2. Access Control: The contract does not properly implement an access control mechanism. It uses the `require` function to check if the caller of a function is the contract owner or a real person, but it does not prevent other contracts from calling its functions. This could allow a malicious contract to interact with it in unintended ways.
+
+3. Bad Randomness: The contract uses the `blockhash` and `msg.sender` to generate a "random" number in the `play` function. However, since these values are publicly available and predictable, a malicious actor could potentially influence the outcome of the game.
+
+Recommendations to fix these vulnerabilities:
+
+1. Reentrancy: Instead of using `call.value()`, use the `transfer` function to send Ether. The `transfer` function only forwards a limited gas stipend, preventing the recipient from using the received Ether to call back into the contract.
+
+2. Access Control: Implement a proper access control mechanism, such as an access control list (ACL) or role-based access control (RBAC), to restrict who can call the contract's functions.
+
+3. Bad Randomness: Use a secure source of randomness, such as the RANDAO beacon or an external oracle service like Chainlink VRF.

@@ -1,0 +1,19 @@
+This smart contract has the following vulnerabilities:
+
+1. Reentrancy: The Collect function sends ether with call.value(_am)() and then updates the balance. This can allow an attacker to recursively call the Collect function before the balance is updated, draining the contract's funds.
+
+2. Arithmetic Issues: The contract does not check for underflows when subtracting from the balance. If _am is larger than acc.balance, the resulting balance would underflow and be extremely large.
+
+3. Unchecked Return Values For Low Level Calls: The contract uses the low-level call function without checking its return value. If the call fails, the contract will continue executing as if it succeeded.
+
+4. Access Control: The AddMessage function in the Log contract is public, allowing anyone to add messages to the log. Depending on the use of these logs, this could be a major vulnerability.
+
+5. Denial of Service: If an attacker's contract throws an exception in its fallback function, it can permanently jam the Collect function, because the call function will always fail.
+
+6. Bad Randomness: Not applicable, as the contract does not use randomness.
+
+7. Front-Running: Not applicable, as the contract does not have any functions where order of transactions could be exploited.
+
+8. Time manipulation: The contract uses the now keyword, which can be manipulated by miners to a certain degree. However, this contract does not have any functions where this could be exploited.
+
+9. Short Address Attack: Not applicable, as the contract does not take address inputs from users.

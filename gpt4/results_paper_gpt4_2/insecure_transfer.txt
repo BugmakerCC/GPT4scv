@@ -1,0 +1,29 @@
+This smart contract has a vulnerability related to Arithmetic Issues, specifically an Integer Overflow/Underflow problem. 
+
+In the `transfer` function, the contract checks if the sender has enough balance to make the transfer. The sender's balance is then decremented by the value being transferred. However, there's no check to ensure that the recipient's new balance doesn't exceed the maximum value for the `uint256` type. If the recipient's new balance does overflow, it will wrap back to 0 and the recipient will lose all their funds.
+
+There's also no check to ensure that the recipient's new balance doesn't underflow and become a very large number if `_value` is greater than `balanceOf[_to]`. 
+
+In addition, there's no check to ensure that the sender's balance doesn't underflow and become a very large number if `_value` is greater than `balanceOf[msg.sender]`. 
+
+Here's how you can fix this vulnerability by using the SafeMath library for all arithmetic operations:
+
+```solidity
+pragma solidity ^0.4.0;
+
+import "./SafeMath.sol";  // import SafeMath library
+
+contract IntegerOverflowAdd {
+    using SafeMath for uint256;
+
+    mapping (address => uint256) public balanceOf;
+
+    function transfer(address _to, uint256 _value) public {
+        require(balanceOf[msg.sender] >= _value);
+
+        balanceOf[msg.sender] = balanceOf[msg.sender].sub(_value);
+        balanceOf[_to] = balanceOf[_to].add(_value);
+    }
+}
+```
+SafeMath library functions like `add` and `sub` revert on overflow and underflow errors, protecting your contract from these vulnerabilities.

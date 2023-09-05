@@ -1,0 +1,19 @@
+1. Reentrancy: The contract does not appear to be vulnerable to reentrancy as there are no external contract calls within a function.
+
+2. Access Control: The contract appears to be vulnerable to an access control issue. The `writeIndex` function does not have any access controls, so any address can call it and potentially add incorrect or malicious data.
+
+3. Arithmetic Issues: The contract does not seem to be vulnerable to arithmetic issues, as there are no arithmetic operations being performed in the contract.
+
+4. Unchecked Return Values For Low Level Calls: The contract has a low level call in the `execute` function within the `Owned` contract, but it does not check the return value, potentially leading to unchecked-send vulnerability.
+
+5. Denial of Service: There do not seem to be any vulnerabilities related to denial of service, as there are no loops or functions that could reach the gas limit or cause unexpected throws.
+
+6. Bad Randomness: The contract does not seem to be vulnerable to bad randomness because it does not use randomness.
+
+7. Front-Running: The contract does not appear to be vulnerable to front-running, as there are no transaction ordering dependencies or time-of-check vs time-of-use conditions.
+
+8. Time manipulation: The contract does not appear to be vulnerable to time manipulation, as it does not rely on block timestamps or block hashes for functionality.
+
+9. Short Address Attack: The contract does not seem to be vulnerable to a short address attack, as it does not interact with user-supplied addresses in a way that would make it susceptible to such an attack. However, it's always a good practice to validate the address length. 
+
+Overall, the most notable vulnerabilities are access control and unchecked return values for low level calls. These should be addressed to ensure the security of the contract.

@@ -1,0 +1,24 @@
+Upon initial analysis, the provided smart contract appears to be vulnerable to the "Arithmetic Issues" vulnerability, specifically an integer underflow. 
+
+The vulnerability lies within the `init` function, where the value `v` is subtracted from the `map[k]` mapping without any checks for potential underflow. 
+
+An integer underflow occurs when a subtraction operation results in a value that is lower than the minimum value that the data type can hold. In Solidity, underflows do not throw an exception but instead wrap around to the maximum value of the data type. 
+
+To fix this vulnerability, you should add an additional check to ensure that the subtraction operation will not cause an underflow. One way to handle this is by implementing a condition that checks if `v` is greater than or equal to `map[k]` before performing the subtraction operation.
+
+Here's an updated version of the contract that addresses the issue:
+
+```solidity
+pragma solidity ^0.4.11;
+
+contract IntegerOverflowMappingSym1 {
+    mapping(uint256 => uint256) map;
+
+    function init(uint256 k, uint256 v) public {
+        require(v <= map[k]); // Check for underflow condition
+        map[k] -= v;
+    }
+}
+```
+
+By using the `require` statement, the function will revert and throw an exception if the condition is not met, effectively preventing the underflow vulnerability.

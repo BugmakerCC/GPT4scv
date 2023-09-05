@@ -1,0 +1,5 @@
+This smart contract appears to have the vulnerability of Time Manipulation. The function `isSaleFinished()` checks if the current block timestamp is greater than or equal to January 1, 2019 (1546300800 in Unix timestamp). 
+
+An attacker could potentially manipulate the block timestamp by mining a new block with a timestamp set in the past or the future. This manipulation could allow them to change the outcome of the `isSaleFinished()` function and potentially exploit the contract.
+
+To mitigate this vulnerability, it is recommended to use block number instead of block timestamp for time-dependent operations. Using block number ensures that the time manipulation vulnerability is eliminated as the block number cannot be manipulated by the attacker.

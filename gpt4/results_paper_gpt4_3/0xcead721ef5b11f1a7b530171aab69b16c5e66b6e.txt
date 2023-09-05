@@ -1,0 +1,15 @@
+The smart contract contains the following vulnerabilities:
+
+1. Reentrancy Vulnerability: In the "Collect" function, the state variable "acc.balance" is updated after the external call "msg.sender.call.value(_am)()". If the external call leads to a reentrant call to the "Collect" function, it could withdraw more Ether than it should. This should be mitigated by implementing the Checks-Effects-Interactions pattern, where the state variable is updated before the external call.
+
+2. Arithmetic Issues: The contract does not handle arithmetic operations safely. In the "Put" function, "acc.balance += msg.value" could potentially overflow, and in the "Collect" function, "acc.balance-=_am" could underflow. It is recommended to use SafeMath library to handle these arithmetic operations.
+
+3. Unchecked Return Values For Low Level Calls: The contract uses a low-level call "msg.sender.call.value(_am)()" without checking its return value. It could lead to unexpected behavior if the call fails silently.
+
+4. Access Control: The contract does not have any access control mechanisms. Any address can call the "Put" and "Collect" functions. It might be necessary to implement some form of access control to limit who can call these functions.
+
+5. Denial of Service: If the contract's balance goes below "MinSum", it would be impossible for any user to collect their funds, effectively locking all funds in the contract. This could be mitigated by implementing a withdrawal pattern where each user can withdraw their funds independently.
+
+6. Time Manipulation: The contract uses "now" (alias for block.timestamp) for unlocking time which is manipulable by miners to some degree. 
+
+The rest of the vulnerabilities (Bad Randomness, Front-Running, and Short Address Attack) do not seem to be present in this contract. However, a thorough audit by a security expert is recommended to ensure the contract's security.

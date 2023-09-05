@@ -1,0 +1,803 @@
+{
+    "file": "0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6.sol",
+    "global_structs": [
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0x152"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0x153"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x154"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "extra",
+            "type": [
+                "array",
+                "integer",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "_addy",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "_share",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "_count",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "target",
+            "type": [
+                "array",
+                "integer",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "master",
+            "type": [
+                "array",
+                "integer",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "owner",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0xc"
+            ]
+        },
+        {
+            "name": "puppets",
+            "type": [
+                "array",
+                "integer"
+            ],
+            "init": [
+                "0x8",
+                "0x9",
+                "0xa",
+                "0xb"
+            ]
+        },
+        {
+            "name": "Splitter",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "Puppet",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "SafeMath",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x8",
+            "instructions": [
+                "puppets = U"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x9",
+            "instructions": [
+                "puppets = U"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xa",
+            "instructions": [
+                "puppets = U"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xb",
+            "instructions": [
+                "puppets = U"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xc",
+            "instructions": [
+                "owner = msg_sender"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xd",
+            "instructions": [
+                "CLR_0 = extra[0]",
+                "REF_44 = CLR_0",
+                "extra[0] = puppets"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xe",
+            "instructions": [
+                "CLR_1 = extra[1]",
+                "REF_45 = CLR_1",
+                "extra[1] = puppets"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xf",
+            "instructions": [
+                "CLR_2 = extra[2]",
+                "REF_46 = CLR_2",
+                "extra[2] = puppets"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x10",
+            "instructions": [
+                "CLR_3 = extra[3]",
+                "REF_47 = CLR_3",
+                "extra[3] = puppets"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x13",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x14",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x15",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x22",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x23",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x24",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x32",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x33",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x34",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x43",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x44",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x45",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x53",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x54",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x55",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x64",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x65",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x66",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x75",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x76",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x77",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x8b",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x8c",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x8d",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xa2",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xa3",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xa4",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xba",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xbb",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xbc",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xd1",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xd2",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xd3",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xe9",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xea",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xeb",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x152",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x153",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x154",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "puppets",
+            "addrs": [
+                "0x2",
+                "0x4"
+            ]
+        },
+        {
+            "name": "extra",
+            "addrs": [
+                "0x2",
+                "0x5"
+            ]
+        },
+        {
+            "name": "_share",
+            "addrs": [
+                "0x2",
+                "0x12"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4",
+            "instructions": [
+                "CLR_4 = msg.sender",
+                "RTMP_65 = CLR_4 == owner",
+                "CONDITION RTMP_65 0x3 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3",
+            "instructions": [
+                "puppets = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5",
+            "instructions": [
+                "CLR_5 = extra[U]",
+                "REF_41 = CLR_5",
+                "extra[0] = U",
+                "extra[1] = U",
+                "extra[2] = U",
+                "extra[3] = U",
+                "extra[4] = U",
+                "extra[5] = U",
+                "extra[6] = U",
+                "extra[7] = U",
+                "extra[8] = U",
+                "extra[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x12",
+            "instructions": [
+                "CLR_6 = msg.sender",
+                "RTMP_66 = CLR_6 == owner",
+                "CONDITION RTMP_66 0x11 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x11",
+            "instructions": [
+                "_share = U"
+            ]
+        }
+    ],
+    "root_addr": "0x155",
+    "dest_addrs": [
+        "0x159"
+    ],
+    "normal_blocks": [
+        {
+            "scope": "setExtra",
+            "addr": "0x155",
+            "instructions": [
+                "NOP",
+                "b = NEW_VAL integer",
+                "a = NEW_VAL integer",
+                "JUMP 0x156"
+            ]
+        },
+        {
+            "scope": "setExtra",
+            "addr": "0x156",
+            "instructions": [
+                "CLR_7 = msg.sender",
+                "TMP_16 = CLR_7 == owner",
+                "CONDITION TMP_16 0x156_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "setExtra",
+            "addr": "0x156_r0",
+            "instructions": [
+                "JUMP 0x157"
+            ]
+        },
+        {
+            "scope": "setExtra",
+            "addr": "0x158",
+            "instructions": [
+                "_share = TMP_18",
+                "CLR_8 = extra[0]",
+                "REF_14 = CLR_8",
+                "CLR_9 = this.balance",
+                "WRP_0 = CLR_9 - _share",
+                "this.balance = WRP_0",
+                "TMP_21 = NEW_VAL boolean",
+                "JUMP 0x159"
+            ]
+        },
+        {
+            "scope": "setExtra",
+            "addr": "0x159",
+            "instructions": [
+                "CLR_10 = extra[1]",
+                "REF_18 = CLR_10",
+                "CLR_11 = this.balance",
+                "WRP_1 = CLR_11 - _share",
+                "this.balance = WRP_1",
+                "TMP_24 = NEW_VAL boolean"
+            ]
+        },
+        {
+            "scope": "setExtra",
+            "addr": "0x15a",
+            "instructions": [
+                "NOP",
+                "JUMP 0x15b"
+            ]
+        },
+        {
+            "scope": "setExtra",
+            "addr": "0x15b",
+            "instructions": [
+                "TMP_44 = a \/ b",
+                "TMP_62 = TMP_44",
+                "JUMP 0x15c"
+            ]
+        },
+        {
+            "scope": "setExtra",
+            "addr": "0x157",
+            "instructions": [
+                "CLR_12 = msg.value",
+                "a = CLR_12",
+                "b = 4",
+                "JUMP 0x15a"
+            ]
+        },
+        {
+            "scope": "setExtra",
+            "addr": "0x15c",
+            "instructions": [
+                "TMP_18 = TMP_62",
+                "JUMP 0x158"
+            ]
+        },
+        {
+            "scope": "setExtra",
+            "addr": "0x15d",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "RequireTrap",
+            "addr": "0xRequireTrap",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

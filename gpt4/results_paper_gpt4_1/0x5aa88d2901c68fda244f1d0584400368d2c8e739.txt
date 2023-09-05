@@ -1,0 +1,13 @@
+The smart contract suffers from the following vulnerabilities:
+
+1. Reentrancy: The function `multiplicate` has a reentrancy vulnerability because it calls an external contract (adr.transfer) while the contract's state is not yet finalized (it still holds the balance). An attacker can re-enter the function to drain the contract.
+
+2. Arithmetic Issues: The function `multiplicate` has a potential integer overflow issue. If `msg.value` and `this.balance` are both close to their maximum values, their sum could exceed the maximum value and wrap around to a smaller number, causing an incorrect amount to be transferred.
+
+3. Unchecked Return Values For Low Level Calls: The function `Command` uses the `call` function without checking its return value. If the call fails, the contract continues execution as if nothing happened.
+
+4. Access Control: The contract only checks if `msg.sender` is the owner in the `withdraw` and `Command` functions, but not in the `multiplicate` function. This means any address can call `multiplicate`, which could lead to unauthorized fund transfers.
+
+5. Denial of Service: The `multiplicate` function could potentially lead to a denial of service attack. If an attacker continuously sends funds to the contract, taking the contract's balance to near its maximum value, then the contract will always fail when trying to transfer more than this balance.
+
+The contract does not seem to suffer from bad randomness, front-running, time manipulation, or short address attack vulnerabilities.

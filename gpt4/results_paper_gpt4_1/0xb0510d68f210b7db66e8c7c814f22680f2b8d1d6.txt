@@ -1,0 +1,17 @@
+1. Reentrancy: The contract doesn't seem to have a reentrancy vulnerability, as there are no external contracts calls that occur after changing the state.
+
+2. Access Control: The contract has some access control issues. The `newPuppet()` and `fundPuppets()` functions can only be called by the owner of the contract, but there's no function to change the owner.
+
+3. Arithmetic Issues: The contract uses the SafeMath library, which should prevent any integer underflows or overflows.
+
+4. Unchecked Return Values For Low Level Calls: The `fundPuppets()` and fallback function in Puppet contract uses low-level `.call.value()`. The return values of these calls are not checked, and if they fail, the contract will not be aware of it.
+
+5. Denial of Service: The `fundPuppets()` function could become a potential DOS attack vector. If one of the puppets has a fallback function that consumes a lot of gas, the function will fail.
+
+6. Bad Randomness: The contract doesn't use any random numbers.
+
+7. Front-Running: The contract does not seem to be vulnerable to a front-running attack.
+
+8. Time manipulation: The contract does not rely on block.timestamp or now for any critical logic.
+
+9. Short Address Attack: The contract does not seem to be vulnerable to a short address attack as it does not take address inputs from users.

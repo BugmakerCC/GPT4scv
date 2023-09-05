@@ -1,0 +1,31 @@
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+Analysing /sb/0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888.sol:Log...
+Vulnerability: Integer Overflow. Maybe in function: History(uint256). PC: 0x401. Line number: 91.
+If a = 2
+and b = 24305664690552578208995679717770084829149218172936811659999341037273466734247
+Vulnerability: Integer Overflow. Maybe in function: AddMessage(address,uint256,string). PC: 0x451. Line number: 81.
+If a = 57896044618658097711785492504343953926634992332820282019728792003956564819976
+and b = 57896044618658097711785492504343953926634992332820282019728792003956564819976
+Vulnerability: Time Manipulation. Maybe in function: AddMessage(address,uint256,string). PC: 0x30e. Line number: 102.
+Vulnerability: Time Manipulation. Maybe in function: AddMessage(address,uint256,string). PC: 0x218. Line number: 99.
+Vulnerability: Integer Overflow. Maybe in function: AddMessage(address,uint256,string). PC: 0x261. Line number: 102.
+If a = 26855909742719118836135222830398413153312900236266913735118855787521260111784
+and b = 18569430475105882587588266137607568536673111973893317399460219858819262702947
+Vulnerability: Integer Overflow. Maybe in function: AddMessage(address,uint256,string). PC: 0x9d. Line number: 95.
+If a = 4
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639932
+Vulnerability: Integer Underflow. Maybe in function: AddMessage(address,uint256,string). PC: 0x253. Line number: 102.
+If a = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+and b = 1
+Analysing /sb/0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888.sol:MONEY_BOX...
+Vulnerability: Integer Overflow. Maybe in function: _fallthrough. PC: 0x22c. Line number: 50.
+If a = 1
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+Vulnerability: Reentrancy. Maybe in function: Collect(uint256). PC: 0x45d. Line number: 63.
+Vulnerability: Reentrancy. Maybe in function: Collect(uint256). PC: 0x579. Line number: 66.
+Vulnerability: Integer Overflow. Maybe in function: _fallthrough. PC: 0x244. Line number: 51.
+If a = 115792089237316195423567920017606176075553267971586263421090346529668762435584
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+Vulnerability: Time Manipulation. Maybe in function: _fallthrough. PC: 0x241. Line number: 51.
+Vulnerability: Reentrancy. Maybe in function: _fallthrough. PC: 0x34e. Line number: 52.

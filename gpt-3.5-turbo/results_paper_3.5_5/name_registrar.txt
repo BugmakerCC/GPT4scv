@@ -1,0 +1,56 @@
+Here is an analysis of the vulnerabilities present in the provided smart contract:
+
+1. Reentrancy: The contract does not have any external function calls, so it is not vulnerable to reentrancy attacks.
+
+2. Access Control: The contract does not have any access control mechanisms, allowing anyone to register a name. This can be a vulnerability if only certain addresses should be allowed to register names.
+
+3. Arithmetic Issues: The contract does not perform any arithmetic operations, so it is not vulnerable to arithmetic issues.
+
+4. Unchecked Return Values For Low-Level Calls: The contract does not make any low-level calls, so it is not vulnerable to unchecked return values.
+
+5. Denial of Service: The contract does not have any gas limit checks or unexpected throws/kills, so it is not vulnerable to denial of service attacks.
+
+6. Bad Randomness: The contract does not use any randomness, so it is not vulnerable to bad randomness.
+
+7. Front-Running: The contract does not have any critical sections where front-running can occur, so it is not vulnerable to front-running attacks.
+
+8. Time Manipulation: The contract does not rely on timestamps, so it is not vulnerable to time manipulation attacks.
+
+9. Short Address Attack: The contract does not have any off-chain interactions, so it is not vulnerable to short address attacks.
+
+Overall, the contract is vulnerable to access control issues as it allows anyone to register a name without any restrictions. Additionally, there is an uninitialized storage issue where a new NameRecord struct is not properly initialized before being assigned values.
+
+To fix the access control vulnerability, you can add a modifier or check to restrict the registration function to only specific addresses.
+
+To fix the uninitialized storage issue, you can replace the line `NameRecord newRecord;` with `NameRecord memory newRecord;` to properly initialize the struct before assigning values.
+
+Here is the updated code with the fixes:
+
+```
+pragma solidity ^0.4.15;
+
+contract NameRegistrar {
+    bool public unlocked = false;  // registrar locked, no name updates
+
+    struct NameRecord { // map hashes to addresses
+        bytes32 name;
+        address mappedAddress;
+    }
+
+    mapping(address => NameRecord) public registeredNameRecord; // records who registered names
+    mapping(bytes32 => address) public resolve; // resolves hashes to addresses
+
+    function register(bytes32 _name, address _mappedAddress) public {
+        require(unlocked); // only allow registrations if contract is unlocked
+
+        NameRecord memory newRecord;
+        newRecord.name = _name;
+        newRecord.mappedAddress = _mappedAddress;
+
+        resolve[_name] = _mappedAddress;
+        registeredNameRecord[msg.sender] = newRecord;
+    }
+}
+```
+
+With these fixes, the contract should be less vulnerable to the identified vulnerabilities. However, it is still important to thoroughly test and audit the contract to ensure its security.

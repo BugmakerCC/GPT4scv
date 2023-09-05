@@ -1,0 +1,753 @@
+{
+    "file": "rubixi.sol",
+    "global_structs": [
+        {
+            "name": "Participant",
+            "fields": {
+                "etherAddress": [
+                    "integer"
+                ],
+                "payout": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0x5f"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0x60"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x61"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "creator",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "participants",
+            "type": [
+                "array",
+                "Participant"
+            ],
+            "init": []
+        },
+        {
+            "name": "collectedFees",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x8"
+            ]
+        },
+        {
+            "name": "feePercent",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x7"
+            ]
+        },
+        {
+            "name": "pyramidMultiplier",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x6"
+            ]
+        },
+        {
+            "name": "payoutOrder",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x5"
+            ]
+        },
+        {
+            "name": "balance",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x4"
+            ]
+        },
+        {
+            "name": "Rubixi",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x4",
+            "instructions": [
+                "balance = 0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x5",
+            "instructions": [
+                "payoutOrder = 0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x6",
+            "instructions": [
+                "pyramidMultiplier = 300"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x7",
+            "instructions": [
+                "feePercent = 10"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x8",
+            "instructions": [
+                "collectedFees = 0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x5f",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x60",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x61",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "creator",
+            "addrs": [
+                "0x2",
+                "0x3",
+                "0x10"
+            ]
+        },
+        {
+            "name": "collectedFees",
+            "addrs": [
+                "0x2",
+                "0xa",
+                "0xd",
+                "0x24",
+                "0x26",
+                "0x2b",
+                "0x2f"
+            ]
+        },
+        {
+            "name": "pyramidMultiplier",
+            "addrs": [
+                "0x2",
+                "0x12",
+                "0x18",
+                "0x1b"
+            ]
+        },
+        {
+            "name": "feePercent",
+            "addrs": [
+                "0x2",
+                "0x14"
+            ]
+        },
+        {
+            "name": "participants",
+            "addrs": [
+                "0x2",
+                "0x16"
+            ]
+        },
+        {
+            "name": "balance",
+            "addrs": [
+                "0x2",
+                "0x1f",
+                "0x21"
+            ]
+        },
+        {
+            "name": "payoutOrder",
+            "addrs": [
+                "0x2",
+                "0x28"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3",
+            "instructions": [
+                "CLR_0 = msg.sender",
+                "creator = CLR_0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa",
+            "instructions": [
+                "RTMP_88 = collectedFees == 0",
+                "CONDITION RTMP_88 0x1 0xb"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb",
+            "instructions": [
+                "CLR_1 = msg.sender",
+                "RTMP_89 = CLR_1 == creator",
+                "CONDITION RTMP_89 0x9 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x9",
+            "instructions": [
+                "collectedFees = 0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xd",
+            "instructions": [
+                "RTMP_90 = collectedFees == 0",
+                "CONDITION RTMP_90 0x1 0xe"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xe",
+            "instructions": [
+                "CLR_2 = msg.sender",
+                "RTMP_91 = CLR_2 == creator",
+                "CONDITION RTMP_91 0xc 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xc",
+            "instructions": [
+                "collectedFees = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x10",
+            "instructions": [
+                "CLR_3 = msg.sender",
+                "RTMP_92 = CLR_3 == creator",
+                "CONDITION RTMP_92 0xf 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xf",
+            "instructions": [
+                "creator = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x12",
+            "instructions": [
+                "CLR_4 = msg.sender",
+                "RTMP_93 = CLR_4 == creator",
+                "CONDITION RTMP_93 0x11 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x11",
+            "instructions": [
+                "pyramidMultiplier = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x14",
+            "instructions": [
+                "CLR_5 = msg.sender",
+                "RTMP_94 = CLR_5 == creator",
+                "CONDITION RTMP_94 0x13 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x13",
+            "instructions": [
+                "feePercent = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x16",
+            "instructions": [
+                "CLR_6 = msg.value",
+                "RTMP_79 = CLR_6 < 1000000000000000000",
+                "CONDITION RTMP_79 0x1 0x15"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x15",
+            "instructions": [
+                "participants = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1b",
+            "instructions": [
+                "REF_25 = NEW_VAL integer",
+                "RTMP_73 = REF_25 == 10",
+                "CONDITION RTMP_73 0x1 0x1c"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1c",
+            "instructions": [
+                "REF_26 = NEW_VAL integer",
+                "RTMP_74 = REF_26 == 25",
+                "CONDITION RTMP_74 0x1d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1d",
+            "instructions": [
+                "CLR_7 = msg.value",
+                "RTMP_81 = CLR_7 < 1000000000000000000",
+                "CONDITION RTMP_81 0x1 0x1a"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1a",
+            "instructions": [
+                "pyramidMultiplier = 150"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x21",
+            "instructions": [
+                "CLR_8 = participants[payoutOrder]",
+                "REF_29 = CLR_8",
+                "CLR_9 = REF_29.payout",
+                "REF_30 = CLR_9",
+                "RTMP_76 = balance > REF_30",
+                "CONDITION RTMP_76 0x22 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x22",
+            "instructions": [
+                "CLR_10 = msg.value",
+                "RTMP_83 = CLR_10 < 1000000000000000000",
+                "CONDITION RTMP_83 0x1 0x20"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x20",
+            "instructions": [
+                "CLR_11 = participants[payoutOrder]",
+                "REF_27 = CLR_11",
+                "CLR_12 = REF_27.payout",
+                "REF_28 = CLR_12",
+                "TMP_75 = balance - REF_28",
+                "balance = TMP_75"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x26",
+            "instructions": [
+                "CLR_13 = msg.value",
+                "RTMP_87 = CLR_13 < 1000000000000000000",
+                "CONDITION RTMP_87 0x25 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x25",
+            "instructions": [
+                "CLR_14 = msg.value",
+                "TMP_86 = collectedFees + CLR_14",
+                "collectedFees = TMP_86"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x28",
+            "instructions": [
+                "CLR_15 = participants[payoutOrder]",
+                "REF_31 = CLR_15",
+                "CLR_16 = REF_31.payout",
+                "REF_32 = CLR_16",
+                "RTMP_78 = balance > REF_32",
+                "CONDITION RTMP_78 0x29 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x29",
+            "instructions": [
+                "CLR_17 = msg.value",
+                "RTMP_85 = CLR_17 < 1000000000000000000",
+                "CONDITION RTMP_85 0x1 0x27"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x27",
+            "instructions": [
+                "TMP_77 = payoutOrder + 1",
+                "payoutOrder = TMP_77"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2f",
+            "instructions": [
+                "CLR_18 = msg.sender",
+                "RTMP_96 = CLR_18 == creator",
+                "CONDITION RTMP_96 0x30 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x30",
+            "instructions": [
+                "RTMP_97 = collectedFees == 0",
+                "CONDITION RTMP_97 0x1 0x2e"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2e",
+            "instructions": [
+                "collectedFees = U"
+            ]
+        }
+    ],
+    "root_addr": "0x62",
+    "dest_addrs": [
+        "0x6d"
+    ],
+    "normal_blocks": [
+        {
+            "scope": "fallback",
+            "addr": "0x62",
+            "instructions": [
+                "NOP",
+                "_fee = NEW_VAL integer",
+                "_fee = NEW_VAL integer",
+                "payoutToSend = NEW_VAL integer",
+                "JUMP 0x63"
+            ]
+        },
+        {
+            "scope": "fallback",
+            "addr": "0x63",
+            "instructions": [
+                "NOP",
+                "JUMP 0x64"
+            ]
+        },
+        {
+            "scope": "fallback",
+            "addr": "0x64",
+            "instructions": [
+                "CLR_19 = msg.value",
+                "TMP_1 = CLR_19 < 1000000000000000000",
+                "CONDITION TMP_1 0x66 0x65"
+            ]
+        },
+        {
+            "scope": "fallback",
+            "addr": "0x65",
+            "instructions": [
+                "NOP",
+                "JUMP 0x67"
+            ]
+        },
+        {
+            "scope": "fallback",
+            "addr": "0x67",
+            "instructions": [
+                "_fee = feePercent",
+                "CLR_20 = msg.value",
+                "TMP_2 = CLR_20 >= 50000000000000000000",
+                "CONDITION TMP_2 0x68 0x66"
+            ]
+        },
+        {
+            "scope": "fallback",
+            "addr": "0x68",
+            "instructions": [
+                "_fee = _fee \/ 2",
+                "JUMP 0x69"
+            ]
+        },
+        {
+            "scope": "fallback",
+            "addr": "0x69",
+            "instructions": [
+                "NOP",
+                "JUMP 0x6a"
+            ]
+        },
+        {
+            "scope": "fallback",
+            "addr": "0x6b",
+            "instructions": [
+                "NOP",
+                "JUMP 0x6c"
+            ]
+        },
+        {
+            "scope": "fallback",
+            "addr": "0x6c",
+            "instructions": [
+                "CLR_21 = msg.value",
+                "TMP_4 = CLR_21 * pyramidMultiplier",
+                "TMP_5 = TMP_4 \/ 100",
+                "TMP_6 = NEW_VAL Participant",
+                "NOP",
+                "TMP_7 = LENGTH participants",
+                "REF_1 = LENGTH participants",
+                "TMP_8 = REF_1 == 10",
+                "CONDITION TMP_8 0x6d 0x66"
+            ]
+        },
+        {
+            "scope": "fallback",
+            "addr": "0x6d",
+            "instructions": [
+                "pyramidMultiplier = 200"
+            ]
+        },
+        {
+            "scope": "fallback",
+            "addr": "0x6a",
+            "instructions": [
+                "_fee = _fee",
+                "JUMP 0x6b"
+            ]
+        },
+        {
+            "scope": "fallback",
+            "addr": "0x66",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

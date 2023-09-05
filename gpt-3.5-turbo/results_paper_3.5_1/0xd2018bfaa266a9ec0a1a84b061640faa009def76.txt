@@ -1,0 +1,21 @@
+After carefully reviewing the smart contract, here are the vulnerabilities that can be identified:
+
+1. Reentrancy: The contract is susceptible to reentrancy attacks because it allows an external contract to be called using the `Command` function without any checks or restrictions. If the called contract performs a recursive call back to the `Pie` contract before the state changes are finalized, it could result in unexpected behavior and potential loss of funds.
+
+2. Access Control: The contract uses a simple access control mechanism by checking if the caller is the owner in the `withdraw` and `Command` functions. However, the owner address is set to a fixed value `0x1Fb3acdBa788CA50Ce165E5A4151f05187C67cd6` in the `withdraw` function, which means anyone who knows this address can become the owner and perform privileged actions.
+
+3. Arithmetic Issues: No visible arithmetic issues are present in the provided contract.
+
+4. Unchecked Return Values For Low-Level Calls: The `Command` function uses the `call` function to invoke an external contract without checking the return value. This can lead to silent failures if the called contract reverts or throws an exception.
+
+5. Denial of Service: The contract is susceptible to a denial-of-service attack if an attacker sends a large amount of ether (greater than 1 ether) to the `Get` function repeatedly. This will consume all the gas available in the block, preventing other transactions from being processed.
+
+6. Bad Randomness: No visible randomness-related issues are present in the provided contract.
+
+7. Front-Running: No visible front-running vulnerabilities are present in the provided contract.
+
+8. Time Manipulation: No visible timestamp dependence issues are present in the provided contract.
+
+9. Short Address Attack: No visible short address attack vulnerabilities are present in the provided contract.
+
+Please note that this analysis is based on the provided code snippet. Further analysis may be required to identify any additional vulnerabilities or issues.

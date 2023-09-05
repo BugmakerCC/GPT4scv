@@ -1,0 +1,26 @@
+This contract suffers from a Reentrancy vulnerability. The `withdrawBalance` function allows for recursive calls. When `msg.sender.call.value(amountToWithdraw)("")` is called, control is handed over to the caller of the function, allowing for any code to be executed. If the calling contract is malicious, it could call `withdrawBalance` again before the first call to `withdrawBalance` has finished. This could lead to multiple withdrawals and the draining of funds from the contract before `userBalances[msg.sender]` is set to 0.
+
+To fix this, you can use the Checks-Effects-Interactions pattern. This pattern mandates that you should make any state changes before calling external contracts. Here is how you can apply it to this contract:
+
+```solidity
+function withdrawBalance() public {
+    uint amountToWithdraw = userBalances[msg.sender];
+    require(amountToWithdraw > 0); // Check
+    userBalances[msg.sender] = 0; // Effect
+
+    (bool success, ) = msg.sender.call.value(amountToWithdraw)(""); // Interaction
+    require(success);
+}
+```
+In this fixed version, the user's balance is set to 0 before any external call is made, preventing multiple withdrawals. However, it's still recommended to avoid using `.call.value()` due to the potential for reentrancy attacks. A more secure way to send Ether is using the `.transfer()` function:
+
+```solidity
+function withdrawBalance() public {
+    uint amountToWithdraw = userBalances[msg.sender];
+    require(amountToWithdraw > 0);
+    userBalances[msg.sender] = 0;
+
+    msg.sender.transfer(amountToWithdraw);
+}
+```
+In this version, the `.transfer()` function is used, which only forwards 2300 gas, not allowing for any further calls to be made. This further secures the contract against reentrancy attacks.

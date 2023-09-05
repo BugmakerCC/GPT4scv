@@ -1,0 +1,19 @@
+The provided smart contract is vulnerable to the following issues:
+
+1. Reentrancy: The `resetInvestment` function in the `Governmental` contract sends ether to the `lastInvestor` and `owner` without first resetting the state. An attacker can use this to recursively call the function and drain the contract funds.
+
+2. Access Control: The `resetInvestment` function is public and can be called by anyone. This should be only callable by the contract owner or the last investor.
+
+3. Arithmetic Issues: Since contract doesn't have any check for overflow or underflow conditions, it's vulnerable to arithmetic issues.
+
+4. Unchecked Return Values For Low Level Calls: The low-level `send` function is used without checking the return value. It's recommended to use `transfer` function instead which throws an exception when the call fails.
+
+5. Denial of Service: As the contract relies on `send` function to transfer funds, if the fallback function of the receiver contract consumes more than 2300 gas (the stipend provided by `send`), the transfer will fail. This can result in a denial of service attack where the contract gets stuck because it can't send funds to a particular address.
+
+6. Bad Randomness: Not applicable to the given contract.
+
+7. Front-Running: Not directly applicable, but due to the public nature of transactions on the blockchain, a miner could front-run the `resetInvestment` function call to become the `lastInvestor` and claim the jackpot.
+
+8. Time manipulation: The contract is dependent on `block.timestamp` for logic in `resetInvestment`. Miners can manipulate the block timestamp to a certain degree, which could potentially be exploited.
+
+9. Short Address Attack: Not applicable to the given contract.

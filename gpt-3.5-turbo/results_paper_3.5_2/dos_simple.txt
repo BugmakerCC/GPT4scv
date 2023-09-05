@@ -1,0 +1,7 @@
+The provided smart contract is vulnerable to a Denial of Service (DoS) attack due to gas limit reached. 
+
+In the `ifillArray` function, the contract checks if the length of `listAddresses` is less than 1500. If it is, the function enters a loop and adds `msg.sender` to the `listAddresses` array 350 times. This loop can potentially consume a large amount of gas, and when the gas limit is reached, the transaction will be reverted. 
+
+An attacker can exploit this vulnerability by calling the `ifillArray` function repeatedly until the gas limit is reached. This would prevent other transactions from being processed, effectively causing a denial of service.
+
+To fix this vulnerability, you can modify the `ifillArray` function to limit the number of iterations in the loop or use a different approach that does not consume excessive gas.

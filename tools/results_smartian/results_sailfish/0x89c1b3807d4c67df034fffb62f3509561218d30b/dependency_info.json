@@ -1,0 +1,1391 @@
+{
+    "0x89c1b3807d4c67df034fffb62f3509561218d30b.sol": [
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "request",
+                "request"
+            ],
+            "from_function": "request",
+            "to_function": "request",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 92\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\"",
+                        "\"BlockID: 54\nFunction: request\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                }
+            ]
+        },
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "request",
+                "request"
+            ],
+            "from_function": "request",
+            "to_function": "request",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 113\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\"",
+                        "\"BlockID: 52\nFunction: request\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                }
+            ]
+        },
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "request",
+                "cancel"
+            ],
+            "from_function": "cancel",
+            "to_function": "request",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 76\nFunction: cancel\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\"",
+                        "\"BlockID: 54\nFunction: request\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                }
+            ]
+        },
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "request",
+                "cancel"
+            ],
+            "from_function": "cancel",
+            "to_function": "request",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 76\nFunction: cancel\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\"",
+                        "\"BlockID: 52\nFunction: request\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                }
+            ]
+        },
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "deliver",
+                "request"
+            ],
+            "from_function": "request",
+            "to_function": "deliver",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\"",
+                        "\"BlockID: 72\nFunction: deliver\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                }
+            ]
+        },
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "deliver",
+                "cancel"
+            ],
+            "from_function": "cancel",
+            "to_function": "deliver",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 76\nFunction: cancel\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\"",
+                        "\"BlockID: 72\nFunction: deliver\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                }
+            ]
+        },
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "cancel",
+                "request"
+            ],
+            "from_function": "request",
+            "to_function": "cancel",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\"",
+                        "\"BlockID: 84\nFunction: cancel\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                }
+            ]
+        },
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "cancel",
+                "cancel"
+            ],
+            "from_function": "cancel",
+            "to_function": "cancel",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 276\nFunction: cancel\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\"",
+                        "\"BlockID: 84\nFunction: cancel\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "withdraw",
+                "request"
+            ],
+            "First_function": "request",
+            "Second_function": "withdraw",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 45\nFunction: request\nNode: \nEXPRESSION requests[requestId].requester = msg.sender\nIRS: \nREF_22 := msg.sender\"",
+                        "\"BlockID: 30\nFunction: withdraw\nNode: \nIF msg.sender == requests[0].requester && unrespondedCnt == 0\nIRS: \nCONDITION TMP_18\""
+                    ],
+                    "state_variable": "requests.requester"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 45\nFunction: request\nNode: \nEXPRESSION requests[requestId].requester = msg.sender\nIRS: \nREF_22 := msg.sender\"",
+                        "\"BlockID: 31\nFunction: withdraw\nNode: \nIF ! requests[0].requester.call.value(this.balance)()\nIRS: \nTMP_20(bool) = LOW_LEVEL_CALL, dest:REF_13, function:call, arguments:[] value:REF_16 \""
+                    ],
+                    "state_variable": "requests.requester"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 43\nFunction: request\nNode: \nEXPRESSION unrespondedCnt ++\nIRS: \nunrespondedCnt = unrespondedCnt + 1\"",
+                        "\"BlockID: 30\nFunction: withdraw\nNode: \nIF msg.sender == requests[0].requester && unrespondedCnt == 0\nIRS: \nCONDITION TMP_18\""
+                    ],
+                    "state_variable": "unrespondedCnt"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "withdraw",
+                "deliver"
+            ],
+            "First_function": "deliver",
+            "Second_function": "withdraw",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 61\nFunction: deliver\nNode: \nEXPRESSION unrespondedCnt --\nIRS: \nunrespondedCnt = unrespondedCnt - 1\"",
+                        "\"BlockID: 30\nFunction: withdraw\nNode: \nIF msg.sender == requests[0].requester && unrespondedCnt == 0\nIRS: \nCONDITION TMP_18\""
+                    ],
+                    "state_variable": "unrespondedCnt"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 74\nFunction: deliver\nNode: \nEXPRESSION unrespondedCnt --\nIRS: \nunrespondedCnt = unrespondedCnt - 1\"",
+                        "\"BlockID: 30\nFunction: withdraw\nNode: \nIF msg.sender == requests[0].requester && unrespondedCnt == 0\nIRS: \nCONDITION TMP_18\""
+                    ],
+                    "state_variable": "unrespondedCnt"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "request",
+                "upgrade"
+            ],
+            "First_function": "upgrade",
+            "Second_function": "request",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 11\nFunction: upgrade\nNode: \nEXPRESSION killswitch = true\nIRS: \nkillswitch := true\"",
+                        "\"BlockID: 36\nFunction: request\nNode: \nIF killswitch\nIRS: \nCONDITION killswitch\""
+                    ],
+                    "state_variable": "killswitch"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "request",
+                "upgrade"
+            ],
+            "First_function": "upgrade",
+            "Second_function": "request",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 11\nFunction: upgrade\nNode: \nEXPRESSION killswitch = true\nIRS: \nkillswitch := true\"",
+                        "\"BlockID: 36\nFunction: request\nNode: \nIF killswitch\nIRS: \nCONDITION killswitch\""
+                    ],
+                    "state_variable": "killswitch"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "request",
+                "reset"
+            ],
+            "First_function": "reset",
+            "Second_function": "request",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 17\nFunction: reset\nNode: \nEXPRESSION MIN_FEE = price * minGas\nIRS: \nMIN_FEE := TMP_9\"",
+                        "\"BlockID: 39\nFunction: request\nNode: \nIF msg.value < MIN_FEE\nIRS: \nCONDITION TMP_25\""
+                    ],
+                    "state_variable": "MIN_FEE"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "request",
+                "suspend"
+            ],
+            "First_function": "suspend",
+            "Second_function": "request",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 23\nFunction: suspend\nNode: \nEXPRESSION killswitch = true\nIRS: \nkillswitch := true\"",
+                        "\"BlockID: 36\nFunction: request\nNode: \nIF killswitch\nIRS: \nCONDITION killswitch\""
+                    ],
+                    "state_variable": "killswitch"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "request",
+                "suspend"
+            ],
+            "First_function": "suspend",
+            "Second_function": "request",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 23\nFunction: suspend\nNode: \nEXPRESSION killswitch = true\nIRS: \nkillswitch := true\"",
+                        "\"BlockID: 36\nFunction: request\nNode: \nIF killswitch\nIRS: \nCONDITION killswitch\""
+                    ],
+                    "state_variable": "killswitch"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "request",
+                "restart"
+            ],
+            "First_function": "restart",
+            "Second_function": "request",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 27\nFunction: restart\nNode: \nEXPRESSION killswitch = false\nIRS: \nkillswitch := false\"",
+                        "\"BlockID: 36\nFunction: request\nNode: \nIF killswitch\nIRS: \nCONDITION killswitch\""
+                    ],
+                    "state_variable": "killswitch"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "request",
+                "restart"
+            ],
+            "First_function": "restart",
+            "Second_function": "request",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 27\nFunction: restart\nNode: \nEXPRESSION killswitch = false\nIRS: \nkillswitch := false\"",
+                        "\"BlockID: 36\nFunction: request\nNode: \nIF killswitch\nIRS: \nCONDITION killswitch\""
+                    ],
+                    "state_variable": "killswitch"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "request",
+                "request"
+            ],
+            "First_function": "request",
+            "Second_function": "request",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 136\nFunction: request\nNode: \nEXPRESSION externalCallFlag = true\nIRS: \nexternalCallFlag := true\"",
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 139\nFunction: request\nNode: \nEXPRESSION externalCallFlag = true\nIRS: \nexternalCallFlag := true\"",
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 151\nFunction: request\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\"",
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 153\nFunction: request\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\"",
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "request",
+                "request"
+            ],
+            "First_function": "request",
+            "Second_function": "request",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 157\nFunction: request\nNode: \nEXPRESSION externalCallFlag = true\nIRS: \nexternalCallFlag := true\"",
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 160\nFunction: request\nNode: \nEXPRESSION externalCallFlag = true\nIRS: \nexternalCallFlag := true\"",
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 172\nFunction: request\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\"",
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 174\nFunction: request\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\"",
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "request",
+                "deliver"
+            ],
+            "First_function": "deliver",
+            "Second_function": "request",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: deliver\nNode: \nEXPRESSION externalCallFlag = true\nIRS: \nexternalCallFlag := true\"",
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 66\nFunction: deliver\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\"",
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 70\nFunction: deliver\nNode: \nEXPRESSION externalCallFlag = true\nIRS: \nexternalCallFlag := true\"",
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 72\nFunction: deliver\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\"",
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "request",
+                "deliver"
+            ],
+            "First_function": "deliver",
+            "Second_function": "request",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: deliver\nNode: \nEXPRESSION externalCallFlag = true\nIRS: \nexternalCallFlag := true\"",
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 66\nFunction: deliver\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\"",
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 70\nFunction: deliver\nNode: \nEXPRESSION externalCallFlag = true\nIRS: \nexternalCallFlag := true\"",
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 72\nFunction: deliver\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\"",
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "request",
+                "cancel"
+            ],
+            "First_function": "cancel",
+            "Second_function": "request",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 80\nFunction: cancel\nNode: \nEXPRESSION externalCallFlag = true\nIRS: \nexternalCallFlag := true\"",
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 84\nFunction: cancel\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\"",
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "request",
+                "cancel"
+            ],
+            "First_function": "cancel",
+            "Second_function": "request",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 80\nFunction: cancel\nNode: \nEXPRESSION externalCallFlag = true\nIRS: \nexternalCallFlag := true\"",
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 84\nFunction: cancel\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\"",
+                        "\"BlockID: 35\nFunction: request\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "deliver",
+                "reset"
+            ],
+            "First_function": "reset",
+            "Second_function": "deliver",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 18\nFunction: reset\nNode: \nEXPRESSION CANCELLATION_FEE = price * cancellationGas\nIRS: \nCANCELLATION_FEE := TMP_10\"",
+                        "\"BlockID: 59\nFunction: deliver\nNode: \nEXPRESSION SGX_ADDRESS.send(CANCELLATION_FEE)\nIRS: \nTMP_42 = SEND dest:SGX_ADDRESS value:CANCELLATION_FEE\""
+                    ],
+                    "state_variable": "CANCELLATION_FEE"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "deliver",
+                "reset"
+            ],
+            "First_function": "reset",
+            "Second_function": "deliver",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 17\nFunction: reset\nNode: \nEXPRESSION MIN_FEE = price * minGas\nIRS: \nMIN_FEE := TMP_9\"",
+                        "\"BlockID: 69\nFunction: deliver\nNode: \nIF callbackGas > msg.gas - 5000\nIRS: \nCONDITION TMP_54\""
+                    ],
+                    "state_variable": "MIN_FEE"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "deliver",
+                "request"
+            ],
+            "First_function": "request",
+            "Second_function": "deliver",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 46\nFunction: request\nNode: \nEXPRESSION requests[requestId].fee = msg.value\nIRS: \nREF_24 := msg.value\"",
+                        "\"BlockID: 56\nFunction: deliver\nNode: \nIF msg.sender != SGX_ADDRESS || requestId <= 0 || requests[requestId].requester == 0 || requests[requestId].fee == DELIVERED_FEE_FLAG\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 46\nFunction: request\nNode: \nEXPRESSION requests[requestId].fee = msg.value\nIRS: \nREF_24 := msg.value\"",
+                        "\"BlockID: 58\nFunction: deliver\nNode: \nIF fee == CANCELLED_FEE_FLAG\nIRS: \nCONDITION TMP_41\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 45\nFunction: request\nNode: \nEXPRESSION requests[requestId].requester = msg.sender\nIRS: \nREF_22 := msg.sender\"",
+                        "\"BlockID: 56\nFunction: deliver\nNode: \nIF msg.sender != SGX_ADDRESS || requestId <= 0 || requests[requestId].requester == 0 || requests[requestId].fee == DELIVERED_FEE_FLAG\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "requests.requester"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 49\nFunction: request\nNode: \nEXPRESSION requests[requestId].paramsHash = paramsHash\nIRS: \nREF_30 := paramsHash\"",
+                        "\"BlockID: 57\nFunction: deliver\nNode: \nIF requests[requestId].paramsHash != paramsHash\nIRS: \nCONDITION TMP_40\""
+                    ],
+                    "state_variable": "requests.paramsHash"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "deliver",
+                "request"
+            ],
+            "First_function": "request",
+            "Second_function": "deliver",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 46\nFunction: request\nNode: \nEXPRESSION requests[requestId].fee = msg.value\nIRS: \nREF_24 := msg.value\"",
+                        "\"BlockID: 56\nFunction: deliver\nNode: \nIF msg.sender != SGX_ADDRESS || requestId <= 0 || requests[requestId].requester == 0 || requests[requestId].fee == DELIVERED_FEE_FLAG\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 46\nFunction: request\nNode: \nEXPRESSION requests[requestId].fee = msg.value\nIRS: \nREF_24 := msg.value\"",
+                        "\"BlockID: 58\nFunction: deliver\nNode: \nIF fee == CANCELLED_FEE_FLAG\nIRS: \nCONDITION TMP_41\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 46\nFunction: request\nNode: \nEXPRESSION requests[requestId].fee = msg.value\nIRS: \nREF_24 := msg.value\"",
+                        "\"BlockID: 63\nFunction: deliver\nNode: \nEXPRESSION SGX_ADDRESS.send(fee)\nIRS: \nTMP_46 = SEND dest:SGX_ADDRESS value:fee\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 45\nFunction: request\nNode: \nEXPRESSION requests[requestId].requester = msg.sender\nIRS: \nREF_22 := msg.sender\"",
+                        "\"BlockID: 56\nFunction: deliver\nNode: \nIF msg.sender != SGX_ADDRESS || requestId <= 0 || requests[requestId].requester == 0 || requests[requestId].fee == DELIVERED_FEE_FLAG\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "requests.requester"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 49\nFunction: request\nNode: \nEXPRESSION requests[requestId].paramsHash = paramsHash\nIRS: \nREF_30 := paramsHash\"",
+                        "\"BlockID: 57\nFunction: deliver\nNode: \nIF requests[requestId].paramsHash != paramsHash\nIRS: \nCONDITION TMP_40\""
+                    ],
+                    "state_variable": "requests.paramsHash"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "deliver",
+                "request"
+            ],
+            "First_function": "request",
+            "Second_function": "deliver",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 46\nFunction: request\nNode: \nEXPRESSION requests[requestId].fee = msg.value\nIRS: \nREF_24 := msg.value\"",
+                        "\"BlockID: 56\nFunction: deliver\nNode: \nIF msg.sender != SGX_ADDRESS || requestId <= 0 || requests[requestId].requester == 0 || requests[requestId].fee == DELIVERED_FEE_FLAG\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 46\nFunction: request\nNode: \nEXPRESSION requests[requestId].fee = msg.value\nIRS: \nREF_24 := msg.value\"",
+                        "\"BlockID: 58\nFunction: deliver\nNode: \nIF fee == CANCELLED_FEE_FLAG\nIRS: \nCONDITION TMP_41\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 46\nFunction: request\nNode: \nEXPRESSION requests[requestId].fee = msg.value\nIRS: \nREF_24 := msg.value\"",
+                        "\"BlockID: 65\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].requester.call.gas(2300).value(fee)()\nIRS: \nTMP_49(bool) = LOW_LEVEL_CALL, dest:REF_46, function:call, arguments:[] value:fee gas:2300\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 45\nFunction: request\nNode: \nEXPRESSION requests[requestId].requester = msg.sender\nIRS: \nREF_22 := msg.sender\"",
+                        "\"BlockID: 56\nFunction: deliver\nNode: \nIF msg.sender != SGX_ADDRESS || requestId <= 0 || requests[requestId].requester == 0 || requests[requestId].fee == DELIVERED_FEE_FLAG\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "requests.requester"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 45\nFunction: request\nNode: \nEXPRESSION requests[requestId].requester = msg.sender\nIRS: \nREF_22 := msg.sender\"",
+                        "\"BlockID: 65\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].requester.call.gas(2300).value(fee)()\nIRS: \nTMP_49(bool) = LOW_LEVEL_CALL, dest:REF_46, function:call, arguments:[] value:fee gas:2300\""
+                    ],
+                    "state_variable": "requests.requester"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 49\nFunction: request\nNode: \nEXPRESSION requests[requestId].paramsHash = paramsHash\nIRS: \nREF_30 := paramsHash\"",
+                        "\"BlockID: 57\nFunction: deliver\nNode: \nIF requests[requestId].paramsHash != paramsHash\nIRS: \nCONDITION TMP_40\""
+                    ],
+                    "state_variable": "requests.paramsHash"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "deliver",
+                "request"
+            ],
+            "First_function": "request",
+            "Second_function": "deliver",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 46\nFunction: request\nNode: \nEXPRESSION requests[requestId].fee = msg.value\nIRS: \nREF_24 := msg.value\"",
+                        "\"BlockID: 56\nFunction: deliver\nNode: \nIF msg.sender != SGX_ADDRESS || requestId <= 0 || requests[requestId].requester == 0 || requests[requestId].fee == DELIVERED_FEE_FLAG\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 46\nFunction: request\nNode: \nEXPRESSION requests[requestId].fee = msg.value\nIRS: \nREF_24 := msg.value\"",
+                        "\"BlockID: 58\nFunction: deliver\nNode: \nIF fee == CANCELLED_FEE_FLAG\nIRS: \nCONDITION TMP_41\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 46\nFunction: request\nNode: \nEXPRESSION requests[requestId].fee = msg.value\nIRS: \nREF_24 := msg.value\"",
+                        "\"BlockID: 63\nFunction: deliver\nNode: \nEXPRESSION SGX_ADDRESS.send(fee)\nIRS: \nTMP_46 = SEND dest:SGX_ADDRESS value:fee\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 46\nFunction: request\nNode: \nEXPRESSION requests[requestId].fee = msg.value\nIRS: \nREF_24 := msg.value\"",
+                        "\"BlockID: 65\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].requester.call.gas(2300).value(fee)()\nIRS: \nTMP_49(bool) = LOW_LEVEL_CALL, dest:REF_46, function:call, arguments:[] value:fee gas:2300\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 46\nFunction: request\nNode: \nEXPRESSION requests[requestId].fee = msg.value\nIRS: \nREF_24 := msg.value\"",
+                        "\"BlockID: 69\nFunction: deliver\nNode: \nIF callbackGas > msg.gas - 5000\nIRS: \nCONDITION TMP_54\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 45\nFunction: request\nNode: \nEXPRESSION requests[requestId].requester = msg.sender\nIRS: \nREF_22 := msg.sender\"",
+                        "\"BlockID: 56\nFunction: deliver\nNode: \nIF msg.sender != SGX_ADDRESS || requestId <= 0 || requests[requestId].requester == 0 || requests[requestId].fee == DELIVERED_FEE_FLAG\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "requests.requester"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 45\nFunction: request\nNode: \nEXPRESSION requests[requestId].requester = msg.sender\nIRS: \nREF_22 := msg.sender\"",
+                        "\"BlockID: 65\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].requester.call.gas(2300).value(fee)()\nIRS: \nTMP_49(bool) = LOW_LEVEL_CALL, dest:REF_46, function:call, arguments:[] value:fee gas:2300\""
+                    ],
+                    "state_variable": "requests.requester"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 49\nFunction: request\nNode: \nEXPRESSION requests[requestId].paramsHash = paramsHash\nIRS: \nREF_30 := paramsHash\"",
+                        "\"BlockID: 57\nFunction: deliver\nNode: \nIF requests[requestId].paramsHash != paramsHash\nIRS: \nCONDITION TMP_40\""
+                    ],
+                    "state_variable": "requests.paramsHash"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 47\nFunction: request\nNode: \nEXPRESSION requests[requestId].callbackAddr = callbackAddr\nIRS: \nREF_26 := callbackAddr\"",
+                        "\"BlockID: 71\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].callbackAddr.call.gas(callbackGas)(requests[requestId].callbackFID,requestId,error,respData)\nIRS: \nTMP_57(bool) = LOW_LEVEL_CALL, dest:REF_51, function:call, arguments:['REF_55', 'requestId', 'error', 'respData']  gas:callbackGas\""
+                    ],
+                    "state_variable": "requests.callbackAddr"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "deliver",
+                "deliver"
+            ],
+            "First_function": "deliver",
+            "Second_function": "deliver",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 200\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_43 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 56\nFunction: deliver\nNode: \nIF msg.sender != SGX_ADDRESS || requestId <= 0 || requests[requestId].requester == 0 || requests[requestId].fee == DELIVERED_FEE_FLAG\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 213\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_41 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 56\nFunction: deliver\nNode: \nIF msg.sender != SGX_ADDRESS || requestId <= 0 || requests[requestId].requester == 0 || requests[requestId].fee == DELIVERED_FEE_FLAG\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 200\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_43 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 58\nFunction: deliver\nNode: \nIF fee == CANCELLED_FEE_FLAG\nIRS: \nCONDITION TMP_41\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 213\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_41 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 58\nFunction: deliver\nNode: \nIF fee == CANCELLED_FEE_FLAG\nIRS: \nCONDITION TMP_41\""
+                    ],
+                    "state_variable": "requests.fee"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "deliver",
+                "deliver"
+            ],
+            "First_function": "deliver",
+            "Second_function": "deliver",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 220\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_43 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 56\nFunction: deliver\nNode: \nIF msg.sender != SGX_ADDRESS || requestId <= 0 || requests[requestId].requester == 0 || requests[requestId].fee == DELIVERED_FEE_FLAG\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 233\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_41 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 56\nFunction: deliver\nNode: \nIF msg.sender != SGX_ADDRESS || requestId <= 0 || requests[requestId].requester == 0 || requests[requestId].fee == DELIVERED_FEE_FLAG\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 220\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_43 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 58\nFunction: deliver\nNode: \nIF fee == CANCELLED_FEE_FLAG\nIRS: \nCONDITION TMP_41\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 233\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_41 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 58\nFunction: deliver\nNode: \nIF fee == CANCELLED_FEE_FLAG\nIRS: \nCONDITION TMP_41\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 220\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_43 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 63\nFunction: deliver\nNode: \nEXPRESSION SGX_ADDRESS.send(fee)\nIRS: \nTMP_46 = SEND dest:SGX_ADDRESS value:fee\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 233\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_41 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 63\nFunction: deliver\nNode: \nEXPRESSION SGX_ADDRESS.send(fee)\nIRS: \nTMP_46 = SEND dest:SGX_ADDRESS value:fee\""
+                    ],
+                    "state_variable": "requests.fee"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "deliver",
+                "deliver"
+            ],
+            "First_function": "deliver",
+            "Second_function": "deliver",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 240\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_43 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 56\nFunction: deliver\nNode: \nIF msg.sender != SGX_ADDRESS || requestId <= 0 || requests[requestId].requester == 0 || requests[requestId].fee == DELIVERED_FEE_FLAG\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 253\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_41 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 56\nFunction: deliver\nNode: \nIF msg.sender != SGX_ADDRESS || requestId <= 0 || requests[requestId].requester == 0 || requests[requestId].fee == DELIVERED_FEE_FLAG\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 240\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_43 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 58\nFunction: deliver\nNode: \nIF fee == CANCELLED_FEE_FLAG\nIRS: \nCONDITION TMP_41\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 253\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_41 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 58\nFunction: deliver\nNode: \nIF fee == CANCELLED_FEE_FLAG\nIRS: \nCONDITION TMP_41\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 240\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_43 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 65\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].requester.call.gas(2300).value(fee)()\nIRS: \nTMP_49(bool) = LOW_LEVEL_CALL, dest:REF_46, function:call, arguments:[] value:fee gas:2300\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 253\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_41 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 65\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].requester.call.gas(2300).value(fee)()\nIRS: \nTMP_49(bool) = LOW_LEVEL_CALL, dest:REF_46, function:call, arguments:[] value:fee gas:2300\""
+                    ],
+                    "state_variable": "requests.fee"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "deliver",
+                "deliver"
+            ],
+            "First_function": "deliver",
+            "Second_function": "deliver",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 260\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_43 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 56\nFunction: deliver\nNode: \nIF msg.sender != SGX_ADDRESS || requestId <= 0 || requests[requestId].requester == 0 || requests[requestId].fee == DELIVERED_FEE_FLAG\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 273\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_41 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 56\nFunction: deliver\nNode: \nIF msg.sender != SGX_ADDRESS || requestId <= 0 || requests[requestId].requester == 0 || requests[requestId].fee == DELIVERED_FEE_FLAG\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 260\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_43 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 58\nFunction: deliver\nNode: \nIF fee == CANCELLED_FEE_FLAG\nIRS: \nCONDITION TMP_41\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 273\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_41 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 58\nFunction: deliver\nNode: \nIF fee == CANCELLED_FEE_FLAG\nIRS: \nCONDITION TMP_41\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 260\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_43 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 63\nFunction: deliver\nNode: \nEXPRESSION SGX_ADDRESS.send(fee)\nIRS: \nTMP_46 = SEND dest:SGX_ADDRESS value:fee\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 273\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_41 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 63\nFunction: deliver\nNode: \nEXPRESSION SGX_ADDRESS.send(fee)\nIRS: \nTMP_46 = SEND dest:SGX_ADDRESS value:fee\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 260\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_43 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 65\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].requester.call.gas(2300).value(fee)()\nIRS: \nTMP_49(bool) = LOW_LEVEL_CALL, dest:REF_46, function:call, arguments:[] value:fee gas:2300\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 273\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_41 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 65\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].requester.call.gas(2300).value(fee)()\nIRS: \nTMP_49(bool) = LOW_LEVEL_CALL, dest:REF_46, function:call, arguments:[] value:fee gas:2300\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 260\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_43 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 69\nFunction: deliver\nNode: \nIF callbackGas > msg.gas - 5000\nIRS: \nCONDITION TMP_54\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 273\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_41 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 69\nFunction: deliver\nNode: \nIF callbackGas > msg.gas - 5000\nIRS: \nCONDITION TMP_54\""
+                    ],
+                    "state_variable": "requests.fee"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "deliver",
+                "cancel"
+            ],
+            "First_function": "cancel",
+            "Second_function": "deliver",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 79\nFunction: cancel\nNode: \nEXPRESSION requests[requestId].fee = CANCELLED_FEE_FLAG\nIRS: \nREF_61 := CANCELLED_FEE_FLAG\"",
+                        "\"BlockID: 56\nFunction: deliver\nNode: \nIF msg.sender != SGX_ADDRESS || requestId <= 0 || requests[requestId].requester == 0 || requests[requestId].fee == DELIVERED_FEE_FLAG\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 79\nFunction: cancel\nNode: \nEXPRESSION requests[requestId].fee = CANCELLED_FEE_FLAG\nIRS: \nREF_61 := CANCELLED_FEE_FLAG\"",
+                        "\"BlockID: 58\nFunction: deliver\nNode: \nIF fee == CANCELLED_FEE_FLAG\nIRS: \nCONDITION TMP_41\""
+                    ],
+                    "state_variable": "requests.fee"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "deliver",
+                "cancel"
+            ],
+            "First_function": "cancel",
+            "Second_function": "deliver",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 79\nFunction: cancel\nNode: \nEXPRESSION requests[requestId].fee = CANCELLED_FEE_FLAG\nIRS: \nREF_61 := CANCELLED_FEE_FLAG\"",
+                        "\"BlockID: 56\nFunction: deliver\nNode: \nIF msg.sender != SGX_ADDRESS || requestId <= 0 || requests[requestId].requester == 0 || requests[requestId].fee == DELIVERED_FEE_FLAG\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 79\nFunction: cancel\nNode: \nEXPRESSION requests[requestId].fee = CANCELLED_FEE_FLAG\nIRS: \nREF_61 := CANCELLED_FEE_FLAG\"",
+                        "\"BlockID: 58\nFunction: deliver\nNode: \nIF fee == CANCELLED_FEE_FLAG\nIRS: \nCONDITION TMP_41\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 79\nFunction: cancel\nNode: \nEXPRESSION requests[requestId].fee = CANCELLED_FEE_FLAG\nIRS: \nREF_61 := CANCELLED_FEE_FLAG\"",
+                        "\"BlockID: 63\nFunction: deliver\nNode: \nEXPRESSION SGX_ADDRESS.send(fee)\nIRS: \nTMP_46 = SEND dest:SGX_ADDRESS value:fee\""
+                    ],
+                    "state_variable": "requests.fee"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "deliver",
+                "cancel"
+            ],
+            "First_function": "cancel",
+            "Second_function": "deliver",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 79\nFunction: cancel\nNode: \nEXPRESSION requests[requestId].fee = CANCELLED_FEE_FLAG\nIRS: \nREF_61 := CANCELLED_FEE_FLAG\"",
+                        "\"BlockID: 56\nFunction: deliver\nNode: \nIF msg.sender != SGX_ADDRESS || requestId <= 0 || requests[requestId].requester == 0 || requests[requestId].fee == DELIVERED_FEE_FLAG\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 79\nFunction: cancel\nNode: \nEXPRESSION requests[requestId].fee = CANCELLED_FEE_FLAG\nIRS: \nREF_61 := CANCELLED_FEE_FLAG\"",
+                        "\"BlockID: 58\nFunction: deliver\nNode: \nIF fee == CANCELLED_FEE_FLAG\nIRS: \nCONDITION TMP_41\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 79\nFunction: cancel\nNode: \nEXPRESSION requests[requestId].fee = CANCELLED_FEE_FLAG\nIRS: \nREF_61 := CANCELLED_FEE_FLAG\"",
+                        "\"BlockID: 65\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].requester.call.gas(2300).value(fee)()\nIRS: \nTMP_49(bool) = LOW_LEVEL_CALL, dest:REF_46, function:call, arguments:[] value:fee gas:2300\""
+                    ],
+                    "state_variable": "requests.fee"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "deliver",
+                "cancel"
+            ],
+            "First_function": "cancel",
+            "Second_function": "deliver",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 79\nFunction: cancel\nNode: \nEXPRESSION requests[requestId].fee = CANCELLED_FEE_FLAG\nIRS: \nREF_61 := CANCELLED_FEE_FLAG\"",
+                        "\"BlockID: 56\nFunction: deliver\nNode: \nIF msg.sender != SGX_ADDRESS || requestId <= 0 || requests[requestId].requester == 0 || requests[requestId].fee == DELIVERED_FEE_FLAG\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 79\nFunction: cancel\nNode: \nEXPRESSION requests[requestId].fee = CANCELLED_FEE_FLAG\nIRS: \nREF_61 := CANCELLED_FEE_FLAG\"",
+                        "\"BlockID: 58\nFunction: deliver\nNode: \nIF fee == CANCELLED_FEE_FLAG\nIRS: \nCONDITION TMP_41\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 79\nFunction: cancel\nNode: \nEXPRESSION requests[requestId].fee = CANCELLED_FEE_FLAG\nIRS: \nREF_61 := CANCELLED_FEE_FLAG\"",
+                        "\"BlockID: 63\nFunction: deliver\nNode: \nEXPRESSION SGX_ADDRESS.send(fee)\nIRS: \nTMP_46 = SEND dest:SGX_ADDRESS value:fee\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 79\nFunction: cancel\nNode: \nEXPRESSION requests[requestId].fee = CANCELLED_FEE_FLAG\nIRS: \nREF_61 := CANCELLED_FEE_FLAG\"",
+                        "\"BlockID: 65\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].requester.call.gas(2300).value(fee)()\nIRS: \nTMP_49(bool) = LOW_LEVEL_CALL, dest:REF_46, function:call, arguments:[] value:fee gas:2300\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 79\nFunction: cancel\nNode: \nEXPRESSION requests[requestId].fee = CANCELLED_FEE_FLAG\nIRS: \nREF_61 := CANCELLED_FEE_FLAG\"",
+                        "\"BlockID: 69\nFunction: deliver\nNode: \nIF callbackGas > msg.gas - 5000\nIRS: \nCONDITION TMP_54\""
+                    ],
+                    "state_variable": "requests.fee"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "cancel",
+                "upgrade"
+            ],
+            "First_function": "upgrade",
+            "Second_function": "cancel",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 11\nFunction: upgrade\nNode: \nEXPRESSION killswitch = true\nIRS: \nkillswitch := true\"",
+                        "\"BlockID: 77\nFunction: cancel\nNode: \nIF killswitch\nIRS: \nCONDITION killswitch\""
+                    ],
+                    "state_variable": "killswitch"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "cancel",
+                "reset"
+            ],
+            "First_function": "reset",
+            "Second_function": "cancel",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 18\nFunction: reset\nNode: \nEXPRESSION CANCELLATION_FEE = price * cancellationGas\nIRS: \nCANCELLATION_FEE := TMP_10\"",
+                        "\"BlockID: 78\nFunction: cancel\nNode: \nIF requests[requestId].requester == msg.sender && fee >= CANCELLATION_FEE\nIRS: \nCONDITION TMP_60\""
+                    ],
+                    "state_variable": "CANCELLATION_FEE"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 18\nFunction: reset\nNode: \nEXPRESSION CANCELLATION_FEE = price * cancellationGas\nIRS: \nCANCELLATION_FEE := TMP_10\"",
+                        "\"BlockID: 81\nFunction: cancel\nNode: \nIF ! msg.sender.call.value(fee - CANCELLATION_FEE)()\nIRS: \nTMP_63(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:TMP_61 \""
+                    ],
+                    "state_variable": "CANCELLATION_FEE"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "cancel",
+                "suspend"
+            ],
+            "First_function": "suspend",
+            "Second_function": "cancel",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 23\nFunction: suspend\nNode: \nEXPRESSION killswitch = true\nIRS: \nkillswitch := true\"",
+                        "\"BlockID: 77\nFunction: cancel\nNode: \nIF killswitch\nIRS: \nCONDITION killswitch\""
+                    ],
+                    "state_variable": "killswitch"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "cancel",
+                "restart"
+            ],
+            "First_function": "restart",
+            "Second_function": "cancel",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 27\nFunction: restart\nNode: \nEXPRESSION killswitch = false\nIRS: \nkillswitch := false\"",
+                        "\"BlockID: 77\nFunction: cancel\nNode: \nIF killswitch\nIRS: \nCONDITION killswitch\""
+                    ],
+                    "state_variable": "killswitch"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "cancel",
+                "request"
+            ],
+            "First_function": "request",
+            "Second_function": "cancel",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 37\nFunction: request\nNode: \nEXPRESSION externalCallFlag = true\nIRS: \nexternalCallFlag := true\"",
+                        "\"BlockID: 76\nFunction: cancel\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 40\nFunction: request\nNode: \nEXPRESSION externalCallFlag = true\nIRS: \nexternalCallFlag := true\"",
+                        "\"BlockID: 76\nFunction: cancel\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 52\nFunction: request\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\"",
+                        "\"BlockID: 76\nFunction: cancel\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 54\nFunction: request\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\"",
+                        "\"BlockID: 76\nFunction: cancel\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 46\nFunction: request\nNode: \nEXPRESSION requests[requestId].fee = msg.value\nIRS: \nREF_24 := msg.value\"",
+                        "\"BlockID: 78\nFunction: cancel\nNode: \nIF requests[requestId].requester == msg.sender && fee >= CANCELLATION_FEE\nIRS: \nCONDITION TMP_60\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 46\nFunction: request\nNode: \nEXPRESSION requests[requestId].fee = msg.value\nIRS: \nREF_24 := msg.value\"",
+                        "\"BlockID: 81\nFunction: cancel\nNode: \nIF ! msg.sender.call.value(fee - CANCELLATION_FEE)()\nIRS: \nTMP_63(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:TMP_61 \""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 45\nFunction: request\nNode: \nEXPRESSION requests[requestId].requester = msg.sender\nIRS: \nREF_22 := msg.sender\"",
+                        "\"BlockID: 78\nFunction: cancel\nNode: \nIF requests[requestId].requester == msg.sender && fee >= CANCELLATION_FEE\nIRS: \nCONDITION TMP_60\""
+                    ],
+                    "state_variable": "requests.requester"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "cancel",
+                "deliver"
+            ],
+            "First_function": "deliver",
+            "Second_function": "cancel",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: deliver\nNode: \nEXPRESSION externalCallFlag = true\nIRS: \nexternalCallFlag := true\"",
+                        "\"BlockID: 76\nFunction: cancel\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 66\nFunction: deliver\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\"",
+                        "\"BlockID: 76\nFunction: cancel\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 70\nFunction: deliver\nNode: \nEXPRESSION externalCallFlag = true\nIRS: \nexternalCallFlag := true\"",
+                        "\"BlockID: 76\nFunction: cancel\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 72\nFunction: deliver\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\"",
+                        "\"BlockID: 76\nFunction: cancel\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 60\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_43 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 78\nFunction: cancel\nNode: \nIF requests[requestId].requester == msg.sender && fee >= CANCELLATION_FEE\nIRS: \nCONDITION TMP_60\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 73\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_41 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 78\nFunction: cancel\nNode: \nIF requests[requestId].requester == msg.sender && fee >= CANCELLATION_FEE\nIRS: \nCONDITION TMP_60\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 60\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_43 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 81\nFunction: cancel\nNode: \nIF ! msg.sender.call.value(fee - CANCELLATION_FEE)()\nIRS: \nTMP_63(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:TMP_61 \""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 73\nFunction: deliver\nNode: \nEXPRESSION requests[requestId].fee = DELIVERED_FEE_FLAG\nIRS: \nREF_41 := DELIVERED_FEE_FLAG\"",
+                        "\"BlockID: 81\nFunction: cancel\nNode: \nIF ! msg.sender.call.value(fee - CANCELLATION_FEE)()\nIRS: \nTMP_63(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:TMP_61 \""
+                    ],
+                    "state_variable": "requests.fee"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "cancel",
+                "cancel"
+            ],
+            "First_function": "cancel",
+            "Second_function": "cancel",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 291\nFunction: cancel\nNode: \nEXPRESSION externalCallFlag = true\nIRS: \nexternalCallFlag := true\"",
+                        "\"BlockID: 76\nFunction: cancel\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 295\nFunction: cancel\nNode: \nEXPRESSION externalCallFlag = false\nIRS: \nexternalCallFlag := false\"",
+                        "\"BlockID: 76\nFunction: cancel\nNode: \nIF externalCallFlag\nIRS: \nCONDITION externalCallFlag\""
+                    ],
+                    "state_variable": "externalCallFlag"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 290\nFunction: cancel\nNode: \nEXPRESSION requests[requestId].fee = CANCELLED_FEE_FLAG\nIRS: \nREF_61 := CANCELLED_FEE_FLAG\"",
+                        "\"BlockID: 78\nFunction: cancel\nNode: \nIF requests[requestId].requester == msg.sender && fee >= CANCELLATION_FEE\nIRS: \nCONDITION TMP_60\""
+                    ],
+                    "state_variable": "requests.fee"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 290\nFunction: cancel\nNode: \nEXPRESSION requests[requestId].fee = CANCELLED_FEE_FLAG\nIRS: \nREF_61 := CANCELLED_FEE_FLAG\"",
+                        "\"BlockID: 81\nFunction: cancel\nNode: \nIF ! msg.sender.call.value(fee - CANCELLATION_FEE)()\nIRS: \nTMP_63(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:TMP_61 \""
+                    ],
+                    "state_variable": "requests.fee"
+                }
+            ]
+        }
+    ]
+}

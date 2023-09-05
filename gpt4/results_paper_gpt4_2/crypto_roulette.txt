@@ -1,0 +1,30 @@
+This contract has several potential vulnerabilities:
+
+1. **Bad Randomness (Nothing is Secret):**
+   The function `shuffle()` is using `sha3(now, block.blockhash(block.number-1))` to generate a pseudo-random number. However, `now` (alias for `block.timestamp`) and `block.blockhash(block.number-1)` can be influenced by miners to some extent. This can lead to a predictable outcome for the `secretNumber`.
+
+2. **Reentrancy:**
+   In the `play` function, the player's balance is transferred before the `shuffle` function is called. This could potentially allow for a reentrancy attack if the fallback function of the sender's contract calls the `play` function.
+
+3. **Time Manipulation (timestamp dependence):**
+   The `now` keyword (alias for `block.timestamp`) is used in `shuffle()` and `kill()`. Miners have some influence over the value of `block.timestamp` within a certain range, which could potentially be exploited.
+
+4. **Unchecked Return Values for Low Level Calls:**
+   The `transfer` function in `play` can potentially throw an exception if the call stack depth is at its maximum or if the recipient contract throws an exception. However, the return value of `transfer` is not checked in the contract.
+
+5. **Access Control:**
+   The `kill` function only checks whether the sender is the `ownerAddr` and whether a certain amount of time has passed since `lastPlayed`. However, it does not check whether the contract is in a valid state to be destroyed, potentially causing unexpected behavior.
+
+6. **Arithmetic Issues (Integer Overflow and Underflow):**
+   The contract does not check for potential overflow or underflow conditions. This could potentially lead to unexpected behaviors.
+
+7. **Denial of Service (DoS):**
+   If the `play` function throws an exception (for example, if `msg.sender.transfer(this.balance)` fails), the contract's `shuffle` function and `lastPlayed` updating will not be executed, potentially locking the contract.
+
+8. **Front-Running (Transaction Ordering Dependence):**
+   Since the `secretNumber` is updated after each play, an attacker can observe the updated `secretNumber` and make a guess in the next transaction before others.
+
+9. **Short Address Attack:**
+   While short address attacks are typically more of a concern for token contracts, it's always good practice to verify the length of the `msg.data` to ensure it's as expected. In this contract, such checks are not performed. 
+
+Finally, the contract uses the `suicide` function which is deprecated in newer versions of Solidity. The `selfdestruct` function should be used instead.

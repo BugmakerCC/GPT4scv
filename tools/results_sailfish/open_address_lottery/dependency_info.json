@@ -1,0 +1,76 @@
+{
+    "open_address_lottery.sol": [
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "participate",
+                "participate"
+            ],
+            "First_function": "participate",
+            "Second_function": "participate",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 51\nFunction: participate\nNode: \nEXPRESSION winner[msg.sender] = true\nIRS: \nREF_1 := true\"",
+                        "\"BlockID: 8\nFunction: participate\nNode: \nEXPRESSION require(bool)(winner[msg.sender] == false)\nIRS: \nTMP_5 = SOLIDITY_CALL require(bool)(TMP_4)\""
+                    ],
+                    "state_variable": "winner"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "participate",
+                "fallback"
+            ],
+            "First_function": "fallback",
+            "Second_function": "participate",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 37\nFunction: participate\nNode: \nEXPRESSION winner[msg.sender] = true\nIRS: \nREF_1 := true\"",
+                        "\"BlockID: 8\nFunction: participate\nNode: \nEXPRESSION require(bool)(winner[msg.sender] == false)\nIRS: \nTMP_5 = SOLIDITY_CALL require(bool)(TMP_4)\""
+                    ],
+                    "state_variable": "winner"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "participate"
+            ],
+            "First_function": "participate",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 10\nFunction: participate\nNode: \nEXPRESSION winner[msg.sender] = true\nIRS: \nREF_1 := true\"",
+                        "\"BlockID: 35\nFunction: participate\nNode: \nEXPRESSION require(bool)(winner[msg.sender] == false)\nIRS: \nTMP_5 = SOLIDITY_CALL require(bool)(TMP_4)\""
+                    ],
+                    "state_variable": "winner"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "fallback"
+            ],
+            "First_function": "fallback",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 67\nFunction: participate\nNode: \nEXPRESSION winner[msg.sender] = true\nIRS: \nREF_1 := true\"",
+                        "\"BlockID: 35\nFunction: participate\nNode: \nEXPRESSION require(bool)(winner[msg.sender] == false)\nIRS: \nTMP_5 = SOLIDITY_CALL require(bool)(TMP_4)\""
+                    ],
+                    "state_variable": "winner"
+                }
+            ]
+        }
+    ]
+}

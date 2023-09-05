@@ -1,0 +1,19 @@
+This contract has multiple vulnerabilities:
+
+1. Reentrancy: The `Collect` function has a reentrancy vulnerability. The contract state is updated after the external call `msg.sender.call.value(_am)()`. This can allow an attacker to re-enter the function before the state is updated and withdraw more Ether than they should.
+
+2. Access Control: The `SetMinSum` and `SetLogFile` functions can be called by anyone until `initialized` is set to true. An attacker could call these functions to manipulate the contract's state.
+
+3. Arithmetic Issues: The `Put` function can cause an integer underflow if `_lockTime` is a large number, as `now + _lockTime` could wrap around to a small number.
+
+4. Unchecked Return Values For Low Level Calls: The low-level call in the `Collect` function does not handle failure of the call. If the call fails for any reason, the contract will continue execution as if it succeeded.
+
+5. Denial of Service: An attacker could repeatedly call `Put` with large values of `_lockTime`, increasing `unlockTime` and effectively locking the funds in the contract.
+
+6. Bad Randomness: Not applicable in this contract.
+
+7. Front-Running: Not applicable in this contract.
+
+8. Time manipulation: The contract relies on `now` (alias for `block.timestamp`) for time lock logic. Miners can manipulate this value to a certain degree, which can potentially be used to exploit the contract.
+
+9. Short Address Attack: Not applicable in this contract.

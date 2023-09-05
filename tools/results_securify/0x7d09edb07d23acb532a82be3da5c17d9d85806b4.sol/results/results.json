@@ -1,0 +1,137 @@
+{
+  "/sb/0x7d09edb07d23acb532a82be3da5c17d9d85806b4.sol:PoCGame": {
+    "results": {
+      "TODReceiver": {
+        "violations": [],
+        "warnings": [
+          186
+        ],
+        "safe": [
+          197,
+          209
+        ],
+        "conflicts": []
+      },
+      "UnhandledException": {
+        "violations": [
+          197,
+          209
+        ],
+        "warnings": [
+          285,
+          186
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODTransfer": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": [
+          197,
+          186,
+          209
+        ]
+      },
+      "DAO": {
+        "violations": [
+          197,
+          209
+        ],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODAmount": {
+        "violations": [
+          186,
+          209
+        ],
+        "warnings": [],
+        "safe": [
+          197
+        ],
+        "conflicts": []
+      },
+      "MissingInputValidation": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "DAOConstantGas": {
+        "violations": [],
+        "warnings": [
+          186
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnrestrictedEtherFlow": {
+        "violations": [],
+        "warnings": [
+          285
+        ],
+        "safe": [
+          197,
+          186,
+          209
+        ],
+        "conflicts": []
+      }
+    }
+  },
+  "/sb/0x7d09edb07d23acb532a82be3da5c17d9d85806b4.sol:ERC20Interface": {
+    "results": {
+      "TODReceiver": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnhandledException": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODTransfer": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "DAO": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODAmount": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "MissingInputValidation": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "DAOConstantGas": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnrestrictedEtherFlow": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      }
+    }
+  }
+}

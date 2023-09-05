@@ -1,0 +1,43 @@
+The smart contract provided has a common vulnerability known as Reentrancy.
+
+In the `CashOut` function, the contract sends Ether to an address before it reduces the balance of that address:
+
+```
+if(msg.sender.call.value(_am)())
+{
+    balances[msg.sender]-=_am;
+    TransferLog.AddMessage(msg.sender,_am,"CashOut");
+}
+```
+
+Here, the contract is vulnerable to a reentrancy attack. An attacker can create a fallback function in their contract to call the `CashOut` function again before the first call can finish. This would allow the attacker to drain more Ether than they should be able to according to their balance. 
+
+To fix this vulnerability, the contract should update the balances before making the call:
+
+```
+if(_am<=balances[msg.sender])
+{
+    balances[msg.sender]-=_am;
+    if(msg.sender.call.value(_am)())
+    {
+        TransferLog.AddMessage(msg.sender,_am,"CashOut");
+    }
+    else
+    {
+        balances[msg.sender]+=_am;
+    }
+}
+```
+
+The above code will ensure that the `balances` mapping is updated before the external call is made.
+
+As for other vulnerabilities:
+
+- Access Control: The contract does not have any function or modifier to restrict access to certain functions.
+- Arithmetic Issues: There doesn't seem to be any overflows or underflows possible.
+- Unchecked Return Values For Low Level Calls: The return value of the low-level call in `CashOut` function is checked.
+- Denial of Service: There seems to be no potential for DoS attack in the contract.
+- Bad Randomness: The contract does not use any randomness.
+- Front-Running: The contract does not seem to have any front-running vulnerabilities.
+- Time manipulation: The contract does not rely on timestamps or block numbers.
+- Short Address Attack: The contract does not seem to be vulnerable to a short address attack.

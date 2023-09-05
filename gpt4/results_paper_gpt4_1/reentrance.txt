@@ -1,0 +1,20 @@
+The smart contract provided has a Reentrancy vulnerability. This is one of the most common vulnerabilities in smart contracts and can be very destructive.
+
+Reentrancy vulnerability happens when you call an external contract (in this case `msg.sender.call.value(_amount)()`) inside a function before you've finished making changes to your contract. This allows the called contract to call back into the original function, and if any state changes have not been made yet, it can cause them to be made multiple times.
+
+In this contract, the function `withdraw(uint _amount)` first sends ether to `msg.sender` and then reduces the balance of `msg.sender`. This is dangerous because an attacker can create a fallback function that calls `withdraw` again before the first `withdraw` has finished executing. This allows the attacker to withdraw more ether than they should be able to, draining the contract of its funds.
+
+To fix this vulnerability, you should always make state changes before calling external contracts. For example, you could first reduce the balance and then send the ether:
+
+```
+function withdraw(uint _amount) public {
+  if(balances[msg.sender] >= _amount) {
+    balances[msg.sender] -= _amount;
+    if(!msg.sender.send(_amount)) {
+      balances[msg.sender] += _amount;
+    }
+  }
+}
+```
+
+This way, even if an attacker tries to call `withdraw` again in their fallback function, they won't be able to withdraw more than their balance.

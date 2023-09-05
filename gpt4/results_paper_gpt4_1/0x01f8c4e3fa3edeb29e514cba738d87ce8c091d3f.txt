@@ -1,0 +1,19 @@
+This contract has several vulnerabilities. Here they are:
+
+1. Reentrancy: The `Collect` function is vulnerable to reentrancy attacks. The contract interacts with an external contract (via the `call.value` function) before it resolves its state changes (`balances[msg.sender]-=_am;`). An attacker can create a malicious contract that, when called by the `call.value`, calls back into the `Collect` function, draining the contract's funds.
+
+2. Access Control: Anyone can call the `SetMinSum` and `SetLogFile` functions to change the `MinSum` and `Log` respectively because there are no restrictions on who can call these functions.
+
+3. Arithmetic Issues: The `+=` and `-=` operations in `Deposit` and `Collect` functions can potentially overflow or underflow. Solidity does not throw an error when this happens, which can lead to incorrect balances.
+
+4. Unchecked Return Values For Low Level Calls: The return value of `msg.sender.call.value(_am)()` in `Collect` function is not checked. If the call fails for any reason, the contract will not be aware of it, potentially leading to loss of funds.
+
+5. Denial of Service: If a malicious contract is set as the `LogFile`, it can throw an error in its fallback function, preventing all users from depositing funds into the `PERSONAL_BANK` contract.
+
+6. Bad Randomness: The contract does not have this vulnerability.
+
+7. Front-Running: The contract does not have this vulnerability.
+
+8. Time Manipulation: The contract does not have this vulnerability.
+
+9. Short Address Attack: The contract does not have this vulnerability.

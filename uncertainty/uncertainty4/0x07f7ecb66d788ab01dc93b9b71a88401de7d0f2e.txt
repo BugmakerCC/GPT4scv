@@ -1,0 +1,19 @@
+This smart contract has the following vulnerabilities:
+
+1. **Reentrancy**: This vulnerability is present in the `payout`, `donateToWhale`, and `loseWager` functions. These functions make external calls using `.call.value()()`, which can potentially allow the called contract to re-enter the original contract before the state variables have been updated, leading to issues such as multiple withdrawals.
+
+2. **Unchecked Return Values For Low Level Calls**: The contract uses low level calls in the `donateToWhale` and `loseWager` functions (i.e., `whale.call.value(amount)(bytes4(keccak256("donate()")));`). The return values of these calls are not checked, which could lead to failed calls going unnoticed.
+
+3. **Access Control**: The `onlyOwner` modifier is used to restrict access to certain contract functions. However, the contract does not include a function to change the owner. If the owner's private key is lost or compromised, the contract could be left in an unusable state.
+
+4. **Arithmetic Issues (Integer Overflow and Underflow)**: The contract does not use SafeMath or any other form of protection against integer overflow or underflow. This could lead to issues in functions like `play`, where mathematical operations are performed.
+
+5. **Bad Randomness**: The contract uses `keccak256(abi.encodePacked(blockhash(blockNumber),  msg.sender))%difficulty +1;` for generating a random number. This could be predictable and manipulated by miners.
+
+6. **Denial of Service (DoS)**: If the `whale` address is a contract that always fails, it could cause the `donateToWhale` and `loseWager` functions to fail, causing a denial of service.
+
+7. **Time manipulation**: The contract uses `block.number` to check the time. Miners have some control over this value, which can potentially be manipulated.
+
+8. **Short Address Attack**: There are no protections against a short address attack. If a malformed address is used, Solidity will silently correct it, potentially leading to loss of funds.
+
+9. **Front-Running**: Since the winning number is determined by the blockhash and sender address, a potential attacker can front-run a transaction and manipulate the outcome.

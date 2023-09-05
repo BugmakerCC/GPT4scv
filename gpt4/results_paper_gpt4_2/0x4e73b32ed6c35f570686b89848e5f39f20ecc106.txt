@@ -1,0 +1,17 @@
+1. Reentrancy: The function `Collect` is susceptible to a reentrancy attack as it uses a low level `call` function to send Ether and updates the balance after sending the Ether. An attacker can create a fallback function on their contract that calls `Collect` again, leading to multiple withdrawals.
+
+2. Access Control: The functions `SetMinSum`, `SetLogFile` and `Initialized` are public and don't have any checks on who can call them. This could lead to unauthorized changes to the contract state.
+
+3. Arithmetic Issues: The `Deposit` function allows for potential integer overflow. There is no check to prevent `balances[msg.sender] += msg.value` from exceeding the max uint256 value.
+
+4. Unchecked Return Values For Low-Level Calls: The low level `call` function in `Collect` doesn't check the return value. This could lead to funds being lost if the `call` fails.
+
+5. Denial of Service: If an attacker's contract has a fallback function that always throws, the `Collect` function would always fail when trying to send to that address, locking their funds in the contract.
+
+6. Bad Randomness: There is no use of randomness in this contract, so this vulnerability is not present.
+
+7. Front-Running: There is no use of transaction ordering or time-checks in this contract, so this vulnerability is not present.
+
+8. Time Manipulation: The `LogFile` contract uses `now` (alias for `block.timestamp`) in `AddMessage`. This could lead to minor manipulation as miners have some control over this value.
+
+9. Short Address Attack: This contract does not take input data from users that could be manipulated, so this vulnerability is not present.

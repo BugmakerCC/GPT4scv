@@ -1,0 +1,26 @@
+Upon examining the provided smart contract, I have identified that it is vulnerable to the Reentrancy attack. This vulnerability occurs when the contract's code can be re-entered multiple times before the previous call completes, allowing an attacker to drain the contract's funds.
+
+In the `withdrawBalance` function, the contract transfers the amount specified in `amountToWithdraw` to the `msg.sender` using `msg.sender.call.value(amountToWithdraw)`. However, this transfer is made before updating the `userBalances[msg.sender]` to 0.
+
+An attacker can exploit this vulnerability by creating a malicious contract that calls the `withdrawBalance` function repeatedly before the `userBalances[msg.sender]` is set to 0. This way, the attacker can drain the contract's balance multiple times.
+
+To fix this vulnerability, the `userBalances[msg.sender]` should be set to 0 before the transfer of funds to prevent re-entry attacks. The modified code is as follows:
+
+```solidity
+pragma solidity ^0.5.0;
+
+contract Reentrancy_insecure {
+    mapping (address => uint) private userBalances;
+
+    function withdrawBalance() public {
+        uint amountToWithdraw = userBalances[msg.sender];
+
+        userBalances[msg.sender] = 0; // Set user balance to 0 before transfer
+        
+        (bool success, ) = msg.sender.call.value(amountToWithdraw)("");
+        require(success);
+    }
+}
+```
+
+By updating the contract in this way, the vulnerability to reentrancy attacks is mitigated.

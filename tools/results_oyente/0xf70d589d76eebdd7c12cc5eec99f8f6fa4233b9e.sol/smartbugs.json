@@ -1,0 +1,50 @@
+{
+    "docker": {
+        "command": null,
+        "detach": true,
+        "entrypoint": "'/sb/bin/do_solidity.sh' '/sb/0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.sol' '0' '/sb/bin' '0'",
+        "image": "smartbugs/oyente:480e725",
+        "user": 0,
+        "volumes": {
+            "C:\\Users\\10976\\AppData\\Local\\Temp\\tmp8gchg93j": {
+                "bind": "/sb",
+                "mode": "rw"
+            }
+        }
+    },
+    "filename": "all\\0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.sol",
+    "platform": {
+        "cpu": "12th Gen Intel(R) Core(TM) i7-12700H",
+        "python": "3.11.1.final.0 (64 bit)",
+        "release": "10",
+        "smartbugs": "2.0.7",
+        "system": "Windows",
+        "version": "10.0.22621"
+    },
+    "result": {
+        "duration": 3.3701531887054443,
+        "exit_code": 1,
+        "logs": "result.log",
+        "output": null,
+        "start": 1679481182.8604891
+    },
+    "runid": "20230322_1031",
+    "solc": "0.4.26",
+    "tool": {
+        "bin": "scripts",
+        "command": null,
+        "cpu_quota": null,
+        "entrypoint": "'$BIN/do_solidity.sh' '$FILENAME' '$TIMEOUT' '$BIN' '$MAIN'",
+        "id": "oyente",
+        "image": "smartbugs/oyente:480e725",
+        "info": "Oyente runs on symbolic execution, determines which inputs cause which program branches to execute, to find potential security vulnerabilities. Oyente works directly with EVM bytecode without access high level representation and does not provide soundness nor completeness.",
+        "mem_limit": null,
+        "mode": "solidity",
+        "name": "Oyente",
+        "origin": "https://github.com/smartbugs/oyente",
+        "output": null,
+        "parser": "parser.py",
+        "solc": true,
+        "version": "#480e725"
+    }
+}

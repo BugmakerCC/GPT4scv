@@ -1,0 +1,23 @@
+The smart contract provided has a reentrancy vulnerability. This vulnerability is present in the "withdrawBalance()" function of the contract. 
+
+Here's how it works:
+
+1. When "withdrawBalance()" is called, it sends the user's balance back to them using "msg.sender.call.value(userBalance[msg.sender])()".
+
+2. If "msg.sender" is a contract, it will trigger the fallback function of the contract.
+
+3. If the fallback function of the malicious contract is designed to call "withdrawBalance()" again before the first call to "withdrawBalance()" completed, it will cause the user's balance to be withdrawn multiple times. This is because the user's balance is not set to 0 until after the ether has been sent.
+
+The vulnerability can be resolved by changing the order of operations in "withdrawBalance()". Instead of sending the ether before setting the balance to 0, the balance should be set to 0 first. This prevents the recursive call from withdrawing more than the intended amount:
+
+```
+function withdrawBalance(){
+    uint amount = userBalance[msg.sender];
+    userBalance[msg.sender] = 0;
+    if( ! (msg.sender.call.value(amount)() ) ){
+        throw;
+    }
+}
+```
+
+This contract also has a potential Denial of Service vulnerability, because a malicious contract could always throw an exception when it receives ether, causing "withdrawBalance()" to also throw an exception. This would make it impossible for other users to withdraw their balance.

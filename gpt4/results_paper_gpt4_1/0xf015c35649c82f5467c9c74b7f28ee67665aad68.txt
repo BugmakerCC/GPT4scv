@@ -1,0 +1,13 @@
+This smart contract has several vulnerabilities:
+
+1. **Reentrancy**: The function `Collect(uint _am)` contains a reentrancy vulnerability. The contract sends Ether with `msg.sender.call.value(_am)()` before it reduces the balance of the caller’s account. This allows a recursive call to happen before the state is updated. An attacker could drain the contract by continuously calling this function recursively.
+
+2. **Unchecked Return Values For Low Level Calls**: The contract uses a low-level call `msg.sender.call.value(_am)()`. This could potentially fail silently if the call encounters an error or if the fallback function of the recipient runs out of gas. However, the contract does not check the return value of this call.
+
+3. **Arithmetic Issues**: The contract performs an arithmetic operation `acc.balance-=_am;` without checking for underflows. If `_am` is greater than `acc.balance`, this operation would underflow leading to a very large balance for the account.
+
+4. **Access Control**: The function `AddMessage(address _adr,uint _val,string _data)` in the `Log` contract is public, which means that any account can call it. This could lead to incorrect or malicious log messages.
+
+5. **Denial of Service**: The contract relies on `msg.sender.call.value(_am)()` to transfer funds. If the recipient of these funds is a contract that has a fallback function which uses a lot of gas or fails for any reason, then the `Collect(uint _am)` function would be halted, potentially rendering the contract unusable.
+
+The other vulnerabilities mentioned (Bad Randomness, Front-Running, Time manipulation, Short Address Attack) don't seem to apply to this contract.

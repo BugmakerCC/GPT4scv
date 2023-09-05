@@ -1,0 +1,21 @@
+This contract suffers from a Reentrancy vulnerability. This is a classic example of a reentrancy attack, which is also known as the recursive call vulnerability.
+
+The problematic function is `withdrawBalance()`. This function first sends Ether to a calling contract and then sets the balance of the calling contract to zero in the `EtherBank` contract. 
+
+If the calling contract has a fallback function, this function could call `withdrawBalance()` again before the first call of `withdrawBalance()` has a chance to finish. This is possible because state changes (in this case, `userBalances[msg.sender] = 0`) are not made until all the external calls are completed. This allows the calling contract to drain more Ether than it should be allowed to.
+
+Here's how it can be fixed:
+
+```
+function withdrawBalance() {  
+    uint amountToWithdraw = userBalances[msg.sender];
+    userBalances[msg.sender] = 0;
+    if (!(msg.sender.call.value(amountToWithdraw)())) { 
+        throw; 
+    }
+}
+```
+
+By setting `userBalances[msg.sender] = 0` before the call, we ensure that even if a reentrancy attack happens, the attacker cannot withdraw more than they should be able to. This is because when the recursive call happens, `userBalances[msg.sender]` will already be 0 and thus the call to withdraw will fail.
+
+Also, please note that the use of `throw` is now deprecated in Solidity and the `require` or `revert` functions should be used to handle failed conditions.

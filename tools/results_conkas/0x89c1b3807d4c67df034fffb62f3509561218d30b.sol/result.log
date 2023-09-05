@@ -1,0 +1,20 @@
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+Analysing /sb/0x89c1b3807d4c67df034fffb62f3509561218d30b.sol:TownCrier...
+Vulnerability: Reentrancy. Maybe in function: withdraw(). PC: 0xa3d. Line number: 94.
+Vulnerability: Unchecked Low Level Call. Maybe in function: deliver(uint64,bytes32,uint64,bytes32). PC: 0xc1d. Line number: 162.
+Vulnerability: Integer Overflow. Maybe in function: requests(uint256). PC: 0x1adc. Line number: 41.
+If a = 26959946667150639794667015087019630673637144422540572481103610249216
+and b = 28269553036454149273332760011886696253239742350009903329945699220681916416
+Vulnerability: Reentrancy. Maybe in function: deliver(uint64,bytes32,uint64,bytes32). PC: 0xc1d. Line number: 162.
+Vulnerability: Integer Overflow. Maybe in function: request(uint8,address,bytes4,uint256,bytes32[]). PC: 0x199d. Line number: 137.
+If a = 32
+and b = 14474011154664524427946373126085988481658748083205070504932198000989141204993
+Vulnerability: Integer Overflow. Maybe in function: request(uint8,address,bytes4,uint256,bytes32[]). PC: 0x16eb. Line number: 129.
+If a = 32
+and b = 7237005577332262213973186563042994240829457118352271809708155488435838124032
+Vulnerability: Unchecked Low Level Call. Maybe in function: deliver(uint64,bytes32,uint64,bytes32). PC: 0xd6b. Line number: 175.
+Vulnerability: Integer Overflow. Maybe in function: request(uint8,address,bytes4,uint256,bytes32[]). PC: 0x3c0. Line number: 100.
+If a = 128
+and b = 3618502788666131106986593281521497120414687020801267626233049500247285301243
+Vulnerability: Transaction Ordering Dependence. Maybe in function: deliver(uint64,bytes32,uint64,bytes32). PC: 0xc1d. Line number: 162.

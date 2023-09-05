@@ -1,0 +1,35 @@
+Upon reviewing the provided smart contract, I have identified the vulnerability known as Reentrancy. This vulnerability occurs when a contract calls an external contract that has a fallback function, and the external contract calls back into the original contract before the first call has completed.
+
+In this contract, the `withdraw` function is susceptible to reentrancy attacks. Here's the vulnerable code:
+
+```solidity
+function withdraw(uint _amount) public {
+    if(balances[msg.sender] >= _amount) {
+      
+      if(msg.sender.call.value(_amount)()) {
+        _amount;
+      }
+      balances[msg.sender] -= _amount;
+    }
+}
+```
+
+The `withdraw` function checks if the balance of the `msg.sender` is greater than or equal to the requested withdrawal amount `_amount`. If the condition is true, it calls the `call.value` function to transfer the requested amount of Ether to the `msg.sender`. However, this is where the vulnerability lies.
+
+The `call.value` function can execute any arbitrary code in the receiving contract, including calling back into the `withdraw` function before the balance is updated. This allows an attacker to repeatedly call the `withdraw` function, draining the contract's balance and potentially causing it to run out of gas.
+
+To fix this vulnerability, you should update the contract's state before executing the external call. Here's an example of a modified `withdraw` function that mitigates the reentrancy vulnerability:
+
+```solidity
+function withdraw(uint _amount) public {
+    if(balances[msg.sender] >= _amount) {
+      balances[msg.sender] -= _amount;
+      
+      if(msg.sender.call.value(_amount)()) {
+        // Handle successful withdrawal
+      }
+    }
+}
+```
+
+By updating the balance of the `msg.sender` before making the external call, you ensure that the contract's state is consistent and prevent reentrancy attacks.

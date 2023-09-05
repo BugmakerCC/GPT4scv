@@ -1,0 +1,42 @@
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Analysis started at: 2023-08-14 02:57:19 AM
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Version constraints: ['^0.4.24']
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | solc version: v0.4.24
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Callgraph generation started!
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Callgraph generation finished!
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Value Range Analysis started
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Generating return summary for constructor
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Return summary generated for constructor
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Range graph generated
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Processed function constructor
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Generating return summary for deposit
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Return summary generated for deposit
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Range graph generated
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Processed function deposit
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Generating return summary for withdraw
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Return summary generated for withdraw
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Range graph generated
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Processed function withdraw
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Generating return summary for migrateTo
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Return summary generated for migrateTo
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Processed function migrateTo
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Value Range Analysis took 0.002023 seconds
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Value Range Analysis finished
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Dependency detection started!
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | TOD dependency detected in file wallet_04_confused_sign.sol in contract Wallet in by composing functions withdraw and deposit
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | TOD dependency detected in file wallet_04_confused_sign.sol in contract Wallet in by composing functions withdraw and withdraw
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Dependency detection finished!
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Static Analysis took 0.282508 seconds
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Dependency exists
+[INFO] | 2023-08-14 02:57:19 AM | analyzer.wallet_04_confused_sign | Invoking symbolic executor!
+[INFO] | 2023-08-14 02:57:20 AM | analyzer.wallet_04_confused_sign | Symbolic execution took 0.741713 seconds
+[INFO] | 2023-08-14 02:57:20 AM | analyzer.wallet_04_confused_sign | Symbolic execution finished!
+[INFO] | 2023-08-14 02:57:20 AM | analyzer.wallet_04_confused_sign | Analysis finished!
+[INFO] | 2023-08-14 02:57:20 AM | analyzer.wallet_04_confused_sign | Analysis took 1.024681 seconds
+[INFO] | 2023-08-14 02:57:20 AM | analyzer.wallet_04_confused_sign | Analysis finished at: 2023-08-14 02:57:20 AM

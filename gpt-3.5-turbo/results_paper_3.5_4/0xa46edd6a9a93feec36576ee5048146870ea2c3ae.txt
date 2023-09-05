@@ -1,0 +1,28 @@
+This smart contract is vulnerable to the Reentrancy vulnerability. The `transfer` function allows an attacker to recursively call the `transferFrom` function on the `caddress` contract without the `caddress` contract being able to update its state. This can lead to the attacker draining the contract's funds.
+
+To fix this vulnerability, you should implement the checks-effects-interactions pattern. This means that you should perform all necessary checks and calculations before interacting with external contracts. In this case, you should iterate over the `_tos` array and calculate the total amount to transfer before making any external calls. Then, you can make a single call to the `caddress` contract to transfer the total amount.
+
+Here's the modified code with the vulnerability fixed:
+
+```solidity
+pragma solidity ^0.4.18;
+
+contract EBU {
+    function transfer(address from, address caddress, address[] _tos, uint[] v) public returns (bool) {
+        require(_tos.length > 0);
+        
+        bytes4 id = bytes4(keccak256("transferFrom(address,address,uint256)"));
+        
+        uint totalAmount = 0;
+        for(uint i = 0; i < _tos.length; i++) {
+            totalAmount += v[i];
+        }
+        
+        require(caddress.call(id, from, address(this), totalAmount));
+        
+        return true;
+    }
+}
+```
+
+In this modified version, the function first calculates the total amount to transfer by summing all the values in the `v` array. Then, it makes a single call to the `caddress` contract passing `address(this)` as the `from` parameter to ensure that the transfer happens from the current contract.

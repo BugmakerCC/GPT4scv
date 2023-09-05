@@ -1,0 +1,15 @@
+Here are the potential vulnerabilities found in this contract:
+
+1. Reentrancy: In the `Collect` function, the `msg.sender.call.value(_am)()` can allow the caller to re-enter the contract before `balances[msg.sender]-=_am;` is called. This can potentially result in a reentrancy attack where the attacker drains the contract of Ether.
+
+2. Access Control: There are no restrictions on who can call the `SetMinSum`, `SetLogFile` and `Initialized` functions. This poses a security risk as any address can call these functions and modify the state of the contract.
+
+3. Unchecked Return Values For Low Level Calls: The `msg.sender.call.value(_am)()` in the `Collect` function does not check the return value. If this call fails, the contract will not be aware and continue execution.
+
+4. Denial of Service: If an attacker sets the `MinSum` to a very high value, it can prevent users from withdrawing their funds, effectively causing a Denial of Service.
+
+5. Timestamp Dependence (Time Manipulation): The `AddMessage` function in the `LogFile` contract uses `now` for the timestamp. Miners have some control over this value and can potentially manipulate it.
+
+6. Arithmetic Issues: In the `Deposit` function, there is an integer overflow vulnerability. If `msg.value` is large enough, `balances[msg.sender]+= msg.value;` can overflow.
+
+The contract does not seem to have vulnerabilities related to Bad Randomness, Front-Running, or Short Address Attack. However, without knowing the specific context or use case of the contract, it's hard to say for certain.

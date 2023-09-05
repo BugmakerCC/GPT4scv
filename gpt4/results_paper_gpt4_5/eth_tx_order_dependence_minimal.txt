@@ -1,0 +1,21 @@
+This smart contract has several vulnerabilities:
+
+1. Reentrancy: The `setReward` function transfers Ether to the `owner` before it sets the `reward` to `msg.value`. If the `owner` is a smart contract, it could call `setReward` again before `reward` is set to `msg.value`, causing a reentrancy attack. This could be mitigated by using the Checks-Effects-Interactions pattern, where state changes are done before transfers.
+
+2. Access Control: Only the `owner` can call `setReward`, but anyone can call `claimReward` if `claimed` is false and the `submission` value is less than 10. This could allow an attacker to claim the reward before the intended recipient.
+
+3. Arithmetic Issues: There are no arithmetic operations, so integer overflow and underflow do not apply.
+
+4. Unchecked Return Values For Low Level Calls: The `transfer` function, which is a low level call, does not check the return value. However, `transfer` inherently throws an exception if the call fails, so this issue does not apply.
+
+5. Denial of Service: If the `owner` is a contract and it throws an exception in its fallback function, `setReward` will fail, making the contract unavailable. This issue could be mitigated by using the withdrawal pattern.
+
+6. Bad Randomness: The contract does not use randomness, so this issue does not apply.
+
+7. Front-Running: The `claimReward` function is vulnerable to front-running. An attacker could watch the transaction pool and submit a transaction with a higher gas price to claim the reward before the intended recipient.
+
+8. Time manipulation: The contract does not depend on timestamps, so this issue does not apply.
+
+9. Short Address Attack: Since the contract does not take address inputs, it is not vulnerable to short address attacks.
+  
+Please note that this contract is also susceptible to being self-destructed since it does not have a payable fallback function. If it receives Ether via a `send` or `transfer` function call, it will be destroyed.

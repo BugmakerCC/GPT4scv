@@ -1,0 +1,9 @@
+The smart contract provided here is vulnerable to an Arithmetic Issue - specifically, integer underflow.
+
+Explanation:
+In smart contracts, Solidity does not throw an error on arithmetic underflow or overflow. This contract contains a mapping of uint256 integers and exposes a public function called init() that accepts two parameters (k and v) and decreases the value of mapping at index k by v. If the value of map[k] is less than v, this will result in an integer underflow, which can be manipulated by an attacker.
+
+The underflow occurs when an unsigned integer is subtracted below its minimum (which is zero). In this case, the result is not negative, as expected in normal arithmetic, but rather it wraps around to the maximum value that type can hold (for uint256, it's about 1.15*10^77).
+
+Suggested Fix:
+To prevent this, it would be advisable to use SafeMath library for arithmetic operations. The SafeMath library is part of the OpenZeppelin contracts, which includes safety checks to prevent overflow and underflow issues. Replace the operation "map[k] -= v;" with "map[k] = SafeMath.sub(map[k], v);" ensuring to import the SafeMath library at the beginning of your contract.

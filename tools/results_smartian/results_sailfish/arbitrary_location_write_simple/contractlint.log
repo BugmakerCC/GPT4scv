@@ -1,0 +1,46 @@
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Analysis started at: 2023-08-14 02:56:13 AM
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Version constraints: ['^0.4.25']
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | solc version: v0.4.25
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Callgraph generation started!
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Callgraph generation finished!
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Value Range Analysis started
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Generating return summary for constructor
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Return summary generated for constructor
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Range graph generated
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Processed function constructor
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Generating return summary for fallback
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Return summary generated for fallback
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Processed function fallback
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Generating return summary for PushBonusCode
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Return summary generated for PushBonusCode
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Range graph generated
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Processed function PushBonusCode
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Generating return summary for PopBonusCode
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Return summary generated for PopBonusCode
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Range graph generated
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Processed function PopBonusCode
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Generating return summary for UpdateBonusCodeAt
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Return summary generated for UpdateBonusCodeAt
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Range graph generated
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Processed function UpdateBonusCodeAt
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Generating return summary for Destroy
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Return summary generated for Destroy
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Processed function Destroy
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Value Range Analysis took 0.001938 seconds
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Value Range Analysis finished
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Dependency detection started!
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Dependency detection finished!
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Static Analysis took 0.226734 seconds
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Dependency does not exist
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Symbolic execution is not needed!
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Analysis finished!
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Analysis took 0.226955 seconds
+[INFO] | 2023-08-14 02:56:13 AM | analyzer.arbitrary_location_write_simple | Analysis finished at: 2023-08-14 02:56:13 AM

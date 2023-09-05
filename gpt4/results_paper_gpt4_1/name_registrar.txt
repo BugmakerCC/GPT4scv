@@ -1,0 +1,22 @@
+The smart contract provided has a vulnerability related to the Access Control. It is evident in the function `register()`. In the function, the `require(unlocked);` is placed at the end. This statement is supposed to ensure that the contract is unlocked before any registration can occur. But in the current setup, the NameRecord is allowed to be registered even when the contract is locked, which is a serious security issue. This happens because the `require()` statement is checked after the registration process is already carried out.
+
+The ideal way to avoid this vulnerability would be to ensure that the unlock condition (`require(unlocked);`) is checked prior to any other operations in the `register()` function. This way, the function will throw an error and halt if the contract is locked, thus preventing any further process.
+
+Here's the corrected function:
+
+```solidity
+function register(bytes32 _name, address _mappedAddress) public {
+    require(unlocked); // only allow registrations if contract is unlocked
+
+    // set up the new NameRecord
+    // <yes> <report> OTHER - uninitialized storage
+    NameRecord newRecord;
+    newRecord.name = _name;
+    newRecord.mappedAddress = _mappedAddress;
+
+    resolve[_name] = _mappedAddress;
+    registeredNameRecord[msg.sender] = newRecord;
+}
+```
+
+I do not see vulnerabilities related to Reentrancy, Arithmetic Issues, Unchecked Return Values For Low Level Calls, Denial of Service, Bad Randomness, Front-Running, Time manipulation, or Short Address Attack in this smart contract.

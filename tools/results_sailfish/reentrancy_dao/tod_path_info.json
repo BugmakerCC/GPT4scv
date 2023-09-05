@@ -1,0 +1,88 @@
+{
+    "tod_symex_path_1.json": {
+        "file_name": "",
+        "from_function": "withdrawAll",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 90\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 92\nCall context: \nTrue\nbalance = balance - oCredit\nTMP_2(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:oCredit \""
+        ],
+        "executable_instructions": 27,
+        "state_variable": "credit",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_2.json": {
+        "file_name": "",
+        "from_function": "withdrawAll",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 97\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 99\nCall context: \nTrue\nbalance = balance - oCredit\nTMP_2(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:oCredit \""
+        ],
+        "executable_instructions": 27,
+        "state_variable": "credit",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_3.json": {
+        "file_name": "",
+        "from_function": "withdrawAll",
+        "to_function": "withdrawAll",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 104\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 112\nCall context: \nTrue\nbalance = balance - oCredit\nTMP_2(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:oCredit \""
+        ],
+        "executable_instructions": 46,
+        "state_variable": "credit",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_4.json": {
+        "file_name": "",
+        "from_function": "withdrawAll",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 117\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 119\nCall context: \nTrue\nbalance = balance - oCredit\nTMP_2(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:oCredit \""
+        ],
+        "executable_instructions": 27,
+        "state_variable": "credit",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_5.json": {
+        "file_name": "",
+        "from_function": "withdrawAll",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 124\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 126\nCall context: \nTrue\nbalance = balance - oCredit\nTMP_2(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:oCredit \""
+        ],
+        "executable_instructions": 27,
+        "state_variable": "credit",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_6.json": {
+        "file_name": "",
+        "from_function": "withdrawAll",
+        "to_function": "deposit",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 133\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 135\nCall context: \nTrue\nbalance = balance - oCredit\nTMP_2(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:oCredit \""
+        ],
+        "executable_instructions": 27,
+        "state_variable": "credit",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    }
+}

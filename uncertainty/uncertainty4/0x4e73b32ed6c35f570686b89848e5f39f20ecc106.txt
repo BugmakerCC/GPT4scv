@@ -1,0 +1,19 @@
+The smart contract has several vulnerabilities:
+
+1. Reentrancy: The function `Collect(uint _am)` is vulnerable to Reentrancy attack because it makes a call to an external contract (with `msg.sender.call.value(_am)()`) before it has finished processing. This means that the external contract could call back into `Collect` before `balances[msg.sender] -= _am;` has been executed.
+
+2. Access Control: The function `SetMinSum(uint _val)`, `SetLogFile(address _log)`, and `Initialized()` can be called by anyone because there is no access control in place to restrict who can call these functions. This means that a malicious actor could set the `MinSum` to an arbitrary value, change the log file address or initialize the contract at will.
+
+3. Unchecked Return Values For Low Level Calls: The return value of `msg.sender.call.value(_am)()` in the `Collect(uint _am)` function is not checked. This means that if the call fails for any reason (for example, the recipient contract throws an exception), the failure will be silently ignored.
+
+4. Arithmetic Issues: Although no clear arithmetic issues such as integer overflow or underflow are visible in the provided contract, it is still good practice to use SafeMath library for arithmetic operations to prevent such issues.
+
+5. Denial of Service: While not explicitly evident from the code, the contract might be vulnerable to a Denial of Service attack if a malicious actor can manipulate the state of the contract (e.g., by changing the `MinSum` or the log file address) to make it unusable for others.
+
+6. Bad Randomness: Not applicable, as no randomness is used in the contract.
+
+7. Front-Running: Not applicable, as there is no dependency on transaction ordering.
+
+8. Time Manipulation: Not applicable, as there is no dependency on block timestamp.
+
+9. Short Address Attack: Not applicable, as function parameters are not directly used for address access.

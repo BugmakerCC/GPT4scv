@@ -1,0 +1,21 @@
+This contract has several vulnerabilities:
+
+1. Reentrancy: While there isn't a direct reentrancy vulnerability, it's important to note that the contract makes external calls to untrusted contracts, which could make it susceptible to reentrancy attacks if not handled properly.
+
+2. Access Control: There is an issue with the way access control is handled. The 'onlyowner' modifier is used to restrict some functions to owners only, but any address can become an owner if the 'addOwner' function is called by an existing owner.
+
+3. Arithmetic Issues: The contract does contain some arithmetic operations but there are no checks for overflows or underflows. This could lead to unexpected behavior.
+
+4. Unchecked Return Values for Low-Level Calls: The contract uses low-level call functions without checking their return value. This could lead to unexpected behavior if the called contract throws an exception.
+
+5. Denial of Service: The 'changeOwner' and 'removeOwner' functions change the state of the contract without checking if the provided addresses are valid or not. This could potentially lead to a denial of service if an attacker is able to remove all owners.
+
+6. Bad Randomness: There is no randomness used in this contract, therefore no bad randomness vulnerability detected.
+
+7. Front-Running: There is potential for front-running attacks as state-changing functions like 'addOwner', 'removeOwner', 'changeOwner', etc. do not use any mechanism to prevent these attacks.
+
+8. Time Manipulation: The contract uses the 'now' keyword for time-keeping, which can be manipulated by miners to a certain degree. However, in this case, it does not seem to be a significant issue as it is only used for day-keeping.
+
+9. Short Address Attack: Since Ethereum does not check the length of the input, if the address is short, it will be filled with zeros. This contract does not seem to have safeguards against this attack. 
+
+10. In addition to the above vulnerabilities, this contract also contains the well-known "Parity Multisig Bug #2". The `initWallet` function can be called by any external actor, effectively changing the ownership of the wallet contract. This has led to millions of dollars being locked up in the past.

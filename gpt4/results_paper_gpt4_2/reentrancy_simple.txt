@@ -1,0 +1,19 @@
+This smart contract has a Reentrancy vulnerability. 
+
+Reentrancy attacks can occur when you create a function that makes an external call to another untrusted contract before it resolves any effects. If the attacker can control the external contract, they can make recursive calls back into the calling function, potentially leading to unexpected behavior.
+
+In the provided smart contract, the `withdrawBalance` function sends ether to the `msg.sender` before setting the sender's balance to 0. If `msg.sender` is a malicious contract, it can call `withdrawBalance` again before the original call is finished. This can cause the user to withdraw more ether than they originally had in `userBalance`.
+
+To fix this vulnerability, you should always make sure to resolve your contract's state before calling external contracts. In this case, you should set `userBalance[msg.sender]` to 0 before sending the ether. Here is what the fixed function looks like:
+
+```
+function withdrawBalance(){
+     uint amountToWithdraw = userBalance[msg.sender];
+     userBalance[msg.sender] = 0;
+     if( ! (msg.sender.call.value(amountToWithdraw)() ) ){
+         throw;
+     }
+ }
+```
+
+This way, even if the recipient is a contract and triggers a fallback function that calls `withdrawBalance` again, their balance has already been set to 0, so they can't withdraw any more ether.

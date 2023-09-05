@@ -1,0 +1,13 @@
+The contract seems to have the following vulnerabilities:
+
+1. Reentrancy: The contract is potentially subject to the reentrancy attack as it calls an unknown contract (caddress) which could call back into the airPort contract before the first function call is finished. This attack could be mitigated by following the Checks-Effects-Interactions pattern.
+
+2. Unchecked Low Level Calls: The contract uses a low level call (caddress.call(id,from,_tos[i],v);) without checking the return value. If the call fails, it will silently fail and the contract will continue its execution. This could be mitigated by checking the return value of call and acting accordingly. 
+
+3. Front-Running: The transfer function is public and takes an array of addresses to transfer funds. It could be possible for an attacker to view the pending transactions and front-run the contract by placing a transaction with a higher gas price.
+
+4. Access Control: The function transfer does not have any access control mechanism. Anybody can call this function and execute the code, which can lead to malicious activity. 
+
+This contract does not seem to contain the other vulnerabilities mentioned (Arithmetic Issues, Denial of Service, Bad Randomness, Time manipulation, Short Address Attack). However, without a more thorough analysis and more context (like how the contract is used), it's hard to be certain. 
+
+Remember, smart contracts should always be audited by a professional before deployed on the mainnet.

@@ -1,0 +1,30 @@
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Analysis started at: 2023-08-14 02:58:33 AM
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Version constraints: ['^0.4.15']
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | solc version: v0.4.15
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Callgraph generation started!
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Callgraph generation finished!
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Value Range Analysis started
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Generating return summary for Unprotected
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Return summary generated for Unprotected
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Range graph generated
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Processed function Unprotected
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Generating return summary for changeOwner
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Return summary generated for changeOwner
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Range graph generated
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Processed function changeOwner
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Value Range Analysis took 0.000525 seconds
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Value Range Analysis finished
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Dependency detection started!
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Dependency detection finished!
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Static Analysis took 0.114914 seconds
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Dependency does not exist
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Symbolic execution is not needed!
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Analysis finished!
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Analysis took 0.115062 seconds
+[INFO] | 2023-08-14 02:58:33 AM | analyzer.unprotected0 | Analysis finished at: 2023-08-14 02:58:33 AM

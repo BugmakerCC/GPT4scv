@@ -1,0 +1,19 @@
+There are several potential vulnerabilities present in this smart contract. 
+
+1. Reentrancy: The `redeem` and `withdraw` functions are susceptible to a reentrancy attack because they call the `transfer` function before updating the state of the contract. An attacker could potentially re-enter the function before the state is updated and drain the contract of its funds.
+
+2. Access Control: The `withdraw` and `Command` functions require the sender to be the owner, but the owner can be changed in the `withdraw` function. This could allow an attacker to gain ownership of the contract and execute arbitrary commands.
+
+3. Unchecked Return Values For Low Level Calls: The `Command` function uses a low-level call without checking the return value. If the call were to fail, the contract would not be aware.
+
+4. Bad Randomness: Not present in this contract.
+
+5. Front-Running: Not present in this contract.
+
+6. Time Manipulation: Not present in this contract.
+
+7. Short Address Attack: Not present in this contract.
+
+8. Arithmetic Issues: Not present in this contract.
+
+9. Denial of Service: The `redeem` function allows anyone who sends enough ether to drain the contract of its funds. If this function is invoked multiple times in quick succession, it could potentially drain the contract and prevent other users from interacting with it.

@@ -1,0 +1,21 @@
+This contract has several potential vulnerabilities:
+
+1. **Reentrancy**: The `withdrawEther` function is vulnerable to a reentrancy attack because it calls `transfer` before any state changes have happened. An attacker could recursively call the `withdrawEther` function to drain the contract of its Ether.
+
+2. **Access Control**: There is no access control on the `withdrawTokens` and `withdrawEther` functions. This means that any address could call these functions and potentially steal tokens or Ether from the contract.
+
+3. **Unchecked Return Values For Low Level Calls**: The `addr.call.value(0 wei)()` in `getTokens` function is a low level call and its return value is not checked, which could lead to unexpected behavior.
+
+4. **Denial of Service**: If the `getTokens` function is called with a large `num` value, it could potentially consume all the gas in a block, rendering the contract inoperable.
+
+5. **Arithmetic Issues**: There doesn't seem to be any problems related to integer overflow or underflow in this contract.
+
+6. **Bad Randomness**: This contract doesn't generate any random numbers, so it's not vulnerable to bad randomness.
+
+7. **Front-Running**: There doesn't seem to be any front-running vulnerabilities in this contract as it doesn't seem to depend on transaction ordering.
+
+8. **Time manipulation**: This contract doesn't use any timestamps, so it's not vulnerable to time manipulation.
+
+9. **Short Address Attack**: The contract does not sanitize the length of the input address, leaving it vulnerable to a potential short address attack. 
+
+Please note that this is a preliminary audit and a more thorough inspection is recommended. Always consult with a professional auditor for a comprehensive security evaluation.

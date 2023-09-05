@@ -1,0 +1,3 @@
+[INFO] | 2023-08-14 02:58:51 AM | analyzer.etherbank | Analysis started at: 2023-08-14 02:58:51 AM
+[INFO] | 2023-08-14 02:58:51 AM | analyzer.etherbank | Version constraints: ['^0.4.0']
+[INFO] | 2023-08-14 02:58:51 AM | analyzer.etherbank | solc version: v0.4.0

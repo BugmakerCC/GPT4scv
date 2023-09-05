@@ -1,0 +1,19 @@
+The contract has the following vulnerabilities:
+
+1. Reentrancy: The `Collect` function is vulnerable to a reentrancy attack because it uses a low-level `.call.value` method without taking measures to prevent reentrancy. The `balances[msg.sender]-=_am;` should be placed before the `msg.sender.call.value(_am)()` to prevent the attack.
+
+2. Access Control: The contract does not implement any form of access control. Anyone can call the `SetMinSum`, `SetLogFile`, and `Initialized` functions. This could be mitigated by implementing a modifier that only allows a specific address (like the contract owner) to call these functions.
+
+3. Arithmetic Issues: If an attacker can cause an overflow or underflow of the balances mapping, they could potentially steal Ether. This can be mitigated by using SafeMath library for arithmetic operations.
+
+4. Unchecked Return Values: The `msg.sender.call.value(_am)()` in the `Collect` function does not check the return value. If the call fails for any reason, the contract's state would be incorrect.
+
+5. Denial of Service: If an attacker is able to force the `Collect` function to always fail (for example by causing the `call.value` to always fail by having a fallback function that always throws), they could lock up all of the funds in the contract.
+
+6. Bad Randomness: Not applicable in this contract.
+
+7. Front-Running: Not applicable in this contract.
+
+8. Time Manipulation: Not applicable in this contract.
+
+9. Short Address Attack: Not applicable in this contract.

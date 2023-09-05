@@ -1,0 +1,58 @@
+{
+    "0x7a8721a9d64c74da899424c1b52acbf58ddc9782.sol": [
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "CashOut",
+                "CashOut"
+            ],
+            "from_function": "CashOut",
+            "to_function": "CashOut",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 31\nFunction: CashOut\nNode: \nIF _am <= balances[msg.sender]\nIRS: \nCONDITION TMP_7\"",
+                        "\"BlockID: 18\nFunction: CashOut\nNode: \nEXPRESSION balances[msg.sender] -= _am\nIRS: \nREF_5 = REF_5 - _am\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "CashOut",
+                "Deposit"
+            ],
+            "First_function": "Deposit",
+            "Second_function": "CashOut",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 10\nFunction: Deposit\nNode: \nEXPRESSION balances[msg.sender] += msg.value\nIRS: \nREF_0 = REF_0 + msg.value\"",
+                        "\"BlockID: 14\nFunction: CashOut\nNode: \nIF _am <= balances[msg.sender]\nIRS: \nCONDITION TMP_7\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "CashOut",
+                "CashOut"
+            ],
+            "First_function": "CashOut",
+            "Second_function": "CashOut",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 43\nFunction: CashOut\nNode: \nEXPRESSION balances[msg.sender] -= _am\nIRS: \nREF_5 = REF_5 - _am\"",
+                        "\"BlockID: 14\nFunction: CashOut\nNode: \nIF _am <= balances[msg.sender]\nIRS: \nCONDITION TMP_7\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        }
+    ]
+}

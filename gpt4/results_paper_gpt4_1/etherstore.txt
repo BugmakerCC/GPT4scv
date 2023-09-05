@@ -1,0 +1,23 @@
+This smart contract contains a reentrancy vulnerability. The issue is in the `withdrawFunds` function where the state of `balances[msg.sender]` is updated after the call to `msg.sender.call.value(_weiToWithdraw)()`.
+
+This allows for a recursive call, as the state of the contract has not been updated at the time of the external call. An attacker can repeatedly call `withdrawFunds` before the balance is updated, effectively draining the contract of more Ether than they should be able to according to their balance.
+
+To fix this vulnerability, the state of `balances[msg.sender]` should be updated before making the external call:
+
+```solidity
+function withdrawFunds (uint256 _weiToWithdraw) public {
+    require(balances[msg.sender] >= _weiToWithdraw);
+    // limit the withdrawal
+    require(_weiToWithdraw <= withdrawalLimit);
+    // limit the time allowed to withdraw
+    require(now >= lastWithdrawTime[msg.sender] + 1 weeks);
+    
+    balances[msg.sender] -= _weiToWithdraw;
+    require(msg.sender.call.value(_weiToWithdraw)());
+    lastWithdrawTime[msg.sender] = now;
+}
+```
+
+Furthermore, using `call.value()` is risky and it's generally recommended to use the `transfer()` or `send()` functions as they limit the gas forwarded to the called contract, reducing the risk of reentrancy attacks.
+
+The contract doesn't seem to have other aforementioned vulnerabilities such as access control issues, arithmetic issues, unchecked return values for low level calls, denial of service, bad randomness, front-running, time manipulation, and short address attack.

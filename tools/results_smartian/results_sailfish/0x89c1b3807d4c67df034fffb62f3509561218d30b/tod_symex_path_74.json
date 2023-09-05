@@ -1,0 +1,1639 @@
+{
+    "file": "0x89c1b3807d4c67df034fffb62f3509561218d30b.sol",
+    "global_structs": [
+        {
+            "name": "Request",
+            "fields": {
+                "requester": [
+                    "integer"
+                ],
+                "fee": [
+                    "integer"
+                ],
+                "callbackAddr": [
+                    "integer"
+                ],
+                "callbackFID": [
+                    "integer"
+                ],
+                "paramsHash": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0x48d"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0x48e"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x48f"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "requests",
+            "type": [
+                "array",
+                "Request"
+            ],
+            "init": []
+        },
+        {
+            "name": "GAS_PRICE",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x88"
+            ]
+        },
+        {
+            "name": "CANCELLED_FEE_FLAG",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x85"
+            ]
+        },
+        {
+            "name": "DELIVERED_FEE_FLAG",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x84"
+            ]
+        },
+        {
+            "name": "FAIL_FLAG",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x83"
+            ]
+        },
+        {
+            "name": "SUCCESS_FLAG",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x82"
+            ]
+        },
+        {
+            "name": "newVersion",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x81"
+            ]
+        },
+        {
+            "name": "SGX_ADDRESS",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x80"
+            ]
+        },
+        {
+            "name": "MIN_FEE",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x87"
+            ]
+        },
+        {
+            "name": "externalCallFlag",
+            "type": [
+                "boolean"
+            ],
+            "init": [
+                "0x7"
+            ]
+        },
+        {
+            "name": "unrespondedCnt",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x6"
+            ]
+        },
+        {
+            "name": "CANCELLATION_FEE",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x86"
+            ]
+        },
+        {
+            "name": "killswitch",
+            "type": [
+                "boolean"
+            ],
+            "init": [
+                "0x5"
+            ]
+        },
+        {
+            "name": "requestCnt",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x3"
+            ]
+        },
+        {
+            "name": "TownCrier",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x3",
+            "instructions": [
+                "requestCnt = 1"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x4",
+            "instructions": [
+                "CLR_0 = requests[0]",
+                "REF_70 = CLR_0",
+                "CLR_1 = REF_70.requester",
+                "REF_71 = CLR_1",
+                "REF_70.requester = msg_sender"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x5",
+            "instructions": [
+                "killswitch = false"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x6",
+            "instructions": [
+                "unrespondedCnt = 0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x7",
+            "instructions": [
+                "externalCallFlag = false"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x80",
+            "instructions": [
+                "SGX_ADDRESS = 138826930989434179790257333360775229525134415251"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x81",
+            "instructions": [
+                "newVersion = 0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x82",
+            "instructions": [
+                "SUCCESS_FLAG = 1"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x83",
+            "instructions": [
+                "FAIL_FLAG = 1809251394333065553493296640760748560207343510400633813116524750123642650624"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x84",
+            "instructions": [
+                "DELIVERED_FEE_FLAG = 0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x85",
+            "instructions": [
+                "CANCELLED_FEE_FLAG = 1"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x86",
+            "instructions": [
+                "TMP_180 = 25000 * GAS_PRICE",
+                "CANCELLATION_FEE = TMP_180"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x87",
+            "instructions": [
+                "TMP_181 = 30000 * GAS_PRICE",
+                "MIN_FEE = TMP_181"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x88",
+            "instructions": [
+                "GAS_PRICE = 50000000000"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x89",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x8a",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x8b",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xa8",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xa9",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xaa",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xc9",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xca",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xcb",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xe5",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xe6",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xe7",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x103",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x104",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x105",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x12c",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x12d",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x12e",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x152",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x153",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x154",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x173",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x174",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x175",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x48d",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x48e",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x48f",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "newVersion",
+            "addrs": [
+                "0x2",
+                "0x9"
+            ]
+        },
+        {
+            "name": "killswitch",
+            "addrs": [
+                "0x2",
+                "0xc",
+                "0x18",
+                "0x1a"
+            ]
+        },
+        {
+            "name": "GAS_PRICE",
+            "addrs": [
+                "0x2",
+                "0xf"
+            ]
+        },
+        {
+            "name": "MIN_FEE",
+            "addrs": [
+                "0x2",
+                "0x12"
+            ]
+        },
+        {
+            "name": "CANCELLATION_FEE",
+            "addrs": [
+                "0x2",
+                "0x15"
+            ]
+        },
+        {
+            "name": "externalCallFlag",
+            "addrs": [
+                "0x2",
+                "0x1d",
+                "0x20",
+                "0x24",
+                "0x29",
+                "0x58",
+                "0x5d",
+                "0x62",
+                "0x67",
+                "0x76",
+                "0x7b"
+            ]
+        },
+        {
+            "name": "requestCnt",
+            "addrs": [
+                "0x2",
+                "0x2d"
+            ]
+        },
+        {
+            "name": "unrespondedCnt",
+            "addrs": [
+                "0x2",
+                "0x31",
+                "0x4e",
+                "0x53"
+            ]
+        },
+        {
+            "name": "requests",
+            "addrs": [
+                "0x2",
+                "0x35",
+                "0x39",
+                "0x3d",
+                "0x41",
+                "0x45",
+                "0x49",
+                "0x6c",
+                "0x71"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x9",
+            "instructions": [
+                "CLR_2 = requests[0]",
+                "REF_72 = CLR_2",
+                "CLR_3 = REF_72.requester",
+                "REF_73 = CLR_3",
+                "CLR_4 = msg.sender",
+                "RTMP_85 = CLR_4 == REF_73",
+                "CONDITION RTMP_85 0xa 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa",
+            "instructions": [
+                "RTMP_86 = unrespondedCnt == 0",
+                "CONDITION RTMP_86 0x8 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x8",
+            "instructions": [
+                "newVersion = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xc",
+            "instructions": [
+                "CLR_5 = requests[0]",
+                "REF_74 = CLR_5",
+                "CLR_6 = REF_74.requester",
+                "REF_75 = CLR_6",
+                "CLR_7 = msg.sender",
+                "RTMP_87 = CLR_7 == REF_75",
+                "CONDITION RTMP_87 0xd 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xd",
+            "instructions": [
+                "RTMP_88 = unrespondedCnt == 0",
+                "CONDITION RTMP_88 0xb 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb",
+            "instructions": [
+                "killswitch = true"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xf",
+            "instructions": [
+                "CLR_8 = requests[0]",
+                "REF_76 = CLR_8",
+                "CLR_9 = REF_76.requester",
+                "REF_77 = CLR_9",
+                "CLR_10 = msg.sender",
+                "RTMP_89 = CLR_10 == REF_77",
+                "CONDITION RTMP_89 0x10 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x10",
+            "instructions": [
+                "RTMP_90 = unrespondedCnt == 0",
+                "CONDITION RTMP_90 0xe 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xe",
+            "instructions": [
+                "GAS_PRICE = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x12",
+            "instructions": [
+                "CLR_11 = requests[0]",
+                "REF_78 = CLR_11",
+                "CLR_12 = REF_78.requester",
+                "REF_79 = CLR_12",
+                "CLR_13 = msg.sender",
+                "RTMP_91 = CLR_13 == REF_79",
+                "CONDITION RTMP_91 0x13 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x13",
+            "instructions": [
+                "RTMP_92 = unrespondedCnt == 0",
+                "CONDITION RTMP_92 0x11 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x11",
+            "instructions": [
+                "MIN_FEE = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x15",
+            "instructions": [
+                "CLR_14 = requests[0]",
+                "REF_80 = CLR_14",
+                "CLR_15 = REF_80.requester",
+                "REF_81 = CLR_15",
+                "CLR_16 = msg.sender",
+                "RTMP_93 = CLR_16 == REF_81",
+                "CONDITION RTMP_93 0x16 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x16",
+            "instructions": [
+                "RTMP_94 = unrespondedCnt == 0",
+                "CONDITION RTMP_94 0x14 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x14",
+            "instructions": [
+                "CANCELLATION_FEE = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x18",
+            "instructions": [
+                "CLR_17 = requests[0]",
+                "REF_82 = CLR_17",
+                "CLR_18 = REF_82.requester",
+                "REF_83 = CLR_18",
+                "CLR_19 = msg.sender",
+                "RTMP_95 = CLR_19 == REF_83",
+                "CONDITION RTMP_95 0x17 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x17",
+            "instructions": [
+                "killswitch = true"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1a",
+            "instructions": [
+                "CLR_20 = requests[0]",
+                "REF_84 = CLR_20",
+                "CLR_21 = REF_84.requester",
+                "REF_85 = CLR_21",
+                "CLR_22 = msg.sender",
+                "RTMP_96 = CLR_22 == REF_85",
+                "CONDITION RTMP_96 0x1b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1b",
+            "instructions": [
+                "RTMP_97 = newVersion == 0",
+                "CONDITION RTMP_97 0x19 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x19",
+            "instructions": [
+                "killswitch = false"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x29",
+            "instructions": [
+                "RTMP_130 = ! U",
+                "CONDITION RTMP_130 0x1 0x2a"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2a",
+            "instructions": [
+                "RTMP_131 = externalCallFlag == true",
+                "CONDITION RTMP_131 0x1 0x2b"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2b",
+            "instructions": [
+                "RTMP_132 = killswitch == true",
+                "CONDITION RTMP_132 0x28 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x28",
+            "instructions": [
+                "externalCallFlag = false"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2d",
+            "instructions": [
+                "RTMP_104 = killswitch == true",
+                "CONDITION RTMP_104 0x1 0x2e"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2e",
+            "instructions": [
+                "CLR_23 = msg.value",
+                "RTMP_105 = CLR_23 < MIN_FEE",
+                "CONDITION RTMP_105 0x1 0x2f"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2f",
+            "instructions": [
+                "RTMP_106 = externalCallFlag == true",
+                "CONDITION RTMP_106 0x1 0x2c"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2c",
+            "instructions": [
+                "TMP_103 = requestCnt + 1",
+                "requestCnt = TMP_103"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x31",
+            "instructions": [
+                "RTMP_108 = killswitch == true",
+                "CONDITION RTMP_108 0x1 0x32"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x32",
+            "instructions": [
+                "CLR_24 = msg.value",
+                "RTMP_109 = CLR_24 < MIN_FEE",
+                "CONDITION RTMP_109 0x1 0x33"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x33",
+            "instructions": [
+                "RTMP_110 = externalCallFlag == true",
+                "CONDITION RTMP_110 0x1 0x30"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x30",
+            "instructions": [
+                "TMP_107 = unrespondedCnt + 1",
+                "unrespondedCnt = TMP_107"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x35",
+            "instructions": [
+                "RTMP_111 = killswitch == true",
+                "CONDITION RTMP_111 0x1 0x36"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x36",
+            "instructions": [
+                "CLR_25 = msg.value",
+                "RTMP_112 = CLR_25 < MIN_FEE",
+                "CONDITION RTMP_112 0x1 0x37"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x37",
+            "instructions": [
+                "RTMP_113 = externalCallFlag == true",
+                "CONDITION RTMP_113 0x1 0x34"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x34",
+            "instructions": [
+                "CLR_26 = requests[U]",
+                "REF_86 = CLR_26",
+                "CLR_27 = REF_86.requester",
+                "REF_87 = CLR_27",
+                "CLR_28 = msg.sender",
+                "REF_86.requester = CLR_28"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x39",
+            "instructions": [
+                "RTMP_114 = killswitch == true",
+                "CONDITION RTMP_114 0x1 0x3a"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3a",
+            "instructions": [
+                "CLR_29 = msg.value",
+                "RTMP_115 = CLR_29 < MIN_FEE",
+                "CONDITION RTMP_115 0x1 0x3b"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3b",
+            "instructions": [
+                "RTMP_116 = externalCallFlag == true",
+                "CONDITION RTMP_116 0x1 0x38"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x38",
+            "instructions": [
+                "CLR_30 = requests[U]",
+                "REF_88 = CLR_30",
+                "CLR_31 = REF_88.fee",
+                "REF_89 = CLR_31",
+                "CLR_32 = msg.value",
+                "REF_88.fee = CLR_32"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3d",
+            "instructions": [
+                "RTMP_117 = killswitch == true",
+                "CONDITION RTMP_117 0x1 0x3e"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3e",
+            "instructions": [
+                "CLR_33 = msg.value",
+                "RTMP_118 = CLR_33 < MIN_FEE",
+                "CONDITION RTMP_118 0x1 0x3f"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3f",
+            "instructions": [
+                "RTMP_119 = externalCallFlag == true",
+                "CONDITION RTMP_119 0x1 0x3c"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3c",
+            "instructions": [
+                "CLR_34 = requests[U]",
+                "REF_90 = CLR_34",
+                "CLR_35 = REF_90.callbackAddr",
+                "REF_91 = CLR_35",
+                "REF_90.callbackAddr = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x41",
+            "instructions": [
+                "RTMP_120 = killswitch == true",
+                "CONDITION RTMP_120 0x1 0x42"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x42",
+            "instructions": [
+                "CLR_36 = msg.value",
+                "RTMP_121 = CLR_36 < MIN_FEE",
+                "CONDITION RTMP_121 0x1 0x43"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x43",
+            "instructions": [
+                "RTMP_122 = externalCallFlag == true",
+                "CONDITION RTMP_122 0x1 0x40"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x40",
+            "instructions": [
+                "CLR_37 = requests[U]",
+                "REF_92 = CLR_37",
+                "CLR_38 = REF_92.callbackFID",
+                "REF_93 = CLR_38",
+                "REF_92.callbackFID = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x45",
+            "instructions": [
+                "RTMP_123 = killswitch == true",
+                "CONDITION RTMP_123 0x1 0x46"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x46",
+            "instructions": [
+                "CLR_39 = msg.value",
+                "RTMP_124 = CLR_39 < MIN_FEE",
+                "CONDITION RTMP_124 0x1 0x47"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x47",
+            "instructions": [
+                "RTMP_125 = externalCallFlag == true",
+                "CONDITION RTMP_125 0x1 0x44"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x44",
+            "instructions": [
+                "CLR_40 = requests[U]",
+                "REF_94 = CLR_40",
+                "CLR_41 = REF_94.paramsHash",
+                "REF_95 = CLR_41",
+                "REF_94.paramsHash = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x49",
+            "instructions": [
+                "CLR_42 = msg.sender",
+                "RTMP_133 = CLR_42 != SGX_ADDRESS",
+                "CONDITION RTMP_133 0x4a 0x4a"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4a",
+            "instructions": [
+                "CLR_43 = requests[U]",
+                "REF_98 = CLR_43",
+                "CLR_44 = REF_98.requester",
+                "REF_99 = CLR_44",
+                "RTMP_134 = REF_99 == 0",
+                "CONDITION RTMP_134 0x4b 0x4b"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4b",
+            "instructions": [
+                "CLR_45 = requests[U]",
+                "REF_100 = CLR_45",
+                "CLR_46 = REF_100.fee",
+                "REF_101 = CLR_46",
+                "RTMP_135 = REF_101 == DELIVERED_FEE_FLAG",
+                "CONDITION RTMP_135 0x1 0x4c"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4c",
+            "instructions": [
+                "CLR_47 = requests[U]",
+                "REF_102 = CLR_47",
+                "CLR_48 = REF_102.fee",
+                "REF_103 = CLR_48",
+                "RTMP_136 = REF_103 == CANCELLED_FEE_FLAG",
+                "CONDITION RTMP_136 0x1 0x48"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x48",
+            "instructions": [
+                "CLR_49 = requests[U]",
+                "REF_96 = CLR_49",
+                "CLR_50 = REF_96.fee",
+                "REF_97 = CLR_50",
+                "REF_96.fee = DELIVERED_FEE_FLAG"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x53",
+            "instructions": [
+                "CLR_51 = msg.sender",
+                "RTMP_163 = CLR_51 != SGX_ADDRESS",
+                "CONDITION RTMP_163 0x54 0x54"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x54",
+            "instructions": [
+                "CLR_52 = requests[U]",
+                "REF_142 = CLR_52",
+                "CLR_53 = REF_142.requester",
+                "REF_143 = CLR_53",
+                "RTMP_164 = REF_143 == 0",
+                "CONDITION RTMP_164 0x55 0x55"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x55",
+            "instructions": [
+                "CLR_54 = requests[U]",
+                "REF_144 = CLR_54",
+                "CLR_55 = REF_144.fee",
+                "REF_145 = CLR_55",
+                "RTMP_165 = REF_145 == DELIVERED_FEE_FLAG",
+                "CONDITION RTMP_165 0x1 0x56"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x56",
+            "instructions": [
+                "CLR_56 = requests[U]",
+                "REF_146 = CLR_56",
+                "CLR_57 = REF_146.fee",
+                "REF_147 = CLR_57",
+                "RTMP_166 = REF_147 == CANCELLED_FEE_FLAG",
+                "CONDITION RTMP_166 0x52 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x52",
+            "instructions": [
+                "TMP_162 = unrespondedCnt - 1",
+                "unrespondedCnt = TMP_162"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x67",
+            "instructions": [
+                "CLR_58 = msg.sender",
+                "RTMP_154 = CLR_58 != SGX_ADDRESS",
+                "CONDITION RTMP_154 0x68 0x68"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x68",
+            "instructions": [
+                "CLR_59 = requests[U]",
+                "REF_128 = CLR_59",
+                "CLR_60 = REF_128.requester",
+                "REF_129 = CLR_60",
+                "RTMP_155 = REF_129 == 0",
+                "CONDITION RTMP_155 0x69 0x69"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x69",
+            "instructions": [
+                "CLR_61 = requests[U]",
+                "REF_130 = CLR_61",
+                "CLR_62 = REF_130.fee",
+                "REF_131 = CLR_62",
+                "RTMP_156 = REF_131 == DELIVERED_FEE_FLAG",
+                "CONDITION RTMP_156 0x1 0x6a"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6a",
+            "instructions": [
+                "CLR_63 = requests[U]",
+                "REF_132 = CLR_63",
+                "CLR_64 = REF_132.fee",
+                "REF_133 = CLR_64",
+                "RTMP_157 = REF_133 == CANCELLED_FEE_FLAG",
+                "CONDITION RTMP_157 0x1 0x66"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x66",
+            "instructions": [
+                "externalCallFlag = false"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6c",
+            "instructions": [
+                "CLR_65 = msg.sender",
+                "RTMP_158 = CLR_65 != SGX_ADDRESS",
+                "CONDITION RTMP_158 0x6d 0x6d"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6d",
+            "instructions": [
+                "CLR_66 = requests[U]",
+                "REF_136 = CLR_66",
+                "CLR_67 = REF_136.requester",
+                "REF_137 = CLR_67",
+                "RTMP_159 = REF_137 == 0",
+                "CONDITION RTMP_159 0x6e 0x6e"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6e",
+            "instructions": [
+                "CLR_68 = requests[U]",
+                "REF_138 = CLR_68",
+                "CLR_69 = REF_138.fee",
+                "REF_139 = CLR_69",
+                "RTMP_160 = REF_139 == DELIVERED_FEE_FLAG",
+                "CONDITION RTMP_160 0x1 0x6f"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6f",
+            "instructions": [
+                "CLR_70 = requests[U]",
+                "REF_140 = CLR_70",
+                "CLR_71 = REF_140.fee",
+                "REF_141 = CLR_71",
+                "RTMP_161 = REF_141 == CANCELLED_FEE_FLAG",
+                "CONDITION RTMP_161 0x6b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6b",
+            "instructions": [
+                "CLR_72 = requests[U]",
+                "REF_134 = CLR_72",
+                "CLR_73 = REF_134.fee",
+                "REF_135 = CLR_73",
+                "REF_134.fee = DELIVERED_FEE_FLAG"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x71",
+            "instructions": [
+                "CLR_74 = requests[U]",
+                "REF_150 = CLR_74",
+                "CLR_75 = REF_150.requester",
+                "REF_151 = CLR_75",
+                "CLR_76 = msg.sender",
+                "RTMP_168 = REF_151 == CLR_76",
+                "CONDITION RTMP_168 0x72 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x72",
+            "instructions": [
+                "CLR_77 = requests[U]",
+                "REF_152 = CLR_77",
+                "CLR_78 = REF_152.fee",
+                "REF_153 = CLR_78",
+                "RTMP_169 = REF_153 >= CANCELLATION_FEE",
+                "CONDITION RTMP_169 0x73 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x73",
+            "instructions": [
+                "RTMP_167 = killswitch == true",
+                "CONDITION RTMP_167 0x1 0x74"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x74",
+            "instructions": [
+                "RTMP_170 = externalCallFlag == true",
+                "CONDITION RTMP_170 0x1 0x70"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x70",
+            "instructions": [
+                "CLR_79 = requests[U]",
+                "REF_148 = CLR_79",
+                "CLR_80 = REF_148.fee",
+                "REF_149 = CLR_80",
+                "REF_148.fee = CANCELLED_FEE_FLAG"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7b",
+            "instructions": [
+                "CLR_81 = requests[U]",
+                "REF_158 = CLR_81",
+                "CLR_82 = REF_158.requester",
+                "REF_159 = CLR_82",
+                "CLR_83 = msg.sender",
+                "RTMP_176 = REF_159 == CLR_83",
+                "CONDITION RTMP_176 0x7c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7c",
+            "instructions": [
+                "CLR_84 = requests[U]",
+                "REF_160 = CLR_84",
+                "CLR_85 = REF_160.fee",
+                "REF_161 = CLR_85",
+                "RTMP_177 = REF_161 >= CANCELLATION_FEE",
+                "CONDITION RTMP_177 0x7d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7d",
+            "instructions": [
+                "RTMP_175 = killswitch == true",
+                "CONDITION RTMP_175 0x1 0x7e"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7e",
+            "instructions": [
+                "RTMP_178 = ! U",
+                "CONDITION RTMP_178 0x1 0x7f"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7f",
+            "instructions": [
+                "RTMP_179 = externalCallFlag == true",
+                "CONDITION RTMP_179 0x1 0x7a"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7a",
+            "instructions": [
+                "externalCallFlag = false"
+            ]
+        }
+    ],
+    "root_addr": "0x498",
+    "dest_addrs": [
+        "0x496"
+    ],
+    "normal_blocks": [
+        {
+            "scope": "deliver_v1",
+            "addr": "0x490",
+            "instructions": [
+                "NOP",
+                "JUMP 0x491"
+            ]
+        },
+        {
+            "scope": "deliver_v1",
+            "addr": "0x491",
+            "instructions": [
+                "NOP",
+                "JUMP 0x492"
+            ]
+        },
+        {
+            "scope": "deliver_v1",
+            "addr": "0x493",
+            "instructions": [
+                "CLR_86 = msg.sender",
+                "TMP_33 = CLR_86 != SGX_ADDRESS",
+                "TMP_34 = requestId <= 0",
+                "TMP_35 = TMP_33 || TMP_34",
+                "CLR_87 = requests[requestId]",
+                "REF_31 = CLR_87",
+                "CLR_88 = REF_31.requester",
+                "REF_32 = CLR_88",
+                "TMP_36 = REF_32 == 0",
+                "TMP_37 = TMP_35 || TMP_36",
+                "CLR_89 = requests[requestId]",
+                "REF_33 = CLR_89",
+                "CLR_90 = REF_33.fee",
+                "REF_34 = CLR_90",
+                "TMP_38 = REF_34 == DELIVERED_FEE_FLAG",
+                "TMP_39 = TMP_37 || TMP_38",
+                "CONDITION TMP_39 0x495 0x494"
+            ]
+        },
+        {
+            "scope": "deliver_v1",
+            "addr": "0x492",
+            "instructions": [
+                "CLR_91 = requests[requestId]",
+                "REF_42 = CLR_91",
+                "CLR_92 = REF_42.fee",
+                "REF_43 = CLR_92",
+                "REF_42.fee = DELIVERED_FEE_FLAG",
+                "TMP_44 = unrespondedCnt",
+                "unrespondedCnt = unrespondedCnt - 1",
+                "TMP_45 = error < 2",
+                "CONDITION TMP_45 0x495 0x496"
+            ]
+        },
+        {
+            "scope": "deliver_v1",
+            "addr": "0x494",
+            "instructions": [
+                "NOP",
+                "JUMP 0x497"
+            ]
+        },
+        {
+            "scope": "deliver_v1",
+            "addr": "0x498",
+            "instructions": [
+                "NOP",
+                "fee = NEW_VAL integer",
+                "respData = NEW_VAL integer",
+                "callbackGas = NEW_VAL integer",
+                "requestId = NEW_VAL integer",
+                "paramsHash = NEW_VAL integer",
+                "error = NEW_VAL integer",
+                "JUMP 0x493"
+            ]
+        },
+        {
+            "scope": "deliver_v1",
+            "addr": "0x497",
+            "instructions": [
+                "CLR_93 = requests[requestId]",
+                "REF_35 = CLR_93",
+                "CLR_94 = REF_35.fee",
+                "REF_36 = CLR_94",
+                "fee = REF_36",
+                "CLR_95 = requests[requestId]",
+                "REF_37 = CLR_95",
+                "CLR_96 = REF_37.paramsHash",
+                "REF_38 = CLR_96",
+                "TMP_40 = REF_38 != paramsHash",
+                "CONDITION TMP_40 0x495 0x499"
+            ]
+        },
+        {
+            "scope": "deliver_v1",
+            "addr": "0x496",
+            "instructions": [
+                "externalCallFlag = true",
+                "CLR_97 = requests[requestId]",
+                "REF_45 = CLR_97",
+                "CLR_98 = REF_45.requester",
+                "REF_46 = CLR_98",
+                "CLR_99 = this.balance",
+                "WRP_0 = CLR_99 - fee",
+                "this.balance = WRP_0",
+                "TMP_49 = NEW_VAL boolean"
+            ]
+        },
+        {
+            "scope": "deliver_v1",
+            "addr": "0x499",
+            "instructions": [
+                "TMP_41 = fee == CANCELLED_FEE_FLAG",
+                "CONDITION TMP_41 0x495 0x490"
+            ]
+        },
+        {
+            "scope": "deliver_v1",
+            "addr": "0x495",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

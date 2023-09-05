@@ -1,0 +1,21 @@
+The smart contract code you provided has several potential vulnerabilities including:
+
+1. Reentrancy: The `fundPuppets()` function in the `Splitter` contract and the fallback function in the `Puppet` contract have potential reentrancy vulnerabilities. They call external contracts with the `.call.value()` function, which allows for reentrancy attacks. The external contract could call back into the original contract before the first function call is finished, potentially leading to unexpected behavior.
+
+2. Arithmetic Issues: Although the `SafeMath` library is used for arithmetic operations, not all of these operations are covered. This could potentially lead to overflow or underflow issues. 
+
+3. Unchecked Return Values For Low Level Calls: The `.call.value().gas()` method does not handle the return value. If the called contract throws an exception or runs out of gas, the calling contract will not be able to react to this exception. 
+
+4. Access Control: The `owner` is able to control a lot of functions such as `withdraw()`, `newPuppet()`, `fundPuppets()` and `setExtra()`. If the private key for `owner` is compromised, it could lead to a loss of funds or a potential Denial of Service attack.
+
+5. Denial of Service: The `withdraw()` functions could potentially be used for a Denial of Service attack. If the `owner` address is a contract with a fallback function that always throws an exception, the `withdraw()` function will be stuck since it cannot send Ether to the `owner`.
+
+6. Bad Randomness: There is no randomness in the contract, so this vulnerability is not applicable.
+
+7. Front-Running: This contract could be vulnerable to front-running attacks, as attackers can see transactions in the memory pool before they are mined and then submit their own transaction with a higher gas price to be mined first.
+
+8. Time manipulation: The contract does not rely on timestamps or block numbers, so this vulnerability is not applicable.
+
+9. Short Address Attack: The contract does not seem to be vulnerable to this attack, as it does not take address inputs from users. However, it's generally a good practice to validate the length of the address inputs. 
+
+Please get the contract audited by a professional auditing firm to avoid any potential security issues.

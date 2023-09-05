@@ -1,0 +1,30 @@
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Analysis started at: 2023-08-14 03:00:22 AM
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Version constraints: ['^0.4.19']
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | solc version: v0.4.19
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Callgraph generation started!
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Callgraph generation finished!
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Storage dependency graph generation started!
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Value Range Analysis started
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Generating return summary for run
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Return summary generated for run
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Range graph generated
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Processed function run
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Generating return summary for slitherConstructorVariables
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Return summary generated for slitherConstructorVariables
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Range graph generated
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Processed function slitherConstructorVariables
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Value Range Analysis took 0.000522 seconds
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Value Range Analysis finished
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Dependency detection started!
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Dependency detection finished!
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Static Analysis took 0.069559 seconds
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Dependency does not exist
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Symbolic execution is not needed!
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Analysis finished!
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Analysis took 0.069739 seconds
+[INFO] | 2023-08-14 03:00:22 AM | analyzer.integer_overflow_minimal | Analysis finished at: 2023-08-14 03:00:22 AM

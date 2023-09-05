@@ -1,0 +1,60 @@
+{
+    "tod_symex_path_1.json": {
+        "file_name": "",
+        "from_function": "setReward",
+        "to_function": "setReward",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 30\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 33\nCall context: \nTrue\nTransfer dest:owner value:reward\""
+        ],
+        "executable_instructions": 20,
+        "state_variable": "reward",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_2.json": {
+        "file_name": "",
+        "from_function": "setReward",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 37\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 38\nCall context: \nNone\nTMP_0 = ! claimed \nTMP_1 = SOLIDITY_CALL require(bool)(TMP_0)\""
+        ],
+        "executable_instructions": 15,
+        "state_variable": "claimed",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_3.json": {
+        "file_name": "",
+        "from_function": "claimReward",
+        "to_function": "setReward",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 48\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 51\nCall context: \nTrue\nTransfer dest:msg.sender value:reward\""
+        ],
+        "executable_instructions": 21,
+        "state_variable": "reward",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_4.json": {
+        "file_name": "",
+        "from_function": "claimReward",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 55\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 56\nCall context: \nNone\nTMP_5 = ! claimed \nTMP_6 = SOLIDITY_CALL require(bool)(TMP_5)\""
+        ],
+        "executable_instructions": 16,
+        "state_variable": "claimed",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    }
+}

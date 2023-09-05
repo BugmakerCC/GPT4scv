@@ -1,0 +1,19 @@
+This contract has several vulnerabilities:
+
+1. Reentrancy: In the `redeem` function, there is a reentrancy vulnerability where the contract sends all its balance to the `msg.sender` and the Owner. If the `msg.sender` is a contract, it could in its fallback function call `redeem` again before the first call to `redeem` has finished.
+
+2. Access Control: The `withdraw` and `Command` functions are only protected by a simple `require` statement checking if the `msg.sender` is the Owner. If the Owner address is compromised, an attacker could withdraw all funds or execute arbitrary calls.
+
+3. Arithmetic Issues: There are no arithmetic operations in this contract, so it is not vulnerable to integer overflow and underflow.
+
+4. Unchecked Return Values For Low Level Calls: In the `Command` function, the return value of the low level `call` method is not checked. If the call fails, no exception is thrown and execution continues.
+
+5. Denial of Service: The `redeem` function could potentially be abused to drain the contract of all its funds, resulting in a denial of service for other users. 
+
+6. Bad Randomness: This contract does not involve any randomness, so it is not vulnerable to bad randomness.
+
+7. Front-Running: This contract does not deal with transaction ordering, so it is not vulnerable to front-running.
+
+8. Time Manipulation: This contract does not rely on timestamps or block numbers, so it is not vulnerable to time manipulation.
+
+9. Short Address Attack: This contract does not take any external input for addresses, so it is not vulnerable to short address attacks.

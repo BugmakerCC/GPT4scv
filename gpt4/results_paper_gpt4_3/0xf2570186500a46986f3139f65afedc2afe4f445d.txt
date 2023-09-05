@@ -1,0 +1,26 @@
+This contract has several potential vulnerabilities:
+
+1. Reentrancy: This contract is vulnerable to reentrancy attacks because it makes external calls (`fuck.call(bytes4(sha3("giveBlockReward()")))`) in a loop without taking precautions to prevent recursive calls. The external contract could potentially call back into `makeOldFucks` before the first invocation of the function has finished executing.
+
+2. Unchecked Return Values For Low Level Calls: The contract uses `call` function which is a low level call. The return value of this `call` is not checked, which could lead to unexpected behavior if the call fails. 
+
+3. Denial of Service (DoS): This contract is potentially vulnerable to Denial of Service (DoS) attacks. If the `giveBlockReward()` function of the `fuck` contract consumes a lot of gas, the `makeOldFucks` function could run out of gas if `number` is large.
+
+4. Bad Randomness: Although this contract does not generate any randomness, if the `giveBlockReward()` function of the `fuck` contract does, and relies on block variables such as `block.timestamp` or `block.number`, it may be possible for miners to manipulate these variables to their advantage.
+
+5. Access Control: This contract does not have any access control mechanisms. Anybody can call the `makeOldFucks` function and potentially abuse it.
+
+6. Arithmetic Issues: Although there are no obvious arithmetic issues, if the `giveBlockReward()` function of the `fuck` contract has any, they could become an issue.
+
+7. Front-Running: Not applicable as the contract does not change state based on external input.
+
+8. Time manipulation: Not applicable as the contract does not depend on time.
+
+9. Short Address Attack: Not applicable as the contract does not take address inputs from users.
+
+To fix these vulnerabilities, the contract should:
+- Implement a mutex to prevent reentrancy.
+- Check the return value of `call`.
+- Limit the maximum `number` input to the `makeOldFucks` function to prevent DoS.
+- Implement access control mechanisms to restrict who can call `makeOldFucks`.
+- Carefully review the `giveBlockReward()` function of the `fuck` contract for potential arithmetic issues or bad randomness.

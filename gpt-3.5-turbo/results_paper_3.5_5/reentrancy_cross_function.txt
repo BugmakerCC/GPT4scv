@@ -1,0 +1,33 @@
+Upon reviewing the provided smart contract, I have identified two vulnerabilities: Reentrancy and Unchecked Return Values For Low Level Calls.
+
+1. Reentrancy: This vulnerability occurs when an external contract is called within the smart contract and the external contract invokes the calling contract's function again before the initial execution is completed. This can lead to unexpected behavior and potential manipulation of the contract's state.
+
+In the `withdrawBalance()` function, the contract transfers the user's balance to their address using the `call.value()` function. However, the contract does not prevent reentrancy attacks, as there is no check to ensure that the user's balance is set to zero before the external contract call is made. This allows an attacker to recursively call the `withdrawBalance()` function, repeatedly draining the user's balance.
+
+To fix this vulnerability, it is recommended to use the "checks-effects-interactions" pattern. This involves updating the user's balance to zero before making the external contract call. Here's an example of the fixed code:
+
+```solidity
+function withdrawBalance() public {
+    uint amountToWithdraw = userBalances[msg.sender];
+    userBalances[msg.sender] = 0; // Update balance to zero before making the external call
+    
+    (bool success, ) = msg.sender.call.value(amountToWithdraw)("");
+    require(success);
+}
+```
+
+2. Unchecked Return Values For Low Level Calls: This vulnerability occurs when the return value of a low-level call is not checked, allowing the called contract to fail silently. In the original code, the return value of `msg.sender.call.value(amountToWithdraw)("")` is not checked, which means that any failure during the call will not be detected or handled.
+
+To address this vulnerability, it is important to check the return value of the low-level call and handle any failures appropriately. Here's an example of the fixed code:
+
+```solidity
+function withdrawBalance() public {
+    uint amountToWithdraw = userBalances[msg.sender];
+    userBalances[msg.sender] = 0; // Update balance to zero before making the external call
+    
+    (bool success, ) = msg.sender.call.value(amountToWithdraw)("");
+    require(success, "External call failed");
+}
+```
+
+By implementing these fixes, the smart contract will be more secure against reentrancy attacks and will properly handle failures during low-level calls.

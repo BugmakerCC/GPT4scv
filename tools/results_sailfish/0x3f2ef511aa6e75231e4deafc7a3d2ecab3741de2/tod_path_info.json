@@ -1,0 +1,75 @@
+{
+    "tod_symex_path_1.json": {
+        "file_name": "",
+        "from_function": "redeem",
+        "to_function": "withdraw",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 38\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 46\nCall context: \nTrue\nREF_1 -> BALANCE this\nTransfer dest:Owner value:REF_1\""
+        ],
+        "executable_instructions": 26,
+        "state_variable": "Owner",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_2.json": {
+        "file_name": "",
+        "from_function": "redeem",
+        "to_function": "withdraw",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 50\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 58\nCall context: \nTrue\nREF_1 -> BALANCE this\nTransfer dest:Owner value:REF_1\""
+        ],
+        "executable_instructions": 26,
+        "state_variable": "Owner",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_3.json": {
+        "file_name": "",
+        "from_function": "withdraw",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 63\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 67\nCall context: \nNone\nTMP_4 = msg.sender == Owner\nTMP_5 = SOLIDITY_CALL require(bool)(TMP_4)\""
+        ],
+        "executable_instructions": 16,
+        "state_variable": "Owner",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_4.json": {
+        "file_name": "",
+        "from_function": "withdraw",
+        "to_function": "withdraw",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 70\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 81\nCall context: \nTrue\nREF_5 -> BALANCE this\nTransfer dest:Owner value:REF_5\""
+        ],
+        "executable_instructions": 33,
+        "state_variable": "Owner",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_5.json": {
+        "file_name": "",
+        "from_function": "Command",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 84\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 85\nCall context: \nNone\nTMP_7 = msg.sender == Owner\nTMP_8 = SOLIDITY_CALL require(bool)(TMP_7)\""
+        ],
+        "executable_instructions": 12,
+        "state_variable": "Owner",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    }
+}

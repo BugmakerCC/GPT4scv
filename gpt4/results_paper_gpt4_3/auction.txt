@@ -1,0 +1,5 @@
+This smart contract is vulnerable to the Denial of Service (DoS) attack, specifically related to the "unexpected throw" subtype. This happens when a contract relies on the successful execution of an external function call, in this case, the refund to the current frontrunner in the bid() function.
+
+If the address of the current frontrunner is a contract with a fallback function that always reverts or fails, the require(currentFrontrunner.send(currentBid)) line will also fail, and the whole transaction will be reverted. This means that no one will ever be able to outbid the current frontrunner, effectively blocking the auction.
+
+This contract doesn't have any other vulnerabilities from the mentioned list. However, to fix this Denial of Service vulnerability, the contract should handle failed send() calls more gracefully. Instead of reverting the whole transaction, the contract can queue the refunds and process them separately, or it can simply log the failed refund and continue with the new bid.

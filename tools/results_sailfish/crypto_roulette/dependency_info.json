@@ -1,0 +1,22 @@
+{
+    "crypto_roulette.sol": [
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "play",
+                "play"
+            ],
+            "First_function": "play",
+            "Second_function": "play",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 30\nFunction: shuffle\nNode: \nEXPRESSION secretNumber = uint8(sha3()(now,block.blockhash(block.number - 1))) % 20 + 1\nIRS: \nsecretNumber := TMP_6\"",
+                        "\"BlockID: 9\nFunction: play\nNode: \nIF number == secretNumber\nIRS: \nCONDITION TMP_12\""
+                    ],
+                    "state_variable": "secretNumber"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+This smart contract suffers from the Arithmetic Issues vulnerability, specifically an Integer Overflow. 
+
+In the line of code that says "balance += deposit;", the contract is taking the parameter 'deposit' and adding it to the current 'balance'. 
+
+However, it doesn't check if the resulting balance is more than the maximum value a 'uint' type can hold. In Solidity, a 'uint' (unsigned integer) has a maximum value of 2^256 - 1. If a user were to input a value for 'deposit' that when added to 'balance' exceeds this maximum value, the balance will roll over to zero and keep counting up from there.
+
+This is known as an integer overflow and it can lead to unexpected behaviour in the contract, such as the balance appearing much lower than it should be.
+
+To fix this issue, the contract should include a check before adding to the balance to make sure the resulting sum won't exceed the maximum value a 'uint' can hold.
+
+Here is a simple fix for the vulnerability:
+```
+function add(uint256 deposit) public {
+    require(balance + deposit >= balance);
+    balance += deposit;
+}
+```
+The 'require' keyword makes sure the condition inside the parentheses is true before executing the rest of the function. If the condition is false, the function will revert all changes and no gas will be consumed.

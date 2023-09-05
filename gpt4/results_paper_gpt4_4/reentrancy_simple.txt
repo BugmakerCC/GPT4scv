@@ -1,0 +1,21 @@
+The given smart contract suffers from a Reentrancy vulnerability. This is a common attack pattern in Ethereum smart contracts and can potentially allow an attacker to drain the contract of Ether.
+
+The vulnerability lies in the `withdrawBalance` function. When the contract sends Ether to the `msg.sender` address using the `call.value` function, it only sets the user balance to 0 after the transfer. If the `msg.sender` is a contract, it will call the fallback function where it can call `withdrawBalance` again before the user balance is set to 0. This is known as a reentrant call and can lead to the contract sending more Ether than it should.
+
+This vulnerability can be mitigated by employing the Checks-Effects-Interactions pattern. This pattern involves performing checks (conditions that must be met for the transaction to pass), then changes to the contract's state, and finally interactions with other contracts.
+
+Here’s a patched version of the `withdrawBalance` function:
+
+```solidity
+function withdrawBalance(){
+    uint amount = userBalance[msg.sender];
+    userBalance[msg.sender] = 0;
+    if( ! (msg.sender.call.value(amount)() ) ){
+        throw;
+    }
+}
+```
+
+In the patched version, the user balance is set to 0 before the contract interacts with the `msg.sender`. This prevents a reentrant call from being able to drain the contract of Ether, because when the reentrant call is made, the balance has already been set to 0. 
+
+I didn't find other vulnerabilities listed in the contract snippet provided. However, it's important to note that a comprehensive security review would involve inspecting all contract code and considering all possible interactions between functions.

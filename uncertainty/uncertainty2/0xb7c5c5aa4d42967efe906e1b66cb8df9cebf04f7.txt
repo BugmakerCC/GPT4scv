@@ -1,0 +1,23 @@
+This contract has a Reentrancy vulnerability. The `withdraw` function sends ether with `msg.sender.call.value(balances[msg.sender])()`, then updates the balance of `msg.sender` to zero. An attacker may reenter the function after the ether is sent but before the balance is updated to zero, withdrawing more ether than their initial balance.
+
+To fix this vulnerability, you should update the balance before sending the ether. This is known as the Checks-Effects-Interactions pattern. Using `transfer` or `send` instead of `call.value` also mitigates reentrancy because they only provide a limited amount of gas to the recipient, not enough to call back into the contract.
+
+Here's a fixed version of the contract:
+```
+pragma solidity ^0.4.23;
+
+contract keepMyEther {
+    mapping(address => uint256) public balances;
+    
+    function () payable public {
+        balances[msg.sender] += msg.value;
+    }
+    
+    function withdraw() public {
+        uint256 amount = balances[msg.sender];
+        balances[msg.sender] = 0;
+        msg.sender.transfer(amount);
+    }
+}
+```
+This version first saves the balance in a local variable, updates the balance to zero, then sends the ether. This prevents a reentrant call from being able to withdraw more ether than intended.

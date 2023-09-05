@@ -1,0 +1,22 @@
+The contract you provided is vulnerable to Reentrancy attack. This vulnerability is a result of the execution control being handed over to an external contract through a call before the state of the current contract is settled.
+
+In the provided contract, the function `withdrawAll()` is vulnerable. It allows reentrancy because the state variable `credit[msg.sender]` is updated after the external call `msg.sender.call.value(oCredit)()` is made. An attacker can recursively call the `withdrawAll()` function before the `credit[msg.sender]` is set to 0 in the first call. This would allow the attacker to drain the contract's Ether.
+
+To fix the Reentrancy vulnerability, it is important to remember to not make any external calls until the state of the contract is settled. In this case, you can update the `credit[msg.sender]` before making the external call. Here is an example:
+
+```solidity
+function withdrawAll() public {
+    uint oCredit = credit[msg.sender];
+    if (oCredit > 0) {
+        credit[msg.sender] = 0;
+        balance -= oCredit;
+        
+        bool callResult = msg.sender.call.value(oCredit)();
+        require(callResult);
+    }
+}
+```
+
+In addition to Reentrancy, the contract is also vulnerable to Arithmetic issues like underflow. If the balance of the contract is less than `oCredit`, the operation `balance -= oCredit;` would underflow. A simple solution to this is to use the SafeMath library to perform arithmetic operations.
+
+Please note that the contract also lacks access control mechanisms and anyone can deposit or withdraw funds. This may or may not be intended behavior depending on the use case of the contract.

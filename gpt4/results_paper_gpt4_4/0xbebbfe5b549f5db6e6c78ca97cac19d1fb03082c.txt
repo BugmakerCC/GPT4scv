@@ -1,0 +1,21 @@
+The smart contract is vulnerable to the following issues:
+
+1. Reentrancy: The smart contract is vulnerable to reentrancy attack in the `withdraw` function. The balance is updated after the transfer is made. An attacker could make a recursive call to withdraw funds before the balance has had a chance to update.
+
+2. Access Control: The contract has an access control vulnerability. The `Owner` is public and can be overwritten, which could allow an attacker to take control of the contract. 
+
+3. Unchecked Low Level Calls: The `proxy` function in the `Proxy` contract uses a low-level `.call` function without checking its return value. If the call fails for any reason, it will do so silently, and the contract will continue execution.
+
+4. Arithmetic Issues: The `deposit` function could be susceptible to an integer overflow or underflow issue. If the `msg.value` is manipulated in such a way that when added to `Deposits[msg.sender]` it causes an overflow, the balance would be incorrect.
+
+5. Denial of Service: The contract has a potential Denial of Service risk. If an attacker repeatedly calls the `withdraw` function, they could drain the contract of Ether making it impossible for others to withdraw.
+
+6. Bad Randomness: Not applicable in this contract.
+
+7. Front-Running: Not applicable in this contract.
+
+8. Time manipulation: Not applicable in this contract.
+
+9. Short Address Attack: Not applicable in this contract. 
+
+The contract needs to be updated to address these vulnerabilities.

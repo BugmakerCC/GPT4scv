@@ -1,0 +1,21 @@
+Here are the vulnerabilities in the given contract according to the common vulnerabilities list:
+
+1. Reentrancy: The contract is vulnerable to Reentrancy in the `Collect` function. The contract calls an external contract (msg.sender) and continues execution after this call. An attacker could use this vulnerability to drain the contract funds.
+
+2. Access Control: The contract does not have any access control mechanism. Any address can call `Put`, `Collect` and `AddMessage` functions.
+
+3. Arithmetic Issues: The contract does not use SafeMath or any other similar library to prevent integer overflow and underflow vulnerabilities. However, in this specific contract, there isn't any clear integer overflow or underflow vulnerability.
+
+4. Unchecked Return Values For Low Level Calls: The contract does not check the return value of the `call` function in the `Collect` method.
+
+5. Denial of Service: The contract may run out of gas if the `History` array in the `Log` contract becomes too long. 
+
+6. Bad Randomness: The contract does not use any randomness.
+
+7. Front-Running: The contract does not have any timestamp or amount checks that could be vulnerable to front-running.
+
+8. Time manipulation: The contract uses `now` for timestamping which can be manipulated by miners to a certain degree but there aren't any clear vulnerabilities related to this in the contract.
+
+9. Short Address Attack: The contract does not check the length of the address inputs which makes it vulnerable to short address attacks.
+
+Please note that while these vulnerabilities are potential risks, their exploitation depends on various factors such as user behavior and network conditions.

@@ -1,0 +1,30 @@
+{
+    "tod_symex_path_1.json": {
+        "file_name": "",
+        "from_function": "sendToWinner",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 18\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 19\nCall context: \nNone\nTMP_0 = ! payedOut \nTMP_1 = SOLIDITY_CALL require(bool)(TMP_0)\""
+        ],
+        "executable_instructions": 10,
+        "state_variable": "payedOut",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_2.json": {
+        "file_name": "",
+        "from_function": "withdrawLeftOver",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 24\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 25\nCall context: \nNone\nTMP_3 = SOLIDITY_CALL require(bool)(payedOut)\""
+        ],
+        "executable_instructions": 9,
+        "state_variable": "payedOut",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    }
+}

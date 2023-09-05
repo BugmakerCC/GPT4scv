@@ -1,0 +1,21 @@
+This smart contract has a few potential vulnerabilities:
+
+1. Reentrancy: There is no explicit guard against reentrancy attacks. However, it doesn't seem to have functions that call external contracts while still having control over state variables. Thus, reentrancy might not be an issue here.
+
+2. Access Control: There are checks in place (e.g., `if (msg.sender != owner) throw;`) for access control, but it's not clear who can become the owner or how the ownership can be transferred. If the wrong person gains control, this can lead to serious issues.
+
+3. Arithmetic Issues: The contract uses a SafeMath library to prevent integer overflows and underflows. This is a good practice.
+
+4. Unchecked Return Values For Low Level Calls: The contract uses `.transfer()` for sending ether which throws on failure, so it's safe from this vulnerability.
+
+5. Denial of Service: There doesn't seem to be any potential DOS vulnerability in the provided contract.
+
+6. Bad Randomness: The contract doesn't use any randomness, so it's safe from this vulnerability.
+
+7. Front-Running: There is a potential risk of front-running as the contract doesn't prevent miners from manipulating the order of transactions.
+
+8. Time manipulation: The contract uses block numbers (`block.number`) for time references, which can be manipulated by miners within a certain range.
+
+9. Short Address Attack: The contract doesn't seem to be vulnerable to short address attacks as it doesn't seem to use `msg.data.length` or similar to calculate token amounts. 
+
+Please note that this analysis doesn't guarantee the contract is secure and it's always recommended to have a full audit performed by a professional security auditor.

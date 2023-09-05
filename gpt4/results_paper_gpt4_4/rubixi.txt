@@ -1,0 +1,21 @@
+The contract seems to contain several vulnerabilities:
+
+1. Wrong Constructor Name:
+The function "DynamicPyramid()" is intended to be a constructor that sets the message sender as the creator of the contract. However, the name of this function does not match the contract name "Rubixi". This means that it can be executed by anyone, at any time, to gain control of the contract. 
+
+2. Access Control:
+Only the contract creator should be able to execute certain functions (e.g. collectAllFees(), changeOwner(), changeMultiplier(), etc.), however since anyone can become the contract creator (due to the above-mentioned wrong constructor name vulnerability), these functions are practically open to everyone.
+
+3. Reentrancy:
+The function addPayout() includes a loop where it sends ether to some participants. However, the balance is updated after the send, which could allow a malicious contract to reenter and drain the contract's balance.
+
+4. Arithmetic Issues:
+There are multiple instances where arithmetic operations are being performed without checking for overflows or underflows. 
+
+5. Unchecked Return Values For Low Level Calls:
+The contract uses .send() several times without checking its return value. If .send() fails, the contract will continue to execute, potentially leading to unforeseen consequences.
+
+6. Denial of Service:
+A malicious contract could refuse the incoming transfer of ether from addPayout(), effectively blocking payouts for everyone downstream in the participants array.
+
+I recommend to revise the contract with proper constructor, require() or assert() statements after .send(), safe arithmetic operations and additional checks to prevent reentrancy.

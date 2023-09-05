@@ -1,0 +1,21 @@
+This contract potentially has the following vulnerabilities:
+
+1. Reentrancy: In the `Collect` function, the contract calls an external function (`msg.sender.call.value(_am)()`) before it reduces the balance of the sender (`acc.balance-=_am`). This could allow a malicious contract to recursively call the `Collect` function before the initial call reduces the sender's balance, effectively draining the contract.
+
+2. Access Control: The contract lacks access control on functions `SetMinSum` and `SetLogFile`, anyone can call these functions before initialization.
+
+3. Arithmetic Issues: There are no checks for overflow on the `acc.balance += msg.value` statement.
+
+4. Unchecked Return Values For Low Level Calls: Although the return value of `msg.sender.call.value(_am)()` is checked, the result is not handled. It should revert the transaction if the call fails.
+
+5. Denial of Service: A malicious contract could always make the `msg.sender.call.value(_am)()` fail, preventing other users from withdrawing their balances.
+
+6. Bad Randomness: Not applicable here.
+
+7. Front-Running: Not directly applicable, but an attacker could potentially observe the `Collect` function call and make a transaction with a higher gas price to 'front-run' the original transaction.
+
+8. Time manipulation: The contract uses `now` for the unlock time. Miners could potentially manipulate the block timestamp to affect this.
+
+9. Short Address Attack: Not directly applicable as the contract does not take address inputs from function arguments, but relies on `msg.sender` which cannot be shortened.
+
+Please note that this analysis might not be exhaustive and the contract should undergo a thorough audit by a professional security analyst.

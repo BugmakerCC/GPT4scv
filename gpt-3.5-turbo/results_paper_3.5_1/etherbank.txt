@@ -1,0 +1,20 @@
+The provided smart contract is vulnerable to the Reentrancy vulnerability. Here's a breakdown of the vulnerabilities in the contract:
+
+1. Reentrancy: The `withdrawBalance` function allows users to withdraw their balance from the contract. However, it uses the `call.value` method to send the balance to the user's address. This method can execute arbitrary code in the receiving contract, potentially allowing an attacker to re-enter the `withdrawBalance` function before the balance is set to zero, leading to repeated withdrawals and draining of the contract's balance.
+
+To fix this vulnerability, you should follow the Checks-Effects-Interactions pattern. This means that you should first update the balance of the user to zero before executing the external call. Here's an example of how to fix the `withdrawBalance` function:
+
+```solidity
+function withdrawBalance() {
+    uint amountToWithdraw = userBalances[msg.sender];
+    userBalances[msg.sender] = 0;
+        
+    if (!(msg.sender.call.value(amountToWithdraw)())) {
+        revert();
+    }
+}
+```
+
+This change ensures that the balance is set to zero before any external call is made, preventing the reentrancy vulnerability.
+
+It's important to note that the other mentioned vulnerabilities (Access Control, Arithmetic Issues, Unchecked Return Values, Denial of Service, Bad Randomness, Front-Running, Time manipulation, and Short Address Attack) are not present in the given smart contract. However, it's always a good practice to consider these vulnerabilities when developing smart contracts.

@@ -1,0 +1,11 @@
+The contract contains several vulnerabilities:
+
+1. Reentrancy: In the function `CashOut`, the contract sends Ether to an external address before decreasing the balance of the sender. This pattern may allow a reentrancy attack where the called contract calls back into the vulnerable contract before the first call is finished.
+
+2. Unchecked Return Values for Low-Level Calls: The contract uses `call.value` in `CashOut` function, which is a low-level function. The return value of this call is not checked, which can lead to unexpected behavior if it fails.
+
+3. Access Control: The `AddMessage` function in the `Log` contract can be called by anyone, as there are no access control mechanisms in place. This could lead to unauthorized actions.
+
+4. Denial of Service: An attacker could clog the network and prevent others from interacting with the contract.
+
+The contract does not seem to have arithmetic issues, bad randomness, front-running, time manipulation or short address attack vulnerabilities. However, each of these vulnerabilities requires specific conditions to be exploitable, which might not be evident from the contract code alone. Therefore, further testing and investigation should be done to ensure the security of the contract.

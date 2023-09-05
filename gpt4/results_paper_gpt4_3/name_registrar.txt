@@ -1,0 +1,11 @@
+This contract has the following vulnerabilities:
+
+1. **Access Control**: The `register` function can be called by anyone because there are no access control checks like `onlyOwner` or similar. This can allow an attacker to register any name and mapped address.
+
+2. **Uninitialized Storage Pointer**: `NameRecord newRecord;` is a storage pointer but it's uninitialized. This means it points to the zero slot in storage, so when you do `newRecord.name = _name;` and `newRecord.mappedAddress = _mappedAddress;`, you are writing to the zero slot in storage. This is a serious security vulnerability because it can overwrite other important data. 
+
+3. **Denial of Service**: The contract uses a `require(unlocked);` statement but it doesn't provide a way to switch `unlocked` to `true`, so once the contract is deployed with `unlocked` set to `false`, the contract will be locked forever. This means no one can ever register a name, which is a denial of service.
+
+4. **Order of Operations**: The `require(unlocked);` statement should ideally be placed at the beginning of the `register` function. This is to prevent unnecessary gas expenditure in case the contract is locked. As it stands, the function first performs all the operations and then checks whether the contract is locked or not. If the contract is locked, all the previous operations would have consumed gas for nothing.
+
+The contract doesn't appear to have the other vulnerabilities mentioned (Reentrancy, Arithmetic Issues, Unchecked Return Values For Low Level Calls, Bad Randomness, Front-Running, Time manipulation, Short Address Attack), based on the provided code.

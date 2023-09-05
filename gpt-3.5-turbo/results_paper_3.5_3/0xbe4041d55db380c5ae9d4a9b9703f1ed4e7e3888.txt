@@ -1,0 +1,21 @@
+After carefully reviewing the smart contract provided, here are the vulnerabilities that I have identified:
+
+1. Reentrancy: The contract is susceptible to reentrancy attacks as it allows external contracts to call the `Collect` function. When `Collect` transfers funds to `msg.sender`, it should be the last operation to prevent reentrancy attacks.
+
+2. Access Control: The contract does not have any access control mechanisms implemented. This means that anyone can call the `Put` and `Collect` functions, potentially manipulating the contract's state.
+
+3. Arithmetic Issues: There are no explicit checks for integer overflow or underflow in the contract. Operations such as `acc.balance += msg.value` and `acc.balance -= _am` can potentially lead to arithmetic issues if not properly handled.
+
+4. Unchecked Return Values For Low Level Calls: The contract uses the `call` function without checking the return value. If the call to `msg.sender.call.value(_am)()` fails, the contract does not handle the failure and continues execution, leading to the potential loss of funds.
+
+5. Denial of Service: The contract does not have any gas limits or checks for gas exhaustion. This can allow an attacker to consume all the gas, preventing other transactions from being executed.
+
+6. Bad Randomness: The contract does not have any mechanisms to ensure randomness. This can lead to predictable outcomes in functions such as `Put`, which rely on random values.
+
+7. Front-Running: The contract does not have any measures to prevent front-running attacks. A malicious user could observe pending transactions and manipulate their own transaction order to gain an advantage.
+
+8. Time manipulation: The contract uses the `now` keyword to check for time-based conditions. However, `now` can be manipulated by miners to bypass certain conditions, potentially leading to unauthorized operations.
+
+9. Short Address Attack: The contract does not have any checks for short address attacks. If a caller provides a short address, it can lead to unexpected behavior and potential security vulnerabilities.
+
+It is important to address these vulnerabilities to ensure the security and reliability of the smart contract.

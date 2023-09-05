@@ -1,0 +1,11 @@
+The given smart contract has at least two vulnerabilities.
+
+1. Reentrancy: The "CashOut" function is vulnerable to a reentrancy attack. This is because it first sends Ether to an external address with `msg.sender.call.value(_am)()`, and then only after that does it reduce the sender's balance with `balances[msg.sender]-=_am;`. If the recipient of the Ether is a malicious contract that can call back into the "CashOut" function, it can drain the contract's Ether before its balance is reduced.
+
+2. Denial of Service: The contract relies on external calls to `msg.sender` which can be a contract. If the fallback function of the recipient contract consumes a lot of gas or reverts, the "CashOut" function will fail. This can be used to block users from withdrawing their Ether from the contract.
+
+To fix these vulnerabilities:
+
+1. Reentrancy: The balance should be reduced before the Ether is sent. This can be done by moving the line `balances[msg.sender]-=_am;` above the `msg.sender.call.value(_am)()` line.
+
+2. Denial of Service: Use the "withdrawal pattern", where each user can withdraw their funds on their own. This way, if the withdrawal fails, it won't block other users. Also, consider limiting the gas sent with `call` to prevent malicious contracts from causing your contract to run out of gas.

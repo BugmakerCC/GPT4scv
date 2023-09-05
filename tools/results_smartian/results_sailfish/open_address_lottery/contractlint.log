@@ -1,0 +1,61 @@
+[INFO] | 2023-08-14 03:00:03 AM | analyzer.open_address_lottery | Analysis started at: 2023-08-14 03:00:03 AM
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Version constraints: ['^0.4.19']
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | solc version: v0.4.19
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Callgraph generation started!
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Callgraph generation finished!
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Storage dependency graph generation started!
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Value Range Analysis started
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Generating return summary for luckyNumberOfAddress
+[WARNING] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | No lvalue eligible assignment, is this some bug!
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Return summary generated for luckyNumberOfAddress
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | State variable assignement do not exist
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Processed function luckyNumberOfAddress
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Generating return summary for reseed
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Return summary generated for reseed
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Range graph generated
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Processed function reseed
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Generating return summary for kill
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Return summary generated for kill
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | State variable assignement do not exist
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Processed function kill
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Generating return summary for slitherConstructorVariables
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Return summary generated for slitherConstructorVariables
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Range graph generated
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Processed function slitherConstructorVariables
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Generating return summary for participate
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Return summary generated for participate
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Range graph generated
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Processed function participate
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Generating return summary for OpenAddressLottery
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Return summary generated for OpenAddressLottery
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Range graph generated
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Processed function OpenAddressLottery
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Generating return summary for forceReseed
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Return summary generated for forceReseed
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Range graph generated
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Processed function forceReseed
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Generating return summary for fallback
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Return summary generated for fallback
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Range graph generated
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Processed function fallback
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Value Range Analysis took 0.004282 seconds
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Value Range Analysis finished
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Dependency detection started!
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | TOD dependency detected in file open_address_lottery.sol in contract OpenAddressLottery in by composing functions participate and participate
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | TOD dependency detected in file open_address_lottery.sol in contract OpenAddressLottery in by composing functions participate and fallback
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | TOD dependency detected in file open_address_lottery.sol in contract OpenAddressLottery in by composing functions fallback and participate
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | TOD dependency detected in file open_address_lottery.sol in contract OpenAddressLottery in by composing functions fallback and fallback
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Dependency detection finished!
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Static Analysis took 0.629217 seconds
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Dependency exists
+[INFO] | 2023-08-14 03:00:04 AM | analyzer.open_address_lottery | Invoking symbolic executor!
+[INFO] | 2023-08-14 03:00:05 AM | analyzer.open_address_lottery | Symbolic execution took 1.042699 seconds
+[INFO] | 2023-08-14 03:00:05 AM | analyzer.open_address_lottery | Symbolic execution finished!
+[INFO] | 2023-08-14 03:00:05 AM | analyzer.open_address_lottery | Analysis finished!
+[INFO] | 2023-08-14 03:00:05 AM | analyzer.open_address_lottery | Analysis took 1.672434 seconds
+[INFO] | 2023-08-14 03:00:05 AM | analyzer.open_address_lottery | Analysis finished at: 2023-08-14 03:00:05 AM

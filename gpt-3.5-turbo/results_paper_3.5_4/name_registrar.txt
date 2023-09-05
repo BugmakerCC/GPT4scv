@@ -1,0 +1,21 @@
+The smart contract provided seems to have a vulnerability related to uninitialized storage. 
+
+In the `register` function, the `NameRecord` struct is not properly initialized before being used. The line `NameRecord newRecord;` creates a new instance of `NameRecord` but does not assign any values to its properties. As a result, the `name` and `mappedAddress` properties of `newRecord` are uninitialized, and their values are not set.
+
+To fix this vulnerability, you should initialize the `NameRecord` struct with the given values before assigning it to the mappings. The corrected code would be as follows:
+
+```solidity
+function register(bytes32 _name, address _mappedAddress) public {
+    // set up the new NameRecord
+    NameRecord memory newRecord;
+    newRecord.name = _name;
+    newRecord.mappedAddress = _mappedAddress;
+
+    resolve[_name] = _mappedAddress;
+    registeredNameRecord[msg.sender] = newRecord;
+
+    require(unlocked); // only allow registrations if contract is unlocked
+}
+```
+
+By declaring `newRecord` as a `memory` variable and initializing its properties, we ensure that the struct is properly initialized before assigning its values to mappings.

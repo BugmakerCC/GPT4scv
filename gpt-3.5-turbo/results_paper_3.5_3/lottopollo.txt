@@ -1,0 +1,9 @@
+Upon reviewing the provided smart contract, I have identified the following vulnerabilities:
+
+1. Time Manipulation: The contract uses the `now` keyword, which can be manipulated by miners to exploit the contract. This vulnerability can be exploited by a miner to control the execution flow of the contract.
+
+2. Time Manipulation: The `randomGen()` function uses `block.timestamp` to generate a random number. However, `block.timestamp` can also be manipulated by miners to predict or control the outcome of the random number generation.
+
+To mitigate these vulnerabilities, it is recommended to use an external and trusted source of randomness, such as an oracle or a random number generator contract. Additionally, it is important to avoid using `block.timestamp` for critical operations.
+
+Please note that while I have identified these vulnerabilities, there may be other potential issues within the contract. It is always recommended to conduct a thorough security audit of the entire contract code by a professional auditor.

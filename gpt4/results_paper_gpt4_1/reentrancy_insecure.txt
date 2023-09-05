@@ -1,0 +1,9 @@
+The smart contract has the following vulnerabilities:
+
+1. Reentrancy: The contract is subject to a reentrancy attack because it calls an external function before it updates the state. In the "withdrawBalance" function, the contract sends ether with "msg.sender.call.value(amountToWithdraw)("")" before it updates the user balance with "userBalances[msg.sender] = 0". An attacker can recursively call the "withdrawBalance" function within a fallback function to drain the contract's ether.
+
+2. Unchecked Return Values For Low Level Calls: The contract does not handle the return value of "msg.sender.call.value(amountToWithdraw)("")". If the call fails, the contract will continue executing and set "userBalances[msg.sender] = 0". This is not necessarily a vulnerability in this case because the contract uses "require(success);" to ensure the call was successful. However, this could become a vulnerability if the contract's logic changes in the future.
+
+3. Denial of Service (DoS): The contract is potentially vulnerable to a DoS attack. If an attacker can cause "msg.sender.call.value(amountToWithdraw)("")" to fail, they can prevent the user from withdrawing their balance. For instance, the attacker can use a contract with a fallback function that always throws an exception. 
+
+The other vulnerabilities (Access Control, Arithmetic Issues, Bad Randomness, Front-Running, Time manipulation, Short Address Attack) are not present in the given contract.

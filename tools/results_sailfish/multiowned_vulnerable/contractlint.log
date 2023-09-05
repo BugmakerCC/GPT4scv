@@ -1,0 +1,62 @@
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Analysis started at: 2023-08-14 02:56:16 AM
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Version constraints: ['^0.4.23']
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | solc version: v0.4.23
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Callgraph generation started!
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Callgraph generation finished!
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Value Range Analysis started
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Generating return summary for constructor
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Return summary generated for constructor
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Range graph generated
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Processed function constructor
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Generating return summary for newOwner
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Return summary generated for newOwner
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Range graph generated
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Processed function newOwner
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Generating return summary for onlyOwner
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Return summary generated for onlyOwner
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Processed function onlyOwner
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Generating return summary for constructor
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Return summary generated for constructor
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Range graph generated
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Processed function constructor
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Generating return summary for newOwner
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Return summary generated for newOwner
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Range graph generated
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Processed function newOwner
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Generating return summary for fallback
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Return summary generated for fallback
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Processed function fallback
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Generating return summary for onlyOwner
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Return summary generated for onlyOwner
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Processed function onlyOwner
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Generating return summary for deleteOwner
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Return summary generated for deleteOwner
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Range graph generated
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Processed function deleteOwner
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Generating return summary for deleteOwner
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Return summary generated for deleteOwner
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Range graph generated
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Processed function deleteOwner
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Generating return summary for withdrawAll
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Return summary generated for withdrawAll
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Processed function withdrawAll
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Value Range Analysis took 0.003253 seconds
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Value Range Analysis finished
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Dependency detection started!
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Dependency detection finished!
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Static Analysis took 0.298435 seconds
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Dependency does not exist
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Symbolic execution is not needed!
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Analysis finished!
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Analysis took 0.298623 seconds
+[INFO] | 2023-08-14 02:56:16 AM | analyzer.multiowned_vulnerable | Analysis finished at: 2023-08-14 02:56:16 AM

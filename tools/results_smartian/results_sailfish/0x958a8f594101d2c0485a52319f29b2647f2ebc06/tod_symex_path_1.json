@@ -1,0 +1,774 @@
+{
+    "file": "0x958a8f594101d2c0485a52319f29b2647f2ebc06.sol",
+    "global_structs": [
+        {
+            "name": "Event",
+            "fields": {
+                "date": [
+                    "integer"
+                ],
+                "name": [
+                    "unknown"
+                ],
+                "description": [
+                    "unknown"
+                ],
+                "url": [
+                    "unknown"
+                ]
+            }
+        },
+        {
+            "name": "Message",
+            "fields": {
+                "date": [
+                    "integer"
+                ],
+                "nameFrom": [
+                    "unknown"
+                ],
+                "text": [
+                    "unknown"
+                ],
+                "url": [
+                    "unknown"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0x28"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0x29"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x2a"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "newOwner",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "partner1",
+            "type": [
+                "unknown"
+            ],
+            "init": []
+        },
+        {
+            "name": "partner2",
+            "type": [
+                "unknown"
+            ],
+            "init": []
+        },
+        {
+            "name": "marriageDate",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "marriageStatus",
+            "type": [
+                "unknown"
+            ],
+            "init": []
+        },
+        {
+            "name": "vows",
+            "type": [
+                "unknown"
+            ],
+            "init": []
+        },
+        {
+            "name": "majorEvents",
+            "type": [
+                "array",
+                "Event"
+            ],
+            "init": []
+        },
+        {
+            "name": "messages",
+            "type": [
+                "array",
+                "Message"
+            ],
+            "init": []
+        },
+        {
+            "name": "owner",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x6",
+                "0x9"
+            ]
+        },
+        {
+            "name": "Owned",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "Marriage",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x6",
+            "instructions": [
+                "owner = msg_sender"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x9",
+            "instructions": [
+                "owner = U"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x28",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x29",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x2a",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "owner",
+            "addrs": [
+                "0x2",
+                "0x8"
+            ]
+        },
+        {
+            "name": "newOwner",
+            "addrs": [
+                "0x2",
+                "0xd"
+            ]
+        },
+        {
+            "name": "partner1",
+            "addrs": [
+                "0x2",
+                "0xf"
+            ]
+        },
+        {
+            "name": "partner2",
+            "addrs": [
+                "0x2",
+                "0x12"
+            ]
+        },
+        {
+            "name": "marriageDate",
+            "addrs": [
+                "0x2",
+                "0x15"
+            ]
+        },
+        {
+            "name": "vows",
+            "addrs": [
+                "0x2",
+                "0x18"
+            ]
+        },
+        {
+            "name": "marriageStatus",
+            "addrs": [
+                "0x2",
+                "0x1b",
+                "0x27"
+            ]
+        },
+        {
+            "name": "majorEvents",
+            "addrs": [
+                "0x2",
+                "0x1e",
+                "0x21",
+                "0x24"
+            ]
+        },
+        {
+            "name": "messages",
+            "addrs": [
+                "0x2",
+                "0x22"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x8",
+            "instructions": [
+                "CLR_0 = msg.sender",
+                "RTMP_65 = CLR_0 == newOwner",
+                "CONDITION RTMP_65 0x7 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7",
+            "instructions": [
+                "owner = newOwner"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xd",
+            "instructions": [
+                "CLR_1 = msg.sender",
+                "RTMP_67 = CLR_1 == owner",
+                "CONDITION RTMP_67 0xc 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xc",
+            "instructions": [
+                "newOwner = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xf",
+            "instructions": [
+                "REF_12 = NEW_VAL integer",
+                "RTMP_68 = REF_12 == 0",
+                "CONDITION RTMP_68 0x10 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x10",
+            "instructions": [
+                "CLR_2 = msg.sender",
+                "RTMP_69 = CLR_2 == owner",
+                "CONDITION RTMP_69 0xe 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xe",
+            "instructions": [
+                "partner1 = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x12",
+            "instructions": [
+                "REF_13 = NEW_VAL integer",
+                "RTMP_70 = REF_13 == 0",
+                "CONDITION RTMP_70 0x13 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x13",
+            "instructions": [
+                "CLR_3 = msg.sender",
+                "RTMP_71 = CLR_3 == owner",
+                "CONDITION RTMP_71 0x11 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x11",
+            "instructions": [
+                "partner2 = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x15",
+            "instructions": [
+                "REF_14 = NEW_VAL integer",
+                "RTMP_72 = REF_14 == 0",
+                "CONDITION RTMP_72 0x16 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x16",
+            "instructions": [
+                "CLR_4 = msg.sender",
+                "RTMP_73 = CLR_4 == owner",
+                "CONDITION RTMP_73 0x14 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x14",
+            "instructions": [
+                "marriageDate = now"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x18",
+            "instructions": [
+                "REF_15 = NEW_VAL integer",
+                "RTMP_74 = REF_15 == 0",
+                "CONDITION RTMP_74 0x19 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x19",
+            "instructions": [
+                "CLR_5 = msg.sender",
+                "RTMP_75 = CLR_5 == owner",
+                "CONDITION RTMP_75 0x17 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x17",
+            "instructions": [
+                "vows = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1b",
+            "instructions": [
+                "REF_16 = NEW_VAL integer",
+                "RTMP_76 = REF_16 == 0",
+                "CONDITION RTMP_76 0x1c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1c",
+            "instructions": [
+                "CLR_6 = msg.sender",
+                "RTMP_77 = CLR_6 == owner",
+                "CONDITION RTMP_77 0x1a 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1a",
+            "instructions": [
+                "marriageStatus = NEW_VAL unknown"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1e",
+            "instructions": [
+                "REF_17 = NEW_VAL integer",
+                "RTMP_78 = REF_17 == 0",
+                "CONDITION RTMP_78 0x1f 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1f",
+            "instructions": [
+                "CLR_7 = msg.sender",
+                "RTMP_79 = CLR_7 == owner",
+                "CONDITION RTMP_79 0x1d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1d",
+            "instructions": [
+                "majorEvents = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x21",
+            "instructions": [
+                "CLR_8 = msg.sender",
+                "RTMP_80 = CLR_8 == owner",
+                "CONDITION RTMP_80 0x20 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x20",
+            "instructions": [
+                "majorEvents = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x22",
+            "instructions": [
+                "messages = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x24",
+            "instructions": [
+                "CLR_9 = msg.sender",
+                "RTMP_80 = CLR_9 == owner",
+                "CONDITION RTMP_80 0x25 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x25",
+            "instructions": [
+                "CLR_10 = msg.sender",
+                "RTMP_81 = CLR_10 == owner",
+                "CONDITION RTMP_81 0x23 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x23",
+            "instructions": [
+                "majorEvents = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x27",
+            "instructions": [
+                "CLR_11 = msg.sender",
+                "RTMP_82 = CLR_11 == owner",
+                "CONDITION RTMP_82 0x26 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x26",
+            "instructions": [
+                "marriageStatus = U"
+            ]
+        }
+    ],
+    "root_addr": "0x32",
+    "dest_addrs": [
+        "0x2d"
+    ],
+    "normal_blocks": [
+        {
+            "scope": "acceptOwnership",
+            "addr": "0x2b",
+            "instructions": [
+                "NOP",
+                "JUMP 0x2c"
+            ]
+        },
+        {
+            "scope": "acceptOwnership",
+            "addr": "0x2c",
+            "instructions": [
+                "CLR_12 = msg.value",
+                "TMP_33 = CLR_12 > 0",
+                "CONDITION TMP_33 0x2d 0x2e"
+            ]
+        },
+        {
+            "scope": "acceptOwnership",
+            "addr": "0x2d",
+            "instructions": [
+                "REF_10 = BALANCE this",
+                "CLR_13 = this.balance",
+                "WRP_0 = CLR_13 - REF_10",
+                "this.balance = WRP_0"
+            ]
+        },
+        {
+            "scope": "acceptOwnership",
+            "addr": "0x2f",
+            "instructions": [
+                "NOP",
+                "text = NEW_VAL unknown",
+                "nameFrom = NEW_VAL unknown",
+                "url = NEW_VAL unknown",
+                "JUMP 0x30"
+            ]
+        },
+        {
+            "scope": "acceptOwnership",
+            "addr": "0x30",
+            "instructions": [
+                "TMP_83 = 1",
+                "TMP_42 = CALL1 sha3 TMP_83",
+                "TMP_84 = 2",
+                "TMP_43 = CALL1 sha3 TMP_84",
+                "TMP_44 = TMP_42 == TMP_43",
+                "CONDITION TMP_44 0x30_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "acceptOwnership",
+            "addr": "0x30_r0",
+            "instructions": [
+                "JUMP 0x31"
+            ]
+        },
+        {
+            "scope": "acceptOwnership",
+            "addr": "0x31",
+            "instructions": [
+                "NOP",
+                "JUMP 0x2b"
+            ]
+        },
+        {
+            "scope": "sendMessage",
+            "addr": "0x32",
+            "instructions": [
+                "NOP",
+                "JUMP 0x33"
+            ]
+        },
+        {
+            "scope": "sendMessage",
+            "addr": "0x33",
+            "instructions": [
+                "CLR_14 = msg.sender",
+                "TMP_11 = CLR_14 == newOwner",
+                "CONDITION TMP_11 0x34 0x2e"
+            ]
+        },
+        {
+            "scope": "sendMessage",
+            "addr": "0x34",
+            "instructions": [
+                "owner = newOwner",
+                "JUMP 0x35"
+            ]
+        },
+        {
+            "scope": "sendMessage",
+            "addr": "0x35",
+            "instructions": [
+                "NOP",
+                "JUMP 0x2f"
+            ]
+        },
+        {
+            "scope": "acceptOwnership",
+            "addr": "0x2e",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "RequireTrap",
+            "addr": "0xRequireTrap",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

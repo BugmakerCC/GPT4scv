@@ -1,0 +1,13 @@
+The smart contract provided has a couple of vulnerabilities:
+
+1. Reentrancy: The `CashOut` function is vulnerable to a reentrancy attack. The contract transfers ethers with `msg.sender.call.value(_am)()` before it reduces the balance of the sender with `balances[msg.sender]-=_am;`. This allows a malicious contract to call the `CashOut` function recursively and drain the contract of its ethers.
+
+2. Unchecked Return Values For Low Level Calls: The `CashOut` function uses a low level `call` function without checking its return value. If the call fails for any reason, the contract will not be aware of the failure and will continue its execution.
+
+3. Access Control: The `AddMessage` function in the `Log` contract does not have any access control measures. This means any address can call this function and add messages to the `History`. 
+
+4. Denial of Service: In the `CashOut` function, if the call to `msg.sender.call.value(_am)()` fails (for example, if the fallback function of the msg.sender consumes more than the stipulated gas), then the user will be unable to withdraw their ether. This could effectively lock all the funds in the contract.
+
+5. Arithmetic Issues: The `Deposit` function is susceptible to integer overflow. If a user deposits a large enough amount, `balances[msg.sender]+=msg.value;` could overflow and reset the balance of the sender to a lower value.
+
+Finally, to mitigate these vulnerabilities, it is recommended to use the 'Checks-Effects-Interactions' pattern to avoid reentrancy attacks, always check the return value of `call` functions, add access control to sensitive functions, avoid using low-level calls unless necessary, and use SafeMath library to prevent arithmetic issues.

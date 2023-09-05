@@ -1,0 +1,9 @@
+This smart contract has an Arithmetic Issues vulnerability, specifically it has an integer overflow and underflow issue. 
+
+In the function `transfer(address _to, uint256 _value)`, the contract checks if the sender has enough balance, deducts the `_value` from the sender's balance, and then adds the `_value` to the recipient's balance. The problem here is that there are no checks to prevent overflow or underflow. 
+
+For instance, if the recipient's balance is very large, adding more value could cause it to overflow and wrap around to a very small number. Similarly, if the sender's balance is very small, subtracting value could cause it to underflow and wrap around to a very large number. 
+
+These scenarios could lead to serious issues like theft of tokens or loss of funds. 
+
+To fix this issue, the contract should use SafeMath library for arithmetic operations which includes checks for overflow and underflow.

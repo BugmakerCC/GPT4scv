@@ -1,0 +1,15 @@
+The given smart contract appears to have several vulnerabilities:
+
+1. Reentrancy: This vulnerability exists in the `tokens_buy()` function where the `c.call()` function is called before the `owner2.send(sum2);` function. An attacker can potentially re-enter the `tokens_buy()` function during the `c.call()`, drain the contract, and prevent the `owner2.send(sum2);` function from executing.
+
+2. Access Control: The `change_token_price` and `change_active` methods are protected by the `onlyOwner` modifier which checks if `msg.sender` is `owner`. However, there's no similar check for `owner2` even though `owner2` is also assigned at contract deployment and `owner2.send(sum2);` function is called in the `tokens_buy()` function.
+
+3. Arithmetic Issues: There's a potential for integer underflow or overflow in `tokens_buy = msg.value*10**18/token_price;` and `uint sum2 = msg.value * 3 / 10;` because there are no checks for overflows or underflows.
+
+4. Denial of Service: A Denial of Service attack could be possible if an attacker can cause the `c.call()` or `owner2.send(sum2);` functions to always fail.
+
+5. Unchecked Return Values For Low Level Calls: The contract does not check the return value of `owner2.send(sum2);` and `owner.send(balance);` in the `withdraw()` function. This could lead to loss of funds if these call fails due to gas limitations or an exception in the receiving contract.
+
+6. Bad Randomness, Front-Running, Time manipulation, and Short Address Attack vulnerabilities do not appear to be present in this contract. 
+
+Please note that this analysis is based on the provided contract and vulnerabilities can vary depending on the entire system design and other contracts it interacts with. It's recommended to use comprehensive testing and formal verification tools to ensure the security of a smart contract.

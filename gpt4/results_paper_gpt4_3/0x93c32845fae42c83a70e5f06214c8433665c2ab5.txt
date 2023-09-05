@@ -1,0 +1,21 @@
+This smart contract potentially has the following vulnerabilities:
+
+1. Reentrancy: The `Collect` function is susceptible to a reentrancy attack because it calls an external contract `msg.sender.call.value(_am)()` before updating the state `acc.balance-=_am;`. An attacker can make a recursive call back into the `Collect` function before the state is updated.
+
+2. Arithmetic Issues: The contract does not check for overflows or underflows in the `Put` function when adding to the balance `acc.balance += msg.value;` or in the `Collect` function when subtracting from the balance `acc.balance-=_am;`.
+
+3. Unchecked Return Values For Low Level Calls: The contract uses low level calls `msg.sender.call.value(_am)()` in the `Collect` function without checking the return value. If the call fails due to an exception, the contract will not be aware of it.
+
+4. Access Control: This contract does not implement any access control mechanisms. This allows any address to execute any function, which might not be the intended behavior.
+
+5. Denial of Service: The contract is vulnerable to a Denial of Service (DoS) in the `Collect` function. If an attacker sets a high gas price, the `msg.sender.call.value(_am)()` could run out of gas, and the function would never release funds.
+
+6. Bad Randomness: The contract does not use any randomness in its computations.
+
+7. Front-running: There is a potential for front-running attacks in the `Collect` function where a malicious miner can see pending transactions and reorder them to their advantage.
+
+8. Time Manipulation: The contract uses the `now` keyword which can be manipulated by miners to a certain degree.
+
+9. Short Address Attack: The contract does not seem to be vulnerable to a short address attack as it does not take address inputs from users. 
+
+Please note that these vulnerabilities are potential and further analysis and testing are needed to confirm them.

@@ -1,0 +1,17 @@
+1. Reentrancy: The contract is vulnerable to reentrancy in the `GetHoneyFromJar` function. After checking if `msg.value` is greater than 1 ether, the contract transfers the balance of the contract to `Owner` and then to `msg.sender`. An attacker can make a `call` to the contract in their fallback function and drain the contract.
+
+2. Access Control: There's a risk in the `Command` function where the contract owner can execute any function of any contract. If the owner's address is compromised, an attacker can do anything.
+
+3. Arithmetic Issues: There are no arithmetic operations, so it's not vulnerable to this type of issue.
+
+4. Unchecked Return Values For Low Level Calls: In the `Command` function, it uses `call.value` without checking the return value. This is a potential risk if the called contract throws an exception.
+
+5. Denial of Service: The `withdraw` function can potentially be a DoS vulnerability. If the `Owner` is a contract and its fallback function always throws an exception, then it will be impossible to withdraw funds from the contract.
+
+6. Bad Randomness: There's no randomness in the contract, so it's not vulnerable to this type of issue.
+
+7. Front-Running: There's no transaction ordering in the contract, so it's not vulnerable to this type of issue.
+
+8. Time manipulation: There's no use of `block.timestamp` or `now`, so it's not vulnerable to this type of issue.
+
+9. Short Address Attack: There's no external call with msg.data or transfer with a user-supplied address, so it's not vulnerable to this type of issue. However, the contract does not check the length of the input address in the `Command` function, which might be a potential risk if combined with off-chain client vulnerabilities.

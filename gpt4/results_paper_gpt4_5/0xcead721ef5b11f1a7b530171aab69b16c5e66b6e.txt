@@ -1,0 +1,15 @@
+Looking at the provided smart contract, we can identify some potential vulnerabilities:
+
+1. Reentrancy: The `Collect` function is vulnerable to a reentrancy attack because it calls an external contract (i.e., `msg.sender.call.value(_am)()`) before it updates the state (`acc.balance -= _am;`). An attacker can re-enter the contract before the state is updated, and drain the contract of its funds.
+
+2. Arithmetic Issues: The contract can have integer overflow and underflow issues. For example, the `Put` function increases the `acc.balance` by `msg.value` without checking for overflow. Similarly, the `Collect` function decreases the `acc.balance` by `_am` without checking for underflow.
+
+3. Unchecked Return Values For Low Level Calls: The contract uses a low-level call (`msg.sender.call.value(_am)()`) without checking its return value. If this call fails, the contract will continue execution without any error.
+
+4. Access Control: The contract does not have any access control mechanisms in place. Any address can call the `Put` and `Collect` functions and potentially manipulate the contract's state.
+
+5. Denial of Service: An attacker can potentially do a denial of service attack by ensuring that the `msg.sender.call.value(_am)()` in `Collect` function always fails. This can be done if the attacker's fallback function always throws an exception.
+
+6. Time Manipulation: This contract uses the `now` keyword for time-based calculations. `now` is an alias for `block.timestamp`, and miners have some control over this value, which could be manipulated.
+
+The contract does not appear to be vulnerable to Front-Running, Bad Randomness, or Short Address Attack. However, it's always important to thoroughly test smart contracts and use best practices to minimize potential risks.

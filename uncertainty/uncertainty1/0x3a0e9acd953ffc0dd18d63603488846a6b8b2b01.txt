@@ -1,0 +1,15 @@
+This smart contract has several potential vulnerabilities. 
+
+1. Reentrancy: The public functions `WitdrawTokenToHolder` and `WithdrawToHolder` in the `TokenBank` contract are susceptible to reentrancy attacks because they call external contracts (`token.call` and `_addr.call`) before updating the state (subtracting `_wei` from `Holders[_addr]`).
+
+2. Access control: The `onlyOwner` modifier in the `Ownable` contract doesn't prevent the execution of the function when `msg.sender` is not the owner. It should use `require(owner == msg.sender);` instead of `if(owner == msg.sender)_;`. 
+
+3. Unchecked return values for low level calls: The return values of `token.call` and `_addr.call` are not checked in the functions `WitdrawTokenToHolder` and `WithdrawToHolder` of the `TokenBank` contract. This means that if these calls fail, the contract will not be aware and will continue execution.
+
+4. Arithmetic issues: The `Deposit` function in the `TokenBank` contract has a potential for an integer underflow. When calling `Holders[_addr]-=_wei;`, if `_wei` is greater than `Holders[_addr]`, the balance of the holder could become a very large number due to underflow.
+
+5. Denial of Service: The `confirmOwner` function in the `Ownable` contract could allow an attacker to take over the contract if they can force `newOwner` to be their address.
+
+6. There seems to be no evidence of Bad Randomness, Front-Running, Time Manipulation or Short Address Attack vulnerabilities in the provided contract.
+
+Please consider these potential issues and revise your smart contract accordingly.

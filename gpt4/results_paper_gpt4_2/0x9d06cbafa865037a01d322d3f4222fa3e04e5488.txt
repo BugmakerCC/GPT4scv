@@ -1,0 +1,21 @@
+This smart contract has several potential vulnerabilities:
+
+1. Reentrancy: The `tokens_buy` function calls an external contract (`c.call`) before it finishes its execution. This can cause a reentrancy attack if the called contract calls back the `tokens_buy` function before it finishes its execution.
+
+2. Access Control: The contract has two different owners (owner and owner2). If the private keys of these addresses are not properly secured, an attacker may take over the contract.
+
+3. Arithmetic Issues: There is a potential for an underflow in the `tokens_buy` function when calculating `tokens_buy` value. If `token_price` is greater than `msg.value`, then the result will underflow and return a very large number.
+
+4. Unchecked Return Values For Low Level Calls: There are several low-level calls (`c.call` and `owner2.send`) that are not checked for their return values. If these calls fail, the contract will continue its execution which can lead to undesired outcomes.
+
+5. Denial of Service: The `withdraw` function sends ether to the `owner` address. If this address is a smart contract with a fallback function that consumes more than 2300 gas, the send function will fail and lock the ether in the contract.
+
+6. Bad Randomness: This contract does not use any randomness so this vulnerability is not applicable.
+
+7. Front-Running: This contract does not use any transaction ordering dependence so this vulnerability is not applicable.
+
+8. Time manipulation: This contract does not use any timestamp dependence so this vulnerability is not applicable.
+
+9. Short Address Attack: This contract does not take any address as input from users, so it is not vulnerable to short address attack.
+
+Please note that this is a preliminary analysis and further detailed analysis with a thorough code review is necessary to uncover all potential vulnerabilities.

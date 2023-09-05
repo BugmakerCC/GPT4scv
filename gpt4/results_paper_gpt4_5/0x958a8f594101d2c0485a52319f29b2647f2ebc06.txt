@@ -1,0 +1,21 @@
+The main vulnerabilities in this smart contract are:
+
+1. Reentrancy: This contract does not appear to have a reentrancy vulnerability. Although the "execute" function in the Owned contract does make an external call, it only does so after all state changes have been made and it doesn't call another contract function, reducing the risk of reentrancy.
+
+2. Access Control: The contract uses the "onlyOwner" modifier to restrict access to certain functions. However, the contract also includes a function "acceptOwnership" that appears to allow any address to take over the contract if they are set as the "newOwner". This could pose a risk if the "newOwner" is manipulated in any way.
+
+3. Arithmetic Issues: This contract does not appear to have any arithmetic operations, thus there are no integer overflow or underflow issues.
+
+4. Unchecked Return Values For Low Level Calls: The "execute" function in the Owned contract uses a low-level ".call" method without checking its return value. This can lead to unexpected behavior if the call fails.
+
+5. Denial of Service: The "sendMessage" function transfers the entire balance of the contract to the owner every time a message with a value greater than 0 is sent. This could potentially be exploited to drain the contract.
+
+6. Bad Randomness: This contract does not use any randomness, thus it's not vulnerable to this kind of attack.
+
+7. Front-Running: This contract does not seem to be vulnerable to front-running as there are no transactions which depend on the order of execution.
+
+8. Time manipulation: The contract uses the "now" keyword, which can be manipulated by miners to some extent. However, the potential impact of such manipulation appears to be small in this case.
+
+9. Short Address Attack: The contract does not appear to be vulnerable to a short address attack. All addresses are either set directly by the owner or come directly from "msg.sender", which prevents the possibility of a short address attack.
+
+Please note that this analysis does not guarantee that the contract is free from all vulnerabilities. It is always recommended to have contracts audited by a professional security service.

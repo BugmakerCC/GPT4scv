@@ -1,0 +1,19 @@
+This contract has several vulnerabilities:
+
+1. Reentrancy: In the `Collect` function, the contract calls an external contract (i.e., `msg.sender.call.value(_am)()`) before it updates the state (i.e., `acc.balance-=_am;`). If `msg.sender` is a malicious contract, it could recursively call `Collect` before the original call has a chance to subtract `_am` from `acc.balance`. This would allow the attacker to drain more ether from the contract than they should be able to.
+
+2. Access Control: There are no access controls on any functions. This means that anyone can call `SetMinSum`, `SetLogFile`, and `Initialized`, potentially causing unwanted changes in the contract state.
+
+3. Arithmetic Issues: While this contract doesn't have any obvious arithmetic issues, it's worth noting that Solidity doesn't automatically check for overflows or underflows. This means that you need to be very careful when performing arithmetic operations.
+
+4. Unchecked Return Values: The contract doesn't check the return value of `msg.sender.call.value(_am)()`. If this call fails for any reason, the contract will silently ignore the failure and continue executing. This could lead to unexpected behavior.
+
+5. Denial of Service: If `msg.sender.call.value(_am)()` always fails (e.g., because `msg.sender` is a contract with a fallback function that always throws), then `acc.balance` will never be reduced. This could allow an attacker to permanently lock up ether in the contract.
+
+6. Bad Randomness: This contract doesn't use any randomness, so this vulnerability is not applicable.
+
+7. Front-Running: This contract doesn't have any obvious front-running vulnerabilities, but it's worth noting that miners can always reorder transactions within a block. This means that you need to be very careful when relying on the order of transactions.
+
+8. Time Manipulation: The contract relies on `now` (alias for `block.timestamp`) in `Put` and `Collect` function. Miners have some control over this value, potentially allowing them to manipulate the contract's behavior.
+
+9. Short Address Attack: This contract doesn't interact with user-provided addresses, so this vulnerability is not applicable.

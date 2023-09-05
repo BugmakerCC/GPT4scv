@@ -1,0 +1,58 @@
+{
+    "reentrancy_simple.sol": [
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "withdrawBalance",
+                "withdrawBalance"
+            ],
+            "from_function": "withdrawBalance",
+            "to_function": "withdrawBalance",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 9\nFunction: withdrawBalance\nNode: \nIF ! (msg.sender.call.value(userBalance[msg.sender])())\nIRS: \nTMP_1(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:REF_4 \"",
+                        "\"BlockID: 7\nFunction: withdrawBalance\nNode: \nEXPRESSION userBalance[msg.sender] = 0\nIRS: \nREF_5 := 0\""
+                    ],
+                    "state_variable": "userBalance"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "withdrawBalance",
+                "addToBalance"
+            ],
+            "First_function": "addToBalance",
+            "Second_function": "withdrawBalance",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 3\nFunction: addToBalance\nNode: \nEXPRESSION userBalance[msg.sender] += msg.value\nIRS: \nREF_1 = REF_1 + msg.value\"",
+                        "\"BlockID: 5\nFunction: withdrawBalance\nNode: \nIF ! (msg.sender.call.value(userBalance[msg.sender])())\nIRS: \nTMP_1(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:REF_4 \""
+                    ],
+                    "state_variable": "userBalance"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "withdrawBalance",
+                "withdrawBalance"
+            ],
+            "First_function": "withdrawBalance",
+            "Second_function": "withdrawBalance",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 15\nFunction: withdrawBalance\nNode: \nEXPRESSION userBalance[msg.sender] = 0\nIRS: \nREF_5 := 0\"",
+                        "\"BlockID: 5\nFunction: withdrawBalance\nNode: \nIF ! (msg.sender.call.value(userBalance[msg.sender])())\nIRS: \nTMP_1(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:REF_4 \""
+                    ],
+                    "state_variable": "userBalance"
+                }
+            ]
+        }
+    ]
+}

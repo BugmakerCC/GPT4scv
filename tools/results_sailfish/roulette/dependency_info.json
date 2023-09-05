@@ -1,0 +1,22 @@
+{
+    "roulette.sol": [
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "fallback"
+            ],
+            "First_function": "fallback",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 12\nFunction: fallback\nNode: \nEXPRESSION pastBlockTime = now\nIRS: \npastBlockTime := now\"",
+                        "\"BlockID: 4\nFunction: fallback\nNode: \nEXPRESSION require(bool)(now != pastBlockTime)\nIRS: \nTMP_3 = SOLIDITY_CALL require(bool)(TMP_2)\""
+                    ],
+                    "state_variable": "pastBlockTime"
+                }
+            ]
+        }
+    ]
+}

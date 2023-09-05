@@ -1,0 +1,21 @@
+The smart contract has a few vulnerabilities related to the common categories mentioned:
+
+1. Reentrancy: This contract is vulnerable to reentrancy attacks. In the function `deliver()` and `cancel()`, before making an external call via `call.value()()`, they set the `externalCallFlag` to true. This flag is checked in the `request()` function and if true, it throws an exception. However, this doesn't protect the contract from reentrancy because if the attacker's fallback function calls `deliver()` or `cancel()`, reentrancy still can happen, because the `externalCallFlag` is set back to false after the external call in `deliver()` and `cancel()`.
+
+2. Access Control: In the `upgrade()`, `reset()`, `suspend()`, `restart()`, and `withdraw()` functions, the only access control is checking if `msg.sender` is the `requester` of the first request (`requests[0].requester`). This is too weak as it only checks the first request and not the subsequent ones. If the first request is made by an attacker, they can gain control of the contract.
+
+3. Arithmetic Issues: There are no integer overflows or underflows vulnerabilities detected in the contract.
+
+4. Unchecked Return Values for Low Level Calls: The contract uses `call.value()()` in `deliver()`, `request()`, and `cancel()` functions but does not check the return value which can lead to unchecked send vulnerability. If those calls fail, the contract will not be aware of it.
+
+5. Denial of Service: The contract is vulnerable to a denial of service attack. The `request()` function has a `killswitch` that, if set to true, prevents any new requests from being processed. The `suspend()` function can set `killswitch` to true, and the `restart()` function sets it back to false. If an attacker gains control of the `requester` of the first request, they can call `suspend()` to stop all new requests.
+
+6. Bad Randomness: The contract does not rely on randomness.
+
+7. Front-Running: There seems to be no vulnerability to front running here, as transaction ordering does not seem to affect the contract’s behaviour in a way that could be exploited.
+
+8. Time manipulation: The contract does not rely on timestamps or block numbers.
+
+9. Short Address Attack: The contract does not appear to be susceptible to a short address attack.
+
+This analysis is based on the provided information and might not include all possible vulnerabilities. A more comprehensive security audit might unveil more subtle and context-specific vulnerabilities.

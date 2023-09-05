@@ -1,0 +1,19 @@
+The smart contract has several potential vulnerabilities:
+
+1. Reentrancy: The function `cash` uses `send()` to transfer funds to the winner's address. If the winner's address is a contract, it could potentially call back into the function before it's finished, leading to reentrancy. Consider using the withdrawal pattern to mitigate this.
+
+2. Arithmetic Issues: The contract does not check for overflows or underflows in its arithmetic operations. This could lead to unintended behavior if large values are used. Consider using a library like SafeMath for safe arithmetic operations.
+
+3. Unchecked Return Values: The contract does not check the return values of `send()`. If the `send()` function fails for some reason (for example, if the recipient is a contract with a fallback function that consumes more than the 2300 gas stipend), the contract will not be aware of the failure. This is especially concerning in the `cash` function, where the contract assumes that the send operation succeeds and marks the round as cashed. If the send operation fails, the funds will be stuck in the contract forever.
+
+4. Denial of Service: The contract relies heavily on the `block.number` and `block.blockhash` built-in variables, which can be influenced by miners. This could potentially lead to a denial of service attack.
+
+5. Time Manipulation: The contract uses block numbers to manage rounds and determine winners. This is a form of time manipulation as miners have some influence over block numbers and hashes.
+
+6. Bad Randomness: The contract uses `block.blockhash` to calculate the winner. This is insecure because miners can influence the result by deciding not to publish a block if it would make them lose.
+
+7. Access Control: The contract does not have any access control mechanisms. This means that any account can call any function. While this is not necessarily a problem, it's something to be aware of.
+
+8. Front-Running: Since the contract's state is public, it's possible for a miner to see a winning transaction and decide to front-run it by inserting their own transaction first.
+
+9. Short Address Attack: The contract does not appear to be vulnerable to a short address attack, as it does not manually parse inputs to multi-argument functions. However, it's still a good practice to use `msg.data.length` to verify the correct length of the data payload.

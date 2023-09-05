@@ -1,0 +1,35 @@
+Upon analyzing the provided smart contract, we can identify several vulnerabilities:
+
+1. Reentrancy: The `withdrawAll` function allows users to withdraw their credit balance. However, it does not prevent reentrancy attacks. After deducting the credit from the balance, it calls the `msg.sender` contract, which can be an external contract. This allows an attacker to recursively call the `withdrawAll` function and drain the contract's balance. To fix this vulnerability, the state should be updated before making any external calls.
+
+2. Denial of Service: The `withdrawAll` function does not check if the `oCredit` value is greater than the contract's balance. This allows an attacker to withdraw more credit than the contract holds, leading to a denial of service by depleting the contract's balance.
+
+To address these vulnerabilities, the modified contract is as follows:
+
+```solidity
+pragma solidity ^0.4.19;
+
+contract ReentrancyDAO {
+    mapping (address => uint) credit;
+    uint balance;
+
+    function withdrawAll() public {
+        uint oCredit = credit[msg.sender];
+        require(oCredit > 0); // Check if the credit balance is greater than zero
+
+        credit[msg.sender] = 0; // Update the state before making any external calls
+
+        balance -= oCredit;
+
+        bool callResult = msg.sender.call.value(oCredit)();
+        require(callResult);
+    }
+
+    function deposit() public payable {
+        credit[msg.sender] += msg.value;
+        balance += msg.value;
+    }
+}
+```
+
+By implementing these modifications, we ensure that the contract is more secure against reentrancy attacks and denial of service vulnerabilities.

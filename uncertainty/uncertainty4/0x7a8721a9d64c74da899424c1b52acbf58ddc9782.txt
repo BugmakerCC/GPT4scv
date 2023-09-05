@@ -1,0 +1,15 @@
+The smart contract has at least two vulnerabilities:
+
+1. Reentrancy: The CashOut function is vulnerable to a reentrancy attack. The contract sends Ether with the call.value() function before it decreases the balance of the sender. If the called contract is malicious and implements a fallback function to call CashOut again, it could drain the contract's Ether.
+
+2. Access Control: The setLog() function allows the owner to change the contract address of the TransferLog. If the owner is malicious or their account is compromised, they can change the log contract to a malicious one. It's also worth noting that only the contract owner can change the log contract - other users of the contract have no control over this.
+
+Additionally, the contract uses the tx.origin function, which is a potential security risk. The tx.origin command returns the address of the user who originally sent the transaction. If a contract function uses tx.origin for authentication, it opens the door for a phishing attack where a malicious contract can trick a user into calling a function that the user didn't intend to call. 
+
+Recommendations for improvements would include: 
+
+- In the case of reentrancy, the balance of the sender should be updated before the call.value() function is called.
+
+- For access control, a possible solution could be to implement a voting system among users to change the log contract. 
+
+- The use of tx.origin should be replaced with msg.sender.

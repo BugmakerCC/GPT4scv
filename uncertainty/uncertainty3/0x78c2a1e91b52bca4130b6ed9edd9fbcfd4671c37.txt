@@ -1,0 +1,19 @@
+The smart contract has a few vulnerabilities:
+
+1. Reentrancy: In the `redeem` function, the contract first sends money to the `Owner`, then to the `msg.sender`. If the `Owner` is a malicious contract, it could call back into `redeem` before the original call has finished. This could drain the contract's Ether.
+
+2. Arithmetic Issues: There are no underflow or overflow checks on the msg.value in the `redeem` function.
+
+3. Unchecked Return Values For Low Level Calls: In the `Command` function, there is a low level call (`adr.call.value(msg.value)(data)`) but the return value is not checked. This could lead to unexpected behavior if the call fails.
+
+4. Access Control: The `Owner` can be changed in the `withdraw` function if the sender address is `0x7a617c2B05d2A74Ff9bABC9d81E5225C1e01004b`. This could allow an attacker to take control of the contract if they can control this address.
+
+5. Denial of Service: If a contract becomes the `Owner`, it could refuse to accept Ether in its fallback function, causing `Owner.transfer(this.balance);` to throw an exception and stop execution of the `withdraw` and `redeem` functions.
+
+6. Bad Randomness: Not applicable as the contract doesn't use randomness.
+
+7. Front-Running: Not applicable as the contract's functions aren't dependent on transaction order.
+
+8. Time manipulation: Not applicable as the contract doesn't use timestamps.
+
+9. Short Address Attack: Not applicable as the contract doesn't take address input from user.

@@ -1,0 +1,66 @@
+[INFO] | 2023-08-14 02:55:00 AM | analyzer.ERC20  | Analysis started at: 2023-08-14 02:55:00 AM
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Version constraints: ['^0.4.24']
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | solc version: v0.4.24
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Callgraph generation started!
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Callgraph generation finished!
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Value Range Analysis started
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Generating return summary for mul
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Return summary generated for mul
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | State variable assignement do not exist
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Processed function mul
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Generating return summary for div
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Return summary generated for div
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | State variable assignement do not exist
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Processed function div
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Generating return summary for sub
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Return summary generated for sub
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | State variable assignement do not exist
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Processed function sub
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Generating return summary for add
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Return summary generated for add
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | State variable assignement do not exist
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Processed function add
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Generating return summary for mod
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Return summary generated for mod
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | State variable assignement do not exist
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Processed function mod
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Generating return summary for constructor
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Return summary generated for constructor
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Range graph generated
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Processed function constructor
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Generating return summary for balanceOf
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Return summary generated for balanceOf
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | State variable assignement do not exist
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Processed function balanceOf
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Generating return summary for allowance
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Return summary generated for allowance
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | State variable assignement do not exist
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Processed function allowance
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Generating return summary for approve
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Return summary generated for approve
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Range graph generated
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Processed function approve
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Generating return summary for transfer
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Return summary generated for transfer
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Range graph generated
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Processed function transfer
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Generating return summary for transferFrom
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Return summary generated for transferFrom
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Range graph generated
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Processed function transferFrom
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Value Range Analysis took 0.003459 seconds
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Value Range Analysis finished
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Dependency detection started!
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Dependency detection finished!
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Static Analysis took 0.508991 seconds
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Dependency does not exist
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Symbolic execution is not needed!
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Analysis finished!
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Analysis took 0.509171 seconds
+[INFO] | 2023-08-14 02:55:01 AM | analyzer.ERC20  | Analysis finished at: 2023-08-14 02:55:01 AM

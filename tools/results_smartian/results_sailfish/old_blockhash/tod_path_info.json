@@ -1,0 +1,100 @@
+{
+    "tod_symex_path_1.json": {
+        "file_name": "",
+        "from_function": "settle",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 26\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 27\nCall context: \nNone\nREF_6 -> guesses[msg.sender]\nREF_7 -> REF_6.block\nTMP_7 = block.number > REF_7\nTMP_8 = SOLIDITY_CALL require(bool)(TMP_7)\""
+        ],
+        "executable_instructions": 34,
+        "state_variable": "guesses.block",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_2.json": {
+        "file_name": "",
+        "from_function": "settle",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 32\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 35\nCall context: \nTrue\nTransfer dest:msg.sender value:2000000000000000000\""
+        ],
+        "executable_instructions": 47,
+        "state_variable": "guesses.block",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_3.json": {
+        "file_name": "",
+        "from_function": "settle",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 38\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 41\nCall context: \nTrue\nTransfer dest:msg.sender value:2000000000000000000\""
+        ],
+        "executable_instructions": 47,
+        "state_variable": "guesses.block",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_4.json": {
+        "file_name": "",
+        "from_function": "settle",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 44\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 47\nCall context: \nTrue\nTransfer dest:msg.sender value:2000000000000000000\""
+        ],
+        "executable_instructions": 47,
+        "state_variable": "guesses.guess",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_5.json": {
+        "file_name": "",
+        "from_function": "settle",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 51\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 52\nCall context: \nNone\nREF_6 -> guesses[msg.sender]\nREF_7 -> REF_6.block\nTMP_7 = block.number > REF_7\nTMP_8 = SOLIDITY_CALL require(bool)(TMP_7)\""
+        ],
+        "executable_instructions": 34,
+        "state_variable": "guesses.block",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_6.json": {
+        "file_name": "",
+        "from_function": "settle",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 57\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 60\nCall context: \nTrue\nTransfer dest:msg.sender value:2000000000000000000\""
+        ],
+        "executable_instructions": 47,
+        "state_variable": "guesses.block",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_7.json": {
+        "file_name": "",
+        "from_function": "settle",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 63\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 66\nCall context: \nTrue\nTransfer dest:msg.sender value:2000000000000000000\""
+        ],
+        "executable_instructions": 47,
+        "state_variable": "guesses.block",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    }
+}

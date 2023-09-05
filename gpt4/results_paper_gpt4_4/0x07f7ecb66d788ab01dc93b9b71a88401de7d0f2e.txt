@@ -1,0 +1,21 @@
+This contract contains several vulnerabilities:
+
+1. Reentrancy: The `payout` and `loseWager` functions are susceptible to reentrancy attacks because they call external contracts (`winner.transfer` and `whale.call.value`) before setting their states. An attacker can recursively call the `payout` or `loseWager` function and drain the contract's funds. 
+
+2. Access Control: The `onlyRealPeople` modifier is not a reliable way to ensure that the function is only called by an EOA (Externally Owned Account). Contracts can be created with a constructor that sets `tx.origin` to the address of the contract itself.
+
+3. Arithmetic Issues: There don't seem to be any integer underflow or overflow issues in the contract.
+
+4. Unchecked Return Values For Low Level Calls: The low level call `whale.call.value(amount)` in the `donateToWhale` and `loseWager` functions does not check the return value. If this call fails, no error will be thrown and execution will continue.
+
+5. Denial of Service: The contract can be locked by sending ether without calling any function (by sending ether to the contract's address). Once enough ether has been sent to reach the gas limit, no further transactions can be processed.
+
+6. Bad Randomness: The `play` function uses `blockhash(blockNumber)` for randomness which is predictable and can be manipulated by miners.
+
+7. Front-Running: An attacker can see a winning transaction in the mempool and try to front-run it by sending a transaction with a higher gas price.
+
+8. Time manipulation: No timestamp dependence vulnerability is found in the contract.
+
+9. Short Address Attack: This type of vulnerability is not applicable here as the contract does not handle tokens directly, other than in the `transferAnyERC20Token` function. But the function could be misused by the owner to transfer tokens not owned by the contract.
+
+This smart contract needs to be deeply audited and fixed to prevent these vulnerabilities from being exploited.

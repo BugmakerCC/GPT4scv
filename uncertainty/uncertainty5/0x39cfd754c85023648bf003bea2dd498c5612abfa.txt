@@ -1,0 +1,15 @@
+The contract code you provided seems to have the following vulnerabilities:
+
+1. Reentrancy: The `WithdrawToHolder` function is susceptible to a reentrancy attack because it makes an external call to `_addr` using `.call.value(_wei)` before it reduces the balance of `_addr` in `Holders[_addr]-=_wei;`. An attacker can make a recursive call back into `WithdrawToHolder` before `Holders[_addr]-=_wei;` has a chance to execute.
+
+2. Access Control: The `onlyOwner` modifier definition is incorrect. It should be `require(msg.sender == owner);` instead of `if(owner == msg.sender)_;`. In the current form, it does not prevent execution of a function in case the sender is not the owner.
+
+3. Arithmetic Issues: There is no check for underflow when the function `Holders[_addr]-=_wei;` is called. If `_wei > Holders[_addr]`, this would result in an underflow. The usage of SafeMath library could prevent this.
+
+4. Unchecked Return Values For Low Level Calls: The Low-level call to `token.call(bytes4(sha3("transfer(address,uint256)")),to,amount);` and `_addr.call.value(_wei)` do not check for their return values. If these calls were to fail, the contract would not know and would continue execution.
+
+5. Denial of Service: If the address `_addr` in the functions `WithdrawTokenToHolder` and `WithdrawToHolder` is a contract that throws errors or consumes a lot of gas, it could block the entire contract.
+
+6. Front-Running: Due to the public nature of transactions, an attacker could see a pending transaction in the `WithdrawTokenToHolder` or `WithdrawToHolder` function and front-run it by offering a higher gas price.
+
+The contract does not seem to have any issues related to Bad Randomness, Time Manipulation, or Short Address Attack. However, further testing and analysis would be required to completely ensure the absence of these vulnerabilities.

@@ -1,0 +1,15 @@
+This smart contract has several potential vulnerabilities:
+
+1. Reentrancy: The contract is potentially vulnerable to a reentrancy attack because it makes an external call to `caddress.call(id,from,_tos[i],v);` without first adjusting the state. That means if the called contract includes malicious code that calls back into this contract, it could potentially lead to unexpected behaviour or even drain the contract's funds.
+
+2. Unchecked Return Values For Low Level Calls: The contract uses `caddress.call(id,from,_tos[i],v);` but does not check the return value. If this call fails for any reason, the contract will not be aware and will continue to function as if it had succeeded. This can lead to unexpected behaviour and potential loss of funds.
+
+3. Arithmetic Issues: While the contract does not perform any arithmetic operations, it does not include any checks for integer overflow or underflow. If the variable `v` is manipulated maliciously, it could potentially lead to integer overflow or underflow, leading to unexpected behaviour.
+
+4. Access Control: The function `transfer` is public, meaning any Ethereum user can call it. If this function is intended to be used only by specific users, this could be a vulnerability. 
+
+5. Denial of Service: DoS with Unexpected Throw: If the call to `caddress.call(id,from,_tos[i],v);` throws an exception, the loop will be interrupted and the function will stop executing, which can be used for a Denial of Service (DoS) attack.
+
+The contract does not appear to be vulnerable to Time manipulation, Bad randomness, Short Address Attack and Front-Running. 
+
+However, without knowing the full context of this contract, it's difficult to say for sure. Always practice good security hygiene when writing smart contracts.

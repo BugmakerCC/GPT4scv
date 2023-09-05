@@ -1,0 +1,19 @@
+The contract appears to have multiple vulnerabilities such as:
+
+1. Reentrancy: The `WithdrawToHolder` function is vulnerable to a reentrancy attack because it calls an external contract `_addr.call.value(_wei)` before it updates the state `Holders[_addr]-=_wei`. An attacker could recursively call `WithdrawToHolder` before the state `Holders[_addr]` has been updated, draining the contract of Ether.
+
+2. Arithmetic Issues: The `Deposit` function could potentially underflow if `Holders[msg.sender]` is less than `msg.value`.
+
+3. Unchecked Return Values For Low Level Calls: The `WithdrawToken` function in the `Token` contract and `WithdrawToHolder` function in the `TokenBank` contract use low-level call methods without checking the return value. If these calls fail, the contract will not be aware of it.
+
+4. Access Control: The `onlyOwner` modifier is incorrectly implemented. It should throw an exception if `msg.sender` is not the owner, but instead, it does nothing. This means any address can call functions with the `onlyOwner` modifier.
+
+5. Denial of Service: If an attacker sets the contract address to a contract of their own that always throws exceptions, it can stop the `WithdrawToken` and `WithdrawToHolder` functions from executing, resulting in a Denial of Service.
+
+6. Bad Randomness: Not explicitly seen in the contract, but could be a potential issue if the contract relies on variables like block.timestamp for generating randomness.
+
+7. Front-Running: Not explicitly seen in the contract, but could be a potential issue if the contract involves trading or bidding functionality.
+
+8. Time manipulation: Not explicitly seen in the contract, but could be a potential issue if the contract relies on block.timestamp for executing certain functions.
+
+9. Short Address Attack: Not explicitly seen in the contract, but could be a potential issue if the contract does not validate the length of the address input in functions like `changeOwner`, `WithdrawToken`, and `WitdrawTokenToHolder`.

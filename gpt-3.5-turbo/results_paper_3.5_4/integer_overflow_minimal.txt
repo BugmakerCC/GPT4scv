@@ -1,0 +1,22 @@
+The provided smart contract is vulnerable to an Arithmetic Issue known as integer underflow. This vulnerability occurs when subtracting a value from a variable and the result exceeds the maximum value that the variable can hold.
+
+In the provided contract, the `count` variable is of type `uint`, which means it can only hold positive values. However, the `run` function subtracts the `input` parameter from `count` without checking if the subtraction will result in an underflow.
+
+Here is the modified code that includes a fix for the vulnerability:
+
+```solidity
+pragma solidity ^0.4.19;
+
+contract IntegerOverflowMinimal {
+    uint public count = 1;
+
+    function run(uint256 input) public {
+        require(input <= count); // Check if input is less than or equal to count to prevent underflow
+        count -= input;
+    }
+}
+```
+
+In the modified code, we added a `require` statement to check if the `input` value is less than or equal to `count`. If the condition is not met, the transaction will be reverted, preventing an integer underflow.
+
+By implementing this fix, we ensure that the subtraction operation will not result in an underflow, eliminating the vulnerability.

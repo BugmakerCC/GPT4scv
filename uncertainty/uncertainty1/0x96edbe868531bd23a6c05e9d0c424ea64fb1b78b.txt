@@ -1,0 +1,21 @@
+The provided smart contract appears to have several vulnerabilities:
+
+1. **Reentrancy** - In the `Collect` function, the contract sends ether to an address before it updates the balance of that address. This is a classic example of a reentrancy vulnerability because if the fallback function of the contract at `msg.sender` makes a call back to `Collect`, it will be able to withdraw more Ether than it should. This vulnerability could be exploited to drain the contract of all its Ether.
+
+2. **Unchecked Return Values For Low Level Calls** - In the `Collect` function, the `call.value()` function is used to send Ether. However, the return value of this function is not checked. This function returns `false` if the call fails but does not throw an exception. This can lead to unexpected behavior if the call fails. 
+
+3. **Access Control** - The contract seems to have no access control mechanisms in place. This means that anyone can call any function in the contract. For example, anyone can call the `SetMinSum` and `SetLogFile` functions, potentially changing important parameters of the contract.
+
+4. **Arithmetic Issues** - In the `Put` function, the contract adds `msg.value` to `acc.balance` and `_lockTime` to `now` without checking for an overflow. If an overflow occurs, this will lead to incorrect balances or unlock times.
+
+5. **Denial of Service** - If a contract has a fallback function that consumes a lot of gas, the `Collect` function could potentially fail due to the gas limit being reached, thus blocking all future calls to `Collect`.
+
+6. **Bad Randomness** - Not applicable in this contract since it does not involve any randomness.
+
+7. **Front-Running** - Not applicable in this contract as it does not involve any transaction ordering dependence.
+
+8. **Time manipulation** - The contract uses `now` for the unlock time. Miners have control over this variable and could potentially manipulate it. However, in this contract, it does not seem like a miner could profit from such a manipulation.
+
+9. **Short Address Attack** - Not applicable as this contract does not take address inputs from users.
+
+To fix these issues, the contract could use the `SafeMath` library for arithmetic operations, add checks for the return value of `call.value()`, add access control mechanisms, and use a pull payment system to prevent reentrancy and denial of service attacks.

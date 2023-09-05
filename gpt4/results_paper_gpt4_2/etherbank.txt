@@ -1,0 +1,30 @@
+The smart contract provided has a Reentrancy vulnerability, which is one of the most common vulnerabilities in Ethereum smart contracts. 
+
+Here's how it works:
+
+The `withdrawBalance()` function first sends the Ether to the caller with the `call.value()` function, then sets the user's balance to zero. However, the `call.value()` function allows the called contract to execute code. If the caller contract's fallback function calls `withdrawBalance()` again, it could withdraw more Ether than its balance. This is a classic example of a reentrancy attack, also known as the DAO attack. 
+
+The code can be fixed by flipping the order of operations in the `withdrawBalance()` function:
+
+```solidity
+pragma solidity ^0.4.0;
+contract EtherBank{
+    mapping (address => uint) userBalances;
+
+    function getBalance(address user) constant returns(uint) {  
+		return userBalances[user];
+	}
+
+	function addToBalance() {  
+		userBalances[msg.sender] += msg.value;
+	}
+
+	function withdrawBalance() {  
+		uint amountToWithdraw = userBalances[msg.sender];
+		userBalances[msg.sender] = 0;
+		if (!(msg.sender.call.value(amountToWithdraw)())) { throw; }
+	}    
+}
+```
+
+By setting the user's balance to zero before the call is made, we ensure that even if a reentrancy attempt is made, the balance is already zero, and no Ether can be withdrawn.

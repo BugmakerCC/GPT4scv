@@ -1,0 +1,48 @@
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Analysis started at: 2023-08-14 02:57:21 AM
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Version constraints: ['^0.4.19']
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | solc version: v0.4.19
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Callgraph generation started!
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Callgraph generation finished!
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Value Range Analysis started
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Generating return summary for fallback
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Return summary generated for fallback
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Processed function fallback
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Generating return summary for GetHoneyFromJar
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Return summary generated for GetHoneyFromJar
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Processed function GetHoneyFromJar
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Generating return summary for withdraw
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Return summary generated for withdraw
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Range graph generated
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Processed function withdraw
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Generating return summary for Command
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Return summary generated for Command
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Processed function Command
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Generating return summary for slitherConstructorVariables
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Return summary generated for slitherConstructorVariables
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Range graph generated
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Processed function slitherConstructorVariables
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Value Range Analysis took 0.001160 seconds
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Value Range Analysis finished
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Dependency detection started!
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | TOD dependency detected in file 0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4.sol in contract HomeyJar in by composing functions GetHoneyFromJar and withdraw
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | TOD dependency detected in file 0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4.sol in contract HomeyJar in by composing functions GetHoneyFromJar and withdraw
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | TOD dependency detected in file 0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4.sol in contract HomeyJar in by composing functions withdraw and withdraw
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | TOD dependency detected in file 0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4.sol in contract HomeyJar in by composing functions Command and withdraw
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Dependency detection finished!
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Static Analysis took 0.255629 seconds
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Dependency exists
+[INFO] | 2023-08-14 02:57:21 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Invoking symbolic executor!
+[INFO] | 2023-08-14 02:57:22 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Symbolic execution took 0.841060 seconds
+[INFO] | 2023-08-14 02:57:22 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Symbolic execution finished!
+[INFO] | 2023-08-14 02:57:22 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Analysis finished!
+[INFO] | 2023-08-14 02:57:22 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Analysis took 1.097136 seconds
+[INFO] | 2023-08-14 02:57:22 AM | analyzer.0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4 | Analysis finished at: 2023-08-14 02:57:22 AM

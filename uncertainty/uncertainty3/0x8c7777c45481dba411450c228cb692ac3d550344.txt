@@ -1,0 +1,13 @@
+The smart contract has several vulnerabilities:
+
+1. Reentrancy: This is a high-severity vulnerability present in the CashOut function. The contract transfers Ether to msg.sender before it decreases the balance of msg.sender. This allows the same function to be called again before the original call finishes, enabling an attacker to drain more Ether than they should have access to.
+
+2. Unchecked Return Values For Low Level Calls: The CashOut function uses a low-level call() function without checking its return value. If the call fails, the contract execution will continue as if nothing happened, potentially leading to unexpected behavior.
+
+3. Access Control: The AddMessage function in the Log contract is public, meaning anyone can call it. Depending on the function's intended use, this could be a vulnerability. It's generally recommended that functions are made only as public as they need to be, and in this case, it may be better to make the function internal or private.
+
+4. Denial of Service: The `CashOut` function is vulnerable to a denial of service attack. If an attacker's fallback function always reverts, it will not be possible to send ether to the attacker, effectively blocking all payouts.
+
+5. Time manipulation: The `AddMessage` function in the Log contract uses the `now` keyword, which can be manipulated by miners to some extent. This could potentially be used to influence the contract's behavior.
+
+The contract does not appear to have vulnerabilities related to Arithmetic Issues (integer overflow and underflow), Bad Randomness, Front-Running, or Short Address Attack. However, a thorough audit by a professional auditor is recommended for complete assurance.

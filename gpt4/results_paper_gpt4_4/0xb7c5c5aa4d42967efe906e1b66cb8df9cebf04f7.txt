@@ -1,0 +1,41 @@
+This smart contract has a Reentrancy vulnerability. During the execution of the `withdraw()` function, the contract's state is not updated before the call to `msg.sender.call.value(balances[msg.sender])()`. This allows for a reentrancy attack where an attacker can recursively call the `withdraw()` function to drain the contract's Ether before the balance is set to 0.
+
+The contract should be updated to follow the Checks-Effects-Interactions pattern to mitigate this reentrancy vulnerability. The balance for `msg.sender` should be set to 0 before making the external call.
+
+Here's a fixed version of the contract:
+
+```
+contract keepMyEther {
+    mapping(address => uint256) public balances;
+    
+    function () payable public {
+        balances[msg.sender] += msg.value;
+    }
+    
+    function withdraw() public {
+        uint256 amount = balances[msg.sender];
+        balances[msg.sender] = 0;
+        msg.sender.call.value(amount)();
+    }
+}
+```
+
+This version of the contract is still vulnerable to unchecked return values for low level calls. The `call()` function returns a boolean indicating success or failure, but this return value isn't checked in the original or the fixed contract. If the call fails, the contract's state will be incorrect, as `balances[msg.sender]` has already been set to 0.
+
+To fix this, you should use `transfer()` or `send()` instead of `call.value()()`. These functions throw an exception if the call fails, reverting the contract's state to what it was before the call. However, they only forward 2300 gas, preventing reentrancy.
+
+```
+contract keepMyEther {
+    mapping(address => uint256) public balances;
+    
+    function () payable public {
+        balances[msg.sender] += msg.value;
+    }
+    
+    function withdraw() public {
+        uint256 amount = balances[msg.sender];
+        balances[msg.sender] = 0;
+        msg.sender.transfer(amount);
+    }
+}
+```

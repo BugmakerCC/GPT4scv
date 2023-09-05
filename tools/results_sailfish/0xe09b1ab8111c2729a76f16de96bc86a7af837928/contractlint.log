@@ -1,0 +1,143 @@
+[INFO] | 2023-08-14 02:58:19 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Analysis started at: 2023-08-14 02:58:19 AM
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Version constraints: ['^0.4.24']
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | solc version: v0.4.24
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Callgraph generation started!
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Callgraph generation finished!
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Value Range Analysis started
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for slitherConstructorConstantVariables
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for slitherConstructorConstantVariables
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Range graph generated
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function slitherConstructorConstantVariables
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for constructor
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for constructor
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Range graph generated
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function constructor
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for fallback
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for fallback
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function fallback
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for donateForContractHealth
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for donateForContractHealth
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Range graph generated
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function donateForContractHealth
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for getBetInfo
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for getBetInfo
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function getBetInfo
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for getContractBalance
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for getContractBalance
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function getContractBalance
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for getCollateralBalance
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for getCollateralBalance
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function getCollateralBalance
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for payout
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for payout
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function payout
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for sendRefund
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for sendRefund
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Range graph generated
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function sendRefund
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for sendFunds
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for sendFunds
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function sendFunds
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for loseWager
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for loseWager
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function loseWager
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for clearProcessedBet
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for clearProcessedBet
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function clearProcessedBet
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for onlyOwner
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for onlyOwner
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function onlyOwner
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for checkContractHealth
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for checkContractHealth
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function checkContractHealth
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for onlyBot
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for onlyBot
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function onlyBot
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for transfer
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for transfer
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function transfer
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for wager
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for wager
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Range graph generated
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function wager
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for play
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for play
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Range graph generated
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function play
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for refund
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for refund
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Range graph generated
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function refund
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for withdrawDonation
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for withdrawDonation
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Range graph generated
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function withdrawDonation
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for withdrawDevFee
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for withdrawDevFee
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Range graph generated
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function withdrawDevFee
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for withdrawBotFee
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for withdrawBotFee
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Range graph generated
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function withdrawBotFee
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for clearStorage
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for clearStorage
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function clearStorage
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for setBotAddress
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for setBotAddress
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Range graph generated
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function setBotAddress
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for setSecretSigner
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for setSecretSigner
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Range graph generated
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function setSecretSigner
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for kill
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for kill
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function kill
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Generating return summary for transferAnyERC20Token
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Return summary generated for transferAnyERC20Token
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Processed function transferAnyERC20Token
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Value Range Analysis took 0.010108 seconds
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Value Range Analysis finished
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Dependency detection started!
+[INFO] | 2023-08-14 02:58:20 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | TOD dependency detected in file 0xe09b1ab8111c2729a76f16de96bc86a7af837928.sol in contract FiftyFlip in by composing functions wager and wager
+[INFO] | 2023-08-14 02:58:21 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | TOD dependency detected in file 0xe09b1ab8111c2729a76f16de96bc86a7af837928.sol in contract FiftyFlip in by composing functions wager and play
+[INFO] | 2023-08-14 02:58:21 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | TOD dependency detected in file 0xe09b1ab8111c2729a76f16de96bc86a7af837928.sol in contract FiftyFlip in by composing functions wager and refund
+[INFO] | 2023-08-14 02:58:21 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | TOD dependency detected in file 0xe09b1ab8111c2729a76f16de96bc86a7af837928.sol in contract FiftyFlip in by composing functions play and wager
+[INFO] | 2023-08-14 02:58:21 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | TOD dependency detected in file 0xe09b1ab8111c2729a76f16de96bc86a7af837928.sol in contract FiftyFlip in by composing functions play and play
+[INFO] | 2023-08-14 02:58:21 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | TOD dependency detected in file 0xe09b1ab8111c2729a76f16de96bc86a7af837928.sol in contract FiftyFlip in by composing functions play and refund
+[INFO] | 2023-08-14 02:58:21 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | TOD dependency detected in file 0xe09b1ab8111c2729a76f16de96bc86a7af837928.sol in contract FiftyFlip in by composing functions withdrawDonation and donateForContractHealth
+[INFO] | 2023-08-14 02:58:21 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | TOD dependency detected in file 0xe09b1ab8111c2729a76f16de96bc86a7af837928.sol in contract FiftyFlip in by composing functions withdrawDonation and withdrawDonation
+[INFO] | 2023-08-14 02:58:22 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | TOD dependency detected in file 0xe09b1ab8111c2729a76f16de96bc86a7af837928.sol in contract FiftyFlip in by composing functions refund and wager
+[INFO] | 2023-08-14 02:58:22 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | TOD dependency detected in file 0xe09b1ab8111c2729a76f16de96bc86a7af837928.sol in contract FiftyFlip in by composing functions refund and play
+[INFO] | 2023-08-14 02:58:22 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | TOD dependency detected in file 0xe09b1ab8111c2729a76f16de96bc86a7af837928.sol in contract FiftyFlip in by composing functions refund and refund
+[INFO] | 2023-08-14 02:58:22 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Dependency detection finished!
+[INFO] | 2023-08-14 02:58:22 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Static Analysis took 2.873001 seconds
+[INFO] | 2023-08-14 02:58:22 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Dependency exists
+[INFO] | 2023-08-14 02:58:22 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Invoking symbolic executor!
+[INFO] | 2023-08-14 02:58:27 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Symbolic execution took 5.461851 seconds
+[INFO] | 2023-08-14 02:58:27 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Symbolic execution finished!
+[INFO] | 2023-08-14 02:58:27 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Analysis finished!
+[INFO] | 2023-08-14 02:58:27 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Analysis took 8.335289 seconds
+[INFO] | 2023-08-14 02:58:27 AM | analyzer.0xe09b1ab8111c2729a76f16de96bc86a7af837928 | Analysis finished at: 2023-08-14 02:58:27 AM

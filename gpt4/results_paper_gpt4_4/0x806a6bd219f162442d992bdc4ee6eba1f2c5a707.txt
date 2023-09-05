@@ -1,0 +1,19 @@
+The given smart contract has the following vulnerabilities:
+
+1. Reentrancy: The function GetPie() is vulnerable to a reentrancy attack. It first sends ether to the owner and then to the message sender. An attacker can make a recursive call to drain the contract's funds.
+
+2. Access Control: The contract allows the owner to change at any time by calling the withdraw() function. This can lead to unauthorized changes in the contract's ownership.
+
+3. Unchecked Return Values For Low Level Calls: In the Command() function, the return value of the low-level call is not checked. If the call fails, the contract will not be aware of it.
+
+4. Denial of Service: The GetPie() function can be exploited to perform a Denial of Service attack. If an attacker sends more than 1 ether, they can drain all the contract's funds.
+
+5. Bad Randomness: Not applicable here as the contract does not use any randomness.
+
+6. Front-Running: Not applicable here as the contract does not use any function that depends on the order of transactions.
+
+7. Time manipulation: Not applicable here as the contract does not use any timestamp or blocktime.
+
+8. Short Address Attack: Not applicable here as there is no off-chain interaction.
+
+It's recommended to use the withdrawal pattern instead of direct transfer to avoid reentrancy attacks, check the return value of low-level calls, and use modifiers to limit access to certain functions.

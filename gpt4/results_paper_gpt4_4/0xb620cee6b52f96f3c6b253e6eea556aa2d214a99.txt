@@ -1,0 +1,17 @@
+The provided smart contract has several vulnerabilities. They are as follows:
+
+1. Reentrancy: The winPrize function can potentially lead to Reentrancy attack. The balance of the contract is transferred to the owner before the state of the contract is updated. An attacker can recursively call the winPrize function to drain the contract.
+
+2. Bad Randomness: The unlockSecret function uses blockhash(block.number-1) for randomness which can be predicted by miners. 
+
+3. Front-Running: The guessSeed function can be front run. An attacker can see the guess from the original transaction in the transaction pool and make their own transaction with a higher gas price to get it included in the blockchain first.
+
+4. Access Control: The onlyOwner modifier is used to restrict access to the winPrize function. However, the owner can be easily changed through the guessSeed function if the guess matches the secret. This could allow an attacker to become the owner and call the winPrize function.
+
+5. Arithmetic Issues: The guessSeed function has an integer division operation, which can lead to truncation errors. This can be exploited by an attacker.
+
+6. Unchecked Return Values: Low level calls are made to firstTarget and secondTarget in the functions callFirstTarget and callSecondTarget without checking the return value of the call. If these calls fail, the contract won't be aware and will continue execution.
+
+7. Denial of Service: The becomePlayer function pushes the address of the sender to the players array without any limit. This could lead to a Denial of Service attack, where an attacker could call the function multiple times to fill up the array and make the contract run out of gas when looping through the array.
+
+The vulnerabilities of Time manipulation, and Short Address Attack were not found in this contract.

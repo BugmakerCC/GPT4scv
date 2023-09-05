@@ -1,0 +1,31 @@
+1. Reentrancy: No vulnerability found. There is no external contract call followed by a state change.
+
+2. Access Control: 
+    - The `setTokenInformation` function can only be called by the owner. 
+    - The `setChainsAddresses` function can also only be called by the owner. 
+    - The `sendTokenAw` function can only be called by the owner. 
+    - The `setBonusCreationRate` function can only be called by the owner. 
+    - The `FundsTransfer` function can only be executed by the owner.
+    - The `PartialFundsTransfer` function can only be executed by the owner.
+    - The `turnrefund` function can be only executed by the owner.
+    - The `fundingState` can be only executed by the owner.
+    - The `turnmigrate` function can be only executed by migrationMaster.
+    - The `finalize` function can be only executed by the owner after a specified block number is passed.
+    - The `migrate` function can be called by any user but only if migratestate is false.
+    - The `refundTRA` function can be called by any user but only if funding is false and refundstate is true.
+
+3. Arithmetic Issues: The contract uses SafeMath library functions for arithmetic operations which prevents integer overflow and underflow.
+
+4. Unchecked Return Values For Low Level Calls: The contract does not use low level calls.
+
+5. Denial of Service: No potential denial of service attacks found.
+
+6. Bad Randomness: The contract does not rely on randomness.
+
+7. Front-Running: No potential front-running attacks found as there are no transaction ordering dependencies.
+
+8. Time manipulation: No vulnerabilities found related to timestamp dependence.
+
+9. Short Address Attack: No potential short address attacks found. The contract does not interact with the msg.data directly.
+
+Please note that this analysis does not guarantee the contract is 100% secure and error-free.

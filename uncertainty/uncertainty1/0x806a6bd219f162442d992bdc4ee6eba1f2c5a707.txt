@@ -1,0 +1,19 @@
+The smart contract has several vulnerabilities:
+
+1. Reentrancy: In the GetPie() and withdraw() functions, the contract transfers Ether to an external address (msg.sender or Owner). During the transfer execution, the control is handed over to the recipient contract which could potentially call back into the sending contract before the first invocation is completed. This could lead to unexpected behavior or a reentrancy attack.
+
+2. Access Control: The contract seems to have no restrictions on who can call the GetPie() function. This could let any user drain all the Ether from the contract if they send more than 1 Ether with the transaction. The withdraw() function has some access control by checking if msg.sender is the Owner, but the Owner can be changed by any address that matches the hard-coded value.
+
+3. Arithmetic Issues: There don't appear to be any instances of integer overflow or underflow in this contract.
+
+4. Unchecked Return Values: The contract makes a low-level call in the Command() function but does not check the return value. If the call fails, the contract will not be aware and will continue executing.
+
+5. Denial of Service: The contract is vulnerable to a Denial of Service attack through the GetPie() function. If an attacker can force the contract to throw an exception during the execution of this function, they could potentially lock the contract and prevent other users from withdrawing their Ether.
+
+6. Bad Randomness: There don't seem to be any instances of reliance on randomness in this contract.
+
+7. Front-Running: There's no explicit vulnerability to Front-Running, but given the lack of access control, an attacker could potentially take advantage of transaction ordering to drain the contract's Ether.
+
+8. Time manipulation: The contract does not rely on timestamps or block numbers, so it's not vulnerable to time manipulation.
+
+9. Short Address Attack: The contract does not take measures to prevent short address attacks. This attack could occur if the length of the address is not validated when it's used as an argument for a function.

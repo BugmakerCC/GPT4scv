@@ -1,0 +1,21 @@
+The given smart contract might have the following vulnerabilities:
+
+1. Reentrancy: The contract is susceptible to the reentrancy vulnerability in the Collect function. The contract first transfers Ether (msg.sender.call.value(_am)()) and then reduces the balance (acc.balance-=_am;). This order of operations can lead to a reentrancy attack. 
+
+2. Arithmetic Issues: The contract does not take care of integer overflow and underflow. These vulnerabilities occur when an arithmetic operation reaches the maximum or minimum size of the integer type. It is always recommended to use SafeMath library functions for arithmetic operations. 
+
+3. Unchecked return values for low level calls: The return value of the call function (msg.sender.call.value(_am)()) is not checked. If this call fails for any reason, the contract will not be aware of it.
+
+4. Denial of Service: Denial of service can be caused by a contract being 'stuck' when trying to perform operations that require more gas than is available or when a contract is forced into an endless loop. This contract does not have a clear DoS vulnerability, but remember that 'call.value()' should be carefully used as it introduces potential DoS attack if the fallback function of the sender consumes a lot of gas.
+
+5. Access Control: There are no explicit access control checks (like onlyOwner modifier) which could lead to unauthorized access.
+
+6. Bad Randomness: There is no randomness involved in this contract, so it is not exposed to this vulnerability.
+
+7. Front-running: There is no transaction ordering dependence in this contract, so it is not exposed to this vulnerability.
+
+8. Time manipulation: The contract relies on the 'now' keyword (alias for block.timestamp) which can be manipulated by miners to some degree.
+
+9. Short Address Attack: This contract does not seem to be vulnerable to a short address attack as it does not take any address as an argument from external calls. 
+
+Please note that this is a preliminary analysis and a deeper audit might be necessary to find more subtle and specific vulnerabilities.

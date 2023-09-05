@@ -1,0 +1,19 @@
+The smart contract has the following vulnerabilities:
+
+1. Bad Randomness: The code uses `block.timestamp` as a seed for generating a random number. This is risky because `block.timestamp` is not random and can be manipulated by the miner who mines the block. Therefore, this randomness is not secure and can be exploited.
+
+2. Reentrancy: In the `play()` function, after the winner is determined, the contract first transfers the fee to the `bank` account, and then transfers the winnings to the player. An attacker could potentially create a malicious contract that triggers the `play()` function again when it receives ether, causing the `EtherLotto` contract to potentially send multiple payouts in one transaction.
+
+3. DoS with Unpredictable Gas: The `play()` function sends ether to `msg.sender` which can be a contract that consumes all the gas causing the transfer to fail.
+
+4. Time Manipulation: As mentioned before, the smart contract uses `block.timestamp` for generating a random number. However, the timestamp is not secure and can be manipulated by the miner, causing a potential vulnerability.
+
+5. Front-Running: Since the contract's state is publicly viewable on the blockchain, an attacker could potentially see a winning transaction and then bribe miners to place their transaction first.
+
+6. Access Control: The `bank` variable is publicly accessible and not protected by any authorization checks. This means that anyone could potentially change the bank address.
+
+7. Unchecked Return Values: The contract does not check the return value of the `transfer` function. If the transfer fails, the contract will not be aware and will continue execution.
+
+8. Integer Underflow: If the pot is less than `FEE_AMOUNT`, then `pot - FEE_AMOUNT` would underflow, leading to a very large payout.
+
+9. No mechanism to withdraw funds: If no one ever wins the lottery, funds will be locked in the contract forever.

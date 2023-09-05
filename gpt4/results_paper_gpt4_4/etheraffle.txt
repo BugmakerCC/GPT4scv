@@ -1,0 +1,11 @@
+This contract has several potential vulnerabilities:
+
+1. Bad Randomness (Nothing is Secret): The `chooseWinner()` function uses `block.coinbase`, `msg.sender`, and `block.difficulty` as seed values to generate a random number. These values are public on the blockchain and could potentially be manipulated by a miner. This randomness is critical to the fairness of the lottery and any predictability could be exploited.
+
+2. Reentrancy: The `chooseWinner()` function makes a call to an unknown address (`winningAddress.transfer(prize)`) before internal state is fully updated (`raffleId++; nextTicket = 0; blockNumber = block.number;`). If `winningAddress` is a contract, it may call back into `Ethraffle_v4b`, and cause reentrancy bugs. However, the potential damage is limited because the contract state is partially updated before the `transfer`.
+
+3. Denial of Service (Gas Limit Reached/Unexpected Throw): The `endRaffle()` function iterates through all `totalTickets` and attempts to refund each one. If the number of tickets is large, this function could exceed the block gas limit and fail to execute. This could lock participants' funds in the contract.
+
+4. Access Control: Anyone can call the `getRefund()` function and potentially get refunded for the tickets they don't own if they can guess or know the address and raffleId of a legitimate ticket owner. There is a lack of proper access control to verify that the caller of the function is indeed the owner of the ticket.
+
+To fix these vulnerabilities, the contract should use a more reliable source of randomness, ensure no external calls are made until all internal state is updated, limit the number of iterations in a single function call to prevent exceeding the block gas limit, and implement proper access controls to validate the identity of function callers.

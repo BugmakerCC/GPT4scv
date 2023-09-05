@@ -1,0 +1,21 @@
+The smart contract code provided here may have the following vulnerabilities:
+
+1. Reentrancy: This occurs in `multiplicate(address adr)` function where it's transferring ethers to an external address. If the external address is a contract, it could call back into `multiplicate()` before the first invocation is finished, potentially draining the contract of its funds.
+
+2. Access Control: Anybody can call the `multiplicate(address adr)` function. If the condition `msg.value>=this.balance` is met, they can drain all the funds in the contract.
+
+3. Arithmetic Issues: In the `multiplicate(address adr)` function, the balance is added to the msg.value without any checks for overflow.
+
+4. Unchecked Return Values For Low Level Calls: The `adr.call.value(msg.value)(data);` in the `Command(address adr,bytes data)` is a low level call and its return value is not checked. If this call fails, the contract won't be aware of it.
+
+5. Denial of Service: If the owner's address becomes a contract that throws an exception, then the `withdraw()` function may always fail, blocking the withdrawal of ethers forever.
+
+6. Bad Randomness: Not applicable here as no randomness is involved in this contract.
+
+7. Front-Running: Not applicable here as no transaction ordering dependence is observed.
+
+8. Time manipulation: Not applicable here as no timestamp dependence is observed.
+
+9. Short Address Attack: Not applicable here as the contract does not take any address as an argument from external calls. All addresses are provided by the contract owner.
+
+Please note that the solidity version used here (0.4.18) is also outdated and may have additional vulnerabilities. It is always recommended to use the latest version of solidity.

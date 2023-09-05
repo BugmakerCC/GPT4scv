@@ -1,0 +1,21 @@
+The smart contract provided has several vulnerabilities, including:
+
+1. **Reentrancy Vulnerability:** This occurs in the `fundPuppets` function. The `fundPuppets` function sends funds to the `extra` addresses by using the `.call.value().gas()` method, which is a low-level function that can allow for reentrancy attacks if the callee contract has a fallback function that calls back into the calling contract.
+
+2. **Unchecked Return Values For Low Level Calls:** This is found in the `fundPuppets` function and the fallback function of the `Puppet` contract. The return value of the `.call.value().gas()` is not checked. If the call fails, the contract will not be aware and this could lead to loss of funds or unexpected behavior.
+
+3. **Denial of Service (DoS):** This is found in the `withdraw` function of both the `Splitter` and `Puppet` contracts. If the `owner` or `master` addresses are contract addresses that throw on `.transfer()`, the `withdraw` function would be stuck, leading to a DoS attack.
+
+4. **Access Control:** The `setExtra` function in the `Splitter` contract allows any address to change the `extra` mapping, which could lead to loss of funds if an attacker changes the addresses to their own. The `newPuppet` function allows any address to deploy new Puppet contracts and add them to the `puppets` array, which could lead to unexpected behavior.
+
+5. **Arithmetic Issues:** The `fundPuppets` function in the `Splitter` contract uses the `SafeMath.div` function to divide the `msg.value` by 4, but it does not check if `msg.value` is a multiple of 4. If it's not, the division result will be rounded down, leading to potential loss of funds due to integer underflow.
+
+6. **Bad Randomness:** Not found in this contract.
+
+7. **Front-Running:** Not found in this contract.
+
+8. **Time manipulation:** Not found in this contract.
+
+9. **Short Address Attack:** Not found in this contract. All addresses are assigned within the contract itself, so there's no room for external attackers to manipulate the input data length. 
+
+Please note that this is a general analysis. For a detailed and precise audit, each function and line of code would need to be thoroughly examined. Further, the contract should have a better structure for managing users and use events to log important activities.

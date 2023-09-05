@@ -1,0 +1,15 @@
+The provided smart contract is potentially vulnerable to a number of the listed common vulnerabilities:
+
+1. Reentrancy: The contract could potentially be vulnerable to reentrancy attacks. The function `sendToWinner()` sends `winAmount` to the `winner` address, but does not immediately set `payedOut` to `true`. If the `winner` address is a contract, it could re-enter `sendToWinner()` before `payedOut` is set to `true`, thereby draining the contract of more than the intended `winAmount`.
+
+2. Unchecked Return Values For Low Level Calls: The contract uses `send` to transfer ether, but does not check the return value. `send` only provides 2300 gas, which may not be enough to complete the operation, in which case it will silently fail. It is safer to use the `transfer` function, which throws an exception on failure, or to check the return value of `send`.
+
+3. Denial of Service: The `withdrawLeftOver` function allows any user to withdraw the remaining balance after payout. If the `payedOut` variable is set to true, an attacker could continuously call this function to drain the contract of its balance.
+
+4. Access Control: The contract does not specify who can call the `sendToWinner` and `withdrawLeftOver` functions. Without proper access control, anyone could potentially call these functions and manipulate the outcome of the lottery.
+
+5. Arithmetic Issues: Although not shown in the provided code snippet, if there is any arithmetic operation in the extra functionality that could lead to an integer overflow or underflow, that would be a vulnerability.
+
+6. Time manipulation, Front-Running, Bad Randomness, and Short Address Attack vulnerabilities are not evident from the provided code snippet, but could potentially exist depending on the omitted extra functionality.
+
+This contract needs to be revised to address these potential vulnerabilities.

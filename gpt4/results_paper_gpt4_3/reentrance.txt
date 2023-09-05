@@ -1,0 +1,27 @@
+The smart contract provided has a Reentrancy vulnerability. 
+
+The issue occurs in the `withdraw` function where it first sends Ether to `msg.sender` and then subtracts the `_amount` from the sender's balance. This allows a malicious contract to call `withdraw` again before `balances[msg.sender] -= _amount;` is executed. 
+
+The attack can be performed as follows:
+
+1. The attacker calls `donate` function to deposit some Ether into the contract.
+2. The attacker calls `withdraw` function to withdraw the Ether.
+3. The fallback function of the attacker's contract is triggered which again calls the `withdraw` function to drain more Ether.
+4. This process is repeated until the contract's Ether is drained.
+
+To fix this vulnerability, the balance of the user should be updated first before the transfer of the ether takes place. This makes sure that even if a reentrant call is made, the balance of the user would already have been updated, hence preventing the reentrancy attack. 
+
+The corrected `withdraw` function would look something like this:
+
+```solidity
+function withdraw(uint _amount) public {
+  if(balances[msg.sender] >= _amount) {
+    balances[msg.sender] -= _amount;
+    if(!msg.sender.call.value(_amount)()) {
+        revert("Transfer failed.");
+    }
+  }
+}
+```
+
+I did not find any of the other vulnerabilities mentioned in your list in this contract.

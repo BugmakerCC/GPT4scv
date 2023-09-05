@@ -1,0 +1,26 @@
+This contract has a Reentrancy vulnerability that arises from the order of operations in the withdrawBalance function. More precisely, the balance of a user is set to zero after the function tries to send them their balance. If the send operation fails, the user's balance is already zeroed out, and they have no way of getting their funds back. 
+
+To fix this vulnerability, the contract should follow the Checks-Effects-Interactions (CEI) pattern. The balance of a user should be set to zero before the contract tries to send them their balance. This way, even if the send operation fails, the user's balance is still preserved.
+
+In addition, the contract does not check the return value of the `send` function. The `send` function returns `false` when it fails to send the ether. The contract should handle this failure case to prevent loss of ether.
+
+Here's a revised version of the contract that resolves the above vulnerabilities:
+
+```solidity
+pragma solidity ^0.4.0;
+
+contract SendBack {
+    mapping (address => uint) userBalances;
+
+    function withdrawBalance() {  
+        uint amountToWithdraw = userBalances[msg.sender];
+        userBalances[msg.sender] = 0;
+
+        // Use the transfer function instead of send. Transfer throws an exception
+        // when the send operation fails, reverting all changes.
+        msg.sender.transfer(amountToWithdraw);
+    }
+}
+```
+
+Please note that the revised contract uses the `transfer` function instead of `send`. The `transfer` function throws an exception when the send operation fails, reverting all changes. This is a safer way to send ether.

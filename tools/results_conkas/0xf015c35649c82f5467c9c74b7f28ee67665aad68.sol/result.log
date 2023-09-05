@@ -1,0 +1,25 @@
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+Analysing /sb/0xf015c35649c82f5467c9c74b7f28ee67665aad68.sol:Log...
+Vulnerability: Time Manipulation. Maybe in function: AddMessage(address,uint256,string). PC: 0x218. Line number: 80.
+Vulnerability: Integer Overflow. Maybe in function: AddMessage(address,uint256,string). PC: 0x261. Line number: 83.
+If a = 27839325804224920433562131229381200537939262541821212501048892747776605725120
+and b = 18569430475105882587588266137607568536673111973893317399460219858819262702947
+Vulnerability: Time Manipulation. Maybe in function: AddMessage(address,uint256,string). PC: 0x30e. Line number: 83.
+Vulnerability: Integer Overflow. Maybe in function: AddMessage(address,uint256,string). PC: 0x9d. Line number: 76.
+If a = 4
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639932
+Vulnerability: Integer Overflow. Maybe in function: History(uint256). PC: 0x401. Line number: 72.
+If a = 2
+and b = 24305664690552578208995679717770084829149218172936811659999341037273466734247
+Vulnerability: Integer Overflow. Maybe in function: AddMessage(address,uint256,string). PC: 0x451. Line number: 62.
+If a = 57896044618658097711785492504343953926634992332820282019728792003956564819976
+and b = 57896044618658097711785492504343953926634992332820282019728792003956564819976
+Analysing /sb/0xf015c35649c82f5467c9c74b7f28ee67665aad68.sol:MY_BANK...
+Vulnerability: Reentrancy. Maybe in function: Collect(uint256). PC: 0x470. Line number: 32.
+Vulnerability: Reentrancy. Maybe in function: Collect(uint256). PC: 0x354. Line number: 29.
+Vulnerability: Integer Overflow. Maybe in function: _fallthrough. PC: 0x184. Line number: 16.
+If a = 1
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+Vulnerability: Reentrancy. Maybe in function: _fallthrough. PC: 0x2a3. Line number: 18.
+Vulnerability: Time Manipulation. Maybe in function: _fallthrough. PC: 0x192. Line number: 17.

@@ -1,0 +1,17 @@
+1. Reentrancy: Not Found. There are no cases of recursive calls in this contract.
+
+2. Access Control: Found a vulnerability. The owner of the contract is allowed to call the 'forceReseed' function, which might lead to manipulation of the outcome of the lottery.
+
+3. Arithmetic Issues: Not Found. The contract does not perform risky arithmetic operations that could result in overflow or underflow.
+
+4. Unchecked Return Values For Low Level Calls: Not Found. The contract only uses the 'transfer' function, which reverts the transaction in case of failure.
+
+5. Denial of Service: Not Found. The contract does not contain any loops or recursive calls that could cause it to reach the gas limit.
+
+6. Bad Randomness: Found a vulnerability. The 'luckyNumberOfAddress' function uses parameters that can be influenced by miners (block.timestamp, block.difficulty, block.coinbase, block.gaslimit) to generate a "random" number. This could allow a miner to manipulate the outcome of the lottery.
+
+7. Front-Running: Not Found. Contract operations do not depend on the order of transactions.
+
+8. Time manipulation: Found a vulnerability. The contract uses 'block.timestamp' for randomness which can be influenced by miners to a certain extent.
+
+9. Short Address Attack: Not Found. The contract does not handle raw byte input, which is where such an attack would be relevant.

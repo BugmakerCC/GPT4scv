@@ -1,0 +1,18 @@
+The provided smart contract is vulnerable to the Reentrancy attack.
+
+The Reentrancy vulnerability occurs when an external contract is allowed to call back into the contract being executed before the current execution is complete. In this case, the `withdrawBalance` function allows the caller to execute arbitrary code by calling `msg.sender.call.value(amountToWithdraw)("")` before updating the balance.
+
+To fix this vulnerability, you should use the "Checks-Effects-Interactions" pattern. This means that you should perform all necessary checks and update the contract state before interacting with external contracts. Here's an example of how you can modify the `withdrawBalance` function to mitigate the Reentrancy vulnerability:
+
+```solidity
+function withdrawBalance() public {
+    uint amountToWithdraw = userBalances[msg.sender];
+    userBalances[msg.sender] = 0;
+
+    bool success = msg.sender.send(amountToWithdraw); // Transfer the balance first
+
+    require(success, "Failed to send balance to the caller");
+}
+```
+
+In this modified version, the balance is transferred to the caller before updating the contract state.

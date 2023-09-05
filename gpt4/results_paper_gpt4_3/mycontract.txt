@@ -1,0 +1,10 @@
+The smart contract provided has an Access Control vulnerability due to the use of `tx.origin` for authorization control in the `sendTo` function. 
+
+In Solidity, `tx.origin` refers to the sender of the transaction, which can be a contract or an externally owned account. While `msg.sender` refers to the immediate sender of the message, `tx.origin` always refers to the externally owned account that originally started the transaction. This can be manipulated in cases where a contract is indirectly invoking another contract, as an attacker contract could trick a user into invoking a function that calls into the vulnerable contract.
+
+Here is how it works in this contract:
+The `sendTo` function checks if `tx.origin` is equal to the contract's owner before proceeding with the transfer. If an attacker creates a malicious contract that calls the `sendTo` function, `tx.origin` will refer to the original sender (i.e., the user tricked into calling the attacker's contract), not the attacker's contract itself. Therefore, if the user is the owner of the contract, the check `require(tx.origin == owner)` will pass and the attacker can force the contract to send funds.
+
+To avoid this vulnerability, it's recommended to use `msg.sender` for authorization purposes instead of `tx.origin`. This is because `msg.sender` would be the contract directly interacting with your contract, and not necessarily the original creator of the transaction. 
+
+Please note that there are other potential vulnerabilities that are not visible without more context, such as knowing the way `sendTo` function is being called, whether the `owner` can be changed, and whether the contract's balance is properly checked and managed.

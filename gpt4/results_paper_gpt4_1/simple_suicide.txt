@@ -1,0 +1,29 @@
+The smart contract provided contains the Access Control vulnerability. The function `sudicideAnyone()` is not protected by any modifiers such as `onlyOwner` to make sure only specific addresses can call this function. This means that anyone who has access to the contract can call this function and kill the contract. 
+
+In this case, the appropriate fix would be to include a modifier that checks if the message sender (`msg.sender`) is the owner of the contract before allowing the `selfdestruct` function to be executed. 
+
+Here is an example of how you could modify the contract to include this check:
+
+```solidity
+pragma solidity ^0.4.0;
+
+contract SimpleSuicide {
+  address owner;
+
+  function SimpleSuicide() {
+    owner = msg.sender;
+  }
+  
+  modifier onlyOwner {
+    require(msg.sender == owner);
+    _;
+  }
+
+  function sudicideAnyone() onlyOwner {
+    selfdestruct(owner);
+  }
+
+}
+```
+
+In this updated contract, the `onlyOwner` modifier is used to restrict access to the `sudicideAnyone()` function. If `msg.sender` is not the owner of the contract, the `require` statement will fail, and execution will stop. If `msg.sender` is the owner, the `_` placeholder is replaced by the modified function, and execution continues.

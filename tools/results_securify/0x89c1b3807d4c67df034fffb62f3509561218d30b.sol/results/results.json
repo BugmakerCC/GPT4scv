@@ -1,0 +1,111 @@
+{
+  "/sb/0x89c1b3807d4c67df034fffb62f3509561218d30b.sol:TownCrier": {
+    "results": {
+      "TODReceiver": {
+        "violations": [],
+        "warnings": [
+          106,
+          117,
+          161,
+          210,
+          174
+        ],
+        "safe": [
+          93,
+          179
+        ],
+        "conflicts": []
+      },
+      "UnhandledException": {
+        "violations": [
+          161,
+          174,
+          179,
+          191
+        ],
+        "warnings": [
+          106,
+          93,
+          117,
+          210
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODTransfer": {
+        "violations": [],
+        "warnings": [
+          93,
+          161,
+          174,
+          179
+        ],
+        "safe": [],
+        "conflicts": [
+          106,
+          117,
+          210
+        ]
+      },
+      "DAO": {
+        "violations": [
+          106,
+          117,
+          210
+        ],
+        "warnings": [
+          93
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODAmount": {
+        "violations": [
+          93,
+          161,
+          210
+        ],
+        "warnings": [],
+        "safe": [
+          106,
+          117,
+          174,
+          179
+        ],
+        "conflicts": []
+      },
+      "MissingInputValidation": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "DAOConstantGas": {
+        "violations": [
+          161,
+          174,
+          179
+        ],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnrestrictedEtherFlow": {
+        "violations": [],
+        "warnings": [
+          93,
+          161,
+          210,
+          174,
+          179,
+          191
+        ],
+        "safe": [
+          106,
+          117
+        ],
+        "conflicts": []
+      }
+    }
+  }
+}

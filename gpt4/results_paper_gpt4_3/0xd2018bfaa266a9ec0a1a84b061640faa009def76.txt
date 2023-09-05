@@ -1,0 +1,21 @@
+Following are the vulnerabilities present in the provided smart contract:
+
+1. Reentrancy: The `Get` and `withdraw` functions are vulnerable to reentrancy attack as they call the `transfer` function before updating the state of the contract. An attacker could recursively call the `Get` or `withdraw` function to drain the contract funds.
+
+2. Access Control: The `Command` function allows the contract owner to execute arbitrary calls to any address. An attacker who becomes the owner could call any function, potentially causing damage.
+
+3. Unchecked Return Values For Low Level Calls: The `adr.call.value(msg.value)(data);` in `Command` function is a low level call which does not check its return value. If the call fails, the contract won’t be aware of it which could lead to unexpected behavior.
+
+4. Denial of Service: The contract can be paused indefinitely by sending more than 1 ether to the `Get` function. This function transfers all contract balance to the sender and if it fails, the function execution is stopped leading to a DoS condition.
+
+5. Bad Randomness: There is no randomness involved, hence not applicable.
+
+6. Front-Running: There are no transactions involving external calls based on state variables that could be front-run.
+
+7. Time Manipulation: There is no dependency on block timestamp or related variables, hence this vulnerability is not present.
+
+8. Short Address Attack: There is no operation involving length of the address, hence not applicable.
+
+9. Arithmetic Issues: There is no arithmetic operation that could lead to an integer overflow or underflow.
+
+Please note that the contract might have other logical issues, such as the `Get` function which can transfer the contract balance to any address if the value sent is more than 1 ether. This is a potential security risk and should be avoided in production contracts.

@@ -1,0 +1,21 @@
+The smart contract provided above has the following vulnerabilities:
+
+1. Reentrancy: The function `Collect(uint _am)` is vulnerable to reentrancy because it calls an external contract (`msg.sender.call.value(_am)()`) before it updates the state (`balances[msg.sender]-=_am`). This could potentially allow an attacker to drain the contract by recursively calling the `Collect` function before the balance is updated.
+
+2. Access Control: The functions `SetMinSum(uint _val)`, `SetLogFile(address _log)`, and `Initialized()` do not have any access control mechanisms, which means anyone can call these functions. The contract owner should be the only one with the ability to call these functions.
+
+3. Arithmetic Issues: There is potential for an integer underflow in the `Collect(uint _am)` function when the balance is subtracted `_am`. There is no check to ensure that the balance is greater than or equal to `_am` before subtraction. 
+
+4. Unchecked Return Values For Low Level Calls: The low-level call `msg.sender.call.value(_am)()` in `Collect(uint _am)` function does not check the return value. This can lead to funds being stuck in the contract if the call fails.
+
+5. Denial of Service: If an attacker sets the `LogFile` contract to a malicious contract, it can potentially block the `Deposit` and `Collect` functions from completing, causing a denial of service.
+
+6. Bad Randomness: N/A
+
+7. Front-Running: N/A
+
+8. Time manipulation: N/A
+
+9. Short Address Attack: N/A
+
+To mitigate these vulnerabilities, consider using `transfer` or `send` instead of `call.value()()`, adding access control to sensitive functions, checking arithmetic operations for overflows and underflows, and always checking the return value of low-level calls.

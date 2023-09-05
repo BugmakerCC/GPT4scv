@@ -1,0 +1,9 @@
+This contract appears to have two main vulnerabilities.
+
+1. Bad Randomness:
+The contract is using `blockhash` as a source of randomness. However, `blockhash` is not a truly random value as it is possible to predict with a certain degree of accuracy. This is because `blockhash` returns zero for block numbers that are more than 256 blocks ago. This means an attacker can lock in their guess as zero and wait until the block number of their guess is more than 256 blocks ago, at which point `blockhash` will return zero and they will win the challenge.
+
+2. Denial of Service:
+In the `settle` function, the contract is transferring 2 ether to `msg.sender` if their guess is correct. However, it does not check if the transfer was successful. If the recipient contract throws an exception, this function will revert and the contract will be locked, causing a denial of service. This is a form of the unchecked return values vulnerability.
+
+The contract does not seem to have reentrancy, access control, arithmetic issues, unchecked return values for low-level calls, front-running, time manipulation, or short address attack vulnerabilities.

@@ -1,0 +1,11 @@
+The smart contract seems to have a few potential vulnerabilities:
+
+1. Access Control: The `newOwner` function does not have the `onlyOwner` modifier, which means that any address can add itself as an owner. This could lead to unauthorized access to the contract's functionality. 
+
+2. Reentrancy: Even though `withdrawAll()` is a simple function, it could still be susceptible to reentrancy attack. When sending Ether using `transfer()`, the fallback function of the contract at the address to which the Ether is sent, is invoked. If the fallback function were to call `withdrawAll()` again, this could result in a reentrancy attack. However, a reentrancy guard is not very necessary in this instance as `onlyOwner` modifier restricts access and there's no function updating the state of the contract before the `transfer()` call.
+
+3. Denial of Service: The `deleteOwner` function can be used by the root owner to delete all other owners, thereby potentially denying service to legitimate owners.
+
+4. Arithmetic Issues, Unchecked Return Values For Low Level Calls, Bad Randomness, Front-Running, Time manipulation, Short Address Attack: These vulnerabilities do not seem to be present in this contract as it currently stands. 
+
+It's always good to remember that even seemingly simple contracts can have vulnerabilities because of the way in which they interact with other contracts and addresses. Therefore, contracts should always be tested thoroughly and audited by security professionals.

@@ -1,0 +1,13 @@
+This contract has a Reentrancy vulnerability in the `confirm` function. This function, which is used to confirm a transaction, calls an external contract through a low-level call (`call.value(_value)(_data)`). The state of the contract (deletion of the transaction from `m_txs`) is updated only after this call. If the called contract calls back (`reentrancy`) the `confirm` function, it will still see the transaction as unconfirmed. 
+
+If the requirements for the `confirm` function are fulfilled (which is probable, since the first call to `confirm` has just fulfilled them), this allows the called contract to force the wallet contract to execute the transaction again, even if the daily limit has been reached or if the transaction moves more funds than available on the contract. 
+
+A potential solution to this vulnerability is to make sure to update the state before calling the external contract. Moving `delete m_txs[_h];` before the external call in the `confirm` function should solve the problem. 
+
+Another potential vulnerability is related to Access Control issues. The only check for ownership is done in the `onlymanyowners` modifier, which checks if a majority of owners have confirmed the operation. This check is bypassed if the contract's daily limit has not been reached, allowing any owner to execute transactions within the limit. 
+
+The contract's `execute` function allows any owner to execute a transaction if the daily limit has not been reached, even if the number of required confirmations is not 1. This means that any owner can unilaterally move funds within the daily limit. 
+
+This can be a problem if the contract is supposed to require multiple confirmations for all transactions, regardless of the amount. If the intended behavior is to require multiple confirmations for all transactions, this is a vulnerability and the condition `|| m_required == 1` should be removed from the `execute` function. 
+
+There are no clear underflows or overflows, all arithmetic operations seem to be protected. There's no clear unchecked return values from low-level calls, denial of service, bad randomness, time manipulation, reordering dependency or short address attacks.

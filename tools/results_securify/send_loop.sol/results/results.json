@@ -1,0 +1,70 @@
+{
+  "/sb/send_loop.sol:Refunder": {
+    "results": {
+      "TODReceiver": {
+        "violations": [],
+        "warnings": [],
+        "safe": [
+          23
+        ],
+        "conflicts": []
+      },
+      "UnhandledException": {
+        "violations": [],
+        "warnings": [
+          23
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODTransfer": {
+        "violations": [],
+        "warnings": [],
+        "safe": [
+          23
+        ],
+        "conflicts": []
+      },
+      "DAO": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODAmount": {
+        "violations": [],
+        "warnings": [],
+        "safe": [
+          23
+        ],
+        "conflicts": []
+      },
+      "MissingInputValidation": {
+        "violations": [
+          12
+        ],
+        "warnings": [
+          20
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "DAOConstantGas": {
+        "violations": [],
+        "warnings": [
+          23
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnrestrictedEtherFlow": {
+        "violations": [],
+        "warnings": [],
+        "safe": [
+          23
+        ],
+        "conflicts": []
+      }
+    }
+  }
+}

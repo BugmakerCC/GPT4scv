@@ -1,0 +1,21 @@
+The smart contract provided has multiple vulnerabilities:
+
+1. **Reentrancy**: This vulnerability exists because of the `.send()` method used in the `claimThrone` function to send ether to the previous monarch and refund excess ether to the claimant. If the fallback function of the recipient contract performs any state-changing operations, it can lead to unexpected behavior.
+
+2. **Unchecked Return Values For Low Level Calls**: The `.send()` function is used without checking its return value. This function returns false if the call fails but here it is not checking the return value which can lead to unexpected behavior.
+
+3. **Denial of Service**: The `claimThrone` function relies on the possibility of sending ether to arbitrary addresses. If one of these addresses is a contract with a fallback function that consumes a lot of gas or throws an exception, it could block the execution of the `claimThrone` function.
+
+4. **Access Control**: There are two functions `sweepCommission` and `transferOwnership` which can only be called by the wizard (owner). But anyone can become the wizard by just knowing the wizard’s address.
+
+5. **Arithmetic Issues**: The contract does not protect against overflows or underflows. This could lead to unexpected behavior when calculating the `wizardCommission` and `compensation`.
+
+6. **Time manipulation**: The contract uses the `block.timestamp` variable, which can be manipulated by miners to a certain degree.
+
+7. **Bad Randomness**: Not applicable in this contract analysis.
+
+8. **Front-Running**: An attacker can see pending transactions and thus, the new name and amount of ether sent by a user trying to become the new monarch. The attacker can then issue a transaction with a higher gas price to become the new monarch before the original user.
+
+9. **Short Address Attack**: Not applicable in this contract analysis. 
+
+10. **Gas Limit**: Given that the list `pastMonarchs` is unbounded, operations that interact with it could hit the block gas limit in the future, rendering those operations impossible.

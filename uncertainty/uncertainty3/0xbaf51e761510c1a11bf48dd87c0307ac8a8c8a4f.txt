@@ -1,0 +1,19 @@
+This smart contract contains vulnerability of Reentrancy. This vulnerability is found in the CashOut function. The contract first sends ether to an address with msg.sender.call.value(_am)() and then it deducts the amount from the sender's balance with balances[msg.sender]-=_am;. If the fallback function of the msg.sender contract contains a function that calls back the CashOut function, it could withdraw more ether than its balance.
+
+To fix this issue, it's a good practice to first change the state variables and then make the external calls, like this:
+
+```solidity
+if(_am <= balances[msg.sender])
+{
+    balances[msg.sender] -= _am;
+    if(!msg.sender.call.value(_am)()) {
+        revert();
+    }
+    TransferLog.AddMessage(msg.sender,_am,"CashOut");
+}
+```
+Also, this contract does not handle the potential failure of the external call to TransferLog.AddMessage. An unchecked return value vulnerability exists. The return value of external calls should always be checked. If the external call fails but is not handled properly, it may cause unexpected behavior of the contract.
+
+The contract does not have a function to change the MinDeposit, which is a lack of access control. If the situation changes and the MinDeposit needs to be adjusted, it can't be done with this contract. 
+
+The contract does not contain the other mentioned vulnerabilities such as integer overflow and underflow, denial of service, bad randomness, front-running, time manipulation, and short address attack.

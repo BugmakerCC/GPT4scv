@@ -1,0 +1,21 @@
+This smart contract for EtherLotto has several vulnerabilities:
+
+1. Bad Randomness: The smart contract uses the `block.timestamp` for generating a pseudo-random number. Miners can manipulate the timestamp to some extent, which makes this randomness insecure.
+
+2. Reentrancy: The `play()` function has a potential for a reentrancy attack. A malicious contract could override the fallback function to call back into `play()` when `msg.sender.transfer(pot - FEE_AMOUNT);` is executed, potentially draining the contract of its funds.
+
+3. Denial of Service: The contract sends funds with `msg.sender.transfer(pot - FEE_AMOUNT);`. If the receiving contract's fallback function consumes more than the gas stipend (2300 gas), the transfer will fail, causing the EtherLotto contract to be stuck.
+
+4. Arithmetic Issues: There are no checks for integer overflow or underflow. However, since this contract only deals with a fixed ticket amount and fee, this might not be a problem here.
+
+5. Access Control: The `bank` variable can potentially be manipulated since it's public. It's set in the constructor, but there's no mechanism in place to prevent it from being changed later.
+
+6. Unchecked Return Values: The contract does not check the return value of the `transfer` function. Although this is not a concern with the current solidity version as `transfer` will throw an error if unsuccessful, it's a good practice to handle potential failures.
+
+7. Front Running: Players can potentially see other players' moves before transactions are confirmed, giving them an advantage.
+
+8. Time Manipulation: As mentioned above, the contract is vulnerable to timestamp manipulation.
+
+9. Short Address Attack: This contract doesn't seem to be vulnerable to a short address attack as it doesn't take address inputs from users.
+
+In addition to these vulnerabilities, it's also worth noting that this contract does not follow the latest Solidity version, which has more security features and fixes for known vulnerabilities.

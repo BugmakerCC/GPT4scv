@@ -1,0 +1,11 @@
+The smart contract provided has several vulnerabilities:
+
+1. Reentrancy: The contract does not have any code that allows for reentrancy attacks.
+
+2. Access Control: The contract does not implement any access control mechanisms.
+
+3. Arithmetic Issues: The contract uses the SafeMath library to prevent arithmetic issues such as integer overflow and underflow.
+
+4. Unchecked Return Values For Low Level Calls: The contract does not make any low-level calls.
+
+5. Denial of Service

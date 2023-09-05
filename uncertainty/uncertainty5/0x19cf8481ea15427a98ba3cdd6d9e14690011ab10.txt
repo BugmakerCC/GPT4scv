@@ -1,0 +1,21 @@
+The smart contract provided does not have evident vulnerabilities among the nine common ones listed. These are the checks performed:
+
+1. Reentrancy: The contract does not seem to have reentrancy issues as it doesn't call external contracts in a context where the state isn't settled. 
+
+2. Access Control: Access control is well implemented using the 'owner' and 'migrationMaster' variables. Only the owner can change important parameters or migrate tokens.
+
+3. Arithmetic Issues: The contract uses a 'SafeMath' library to protect from overflows and underflows. 
+
+4. Unchecked Return Values For Low Level Calls: The contract doesn't seem to use low level calls like call.value(), so this vulnerability doesn't apply.
+
+5. Denial of Service: The contract doesn't have any loop that depends on inputs length which can cause gas limit to be reached.
+
+6. Bad Randomness: The contract doesn't use randomness, so this vulnerability doesn't apply.
+
+7. Front-Running: Front-running is a potential issue for all Ethereum contracts due to the public nature of transactions, but this specific contract does not have explicit conditions that would make it particularly susceptible to front-running.
+
+8. Time manipulation: The contract uses 'block.number' for timing, which is safer than 'now' or 'block.timestamp' as it can't be manipulated by miners.
+
+9. Short Address Attack: This attack is more related to the interaction between the user interface and the blockchain, but the contract could include checks for the msg.data length to mitigate this. However, such checks are not present in this contract.
+
+Please note this is a high-level review and more detailed analysis could uncover other issues. Also, smart contract security analysis is a rapidly evolving field and some issues might not yet be widely recognized.

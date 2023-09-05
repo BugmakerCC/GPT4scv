@@ -1,0 +1,13 @@
+The given smart contract has the following vulnerabilities:
+
+1. Time Manipulation: The contract is using the `now` keyword (alias for `block.timestamp`) in its `payOut` function. This is a timestamp dependence vulnerability because miners can manipulate timestamps to some extent. Similarly, the `randomGen` function is returning `block.timestamp` which again makes the contract prone to timestamp manipulation.
+
+2. Unchecked Return Values For Low-Level Calls: The contract uses `.send` function twice in the `payOut` function. This function only throws an exception when the call stack depth is at its limit, otherwise it silently fails. Therefore, an exception may not be thrown even though the balance transfer failed. This is an unchecked-send issue. It would be safer to use `.transfer` instead of `.send`, as `.transfer` will throw an exception if the transfer fails.
+
+3. Arithmetic Issues: Although not present in the given code, if the contract were to perform any arithmetic operations such as addition, subtraction, multiplication, or division, it would be vulnerable to integer overflow and underflow. This happens when the result of an arithmetic operation exceeds the maximum or minimum size of the integer type.
+
+4. Access Control: The contract does not impose any access control on the `draw` or `payOut` functions. This means that any address can call these functions and potentially manipulate the contract.
+
+5. Bad Randomness: The `randomGen` function is generating a random number based on `block.timestamp`. This is not a secure method of generating random numbers in Ethereum and can be influenced by miners.
+
+The contract does not seem to have issues related to Reentrancy, Denial of Service, Front-Running, or Short Address Attack.

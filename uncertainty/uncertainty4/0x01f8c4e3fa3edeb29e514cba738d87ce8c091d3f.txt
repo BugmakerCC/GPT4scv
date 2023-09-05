@@ -1,0 +1,19 @@
+The smart contract has the following vulnerabilities:
+
+1. Reentrancy: This vulnerability exists in the `Collect` function. The contract performs a state change after an external call to `msg.sender.call.value(_am)()`. An attacker can potentially call back into `Collect` before `balances[msg.sender]-=_am;` is executed.
+
+   To fix this issue, the state should be updated before the external call. This can be done by moving `balances[msg.sender]-=_am;` before `if(msg.sender.call.value(_am)())`.
+
+2. Access Control: There is no access control for the functions `SetMinSum`, `SetLogFile`, and `Initialized`. Anyone can call these functions and change the state of the contract. 
+
+   To fix this issue, only the contract owner should be able to call these functions. This can be done by adding a `onlyOwner` modifier to these functions.
+
+3. Unchecked Return Value: The contract does not check the return value of `msg.sender.call.value(_am)()`. If this call fails, the contract will not be aware.
+
+   To fix this issue, the return value of the call should be checked and handled accordingly.
+
+4. Denial of Service: If an attacker sets the `MinSum` to a high value, it could lead to a denial of service for other users who are trying to collect their balances.
+
+5. Timestamp Dependence: The `LogFile` contract uses `now` for timestamping. This can be manipulated by miners to some extent.
+
+The contract doesn't seem to have issues related to Arithmetic, Bad Randomness, Front-Running, and Short Address Attack.

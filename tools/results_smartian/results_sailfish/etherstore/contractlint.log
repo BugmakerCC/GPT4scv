@@ -1,0 +1,3 @@
+[INFO] | 2023-08-14 02:55:56 AM | analyzer.etherstore | Analysis started at: 2023-08-14 02:55:56 AM
+[INFO] | 2023-08-14 02:55:56 AM | analyzer.etherstore | Version constraints: ['^0.4.0']
+[INFO] | 2023-08-14 02:55:56 AM | analyzer.etherstore | solc version: v0.4.0

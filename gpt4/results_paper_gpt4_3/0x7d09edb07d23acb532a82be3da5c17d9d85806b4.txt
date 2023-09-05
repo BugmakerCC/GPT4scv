@@ -1,0 +1,21 @@
+The contract has the following vulnerabilities:
+
+1. Reentrancy: The contract is vulnerable to a reentrancy attack in the `payout` function. The state is not updated before the external call to `transfer`, allowing for reentrancy.
+
+2. Access Control: The modifier `onlyOwner` is used to restrict access to certain functions. However, if the contract owner's private key is compromised, an attacker could take control of the contract.
+
+3. Unchecked Return Values For Low Level Calls: In the `donateToWhale` and `loseWager` functions, the contract makes a low level `.call`. The return value of this call is not checked, which means if the call fails, the contract will continue execution instead of halting.
+
+4. Bad Randomness: The contract uses `keccak256(abi.encodePacked(blockhash(blockNumber), msg.sender))%difficulty +1` to generate a random number. This is not secure as miners could influence the outcome by manipulating the blockhash.
+
+5. Time Manipulation: The contract uses `block.number` as a timestamp, which can be manipulated by miners. 
+
+6. Arithmetic Issues: There is a potential for underflow/overflow in the `payout` function where the contract balance is divided by 2. If the balance is 1, the result will be 0 due to truncation in Solidity.
+
+7. Front-running: Since Ethereum miners can see all pending transactions, they could potentially manipulate the order of transactions or delay transactions to their advantage.
+
+8. Denial of Service: If the `whale` contract is a malicious contract and its fallback function always reverts, then the `payout` function will fail and the `PoCGame` contract will be stuck.
+
+9. Short Address Attack: The contract does not validate the size of the input to `transferAnyERC20Token`, which could lead to a short address attack if a user submits an address that is fewer than 20 bytes.
+
+To fix these vulnerabilities, the contract should use a secure source of randomness, check the return value of all external calls, implement secure access control, prevent overflow/underflow, and validate all input lengths.

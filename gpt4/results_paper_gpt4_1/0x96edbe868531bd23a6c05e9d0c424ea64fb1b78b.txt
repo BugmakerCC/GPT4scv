@@ -1,0 +1,13 @@
+This contract has several vulnerabilities:
+
+1. Reentrancy: The `Collect` function is vulnerable to reentrancy attacks. It first sends ether with `msg.sender.call.value(_am)()` before it updates the balance with `acc.balance-=_am;`. An attacker can create a contract which calls the Collect function when it receives ether, causing `acc.balance-=_am;` to never get called and enabling the attacker to drain all ether from the contract.
+
+2. Integer Underflow/Overflow: The function `Put` is vulnerable to integer overflow. `acc.balance += msg.value;` may overflow and become very small. This vulnerability could potentially allow an attacker to gain more ether than they should.
+
+3. Access Control: Anyone can call the `SetMinSum` and `SetLogFile` functions before the contract is initialized. This means that an attacker can set the `MinSum` to an arbitrary value or set the `Log` to an arbitrary contract. The `Initialized` function also lacks access control, so any user could call it and then block the owner from calling `SetMinSum` and `SetLogFile`.
+
+4. Unchecked Return Values: The contract does not check the return value of `msg.sender.call.value(_am)()`. If this call fails, the contract continues to execute and no error is thrown.
+
+5. Denial of Service (DoS): If an attacker creates a contract which always throws an exception in its fallback function, and then sends ether from this contract to the PENNY_BY_PENNY contract, the `Collect` function will always fail when trying to send ether to the attacker's contract, effectively making the ether stuck in the PENNY_BY_PENNY contract.
+
+These vulnerabilities could be mitigated by using the checks-effects-interactions pattern, adding access control to all functions which change the contract state, checking return values of all external calls, and using a pull payment system instead of directly sending ether to prevent DoS attacks.

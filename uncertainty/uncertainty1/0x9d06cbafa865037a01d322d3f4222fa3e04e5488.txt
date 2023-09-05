@@ -1,0 +1,21 @@
+The smart contract seems to have the following vulnerabilities:
+
+1. Reentrancy: The `tokens_buy` function sends Ether to the `owner2` address. If the contract at `owner2` can call `tokens_buy` again before the first call finishes, it could withdraw more Ether than it should.
+
+2. Arithmetic Issues: The contract doesn't check for overflows and underflows while performing arithmetic operations. For example, the `msg.value*10**18/token_price` calculation could overflow if `msg.value` is too large.
+
+3. Unchecked Return Values For Low Level Calls: The contract uses a low-level `send` function to transfer Ether to the `owner` and `owner2` addresses. If these transfers fail, the contract doesn't check the return value and doesn't handle the error.
+
+4. Denial of Service: If the `owner` and `owner2` addresses are contracts that can fail or run out of gas, they can block the `tokens_buy` and `withdraw` functions, making the contract unusable.
+
+5. Access Control: The contract has a `onlyOwner` modifier, but it doesn't prevent the `owner` from being changed. If an attacker can control the `owner` address, they can steal all the funds.
+
+6. Bad Randomness: Not applicable in this contract.
+
+7. Front-Running: As the purchase of tokens depends on the Ether sent, an attacker can see a pending purchase transaction and front-run it, buying all the available tokens with a higher gas price.
+
+8. Time Manipulation: Not applicable in this contract.
+
+9. Short Address Attack: Not applicable in this contract.
+
+Overall, this contract lacks proper error handling and has several security issues that need to be addressed.

@@ -1,0 +1,7 @@
+The provided smart contract appears to contain the Unchecked Return Values vulnerability.
+
+In the `callchecked` function, the `require` statement is used to check the return value of the `call` function. If the `call` function fails, the `require` statement will revert the transaction, preventing any further execution. This is a good practice to handle potential failures.
+
+On the other hand, in the `callnotchecked` function, the return value of the `call` function is not checked. This means that if the `call` function fails, the execution will continue without any error handling. This can lead to unexpected behavior or vulnerabilities.
+
+To fix this vulnerability, you should always check the return value of low-level calls like `call` or `delegatecall`.

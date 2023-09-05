@@ -1,0 +1,1729 @@
+{
+    "file": "0x19cf8481ea15427a98ba3cdd6d9e14690011ab10.sol",
+    "global_structs": [
+        {
+            "name": "sendTokenAway",
+            "fields": {
+                "coinContract": [
+                    "integer"
+                ],
+                "amount": [
+                    "integer"
+                ],
+                "recipient": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0x122"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0x123"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x124"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "decimals",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x3"
+            ]
+        },
+        {
+            "name": "oneweek",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x4"
+            ]
+        },
+        {
+            "name": "balances",
+            "type": [
+                "array",
+                "integer",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "balancesRAW",
+            "type": [
+                "array",
+                "integer",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "allowed",
+            "type": [
+                "array",
+                "integer",
+                [
+                    "array",
+                    "integer",
+                    "integer"
+                ]
+            ],
+            "init": []
+        },
+        {
+            "name": "totalMigrated",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "transfers",
+            "type": [
+                "array",
+                "integer",
+                "sendTokenAway"
+            ],
+            "init": []
+        },
+        {
+            "name": "symbol",
+            "type": [
+                "unknown"
+            ],
+            "init": [
+                "0x6b"
+            ]
+        },
+        {
+            "name": "otherchainstotalsupply",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x6a"
+            ]
+        },
+        {
+            "name": "supplylimit",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x69"
+            ]
+        },
+        {
+            "name": "totalSupply",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x68"
+            ]
+        },
+        {
+            "name": "Chain1",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x67"
+            ]
+        },
+        {
+            "name": "Chain2",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x66"
+            ]
+        },
+        {
+            "name": "Chain3",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x65"
+            ]
+        },
+        {
+            "name": "Chain4",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x64"
+            ]
+        },
+        {
+            "name": "migrationAgent",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x63"
+            ]
+        },
+        {
+            "name": "numTransfers",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x62"
+            ]
+        },
+        {
+            "name": "supplylimitset",
+            "type": [
+                "boolean"
+            ],
+            "init": [
+                "0x61"
+            ]
+        },
+        {
+            "name": "otherchainstotalset",
+            "type": [
+                "boolean"
+            ],
+            "init": [
+                "0x60"
+            ]
+        },
+        {
+            "name": "tokenCreationRate",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x5f"
+            ]
+        },
+        {
+            "name": "bonusCreationRate",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x5e"
+            ]
+        },
+        {
+            "name": "CreationRate",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x5d"
+            ]
+        },
+        {
+            "name": "fundingEndBlock",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x5c"
+            ]
+        },
+        {
+            "name": "funding",
+            "type": [
+                "boolean"
+            ],
+            "init": [
+                "0x5b"
+            ]
+        },
+        {
+            "name": "refundstate",
+            "type": [
+                "boolean"
+            ],
+            "init": [
+                "0x5a"
+            ]
+        },
+        {
+            "name": "migratestate",
+            "type": [
+                "boolean"
+            ],
+            "init": [
+                "0x59"
+            ]
+        },
+        {
+            "name": "name",
+            "type": [
+                "unknown"
+            ],
+            "init": [
+                "0x58"
+            ]
+        },
+        {
+            "name": "owner",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x7"
+            ]
+        },
+        {
+            "name": "migrationMaster",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x8"
+            ]
+        },
+        {
+            "name": "tokenRecipient",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "MigrationAgent",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ERC20",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "SafeMath",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "StandardToken",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "daoPOLSKAtokens",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x3",
+            "instructions": [
+                "decimals = 18"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x4",
+            "instructions": [
+                "oneweek = 36000"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x7",
+            "instructions": [
+                "owner = msg_sender"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x8",
+            "instructions": [
+                "migrationMaster = msg_sender"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x58",
+            "instructions": [
+                "name = NEW_VAL unknown"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x59",
+            "instructions": [
+                "migratestate = false"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x5a",
+            "instructions": [
+                "refundstate = false"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x5b",
+            "instructions": [
+                "funding = true"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x5c",
+            "instructions": [
+                "fundingEndBlock = 5433616"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x5d",
+            "instructions": [
+                "CreationRate = 1761"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x5e",
+            "instructions": [
+                "bonusCreationRate = 1000"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x5f",
+            "instructions": [
+                "tokenCreationRate = 1000"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x60",
+            "instructions": [
+                "otherchainstotalset = false"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x61",
+            "instructions": [
+                "supplylimitset = false"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x62",
+            "instructions": [
+                "numTransfers = 0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x63",
+            "instructions": [
+                "migrationAgent = 762280381794746143042721101426205168144546831330"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x64",
+            "instructions": [
+                "Chain4 = 0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x65",
+            "instructions": [
+                "Chain3 = 0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x66",
+            "instructions": [
+                "Chain2 = 0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x67",
+            "instructions": [
+                "Chain1 = 0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x68",
+            "instructions": [
+                "totalSupply = 0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x69",
+            "instructions": [
+                "supplylimit = 10000000000000000000000"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x6a",
+            "instructions": [
+                "otherchainstotalsupply = 1000000000000000000"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x6b",
+            "instructions": [
+                "symbol = NEW_VAL unknown"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x122",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x123",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x124",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "supplylimitset",
+            "addrs": [
+                "0x2",
+                "0xa"
+            ]
+        },
+        {
+            "name": "supplylimit",
+            "addrs": [
+                "0x2",
+                "0xd"
+            ]
+        },
+        {
+            "name": "otherchainstotalset",
+            "addrs": [
+                "0x2",
+                "0x10"
+            ]
+        },
+        {
+            "name": "otherchainstotalsupply",
+            "addrs": [
+                "0x2",
+                "0x13"
+            ]
+        },
+        {
+            "name": "balances",
+            "addrs": [
+                "0x2",
+                "0x15",
+                "0x17",
+                "0x1a",
+                "0x1b",
+                "0x1c",
+                "0x1d",
+                "0x21",
+                "0x37",
+                "0x3f",
+                "0x6e",
+                "0x79",
+                "0x7b"
+            ]
+        },
+        {
+            "name": "totalSupply",
+            "addrs": [
+                "0x2",
+                "0x16",
+                "0x19",
+                "0x2f",
+                "0x33",
+                "0x55",
+                "0x70"
+            ]
+        },
+        {
+            "name": "allowed",
+            "addrs": [
+                "0x2",
+                "0x18",
+                "0x1e",
+                "0x1f",
+                "0x6c"
+            ]
+        },
+        {
+            "name": "name",
+            "addrs": [
+                "0x2",
+                "0x23"
+            ]
+        },
+        {
+            "name": "symbol",
+            "addrs": [
+                "0x2",
+                "0x25"
+            ]
+        },
+        {
+            "name": "Chain1",
+            "addrs": [
+                "0x2",
+                "0x27"
+            ]
+        },
+        {
+            "name": "Chain2",
+            "addrs": [
+                "0x2",
+                "0x29"
+            ]
+        },
+        {
+            "name": "Chain3",
+            "addrs": [
+                "0x2",
+                "0x2b"
+            ]
+        },
+        {
+            "name": "Chain4",
+            "addrs": [
+                "0x2",
+                "0x2d"
+            ]
+        },
+        {
+            "name": "balancesRAW",
+            "addrs": [
+                "0x2",
+                "0x3b",
+                "0x51"
+            ]
+        },
+        {
+            "name": "bonusCreationRate",
+            "addrs": [
+                "0x2",
+                "0x43"
+            ]
+        },
+        {
+            "name": "CreationRate",
+            "addrs": [
+                "0x2",
+                "0x45"
+            ]
+        },
+        {
+            "name": "refundstate",
+            "addrs": [
+                "0x2",
+                "0x47",
+                "0x4f"
+            ]
+        },
+        {
+            "name": "funding",
+            "addrs": [
+                "0x2",
+                "0x49",
+                "0x4d"
+            ]
+        },
+        {
+            "name": "migratestate",
+            "addrs": [
+                "0x2",
+                "0x4b"
+            ]
+        },
+        {
+            "name": "totalMigrated",
+            "addrs": [
+                "0x2",
+                "0x72"
+            ]
+        },
+        {
+            "name": "numTransfers",
+            "addrs": [
+                "0x2",
+                "0x7d"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa",
+            "instructions": [
+                "RTMP_203 = supplylimitset != false",
+                "CONDITION RTMP_203 0x1 0xb"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb",
+            "instructions": [
+                "CLR_0 = msg.sender",
+                "RTMP_204 = CLR_0 != owner",
+                "CONDITION RTMP_204 0x1 0x9"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x9",
+            "instructions": [
+                "supplylimitset = true"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xd",
+            "instructions": [
+                "RTMP_205 = supplylimitset != false",
+                "CONDITION RTMP_205 0x1 0xe"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xe",
+            "instructions": [
+                "CLR_1 = msg.sender",
+                "RTMP_206 = CLR_1 != owner",
+                "CONDITION RTMP_206 0x1 0xc"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xc",
+            "instructions": [
+                "supplylimit = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x10",
+            "instructions": [
+                "CLR_2 = msg.sender",
+                "RTMP_207 = CLR_2 != owner",
+                "CONDITION RTMP_207 0x1 0x11"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x11",
+            "instructions": [
+                "RTMP_208 = supplylimitset != false",
+                "CONDITION RTMP_208 0x1 0xf"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xf",
+            "instructions": [
+                "otherchainstotalset = true"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x13",
+            "instructions": [
+                "CLR_3 = msg.sender",
+                "RTMP_209 = CLR_3 != owner",
+                "CONDITION RTMP_209 0x1 0x14"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x14",
+            "instructions": [
+                "RTMP_210 = supplylimitset != false",
+                "CONDITION RTMP_210 0x1 0x12"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x12",
+            "instructions": [
+                "otherchainstotalsupply = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x15",
+            "instructions": [
+                "CLR_4 = msg.sender",
+                "balances[CLR_4] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x16",
+            "instructions": [
+                "totalSupply = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x17",
+            "instructions": [
+                "balances[0] = U",
+                "balances[1] = U",
+                "balances[2] = U",
+                "balances[3] = U",
+                "balances[4] = U",
+                "balances[5] = U",
+                "balances[6] = U",
+                "balances[7] = U",
+                "balances[8] = U",
+                "balances[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x18",
+            "instructions": [
+                "CLR_5 = msg.sender",
+                "CLR_6 = allowed[U]",
+                "CLR_6[CLR_5] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x19",
+            "instructions": [
+                "totalSupply = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1a",
+            "instructions": [
+                "CLR_7 = msg.sender",
+                "balances[CLR_7] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1b",
+            "instructions": [
+                "balances[0] = U",
+                "balances[1] = U",
+                "balances[2] = U",
+                "balances[3] = U",
+                "balances[4] = U",
+                "balances[5] = U",
+                "balances[6] = U",
+                "balances[7] = U",
+                "balances[8] = U",
+                "balances[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1c",
+            "instructions": [
+                "balances[0] = U",
+                "balances[1] = U",
+                "balances[2] = U",
+                "balances[3] = U",
+                "balances[4] = U",
+                "balances[5] = U",
+                "balances[6] = U",
+                "balances[7] = U",
+                "balances[8] = U",
+                "balances[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1d",
+            "instructions": [
+                "balances[0] = U",
+                "balances[1] = U",
+                "balances[2] = U",
+                "balances[3] = U",
+                "balances[4] = U",
+                "balances[5] = U",
+                "balances[6] = U",
+                "balances[7] = U",
+                "balances[8] = U",
+                "balances[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1e",
+            "instructions": [
+                "CLR_8 = msg.sender",
+                "CLR_9 = allowed[U]",
+                "CLR_9[CLR_8] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1f",
+            "instructions": [
+                "CLR_10 = msg.sender",
+                "CLR_11 = allowed[CLR_10]",
+                "REF_75 = CLR_11",
+                "CLR_12 = REF_75[U]",
+                "REF_76 = CLR_12",
+                "REF_75[0] = U",
+                "REF_75[1] = U",
+                "REF_75[2] = U",
+                "REF_75[3] = U",
+                "REF_75[4] = U",
+                "REF_75[5] = U",
+                "REF_75[6] = U",
+                "REF_75[7] = U",
+                "REF_75[8] = U",
+                "REF_75[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x21",
+            "instructions": [
+                "RTMP_211 = funding == true",
+                "CONDITION RTMP_211 0x20 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x20",
+            "instructions": [
+                "CLR_13 = msg.sender",
+                "CLR_14 = balances[CLR_13]",
+                "REF_77 = CLR_14",
+                "CLR_15 = msg.sender",
+                "balances[CLR_15] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x23",
+            "instructions": [
+                "CLR_16 = msg.sender",
+                "RTMP_212 = CLR_16 != owner",
+                "CONDITION RTMP_212 0x1 0x22"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x22",
+            "instructions": [
+                "name = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x25",
+            "instructions": [
+                "CLR_17 = msg.sender",
+                "RTMP_213 = CLR_17 != owner",
+                "CONDITION RTMP_213 0x1 0x24"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x24",
+            "instructions": [
+                "symbol = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x27",
+            "instructions": [
+                "CLR_18 = msg.sender",
+                "RTMP_214 = CLR_18 != owner",
+                "CONDITION RTMP_214 0x1 0x26"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x26",
+            "instructions": [
+                "Chain1 = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x29",
+            "instructions": [
+                "CLR_19 = msg.sender",
+                "RTMP_215 = CLR_19 != owner",
+                "CONDITION RTMP_215 0x1 0x28"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x28",
+            "instructions": [
+                "Chain2 = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2b",
+            "instructions": [
+                "CLR_20 = msg.sender",
+                "RTMP_216 = CLR_20 != owner",
+                "CONDITION RTMP_216 0x1 0x2a"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2a",
+            "instructions": [
+                "Chain3 = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2d",
+            "instructions": [
+                "CLR_21 = msg.sender",
+                "RTMP_217 = CLR_21 != owner",
+                "CONDITION RTMP_217 0x1 0x2c"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2c",
+            "instructions": [
+                "Chain4 = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x33",
+            "instructions": [
+                "CLR_22 = msg.value",
+                "RTMP_230 = CLR_22 == 0",
+                "CONDITION RTMP_230 0x1 0x34"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x34",
+            "instructions": [
+                "TMP_231 = supplylimit - totalSupply",
+                "CLR_23 = msg.value",
+                "RTMP_232 = CLR_23 > TMP_231",
+                "CONDITION RTMP_232 0x1 0x35"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x35",
+            "instructions": [
+                "RTMP_233 = ! funding",
+                "CONDITION RTMP_233 0x1 0x32"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x32",
+            "instructions": [
+                "totalSupply = totalSupply"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x37",
+            "instructions": [
+                "CLR_24 = msg.value",
+                "RTMP_222 = CLR_24 == 0",
+                "CONDITION RTMP_222 0x1 0x38"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x38",
+            "instructions": [
+                "TMP_223 = supplylimit - totalSupply",
+                "CLR_25 = msg.value",
+                "RTMP_224 = CLR_25 > TMP_223",
+                "CONDITION RTMP_224 0x1 0x39"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x39",
+            "instructions": [
+                "RTMP_225 = ! funding",
+                "CONDITION RTMP_225 0x1 0x36"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x36",
+            "instructions": [
+                "CLR_26 = balances[U]",
+                "REF_78 = CLR_26",
+                "balances[0] = REF_78",
+                "balances[1] = REF_78",
+                "balances[2] = REF_78",
+                "balances[3] = REF_78",
+                "balances[4] = REF_78",
+                "balances[5] = REF_78",
+                "balances[6] = REF_78",
+                "balances[7] = REF_78",
+                "balances[8] = REF_78",
+                "balances[9] = REF_78"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3b",
+            "instructions": [
+                "CLR_27 = msg.value",
+                "RTMP_226 = CLR_27 == 0",
+                "CONDITION RTMP_226 0x1 0x3c"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3c",
+            "instructions": [
+                "TMP_227 = supplylimit - totalSupply",
+                "CLR_28 = msg.value",
+                "RTMP_228 = CLR_28 > TMP_227",
+                "CONDITION RTMP_228 0x1 0x3d"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3d",
+            "instructions": [
+                "RTMP_229 = ! funding",
+                "CONDITION RTMP_229 0x1 0x3a"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3a",
+            "instructions": [
+                "CLR_29 = balancesRAW[U]",
+                "REF_79 = CLR_29",
+                "balancesRAW[0] = REF_79",
+                "balancesRAW[1] = REF_79",
+                "balancesRAW[2] = REF_79",
+                "balancesRAW[3] = REF_79",
+                "balancesRAW[4] = REF_79",
+                "balancesRAW[5] = REF_79",
+                "balancesRAW[6] = REF_79",
+                "balancesRAW[7] = REF_79",
+                "balancesRAW[8] = REF_79",
+                "balancesRAW[9] = REF_79"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3f",
+            "instructions": [
+                "CLR_30 = msg.value",
+                "RTMP_234 = CLR_30 == 0",
+                "CONDITION RTMP_234 0x1 0x40"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x40",
+            "instructions": [
+                "TMP_235 = supplylimit - totalSupply",
+                "CLR_31 = msg.value",
+                "RTMP_236 = CLR_31 > TMP_235",
+                "CONDITION RTMP_236 0x1 0x41"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x41",
+            "instructions": [
+                "RTMP_237 = ! funding",
+                "CONDITION RTMP_237 0x1 0x3e"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3e",
+            "instructions": [
+                "CLR_32 = balances[migrationMaster]",
+                "REF_80 = CLR_32",
+                "balances[migrationMaster] = REF_80"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x43",
+            "instructions": [
+                "CLR_33 = msg.sender",
+                "RTMP_238 = CLR_33 == owner",
+                "CONDITION RTMP_238 0x42 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x42",
+            "instructions": [
+                "bonusCreationRate = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x45",
+            "instructions": [
+                "CLR_34 = msg.sender",
+                "RTMP_239 = CLR_34 == owner",
+                "CONDITION RTMP_239 0x44 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x44",
+            "instructions": [
+                "CreationRate = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x47",
+            "instructions": [
+                "CLR_35 = msg.sender",
+                "RTMP_241 = CLR_35 != owner",
+                "CONDITION RTMP_241 0x1 0x46"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x46",
+            "instructions": [
+                "TMP_240 = ! refundstate",
+                "refundstate = TMP_240"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x49",
+            "instructions": [
+                "CLR_36 = msg.sender",
+                "RTMP_243 = CLR_36 != owner",
+                "CONDITION RTMP_243 0x1 0x48"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x48",
+            "instructions": [
+                "TMP_242 = ! funding",
+                "funding = TMP_242"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4b",
+            "instructions": [
+                "CLR_37 = msg.sender",
+                "RTMP_245 = CLR_37 != migrationMaster",
+                "CONDITION RTMP_245 0x1 0x4a"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4a",
+            "instructions": [
+                "TMP_244 = ! migratestate",
+                "migratestate = TMP_244"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4d",
+            "instructions": [
+                "TMP_246 = fundingEndBlock + 288000",
+                "CLR_38 = block.number",
+                "RTMP_247 = CLR_38 <= TMP_246",
+                "CONDITION RTMP_247 0x1 0x4c"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4c",
+            "instructions": [
+                "funding = false"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4f",
+            "instructions": [
+                "TMP_249 = fundingEndBlock + 288000",
+                "CLR_39 = block.number",
+                "RTMP_250 = CLR_39 <= TMP_249",
+                "CONDITION RTMP_250 0x1 0x4e"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4e",
+            "instructions": [
+                "TMP_248 = ! refundstate",
+                "refundstate = TMP_248"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x51",
+            "instructions": [
+                "CLR_40 = msg.sender",
+                "CLR_41 = balancesRAW[CLR_40]",
+                "REF_82 = CLR_41",
+                "RTMP_251 = REF_82 == 0",
+                "CONDITION RTMP_251 0x1 0x52"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x52",
+            "instructions": [
+                "RTMP_252 = funding == true",
+                "CONDITION RTMP_252 0x1 0x53"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x53",
+            "instructions": [
+                "RTMP_253 = ! refundstate",
+                "CONDITION RTMP_253 0x1 0x50"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x50",
+            "instructions": [
+                "CLR_42 = msg.sender",
+                "CLR_43 = balancesRAW[CLR_42]",
+                "REF_81 = CLR_43",
+                "CLR_44 = msg.sender",
+                "balancesRAW[CLR_44] = 0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x55",
+            "instructions": [
+                "CLR_45 = msg.sender",
+                "CLR_46 = balancesRAW[CLR_45]",
+                "REF_83 = CLR_46",
+                "RTMP_254 = REF_83 == 0",
+                "CONDITION RTMP_254 0x1 0x56"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x56",
+            "instructions": [
+                "RTMP_255 = funding == true",
+                "CONDITION RTMP_255 0x1 0x57"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x57",
+            "instructions": [
+                "RTMP_256 = ! refundstate",
+                "CONDITION RTMP_256 0x1 0x54"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x54",
+            "instructions": [
+                "totalSupply = totalSupply"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6c",
+            "instructions": [
+                "CLR_47 = msg.sender",
+                "CLR_48 = allowed[CLR_47]",
+                "REF_75 = CLR_48",
+                "CLR_49 = REF_75[U]",
+                "REF_76 = CLR_49",
+                "REF_75[0] = U",
+                "REF_75[1] = U",
+                "REF_75[2] = U",
+                "REF_75[3] = U",
+                "REF_75[4] = U",
+                "REF_75[5] = U",
+                "REF_75[6] = U",
+                "REF_75[7] = U",
+                "REF_75[8] = U",
+                "REF_75[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6e",
+            "instructions": [
+                "RTMP_257 = migratestate == true",
+                "CONDITION RTMP_257 0x1 0x6d"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6d",
+            "instructions": [
+                "CLR_50 = msg.sender",
+                "balances[CLR_50] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x70",
+            "instructions": [
+                "RTMP_258 = migratestate == true",
+                "CONDITION RTMP_258 0x1 0x6f"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6f",
+            "instructions": [
+                "totalSupply = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x72",
+            "instructions": [
+                "RTMP_259 = migratestate == true",
+                "CONDITION RTMP_259 0x1 0x71"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x71",
+            "instructions": [
+                "totalMigrated = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x79",
+            "instructions": [
+                "CLR_51 = msg.sender",
+                "RTMP_260 = CLR_51 != owner",
+                "CONDITION RTMP_260 0x1 0x78"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x78",
+            "instructions": [
+                "CLR_52 = msg.sender",
+                "CLR_53 = balances[CLR_52]",
+                "REF_84 = CLR_53",
+                "CLR_54 = msg.sender",
+                "balances[CLR_54] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7b",
+            "instructions": [
+                "CLR_55 = msg.sender",
+                "RTMP_261 = CLR_55 != owner",
+                "CONDITION RTMP_261 0x1 0x7a"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7a",
+            "instructions": [
+                "CLR_56 = balances[U]",
+                "REF_85 = CLR_56",
+                "balances[0] = U",
+                "balances[1] = U",
+                "balances[2] = U",
+                "balances[3] = U",
+                "balances[4] = U",
+                "balances[5] = U",
+                "balances[6] = U",
+                "balances[7] = U",
+                "balances[8] = U",
+                "balances[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7d",
+            "instructions": [
+                "CLR_57 = msg.sender",
+                "RTMP_263 = CLR_57 != owner",
+                "CONDITION RTMP_263 0x1 0x7c"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7c",
+            "instructions": [
+                "TMP_262 = numTransfers + 1",
+                "numTransfers = TMP_262"
+            ]
+        }
+    ],
+    "root_addr": "0x128",
+    "dest_addrs": [
+        "0x126"
+    ],
+    "normal_blocks": [
+        {
+            "scope": "refundTRA",
+            "addr": "0x125",
+            "instructions": [
+                "CONDITION funding 0x127 0x126"
+            ]
+        },
+        {
+            "scope": "refundTRA",
+            "addr": "0x126",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "refundTRA",
+            "addr": "0x128",
+            "instructions": [
+                "NOP",
+                "DAOPLTokenValue = NEW_VAL integer",
+                "ETHValue = NEW_VAL integer",
+                "JUMP 0x125"
+            ]
+        },
+        {
+            "scope": "refundTRA",
+            "addr": "0x127",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

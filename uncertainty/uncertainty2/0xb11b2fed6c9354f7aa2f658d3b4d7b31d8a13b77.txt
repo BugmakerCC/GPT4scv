@@ -1,0 +1,19 @@
+Looking at the smart contract, several vulnerabilities can be identified:
+
+1. Reentrancy: The function `withdraw` is vulnerable to a reentrancy attack due to the use of `call.value()`. A malicious contract could recursively call the `withdraw` function before the state (Deposits[msg.sender]) is updated, draining the contract of Ether.
+
+2. Access Control: The `onlyOwner` modifier only checks if the `msg.sender` is the owner, but it doesn't revert the transaction if the condition is not met. This could potentially allow anyone to execute functions that should be restricted to the owner. 
+
+3. Arithmetic Issues: There is no check for integer overflow or underflow in the `deposit` function when updating the `Deposits[msg.sender]`. 
+
+4. Unchecked Return Values For Low Level Calls: The low level `call.value()` is used without checking its return value in the `proxy` function. If the call fails, the contract will not be aware of it.
+
+5. Denial of Service: The `withdraw` function can potentially be blocked if the address of the `msg.sender` is a contract with a fallback function that consumes a lot of gas or always throws an exception.
+
+6. Bad Randomness: Not applicable here as there is no apparent use of randomness in the contract.
+
+7. Front-Running: Not directly applicable here, but given the lack of access control and potential for reentrancy, a malicious actor could potentially manipulate transaction ordering to their advantage.
+
+8. Time manipulation: Not applicable as there is no time dependency in the functions of the contract.
+
+9. Short Address Attack: Not directly applicable here, but the contract does not validate the length of the address inputs, which could make it vulnerable to a short address attack.

@@ -1,0 +1,11 @@
+This contract appears to have several vulnerabilities. 
+
+1. Reentrancy: The function `sendMoney` has a potential reentrancy vulnerability. It sends Ether to an arbitrary address using a low level `.call.value(_value)()`. If the target address is a contract, it could call back into `sendMoney` before `.call.value(_value)()` finishes, allowing it to reenter and potentially drain the contract's Ether.
+
+2. Unchecked Return Values For Low Level Calls: The return value of `_target.call.value(_value)()` in the `sendMoney` function is not checked. If the call fails for whatever reason, the contract will not be aware of it.
+
+3. Access Control: Although this contract uses the `onlyOwner` modifier to restrict access to certain functions, it does not provide any function to change the `owner`. If the owner's private key is compromised or lost, the contract's Ether could be stolen or forever inaccessible.
+
+4. Denial of Service: The `withdrawAll` function could potentially become unusable if the contract's balance is higher than the gas limit for a transaction. When the owner calls `withdrawAll`, the contract will attempt to send all its Ether to the owner. If this amount is too high, the transaction could run out of gas and fail, making it impossible for the owner to withdraw any Ether from the contract.
+
+There are no obvious vulnerabilities related to Arithmetic Issues, Bad Randomness, Front-Running, Time Manipulation, or Short Address Attack in this contract.

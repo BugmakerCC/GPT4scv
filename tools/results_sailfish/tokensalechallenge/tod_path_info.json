@@ -1,0 +1,30 @@
+{
+    "tod_symex_path_1.json": {
+        "file_name": "",
+        "from_function": "sell",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 24\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 25\nCall context: \nNone\nREF_2 -> balanceOf[msg.sender]\nTMP_7 = REF_2 >= numTokens\nTMP_8 = SOLIDITY_CALL require(bool)(TMP_7)\""
+        ],
+        "executable_instructions": 11,
+        "state_variable": "balanceOf",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_2.json": {
+        "file_name": "",
+        "from_function": "sell",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 29\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 30\nCall context: \nNone\nREF_2 -> balanceOf[msg.sender]\nTMP_7 = REF_2 >= numTokens\nTMP_8 = SOLIDITY_CALL require(bool)(TMP_7)\""
+        ],
+        "executable_instructions": 11,
+        "state_variable": "balanceOf",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    }
+}

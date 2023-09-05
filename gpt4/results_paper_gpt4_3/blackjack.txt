@@ -1,0 +1,21 @@
+The smart contract has the following vulnerabilities:
+
+1. Bad Randomness: The `deal` function in the `Deck` library uses `block.number` and `block.timestamp` as sources of randomness. This is not secure, as miners have some control over these parameters, and could potentially manipulate them to their advantage.
+
+2. Front-Running: The state of the game is public, and transactions are public before they are mined. This means someone could potentially see an opponent's move and react to it before it is mined.
+
+3. Access Control: The contract does not restrict who can call its functions. This means that anyone can interact with the contract, which could lead to unexpected behavior.
+
+4. Arithmetic Issues: While the contract uses safe math for some operations, it does not for all. For example, in the `calculateScore` function, the scores are simply incremented without checking for overflows.
+
+5. Denial of Service: The contract uses the `send` function to send ether. If the recipient contract throws an exception, then the `send` function will also throw an exception, potentially preventing the contract from continuing its execution.
+
+6. Unchecked Return Values For Low Level Calls: The contract does not check the return value of the `send` function. If the call to `send` fails, the contract will not be aware of the failure and will continue execution as if it had succeeded.
+
+7. Reentrancy: While this contract does not appear to be vulnerable to reentrancy attacks, it's important to note that any function that makes an external call could potentially be vulnerable, especially if that function modifies contract state.
+
+8. Time manipulation: The contract uses `block.timestamp` for randomness which can be manipulated by miners to some extent. 
+
+9. Short Address Attack: This contract does not appear to be vulnerable to a short address attack because it does not handle raw addresses. However, any function that accepts an address as a parameter could potentially be vulnerable. Always ensure to use the proper length checks when dealing with addresses.
+
+Overall, this contract has a number of vulnerabilities and should be improved before it is used in a production environment.

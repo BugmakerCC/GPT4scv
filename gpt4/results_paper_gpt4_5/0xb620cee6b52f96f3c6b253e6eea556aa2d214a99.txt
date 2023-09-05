@@ -1,0 +1,19 @@
+1. Reentrancy: This smart contract does not seem to have a reentrancy vulnerability. All external calls are at the end of the function and no state changes happen after these calls.
+
+2. Access Control: The smart contract has access control checks in place through its modifiers such as `onlyOwner`, `onlyWinner`, and `onlyPlayers`. However, the `owner` of the contract can be changed within the `guessSeed` function if the condition `(_seed / (seed[0]*seed[1])) == secret` is met. This could potentially be an access control vulnerability.
+
+3. Arithmetic Issues: No obvious integer overflow or underflow issues are seen in this contract.
+
+4. Unchecked Return Values For Low Level Calls: The contract has unchecked return values for low-level calls in `callFirstTarget` and `callSecondTarget` functions, which can potentially lead to unexpected behavior.
+
+5. Denial of Service: The `winPrize` function calls the `owner` address with a fallback function and transfers 1 wei. If the `owner` address has a malicious fallback function, it can block the execution and cause a denial of service.
+
+6. Bad Randomness: The `unlockSecret` function generates a pseudo-random number using `blockhash(block.number-1)`. This is not a secure way to generate random numbers and can be manipulated by miners.
+
+7. Front-Running: This contract is vulnerable to front-running in the `becomePlayer` and `manipulateSecret` functions where the state is changed after receiving the value.
+
+8. Time manipulation: There does not appear to be a time manipulation vulnerability in this contract.
+
+9. Short Address Attack: The contract does not seem to be vulnerable to a short address attack as it does not directly interact with user-provided addresses. However, it is always recommended to include input validation as a best practice.
+
+Remember, this analysis might not be exhaustive, and the contract could still have vulnerabilities. Always perform a thorough audit and consider multiple security aspects when dealing with smart contracts.

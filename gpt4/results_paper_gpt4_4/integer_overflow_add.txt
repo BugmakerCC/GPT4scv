@@ -1,0 +1,24 @@
+The contract shown has an Arithmetic Issue vulnerability, specifically an integer overflow. The function `run` adds the input value to the state variable `count`. If a sufficiently large value is supplied as input, this results in the `count` value exceeding the maximum value a `uint256` variable can hold, which leads to integer overflow.
+
+This vulnerability can be exploited to reset the value of `count` to a lower value or even zero, potentially leading to unexpected behavior in the contract.
+
+To fix this vulnerability, consider using the SafeMath library for arithmetic operations, which includes built-in overflow and underflow checks. As a best practice, always validate and sanitize inputs to avoid potential issues.
+
+Here's how you can update the contract:
+
+```solidity
+pragma solidity ^0.4.19;
+
+import './SafeMath.sol';
+
+contract IntegerOverflowAdd {
+    using SafeMath for uint;
+    uint public count = 1;
+
+    function run(uint256 input) public {
+        count = count.add(input);
+    }
+}
+```
+
+In the above example, SafeMath's `add` function automatically checks for overflow and throws an exception if it happens, preventing an overflow attack.

@@ -1,0 +1,21 @@
+This contract has several vulnerabilities:
+
+1. Reentrancy: The functions `loseWager`, `donateToWhale` and `payout` are vulnerable to reentrancy attacks, as they make external calls to unknown contracts (`whale` and `winner`) before updating the state (`totalDonated`). An attacker can make a recursive call to drain the contract.
+
+2. Access Control: The contract does not check if `msg.sender` is the `onlyOwner` in the `constructor` function. This means that anyone (not just the owner) can set the `whaleAddress` and `wagerLimit`.
+
+3. Arithmetic Issues: The contract does not handle potential overflows and underflows. For example, `betLimit / 2` could lead to underflows.
+
+4. Unchecked Return Values For Low Level Calls: The functions `donateToWhale` and `loseWager` use low-level calls without checking the return value, which can lead to unexpected behavior if the called contract throws an exception.
+
+5. Denial of Service: The `play` function could potentially block the entire contract if an error occurs, causing a loss of funds for all users.
+
+6. Bad Randomness: The `play` function uses `blockhash(blockNumber)` for randomness which can be manipulated by miners.
+
+7. Front-Running: Since all transaction data is public on the blockchain, an attacker can see a user's transaction and then submit their own with a higher gas fee, causing it to be mined first.
+
+8. Time manipulation: The contract uses `block.number` for timestamping. This can be manipulated by miners to a certain extent.
+
+9. Short Address Attack: Not applicable here as the contract does not interact with token lengths.
+  
+Remember, it's always important to use a standard, well-reviewed contract when handling user funds to prevent these kinds of vulnerabilities.

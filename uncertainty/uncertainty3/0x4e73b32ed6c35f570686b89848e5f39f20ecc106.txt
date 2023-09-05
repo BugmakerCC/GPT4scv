@@ -1,0 +1,35 @@
+The smart contract provided has several vulnerabilities:
+
+1. Reentrancy: The `Collect` function is vulnerable to a reentrancy attack. The `Collect` function sends Ether to an address specified by `msg.sender` and only then it decreases the balance of `msg.sender`. An attacker can make a recursive call to this function and drain the contract of its Ether.
+
+2. Access Control: The `SetMinSum` and `SetLogFile` functions can be called by anyone since there is no access control. Malicious actors could set these to inappropriate values.
+
+3. Unchecked Return Values for Low Level Calls: The contract does not check the return value of `msg.sender.call.value(_am)()`. This could lead to funds being locked in the contract if the call fails.
+
+4. Denial of Service: If an attacker is able to make the `msg.sender.call.value(_am)()` function call fail (for instance, by throwing an exception in their fallback function), they can prevent other users from withdrawing their funds, thus causing a denial of service.
+
+5. Bad Randomness: Not applicable in this contract.
+
+6. Front-Running: Not applicable in this contract.
+
+7. Time Manipulation: Not applicable in this contract.
+
+8. Short Address Attack: Not applicable in this contract.
+
+Recommendations to fix these issues include:
+
+1. To prevent reentrancy, the state of the contract should be changed before calling external contracts. In the `Collect` function, the line `balances[msg.sender]-=_am;` should be before the line `if(msg.sender.call.value(_am)())`.
+
+2. To enforce access control, consider implementing a modifier that only allows the contract owner to call certain functions.
+
+3. Always check the return value of low level `call` functions to ensure they were successful.
+
+4. To prevent denial of service attacks, avoid patterns where users can force your contract into a state where it can't continue to operate correctly.
+
+5. For randomness, consider using an Oracle service or use a commit-reveal scheme.
+
+6. To prevent front-running, consider implementing a commit-reveal scheme.
+
+7. To prevent time manipulation, avoid relying on `block.timestamp` for critical aspects of the contract.
+
+8. To prevent short address attacks, validate the length of the input parameters.

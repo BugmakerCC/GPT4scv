@@ -1,0 +1,19 @@
+This smart contract mainly has the following vulnerabilities:
+
+1. **Reentrancy**: The contract is vulnerable to reentrancy in several places, such as in the `withdraw`, `request`, `deliver` and `cancel` functions. These functions call external contracts and state changes occur after these calls, which means that a malicious contract could call back into the contract before those state changes take place. 
+
+2. **Access Control**: The contract does not appear to have any access control mechanisms beyond checking that the `msg.sender` is the requester of a particular request. This could potentially allow anyone to interact with the contract and possibly change its state.
+
+3. **Unchecked Return Values For Low Level Calls**: In several places, the contract makes low level calls with `call.value()` and `call.gas()`. The return values of these calls are not checked, which could lead to unexpected behavior if those calls fail.
+
+4. **Arithmetic Issues**: The contract does not use SafeMath or any similar library to prevent overflows and underflows. This could potentially lead to unexpected behavior.
+
+5. **Denial of Service**: The contract is vulnerable to a DoS attack in the `request` function. If an attacker continuously sends requests with a high gas price, it could block other users from making requests.
+
+6. **Bad Randomness**: This contract does not appear to use randomness so this issue is not present.
+
+7. **Front-Running**: This contract does not appear to be vulnerable to front-running as it doesn't seem to have functions dependent on transaction ordering.
+
+8. **Time manipulation**: This contract does not appear to have timestamp dependence so it is not vulnerable to time manipulation.
+
+9. **Short Address Attack**: The contract does not validate the length of the addresses it interacts with, which could make it vulnerable to a short address attack.

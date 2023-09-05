@@ -1,0 +1,20 @@
+The contract seems to have a Reentrancy vulnerability. 
+
+In the `withdraw` function, the contract sends ether with `msg.sender.call.value(_amount)()`. However, it updates its state (`balances[msg.sender] -= _amount;`) after the external call. This can open up for a Reentrancy attack, where the called contract calls back into the vulnerable contract before the first invocation of the function is finished. 
+
+In this case, the attacker can repeatedly call the `withdraw` function to drain the contract of its funds, before the balance of the attacker is ever deducted.
+
+To fix the vulnerability, you should always update state before making an external call, to ensure that the state is already updated if a callback happens:
+
+```solidity
+function withdraw(uint _amount) public {
+  if(balances[msg.sender] >= _amount) {
+    balances[msg.sender] -= _amount;
+    if(!msg.sender.call.value(_amount)()) {
+      throw;
+    }
+  }
+}
+```
+
+I don't see clear indications of the other vulnerabilities you've listed in the contract. However, it's always a good practice to use a tool like Mythril or Slither to automatically scan for a wide range of possible vulnerabilities.

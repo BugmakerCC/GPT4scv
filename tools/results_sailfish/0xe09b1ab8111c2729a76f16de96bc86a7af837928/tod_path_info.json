@@ -1,0 +1,536 @@
+{
+    "tod_symex_path_1.json": {
+        "file_name": "",
+        "from_function": "wager",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 426\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 421\nCall context: \nNone\nTMP_12 = 2 * amount\nTMP_13 = TMP_11 >= TMP_12\nTMP_14 = SOLIDITY_CALL require(bool,string)(TMP_13,If we accept this, this contract will be in danger!)\""
+        ],
+        "executable_instructions": 230,
+        "state_variable": "devFeeSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_2.json": {
+        "file_name": "",
+        "from_function": "wager",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 447\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 449\nCall context: \nNone\nTMP_149 = CONVERT this to address\nREF_61 -> BALANCE TMP_149\nTMP_150 = lockedInBets + jackpotSize\nTMP_151 = TMP_150 + devFeeSize\nTMP_152 = REF_61 >= TMP_151\nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+        ],
+        "executable_instructions": 186,
+        "state_variable": "devFeeSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_3.json": {
+        "file_name": "",
+        "from_function": "wager",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 467\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 473\nCall context: wager\nTrue\nTMP_114 = CONVERT this to address\nREF_43 -> BALANCE TMP_114\nTMP_115 = REF_43 - lockedInBets\nTMP_116 = TMP_115 - jackpotSize\nTMP_117 = TMP_116 - devFeeSize\nTMP_170 := TMP_117\""
+        ],
+        "executable_instructions": 220,
+        "state_variable": "devFeeSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_4.json": {
+        "file_name": "",
+        "from_function": "wager",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 488\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 483\nCall context: \nNone\nTMP_12 = 2 * amount\nTMP_13 = TMP_11 >= TMP_12\nTMP_14 = SOLIDITY_CALL require(bool,string)(TMP_13,If we accept this, this contract will be in danger!)\""
+        ],
+        "executable_instructions": 230,
+        "state_variable": "jackpotSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_5.json": {
+        "file_name": "",
+        "from_function": "wager",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 509\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 511\nCall context: \nNone\nTMP_149 = CONVERT this to address\nREF_61 -> BALANCE TMP_149\nTMP_150 = lockedInBets + jackpotSize\nTMP_151 = TMP_150 + devFeeSize\nTMP_152 = REF_61 >= TMP_151\nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+        ],
+        "executable_instructions": 186,
+        "state_variable": "jackpotSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_6.json": {
+        "file_name": "",
+        "from_function": "wager",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 529\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 535\nCall context: wager\nTrue\nTMP_114 = CONVERT this to address\nREF_43 -> BALANCE TMP_114\nTMP_115 = REF_43 - lockedInBets\nTMP_116 = TMP_115 - jackpotSize\nTMP_117 = TMP_116 - devFeeSize\nTMP_170 := TMP_117\""
+        ],
+        "executable_instructions": 220,
+        "state_variable": "jackpotSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_7.json": {
+        "file_name": "",
+        "from_function": "wager",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 550\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 545\nCall context: \nNone\nTMP_12 = 2 * amount\nTMP_13 = TMP_11 >= TMP_12\nTMP_14 = SOLIDITY_CALL require(bool,string)(TMP_13,If we accept this, this contract will be in danger!)\""
+        ],
+        "executable_instructions": 230,
+        "state_variable": "lockedInBets",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_8.json": {
+        "file_name": "",
+        "from_function": "wager",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 571\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 573\nCall context: \nNone\nTMP_149 = CONVERT this to address\nREF_61 -> BALANCE TMP_149\nTMP_150 = lockedInBets + jackpotSize\nTMP_151 = TMP_150 + devFeeSize\nTMP_152 = REF_61 >= TMP_151\nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+        ],
+        "executable_instructions": 186,
+        "state_variable": "lockedInBets",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_9.json": {
+        "file_name": "",
+        "from_function": "wager",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 591\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 597\nCall context: wager\nTrue\nTMP_114 = CONVERT this to address\nREF_43 -> BALANCE TMP_114\nTMP_115 = REF_43 - lockedInBets\nTMP_116 = TMP_115 - jackpotSize\nTMP_117 = TMP_116 - devFeeSize\nTMP_170 := TMP_117\""
+        ],
+        "executable_instructions": 220,
+        "state_variable": "lockedInBets",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_10.json": {
+        "file_name": "",
+        "from_function": "wager",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 612\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 607\nCall context: \nNone\nTMP_12 = 2 * amount\nTMP_13 = TMP_11 >= TMP_12\nTMP_14 = SOLIDITY_CALL require(bool,string)(TMP_13,If we accept this, this contract will be in danger!)\""
+        ],
+        "executable_instructions": 230,
+        "state_variable": "jackpotSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_11.json": {
+        "file_name": "",
+        "from_function": "wager",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 633\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 635\nCall context: \nNone\nTMP_149 = CONVERT this to address\nREF_61 -> BALANCE TMP_149\nTMP_150 = lockedInBets + jackpotSize\nTMP_151 = TMP_150 + devFeeSize\nTMP_152 = REF_61 >= TMP_151\nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+        ],
+        "executable_instructions": 186,
+        "state_variable": "jackpotSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_12.json": {
+        "file_name": "",
+        "from_function": "wager",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 653\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 659\nCall context: wager\nTrue\nTMP_114 = CONVERT this to address\nREF_43 -> BALANCE TMP_114\nTMP_115 = REF_43 - lockedInBets\nTMP_116 = TMP_115 - jackpotSize\nTMP_117 = TMP_116 - devFeeSize\nTMP_170 := TMP_117\""
+        ],
+        "executable_instructions": 220,
+        "state_variable": "jackpotSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_13.json": {
+        "file_name": "",
+        "from_function": "wager",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 674\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 669\nCall context: \nNone\nTMP_12 = 2 * amount\nTMP_13 = TMP_11 >= TMP_12\nTMP_14 = SOLIDITY_CALL require(bool,string)(TMP_13,If we accept this, this contract will be in danger!)\""
+        ],
+        "executable_instructions": 230,
+        "state_variable": "lockedInBets",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_14.json": {
+        "file_name": "",
+        "from_function": "wager",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 695\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 697\nCall context: \nNone\nTMP_149 = CONVERT this to address\nREF_61 -> BALANCE TMP_149\nTMP_150 = lockedInBets + jackpotSize\nTMP_151 = TMP_150 + devFeeSize\nTMP_152 = REF_61 >= TMP_151\nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+        ],
+        "executable_instructions": 186,
+        "state_variable": "lockedInBets",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_15.json": {
+        "file_name": "",
+        "from_function": "wager",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 715\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 721\nCall context: wager\nTrue\nTMP_114 = CONVERT this to address\nREF_43 -> BALANCE TMP_114\nTMP_115 = REF_43 - lockedInBets\nTMP_116 = TMP_115 - jackpotSize\nTMP_117 = TMP_116 - devFeeSize\nTMP_170 := TMP_117\""
+        ],
+        "executable_instructions": 220,
+        "state_variable": "lockedInBets",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_16.json": {
+        "file_name": "",
+        "from_function": "wager",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 736\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 731\nCall context: \nNone\nTMP_12 = 2 * amount\nTMP_13 = TMP_11 >= TMP_12\nTMP_14 = SOLIDITY_CALL require(bool,string)(TMP_13,If we accept this, this contract will be in danger!)\""
+        ],
+        "executable_instructions": 230,
+        "state_variable": "lockedInBets",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_17.json": {
+        "file_name": "",
+        "from_function": "wager",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 757\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 759\nCall context: \nNone\nTMP_149 = CONVERT this to address\nREF_61 -> BALANCE TMP_149\nTMP_150 = lockedInBets + jackpotSize\nTMP_151 = TMP_150 + devFeeSize\nTMP_152 = REF_61 >= TMP_151\nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+        ],
+        "executable_instructions": 186,
+        "state_variable": "lockedInBets",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_18.json": {
+        "file_name": "",
+        "from_function": "wager",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 777\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 783\nCall context: wager\nTrue\nTMP_114 = CONVERT this to address\nREF_43 -> BALANCE TMP_114\nTMP_115 = REF_43 - lockedInBets\nTMP_116 = TMP_115 - jackpotSize\nTMP_117 = TMP_116 - devFeeSize\nTMP_170 := TMP_117\""
+        ],
+        "executable_instructions": 220,
+        "state_variable": "lockedInBets",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_19.json": {
+        "file_name": "",
+        "from_function": "play",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 806\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 801\nCall context: \nTrue\nREF_21 -> bet.player\nEmit JackpotPayment(REF_21.ticketID.jackpotWin)\""
+        ],
+        "executable_instructions": 256,
+        "state_variable": "jackpotSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_20.json": {
+        "file_name": "",
+        "from_function": "play",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 836\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 843\nCall context: \nTrue\nREF_22 -> bet.player\nTMP_65 = tossWin + jackpotWin\nwinner := REF_22\nethToTransfer := TMP_65\nticketID := ticketID\nmaskRes := maskRes\njackpotRes := jackpotRes\""
+        ],
+        "executable_instructions": 269,
+        "state_variable": "jackpotSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_21.json": {
+        "file_name": "",
+        "from_function": "play",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 867\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 869\nCall context: \nNone\nTMP_149 = CONVERT this to address\nREF_61 -> BALANCE TMP_149\nTMP_150 = lockedInBets + jackpotSize\nTMP_151 = TMP_150 + devFeeSize\nTMP_152 = REF_61 >= TMP_151\nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+        ],
+        "executable_instructions": 195,
+        "state_variable": "jackpotSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_22.json": {
+        "file_name": "",
+        "from_function": "play",
+        "to_function": "wager",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 888\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 921\nCall context: play\nNone\nTransfer dest:winner value:ethToTransfer\""
+        ],
+        "executable_instructions": 380,
+        "state_variable": "jackpotSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_23.json": {
+        "file_name": "",
+        "from_function": "play",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 947\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 949\nCall context: \nNone\nTMP_149 = CONVERT this to address\nREF_61 -> BALANCE TMP_149\nTMP_150 = lockedInBets + jackpotSize\nTMP_151 = TMP_150 + devFeeSize\nTMP_152 = REF_61 >= TMP_151\nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+        ],
+        "executable_instructions": 195,
+        "state_variable": "lockedInBets",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_24.json": {
+        "file_name": "",
+        "from_function": "play",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 978\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 980\nCall context: \nNone\nTMP_149 = CONVERT this to address\nREF_61 -> BALANCE TMP_149\nTMP_150 = lockedInBets + jackpotSize\nTMP_151 = TMP_150 + devFeeSize\nTMP_152 = REF_61 >= TMP_151\nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+        ],
+        "executable_instructions": 195,
+        "state_variable": "devFeeSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_25.json": {
+        "file_name": "",
+        "from_function": "play",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1008\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 1003\nCall context: \nTrue\nREF_21 -> bet.player\nEmit JackpotPayment(REF_21.ticketID.jackpotWin)\""
+        ],
+        "executable_instructions": 256,
+        "state_variable": "jackpotSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_26.json": {
+        "file_name": "",
+        "from_function": "play",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1038\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 1045\nCall context: \nTrue\nREF_22 -> bet.player\nTMP_65 = tossWin + jackpotWin\nwinner := REF_22\nethToTransfer := TMP_65\nticketID := ticketID\nmaskRes := maskRes\njackpotRes := jackpotRes\""
+        ],
+        "executable_instructions": 269,
+        "state_variable": "jackpotSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_27.json": {
+        "file_name": "",
+        "from_function": "play",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1069\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 1071\nCall context: \nNone\nTMP_149 = CONVERT this to address\nREF_61 -> BALANCE TMP_149\nTMP_150 = lockedInBets + jackpotSize\nTMP_151 = TMP_150 + devFeeSize\nTMP_152 = REF_61 >= TMP_151\nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+        ],
+        "executable_instructions": 195,
+        "state_variable": "jackpotSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_28.json": {
+        "file_name": "",
+        "from_function": "play",
+        "to_function": "play",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 1099\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 1133\nCall context: play\nNone\nTransfer dest:winner value:ethToTransfer\""
+        ],
+        "executable_instructions": 402,
+        "state_variable": "jackpotSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_29.json": {
+        "file_name": "",
+        "from_function": "play",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1159\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 1161\nCall context: \nNone\nTMP_149 = CONVERT this to address\nREF_61 -> BALANCE TMP_149\nTMP_150 = lockedInBets + jackpotSize\nTMP_151 = TMP_150 + devFeeSize\nTMP_152 = REF_61 >= TMP_151\nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+        ],
+        "executable_instructions": 195,
+        "state_variable": "lockedInBets",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_30.json": {
+        "file_name": "",
+        "from_function": "play",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1190\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 1192\nCall context: \nNone\nTMP_149 = CONVERT this to address\nREF_61 -> BALANCE TMP_149\nTMP_150 = lockedInBets + jackpotSize\nTMP_151 = TMP_150 + devFeeSize\nTMP_152 = REF_61 >= TMP_151\nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+        ],
+        "executable_instructions": 195,
+        "state_variable": "lockedInBets",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_31.json": {
+        "file_name": "",
+        "from_function": "withdrawDonation",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1203\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 1204\nCall context: \nNone\nREF_27 -> donateAmount[msg.sender]\nTMP_72 = REF_27 >= amount\nTMP_73 = SOLIDITY_CALL require(bool,string)(TMP_72,You are going to withdraw more than you donated!)\""
+        ],
+        "executable_instructions": 176,
+        "state_variable": "donateAmount",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_32.json": {
+        "file_name": "",
+        "from_function": "withdrawDonation",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1219\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 1220\nCall context: \nNone\nREF_27 -> donateAmount[msg.sender]\nTMP_72 = REF_27 >= amount\nTMP_73 = SOLIDITY_CALL require(bool,string)(TMP_72,You are going to withdraw more than you donated!)\""
+        ],
+        "executable_instructions": 176,
+        "state_variable": "donateAmount",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_33.json": {
+        "file_name": "",
+        "from_function": "refund",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1238\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 1240\nCall context: \nNone\nTMP_149 = CONVERT this to address\nREF_61 -> BALANCE TMP_149\nTMP_150 = lockedInBets + jackpotSize\nTMP_151 = TMP_150 + devFeeSize\nTMP_152 = REF_61 >= TMP_151\nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+        ],
+        "executable_instructions": 182,
+        "state_variable": "devFeeSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_34.json": {
+        "file_name": "",
+        "from_function": "refund",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1251\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 1253\nCall context: \nNone\nTMP_149 = CONVERT this to address\nREF_61 -> BALANCE TMP_149\nTMP_150 = lockedInBets + jackpotSize\nTMP_151 = TMP_150 + devFeeSize\nTMP_152 = REF_61 >= TMP_151\nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+        ],
+        "executable_instructions": 182,
+        "state_variable": "jackpotSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_35.json": {
+        "file_name": "",
+        "from_function": "refund",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1264\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 1266\nCall context: \nNone\nTMP_149 = CONVERT this to address\nREF_61 -> BALANCE TMP_149\nTMP_150 = lockedInBets + jackpotSize\nTMP_151 = TMP_150 + devFeeSize\nTMP_152 = REF_61 >= TMP_151\nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+        ],
+        "executable_instructions": 182,
+        "state_variable": "lockedInBets",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_36.json": {
+        "file_name": "",
+        "from_function": "refund",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1277\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 1279\nCall context: \nNone\nTMP_149 = CONVERT this to address\nREF_61 -> BALANCE TMP_149\nTMP_150 = lockedInBets + jackpotSize\nTMP_151 = TMP_150 + devFeeSize\nTMP_152 = REF_61 >= TMP_151\nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+        ],
+        "executable_instructions": 182,
+        "state_variable": "jackpotSize",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_37.json": {
+        "file_name": "",
+        "from_function": "refund",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1290\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 1292\nCall context: \nNone\nTMP_149 = CONVERT this to address\nREF_61 -> BALANCE TMP_149\nTMP_150 = lockedInBets + jackpotSize\nTMP_151 = TMP_150 + devFeeSize\nTMP_152 = REF_61 >= TMP_151\nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+        ],
+        "executable_instructions": 182,
+        "state_variable": "lockedInBets",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_38.json": {
+        "file_name": "",
+        "from_function": "refund",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 1303\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 1305\nCall context: \nNone\nTMP_149 = CONVERT this to address\nREF_61 -> BALANCE TMP_149\nTMP_150 = lockedInBets + jackpotSize\nTMP_151 = TMP_150 + devFeeSize\nTMP_152 = REF_61 >= TMP_151\nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+        ],
+        "executable_instructions": 182,
+        "state_variable": "lockedInBets",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    }
+}

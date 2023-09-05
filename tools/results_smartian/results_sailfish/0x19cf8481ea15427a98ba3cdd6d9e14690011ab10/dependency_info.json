@@ -1,0 +1,287 @@
+{
+    "0x19cf8481ea15427a98ba3cdd6d9e14690011ab10.sol": [
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "FundsTransfer",
+                "fundingState"
+            ],
+            "First_function": "fundingState",
+            "Second_function": "FundsTransfer",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 129\nFunction: fundingState\nNode: \nEXPRESSION funding = ! funding\nIRS: \nfunding := TMP_131\"",
+                        "\"BlockID: 118\nFunction: FundsTransfer\nNode: \nIF funding == true\nIRS: \nCONDITION TMP_122\""
+                    ],
+                    "state_variable": "funding"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "FundsTransfer",
+                "finalize"
+            ],
+            "First_function": "finalize",
+            "Second_function": "FundsTransfer",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 135\nFunction: finalize\nNode: \nEXPRESSION funding = false\nIRS: \nfunding := false\"",
+                        "\"BlockID: 118\nFunction: FundsTransfer\nNode: \nIF funding == true\nIRS: \nCONDITION TMP_122\""
+                    ],
+                    "state_variable": "funding"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "refundTRA",
+                "burn"
+            ],
+            "First_function": "burn",
+            "Second_function": "refundTRA",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 47\nFunction: burn\nNode: \nEXPRESSION balances[msg.sender] -= _value\nIRS: \nREF_21 = REF_21 - _value\"",
+                        "\"BlockID: 154\nFunction: refundTRA\nNode: \nEXPRESSION totalSupply -= DAOPLTokenValue\nIRS: \ntotalSupply = totalSupply - DAOPLTokenValue\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "refundTRA",
+                "burnFrom"
+            ],
+            "First_function": "burnFrom",
+            "Second_function": "refundTRA",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 53\nFunction: burnFrom\nNode: \nEXPRESSION balances[_from] -= _value\nIRS: \nREF_25 = REF_25 - _value\"",
+                        "\"BlockID: 154\nFunction: refundTRA\nNode: \nEXPRESSION totalSupply -= DAOPLTokenValue\nIRS: \ntotalSupply = totalSupply - DAOPLTokenValue\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "refundTRA",
+                "transfer"
+            ],
+            "First_function": "transfer",
+            "Second_function": "refundTRA",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 59\nFunction: transfer\nNode: \nEXPRESSION balances[msg.sender] -= _value\nIRS: \nREF_31 = REF_31 - _value\"",
+                        "\"BlockID: 154\nFunction: refundTRA\nNode: \nEXPRESSION totalSupply -= DAOPLTokenValue\nIRS: \ntotalSupply = totalSupply - DAOPLTokenValue\""
+                    ],
+                    "state_variable": "balances"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 60\nFunction: transfer\nNode: \nEXPRESSION balances[_to] += _value\nIRS: \nREF_32 = REF_32 + _value\"",
+                        "\"BlockID: 154\nFunction: refundTRA\nNode: \nEXPRESSION totalSupply -= DAOPLTokenValue\nIRS: \ntotalSupply = totalSupply - DAOPLTokenValue\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "refundTRA",
+                "transferFrom"
+            ],
+            "First_function": "transferFrom",
+            "Second_function": "refundTRA",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: transferFrom\nNode: \nEXPRESSION balances[_to] += _value\nIRS: \nREF_38 = REF_38 + _value\"",
+                        "\"BlockID: 154\nFunction: refundTRA\nNode: \nEXPRESSION totalSupply -= DAOPLTokenValue\nIRS: \ntotalSupply = totalSupply - DAOPLTokenValue\""
+                    ],
+                    "state_variable": "balances"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 65\nFunction: transferFrom\nNode: \nEXPRESSION balances[_from] -= _value\nIRS: \nREF_39 = REF_39 - _value\"",
+                        "\"BlockID: 154\nFunction: refundTRA\nNode: \nEXPRESSION totalSupply -= DAOPLTokenValue\nIRS: \ntotalSupply = totalSupply - DAOPLTokenValue\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "refundTRA",
+                "fallback"
+            ],
+            "First_function": "fallback",
+            "Second_function": "refundTRA",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 76\nFunction: fallback\nNode: \nEXPRESSION balances[msg.sender] = balances[msg.sender] + msg.value\nIRS: \nREF_47 := TMP_98\"",
+                        "\"BlockID: 154\nFunction: refundTRA\nNode: \nEXPRESSION totalSupply -= DAOPLTokenValue\nIRS: \ntotalSupply = totalSupply - DAOPLTokenValue\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "refundTRA",
+                "createDaoPOLSKAtokens"
+            ],
+            "First_function": "createDaoPOLSKAtokens",
+            "Second_function": "refundTRA",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 107\nFunction: createDaoPOLSKAtokens\nNode: \nEXPRESSION balancesRAW[holder] += numTokensRAW\nIRS: \nREF_56 = REF_56 + numTokensRAW\"",
+                        "\"BlockID: 152\nFunction: refundTRA\nNode: \nIF ETHValue == 0\nIRS: \nCONDITION TMP_146\""
+                    ],
+                    "state_variable": "balancesRAW"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 107\nFunction: createDaoPOLSKAtokens\nNode: \nEXPRESSION balancesRAW[holder] += numTokensRAW\nIRS: \nREF_56 = REF_56 + numTokensRAW\"",
+                        "\"BlockID: 156\nFunction: refundTRA\nNode: \nEXPRESSION msg.sender.transfer(ETHValue)\nIRS: \nTransfer dest:msg.sender value:ETHValue\""
+                    ],
+                    "state_variable": "balancesRAW"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 106\nFunction: createDaoPOLSKAtokens\nNode: \nEXPRESSION balances[holder] += numTokens\nIRS: \nREF_55 = REF_55 + numTokens\"",
+                        "\"BlockID: 154\nFunction: refundTRA\nNode: \nEXPRESSION totalSupply -= DAOPLTokenValue\nIRS: \ntotalSupply = totalSupply - DAOPLTokenValue\""
+                    ],
+                    "state_variable": "balances"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 110\nFunction: createDaoPOLSKAtokens\nNode: \nEXPRESSION balances[migrationMaster] += additionalTokens\nIRS: \nREF_57 = REF_57 + additionalTokens\"",
+                        "\"BlockID: 154\nFunction: refundTRA\nNode: \nEXPRESSION totalSupply -= DAOPLTokenValue\nIRS: \ntotalSupply = totalSupply - DAOPLTokenValue\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "refundTRA",
+                "turnrefund"
+            ],
+            "First_function": "turnrefund",
+            "Second_function": "refundTRA",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 126\nFunction: turnrefund\nNode: \nEXPRESSION refundstate = ! refundstate\nIRS: \nrefundstate := TMP_129\"",
+                        "\"BlockID: 151\nFunction: refundTRA\nNode: \nIF ! refundstate\nIRS: \nCONDITION TMP_145\""
+                    ],
+                    "state_variable": "refundstate"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "refundTRA",
+                "fundingState"
+            ],
+            "First_function": "fundingState",
+            "Second_function": "refundTRA",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 129\nFunction: fundingState\nNode: \nEXPRESSION funding = ! funding\nIRS: \nfunding := TMP_131\"",
+                        "\"BlockID: 150\nFunction: refundTRA\nNode: \nIF funding\nIRS: \nCONDITION funding\""
+                    ],
+                    "state_variable": "funding"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "refundTRA",
+                "finalize"
+            ],
+            "First_function": "finalize",
+            "Second_function": "refundTRA",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 135\nFunction: finalize\nNode: \nEXPRESSION funding = false\nIRS: \nfunding := false\"",
+                        "\"BlockID: 150\nFunction: refundTRA\nNode: \nIF funding\nIRS: \nCONDITION funding\""
+                    ],
+                    "state_variable": "funding"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 136\nFunction: finalize\nNode: \nEXPRESSION refundstate = ! refundstate\nIRS: \nrefundstate := TMP_137\"",
+                        "\"BlockID: 151\nFunction: refundTRA\nNode: \nIF ! refundstate\nIRS: \nCONDITION TMP_145\""
+                    ],
+                    "state_variable": "refundstate"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "refundTRA",
+                "migrate"
+            ],
+            "First_function": "migrate",
+            "Second_function": "refundTRA",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 144\nFunction: migrate\nNode: \nEXPRESSION balances[msg.sender] -= _value\nIRS: \nREF_65 = REF_65 - _value\"",
+                        "\"BlockID: 154\nFunction: refundTRA\nNode: \nEXPRESSION totalSupply -= DAOPLTokenValue\nIRS: \ntotalSupply = totalSupply - DAOPLTokenValue\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "refundTRA",
+                "refundTRA"
+            ],
+            "First_function": "refundTRA",
+            "Second_function": "refundTRA",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 185\nFunction: refundTRA\nNode: \nEXPRESSION balancesRAW[msg.sender] = 0\nIRS: \nREF_69 := 0\"",
+                        "\"BlockID: 152\nFunction: refundTRA\nNode: \nIF ETHValue == 0\nIRS: \nCONDITION TMP_146\""
+                    ],
+                    "state_variable": "balancesRAW"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 185\nFunction: refundTRA\nNode: \nEXPRESSION balancesRAW[msg.sender] = 0\nIRS: \nREF_69 := 0\"",
+                        "\"BlockID: 156\nFunction: refundTRA\nNode: \nEXPRESSION msg.sender.transfer(ETHValue)\nIRS: \nTransfer dest:msg.sender value:ETHValue\""
+                    ],
+                    "state_variable": "balancesRAW"
+                }
+            ]
+        }
+    ]
+}

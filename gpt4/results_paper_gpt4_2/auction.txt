@@ -1,0 +1,38 @@
+The given smart contract is susceptible to the Denial of Service (DoS) attack. This is one of the vulnerabilities you mentioned. 
+
+In this contract, the potential DoS attack could be executed in the following way: 
+
+If a frontrunner (bidder) has a fallback function that always fails (e.g., if the recipient's fallback function is revert()), then the entire transaction reverts. This means they will always be the highest bidder as no one else can successfully place a bid. This way, a malicious frontrunner who always fails will indefinitely remain the highest bidder, effectively making the auction useless and denying service to other genuine users.
+
+To mitigate this type of vulnerability, it's better to use the withdrawal pattern. Instead of sending funds immediately to the outbid bidder, the contract could keep track of refunds due. Users could then withdraw their refunds by calling a separate function. This way, an issue with the refund wouldn't block the entire bid function. 
+
+Here is an example of how the contract could be modified to implement the withdrawal pattern:
+
+```
+pragma solidity ^0.4.15;
+
+contract DosAuction {
+    address currentFrontrunner;
+    uint currentBid;
+    mapping(address => uint) refunds;
+
+    function bid() payable {
+        require(msg.value > currentBid);
+
+        if (currentFrontrunner != 0) {
+            refunds[currentFrontrunner] += currentBid;
+        }
+
+        currentFrontrunner = msg.sender;
+        currentBid = msg.value;
+    }
+
+    function withdrawRefund() external {
+        uint refund = refunds[msg.sender];
+        refunds[msg.sender] = 0;
+        require(msg.sender.send(refund));
+    }
+}
+```
+
+In this version of the contract, if a refund fails, it doesn't affect the rest of the system. The user can simply try again later. This prevents a single failing transaction from taking down the entire contract.

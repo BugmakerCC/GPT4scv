@@ -1,0 +1,19 @@
+This contract has several potential vulnerabilities:
+
+1. Reentrancy: The functions `payout()`, `donateToWhale()`, and `loseWager()` use the `call.value()` method to send Ether, which could potentially expose the contract to a reentrancy attack. This occurs when an attacker is able to trigger a function from within an external call before the execution of the initial function is finished.
+
+2. Access Control: The contract uses `onlyOwner` modifier for several functions. If the `owner` address is compromised, the attacker has the ability to change bet limits, transfer any ERC20 tokens, and adjust difficulty.
+
+3. Bad Randomness: The `play()` function generates a "random" number using `blockhash()`, `msg.sender` and `block.number`. This is not truly random and could potentially be predicted or manipulated by miners. 
+
+4. Front-Running: Since Ethereum transactions are public on the blockchain before they are mined, an attacker could see a transaction and then place a bet with a higher gas price to have their transaction mined first.
+
+5. Unchecked Return Values For Low Level Calls: The `donateToWhale()` and `loseWager()` functions use a low level `call` function and do not check the return value. This could lead to unexpected behavior if the call fails.
+
+6. Arithmetic Issues: This contract does not seem to be vulnerable to any arithmetic issues such as integer overflow or underflow.
+
+7. Denial of Service: The `payout()` function could potentially cause a DoS attack if the `winner` is a contract that always throws an error. This would prevent the `payout()` function from executing.
+
+8. Time manipulation: The contract uses `block.number` to timestamp bets. Timestamps based on block numbers could be manipulated by miners, leading to potential vulnerabilities.
+
+9. Short Address Attack: The contract does not appear to be vulnerable to a short address attack as it does not interact with raw byte data of addresses. However, it's always a good practice to include checks for address length.

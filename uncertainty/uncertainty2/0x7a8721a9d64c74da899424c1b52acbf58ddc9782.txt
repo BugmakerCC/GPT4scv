@@ -1,0 +1,21 @@
+This contract appears to have multiple vulnerabilities:
+
+1) Reentrancy: The `CashOut` function is vulnerable to a reentrancy attack because it calls `msg.sender.call.value(_am)()` before it reduces the balance of the sender. An attacker can make a recursive call to `CashOut` and drain the contract.
+
+2) Access Control: The contract uses `tx.origin` for access control in the `onlyOwner` modifier. This is a security risk, as `tx.origin` can be manipulated by contracts that are called by the original sender. It is better to use `msg.sender` instead.
+
+3) Arithmetic Issues: In the `Deposit` function, the balance of the sender is increased with `balances[msg.sender]+=msg.value;` without any overflow checks.
+
+4) Unchecked Return Values for Low Level Calls: The contract does not check the return value of `msg.sender.call.value(_am)()` in the `CashOut` function. If the call fails, the contract will continue execution and no error will be thrown.
+
+5) Denial of Service: The `CashOut` function is vulnerable to a denial of service attack. If an attacker's fallback function always fails, it will be impossible for them to withdraw their balance, effectively blocking their funds.
+
+6) Bad Randomness: There doesn't seem to be any randomness involved in this contract, so this vulnerability doesn't apply here.
+
+7) Front-Running: Front-running could potentially be an issue if the order of transactions affects the outcome of the contract, but this does not seem to be the case in this contract.
+
+8) Time Manipulation: The `Log` contract relies on `now` for timestamps, which can be manipulated by miners to some degree.
+
+9) Short Address Attack: This contract does not appear to be vulnerable to a short address attack, as it doesn't take any address inputs that could be shortened.
+
+It's recommended to address these issues before deploying the contract.

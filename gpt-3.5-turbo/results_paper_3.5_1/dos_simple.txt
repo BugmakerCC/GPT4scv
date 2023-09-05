@@ -1,0 +1,43 @@
+After reviewing the provided smart contract, here are the vulnerabilities that could be present:
+
+1. Denial of Service (DoS): The `ifillArray` function can potentially cause a DoS attack by filling up the `listAddresses` array with a large number of elements. This can lead to excessive gas consumption and potentially block other transactions.
+
+2. Gas Limit Reached: If the `listAddresses` array reaches a size greater than 1500, the `else` block will be executed, creating a new empty array. However, this operation can consume a large amount of gas if the existing array is very large, potentially reaching the gas limit and causing the transaction to fail.
+
+To mitigate these vulnerabilities, you can consider the following modifications:
+
+- Implement a limit on the number of elements that can be added to the `listAddresses` array to prevent excessive gas consumption and potential DoS attacks.
+- Instead of creating a new empty array, consider resetting the existing array to an empty state by clearing its elements using a loop. This way, the gas consumption will be minimal.
+
+Here is an updated version of the smart contract with these modifications:
+
+```
+pragma solidity ^0.4.25;
+
+contract DosOneFunc {
+    address[] listAddresses;
+
+    uint constant MAX_ARRAY_SIZE = 1500;
+
+    function ifillArray() public returns (bool){
+        if (listAddresses.length < MAX_ARRAY_SIZE) {
+            for (uint i = 0; i < 350; i++) {
+                listAddresses.push(msg.sender);
+            }
+            return true;
+        } else {
+            clearArray();
+            return false;
+        }
+    }
+
+    function clearArray() private {
+        for (uint i = 0; i < listAddresses.length; i++) {
+            delete listAddresses[i];
+        }
+        listAddresses.length = 0;
+    }
+}
+```
+
+By implementing these changes, you can reduce the risk of DoS attacks and gas limit issues in the smart contract. However, it is important to thoroughly test the contract and ensure that it meets all the desired functionality and security requirements.

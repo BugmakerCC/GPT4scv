@@ -1,0 +1,21 @@
+The provided smart contract seems to exhibit the following vulnerabilities:
+
+1. Reentrancy: In the Get() function, the contract is transferring ether to 'msg.sender' after transferring the contract's balance to the owner. If the 'msg.sender' is a contract, it can call back into the Get() function before the first call to Get() has finished, resulting in a reentrancy attack. This could drain the contract's ether.
+
+2. Access Control: The contract's owner is public and can be changed via the withdraw() function by a specific address hardcoded in the function. This is a critical vulnerability since the owner has control over the contract's balance.
+
+3. Unchecked Return Values For Low Level Calls: Low-level call is used in Command() function and the return value of the call is not checked. If the call fails, the contract will not be aware of it.
+
+4. Arithmetic Issues: Not applicable in the provided contract.
+
+5. Denial of Service: In the Get() function, if the contract's balance is greater than 1 ether, both the owner and the sender are trying to withdraw the entire balance. If the first transfer fails, the ether will be locked in the contract.
+
+6. Bad Randomness: Not applicable in the provided contract.
+
+7. Front-Running: Not applicable in the provided contract.
+
+8. Time manipulation: Not applicable in the provided contract.
+
+9. Short Address Attack: Not applicable in the provided contract. 
+
+These are potential vulnerabilities and could be exploited by attackers. It is advised to fix these issues to secure the contract.

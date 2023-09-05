@@ -1,0 +1,13 @@
+The smart contract provided has several vulnerabilities:
+
+1. **Unchecked Return Values For Low Level Calls:** The `call.value` function is used in both the `Splitter` and `Puppet` contracts. This function does not throw an exception when the call fails, which means that the failure has to be manually checked. However, the return value of `call.value` is not checked in this contract, which potentially allows silent failures.
+
+2. **Reentrancy:** The `fundPuppets` function in the `Splitter` contract and the fallback function in the `Puppet` contract make external calls to unknown addresses. These calls can potentially call back into the contract before the function is finished, causing a reentrancy attack.
+
+3. **Access Control:** The `newPuppet` and `fundPuppets` functions in the `Splitter` contract and the `withdraw` function in the `Puppet` contract require that `msg.sender == owner`, but the `owner` variable in the `Puppet` contract is never set, meaning that anyone can become the owner and call these functions.
+
+4. **Denial of Service:** The `withdraw` function in both the `Splitter` and `Puppet` contracts could be used to perform a denial of service attack. If the `owner` address is a contract that throws during its fallback function, the `withdraw` function will be stuck as it will keep reverting.
+
+5. **Arithmetic Issues:** The smart contract uses the SafeMath library to protect against overflows and underflows. However, the `div` function in the `SafeMath` library does not handle the case where `b` is 0, which will cause a division by zero error.
+
+The other vulnerabilities mentioned (Bad Randomness, Front-Running, Time manipulation, Short Address Attack) do not appear to be present in this contract.

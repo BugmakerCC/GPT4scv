@@ -1,0 +1,13 @@
+The smart contract has the following vulnerabilities:
+
+1. Bad Randomness: The contract uses `keccak256(block.blockhash(block.number - 1), now)` for generating the random number. This is not safe because `blockhash` and `now` can be predicted by miners. Hence, a miner could manipulate the outcome.
+
+2. Reentrancy: Although this contract does not exhibit a reentrancy vulnerability directly, the use of `transfer()` can potentially be a reentrancy attack vector if the contract interacts with other contracts.
+
+3. Denial of Service: If the contract balance is less than 2 ether, the `guess()` function could potentially fail and cause a denial of service because it tries to transfer 2 ether to the `msg.sender`.
+
+4. Arithmetic Issues: There could be a potential underflow when the balance of the contract is less than 2 ether in the `guess()` function.
+
+5. Unchecked Return Values For Low Level Calls: While `transfer()` function is considered safe as it includes a check for the return value, it's generally recommended to handle the possibility of a transfer failing.
+
+The other vulnerabilities listed do not appear to be present in this contract. However, absence of evidence is not evidence of absence, so a more comprehensive audit might still be necessary.

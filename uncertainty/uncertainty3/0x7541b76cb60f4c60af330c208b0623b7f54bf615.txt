@@ -1,0 +1,25 @@
+The provided smart contract has several vulnerabilities:
+
+1. Reentrancy:
+   The contract has a reentrancy vulnerability in the `Collect()` function. It allows external contract calls to `msg.sender` before the state (the user's balance) is updated, which can allow an attacker to recursively call `Collect()` and drain the contract's Ether.
+
+2. Arithmetic Issues:
+   The contract doesn't handle arithmetic overflows or underflows. It directly adds or subtracts values on balances without any checks for overflows or underflows.
+
+3. Access Control:
+   The function `AddMessage()` in the `Log` contract is public, which means any address can call this function and add a log message. This could be misused to spam the contract's storage and make it run out of gas.
+
+4. Unchecked Return Values For Low Level Calls:
+   The contract uses `call.value()` which can fail silently, and this failure is not checked or handled.
+
+5. Denial of Service:
+   The balance update is dependent on the successful execution of the `msg.sender.call.value(_am)()` call. If this call always fails, the user can be permanently denied access to their funds.
+
+6. Time Manipulation:
+   The contract uses 'now' (block.timestamp) for determining the `unlockTime`. Miners have some control over this value which could be manipulated to their advantage. 
+
+7. Bad Randomness, Front-Running, Short Address Attack vulnerabilities do not seem to be present in this contract.
+
+8. The Log contract can run out of gas if too many messages are being added because it iterates over an array to store log messages. This could potentially be used for a Denial of Service attack.
+
+To fix these issues, consider using the Checks-Effects-Interactions pattern to prevent the reentrancy attack. Use SafeMath library to prevent arithmetic issues. Make sure to check the return value of `call.value()`. Restrict access to sensitive functions like `AddMessage()`. Lastly, be cautious when using block.timestamp, if possible, avoid its dependency.

@@ -1,0 +1,37 @@
+The contract seems to have some vulnerabilities and issues:
+
+1. Reentrancy: The contract does not seem to be vulnerable to reentrancy attacks as it does not call external contracts while holding Ether.
+
+2. Access Control: The contract does have owner-based access control implemented, but there are functions like `approveAndCall` which don't check for owner permissions. 
+
+3. Arithmetic Issues: The contract uses SafeMath library methods to prevent arithmetic issues.
+
+4. Unchecked Return Values For Low Level Calls: The contract seems to properly check the return values of the low level calls.
+
+5. Denial of Service: The contract can potentially be vulnerable to denial of service attacks in the `refundTRA` function. If the `transfer` function fails, it can stop the execution for all users.
+
+6. Bad Randomness: There is no randomness involved in the contract, so it's not vulnerable to bad randomness.
+
+7. Front-Running: The contract is potentially vulnerable to front running attacks as transaction ordering can impact the outcome of transactions.
+
+8. Time manipulation: There is no dependency on block timestamps, so the contract is not vulnerable to time manipulation.
+
+9. Short Address Attack: The contract does not seem to be vulnerable to a short address attack as all critical functions require explicit inputs.
+
+Apart from these vulnerabilities, there are some other issues as well:
+
+- There are unused variables and events such as `otherchainstotalsupply`, `Chain1`, `Chain2`, `Chain3`, `Chain4`, `MigrationAgent` and event `Migrate`.
+
+- The function `approveAndCall` can be potentially dangerous as it allows a potentially malicious contract to spend tokens on behalf of the user.
+
+- In the `sendTokenAw` function, the contract assumes that the transfer will be successful without checking the return value of the transfer function.
+
+- The contract lacks comments which makes it hard to understand the functioning and intention of the contract.
+
+- There are magic numbers used in the contract which can lead to confusion and mistakes. For example, the number 12 is used in the `createDaoPOLSKAtokens` function without any explanation.
+
+- The contract uses the throw statement which is deprecated in the latest versions of solidity. Using `require`, `assert` and `revert` is recommended.
+
+- The `setBonusCreationRate` function can be potentially dangerous as it allows the owner to change the bonus creation rate arbitrarily. This can lead to trust issues with the users of the contract. 
+
+Please note that this is a preliminary analysis and a thorough line by line review of the contract is recommended.

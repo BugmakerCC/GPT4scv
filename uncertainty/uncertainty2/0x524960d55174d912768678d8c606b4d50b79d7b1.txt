@@ -1,0 +1,21 @@
+The smart contract provided contains several vulnerabilities:
+
+1. Reentrancy: The contract is potentially vulnerable to a reentrancy attack since the `call` method is used, which can potentially accept external calls to untrusted contracts. This issue could allow malicious contracts to repeatedly enter the function before the first invocation of the function is finished.
+
+2. Unchecked Low Level Calls: The low level method `call` is used without checking its return value. If this call fails for any reason, the contract will continue execution as if nothing happened. It's recommended to check the return value of `call`.
+
+3. Access Control: It appears that there are no restrictions on who can call the `transfer` function. A function that transfers funds should have appropriate access controls to prevent unauthorized use.
+
+4. Denial of Service: This contract could be vulnerable to a DoS if the call to `register` or `transfer` in an external contract leads to an exception, or if an attacker can force the `transfer` call to fail.
+
+5. Bad Randomness: Not applicable here as there's no randomness involved in the contract.
+
+6. Front-Running: Not applicable here as there's no transaction ordering dependence in the contract.
+
+7. Time Manipulation: Not applicable here as there's no timestamp dependence in the contract.
+
+8. Short Address Attack: Not directly applicable here, but it's worth noting that the addresses `c2` and `contract_address` are hard-coded, which could lead to potential issues if these addresses are incorrect or become compromised.
+
+9. Arithmetic Issues: Not applicable here as there's no arithmetic operation in the contract. 
+
+Lastly, it is always recommended to use the latest version of Solidity. As of now, the version used in the contract is ^0.4.13, which is relatively old and may contain security issues that have been fixed in later versions.

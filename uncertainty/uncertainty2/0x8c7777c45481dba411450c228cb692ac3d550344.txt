@@ -1,0 +1,30 @@
+The smart contract has a Reentrancy vulnerability.
+
+In the `CashOut` function, the contract first sends Ether to `msg.sender` and then deducts the amount from the sender's balance. An attacker can create a fallback function in their own contract to call `CashOut` function again before the first call is finished.
+
+Here's how an attack may occur:
+1. Attacker calls the `CashOut` function.
+2. The contract sends the Ether to the attacker's contract.
+3. The attacker's contract fallback function is triggered, which again calls the `CashOut` function.
+4. The contract sends the Ether to the attacker's contract again because the attacker's balance has not been deducted yet.
+5. This cycle can continue as long as the contract has enough Ether.
+
+To fix this issue, the balance should be deducted before the Ether is sent.
+ 
+For example:
+```solidity
+function CashOut(uint _am)
+    public
+    payable
+    {
+        if(_am<=balances[msg.sender])
+        {
+            balances[msg.sender]-=_am;
+            if(msg.sender.call.value(_am)())
+            {
+                TransferLog.AddMessage(msg.sender,_am,"CashOut");
+            }
+        }
+    }
+```
+This contract does not appear to have other mentioned vulnerabilities such as Access Control, Arithmetic issues, Unchecked Return Values For Low Level Calls, Denial of Service, Bad Randomness, Front-Running, Time manipulation or Short Address Attack. However, it's always a good practice to have a thorough security audit by professional auditors before deploying a smart contract.

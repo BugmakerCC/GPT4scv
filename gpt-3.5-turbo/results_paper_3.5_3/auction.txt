@@ -1,0 +1,37 @@
+Upon reviewing the provided smart contract, here are the vulnerabilities that can be identified:
+
+1. Denial of Service (DoS) Attack: The `DosAuction` contract is susceptible to a DoS attack. An attacker can repeatedly bid with a fallback function that reverts, preventing other participants from outbidding. This is because the refund to the previous frontrunner is done before updating the frontrunner and current bid.
+
+To mitigate this vulnerability, the refund should be done after updating the frontrunner and current bid.
+
+Here is the modified code with the vulnerability fixed:
+
+```
+pragma solidity ^0.4.15;
+
+//Auction susceptible to DoS attack
+contract DosAuction {
+  address currentFrontrunner;
+  uint currentBid;
+
+  //Takes in bid, refunding the frontrunner if they are outbid
+  function bid() payable {
+    require(msg.value > currentBid);
+
+    address previousFrontrunner = currentFrontrunner;
+    uint previousBid = currentBid;
+
+    currentFrontrunner = msg.sender;
+    currentBid = msg.value;
+
+    //Refund the previous frontrunner after updating the frontrunner and current bid
+    if (previousFrontrunner != 0) {
+      require(previousFrontrunner.send(previousBid));
+    }
+  }
+}
+```
+
+By moving the refund after updating the frontrunner and current bid, the vulnerability is mitigated.
+
+Please note that this fix addresses the DoS vulnerability, but the contract may still have other vulnerabilities. It is important to conduct a thorough security assessment to identify and mitigate all potential vulnerabilities.

@@ -1,0 +1,21 @@
+The smart contract Roulette has several vulnerabilities.
+
+1. Denial of Service: The contract is susceptible to a Denial of Service attack since the `transfer` function can fail due to lack of gas. A safer alternative would be `call.value().gas(gasAmount)()`.
+
+2. Bad Randomness: The contract uses `now` as a source of randomness. The `now` keyword in solidity is an alias for `block.timestamp` and miners can manipulate the block timestamp within a certain range. This makes the contract vulnerable to miner attacks.
+
+3. Reentrancy: Although it's not so clear in this contract, the use of the `transfer` function can lead to reentrancy attacks if not handled properly. In this case, it seems not to be a problem because there are no state changes after the transfer call, but it's something to always consider.
+
+4. Time Manipulation: The contract uses `now` for two things: to enforce one bet per block and to determine winners. As mentioned before, `now` is manipulable by miners.
+
+5. Arithmetic Issues: This contract doesn't seem to have overflow or underflow issues. However, it's always good to ensure that arithmetic operations are safe by using libraries like SafeMath.
+
+6. Access Control: There doesn't seem to be any access control issues in this contract. However, it's always important to ensure that only authorized addresses can call certain functions.
+
+7. Unchecked Return Values For Low Level Calls: While this contract doesn't seem to use low-level calls, it's always important to check return values of these calls.
+
+8. Front-Running: This contract could potentially be vulnerable to front-running. If a miner sees a transaction where `now % 15 == 0`, they could front-run this transaction and win the bet.
+
+9. Short Address Attack: This contract doesn't seem to interact with user-supplied addresses directly, so it's unlikely to be vulnerable to a short address attack. 
+
+Remember to use appropriate security measures like checks-effects-interactions, reentrancy guards, or pull payments to mitigate these vulnerabilities.

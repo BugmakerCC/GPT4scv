@@ -1,0 +1,17 @@
+1. Reentrancy: The contract appears to be vulnerable to a reentrancy attack due to the use of `transfer()` with `this.balance`. A malicious contract could, in theory, repeatedly call the `redeem()` function before the state has been updated, draining the contract's funds.
+
+2. Access Control: The `Command` function allows the contract owner to execute arbitrary calls to other contracts. This is a potentially serious access control issue.
+
+3. Arithmetic Issues: No arithmetic operations are being performed in the contract, so there are no integer overflows or underflows.
+
+4. Unchecked Return Values For Low Level Calls: There is an unchecked low-level call in the `Command` function. If the call fails, the contract has no way of handling it.
+
+5. Denial of Service: There's a potential DOS vulnerability in the `redeem` function if the owner's address is a contract and its fallback function consumes a lot of gas.
+
+6. Bad Randomness: There's no randomness used in this contract, so no vulnerability here.
+
+7. Front-Running: There's a potential front-running issue with the `redeem` function. A malicious miner could see a transaction calling this function and insert their own transaction that calls it first.
+
+8. Time Manipulation: There's no dependency on block timestamps in this contract, so no vulnerability here.
+
+9. Short Address Attack: This contract doesn't seem to be vulnerable to a short address attack because it doesn't manipulate input addresses. However, it's generally a good idea to add checks for address length to prevent this possibility.

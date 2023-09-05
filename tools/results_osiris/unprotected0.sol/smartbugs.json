@@ -1,0 +1,50 @@
+{
+    "docker": {
+        "command": null,
+        "detach": true,
+        "entrypoint": "'/sb/bin/do_solidity.sh' '/sb/unprotected0.sol' '0' '/sb/bin' '0'",
+        "image": "smartbugs/osiris:d1ecc37",
+        "user": 0,
+        "volumes": {
+            "C:\\Users\\10976\\AppData\\Local\\Temp\\tmpmmgl7jyj": {
+                "bind": "/sb",
+                "mode": "rw"
+            }
+        }
+    },
+    "filename": "all\\unprotected0.sol",
+    "platform": {
+        "cpu": "12th Gen Intel(R) Core(TM) i7-12700H",
+        "python": "3.11.1.final.0 (64 bit)",
+        "release": "10",
+        "smartbugs": "2.0.7",
+        "system": "Windows",
+        "version": "10.0.22621"
+    },
+    "result": {
+        "duration": 2.7377097606658936,
+        "exit_code": 0,
+        "logs": "result.log",
+        "output": null,
+        "start": 1679741177.2636614
+    },
+    "runid": "20230325_1003",
+    "solc": "0.4.26",
+    "tool": {
+        "bin": "scripts",
+        "command": null,
+        "cpu_quota": null,
+        "entrypoint": "'$BIN/do_solidity.sh' '$FILENAME' '$TIMEOUT' '$BIN' '$MAIN'",
+        "id": "osiris",
+        "image": "smartbugs/osiris:d1ecc37",
+        "info": "Osiris is an analysis tool to detect integer bugs in Ethereum smart contracts. Osiris is based on Oyente.",
+        "mem_limit": null,
+        "mode": "solidity",
+        "name": "Osiris",
+        "origin": "https://github.com/christoftorres/Osiris",
+        "output": null,
+        "parser": "parser.py",
+        "solc": true,
+        "version": "#d1ecc37"
+    }
+}

@@ -1,0 +1,13 @@
+The smart contract provided has a couple of vulnerabilities related to Time Manipulation:
+
+1. Time Manipulation: The contract uses the "now" keyword which is an alias for block.timestamp. It can be manipulated by miners up to a certain degree. It's used in the payOut function to calculate whether a certain condition is met. 
+   
+2. Time Manipulation: The contract uses the "block.timestamp" in the randomGen() function. The timestamp of a block can be manipulated by a miner, and therefore it's dangerous to rely on it for random number generation or for crucial logic.
+
+Recommendations to fix these issues: 
+
+- Instead of relying on block.timestamp, a better approach might be to use blockhash as a source of randomness. Keep in mind that this is still not fully safe since blockhash can only provide hashes for the latest 256 blocks.
+- For time-dependent logic, consider using an external service like an oracle to provide reliable timestamps if possible. 
+- Consider using OpenZeppelin's SafeMath library to prevent arithmetic overflow/underflow issues. It's always a good practice to use well-tested libraries for basic operations.
+  
+Please note that these are not the only vulnerabilities that might exist in the contract. Always conduct a thorough audit before deploying any smart contract.

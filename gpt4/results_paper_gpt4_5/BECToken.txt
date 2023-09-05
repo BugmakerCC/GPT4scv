@@ -1,0 +1,5 @@
+The smart contract doesn't seem to have most of the mentioned vulnerabilities, but it does have a "Batch Overflow" vulnerability which is an arithmetic issue. The vulnerability can be found in the `batchTransfer` function, where the `amount` variable is calculated by multiplying the count of receivers (`cnt`) with the value to be transferred (`_value`). If an extremely large value of `_value` is provided, it can cause an integer overflow, making `amount` very small. 
+
+The `require` statement that checks if the sender has sufficient balance can pass because of this small `amount` value, and in the end, the sender ends up transferring more tokens than they had in their balance.
+
+To fix this issue, each transfer inside the loop should be checked for overflow individually, or the `_value` parameter should be checked to be less than a certain safe limit.

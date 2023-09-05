@@ -1,0 +1,19 @@
+1. Reentrancy: The contract doesn't seem to have a reentrancy vulnerability as it does not make an external call before updating the state.
+
+2. Access Control: The contract uses the `onlyOwner` modifier to restrict access to certain functions like `OpenToThePublic`, `AdjustBetAmounts`, `AdjustDifficulty` and `transferAnyERC20Token`. However, the contract does not have a function to change the owner, which could potentially become an issue if the owner loses control of their address.
+
+3. Arithmetic Issues: The contract doesn't seem to have any obvious arithmetic issues such as overflow or underflow.
+
+4. Unchecked Return Values For Low Level Calls: The contract makes a low level call with `whale.call.value(amount)(bytes4(keccak256("donate()")));` in `donateToWhale` and `loseWager` functions but does not check the return value of this call. This can lead to silent failing sends.
+
+5. Denial of Service: The contract does not seem to have any obvious denial of service vulnerabilities.
+
+6. Bad Randomness: The contract uses `blockhash(blockNumber)` for generating a random number in the `play` function. This is not secure as miners can manipulate blockhash.
+
+7. Front-Running: The contract doesn't seem to have any obvious front-running vulnerabilities.
+
+8. Time manipulation: The contract uses `block.number` in the `wager` and `play` function which could potentially be manipulated by miners.
+
+9. Short Address Attack: The contract doesn't seem to have any obvious short address attack vulnerabilities as it does not deal with raw byte data from external calls.
+
+Please note that this analysis is not exhaustive and the contract could potentially have other security vulnerabilities. It is recommended to have the contract audited by a professional security firm.

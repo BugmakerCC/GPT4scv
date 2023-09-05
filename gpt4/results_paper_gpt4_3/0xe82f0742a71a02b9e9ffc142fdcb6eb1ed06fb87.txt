@@ -1,0 +1,21 @@
+The contract seems to have multiple vulnerabilities:
+
+1. Reentrancy: This vulnerability appears in the GetFreebie() function where the contract makes an external call to msg.sender.transfer(this.balance). An attacker can create a malicious contract that calls GetFreebie() and in the fallback function again calls GetFreebie(), this will drain all the ether from the contract. It is always recommended to use the Checks-Effects-Interactions pattern to avoid these kind of attacks.
+
+2. Access Control: The contract seems to have a hardcoded address 0x30ad12df80a2493a82DdFE367d866616db8a2595 that can become the owner and withdraw all the funds. This hardcoded address seems to be a backdoor.
+
+3. Arithmetic Issues: There doesn't seem to be an arithmetic issue in this contract.
+
+4. Unchecked Return Values For Low Level Calls: The contract has a low level call in the Command function. It does not check the return value of this call, this can lead to silent fails.
+
+5. Denial of Service: The contract seems to be susceptible to a denial of service attack. If the contract's balance is below 1 ether, the GetFreebie function will be stuck because it tries to transfer the entire balance of the contract to the msg.sender.
+
+6. Bad Randomness: This contract does not use any randomness.
+
+7. Front-Running: The contract does not seem to be vulnerable to front-running.
+
+8. Time manipulation: The contract does not rely on timestamps or block numbers so it is not vulnerable to time manipulation.
+
+9. Short Address Attack: The contract does not seem to be vulnerable to short address attack as it does not take address as an input from users. However, it's always a good practice to use transferFrom and approve instead of direct transfers. 
+
+Please note that these are potential vulnerabilities and the impact and exploitability may vary depending on the usage of this contract. Always consult with a professional auditor for thorough contract audits.

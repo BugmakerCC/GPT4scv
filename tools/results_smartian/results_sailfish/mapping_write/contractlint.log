@@ -1,0 +1,34 @@
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Analysis started at: 2023-08-14 02:56:25 AM
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Version constraints: ['^0.4.24']
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | solc version: v0.4.24
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Callgraph generation started!
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Callgraph generation finished!
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Value Range Analysis started
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Generating return summary for set
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Return summary generated for set
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Range graph generated
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Processed function set
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Generating return summary for get
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Return summary generated for get
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Processed function get
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Generating return summary for withdraw
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Return summary generated for withdraw
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | State variable assignement do not exist
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Processed function withdraw
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Value Range Analysis took 0.001616 seconds
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Value Range Analysis finished
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Dependency detection started!
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Dependency detection finished!
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Static Analysis took 0.180338 seconds
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Dependency does not exist
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Symbolic execution is not needed!
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Analysis finished!
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Analysis took 0.180532 seconds
+[INFO] | 2023-08-14 02:56:25 AM | analyzer.mapping_write | Analysis finished at: 2023-08-14 02:56:25 AM

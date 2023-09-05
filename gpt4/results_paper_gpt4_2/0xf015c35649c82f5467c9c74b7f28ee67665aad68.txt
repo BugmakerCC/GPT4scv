@@ -1,0 +1,21 @@
+The smart contract you provided has a few potential vulnerabilities:
+
+1. Reentrancy: The function `Collect(uint _am)` is vulnerable to reentrancy because it first sends Ether with `msg.sender.call.value(_am)()` and then decreases the balance. An attacker can create a contract that calls `Collect()` again within the fallback function, causing reentrancy.
+
+2. Access Control: The contract does not have any access control mechanisms in place. This means that any address can call any function. For instance, the `AddMessage()` function in the `Log` contract can be called by anyone. It would be better to only allow the `MY_BANK` contract to call this function.
+
+3. Arithmetic Issues: The contract does not check for overflows or underflows which can lead to unexpected behavior.
+
+4. Unchecked Return Values For Low Level Calls: The return value of the low level call `msg.sender.call.value(_am)()` is not checked. If this call fails for any reason, the contract will not be aware.
+
+5. Denial of Service: The contract is potentially vulnerable to the gas limit DoS attack. If an attacker's fallback function consumes a lot of gas, the `Collect()` function might fail.
+
+6. Bad Randomness: Not applicable here.
+
+7. Front-Running: Not applicable here.
+
+8. Time manipulation: The contract uses `now` which can be manipulated by miners to some degree. This is used in the `Put()` and `Collect()` functions.
+
+9. Short Address Attack: Not applicable here. 
+
+Please note that this analysis is based on my current understanding of the contract and the vulnerabilities may not be exhaustive. It is recommended to get a thorough audit from a professional audit firm.

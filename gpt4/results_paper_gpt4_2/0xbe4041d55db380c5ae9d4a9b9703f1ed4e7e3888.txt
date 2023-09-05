@@ -1,0 +1,11 @@
+The smart contract provided exhibits a classic example of the Reentrancy vulnerability in the Collect function. This is due to the fact that external calls can be made before the internal state is updated. The line `if(msg.sender.call.value(_am)())` sends Ether back to the message sender before the balance is updated on the next line `acc.balance-=_am;`. This could potentially allow a malicious actor to continuously drain the contract while the condition `acc.balance>=_am` still holds true.
+
+Here is an example of how an attacker could exploit this vulnerability. The attacker's contract could fallback function that calls the `Collect` function again. Since the `acc.balance` is not deducted until after `msg.sender.call.value(_am)()` is called, the attacker could continuously call the `Collect` function in a loop until the balance of the contract is drained.
+
+In addition, the contract uses the `throw` statement which is now deprecated in new versions of Solidity. Instead, it's recommended to use require(), revert(), or assert() to handle errors.
+
+The contract also has a potential Denial of Service vulnerability with an unexpected throw. If the condition in `SetMinSum` and `SetLogFile` fails, the contract will be halted due to the `throw` statement, which could lock all the funds in the contract.
+
+Lastly, the contract does not handle Arithmetic Issues like integer overflow and underflow. For example, the line `acc.balance += msg.value` could potentially overflow. It's recommended to use libraries like SafeMath to prevent these issues.
+
+Please note that the above analysis only covers some of the potential vulnerabilities and there might be more vulnerabilities in this smart contract. Therefore, it is always recommended to have a comprehensive audit by a professional security auditor.

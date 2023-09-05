@@ -1,0 +1,15 @@
+The smart contract seems to contain two potential vulnerabilities:
+
+1. Reentrancy: 
+The function `execute(address _dst, uint _value, bytes _data)` in the `Owned` contract is prone to reentrancy attack. This function calls an external contract and sends it Ether. This external contract could potentially call back into the `execute` function before the first call is finished, possibly leading to unexpected behavior.
+
+2. Access Control: 
+The `writeIndex` function in the `WedIndex` contract does not have any access control modifiers. This means that anyone can call this function, which could lead to unauthorized changes to the index array. 
+
+To fix these vulnerabilities: 
+
+1. For the reentrancy issue, you can use the Checks-Effects-Interactions pattern. This involves moving the call to the external contract (`_dst.call.value(_value)(_data)`) to the end of the function, after all changes to state variables have been made.
+
+2. For the access control issue, you could add the `onlyOwner` modifier to the `writeIndex` function. This would ensure that only the owner of the contract can call this function. 
+
+Note: The above analysis is based on the provided information. In a real-world scenario, a more comprehensive audit would be required to identify all potential vulnerabilities. Also, the Solidity compiler version used in this contract is quite old (0.4.16). Using an outdated compiler may expose the contract to additional vulnerabilities.

@@ -1,0 +1,36 @@
+The given smart contract is susceptible to the following vulnerabilities:
+
+1. Reentrancy: The `withdrawBalance` function allows users to withdraw their balance. However, it does not prevent reentrant calls, which could allow an attacker to repeatedly call the `withdrawBalance` function before the balance update is executed, leading to loss of funds.
+
+2. Access Control: There is no access control mechanism in place to restrict who can call the `withdrawBalance` function. This means that anyone can call this function and withdraw the balance of any user.
+
+3. Unchecked Return Values For Low Level Calls: The `send` function is used to transfer funds to the `msg.sender`. However, it does not check the return value of the `send` function, which can fail silently in case of an error. This can result in the loss of funds if the transfer fails.
+
+To mitigate these vulnerabilities, the following changes can be made to the smart contract:
+
+pragma solidity ^0.4.0;
+contract SendBack {
+    mapping (address => uint) userBalances;
+    mapping (address => bool) isLocked;
+    
+    function withdrawBalance() public {
+        require(!isLocked[msg.sender], "Withdrawal is locked.");
+        
+        uint amountToWithdraw = userBalances[msg.sender];
+        userBalances[msg.sender] = 0;
+        
+        isLocked[msg.sender] = true; // Set the lock to prevent reentrancy attacks
+        
+        require(msg.sender.call.value(amountToWithdraw)(), "Transfer failed.");
+        
+        isLocked[msg.sender] = false; // Release the lock
+    }
+}
+
+In the updated contract, the `withdrawBalance` function includes the following improvements:
+
+- The function is made `public` to allow anyone to call it.
+- An additional `isLocked` mapping is introduced to prevent reentrant calls by locking the withdrawal process for each user.
+- The `require` statement is added to check if the withdrawal is locked for the user.
+- The `require` statement is added to check if the transfer of funds is successful.
+- The lock is released after the transfer is completed to prevent further reentrant calls.

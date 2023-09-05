@@ -1,0 +1,19 @@
+The smart contract provided has a few vulnerabilities:
+
+1. Reentrancy: The `Collect` function is vulnerable to a reentrancy attack because it first calls an external contract with `msg.sender.call.value(_am)()` and then updates the state `balances[msg.sender]-=_am;`. If the external contract calls back into `Collect` before the state is updated, it could withdraw more Ether than it should. This can be mitigated by using the Checks-Effects-Interactions pattern, i.e., updating the state before calling the external contract.
+
+2. Integer Underflow: The line `balances[msg.sender]-=_am;` can underflow if `_am` is greater than `balances[msg.sender]`. This can be avoided by using the SafeMath library for subtraction.
+
+3. Unchecked Return Values: The return value of `msg.sender.call.value(_am)()` is not checked. If this call fails, the balance of the sender is not reduced, which can lead to an incorrect state in the contract.
+
+4. Access Control: There are no access control mechanisms in place. Any address can call `SetMinSum`, `SetLogFile` and `Initialized` functions as long as `intitalized` is false. An attacker can set these values, especially the `LogFile` address, to a contract under their control. To prevent this, only a specific address (like the contract creator) should be allowed to call these functions.
+
+5. Denial of Service: If an attacker sets the `LogFile` address to a contract that always throws in its fallback function, then any call to `Log.AddMessage` will fail and thus any deposit or withdrawal will also fail.
+
+6. Bad Randomness: The contract does not seem to use any randomness, so this vulnerability does not apply.
+
+7. Front-Running: The contract does not seem to have any front-running vulnerabilities, as there are no transactions that depend on the order of transactions.
+
+8. Time Manipulation: The contract does not seem to have any time manipulation vulnerabilities, as there are no timestamps used for critical computations or checks.
+
+9. Short Address Attack: This contract does not seem to be vulnerable to a short address attack as it does not take address inputs from users. All addresses come from `msg.sender`, which is always a full 20 byte address.

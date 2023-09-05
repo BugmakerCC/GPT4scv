@@ -1,0 +1,13 @@
+Upon reviewing the smart contract, three vulnerabilities are discovered:
+
+1. Reentrancy: In the `Collect` function, the contract sends Ether (msg.sender.call.value(_am)()) before updating the internal state (balances[msg.sender]-=_am). This could lead to a reentrancy attack where the recipient of the Ether could re-enter the `Collect` function before the internal state has been updated, potentially enabling them to drain more Ether than they should be able to.
+
+2. Access Control: There are no access controls to limit who can call the `SetMinSum` and `SetLogFile` functions. This could allow any address to change these critical variables. Also, these functions can be called multiple times before the contract is initialized, leading to potential exploits.
+
+3. Unchecked Return Values For Low Level Calls: The return value of the `call.value` function is not checked. This could lead to unexpected behavior if the call fails.
+
+Recommendations for fixing these vulnerabilities include:
+
+- For the reentrancy vulnerability, update the internal state before sending Ether.
+- Implement proper access controls for setting critical variables.
+- Check the return value of `call.value` to ensure it is performed successfully.

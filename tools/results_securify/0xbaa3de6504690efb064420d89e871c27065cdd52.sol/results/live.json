@@ -1,0 +1,241 @@
+{
+  "decompiled": true,
+  "finished": true,
+  "patternResults": {
+    "DAO": {
+      "completed": true,
+      "hasViolations": false,
+      "hasWarnings": false,
+      "hasSafe": true,
+      "hasConflicts": false,
+      "violations": [],
+      "warnings": [],
+      "safe": [
+        297,
+        297,
+        297,
+        631,
+        297,
+        631,
+        297,
+        631,
+        297,
+        631,
+        297,
+        631
+      ],
+      "conflicts": []
+    },
+    "DAOConstantGas": {
+      "completed": true,
+      "hasViolations": false,
+      "hasWarnings": false,
+      "hasSafe": true,
+      "hasConflicts": false,
+      "violations": [],
+      "warnings": [],
+      "safe": [
+        436,
+        436,
+        436
+      ],
+      "conflicts": []
+    },
+    "MissingInputValidation": {
+      "completed": true,
+      "hasViolations": true,
+      "hasWarnings": true,
+      "hasSafe": true,
+      "hasConflicts": false,
+      "violations": [
+        158,
+        158,
+        158,
+        158,
+        158,
+        158,
+        460,
+        158,
+        460,
+        478
+      ],
+      "warnings": [
+        203,
+        203,
+        203,
+        537,
+        203,
+        537,
+        203,
+        537,
+        203,
+        537,
+        203,
+        537
+      ],
+      "safe": [
+        321,
+        321,
+        523,
+        321,
+        523,
+        321,
+        523,
+        640,
+        321,
+        523,
+        640,
+        359,
+        321,
+        523,
+        640,
+        359,
+        321,
+        523,
+        640,
+        359
+      ],
+      "conflicts": []
+    },
+    "TODAmount": {
+      "completed": true,
+      "hasViolations": false,
+      "hasWarnings": true,
+      "hasSafe": true,
+      "hasConflicts": false,
+      "violations": [],
+      "warnings": [
+        297,
+        297,
+        297,
+        631,
+        297,
+        631,
+        297,
+        631,
+        297,
+        631,
+        297,
+        631
+      ],
+      "safe": [
+        436,
+        436,
+        436
+      ],
+      "conflicts": []
+    },
+    "TODReceiver": {
+      "completed": true,
+      "hasViolations": false,
+      "hasWarnings": true,
+      "hasSafe": true,
+      "hasConflicts": false,
+      "violations": [],
+      "warnings": [
+        297,
+        297,
+        297,
+        631,
+        297,
+        631,
+        297,
+        631,
+        297,
+        631,
+        297,
+        631
+      ],
+      "safe": [
+        436,
+        436,
+        436
+      ],
+      "conflicts": []
+    },
+    "TODTransfer": {
+      "completed": true,
+      "hasViolations": true,
+      "hasWarnings": false,
+      "hasSafe": true,
+      "hasConflicts": false,
+      "violations": [
+        436,
+        436,
+        436
+      ],
+      "warnings": [],
+      "safe": [
+        297,
+        297,
+        297,
+        631,
+        297,
+        631,
+        297,
+        631,
+        297,
+        631,
+        297,
+        631
+      ],
+      "conflicts": []
+    },
+    "UnhandledException": {
+      "completed": true,
+      "hasViolations": true,
+      "hasWarnings": false,
+      "hasSafe": true,
+      "hasConflicts": false,
+      "violations": [
+        297,
+        297,
+        297,
+        631,
+        297,
+        631,
+        297,
+        631,
+        297,
+        631,
+        297,
+        631
+      ],
+      "warnings": [],
+      "safe": [
+        436,
+        436,
+        436
+      ],
+      "conflicts": []
+    },
+    "UnrestrictedEtherFlow": {
+      "completed": true,
+      "hasViolations": false,
+      "hasWarnings": true,
+      "hasSafe": true,
+      "hasConflicts": false,
+      "violations": [],
+      "warnings": [
+        297,
+        297,
+        297,
+        631,
+        297,
+        631,
+        297,
+        631,
+        297,
+        631,
+        297,
+        631
+      ],
+      "safe": [
+        436,
+        436,
+        436
+      ],
+      "conflicts": []
+    }
+  }
+}

@@ -1,0 +1,18 @@
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+Analysing /sb/0xbaa3de6504690efb064420d89e871c27065cdd52.sol:Proxy...
+Vulnerability: Integer Overflow. Maybe in function: proxy(address,bytes). PC: 0xd5. Line number: 12.
+If a = 31
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639912
+Vulnerability: Reentrancy. Maybe in function: proxy(address,bytes). PC: 0x22d. Line number: 14.
+Vulnerability: Unchecked Low Level Call. Maybe in function: proxy(address,bytes). PC: 0x22d. Line number: 14.
+Analysing /sb/0xbaa3de6504690efb064420d89e871c27065cdd52.sol:VaultProxy...
+Vulnerability: Integer Overflow. Maybe in function: proxy(address,bytes). PC: 0x1ee. Line number: 12.
+If a = 31
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639906
+Vulnerability: Reentrancy. Maybe in function: withdraw(uint256). PC: 0x38c. Line number: 39.
+Vulnerability: Integer Overflow. Maybe in function: Vault(). PC: 0x562. Line number: 33.
+If a = 3937006385443800738063550056436293268424819850599143959443862998109695180882
+and b = 111870135669347396318202854731051429742868856425921822730874175491146625654970
+Vulnerability: Reentrancy. Maybe in function: proxy(address,bytes). PC: 0x503. Line number: 14.
+Vulnerability: Unchecked Low Level Call. Maybe in function: proxy(address,bytes). PC: 0x503. Line number: 14.

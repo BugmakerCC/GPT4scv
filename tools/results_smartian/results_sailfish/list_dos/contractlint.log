@@ -1,0 +1,3 @@
+[INFO] | 2023-08-14 02:58:18 AM | analyzer.list_dos | Analysis started at: 2023-08-14 02:58:18 AM
+[INFO] | 2023-08-14 02:58:18 AM | analyzer.list_dos | Version constraints: ['^0.4.0']
+[INFO] | 2023-08-14 02:58:18 AM | analyzer.list_dos | solc version: v0.4.0

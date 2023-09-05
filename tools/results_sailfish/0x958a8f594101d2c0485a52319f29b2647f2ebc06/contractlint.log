@@ -1,0 +1,97 @@
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Analysis started at: 2023-08-14 02:55:49 AM
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Version constraints: ['^0.4.16']
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | solc version: v0.4.16
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Callgraph generation started!
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Callgraph generation finished!
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Value Range Analysis started
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Generating return summary for Owned
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Return summary generated for Owned
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Range graph generated
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Processed function Owned
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Generating return summary for acceptOwnership
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Return summary generated for acceptOwnership
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Range graph generated
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Processed function acceptOwnership
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Generating return summary for onlyOwner
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Return summary generated for onlyOwner
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Processed function onlyOwner
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Generating return summary for Owned
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Return summary generated for Owned
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Range graph generated
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Processed function Owned
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Generating return summary for acceptOwnership
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Return summary generated for acceptOwnership
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Range graph generated
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Processed function acceptOwnership
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Generating return summary for Marriage
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Return summary generated for Marriage
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Range graph generated
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Processed function Marriage
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Generating return summary for numberOfMajorEvents
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Return summary generated for numberOfMajorEvents
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Processed function numberOfMajorEvents
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Generating return summary for numberOfMessages
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Return summary generated for numberOfMessages
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Processed function numberOfMessages
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Generating return summary for onlyOwner
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Return summary generated for onlyOwner
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Processed function onlyOwner
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Generating return summary for areMarried
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Return summary generated for areMarried
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Processed function areMarried
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Generating return summary for changeOwner
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Return summary generated for changeOwner
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Range graph generated
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Processed function changeOwner
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Generating return summary for execute
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Return summary generated for execute
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Processed function execute
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Generating return summary for changeOwner
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Return summary generated for changeOwner
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Range graph generated
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Processed function changeOwner
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Generating return summary for execute
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Return summary generated for execute
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Processed function execute
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Generating return summary for createMarriage
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Return summary generated for createMarriage
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Range graph generated
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Processed function createMarriage
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Generating return summary for setMajorEvent
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Return summary generated for setMajorEvent
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Range graph generated
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Processed function setMajorEvent
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Generating return summary for sendMessage
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Return summary generated for sendMessage
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Range graph generated
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Processed function sendMessage
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Generating return summary for setStatus
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Return summary generated for setStatus
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Range graph generated
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Processed function setStatus
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Value Range Analysis took 0.005228 seconds
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Value Range Analysis finished
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Dependency detection started!
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | TOD dependency detected in file 0x958a8f594101d2c0485a52319f29b2647f2ebc06.sol in contract Marriage in by composing functions sendMessage and acceptOwnership
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Dependency detection finished!
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Static Analysis took 0.471099 seconds
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Dependency exists
+[INFO] | 2023-08-14 02:55:49 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Invoking symbolic executor!
+[INFO] | 2023-08-14 02:55:50 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Symbolic execution took 0.447855 seconds
+[INFO] | 2023-08-14 02:55:50 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Symbolic execution finished!
+[INFO] | 2023-08-14 02:55:50 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Analysis finished!
+[INFO] | 2023-08-14 02:55:50 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Analysis took 0.919520 seconds
+[INFO] | 2023-08-14 02:55:50 AM | analyzer.0x958a8f594101d2c0485a52319f29b2647f2ebc06 | Analysis finished at: 2023-08-14 02:55:50 AM

@@ -1,0 +1,3 @@
+[INFO] | 2023-08-14 02:56:17 AM | analyzer.blackjack | Analysis started at: 2023-08-14 02:56:17 AM
+[INFO] | 2023-08-14 02:56:18 AM | analyzer.blackjack | Version constraints: ['^0.4.2']
+[INFO] | 2023-08-14 02:56:18 AM | analyzer.blackjack | solc version: v0.4.2

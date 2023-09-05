@@ -1,0 +1,17 @@
+This smart contract has a severe security vulnerability related to Access Control:
+
+The function `newOwner(address _owner)` is supposed to be restricted to only the current owners of the contract. However, the `onlyOwner` modifier is missing from this function. This means that any external entity can call this function and become an owner of the contract. 
+
+This vulnerability is a critical one because gaining ownership of the contract means gaining control over critical functionalities of the contract. For instance, an unauthorized entity that became an owner can call the `withdrawAll()` function to transfer all the Ether stored in the contract to their own address.
+
+To rectify this vulnerability, the `onlyOwner` modifier should be added to the `newOwner(address _owner)` function to ensure that only current owners can add new owners:
+
+```solidity
+function newOwner(address _owner) onlyOwner external returns (bool) {
+    require(_owner != 0);
+    owners[_owner] = msg.sender;
+    return true;
+}
+```
+
+The other vulnerabilities (Reentrancy, Arithmetic Issues, Unchecked Return Values For Low Level Calls, Denial of Service, Bad Randomness, Front-Running, Time manipulation, Short Address Attack) are not present in this contract.

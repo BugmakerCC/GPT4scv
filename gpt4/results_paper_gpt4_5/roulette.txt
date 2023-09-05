@@ -1,0 +1,19 @@
+This smart contract has the following vulnerabilities:
+
+1. Reentrancy: The contract is vulnerable to reentrancy as it calls an external contract (msg.sender.transfer) without first changing the state (pastBlockTime). An attacker could recursively call the fallback function before the first call is finished, causing the contract to send more Ether than it holds.
+
+2. Arithmetic Issues: Although not explicitly present, it's a good practice to consider potential integer overflow and underflow issues. The Solidity programming language doesn't provide error checking for these issues.
+
+3. Unchecked Return Values For Low Level Calls: The return value of the transfer function is not checked. If the call fails, the contract will not be aware of it.
+
+4. Denial of Service: An attacker could potentially keep the block timestamp (now) the same and prevent other users from participating in the game.
+
+5. Bad Randomness: The contract uses the block timestamp (now) to decide winners. This is a predictable value and a miner with enough power could manipulate it to their advantage.
+
+6. Front-Running: Since Ethereum transactions are public, an attacker can see a winning bet transaction, and place their own with a higher gas price, causing it to be mined first.
+
+7. Time Manipulation: The contract is vulnerable to time manipulation because it uses the block timestamp (now) as a source of randomness. This is influenced by miners to a certain degree.
+
+8. Short Address Attack: Not explicitly present in the contract, but it's always good to be aware of this potential vulnerability.
+
+9. Access Control: The contract lacks access control mechanisms, meaning anyone can interact with it and potentially exploit it. Although it's not explicitly a vulnerability in this context, it's a potential risk to note.

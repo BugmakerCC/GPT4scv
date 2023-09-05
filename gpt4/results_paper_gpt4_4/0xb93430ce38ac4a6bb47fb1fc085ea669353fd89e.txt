@@ -1,0 +1,19 @@
+The contract seems to have the following vulnerabilities:
+
+1. Reentrancy: The function `CashOut(uint _am)` is vulnerable to reentrancy attacks. The balance of the sender is updated after the external call `msg.sender.call.value(_am)()`. This means that the callee can call the `CashOut` function again before the sender's balance is updated, causing the contract to send more Ether than it should.
+
+2. Arithmetic Issues: The `balances[msg.sender]+=msg.value;` is vulnerable to integer overflow. If the value of `msg.value` is very large, the balance of the sender could overflow and become very small.
+
+3. Unchecked Return Values: The contract does not check the return value of the `msg.sender.call.value(_am)()` call. If this call fails for any reason (for example, the recipient contract throws an exception), the balance of the sender is not updated, but the Ether is not sent either.
+
+4. Denial of Service: If an attacker manages to make the `msg.sender.call.value(_am)()` call fail (for example, by causing the recipient contract to throw an exception), they can block all withdrawals from the contract.
+
+5. Access Control: The function `AddMessage(address _adr,uint _val,string _data)` of the Log contract is public, allowing anyone to add messages to the history.
+
+Recommendations to fix these issues:
+
+1. Reentrancy: Update the balance of the sender before making the external call.
+2. Arithmetic Issues: Use a safe math library to perform arithmetic operations.
+3. Unchecked Return Values: Check the return value of the `msg.sender.call.value(_am)()` call and revert the transaction if it's false.
+4. Denial of Service: Use the `transfer` function instead of `call.value` to send Ether.
+5. Access Control: Make the `AddMessage` function internal or only accessible by the PrivateBank contract.

@@ -1,0 +1,28 @@
+The contract provided has a vulnerability related to the "Unchecked Return Values For Low Level Calls". 
+
+In Solidity, the low-level .call() method returns a boolean indicating whether the call was successful or not. If you don't check this return value, you can't know whether the call was successful. 
+
+In the provided contract, the callchecked() function correctly uses require() to assert that the call must be successful. 
+
+However, the callnotchecked() function does not check the return value of the call. This means that if the call fails for any reason (for example, the callee contract throws an exception), the callnotchecked() function will not be aware of this and will continue its execution as if nothing happened.
+
+This can lead to serious issues such as loss of funds or other unexpected behavior, as the contract's state could become inconsistent with the assumption that the call was successful. 
+
+To fix this issue, the return value of the call in callnotchecked() function should be checked, similar to how it's done in callchecked() function. 
+
+Here is the corrected contract:
+
+```solidity
+pragma solidity 0.4.25;
+
+contract ReturnValue {
+
+  function callchecked(address callee) public {
+    require(callee.call());
+  }
+
+  function callnotchecked(address callee) public {
+    require(callee.call());
+  }
+}
+```

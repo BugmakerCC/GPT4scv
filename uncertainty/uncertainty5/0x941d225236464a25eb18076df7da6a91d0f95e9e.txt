@@ -1,0 +1,19 @@
+The given smart contract has several vulnerabilities:
+
+1. Reentrancy: The function `CashOut` is vulnerable to reentrancy. The contract transfers the Ether (using `call.value()()`) before it deducts the balance (`balances[msg.sender]-=_am;`). An attacker could create a fallback function in their contract to call `CashOut` again before the balance is deducted, allowing them to withdraw more Ether than their balance.
+
+2. Arithmetic Issues: The contract does not check for underflows or overflows. For example, in the `CashOut` function, if the balance of the sender is less than `_am`, the subtraction would lead to an underflow.
+
+3. Unchecked Return Values For Low Level Calls: The contract uses `call.value()()` in the `CashOut` function which can fail silently. It's better to use `transfer()` or `send()` which throws an exception when the call fails.
+
+4. Access Control: The contract does not have any access control mechanisms. Anyone can call `Deposit` and `CashOut` functions and manipulate balances.
+
+5. Denial of Service: The contract is vulnerable to Denial of Service (DoS) attacks. An attacker can create a contract with a fallback function that always throws an exception. If such an address is then used to `CashOut`, it will always fail and block the payout queue.
+
+6. Bad Randomness: Not applicable as the contract does not use any randomness.
+
+7. Front-running: The contract is potentially vulnerable to front-running attacks, as the state of the contract (balances) can be altered between the time a transaction is broadcasted and the time it is included in a block.
+
+8. Time Manipulation: The 'Log' contract uses `now` (alias for `block.timestamp`) in 'AddMessage', the value of which can be manipulated by miners to some degree.
+
+9. Short Address Attack: Not applicable as the contract does not take address inputs from function calls that involve value transfers.

@@ -1,0 +1,16 @@
+The contract has the following vulnerabilities:
+
+1. **Arithmetic Issues (Underflow)**: The function `PopBonusCode()` allows the length of the `bonusCodes` array to be decreased by one each time it is called. If this function is called when the array is empty (length 0), the length of the array will underflow (as lengths are unsigned), wrapping around to a very large number. This would make subsequent operations on the array (such as `UpdateBonusCodeAt()`) behave unexpectedly.
+
+2. **Access Control**: The functions `PushBonusCode()`, `PopBonusCode()`, `UpdateBonusCodeAt()`, and `Destroy()` can be called by any address, not just the owner. This means that an attacker can manipulate the `bonusCodes` array or destroy the contract at will.
+
+3. **Unchecked Return Values For Low Level Calls**: The contract uses `selfdestruct()` in the `Destroy()` function. `selfdestruct()` is a low level call that doesn't check the return value. If the call fails, the contract will still be destroyed. If the balance of the contract is non-zero at the time of destruction, the funds will be lost.
+
+4. **Denial of Service**: Any user can call the `Destroy()` function and kill the contract resulting in a denial of service.
+
+To fix these vulnerabilities, you could:
+
+- Add a check in `PopBonusCode()` to ensure that the array isn't empty before decrementing its length.
+- Restrict access to the functions so that only the contract owner can call them.
+- Check the return value of `selfdestruct()` before proceeding with the destruction of the contract.
+- Remove the `Destroy()` function to prevent arbitrary destruction of the contract.

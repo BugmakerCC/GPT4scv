@@ -1,0 +1,16 @@
+{
+    "tod_symex_path_1.json": {
+        "file_name": "",
+        "from_function": "play",
+        "bug_type": "tod_transfer",
+        "src_node": "\"BlockID: 44\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 47\nCall context: \nTrue\nREF_4 -> BALANCE this\nTransfer dest:msg.sender value:REF_4\""
+        ],
+        "executable_instructions": 32,
+        "state_variable": "secretNumber",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    }
+}

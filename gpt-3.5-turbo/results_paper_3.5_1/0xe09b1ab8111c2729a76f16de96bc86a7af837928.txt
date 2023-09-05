@@ -1,0 +1,21 @@
+Here are the vulnerabilities found in the provided smart contract:
+
+1. Reentrancy: The contract does not have any specific code that allows reentrant calls, but it is always a good practice to review all external function calls and ensure they are not susceptible to reentrancy attacks.
+
+2. Access Control: The contract does not have any access control mechanisms in place, which means anyone can call the functions and perform actions that may not be intended for them.
+
+3. Arithmetic Issues: The contract performs arithmetic operations, but it does not have any checks for potential integer overflow or underflow issues. This can lead to unexpected behavior and vulnerabilities.
+
+4. Unchecked Return Values For Low-Level Calls: The contract uses low-level calls to transfer funds, but it does not check the return values of these calls. This can lead to silent failures and vulnerabilities.
+
+5. Denial of Service: The contract does not have any gas limit checks or protection against unexpected throw or kill calls. This can make the contract vulnerable to denial of service attacks.
+
+6. Bad Randomness: The contract uses blockhash as a source of randomness, which is not a secure method for generating random numbers. This can be exploited by attackers to predict outcomes, leading to unfair gameplay.
+
+7. Front-Running: The contract does not have any protection against front-running attacks, where attackers can manipulate the order of transactions to their advantage.
+
+8. Time Manipulation: The contract uses block.timestamp for time-related operations, which can be manipulated by miners. This can lead to vulnerabilities in time-dependent functionalities.
+
+9. Short Address Attack: The contract does not have any checks for the length of input addresses, which can make it vulnerable to short address attacks.
+
+It is important to note that these vulnerabilities are identified based on the provided code. A thorough security audit is recommended to evaluate the contract for all possible vulnerabilities.

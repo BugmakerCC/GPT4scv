@@ -1,0 +1,17 @@
+The smart contract has the following potential vulnerabilities:
+
+1. Reentrancy: The function `Collect(uint _am)` allows for reentrancy attacks. The contract calls an external contract (the sender) and then updates the balance. An attacker could create a fallback function in their contract that calls the `Collect` function again before the balance is updated, allowing them to withdraw more Ether than they should be able to.
+
+2. Arithmetic Issues: There is potential for underflow in the `Collect(uint _am)` function. If `_am` is greater than `acc.balance`, the subtraction `acc.balance-=_am;` will underflow. This can be prevented by ensuring that the balance is always greater than or equal to `_am` before the subtraction.
+
+3. Unchecked Return Values For Low Level Calls: The return value of the low-level `.call.value(_am)()` function is not checked. If this call fails for any reason, the contract will continue executing. This might be an intended behaviour, but it's worth noting as a potential vulnerability.
+
+4. Access Control: The `AddMessage(address _adr,uint _val,string _data)` function in the `Log` contract does not have any access control mechanisms in place. This means that any account could potentially call this function and add messages to the Log.
+
+5. Denial of Service: In the `Collect` function, if the `msg.sender.call.value(_am)()` fails for reasons like the receiver contract throws an exception, the user won't be able to collect their funds, leading to a potential Denial of Service attack.
+
+6. Time Manipulation: The contract uses `now` for time locking logic which can be manipulated by miners to a certain degree.
+
+7. The contract does not seem to have vulnerabilities related to Bad Randomness, Front-Running, and Short Address Attack. 
+
+The contract should be updated to mitigate these potential vulnerabilities. For example, you can use the Checks-Effects-Interactions pattern to prevent the Reentrancy attack, and add require statements to ensure that certain conditions are met before the function execution continues. Furthermore, you should add access control mechanisms to the `AddMessage` function and replace `now` with block hash for time locking logic to prevent miner manipulation.

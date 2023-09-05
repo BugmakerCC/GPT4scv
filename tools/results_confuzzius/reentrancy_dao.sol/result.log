@@ -1,0 +1,135 @@
+2023-03-24 16:05:49,329 - Main     - INFO - [1mInitializing seed to 1427655.0[0m
+2023-03-24 16:05:49,372 - Fuzzer   - INFO - [1mFuzzing contract [1mReentrancyDAO[0m[0m
+2023-03-24 16:05:49,398 - Analysis - INFO - [1mGeneration number 0 	 Code coverage: 67.10% (104/155) 	 Branch coverage: 75.00% (9/12) 	 Transactions: 7 (6 unique)   	 Time: 0.021747589111328125[0m
+2023-03-24 16:05:49,430 - Analysis - INFO - [1mGeneration number 1 	 Code coverage: 67.10% (104/155) 	 Branch coverage: 75.00% (9/12) 	 Transactions: 15 (9 unique)   	 Time: 0.05346560478210449[0m
+2023-03-24 16:05:49,468 - Analysis - INFO - [1mGeneration number 2 	 Code coverage: 67.10% (104/155) 	 Branch coverage: 75.00% (9/12) 	 Transactions: 25 (12 unique)   	 Time: 0.09185385704040527[0m
+2023-03-24 16:05:49,515 - Analysis - INFO - [1mGeneration number 3 	 Code coverage: 67.10% (104/155) 	 Branch coverage: 75.00% (9/12) 	 Transactions: 37 (14 unique)   	 Time: 0.13828325271606445[0m
+2023-03-24 16:05:49,579 - Analysis - INFO - [1mGeneration number 4 	 Code coverage: 67.10% (104/155) 	 Branch coverage: 75.00% (9/12) 	 Transactions: 54 (15 unique)   	 Time: 0.20243430137634277[0m
+2023-03-24 16:05:49,643 - Analysis - INFO - [1mGeneration number 5 	 Code coverage: 67.10% (104/155) 	 Branch coverage: 75.00% (9/12) 	 Transactions: 73 (16 unique)   	 Time: 0.26627302169799805[0m
+2023-03-24 16:05:49,696 - Analysis - INFO - [1mGeneration number 6 	 Code coverage: 67.10% (104/155) 	 Branch coverage: 75.00% (9/12) 	 Transactions: 88 (17 unique)   	 Time: 0.3197057247161865[0m
+2023-03-24 16:05:49,748 - Analysis - INFO - [1mGeneration number 7 	 Code coverage: 67.10% (104/155) 	 Branch coverage: 75.00% (9/12) 	 Transactions: 103 (17 unique)   	 Time: 0.3710944652557373[0m
+2023-03-24 16:05:49,798 - Analysis - INFO - [1mGeneration number 8 	 Code coverage: 67.10% (104/155) 	 Branch coverage: 75.00% (9/12) 	 Transactions: 118 (17 unique)   	 Time: 0.42122578620910645[0m
+2023-03-24 16:05:49,838 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:05:49,838 - Detector - INFO - [1m[31m            !!! Reentrancy detected !!!              [0m
+2023-03-24 16:05:49,838 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:05:49,838 - Detector - INFO - [1m[31mSWC-ID:   107[0m
+2023-03-24 16:05:49,838 - Detector - INFO - [1m[31mSeverity: High[0m
+2023-03-24 16:05:49,838 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:05:49,838 - Detector - INFO - [1m[31mSource code line:[0m
+2023-03-24 16:05:49,838 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:05:49,838 - Detector - INFO - [1m[31m/sb/reentrancy_dao.sol:18:1[0m
+2023-03-24 16:05:49,838 - Detector - INFO - [1m[31mmsg.sender.call.value(oCredit)()[0m
+2023-03-24 16:05:49,838 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31mTransaction sequence:[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31mTransaction 1 - deposit():[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31mValue:     1 Wei[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31mGas Limit: 4500000[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31mInput:     0xd0e30db0[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31mTransaction 2 - withdrawAll():[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31mValue:     0 Wei[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31mGas Limit: 4500000[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31mInput:     0x853828b6[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31mTransaction 3 - withdrawAll():[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31mValue:     0 Wei[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31mGas Limit: 4500000[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31mInput:     0x853828b6[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:05:49,839 - Detector - INFO - [1m[31mTransaction 4 - withdrawAll():[0m
+2023-03-24 16:05:49,840 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:05:49,840 - Detector - INFO - [1m[31mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:05:49,840 - Detector - INFO - [1m[31mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:05:49,840 - Detector - INFO - [1m[31mValue:     0 Wei[0m
+2023-03-24 16:05:49,840 - Detector - INFO - [1m[31mGas Limit: 4500000[0m
+2023-03-24 16:05:49,840 - Detector - INFO - [1m[31mInput:     0x853828b6[0m
+2023-03-24 16:05:49,840 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:05:49,840 - Detector - INFO - [1m[31mTransaction 5 - withdrawAll():[0m
+2023-03-24 16:05:49,840 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:05:49,840 - Detector - INFO - [1m[31mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:05:49,840 - Detector - INFO - [1m[31mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:05:49,840 - Detector - INFO - [1m[31mValue:     0 Wei[0m
+2023-03-24 16:05:49,840 - Detector - INFO - [1m[31mGas Limit: 4500000[0m
+2023-03-24 16:05:49,840 - Detector - INFO - [1m[31mInput:     0x853828b6[0m
+2023-03-24 16:05:49,840 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:05:49,840 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:05:49,840 - Detector - INFO - [1m[33m    !!! Transaction order dependency detected !!!    [0m
+2023-03-24 16:05:49,840 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:05:49,840 - Detector - INFO - [1m[33mSWC-ID:   114[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33mSeverity: Medium[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33mSource code line:[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33m/sb/reentrancy_dao.sol:25:1[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33mcredit[msg.sender] += msg.value[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33mTransaction sequence:[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33mTransaction 1 - deposit():[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33mValue:     1 Wei[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33mInput:     0xd0e30db0[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33mTransaction 2 - withdrawAll():[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:05:49,841 - Detector - INFO - [1m[33mInput:     0x853828b6[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33mTransaction 3 - withdrawAll():[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33mInput:     0x853828b6[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33mTransaction 4 - withdrawAll():[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33mInput:     0x853828b6[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33mTransaction 5 - withdrawAll():[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33mInput:     0x853828b6[0m
+2023-03-24 16:05:49,842 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:05:49,866 - Analysis - INFO - [1mGeneration number 9 	 Code coverage: 97.42% (151/155) 	 Branch coverage: 91.67% (11/12) 	 Transactions: 133 (18 unique)   	 Time: 0.4895291328430176[0m
+2023-03-24 16:05:49,945 - Analysis - INFO - [1mGeneration number 10 	 Code coverage: 97.42% (151/155) 	 Branch coverage: 91.67% (11/12) 	 Transactions: 149 (20 unique)   	 Time: 0.568310022354126[0m
+2023-03-24 16:05:49,961 - Analysis - INFO - [1m-----------------------------------------------------[0m
+2023-03-24 16:05:49,961 - Analysis - INFO - Number of generations: 	 10
+2023-03-24 16:05:49,961 - Analysis - INFO - Number of transactions: 	 149 (20 unique)
+2023-03-24 16:05:49,961 - Analysis - INFO - Transactions per second: 	 255
+2023-03-24 16:05:49,961 - Analysis - INFO - Total code coverage: 	 97.42% (151/155)
+2023-03-24 16:05:49,961 - Analysis - INFO - Total branch coverage: 	 91.67% (11/12)
+2023-03-24 16:05:49,961 - Analysis - INFO - Total execution time: 	 0.58 seconds
+2023-03-24 16:05:49,962 - Analysis - INFO - Total memory consumption: 	 62.67 MB
+
+     ______            ______                _           
+    / ____/___  ____  / ____/_  __________  (_)_  _______
+   / /   / __ \/ __ \/ /_  / / / /_  /_  / / / / / / ___/
+  / /___/ /_/ / / / / __/ / /_/ / / /_/ /_/ / /_/ (__  ) 
+  \____/\____/_/ /_/_/    \__,_/ /___/___/_/\__,_/____/  
+
+delteed file

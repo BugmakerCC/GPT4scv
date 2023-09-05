@@ -1,0 +1,21 @@
+After reviewing the provided smart contract, here are the vulnerabilities that exist:
+
+1. Reentrancy: The contract is susceptible to reentrancy attacks because it performs external calls (e.g., `lastInvestor.send(jackpot)` and `owner.send(this.balance-1 ether)`) before updating the state variables (`lastInvestor`, `jackpot`, `lastInvestmentTimestamp`). An attacker could exploit this vulnerability to repeatedly call the `resetInvestment` function and drain the contract's balance.
+
+2. Access Control: The contract lacks proper access control mechanisms. For example, anyone can call the `invest` function and contribute to the jackpot. This could be abused by malicious actors or result in unwanted behavior.
+
+3. Arithmetic Issues: The contract does not handle potential arithmetic overflows or underflows. For instance, in the `invest` function, the line `jackpot += msg.value/2` could lead to an overflow if the `jackpot` value becomes too large.
+
+4. Unchecked Return Values For Low-Level Calls: The contract does not check the return values of the `send` calls in the `resetInvestment` function. This can lead to silent failures if the transfers fail, potentially resulting in loss of funds.
+
+5. Denial of Service: The contract does not implement any gas limits for its functions. An attacker could call the `resetInvestment` function with a large amount of gas, causing it to run out of gas and preventing other legitimate users from interacting with the contract.
+
+6. Bad Randomness: The contract does not use a secure source of randomness. This could allow malicious actors to predict or manipulate the outcome of certain operations, such as the selection of the `lastInvestor` or the `jackpot` division.
+
+7. Front-Running: The contract is susceptible to front-running attacks because it relies on the `block.timestamp` value for determining the eligibility of a reset. An attacker could manipulate the order of transactions to exploit this vulnerability.
+
+8. Time Manipulation: Similarly to the front-running vulnerability, an attacker could manipulate the `block.timestamp` value to bypass the time-based reset condition in the `resetInvestment` function.
+
+9. Short Address Attack: The contract does not properly handle short address attacks, which can occur when a malicious user sends a transaction with a short address as the destination. This can lead to unexpected behavior or vulnerabilities in the contract's logic.
+
+To mitigate these vulnerabilities, it is recommended to implement proper access control mechanisms, use safe arithmetic operations, validate the return values of external calls, implement gas limits, use secure sources of randomness, and carefully handle timestamps and user inputs.

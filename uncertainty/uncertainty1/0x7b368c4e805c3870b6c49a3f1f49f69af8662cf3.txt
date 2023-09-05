@@ -1,0 +1,21 @@
+Looking at the given contract, the following vulnerabilities are detected:
+
+1. Reentrancy Vulnerability: The `Collect` function is vulnerable to reentrancy attacks because it makes an external call to `msg.sender` before it reduces the balance of the sender. An attacker can create a fallback function in their contract to repeatedly call the `Collect` function, draining the contract of Ether.
+
+2. Access Control Vulnerability: The `Put` and `Collect` functions are public, meaning they can be called by anyone. This could lead to unauthorized access or manipulation of the contract state.
+
+3. Arithmetic Issues: The contract does not check for overflows or underflows when performing arithmetic operations. This can lead to unexpected behaviors.
+
+4. Unchecked Return Values: The contract does not check the return value of the `msg.sender.call.value(_am)()` call in the `Collect` function. If this call fails, the contract will not be aware, leading to potential loss of funds.
+
+5. Denial of Service: An attacker could potentially lock funds indefinitely by repeatedly calling the `Put` function with a large `_unlockTime` value.
+
+6. Bad Randomness: Not applicable in this contract.
+
+7. Front-Running: Not applicable in this contract.
+
+8. Time manipulation: The contract relies on `now` for unlocking funds. Miners can slightly manipulate this value, potentially causing issues.
+
+9. Short Address Attack: Not applicable in this contract. 
+
+Please note that this assessment might not cover all potential vulnerabilities. You should still conduct a thorough audit before deploying any contract.

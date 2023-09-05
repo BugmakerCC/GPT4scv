@@ -1,0 +1,25 @@
+PHI instruction need arguments but 0 was given
+
+Traceback (most recent call last):
+  File "conkas.py", line 114, in main
+    traces = sym_exec.execute()
+  File "/conkas/sym_exec/symbolic_executor.py", line 51, in execute
+    new_traces = self.__sym_exec_traces(traces_to_execute)
+  File "/conkas/sym_exec/symbolic_executor.py", line 64, in __sym_exec_traces
+    new_blocks = self.__sym_exec_block(block_to_analyse, trace.state)
+  File "/conkas/sym_exec/symbolic_executor.py", line 93, in __sym_exec_block
+    new_blocks = self.__sym_exec_instruction(instruction, state)
+  File "/conkas/sym_exec/symbolic_executor.py", line 116, in __sym_exec_instruction
+    return func(instruction, state)
+  File "/conkas/sym_exec/instructions/rattle_instructions.py", line 58, in inst_phi
+    raise Exception
+Exception
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+Analysing /sb/0x958a8f594101d2c0485a52319f29b2647f2ebc06.sol:Marriage...
+Analysing /sb/0x958a8f594101d2c0485a52319f29b2647f2ebc06.sol:Owned...
+Vulnerability: Integer Overflow. Maybe in function: execute(address,uint256,bytes). PC: 0x16f. Line number: 53.
+If a = 4
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639932
+Vulnerability: Unchecked Low Level Call. Maybe in function: execute(address,uint256,bytes). PC: 0x46b. Line number: 55.
+Vulnerability: Reentrancy. Maybe in function: execute(address,uint256,bytes). PC: 0x46b. Line number: 55.

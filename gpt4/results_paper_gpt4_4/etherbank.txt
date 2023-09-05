@@ -1,0 +1,23 @@
+The smart contract provided has a Reentrancy vulnerability. This is a common issue in Ethereum smart contracts and can lead to the stealing of Ether when not prevented. 
+
+In this contract, the vulnerable function is `withdrawBalance()`. Here, the balance of the user is sent before it's actually deducted from the `userBalances` mapping. This means that the function can be called again before the first call has finished, thus allowing the same amount to be withdrawn multiple times. This is the definition of a Reentrancy attack.
+
+```javascript
+    function withdrawBalance() {  
+		uint amountToWithdraw = userBalances[msg.sender];
+		if (!(msg.sender.call.value(amountToWithdraw)())) { throw; }
+		userBalances[msg.sender] = 0;
+	}
+```
+A simple fix to this vulnerability would be to update the `userBalances[msg.sender]` before the external call like so:
+
+```javascript
+    function withdrawBalance() {  
+		uint amountToWithdraw = userBalances[msg.sender];
+		userBalances[msg.sender] = 0;
+		if (!(msg.sender.call.value(amountToWithdraw)())) { throw; }
+	}
+```
+This way, even if the function is called again before the first call has finished, the balance has already been set to 0 and nothing additional can be withdrawn.
+
+There are no other vulnerabilities from the given list in this contract. The contract does not rely on randomness, does not have arithmetic operations which could lead to overflows or underflows, and does not use timestamps or external contract calls. The contract also does not have a fallback function, preventing the potential for a Denial of Service attack. Finally, the contract does not have any access control mechanisms, so there are no access control vulnerabilities.

@@ -1,0 +1,19 @@
+1. Reentrancy: There doesn't seem to be a reentrancy issue as all external calls are made after state changes. 
+
+2. Access Control: The contract uses the modifier onlyOwner to restrict access to critical functions such as changeOwner, execute, fill, and run. Therefore, as long as the owner is trusted, there should be no access control issues. 
+
+3. Arithmetic Issues: The smart contract does not handle potential overflow or underflow situations for the arithmetic operations. In the fill function, acc += amount could potentially overflow but no check is made to handle this. 
+
+4. Unchecked Return Values For Low Level Calls: The contract uses a low level call in the execute function without checking its return value. This could potentially fail silently. 
+
+5. Denial of Service: While there is no explicit selfdestruct function, the contract does use throw in the fill and run functions, which could lead to a potential denial of service if the conditions for throwing are met. 
+
+6. Bad Randomness: This contract does not rely on randomness, so this vulnerability is not present. 
+
+7. Front-Running: The contract does not have any functions that involve value transfer or changes based on transaction ordering, so this vulnerability is not present. 
+
+8. Time manipulation: This contract does not rely on block.timestamp, block.number, block.difficulty or now, so this vulnerability is not present. 
+
+9. Short Address Attack: This vulnerability is not present since the contract doesn't take any addresses as input from external sources in its functions. 
+
+In conclusion, this contract has potential vulnerabilities related to Arithmetic Issues, Unchecked Return Values For Low Level Calls and Denial of Service.

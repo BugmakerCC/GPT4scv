@@ -1,0 +1,13 @@
+The smart contract "OddsAndEvens" has several vulnerabilities:
+
+1. Reentrancy: In the `andTheWinnerIs()` function, a reentrancy vulnerability exists because the state of the contract (`players` and `tot`) is not updated before the ether is sent with `.send()`. If the recipient of the `.send()` is a contract, it could call back into `play()` before `players` and `tot` have been reset, allowing it to possibly play and win the game again.
+
+2. Access Control: There's an access control issue in the `getProfit()` function. Although the function does check whether the caller is the owner, it doesn't revert the transaction if the check fails. It simply proceeds to the next line. This could potentially allow non-owners to withdraw the contract's balance.
+
+3. Unchecked Return Values For Low Level Calls: The return values of `.send()` function calls are not checked in `andTheWinnerIs()` and `getProfit()`. If those calls fail, the contract will silently continue execution. This may lead to funds being locked in the contract.
+
+4. Denial of Service: There's a potential Denial of Service attack. If the address of a player is a contract that always throws, the `andTheWinnerIs()` function will never be able to send ether to that address, preventing the game from being reset and blocking further gameplay.
+
+5. Bad randomness: The contract's gameplay is based on the sum of the numbers provided by the two players. If a player is able to see the number chosen by the first player (which is possible since `players` is public), they can always choose a number that guarantees their win. This is not exactly bad randomness, but it's a related issue of predictable gameplay.
+
+The contract doesn't seem to have vulnerabilities related to Arithmetic Issues, Front-Running, Time Manipulation, or Short Address Attack. However, without knowing the exact context and usage of the contract, it's hard to be entirely sure.

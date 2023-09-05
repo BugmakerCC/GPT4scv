@@ -1,0 +1,19 @@
+The contracts `Proxy` and `VaultProxy` have several security issues:
+
+1. Reentrancy: The `withdraw` function in the `VaultProxy` contract is vulnerable to a reentrancy attack because it calls `msg.sender.transfer(amount)` before it deducts the amount from the sender's balance. An attacker can create a fallback function in their contract to call the `withdraw` function again before the state is updated.
+
+2. Access Control: It seems that the `proxy` function in the `Proxy` contract can be called by any address, not just the owner. This means that any user can make the contract call any arbitrary function with any data, which is a severe security threat.
+
+3. Unchecked Return Values For Low-Level Calls: The `proxy` function in the `Proxy` contract uses a low-level `.call.value()` method without checking its return value. If this call fails for any reason, the contract will not be aware of it, which could lead to unexpected behavior.
+
+4. Bad Randomness: While there's no use of randomness in the given contracts, it's still worth mentioning as a common vulnerability.
+
+5. Front-Running: Front-running is possible in the `deposit` function. A malicious miner can see a transaction involving a large deposit and front-run it with a deposit of their own, possibly affecting the outcome for the original transaction.
+
+6. Time manipulation: There's no use of block timestamp or block number for critical operations, so it's safe from this vulnerability.
+
+7. Short Address Attack: The contracts don't seem to be vulnerable to short address attack as they do not take address input from users and directly use msg.sender where needed. 
+
+8. Arithmetic Issues: These contracts do not seem to be vulnerable to integer overflow and underflow as they are not performing any critical arithmetic operations.
+
+9. Denial of Service: The contracts do not seem to be vulnerable to this type of attack as they do not rely on external contracts for their operations.

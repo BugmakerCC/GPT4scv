@@ -1,0 +1,19 @@
+The code of this contract contains several vulnerabilities:
+
+1. Reentrancy: This vulnerability is present in the `Collect` function. The function first sends Ether to the caller via a low level call (`msg.sender.call.value(_am)()`) and only after that it subtracts the sent amount from the balance (`balances[msg.sender]-=_am;`). This can be exploited by an attacker who could re-enter the `Collect` function before the balance is updated and drain the contract's Ether.
+
+2. Arithmetic Issues: There is a potential for an integer underflow in the `Collect` function when the balance is updated (`balances[msg.sender]-=_am;`). If `_am` is greater than `balances[msg.sender]`, the result will underflow and become a very large number. However, this exploit is unlikely due to the preceding check (`if(balances[msg.sender]>=MinSum && balances[msg.sender]>=_am)`), but it is still a bad practice not to check return values of arithmetic operations.
+
+3. Unchecked Low Level Calls: In the `Collect` function, the return value of the low level call (`msg.sender.call.value(_am)()`) is not checked. This is a bad practice since the call could fail but the contract would not be aware of it.
+
+4. Access Control: There are no restrictions on who can call the `SetMinSum`, `SetLogFile`, and `Initialized` functions. This could be exploited by an attacker to change the contract's state.
+
+5. Denial of Service: If the contract's balance is low, a call to the `Collect` function could fail due to out of gas error, effectively blocking withdrawals.
+
+6. Bad Randomness: Not applicable, as there is no randomness in the contract.
+
+7. Front-Running: Not applicable, as there are no transactions that could be front-run.
+
+8. Time Manipulation: Not applicable, as the contract does not depend on time-based conditions.
+
+9. Short Address Attack: Not applicable, as the contract does not interact with external contracts or accepts token transactions.

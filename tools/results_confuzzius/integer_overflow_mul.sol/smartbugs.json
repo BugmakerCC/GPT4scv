@@ -1,0 +1,50 @@
+{
+    "docker": {
+        "command": "'/sb/bin/do_solidity.sh' '/sb/integer_overflow_mul.sol' '0' '/sb/bin' '0'",
+        "detach": true,
+        "entrypoint": null,
+        "image": "smartbugs/confuzzius:4315fb7",
+        "user": 0,
+        "volumes": {
+            "C:\\Users\\10976\\AppData\\Local\\Temp\\tmpx97mlubi": {
+                "bind": "/sb",
+                "mode": "rw"
+            }
+        }
+    },
+    "filename": "all\\integer_overflow_mul.sol",
+    "platform": {
+        "cpu": "12th Gen Intel(R) Core(TM) i7-12700H",
+        "python": "3.11.1.final.0 (64 bit)",
+        "release": "10",
+        "smartbugs": "2.0.7",
+        "system": "Windows",
+        "version": "10.0.22621"
+    },
+    "result": {
+        "duration": 3.1910195350646973,
+        "exit_code": 0,
+        "logs": "result.log",
+        "output": "result.tar",
+        "start": 1679674184.1625588
+    },
+    "runid": "20230324_1600",
+    "solc": "0.4.26",
+    "tool": {
+        "bin": "scripts",
+        "command": "'$BIN/do_solidity.sh' '$FILENAME' '$TIMEOUT' '$BIN' '$MAIN'",
+        "cpu_quota": null,
+        "entrypoint": null,
+        "id": "confuzzius",
+        "image": "smartbugs/confuzzius:4315fb7",
+        "info": "A data dependency-aware hybrid fuzzer for Ethereum smart contracts",
+        "mem_limit": null,
+        "mode": "solidity",
+        "name": "ConFuzzius",
+        "origin": "https://github.com/christoftorres/ConFuzzius",
+        "output": "/root/results.json",
+        "parser": "parser.py",
+        "solc": true,
+        "version": "#4315fb7 v0.0.1"
+    }
+}

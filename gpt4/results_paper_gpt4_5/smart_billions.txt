@@ -1,0 +1,23 @@
+This contract has several potential vulnerabilities:
+
+1. **Arithmetic Overflow and Underflow**: The contract uses SafeMath for arithmetic operations to prevent overflow and underflow. However, it does not cover all arithmetic operations, leaving potential for overflow/underflow bugs.
+
+2. **Unprotected SelfDestruct function**: The contract does not have a selfdestruct function, so it's not vulnerable to this.
+
+3. **Unchecked Return Values**: There are several external calls in the contract, but I don't see any checks on the return values of these calls, making it vulnerable to unchecked return values. Examples are found in `transfer` functions.
+
+4. **Re-entrancy**: The contract contains a potential re-entrancy vulnerability in the `pay` function. It calls `msg.sender.transfer()` before updating the balance, which can potentially lead to re-entrancy attacks.
+
+5. **Timestamp Dependence**: The contract uses `block.number` for its operation which can be influenced by miners to a certain degree.
+
+6. **Bad Randomness**: The function `playSystem` uses `sha3(msg.sender,block.number)` as a source of randomness which is predictable and can be influenced by miners.
+
+7. **Access Control**: The contract has the `onlyOwner` and `onlyAnimator` modifiers, but it doesn't have a function to check if the `msg.sender` is either the `owner` or the `animator`, potentially leading to unauthorized function access.
+
+8. **Front-Running**: Since smart contracts' data and transactions are publicly visible on the blockchain, an attacker could see a transaction and then place a transaction of their own with a higher gas price, incentivizing miners to place it first in the block.
+
+9. **Denial of Service**: The contract does not seem to have a denial-of-service vulnerability.
+
+10. **Short Address Attack**: This contract does not seem to be vulnerable to a short address attack because it does not use `msg.data` to calculate token amounts.
+
+Please note that while I tried to cover all potential vulnerabilities, there might be some that I have missed. It's always a good idea to have your contract audited by a professional security firm.

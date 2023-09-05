@@ -1,0 +1,76 @@
+{
+    "wallet_02_refund_nosub.sol": [
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "withdraw",
+                "deposit"
+            ],
+            "First_function": "deposit",
+            "Second_function": "withdraw",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 5\nFunction: deposit\nNode: \nEXPRESSION balances[msg.sender] += msg.value\nIRS: \nREF_2 = REF_2 + msg.value\"",
+                        "\"BlockID: 7\nFunction: withdraw\nNode: \nEXPRESSION require(bool)(amount <= balances[msg.sender])\nIRS: \nTMP_4 = SOLIDITY_CALL require(bool)(TMP_3)\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "withdraw",
+                "withdraw"
+            ],
+            "First_function": "withdraw",
+            "Second_function": "withdraw",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 18\nFunction: withdraw\nNode: \nEXPRESSION balances[msg.sender] -= amount\nIRS: \nREF_5 = REF_5 - amount\"",
+                        "\"BlockID: 7\nFunction: withdraw\nNode: \nEXPRESSION require(bool)(amount <= balances[msg.sender])\nIRS: \nTMP_4 = SOLIDITY_CALL require(bool)(TMP_3)\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "refund",
+                "deposit"
+            ],
+            "First_function": "deposit",
+            "Second_function": "refund",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 5\nFunction: deposit\nNode: \nEXPRESSION balances[msg.sender] += msg.value\nIRS: \nREF_2 = REF_2 + msg.value\"",
+                        "\"BlockID: 11\nFunction: refund\nNode: \nEXPRESSION msg.sender.transfer(balances[msg.sender])\nIRS: \nTransfer dest:msg.sender value:REF_7\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "refund",
+                "withdraw"
+            ],
+            "First_function": "withdraw",
+            "Second_function": "refund",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 9\nFunction: withdraw\nNode: \nEXPRESSION balances[msg.sender] -= amount\nIRS: \nREF_5 = REF_5 - amount\"",
+                        "\"BlockID: 11\nFunction: refund\nNode: \nEXPRESSION msg.sender.transfer(balances[msg.sender])\nIRS: \nTransfer dest:msg.sender value:REF_7\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        }
+    ]
+}

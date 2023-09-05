@@ -1,0 +1,19 @@
+This smart contract has several vulnerabilities:
+
+1. Reentrancy: The functions `payout`, `donateToWhale` and `loseWager` use the low-level `call.value()` function to transfer Ether, which could potentially allow reentrant calls. If the `whale` contract's fallback function calls back into `PoCGame` before `whale.call.value()` finishes, it could withdraw more Ether than it should.
+
+2. Access Control: The `onlyOwner` modifier is used to restrict access to certain functions to the contract's owner. However, this doesn't prevent the owner from behaving maliciously. In a truly decentralized application, one person shouldn't have this much power.
+
+3. Arithmetic Issues: The contract does not handle potential integer overflows or underflows. For example, in the `play` function, it uses a modulus operation and addition without checking for overflow.
+
+4. Unchecked Return Values: The contract does not check the return value of `ERC20Interface.transfer`, which could fail silently. 
+
+5. Bad Randomness: The `play` function uses `blockhash(blockNumber)` to generate a "random" number, but this value is predictable and can be manipulated by miners, making the game unfair.
+
+6. Time manipulation: The `play` function uses `block.number` to determine whether a player can play or not. However, this can be manipulated by miners.
+
+7. Front-Running: Since Ethereum transactions are public, a malicious miner or observer could observe the `wager` transactions and front-run, i.e., place their own `wager` transaction with a higher gas price to get it included in the blockchain first.
+
+8. Denial of Service: If the `whale` contract's fallback function consumes a lot of gas, the `payout`, `donateToWhale` and `loseWager` functions could run out of gas and fail, effectively locking all funds in the contract.
+
+9. Short Address Attack: Although this contract does not directly handle tokens (beyond the ability to transfer out accidentally sent ERC20 tokens), if it were to interact with token contracts, it could be susceptible to a short address attack if it does not check the length of the input address.

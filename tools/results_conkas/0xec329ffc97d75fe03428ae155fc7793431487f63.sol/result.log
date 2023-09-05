@@ -1,0 +1,32 @@
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+ANTLR runtime and generated code versions disagree: 4.9.2!=4.7.2
+Analysing /sb/0xec329ffc97d75fe03428ae155fc7793431487f63.sol:Owned...
+Vulnerability: Unchecked Low Level Call. Maybe in function: execute(address,uint256,bytes). PC: 0x320. Line number: 30.
+Vulnerability: Integer Overflow. Maybe in function: execute(address,uint256,bytes). PC: 0x14e. Line number: 28.
+If a = 31
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639912
+Vulnerability: Integer Overflow. Maybe in function: execute(address,uint256,bytes). PC: 0x2d6. Line number: .
+If a = 115792089237316195423570985008687907853269984665640564039457584007913129639721
+and b = 160
+Vulnerability: Reentrancy. Maybe in function: execute(address,uint256,bytes). PC: 0x320. Line number: 30.
+Analysing /sb/0xec329ffc97d75fe03428ae155fc7793431487f63.sol:Token...
+Nothing to analyse
+Analysing /sb/0xec329ffc97d75fe03428ae155fc7793431487f63.sol:TokenSender...
+Vulnerability: Integer Overflow. Maybe in function: run(). PC: 0xa58. Line number: 102.
+If a = 2
+and b = 57896044618658097711785492504343953926720062924550516635576188911740797321216
+Vulnerability: Reentrancy. Maybe in function: run(). PC: 0x926. Line number: 96.
+Vulnerability: Unchecked Low Level Call. Maybe in function: execute(address,uint256,bytes). PC: 0x7cf. Line number: 30.
+Vulnerability: Integer Overflow. Maybe in function: fill(uint256[]). PC: 0xb86. Line number: 39.
+If a = 2
+and b = 100608092147294913536692603547378396673148530048690655807542972507429691262888
+Vulnerability: Integer Overflow. Maybe in function: execute(address,uint256,bytes). PC: 0x330. Line number: 28.
+If a = 31
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639912
+Vulnerability: Integer Overflow. Maybe in function: transfers(uint256). PC: 0x657. Line number: 51.
+If a = 1
+and b = 26639039675354583158140211601424661259595093295535925557437176605089236391730
+Vulnerability: Integer Overflow. Maybe in function: fill(uint256[]). PC: 0x1ae. Line number: 66.
+If a = 32
+and b = 14474011154664524427946373126085988481658748083205070504932198000989141204992
+Vulnerability: Reentrancy. Maybe in function: execute(address,uint256,bytes). PC: 0x7cf. Line number: 30.

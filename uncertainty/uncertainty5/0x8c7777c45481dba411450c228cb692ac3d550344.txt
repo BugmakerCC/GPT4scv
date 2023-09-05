@@ -1,0 +1,47 @@
+The smart contract provided contains a notable vulnerability related to reentrancy. 
+
+In the CashOut function, the contract calls an external contract (in this case the address of the user calling the function) and then updates the state of the contract (the user's balance). This order of operations opens up the potential for a reentrancy attack. A malicious contract could fallback function that calls the CashOut function again before the original call has finished executing. This would allow the attacker to drain more Ether than they should be able to according to their balance.
+
+Here is the vulnerable piece of code:
+
+```solidity
+    function CashOut(uint _am)
+    public
+    payable
+    {
+        if(_am<=balances[msg.sender])
+        {
+            
+            if(msg.sender.call.value(_am)())
+            {
+                balances[msg.sender]-=_am;
+                TransferLog.AddMessage(msg.sender,_am,"CashOut");
+            }
+        }
+    }
+```
+
+The correct way to mitigate this vulnerability is to update the state (reduce the balance) before calling the external contract as follows:
+
+```solidity
+    function CashOut(uint _am)
+    public
+    payable
+    {
+        if(_am<=balances[msg.sender])
+        {
+            balances[msg.sender]-=_am;
+            
+            if(msg.sender.call.value(_am)())
+            {
+                TransferLog.AddMessage(msg.sender,_am,"CashOut");
+            }
+            else
+            {
+                balances[msg.sender]+=_am;
+            }
+        }
+    }
+```
+
+The other vulnerabilities listed are not present in the given contract. The contract does not use timestamps so it's not susceptible to time manipulation attacks. There's no randomness so it's not vulnerable to bad randomness attacks. It doesn't seem to have any access control issues. There is no arithmetic issues, no unchecked return values for low level calls, no potential for denial of service attacks and no possibility for a short address attack as all addresses should be validated by Ethereum itself.

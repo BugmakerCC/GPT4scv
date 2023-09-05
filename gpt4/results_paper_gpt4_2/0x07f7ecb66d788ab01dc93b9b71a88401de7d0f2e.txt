@@ -1,0 +1,21 @@
+The given smart contract has the following vulnerabilities:
+
+1. Reentrancy: The `payout()`, `donateToWhale()`, and `loseWager()` functions are susceptible to reentrancy attacks as they make external calls to another contract (`whale.call.value(amount)(bytes4(keccak256("donate()")));` and `winner.transfer(ethToTransfer);`) before updating the state (`totalDonated += amount;`).
+
+2. Access Control: The contract seems to handle access control properly with the `onlyOwner`, `isOpenToPublic`, `onlyRealPeople`, and `onlyPlayers` modifiers. However, the contract does not limit who can call the `wager()` and `play()` functions.
+
+3. Arithmetic Issues: The contract does not use SafeMath or any other mechanism to prevent integer overflows and underflows. This makes the contract vulnerable to arithmetic issues.
+
+4. Unchecked Return Values For Low-Level Calls: The contract does not check the return value of the `whale.call.value(amount)(bytes4(keccak256("donate()")));` calls. If these calls fail for any reason, the contract will not be aware of the failure.
+
+5. Denial of Service: The contract does not seem to be vulnerable to the common forms of Denial of Service attacks.
+
+6. Bad Randomness: The contract uses `uint256(keccak256(abi.encodePacked(blockhash(blockNumber),  msg.sender)))%difficulty +1;` to generate a random number. This approach is not really random and can be predicted by miners, making the contract vulnerable to attacks.
+
+7. Front-Running: There is a risk of front-running in the `wager()` function as external actors can see the transaction in the mempool before it is mined and act accordingly.
+
+8. Time Manipulation: The contract uses `block.number` as a timestamp. This can be manipulated by miners to a certain extent, which could potentially be exploited.
+
+9. Short Address Attack: The contract does not appear to be vulnerable to a short address attack as it does not directly interact with user-provided addresses.
+
+To solve these issues, the contract should use re-entrancy guards, check the return values of all external calls, use SafeMath for arithmetic operations, and improve the randomness of the `play()` function. Additionally, the contract can use commit-reveal schemes to prevent front-running and limit the use of block variables to reduce miner manipulation.

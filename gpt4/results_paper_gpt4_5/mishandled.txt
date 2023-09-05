@@ -1,0 +1,31 @@
+This contract has a Reentrancy vulnerability.
+
+In the `withdrawBalance` function, the state variable `userBalances[msg.sender]` is set to 0 after the call to `msg.sender.send(amountToWithdraw)`. This introduces a reentrancy bug, because external contract calls can execute unknown code and potentially call `withdrawBalance` again before the first call has finished. 
+
+If this happens, `userBalances[msg.sender]` would still contain the original balance at the time of the second call, allowing the caller to withdraw more Ether than they should be able to. 
+
+To fix this, the state variable should be set before the external call:
+
+```solidity
+function withdrawBalance() {  
+    uint amountToWithdraw = userBalances[msg.sender];
+    userBalances[msg.sender] = 0;
+    
+    require(msg.sender.send(amountToWithdraw));
+}
+```
+
+However, the contract doesn't check the return value of the `send` function. If the `send` function fails, it returns `false`, but the contract doesn't handle this case, which could lead to loss of funds. 
+
+A better way to transfer Ether is to use the `transfer` function, which throws on failure:
+
+```solidity
+function withdrawBalance() {  
+    uint amountToWithdraw = userBalances[msg.sender];
+    userBalances[msg.sender] = 0;
+    
+    msg.sender.transfer(amountToWithdraw);
+}
+```
+
+Additionally, there is no access control implemented in `withdrawBalance` function. Any address can call it and attempt to withdraw Ether. Although it will not be successful if the address has no balance, it is still a good practice to implement a check to ensure only the address with balance can call this function.

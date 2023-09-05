@@ -1,0 +1,19 @@
+1. Reentrancy: The 'winPrize' and 'claimPrize' functions both transfer funds to external addresses without any checks, which could allow those addresses to recursively call the function and drain the contract's funds.
+
+2. Access Control: The 'onlyOwner' and 'onlyWinner' modifiers may allow the owner or winner to manipulate the contract in their favor.
+
+3. Arithmetic Issues: There's no check for overflow or underflow in the 'guessSeed' and 'setSeed' functions.
+
+4. Unchecked Return Values: The 'callFirstTarget' and 'callSecondTarget' functions use the low-level 'call' function without checking its return value.
+
+5. Denial of Service: The 'claimPrize' function could potentially block the contract if the 'winner' address is a contract that throws an exception in its fallback function.
+
+6. Bad Randomness: The 'unlockSecret' function relies on block information for randomness, which is not really random since miners have some control over it.
+
+7. Front-Running: The 'guessSeed', 'checkSecret', and 'manipulateSecret' functions could be vulnerable to front-running, because the information is broadcast to the network before being included in a block.
+
+8. Time manipulation: This contract doesn't seem to have any timestamp dependence vulnerabilities.
+
+9. Short Address Attack: This contract doesn't seem to have any short address vulnerabilities. 
+
+Please note that this is a preliminary analysis and further testing is required to confirm these vulnerabilities.

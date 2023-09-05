@@ -1,0 +1,21 @@
+Let's go through each of the possible vulnerabilities:
+
+1. Reentrancy: This contract is vulnerable to the reentrancy attack since it uses the low-level function call (c.call) which can be a potential point of reentrancy. However, the contract does not seem to handle ETH so the risk is minimal.
+
+2. Access Control: The contract appears to have proper access controls in place. Usage of the onlyOwner() modifier restricts certain function calls to the owner of the contract only. However, the owner's address is hard-coded, which could potentially lead to a loss of control over the contract if the owner loses control of their private key.
+
+3. Arithmetic Issues: The contract does not check for overflows or underflows which can lead to arithmetic issues. For example, in the line "uint tokens_buy = msg.value*10**18/token_price;", if token_price is zero, it would lead to a division by zero error.
+
+4. Unchecked Return Values For Low Level Calls: The contract makes a low-level call (c.call) but does not check the return value. This could potentially lead to unexpected behavior.
+
+5. Denial of Service: The contract might be vulnerable to DoS attacks. If the call to c.call fails, the function tokens_buy would return false, and the ether sent would be locked in the contract.
+
+6. Bad Randomness: There doesn't seem to be an issue related to randomness in the contract.
+
+7. Front-Running: While the contract itself does not have explicit dependencies on transaction order, the use of the ERC20 transferFrom function may be vulnerable to front-running attacks.
+
+8. Time manipulation: There doesn't seem to be any dependency on timestamps or block numbers, so this vulnerability doesn't seem to apply here.
+
+9. Short Address Attack: The contract does not seem to be vulnerable to a short address attack as it does not take addresses as arguments from external calls.
+
+Please note that even though some vulnerabilities are not detected in this smart contract, it does not mean that this contract is secure. It is advised to conduct a thorough security audit before using it in production.

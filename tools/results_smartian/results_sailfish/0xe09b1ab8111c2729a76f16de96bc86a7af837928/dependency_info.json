@@ -1,0 +1,391 @@
+{
+    "0xe09b1ab8111c2729a76f16de96bc86a7af837928.sol": [
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "wager",
+                "wager"
+            ],
+            "First_function": "wager",
+            "Second_function": "wager",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 139\nFunction: wager\nNode: \nEXPRESSION devFeeSize += amount * DEV_FEE \/ 1000\nIRS: \ndevFeeSize = devFeeSize + TMP_26\"",
+                        "\"BlockID: 20\nFunction: wager\nNode: \nEXPRESSION require(bool,string)(getCollateralBalance() >= 2 * amount,If we accept this, this contract will be in danger!)\nIRS: \nTMP_14 = SOLIDITY_CALL require(bool,string)(TMP_13,If we accept this, this contract will be in danger!)\""
+                    ],
+                    "state_variable": "devFeeSize"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 139\nFunction: wager\nNode: \nEXPRESSION devFeeSize += amount * DEV_FEE \/ 1000\nIRS: \ndevFeeSize = devFeeSize + TMP_26\"",
+                        "\"BlockID: 34\nFunction: checkContractHealth\nNode: \nEXPRESSION require(bool,string)(address(this).balance >= lockedInBets + jackpotSize + devFeeSize,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\nIRS: \nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+                    ],
+                    "state_variable": "devFeeSize"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 139\nFunction: wager\nNode: \nEXPRESSION devFeeSize += amount * DEV_FEE \/ 1000\nIRS: \ndevFeeSize = devFeeSize + TMP_26\"",
+                        "\"BlockID: 35\nFunction: getCollateralBalance\nNode: \nIF address(this).balance > lockedInBets + jackpotSize + devFeeSize\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "devFeeSize"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 138\nFunction: wager\nNode: \nEXPRESSION jackpotSize += amount * JACKPOT_FEE \/ 1000\nIRS: \njackpotSize = jackpotSize + TMP_24\"",
+                        "\"BlockID: 20\nFunction: wager\nNode: \nEXPRESSION require(bool,string)(getCollateralBalance() >= 2 * amount,If we accept this, this contract will be in danger!)\nIRS: \nTMP_14 = SOLIDITY_CALL require(bool,string)(TMP_13,If we accept this, this contract will be in danger!)\""
+                    ],
+                    "state_variable": "jackpotSize"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 138\nFunction: wager\nNode: \nEXPRESSION jackpotSize += amount * JACKPOT_FEE \/ 1000\nIRS: \njackpotSize = jackpotSize + TMP_24\"",
+                        "\"BlockID: 34\nFunction: checkContractHealth\nNode: \nEXPRESSION require(bool,string)(address(this).balance >= lockedInBets + jackpotSize + devFeeSize,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\nIRS: \nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+                    ],
+                    "state_variable": "jackpotSize"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 138\nFunction: wager\nNode: \nEXPRESSION jackpotSize += amount * JACKPOT_FEE \/ 1000\nIRS: \njackpotSize = jackpotSize + TMP_24\"",
+                        "\"BlockID: 35\nFunction: getCollateralBalance\nNode: \nIF address(this).balance > lockedInBets + jackpotSize + devFeeSize\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "jackpotSize"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 140\nFunction: wager\nNode: \nEXPRESSION lockedInBets += amount * WIN_X \/ 1000\nIRS: \nlockedInBets = lockedInBets + TMP_28\"",
+                        "\"BlockID: 20\nFunction: wager\nNode: \nEXPRESSION require(bool,string)(getCollateralBalance() >= 2 * amount,If we accept this, this contract will be in danger!)\nIRS: \nTMP_14 = SOLIDITY_CALL require(bool,string)(TMP_13,If we accept this, this contract will be in danger!)\""
+                    ],
+                    "state_variable": "lockedInBets"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 140\nFunction: wager\nNode: \nEXPRESSION lockedInBets += amount * WIN_X \/ 1000\nIRS: \nlockedInBets = lockedInBets + TMP_28\"",
+                        "\"BlockID: 34\nFunction: checkContractHealth\nNode: \nEXPRESSION require(bool,string)(address(this).balance >= lockedInBets + jackpotSize + devFeeSize,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\nIRS: \nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+                    ],
+                    "state_variable": "lockedInBets"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 140\nFunction: wager\nNode: \nEXPRESSION lockedInBets += amount * WIN_X \/ 1000\nIRS: \nlockedInBets = lockedInBets + TMP_28\"",
+                        "\"BlockID: 35\nFunction: getCollateralBalance\nNode: \nIF address(this).balance > lockedInBets + jackpotSize + devFeeSize\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "lockedInBets"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "wager",
+                "play"
+            ],
+            "First_function": "play",
+            "Second_function": "wager",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 47\nFunction: play\nNode: \nEXPRESSION jackpotSize = 0\nIRS: \njackpotSize := 0\"",
+                        "\"BlockID: 20\nFunction: wager\nNode: \nEXPRESSION require(bool,string)(getCollateralBalance() >= 2 * amount,If we accept this, this contract will be in danger!)\nIRS: \nTMP_14 = SOLIDITY_CALL require(bool,string)(TMP_13,If we accept this, this contract will be in danger!)\""
+                    ],
+                    "state_variable": "jackpotSize"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 47\nFunction: play\nNode: \nEXPRESSION jackpotSize = 0\nIRS: \njackpotSize := 0\"",
+                        "\"BlockID: 34\nFunction: checkContractHealth\nNode: \nEXPRESSION require(bool,string)(address(this).balance >= lockedInBets + jackpotSize + devFeeSize,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\nIRS: \nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+                    ],
+                    "state_variable": "jackpotSize"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 47\nFunction: play\nNode: \nEXPRESSION jackpotSize = 0\nIRS: \njackpotSize := 0\"",
+                        "\"BlockID: 35\nFunction: getCollateralBalance\nNode: \nIF address(this).balance > lockedInBets + jackpotSize + devFeeSize\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "jackpotSize"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 54\nFunction: play\nNode: \nEXPRESSION lockedInBets -= tossWinAmount\nIRS: \nlockedInBets = lockedInBets - tossWinAmount\"",
+                        "\"BlockID: 20\nFunction: wager\nNode: \nEXPRESSION require(bool,string)(getCollateralBalance() >= 2 * amount,If we accept this, this contract will be in danger!)\nIRS: \nTMP_14 = SOLIDITY_CALL require(bool,string)(TMP_13,If we accept this, this contract will be in danger!)\""
+                    ],
+                    "state_variable": "lockedInBets"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 54\nFunction: play\nNode: \nEXPRESSION lockedInBets -= tossWinAmount\nIRS: \nlockedInBets = lockedInBets - tossWinAmount\"",
+                        "\"BlockID: 34\nFunction: checkContractHealth\nNode: \nEXPRESSION require(bool,string)(address(this).balance >= lockedInBets + jackpotSize + devFeeSize,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\nIRS: \nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+                    ],
+                    "state_variable": "lockedInBets"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 54\nFunction: play\nNode: \nEXPRESSION lockedInBets -= tossWinAmount\nIRS: \nlockedInBets = lockedInBets - tossWinAmount\"",
+                        "\"BlockID: 35\nFunction: getCollateralBalance\nNode: \nIF address(this).balance > lockedInBets + jackpotSize + devFeeSize\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "lockedInBets"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "wager",
+                "refund"
+            ],
+            "First_function": "refund",
+            "Second_function": "wager",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 78\nFunction: sendRefund\nNode: \nEXPRESSION lockedInBets -= tossWinAmount\nIRS: \nlockedInBets = lockedInBets - tossWinAmount\"",
+                        "\"BlockID: 20\nFunction: wager\nNode: \nEXPRESSION require(bool,string)(getCollateralBalance() >= 2 * amount,If we accept this, this contract will be in danger!)\nIRS: \nTMP_14 = SOLIDITY_CALL require(bool,string)(TMP_13,If we accept this, this contract will be in danger!)\""
+                    ],
+                    "state_variable": "lockedInBets"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 78\nFunction: sendRefund\nNode: \nEXPRESSION lockedInBets -= tossWinAmount\nIRS: \nlockedInBets = lockedInBets - tossWinAmount\"",
+                        "\"BlockID: 34\nFunction: checkContractHealth\nNode: \nEXPRESSION require(bool,string)(address(this).balance >= lockedInBets + jackpotSize + devFeeSize,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\nIRS: \nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+                    ],
+                    "state_variable": "lockedInBets"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 78\nFunction: sendRefund\nNode: \nEXPRESSION lockedInBets -= tossWinAmount\nIRS: \nlockedInBets = lockedInBets - tossWinAmount\"",
+                        "\"BlockID: 35\nFunction: getCollateralBalance\nNode: \nIF address(this).balance > lockedInBets + jackpotSize + devFeeSize\nIRS: \nCONDITION TMP_113\""
+                    ],
+                    "state_variable": "lockedInBets"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "play",
+                "wager"
+            ],
+            "First_function": "wager",
+            "Second_function": "play",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 26\nFunction: wager\nNode: \nEXPRESSION jackpotSize += amount * JACKPOT_FEE \/ 1000\nIRS: \njackpotSize = jackpotSize + TMP_24\"",
+                        "\"BlockID: 49\nFunction: play\nNode: \nIF jackpotWin > 0\nIRS: \nCONDITION TMP_61\""
+                    ],
+                    "state_variable": "jackpotSize"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 26\nFunction: wager\nNode: \nEXPRESSION jackpotSize += amount * JACKPOT_FEE \/ 1000\nIRS: \njackpotSize = jackpotSize + TMP_24\"",
+                        "\"BlockID: 52\nFunction: play\nNode: \nIF tossWin + jackpotWin > 0\nIRS: \nCONDITION TMP_64\""
+                    ],
+                    "state_variable": "jackpotSize"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 26\nFunction: wager\nNode: \nEXPRESSION jackpotSize += amount * JACKPOT_FEE \/ 1000\nIRS: \njackpotSize = jackpotSize + TMP_24\"",
+                        "\"BlockID: 56\nFunction: checkContractHealth\nNode: \nEXPRESSION require(bool,string)(address(this).balance >= lockedInBets + jackpotSize + devFeeSize,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\nIRS: \nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+                    ],
+                    "state_variable": "jackpotSize"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 26\nFunction: wager\nNode: \nEXPRESSION jackpotSize += amount * JACKPOT_FEE \/ 1000\nIRS: \njackpotSize = jackpotSize + TMP_24\"",
+                        "\"BlockID: 57\nFunction: payout\nNode: \nEXPRESSION winner.transfer(ethToTransfer)\nIRS: \nTransfer dest:winner value:ethToTransfer\""
+                    ],
+                    "state_variable": "jackpotSize"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 28\nFunction: wager\nNode: \nEXPRESSION lockedInBets += amount * WIN_X \/ 1000\nIRS: \nlockedInBets = lockedInBets + TMP_28\"",
+                        "\"BlockID: 56\nFunction: checkContractHealth\nNode: \nEXPRESSION require(bool,string)(address(this).balance >= lockedInBets + jackpotSize + devFeeSize,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\nIRS: \nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+                    ],
+                    "state_variable": "lockedInBets"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 27\nFunction: wager\nNode: \nEXPRESSION devFeeSize += amount * DEV_FEE \/ 1000\nIRS: \ndevFeeSize = devFeeSize + TMP_26\"",
+                        "\"BlockID: 56\nFunction: checkContractHealth\nNode: \nEXPRESSION require(bool,string)(address(this).balance >= lockedInBets + jackpotSize + devFeeSize,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\nIRS: \nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+                    ],
+                    "state_variable": "devFeeSize"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "play",
+                "play"
+            ],
+            "First_function": "play",
+            "Second_function": "play",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 159\nFunction: play\nNode: \nEXPRESSION jackpotSize = 0\nIRS: \njackpotSize := 0\"",
+                        "\"BlockID: 49\nFunction: play\nNode: \nIF jackpotWin > 0\nIRS: \nCONDITION TMP_61\""
+                    ],
+                    "state_variable": "jackpotSize"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 159\nFunction: play\nNode: \nEXPRESSION jackpotSize = 0\nIRS: \njackpotSize := 0\"",
+                        "\"BlockID: 52\nFunction: play\nNode: \nIF tossWin + jackpotWin > 0\nIRS: \nCONDITION TMP_64\""
+                    ],
+                    "state_variable": "jackpotSize"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 159\nFunction: play\nNode: \nEXPRESSION jackpotSize = 0\nIRS: \njackpotSize := 0\"",
+                        "\"BlockID: 56\nFunction: checkContractHealth\nNode: \nEXPRESSION require(bool,string)(address(this).balance >= lockedInBets + jackpotSize + devFeeSize,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\nIRS: \nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+                    ],
+                    "state_variable": "jackpotSize"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 159\nFunction: play\nNode: \nEXPRESSION jackpotSize = 0\nIRS: \njackpotSize := 0\"",
+                        "\"BlockID: 57\nFunction: payout\nNode: \nEXPRESSION winner.transfer(ethToTransfer)\nIRS: \nTransfer dest:winner value:ethToTransfer\""
+                    ],
+                    "state_variable": "jackpotSize"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 166\nFunction: play\nNode: \nEXPRESSION lockedInBets -= tossWinAmount\nIRS: \nlockedInBets = lockedInBets - tossWinAmount\"",
+                        "\"BlockID: 56\nFunction: checkContractHealth\nNode: \nEXPRESSION require(bool,string)(address(this).balance >= lockedInBets + jackpotSize + devFeeSize,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\nIRS: \nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+                    ],
+                    "state_variable": "lockedInBets"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "play",
+                "refund"
+            ],
+            "First_function": "refund",
+            "Second_function": "play",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 78\nFunction: sendRefund\nNode: \nEXPRESSION lockedInBets -= tossWinAmount\nIRS: \nlockedInBets = lockedInBets - tossWinAmount\"",
+                        "\"BlockID: 56\nFunction: checkContractHealth\nNode: \nEXPRESSION require(bool,string)(address(this).balance >= lockedInBets + jackpotSize + devFeeSize,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\nIRS: \nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+                    ],
+                    "state_variable": "lockedInBets"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "withdrawDonation",
+                "donateForContractHealth"
+            ],
+            "First_function": "donateForContractHealth",
+            "Second_function": "withdrawDonation",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 61\nFunction: donateForContractHealth\nNode: \nEXPRESSION donateAmount[msg.sender] += msg.value\nIRS: \nREF_26 = REF_26 + msg.value\"",
+                        "\"BlockID: 64\nFunction: withdrawDonation\nNode: \nEXPRESSION require(bool,string)(donateAmount[msg.sender] >= amount,You are going to withdraw more than you donated!)\nIRS: \nTMP_73 = SOLIDITY_CALL require(bool,string)(TMP_72,You are going to withdraw more than you donated!)\""
+                    ],
+                    "state_variable": "donateAmount"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "withdrawDonation",
+                "withdrawDonation"
+            ],
+            "First_function": "withdrawDonation",
+            "Second_function": "withdrawDonation",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 175\nFunction: withdrawDonation\nNode: \nEXPRESSION donateAmount[msg.sender] -= amount\nIRS: \nREF_28 = REF_28 - amount\"",
+                        "\"BlockID: 64\nFunction: withdrawDonation\nNode: \nEXPRESSION require(bool,string)(donateAmount[msg.sender] >= amount,You are going to withdraw more than you donated!)\nIRS: \nTMP_73 = SOLIDITY_CALL require(bool,string)(TMP_72,You are going to withdraw more than you donated!)\""
+                    ],
+                    "state_variable": "donateAmount"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "refund",
+                "wager"
+            ],
+            "First_function": "wager",
+            "Second_function": "refund",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 27\nFunction: wager\nNode: \nEXPRESSION devFeeSize += amount * DEV_FEE \/ 1000\nIRS: \ndevFeeSize = devFeeSize + TMP_26\"",
+                        "\"BlockID: 76\nFunction: checkContractHealth\nNode: \nEXPRESSION require(bool,string)(address(this).balance >= lockedInBets + jackpotSize + devFeeSize,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\nIRS: \nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+                    ],
+                    "state_variable": "devFeeSize"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 26\nFunction: wager\nNode: \nEXPRESSION jackpotSize += amount * JACKPOT_FEE \/ 1000\nIRS: \njackpotSize = jackpotSize + TMP_24\"",
+                        "\"BlockID: 76\nFunction: checkContractHealth\nNode: \nEXPRESSION require(bool,string)(address(this).balance >= lockedInBets + jackpotSize + devFeeSize,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\nIRS: \nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+                    ],
+                    "state_variable": "jackpotSize"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 28\nFunction: wager\nNode: \nEXPRESSION lockedInBets += amount * WIN_X \/ 1000\nIRS: \nlockedInBets = lockedInBets + TMP_28\"",
+                        "\"BlockID: 76\nFunction: checkContractHealth\nNode: \nEXPRESSION require(bool,string)(address(this).balance >= lockedInBets + jackpotSize + devFeeSize,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\nIRS: \nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+                    ],
+                    "state_variable": "lockedInBets"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "refund",
+                "play"
+            ],
+            "First_function": "play",
+            "Second_function": "refund",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 47\nFunction: play\nNode: \nEXPRESSION jackpotSize = 0\nIRS: \njackpotSize := 0\"",
+                        "\"BlockID: 76\nFunction: checkContractHealth\nNode: \nEXPRESSION require(bool,string)(address(this).balance >= lockedInBets + jackpotSize + devFeeSize,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\nIRS: \nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+                    ],
+                    "state_variable": "jackpotSize"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 54\nFunction: play\nNode: \nEXPRESSION lockedInBets -= tossWinAmount\nIRS: \nlockedInBets = lockedInBets - tossWinAmount\"",
+                        "\"BlockID: 76\nFunction: checkContractHealth\nNode: \nEXPRESSION require(bool,string)(address(this).balance >= lockedInBets + jackpotSize + devFeeSize,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\nIRS: \nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+                    ],
+                    "state_variable": "lockedInBets"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "refund",
+                "refund"
+            ],
+            "First_function": "refund",
+            "Second_function": "refund",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 187\nFunction: sendRefund\nNode: \nEXPRESSION lockedInBets -= tossWinAmount\nIRS: \nlockedInBets = lockedInBets - tossWinAmount\"",
+                        "\"BlockID: 76\nFunction: checkContractHealth\nNode: \nEXPRESSION require(bool,string)(address(this).balance >= lockedInBets + jackpotSize + devFeeSize,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\nIRS: \nTMP_153 = SOLIDITY_CALL require(bool,string)(TMP_152,This contract doesn't have enough balance, it is stopped till someone donate to this game!)\""
+                    ],
+                    "state_variable": "lockedInBets"
+                }
+            ]
+        }
+    ]
+}

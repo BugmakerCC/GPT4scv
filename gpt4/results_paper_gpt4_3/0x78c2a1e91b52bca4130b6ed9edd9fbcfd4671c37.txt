@@ -1,0 +1,21 @@
+The smart contract provided has several potential vulnerabilities:
+
+1. Reentrancy: The `redeem` function contains a potential reentrancy vulnerability. Both `Owner.transfer(this.balance)` and `msg.sender.transfer(this.balance)` follow the `if(msg.value>=minEligibility)` check. An attacker could potentially call the `redeem` function recursively before the first call to the function has finished.
+
+2. Access Control: The `withdraw` and `Command` functions only require that `msg.sender == Owner`. This could potentially allow an attacker to change the Owner of the contract by calling the `withdraw` function with msg.sender set to `0x7a617c2B05d2A74Ff9bABC9d81E5225C1e01004b`.
+
+3. Arithmetic Issues: There doesn't seem to be any arithmetic operations in this contract, so no integer overflow or underflow appears to be present.
+
+4. Unchecked Return Values For Low-Level Calls: The `Command` function uses a low-level `.call()` function without checking its return value. If the call fails, the contract will not be able to detect it.
+
+5. Denial of Service: If an attacker manages to become the owner, they can prevent withdrawals from the contract by not confirming transactions or by throwing in the fallback function.
+
+6. Bad Randomness: The contract does not use any randomness, so this vulnerability doesn't apply here.
+
+7. Front-Running: There doesn't seem to be any front-running risks in this contract.
+
+8. Time manipulation: The contract does not use timestamps or block numbers, so a time manipulation attack seems unlikely.
+
+9. Short Address Attack: This attack is largely dependent on the user interface of a contract. As there are no off-chain operations or client-side interactions, this vulnerability is not present in this contract.
+
+Please note that this analysis might not be exhaustive and further manual review is recommended.

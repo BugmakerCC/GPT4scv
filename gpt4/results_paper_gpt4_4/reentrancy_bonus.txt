@@ -1,0 +1,11 @@
+This smart contract is vulnerable to the Reentrancy attack. 
+
+In the function `getFirstWithdrawalBonus(address recipient)`, it first checks if the recipient has claimed the bonus before. If not, it will increase the recipient's reward by 100. Then, it will call the `withdrawReward(recipient)` function to transfer the bonus to the recipient. After the transfer, it will set the `claimedBonus[recipient]` to true which means the recipient has claimed the bonus. 
+
+But the problem is, during the execution of the `withdrawReward(recipient)` function, the state of `claimedBonus[recipient]` is still false. If the recipient is a malicious contract which calls back the `getFirstWithdrawalBonus(address recipient)` function in its fallback function when receiving Ether, it could claim the bonus again and again during one transaction. This is because in the context of the `getFirstWithdrawalBonus(address recipient)` function, the `claimedBonus[recipient]` is set to true only after the `withdrawReward(recipient)` function is finished. 
+
+To fix this problem, you should first change the state before calling an external contract to avoid reentrancy vulnerability. So, you should move the line `claimedBonus[recipient] = true;` before the line `withdrawReward(recipient);`.
+
+I also noticed that the contract does not check for overflows when increasing the rewards, which could potentially lead to an Arithmetic Issue vulnerability. This can be mitigated by using SafeMath library or the built-in overflow checks introduced in Solidity 0.8.0. 
+
+The rest of the vulnerabilities mentioned were not found in this contract.

@@ -1,0 +1,19 @@
+This smart contract has a couple of potential vulnerabilities:
+
+1. Reentrancy: The `sendMessage` function might be vulnerable to reentrancy attacks because it sends ether with `owner.transfer(this.balance)` before updating the state (adding the message to the `messages` array). An attacker might be able to repeatedly call the `sendMessage` function before the state is updated, draining the contract's ether.
+
+2. Access Control: There are several functions with the `onlyOwner` modifier, including `changeOwner` and `execute`. If the owner key is compromised, all these functions are exposed.
+
+3. Unchecked Return Values: The low-level call in `execute` function does not check its return value. If the called contract throws an exception, this will be silently ignored.
+
+4. Arithmetic Issues: Not present in this contract.
+
+5. Denial of Service: The `changeOwner` function might be vulnerable. If the owner changes the ownership to an address that doesn't execute the `acceptOwnership` function, the contract might be locked, as no one can execute the `onlyOwner` functions.
+
+6. Bad Randomness: Not present in this contract.
+
+7. Front-running: Not present in this contract.
+
+8. Time Manipulation: Not present in this contract, although it's worth noting that `now` is used for timestamps, which could be manipulated by miners to a small degree.
+
+9. Short Address Attack: Not present in this contract.

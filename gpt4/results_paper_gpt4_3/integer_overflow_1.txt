@@ -1,0 +1,18 @@
+The given smart contract has an Arithmetic Issue vulnerability, specifically an Integer Overflow. 
+
+In the 'add' function, the 'value' is added to the 'sellerBalance' with no checks in place to verify that the addition does not result in an overflow. In the event that an overflow occurs, the 'sellerBalance' could roll over to a very small number, which would be a major issue if this contract is used to handle a seller's balance.
+
+The commented out 'safe_add' function provides an example of how to safely add the 'value' to the 'sellerBalance' by using a 'require' statement to ensure the addition does not result in an overflow before it is carried out.
+
+To fix the vulnerability, you could uncomment the 'safe_add' function and use it instead of the 'add' function, or add a similar 'require' statement to the 'add' function. 
+
+Here is an example of how you could fix the 'add' function:
+
+```
+function add(uint value) returns (bool){
+     require(value + sellerBalance >= sellerBalance);
+     sellerBalance += value;
+ }
+```
+
+This will throw an exception and revert the transaction if an overflow would occur, thereby preventing the overflow.

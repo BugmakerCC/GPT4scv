@@ -1,0 +1,112 @@
+[INFO] | 2023-08-14 02:54:37 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Analysis started at: 2023-08-14 02:54:37 AM
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Version constraints: ['^0.4.9']
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | solc version: v0.4.9
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Callgraph generation started!
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Callgraph generation finished!
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Value Range Analysis started
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Generating return summary for fallback
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Return summary generated for fallback
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | State variable assignement do not exist
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Processed function fallback
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Generating return summary for TownCrier
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Return summary generated for TownCrier
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Range graph generated
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Processed function TownCrier
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Generating return summary for upgrade
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Return summary generated for upgrade
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Range graph generated
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Processed function upgrade
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Generating return summary for reset
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Return summary generated for reset
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Range graph generated
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Processed function reset
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Generating return summary for suspend
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Return summary generated for suspend
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Range graph generated
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Processed function suspend
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Generating return summary for restart
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Return summary generated for restart
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Range graph generated
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Processed function restart
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Generating return summary for withdraw
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Return summary generated for withdraw
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | State variable assignement do not exist
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Processed function withdraw
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Generating return summary for request
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Return summary generated for request
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Range graph generated
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Processed function request
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Generating return summary for deliver
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Return summary generated for deliver
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Range graph generated
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Processed function deliver
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Generating return summary for cancel
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Return summary generated for cancel
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Range graph generated
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Processed function cancel
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Generating return summary for slitherConstructorVariables
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Return summary generated for slitherConstructorVariables
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Range graph generated
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Processed function slitherConstructorVariables
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Value Range Analysis took 0.008060 seconds
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Value Range Analysis finished
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Dependency detection started!
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | DAO dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions request and request
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | DAO dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions request and request
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | DAO dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions request and cancel
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | DAO dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions request and cancel
+[INFO] | 2023-08-14 02:54:38 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | DAO dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions deliver and request
+[INFO] | 2023-08-14 02:54:39 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | DAO dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions deliver and cancel
+[INFO] | 2023-08-14 02:54:39 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | DAO dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions cancel and request
+[INFO] | 2023-08-14 02:54:39 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | DAO dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions cancel and cancel
+[INFO] | 2023-08-14 02:54:39 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions withdraw and request
+[INFO] | 2023-08-14 02:54:39 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions withdraw and deliver
+[INFO] | 2023-08-14 02:54:39 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions request and upgrade
+[INFO] | 2023-08-14 02:54:39 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions request and upgrade
+[INFO] | 2023-08-14 02:54:39 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions request and reset
+[INFO] | 2023-08-14 02:54:39 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions request and suspend
+[INFO] | 2023-08-14 02:54:39 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions request and suspend
+[INFO] | 2023-08-14 02:54:39 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions request and restart
+[INFO] | 2023-08-14 02:54:39 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions request and restart
+[INFO] | 2023-08-14 02:54:39 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions request and request
+[INFO] | 2023-08-14 02:54:40 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions request and request
+[INFO] | 2023-08-14 02:54:40 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions request and deliver
+[INFO] | 2023-08-14 02:54:40 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions request and deliver
+[INFO] | 2023-08-14 02:54:40 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions request and cancel
+[INFO] | 2023-08-14 02:54:40 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions request and cancel
+[INFO] | 2023-08-14 02:54:40 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions deliver and reset
+[INFO] | 2023-08-14 02:54:40 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions deliver and reset
+[INFO] | 2023-08-14 02:54:41 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions deliver and request
+[INFO] | 2023-08-14 02:54:41 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions deliver and request
+[INFO] | 2023-08-14 02:54:41 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions deliver and request
+[INFO] | 2023-08-14 02:54:42 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions deliver and request
+[INFO] | 2023-08-14 02:54:42 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions deliver and deliver
+[INFO] | 2023-08-14 02:54:42 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions deliver and deliver
+[INFO] | 2023-08-14 02:54:43 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions deliver and deliver
+[INFO] | 2023-08-14 02:54:43 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions deliver and deliver
+[INFO] | 2023-08-14 02:54:43 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions deliver and cancel
+[INFO] | 2023-08-14 02:54:43 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions deliver and cancel
+[INFO] | 2023-08-14 02:54:44 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions deliver and cancel
+[INFO] | 2023-08-14 02:54:44 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions deliver and cancel
+[INFO] | 2023-08-14 02:54:44 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions cancel and upgrade
+[INFO] | 2023-08-14 02:54:44 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions cancel and reset
+[INFO] | 2023-08-14 02:54:44 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions cancel and suspend
+[INFO] | 2023-08-14 02:54:44 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions cancel and restart
+[INFO] | 2023-08-14 02:54:44 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions cancel and request
+[INFO] | 2023-08-14 02:54:45 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions cancel and deliver
+[INFO] | 2023-08-14 02:54:45 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | TOD dependency detected in file 0x89c1b3807d4c67df034fffb62f3509561218d30b.sol in contract TownCrier in by composing functions cancel and cancel
+[INFO] | 2023-08-14 02:54:45 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Dependency detection finished!
+[INFO] | 2023-08-14 02:54:45 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Static Analysis took 7.709985 seconds
+[INFO] | 2023-08-14 02:54:45 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Dependency exists
+[INFO] | 2023-08-14 02:54:45 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Invoking symbolic executor!
+[INFO] | 2023-08-14 02:54:58 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Symbolic execution took 12.698540 seconds
+[INFO] | 2023-08-14 02:54:58 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Symbolic execution finished!
+[INFO] | 2023-08-14 02:54:58 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Analysis finished!
+[INFO] | 2023-08-14 02:54:58 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Analysis took 20.409009 seconds
+[INFO] | 2023-08-14 02:54:58 AM | analyzer.0x89c1b3807d4c67df034fffb62f3509561218d30b | Analysis finished at: 2023-08-14 02:54:58 AM

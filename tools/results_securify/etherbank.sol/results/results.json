@@ -1,0 +1,71 @@
+{
+  "/sb/etherbank.sol:EtherBank": {
+    "results": {
+      "TODReceiver": {
+        "violations": [],
+        "warnings": [
+          20
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnhandledException": {
+        "violations": [],
+        "warnings": [
+          20
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODTransfer": {
+        "violations": [],
+        "warnings": [
+          20
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "DAO": {
+        "violations": [
+          20
+        ],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODAmount": {
+        "violations": [],
+        "warnings": [],
+        "safe": [
+          20
+        ],
+        "conflicts": []
+      },
+      "MissingInputValidation": {
+        "violations": [
+          9
+        ],
+        "warnings": [
+          17,
+          13
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "DAOConstantGas": {
+        "violations": [],
+        "warnings": [],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnrestrictedEtherFlow": {
+        "violations": [],
+        "warnings": [],
+        "safe": [
+          20
+        ],
+        "conflicts": []
+      }
+    }
+  }
+}

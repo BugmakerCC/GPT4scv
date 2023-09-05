@@ -1,0 +1,15 @@
+The following vulnerabilities are detected in the provided smart contract:
+
+1. Reentrancy: This vulnerability is present in the WithdrawToHolder function. The balance of the holder (_addr) is decreased after the external call (_addr.call.value(_wei)). An attacker can reenter the function before the balance is decreased, draining the contract.
+
+2. Access Control: The onlyOwner modifier has a logic error. It should revert the transaction if the caller is not the owner, but instead, it does nothing. The code should be if(owner != msg.sender) revert(); instead of if(owner == msg.sender)_;.
+
+3. Arithmetic Issues: There are no checks for overflows or underflows in the arithmetic operations. This can lead to incorrect balances in the Holders mapping.
+
+4. Unchecked Return Values For Low Level Calls: The low-level calls (like _addr.call.value(_wei) and token.call(bytes4(sha3("transfer(address,uint256)")),to,amount)) are not checked for their return values. If these calls fail, the contract will not be aware of it.
+
+5. Denial of Service: If an attacker becomes a holder with a contract that throws an exception in its fallback function, the WithdrawToHolder function will become stuck, because it cannot transfer Ether to the attacker's contract. This can block all other holders from withdrawing their money.
+
+6. Bad Randomness, Front-Running, Time manipulation and Short Address Attack: No evidence of these vulnerabilities is found in the provided contract.
+
+Remember, it's especially important to handle errors correctly in smart contracts, because once deployed, the code cannot be modified. Always check the return value of external calls, and be mindful of the order of operations to prevent reentrancy attacks.

@@ -1,0 +1,9 @@
+The smart contract has a reentrancy vulnerability, one of the most severe vulnerabilities in smart contracts. Specifically, in the `CashOut` function, the balance of the sender is only deducted after the `call.value` function. This allows for a recursive call, where the same function can be called again before the first call has finished. 
+
+An attacker could exploit this by starting a call to `CashOut`, then when `msg.sender.call.value(_am)()` is called, the attacker's contract can again call `CashOut` before `balances[msg.sender]-=_am;` is executed. This allows an attacker to drain more ether from the contract than they should be able to.
+
+To fix this issue, the order of operations should be switched. The balance should be deducted first, and then the funds should be transferred. This way, if a recursive call is attempted, it will fail because the balance has already been deducted.
+
+Another potential issue is related to Access Control. The `AddMessage` function in the `Log` contract is public, so anyone can add a message to the log. Depending on the application, this could be undesirable and could perhaps be mitigated by only allowing the `PrivateBank` contract to add messages.
+
+Lastly, it's worth noting that using `call.value()` is generally considered unsafe because it forwards all remaining gas and opens up the potential for reentrancy attacks. It's recommended to use `send()` or `transfer()` instead, which only forward a limited amount of gas.

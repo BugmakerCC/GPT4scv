@@ -1,0 +1,17 @@
+This smart contract seems to have the following vulnerabilities:
+
+1. Reentrancy: In the "Collect" function, the contract sends Ether with "msg.sender.call.value(_am)()" before it reduces the balance of the sender. This allows for a reentrancy attack, where the external contract could call "Collect" again before the first call has finished, causing it to withdraw more Ether than it should be able to.
+
+2. Access Control: The functions "SetMinSum", "SetLogFile", and "Initialized" can be called by anyone since they lack a proper access control mechanism, such as the usage of the 'onlyOwner' modifier.
+
+3. Unchecked Low Level Calls: The low level call "msg.sender.call.value(_am)()" is unchecked. Therefore, if it fails, the contract will not be aware and will continue execution.
+
+4. Arithmetic Issues: The contract does not check for potential overflows or underflows in the "Deposit" and "Collect" functions. This could lead to unexpected balances.
+
+5. Denial of Service: If the address of the "LogFile" contract is set to an address that throws an exception, it would stop the execution of the "Deposit" and "Collect" functions, leading to a Denial of Service.
+
+6. Front-Running: As transactions are public, an attacker could see a transaction calling the "Collect" function and then send one with a higher gas price, allowing them to execute before the original transaction.
+
+7. Time Manipulation: The 'now' keyword is used in the 'AddMessage' function of the 'LogFile' contract. This value can be manipulated by miners, making it unreliable.
+
+The contract doesn't seem to be vulnerable to Bad Randomness and Short Address Attack. However, these vulnerabilities can be context-specific and may not be applicable in all cases.

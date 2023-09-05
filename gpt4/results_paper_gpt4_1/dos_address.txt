@@ -1,0 +1,14 @@
+The smart contract provided appears to contain the Denial of Service vulnerability.
+
+Here's why:
+
+The function `emptyCreditors()` checks if the length of `creditorAddresses` array is more than 1500. If it is, the function tries to create a new array with length 0. This operation could potentially consume a lot of gas if the length of `creditorAddresses` array is too large, causing the transaction to hit the gas limit and fail.
+
+The `addCreditors()` function allows anyone to add 350 addresses to the `creditorAddresses` array each time it's called. There is no access control on this function, so an attacker can repeatedly call this function to bloat the size of `creditorAddresses`. This can potentially make the `emptyCreditors()` function unable to execute due to gas limit, effectively causing a Denial of Service.
+
+In addition, this contract also has an Access Control vulnerability. The `addCreditors()` function is public, meaning it can be called by anyone. This could be leveraged by an attacker to fill up the `creditorAddresses` array, potentially causing DoS as explained above.
+
+To fix these vulnerabilities:
+
+1. Implement access control mechanisms to limit who can add to the `creditorAddresses` array.
+2. Instead of emptying the `creditorAddresses` array all at once, consider removing addresses one by one in separate transactions to avoid hitting the gas limit. This can be achieved by using a `pop()` function that removes the last element of an array.

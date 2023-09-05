@@ -1,0 +1,13 @@
+This contract has several vulnerabilities:
+
+1. **Reentrancy**: In the `CashOut` function, the contract sends ETH to an address before it decreases the sender's balance. If the recipient of the ETH is a contract, it could call `CashOut` again before the balance is decreased, allowing it to withdraw more ETH than it should be able to.
+
+2. **Unchecked return values for low level calls**: The `CashOut` function uses a low level `.call.value()` function to send the ETH, which can potentially fail silently. If this call fails, the balance of the user will not be decreased but the user won't receive their ETH, effectively locking the funds in the contract.
+
+3. **Access Control**: There is no access control on the `AddMessage` function in the `Log` contract. This means that anyone can call this function and add arbitrary messages to the log.
+
+4. **Denial of Service**: If a contract is the recipient of the `CashOut` function and its fallback function uses more than the gas stipend, it will always fail and the user will not be able to withdraw their ETH.
+
+5. **Timestamp Dependence**: The `AddMessage` function in the `Log` contract uses the `now` keyword, which can be manipulated by miners. It's not a security issue in this case, but it's something to be aware of.
+
+There are no obvious vulnerabilities related to Arithmetic Issues, Bad Randomness, Front-Running or Short Address Attack.

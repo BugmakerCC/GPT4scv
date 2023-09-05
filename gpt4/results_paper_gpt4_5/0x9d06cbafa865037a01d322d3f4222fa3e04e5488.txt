@@ -1,0 +1,19 @@
+The smart contract has following vulnerabilities:
+
+1. Reentrancy: The `tokens_buy()` function calls an external contract (`c.call`) and then continues execution. If the external contract calls back into `tokens_buy()`, it could potentially withdraw more funds than expected. This could be mitigated by implementing a mutex or by employing the Checks-Effects-Interactions pattern, where all checks and changes to the state are done before calls to external contracts.
+
+2. Unchecked Return Values for Low Level Calls: The contract uses `send` in `tokens_buy()` and `withdraw()` functions, but does not check its return value. `send` only provides 2300 gas which may not be enough for the receiving contract to perform its operations. If `send` fails, the contract continues to execute without knowing that the send operation failed. This could be mitigated by replacing `send` with `transfer` which throws on failure, ensuring that the contract does not continue to execute in an inconsistent state.
+
+3. Access Control: The contract does not adequately control access to its functions. The `onlyOwner` modifier is used to restrict access to certain contract functions, but it throws an exception if the sender is not the owner. This means that if the owner's private key is compromised, the attacker can call these functions with no restrictions. This could be mitigated by implementing a multisignature scheme where more than one signature is required to execute these functions.
+
+4. Arithmetic Issues: The contract does not check for overflows or underflows when performing arithmetic operations. This could be mitigated by using a safe math library that checks for these issues.
+
+5. Denial of Service: If the `owner2` address is a contract that fails on receiving Ether (for example, it throws an exception in its fallback function), then the `tokens_buy()` function will be blocked because the `send` function will fail.
+
+6. Bad randomness: The contract does not include any randomness, but if it did, it would be important to ensure that the randomness is secure and cannot be manipulated by miners or other parties.
+
+7. Front-Running: Not applicable as the contract does not deal with order-dependency.
+
+8. Time manipulation: Not applicable as the contract does not rely on timestamps.
+
+9. Short Address Attack: Not applicable as the contract does not take addresses as inputs from users.

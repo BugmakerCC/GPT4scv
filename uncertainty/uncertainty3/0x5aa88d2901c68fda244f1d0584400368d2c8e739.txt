@@ -1,0 +1,21 @@
+Upon inspection of the given smart contract, here are the potential vulnerabilities that can be found:
+
+1. Reentrancy: The `multiplicate` function could potentially be exploited for a reentrancy attack. The function sends ether with `adr.transfer(this.balance+msg.value);`. If the calling contract is malicious, it could force the `multiplicate` function to re-enter before the original invocation is finished. This could potentially drain the contract's balance.
+
+2. Access Control: The `withdraw` and `Command` functions are only allowed to be called by the contract `Owner`. However, if the `Owner` address is compromised, then the attacker could potentially drain all the funds.
+
+3. Arithmetic Issues: No arithmetic operations seem to be at risk of integer overflow or underflow.
+
+4. Unchecked Return Value for Low-Level Calls: The `adr.call.value(msg.value)(data);` in the `Command` function is a low-level call whose return value is not checked. If this call fails, the contract will not be aware.
+
+5. Denial of Service: The `multiplicate` function could potentially become a vector for a denial of service (DoS) attack if a malicious contract becomes the receiver of the transfer. The malicious contract could refuse the transaction and hold the function indefinitely.
+
+6. Bad Randomness: The contract does not use any randomness.
+
+7. Front-Running: The contract does not seem to have vulnerabilities related to front-running.
+
+8. Time Manipulation: The contract does not use timestamp or block number for any crucial functionality, so it's not vulnerable to time manipulation.
+
+9. Short Address Attack: The contract does not seem to be vulnerable to a short address attack since it does not handle raw addresses. 
+
+Please note this is a high-level analysis and further detailed code review and testing might reveal other potential vulnerabilities.

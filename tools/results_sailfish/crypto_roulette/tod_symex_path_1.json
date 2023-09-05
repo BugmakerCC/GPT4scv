@@ -1,0 +1,437 @@
+{
+    "file": "crypto_roulette.sol",
+    "global_structs": [
+        {
+            "name": "Game",
+            "fields": {
+                "player": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0xc"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0xd"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0xe"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "lastPlayed",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "gamesPlayed",
+            "type": [
+                "array",
+                "Game"
+            ],
+            "init": []
+        },
+        {
+            "name": "ownerAddr",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x5"
+            ]
+        },
+        {
+            "name": "secretNumber",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x4"
+            ]
+        },
+        {
+            "name": "betPrice",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x3"
+            ]
+        },
+        {
+            "name": "CryptoRoulette",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x3",
+            "instructions": [
+                "betPrice = 100000000000000000"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x4",
+            "instructions": [
+                "secretNumber = U"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x5",
+            "instructions": [
+                "ownerAddr = msg_sender"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xc",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xd",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xe",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "secretNumber",
+            "addrs": [
+                "0x2",
+                "0x7"
+            ]
+        },
+        {
+            "name": "gamesPlayed",
+            "addrs": [
+                "0x2",
+                "0x9"
+            ]
+        },
+        {
+            "name": "lastPlayed",
+            "addrs": [
+                "0x2",
+                "0xb"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7",
+            "instructions": [
+                "CLR_0 = msg.value",
+                "RTMP_26 = CLR_0 >= betPrice",
+                "CONDITION RTMP_26 0x6 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6",
+            "instructions": [
+                "secretNumber = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x9",
+            "instructions": [
+                "CLR_1 = msg.value",
+                "RTMP_27 = CLR_1 >= betPrice",
+                "CONDITION RTMP_27 0x8 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x8",
+            "instructions": [
+                "gamesPlayed = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb",
+            "instructions": [
+                "CLR_2 = msg.value",
+                "RTMP_28 = CLR_2 >= betPrice",
+                "CONDITION RTMP_28 0xa 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa",
+            "instructions": [
+                "lastPlayed = now"
+            ]
+        }
+    ],
+    "root_addr": "0xf",
+    "dest_addrs": [
+        "0x12"
+    ],
+    "normal_blocks": [
+        {
+            "scope": "play",
+            "addr": "0xf",
+            "instructions": [
+                "NOP",
+                "game = NEW_VAL Game",
+                "number = NEW_VAL integer",
+                "JUMP 0x10"
+            ]
+        },
+        {
+            "scope": "play",
+            "addr": "0x10",
+            "instructions": [
+                "CLR_3 = msg.value",
+                "TMP_7 = CLR_3 >= betPrice",
+                "TMP_8 = number <= 10",
+                "TMP_9 = TMP_7 && TMP_8",
+                "CONDITION TMP_9 0x10_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "play",
+            "addr": "0x10_r0",
+            "instructions": [
+                "JUMP 0x11"
+            ]
+        },
+        {
+            "scope": "play",
+            "addr": "0x11",
+            "instructions": [
+                "NOP",
+                "CLR_4 = game.player",
+                "REF_0 = CLR_4",
+                "CLR_5 = msg.sender",
+                "game.player = CLR_5",
+                "CLR_6 = game.number",
+                "REF_1 = CLR_6",
+                "game.number = number",
+                "NOP",
+                "TMP_11 = LENGTH gamesPlayed",
+                "TMP_12 = number == secretNumber",
+                "CONDITION TMP_12 0x12 0x13"
+            ]
+        },
+        {
+            "scope": "play",
+            "addr": "0x12",
+            "instructions": [
+                "REF_4 = BALANCE this",
+                "CLR_7 = this.balance",
+                "WRP_0 = CLR_7 - REF_4",
+                "this.balance = WRP_0"
+            ]
+        },
+        {
+            "scope": "play",
+            "addr": "0x13",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "RequireTrap",
+            "addr": "0xRequireTrap",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

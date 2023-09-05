@@ -1,0 +1,21 @@
+The smart contract has some vulnerabilities.
+
+1. Reentrancy: Not applicable here as there are no external contract calls that could make the contract susceptible to reentrancy.
+
+2. Access Control: There is an access control vulnerability. The function `transfer` can only be called by the hardcoded address `0x9797055B68C5DadDE6b3c7d5D80C9CFE2eecE6c9`. 
+
+3. Arithmetic Issues: There is potential for an arithmetic issue on the line `v[i]*1000000000000000000`. If `v[i]` is very large, it could cause an integer overflow.
+
+4. Unchecked Return Values For Low Level Calls: There is an unchecked return value from the low-level `.call` at `caddress.call(id,from,_tos[i],v[i]*1000000000000000000);`. This can potentially fail silently.
+
+5. Denial of Service: Not applicable in this contract.
+
+6. Bad Randomness: Not applicable as there is no use of randomness in the contract.
+
+7. Front-Running: Not applicable in this contract.
+
+8. Time manipulation: Not applicable as there is no dependency on timestamps in the contract.
+
+9. Short Address Attack: Not applicable in this contract.
+
+It's worth noting that the address `caddress` is hardcoded and there isn't a function to change it. If the contract at that address becomes compromised or has a bug, this contract could also be affected.

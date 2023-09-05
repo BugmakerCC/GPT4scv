@@ -1,0 +1,17 @@
+1. Reentrancy: There is no reentrancy vulnerability in this contract. The contract does not make any external calls before its state is finalized.
+
+2. Access Control: There is an access control vulnerability in the 'inheritToNextGeneration' function. Only the 'corruptElite' should be able to change the 'corruptElite' address. However, there is no modifier to ensure this, and any address can call this function and change the 'corruptElite'.
+
+3. Arithmetic Issues: There is potential for integer overflow or underflow in the following lines: 'amount * 110 / 100', 'amount * 5/100', and 'buddies[msg.sender] += amount * 110 / 100'. There should be checks to prevent this.
+
+4. Unchecked Return Values For Low Level Calls: There are several low level '.send' calls in this contract. The return values of these calls are not checked, which could lead to unexpected behavior. 
+
+5. Denial of Service: The 'lendGovernmentMoney' function includes a loop that could potentially lead to a denial of service attack if the array 'creditorAmounts' becomes too large.
+
+6. Bad Randomness: This contract does not rely on randomness, so this vulnerability is not present.
+
+7. Front-Running: This contract is vulnerable to front-running. Transactions are public on the blockchain before they are mined, so a miner could see a transaction in the 'lendGovernmentMoney' function and front-run it.
+
+8. Time manipulation: This contract uses 'block.timestamp' for timing, which can be manipulated by miners to some degree.
+
+9. Short Address Attack: The contract does not seem to be vulnerable to the short address attack, as it does not directly read from msg.data. However, it should be noted that this attack is more relevant to the user interface level rather than the contract level.

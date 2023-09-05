@@ -1,0 +1,11 @@
+This contract has a Reentrancy vulnerability. 
+
+The Reentrancy vulnerability happens when a function makes an external call to another untrusted contract before it resolves any effects. In this case, the `withdrawBalance` function makes an external call with `msg.sender.call.value(amountToWithdraw)("")` before it sets `userBalances[msg.sender]` to 0.
+
+An attacker can create a contract that, when called by `msg.sender.call.value(amountToWithdraw)("")`, calls back `withdrawBalance()`. Since `userBalances[msg.sender]` has not been set to 0 yet, the attacker can repeatedly call `withdrawBalance()` to drain the contract of Ether.
+
+To fix this, you should use the Checks-Effects-Interactions pattern. First, perform any checks. Then, make any changes to your contract's state. Finally, interact with other contracts. Here, you should set `userBalances[msg.sender]` to 0 before making the external call.
+
+Additionally, this contract also has an Access Control vulnerability. The `transfer` function does not have any modifiers to check if the function caller is allowed to perform the operation. Anybody can call this function and transfer the amount from any address to any other address as long as the condition `userBalances[msg.sender] >= amount` is satisfied. This can lead to unauthorized access and potential loss of funds. 
+
+To fix the Access Control issue, you can add a function modifier to check if the `msg.sender` is authorized to call the function. You can also add a function to set the owner of the contract and use a modifier to limit access to the owner.

@@ -1,0 +1,9 @@
+The given smart contract has a Reentrancy vulnerability which is one of the most common security issues. 
+
+In the `withdrawBalance` function, the code calls `msg.sender.call.value(amountToWithdraw)("")` before it sets `userBalances[msg.sender]` to 0. This allows the caller to re-enter the `withdrawBalance` function before `userBalances[msg.sender]` is set to 0, leading to the reentrancy vulnerability. 
+
+This can be exploited by an attacker to drain the contract of its Ether. The attacker initiates the `withdrawBalance` function and then, during the external call, calls `withdrawBalance` again. Since `userBalances[msg.sender]` has not been set to 0 yet, the attacker can withdraw more Ether than they should be able to. 
+
+One common mitigation strategy for reentrancy is to use the Checks-Effects-Interactions pattern. This pattern moves any external calls (interactions) to the end of the function, after all state changes (effects) and conditions (checks). In this case, `userBalances[msg.sender] = 0;` should be moved before `(bool success, ) = msg.sender.call.value(amountToWithdraw)("");`.
+
+There don't appear to be issues related to Access Control, Arithmetic Issues, Unchecked Return Values For Low Level Calls, Denial of Service, Bad Randomness, Front-Running, Time manipulation, or Short Address Attack in this contract.

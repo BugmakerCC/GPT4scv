@@ -1,0 +1,27 @@
+The given smart contract is susceptible to an Integer Overflow vulnerability. 
+
+In the `init` function, the `map` mapping is updated by subtracting the value `v` from the existing value at key `k`. However, if the subtraction operation results in an overflow, the result will wrap around and lead to an unintended value being stored in the mapping.
+
+To fix this vulnerability, you can add a check to ensure that the subtraction operation does not result in an overflow. One way to do this is by using the SafeMath library, which provides safe arithmetic operations.
+
+Here's an updated version of the smart contract using SafeMath:
+
+```solidity
+pragma solidity ^0.4.11;
+
+import "github.com/OpenZeppelin/openzeppelin-solidity/contracts/math/SafeMath.sol";
+
+contract IntegerOverflowMappingSym1 {
+    using SafeMath for uint256;
+    
+    mapping(uint256 => uint256) map;
+
+    function init(uint256 k, uint256 v) public {
+        require(v <= map[k]); // Prevent underflow
+        
+        map[k] = map[k].sub(v);
+    }
+}
+```
+
+In the updated version, the `SafeMath` library is imported, and the `sub` function is used to subtract `v` from `map[k]`. Additionally, a `require` statement is added to ensure that `v` is not greater than `map[k]`, preventing an underflow.

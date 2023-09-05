@@ -1,0 +1,10 @@
+This smart contract contains the Arithmetic Issues vulnerability, specifically an Integer Underflow. In the run function, there's no check to prevent `count` from underflowing when `input` is larger than `count`. The `count -= input;` operation could result in a very large number if `input` is larger than `count`, due to the nature of unsigned integer arithmetic in Solidity.
+
+To fix this, you should add a check to ensure that `input` is less than or equal to `count` before subtracting:
+
+```solidity
+require(input <= count, "Input is larger than count");
+count -= input;
+```
+
+This contract does not appear to contain any of the other listed vulnerabilities. However, it's worth noting that this is a very simple contract, and real-world contracts can often contain more complex interactions and potential vulnerabilities.

@@ -1,0 +1,19 @@
+1. Reentrancy: The 'CashOut' function is vulnerable to a reentrancy attack because it makes an external call to the sender before it updates the state (balances[msg.sender] -= _am). An attacker could create a fallback function in their contract to repeatedly call the 'CashOut' function before the state has been updated, effectively draining the contract of Ether.
+
+2. Access Control: There doesn't seem to be any access control issues in this contract, as there are no functions or variables that should be restricted to certain addresses.
+
+3. Arithmetic Issues: This contract is not vulnerable to integer overflow or underflow because it does not perform any arithmetic operations that are capable of producing these issues.
+
+4. Unchecked Return Values For Low Level Calls: The 'CashOut' function uses a low-level call (msg.sender.call.value(_am)()) without checking its return value. If the call fails for any reason, the contract will not be notified and continue execution.
+
+5. Denial of Service: The contract uses a loop in the 'AddMessage' function, which could potentially be exploited to cause a denial of service attack by making the gas cost of transactions extremely high.
+
+6. Bad Randomness: There doesn't seem to be any randomness in this contract, so it's not vulnerable to bad randomness.
+
+7. Front-Running: There are no transaction ordering dependencies in this contract, so it's not vulnerable to front-running.
+
+8. Time manipulation: The 'AddMessage' function uses the 'now' keyword (alias for block.timestamp), making it vulnerable to minor time manipulation by miners.
+
+9. Short Address Attack: This contract does not seem to be vulnerable to a short address attack because it does not take address arguments from external callers and does not perform raw token transfers.
+
+Please note that this is a basic analysis and a more thorough audit might reveal other subtle bugs or vulnerabilities.

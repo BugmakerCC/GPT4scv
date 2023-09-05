@@ -1,0 +1,15 @@
+The smart contract code you've provided has several potential vulnerabilities:
+
+1. Reentrancy: The method `WithdrawToHolder` is vulnerable to reentrancy attacks because it calls to an external contract before updating the internal state (in this case, the balance of `_addr`). An attacker could potentially drain the contract by causing the fallback function to call `WithdrawToHolder` again before `Holders[_addr]` is updated.
+
+2. Access Control: In the `Ownable` contract, the `onlyOwner` modifier doesn't throw an exception or revert the transaction if `msg.sender` is not the owner. Instead, it just ends the execution of the function. This could lead to unexpected behavior in functions that use this modifier. 
+
+3. Unchecked Return Values For Low Level Calls: The low level `.call.value()` and `.call()` methods used in `WithdrawToHolder` and `WithdrawToken` do not check the return value. This is risky because if the call fails for any reason (for example, the call stack depth limit is reached, or the receiver runs out of gas), the contract will silently fail.
+
+4. Arithmetic Issues: Although there are no evident arithmetic issues, it's good practice to use the SafeMath library for performing arithmetic operations to prevent overflows and underflows.
+
+5. Denial of Service: If an attacker's contract becomes the owner of the contract, it could refuse to confirm the new owner and essentially halt any functionality that requires owner permissions.
+
+6. Bad Randomness, Front-Running, Time manipulation, Short Address Attack: These vulnerabilities are not applicable to this contract as it doesn't use randomness, isn't dependent on transaction ordering or timestamps, and doesn't deal with user input for address lengths. 
+
+To mitigate these vulnerabilities, implement checks for call returns, use reentrancy guards (like locks), and use the SafeMath library. Also, the `onlyOwner` modifier should throw an exception if `msg.sender` is not the owner.

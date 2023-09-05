@@ -1,0 +1,23 @@
+This smart contract suffers from an Arithmetic Issue, specifically, it is vulnerable to an integer overflow.
+
+The "add" function simply adds the deposit argument to the balance. However, there are no checks in place to ensure that the resulting balance is not more than the maximum value that can be stored in a uint256 type variable. If a deposit is made that causes the balance to exceed this maximum value, the balance will overflow and will be much smaller than expected.
+
+This could be exploited by an attacker to deposit a large amount of tokens, causing the balance to overflow and become very small, effectively stealing all the tokens in the contract.
+
+To fix this, the contract should use SafeMath for all arithmetic operations. SafeMath is a library for secure math operations that throws an error on integer overflow or underflow. Here is how to use it:
+
+```
+pragma solidity 0.4.25;
+
+import "./SafeMath.sol";
+
+contract Overflow_Add {
+    using SafeMath for uint;
+    uint public balance = 1;
+
+    function add(uint256 deposit) public {
+        balance = balance.add(deposit);
+    }
+}
+```
+In this updated contract, if a deposit is made that would cause the balance to overflow, the add function will throw an error and the state of the contract will be reverted to what it was before the function call.

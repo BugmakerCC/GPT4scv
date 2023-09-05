@@ -1,0 +1,31 @@
+The given smart contract is vulnerable to the Reentrancy attack. Here's the explanation:
+
+1. Reentrancy: The contract allows users to withdraw their balance. The `withdrawBalance` function transfers the balance to the caller's address using the `msg.sender.call.value(amountToWithdraw)("")` line. However, this line allows the caller to call back into the contract before the state is updated, enabling reentrancy attacks.
+
+An attacker can create a malicious contract and call the `withdrawBalance` function repeatedly before the `userBalances[msg.sender] = 0` line is executed, draining the contract's balance.
+
+To fix this vulnerability, you should update the user's balance before making any external calls. Here's the modified code:
+
+```solidity
+contract Reentrancy_secure {
+    mapping (address => uint) private userBalances;
+    mapping (address => bool) private locked;
+
+    function withdrawBalance() public {
+        require(!locked[msg.sender]); // Check if the sender is locked
+
+        locked[msg.sender] = true; // Lock the sender to prevent reentrancy
+
+        uint amountToWithdraw = userBalances[msg.sender];
+        
+        userBalances[msg.sender] = 0; // Update the user's balance before making any external calls
+        
+        (bool success, ) = msg.sender.call.value(amountToWithdraw)(""); // External call is made after updating the balance
+        require(success);
+
+        locked[msg.sender] = false; // Unlock the sender after the external call
+    }
+}
+```
+
+In this modified code, a `locked` mapping is introduced to prevent reentrancy. The sender's address is locked before making any external calls and unlocked afterward.

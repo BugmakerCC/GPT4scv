@@ -1,0 +1,15 @@
+Looking at your provided smart contract, it seems to have the following vulnerabilities:
+
+1. Reentrancy: The `CashOut` function is vulnerable to a reentrancy attack. The contract updates the balance of the msg.sender only after the external call to msg.sender. This allows the recipient to call `CashOut` recursively before the balance is updated.
+
+2. Denial of Service: The `CashOut` function uses a low level `call.value()` method. This can lead to a denial of service attack if the recipient contract falls, hence making the `msg.sender` unable to withdraw their funds.
+
+3. Unchecked Return Values For Low Level Calls: The return value of `msg.sender.call.value(_am)()` is not checked in the `CashOut` function. If the call fails for some reason, the contract will continue execution without any error.
+
+4. Access Control: The function `AddMessage` in the `Log` contract is public and doesn't have any restrictions on who can call it. This could potentially lead to unauthorized access.
+
+5. Arithmetic Issues: There are no checks for overflows or underflows in the `Deposit` function when adding the deposited amount to the sender's balance. This could lead to potential arithmetic issues.
+
+6. Front-Running: Also, potential front-running attacks could happen as external users can see transactions and their details before they are mined.
+
+The contract does not appear to have issues with bad randomness, time manipulation, and short address attack. However, it is recommended to use tools like Mythril, Oyente, or Slither for a more comprehensive and automated vulnerability check.

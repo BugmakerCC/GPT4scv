@@ -1,0 +1,21 @@
+The smart contract appears to be fairly robust, but there are several potential vulnerabilities:
+
+1. Arithmetic issues: The contract uses SafeMath for all its arithmetic operations which should prevent any overflows or underflows.
+
+2. Reentrancy: There does not appear to be any reentrancy vulnerabilities as all state changes occur before external calls.
+
+3. Access Control: There are several functions that require the caller to be the owner, but the contract does not have a function for changing the owner. This could be problematic if the owner's private key is compromised or lost.
+
+4. Unchecked Return Values: The contract does not check the return value of the `send` or `transfer` function. This could be a potential vulnerability as `send` and `transfer` will return false if the call runs out of gas or if the recipient address is a contract that throws an exception.
+
+5. DoS: The `finalize` function transfers the balance of the contract to the `owner`. If the `owner` address is a contract that throws an exception, it could potentially lock the funds in the contract.
+
+6. Bad Randomness: The contract does not use any random numbers, so this vulnerability does not apply.
+
+7. Front-Running: The contract does not appear to be vulnerable to front-running. 
+
+8. Time manipulation: The contract uses `block.number` for timing, which could potentially be manipulated by miners.
+
+9. Short Address Attack: The contract does not appear to be vulnerable to short address attacks.
+
+Please note that this is a high-level overview and a more thorough audit would be needed to ensure the contract is secure.

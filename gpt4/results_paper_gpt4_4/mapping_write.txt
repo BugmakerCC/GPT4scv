@@ -1,0 +1,23 @@
+This smart contract has the following vulnerabilities:
+
+1. Access Control: Anyone can call the 'set' function of the contract and manipulate the 'map' array. Although the 'withdraw' function has a check for 'owner', the 'owner' of the contract is not set in the constructor, which means it defaults to '0x0'. Therefore, only an address of '0x0' could call the 'withdraw' function which is unlikely to be intended behavior.
+
+2. Arithmetic Issues: There is a potential for integer overflow in the 'set' function when increasing the 'map.length'. If 'key' is a very large number, then 'key + 1' could result in an integer overflow, setting 'map.length' to zero and potentially leading to unexpected behavior.
+
+3. Unchecked Return Values For Low Level Calls: The 'withdraw' function uses 'transfer', a low-level call, without checking its return value. While 'transfer' throws an exception on failure in current versions of Solidity, future changes could potentially alter this behavior.
+
+4. Denial of Service: If the contract's balance is depleted by another way (other calls not shown in the contract), the 'withdraw' function could potentially fail due to a lack of gas, locking the funds.
+
+5. Time manipulation and Front-running aren't applicable here as the contract doesn't rely on time or transaction ordering.
+
+6. Bad randomness and Short address attack: These aren't applicable as the contract does not make use of randomness or deal with address lengths.
+
+7. There is no reentrancy issue in this contract. 
+
+Recommendations for fixing the vulnerabilities:
+
+1. Limit access to sensitive functions by implementing a modifier that checks if the message sender is the owner.
+2. Use SafeMath library functions to prevent integer overflows and underflows.
+3. Always check the return value of 'transfer' and handle any potential failure.
+4. Ensure the contract's balance cannot be depleted by other means or consider adding a gas limit to the 'withdraw' function.
+5. Set the 'owner' in the constructor to the address deploying the contract.

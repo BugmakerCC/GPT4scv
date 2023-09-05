@@ -1,0 +1,15 @@
+The smart contract provided has several potential vulnerabilities:
+
+1. Reentrancy Attack: The CashOut function is vulnerable to a reentrancy attack. The balance of the sender is only updated after the external call to `msg.sender.call.value(_am)()`. An attacker can reenter the function before `balances[msg.sender] -= _am;` is executed and withdraw more Ether than they should be allowed to.
+
+2. Access Control: The contract uses `tx.origin` in the `onlyOwner` modifier which is a bad practice and can lead to vulnerabilities. `tx.origin` represents the sender of the transaction, while `msg.sender` represents the caller of the current function. An attacker contract can trick an owner into making a transaction, thus gaining owner rights.
+
+3. Arithmetic Issues: Although not directly evident in the contract, there is a potential for integer underflow in the CashOut function, where `balances[msg.sender] -= _am;` could potentially underflow if `_am` is greater than `balances[msg.sender]`. 
+
+4. Unchecked Return Values For Low Level Calls: The contract uses `call.value()` which is a low level call and it doesn't check the return value. If the call fails, it will silently return false and continue execution.
+
+5. Denial of Service: There is a potential for DoS attack in the CashOut function. If the calling contract's fallback function consumes a lot of gas, the `msg.sender.call.value(_am)()` could fail, denying service for legitimate users.
+
+6. Timestamp Dependence: Though not directly used in the contract, the `now` keyword is used in the Log contract which can be manipulated by miners.
+
+The contract doesn't seem to have vulnerabilities related to Bad Randomness, Front-Running, and Short Address Attack. But these issues should be kept in mind while developing smart contracts.

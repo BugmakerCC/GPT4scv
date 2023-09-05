@@ -1,0 +1,19 @@
+This contract seems to have multiple vulnerabilities:
+
+1. **Bad Randomness**: The `shuffle()` function is supposed to generate a random secret number between 1 and 20. However, it uses `uint8(sha3(now, block.blockhash(block.number-1))) % 20 + 1` to do so, which is predictable as `now` is just the current block timestamp and `blockhash` can be influenced by miners. This makes it easier for a miner to manipulate the outcome.
+
+2. **Unchecked Return Values For Low Level Calls**: In the `play()` function, the call to `msg.sender.transfer(this.balance)` may fail silently, as the return value is not checked. It would be safer to use a `require()` statement to ensure the transfer was successful.
+
+3. **Access Control**: The kill function can only be called by the owner and only if no one has played the game for a day. However, the owner of the contract can be anyone who deploys it, this can allow the contract owner to drain funds if no one has played for a day.
+
+4. **Arithmetic Issues**: This contract does not seem to have any integer overflow or underflow issues.
+
+5. **Denial of Service**: The `kill()` function could be used in a denial of service attack. If the owner of the contract calls this function, the contract will self-destruct, and the funds will be sent to the owner, making the contract unusable.
+
+6. **Reentrancy**: This contract does not seem to have reentrancy vulnerabilities because it does not make any external calls to untrusted contracts within a function where state changes happen after the call.
+
+7. **Front-Running**: This contract might have front-running vulnerabilities. Since the secret number is pseudo-randomly generated based on public blockchain data, a malicious miner could potentially front-run a transaction that calls `play()`.
+
+8. **Time manipulation**: Miners could potentially manipulate the timestamp used in the `shuffle` function's pseudo-random number generation.
+
+9. **Short Address Attack**: This contract does not seem to be vulnerable to a short address attack, as it does not take address arguments in its functions.

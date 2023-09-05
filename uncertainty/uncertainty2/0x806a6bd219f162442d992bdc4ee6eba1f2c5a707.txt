@@ -1,0 +1,19 @@
+The contract has the following vulnerabilities:
+
+1. Reentrancy: In the `GetPie()` and `withdraw()` functions, the contract sends Ether with `Owner.transfer(this.balance)`. If the `Owner` is a contract, it could call back into `GetPie()` or `withdraw()` before the first call is finished, potentially causing a reentrancy attack.
+
+2. Access Control: There is a weak access control in the `withdraw()` function. The contract is simply checking if `msg.sender` equals a hardcoded Ethereum address. If the private key of this Ethereum address is leaked, an attacker can withdraw all the Ether from the contract.
+
+3. Arithmetic Issues: This contract does not seem to have Arithmetic issues such as integer overflow and underflow.
+
+4. Unchecked Return Values For Low Level Calls: In the `Command()` function, it's using a low level `call` function without checking the return value. If the call fails, the contract will not be able to detect it.
+
+5. Denial of Service: An attacker could become the `Owner` by using the `withdraw()` function, then he could prevent others from becoming the `Owner` by refusing to execute `withdraw()`, or he could drain the contract funds using `GetPie()`.
+
+6. Bad Randomness: This contract does not seem to deal with randomness, so it's not vulnerable to the bad randomness vulnerability.
+
+7. Front-Running: The contract is not vulnerable to front-running because it does not have transaction ordering dependence.
+
+8. Time manipulation: The contract does not depend on block timestamp or block number, so it's not vulnerable to time manipulation.
+
+9. Short Address Attack: The contract does not take address as an input from non-owners, so it's not vulnerable to short address attack.

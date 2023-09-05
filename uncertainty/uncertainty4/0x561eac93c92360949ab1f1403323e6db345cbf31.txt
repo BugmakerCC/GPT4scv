@@ -1,0 +1,13 @@
+This contract has several vulnerabilities:
+
+1. Reentrancy: The contract contains a classic reentrancy bug in the `Collect` function. This function sends ether with `msg.sender.call.value(_am)()` before it reduces the balance of the sender with `balances[msg.sender]-=_am;`. An attacker can use a fallback function to reenter the `Collect` function before `balances[msg.sender]-=_am;` is executed.
+
+2. Unchecked Return Values For Low Level Calls: The return value of the low-level call `msg.sender.call.value(_am)()` is not checked. If this call fails for any reason (for example, the fallback function of the recipient throws an exception), the state of the contract is not reverted. This can lead to an inconsistent state.
+
+3. Denial of Service: If an attacker has a contract with a fallback function that always throws an exception as a recipient of `Collect`, the balance of this address can never be reduced because `msg.sender.call.value(_am)()` will always fail.
+
+4. Access Control: The functions `SetMinSum` and `SetLogFile` can be called by any address. This could lead to changes in the contract behavior by unauthorized persons.
+
+5. Arithmetic Issues: Although this contract doesn't directly suffer from Arithmetic issues, it's a good practice to use SafeMath library to avoid potential future problems.
+
+Please note that the contract does not seem to suffer from Front-running, Time manipulation, Bad randomness or Short Address Attack vulnerabilities. However, without knowing the context in which this contract is used, one cannot definitely say that these vulnerabilities are not present. For instance, if the order of transactions matters for the logic of this contract, then it might be vulnerable to Front-running. Similarly, if the value of `now` is critical for the contract logic, then the contract could be vulnerable to Time manipulation.

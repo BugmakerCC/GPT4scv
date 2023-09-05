@@ -1,0 +1,15 @@
+The contract has a Reentrancy vulnerability. This vulnerability is presented in the `CashOut` function where the balance of the sender is deducted after the call. This allows for a recursive call, where an attacker can continuously call the `CashOut` function while the original `CashOut` is still in the stack, draining the contract of ether.
+
+Here is how the vulnerability can be exploited:
+1. The attacker calls the `CashOut` function.
+2. The contract checks if the amount `_am` is less than or equal to the balance of the sender (which it is).
+3. The contract sends the amount `_am` to the sender.
+4. The attacker's fallback function is triggered, which calls the `CashOut` function again.
+5. The contract does not know that it is in the middle of a `CashOut` function call, so it checks if `_am` is less than or equal to the attacker's balance (which it is, because the balance has not been updated yet), and sends the amount `_am` again.
+6. This process can be repeated as long as the contract has funds.
+
+To fix this, you should always update the state variables before calling external contracts or sending ether. In this case, `balances[msg.sender]-=_am;` should be placed before `msg.sender.call.value(_am)()`. This ensures that even if the fallback function calls `CashOut` again, the balance of the attacker has already been deducted and the contract will not send more ether. 
+
+There is also an unchecked return value vulnerability in the `CashOut` function. It does not handle the return value of `msg.sender.call.value(_am)()`. If this call fails, the contract continues execution as if it did not. A `require()` function should be used to check that this call does not fail. 
+
+Lastly, the contract does not have any access control mechanisms. This means that anyone can call the `AddMessage` function in the `Log` contract. To prevent unauthorized access, only the `ETH_VAULT` contract should be able to call this function. This can be implemented using the `onlyOwner` modifier in Solidity.

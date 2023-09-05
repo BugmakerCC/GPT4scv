@@ -1,0 +1,9 @@
+The smart contract provided has some vulnerabilities related to the above-mentioned common ones. 
+
+1. Denial of Service: If the addCreditors() function is called enough times, the length of the creditorAddresses array can become very large. When the emptyCreditors() function is then called, it could potentially consume all of the gas if the array's length is greater than 1500. This is a potential Denial of Service (DoS) attack where the contract can be made inoperable by reaching the gas limit. 
+
+2. Access Control: Functions such as emptyCreditors(), addCreditors(), iWin(), and numberCreditors() are public, so anyone can call them. Depending on the intended use of this contract, this might pose an Access Control vulnerability. If these functions are meant to be restricted to certain addresses, then this could be a major issue. 
+
+3. Unchecked Return Values: The addCreditors() function does not check the success of the push operation to the creditorAddresses array. In Solidity versions before 0.6.0, the push operation can fail silently which can lead to Unchecked Return Values vulnerability.
+
+To fix these vulnerabilities, the contract should limit who can call these functions, especially those that can change the state of the contract, by implementing appropriate access control mechanisms. Also, it should handle potential DoS attacks by implementing a pattern such as the Checks-Effects-Interactions pattern, and by not allowing loops that iterate over a number of elements that can grow indefinitely. Lastly, it should check the success of all function calls and handle potential failures appropriately.

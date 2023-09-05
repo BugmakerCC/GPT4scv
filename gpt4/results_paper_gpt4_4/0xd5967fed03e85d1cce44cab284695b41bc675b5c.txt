@@ -1,0 +1,21 @@
+This contract has several potential vulnerabilities:
+
+1. **Reentrancy**: The `transfer` function uses a low-level `.call()` function to make external calls. This is risky and can lead to reentrancy attacks because it allows the called contract to run an arbitrary code and possibly call back the calling contract before the completion of the initial call.
+
+2. **Unchecked Return Values For Low Level Calls**: The return value of `caddress.call(id,from,_tos[i],v);` is not checked. If this call fails for some reason (e.g., out of gas, exception thrown), the contract will not know and will continue execution as if nothing happened.
+
+3. **Access Control**: There doesn't seem to be any access control restrictions in place. The `transfer` function can be called by anyone because there are no `onlyOwner` or similar modifiers in place. This might not be a vulnerability, but it does depend on the intended use of the contract.
+
+4. **Denial of Service (DoS)**: If one of the `_tos` addresses is a contract that throws an exception, it will stop the execution of the entire `transfer` function, which could lead to a DoS attack.
+
+5. **Bad Randomness**: Not applicable in this contract.
+
+6. **Front-Running**: Not applicable in this contract.
+
+7. **Time manipulation**: Not applicable in this contract.
+
+8. **Short Address Attack**: This is potentially risky. If an address in `_tos` array is shorter than expected, it could lead to unexpected results.
+
+9. **Arithmetic Issues**: Not applicable in this contract. 
+
+In conclusion, this contract needs to be improved for security concerns. It's recommended to avoid using low-level calls, add error checking after external calls, and implement proper access control. Also, we need to validate the length of the addresses in `_tos` array to protect against short address attacks.

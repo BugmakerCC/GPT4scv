@@ -1,0 +1,19 @@
+The given smart contract shows signs of several vulnerabilities:
+
+1. Reentrancy: The call method used in this contract is susceptible to reentrancy attacks. A malicious contract might be able to repeatedly call the 'transfer' function before the first call is finished, resulting in more tokens being transferred than intended.
+
+2. Unchecked Return Values for Low Level Calls: The contract is not checking the return value of 'call'. If the call fails for any reason (e.g., the recipient contract throws an exception), the current contract will not be aware of it and will continue execution as if nothing happened.
+
+3. Access Control: The transfer function is not restricted and can be called by anyone. It should have some sort of access control to ensure that only authorized entities can call it.
+
+4. Denial of Service: A possible DoS attack might occur if one of the _tos addresses is a contract that throws an exception during its execution. This would cause the entire 'transfer' function to fail and stop the loop.
+
+5. Front Running: Since the operations are not atomic and the state is not locked while they are being performed, an attacker could see a pending transaction that calls this function and issue another transaction with a higher gas price, which miners would prioritize. This is known as front-running.
+
+To fix these issues:
+
+1. Avoid using call() method with user-supplied data.
+2. Always check the return value of call.
+3. Implement access controls to restrict who can call certain functions.
+4. Use pull payment system instead of push payments in loops to avoid potential DoS attacks.
+5. Use commit-reveal schemes, sequenced transactions, or other forms of transaction ordering protections to prevent front running.

@@ -1,0 +1,17 @@
+1. Reentrancy: None found. The contract does not seem to make external calls in the middle of a function execution.
+
+2. Access Control: Access control is implemented using the `onlyOwner`, `isOpenToPublic`, `onlyRealPeople`, and `onlyPlayers` modifiers to restrict certain functionality such as adjusting betting amounts, opening to public, and playing the game. However, the contract does not validate the 'whale' address in the constructor. A malicious owner could pass a malicious contract as 'whale', which could then re-enter the contract when `whale.call.value(amount)(bytes4(keccak256("donate()")));` is called in `donateToWhale` and `loseWager` functions.
+
+3. Arithmetic issues: None found. The contract does not perform unsafe arithmetic operations that could lead to integer overflow or underflow.
+
+4. Unchecked Return Values For Low Level Calls: The contract executes `whale.call.value(amount)(bytes4(keccak256("donate()")));` in `donateToWhale` and `loseWager` functions without checking the return value, which could fail silently.
+
+5. Denial of Service: None found. The contract does not seem to have functions that could block operations indefinitely.
+
+6. Bad Randomness: The contract uses `uint256(keccak256(abi.encodePacked(blockhash(blockNumber),  msg.sender)))%difficulty +1;` to generate a random number, which is not truly random and could potentially be manipulated by a miner.
+
+7. Front-Running: The contract is vulnerable to front-running because a miner could see a player's wagering transaction and place their own wagering transaction with higher gas price to be mined first.
+
+8. Time Manipulation: None found. The contract does not rely on block timestamp for critical operations.
+
+9. Short Address Attack: None found. The contract does not seem to be vulnerable to short address attacks as it does not take address lengths directly from user input.

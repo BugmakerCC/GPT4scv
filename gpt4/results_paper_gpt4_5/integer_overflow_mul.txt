@@ -1,0 +1,26 @@
+The provided smart contract is susceptible to the Arithmetic Issue, specifically Integer Overflow and Underflow. 
+
+The vulnerability exists in the function `run()`. When this function is called with a very large `input` value, the product of `count` and `input` may exceed the maximum limit of the `uint256` data type, causing an integer overflow. Conversely, if a very small value (close to zero) is used, it could potentially lead to an integer underflow.
+
+This vulnerability allows an attacker to manipulate the `count` variable to an unexpected value, which can lead to incorrect business logic and potentially loss of funds.
+
+To mitigate this vulnerability, the contract should include a check to prevent integer overflow and underflow. SafeMath library in solidity provides functions for safely performing arithmetic operations.
+
+Here is the corrected smart contract:
+
+```solidity
+pragma solidity ^0.4.19;
+
+import "./SafeMath.sol"; // include SafeMath library
+
+contract IntegerOverflowMul {
+    using SafeMath for uint256; // use SafeMath for uint256
+
+    uint256 public count = 2;
+
+    function run(uint256 input) public {
+        count = count.mul(input); // use SafeMath's mul function
+    }
+}
+```
+Here, `SafeMath`'s `mul` function is used, which includes a check for integer overflow. If an overflow is detected, it reverts the transaction, preventing the overflow.

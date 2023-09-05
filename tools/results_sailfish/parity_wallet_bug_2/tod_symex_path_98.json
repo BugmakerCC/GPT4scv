@@ -1,0 +1,2370 @@
+{
+    "file": "parity_wallet_bug_2.sol",
+    "global_structs": [
+        {
+            "name": "PendingState",
+            "fields": {
+                "yetNeeded": [
+                    "integer"
+                ],
+                "ownersDone": [
+                    "integer"
+                ],
+                "index": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "Transaction",
+            "fields": {
+                "to": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ],
+                "data": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0xf2a"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0xf2b"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0xf2c"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "m_required",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "m_numOwners",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "m_dailyLimit",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "m_spentToday",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "m_lastDay",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "m_owners",
+            "type": [
+                "array",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "m_ownerIndex",
+            "type": [
+                "array",
+                "integer",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "m_pending",
+            "type": [
+                "array",
+                "integer",
+                "PendingState"
+            ],
+            "init": []
+        },
+        {
+            "name": "m_pendingIndex",
+            "type": [
+                "array",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "m_txs",
+            "type": [
+                "array",
+                "integer",
+                "Transaction"
+            ],
+            "init": []
+        },
+        {
+            "name": "c_maxOwners",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x4"
+            ]
+        },
+        {
+            "name": "_walletLibrary",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x3"
+            ]
+        },
+        {
+            "name": "WalletEvents",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "WalletAbi",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "WalletLibrary",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x3",
+            "instructions": [
+                "_walletLibrary = 1158898208370148791445375540046301417554592058110"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x4",
+            "instructions": [
+                "c_maxOwners = 250"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xf2a",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xf2b",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xf2c",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "m_pendingIndex",
+            "addrs": [
+                "0x2",
+                "0x6",
+                "0x9"
+            ]
+        },
+        {
+            "name": "m_owners",
+            "addrs": [
+                "0x2",
+                "0xc",
+                "0x25",
+                "0x37",
+                "0x40",
+                "0x52",
+                "0x66",
+                "0x70",
+                "0x83",
+                "0x87",
+                "0xb3",
+                "0xb9"
+            ]
+        },
+        {
+            "name": "m_ownerIndex",
+            "addrs": [
+                "0x2",
+                "0x10",
+                "0x14",
+                "0x2e",
+                "0x44",
+                "0x5c",
+                "0x75",
+                "0x85",
+                "0x8b",
+                "0xb6",
+                "0xbf"
+            ]
+        },
+        {
+            "name": "m_numOwners",
+            "addrs": [
+                "0x2",
+                "0x18",
+                "0x21",
+                "0x48",
+                "0x81",
+                "0xb0"
+            ]
+        },
+        {
+            "name": "m_dailyLimit",
+            "addrs": [
+                "0x2",
+                "0x7a",
+                "0x8d",
+                "0xaa"
+            ]
+        },
+        {
+            "name": "m_lastDay",
+            "addrs": [
+                "0x2",
+                "0x7c",
+                "0x96",
+                "0xad"
+            ]
+        },
+        {
+            "name": "m_required",
+            "addrs": [
+                "0x2",
+                "0x7e",
+                "0x89",
+                "0xbc"
+            ]
+        },
+        {
+            "name": "m_spentToday",
+            "addrs": [
+                "0x2",
+                "0x90",
+                "0x93",
+                "0x94"
+            ]
+        },
+        {
+            "name": "m_txs",
+            "addrs": [
+                "0x2",
+                "0x98",
+                "0x9e",
+                "0xa4"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6",
+            "instructions": [
+                "CLR_0 = m_ownerIndex[U]",
+                "REF_104 = CLR_0",
+                "RTMP_198 = REF_104 == 0",
+                "CONDITION RTMP_198 0x1 0x7"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7",
+            "instructions": [
+                "CLR_1 = m_pending[U]",
+                "REF_105 = CLR_1",
+                "CLR_2 = REF_105.yetNeeded",
+                "REF_106 = CLR_2",
+                "RTMP_199 = REF_106 == 0",
+                "CONDITION RTMP_199 0x5 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5",
+            "instructions": [
+                "REF_103 = NEW_VAL integer",
+                "TMP_197 = REF_103 + 1",
+                "NCV_0 = NEW_VAL integer",
+                "m_pendingIndex.length = NCV_0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x9",
+            "instructions": [
+                "CLR_3 = m_ownerIndex[U]",
+                "REF_110 = CLR_3",
+                "RTMP_200 = REF_110 == 0",
+                "CONDITION RTMP_200 0x1 0xa"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa",
+            "instructions": [
+                "CLR_4 = m_pending[U]",
+                "REF_111 = CLR_4",
+                "CLR_5 = REF_111.yetNeeded",
+                "REF_112 = CLR_5",
+                "RTMP_201 = REF_112 == 0",
+                "CONDITION RTMP_201 0x8 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x8",
+            "instructions": [
+                "CLR_6 = m_pending[U]",
+                "REF_107 = CLR_6",
+                "CLR_7 = REF_107.index",
+                "REF_108 = CLR_7",
+                "CLR_8 = m_pendingIndex[REF_108]",
+                "REF_109 = CLR_8",
+                "m_pendingIndex[REF_108] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xc",
+            "instructions": [
+                "CLR_9 = m_pending[U]",
+                "REF_124 = CLR_9",
+                "CLR_10 = REF_124.yetNeeded",
+                "REF_125 = CLR_10",
+                "RTMP_247 = REF_125 <= 1",
+                "CONDITION RTMP_247 0xd 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xd",
+            "instructions": [
+                "CLR_11 = m_ownerIndex[U]",
+                "REF_126 = CLR_11",
+                "RTMP_248 = REF_126 == 0",
+                "CONDITION RTMP_248 0x1 0xe"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xe",
+            "instructions": [
+                "CLR_12 = m_ownerIndex[U]",
+                "REF_127 = CLR_12",
+                "RTMP_249 = REF_127 == 0",
+                "CONDITION RTMP_249 0x1 0xb"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb",
+            "instructions": [
+                "CLR_13 = m_owners[U]",
+                "REF_123 = CLR_13",
+                "m_owners[0] = U",
+                "m_owners[1] = U",
+                "m_owners[2] = U",
+                "m_owners[3] = U",
+                "m_owners[4] = U",
+                "m_owners[5] = U",
+                "m_owners[6] = U",
+                "m_owners[7] = U",
+                "m_owners[8] = U",
+                "m_owners[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x10",
+            "instructions": [
+                "CLR_14 = m_pending[U]",
+                "REF_129 = CLR_14",
+                "CLR_15 = REF_129.yetNeeded",
+                "REF_130 = CLR_15",
+                "RTMP_250 = REF_130 <= 1",
+                "CONDITION RTMP_250 0x11 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x11",
+            "instructions": [
+                "CLR_16 = m_ownerIndex[U]",
+                "REF_131 = CLR_16",
+                "RTMP_251 = REF_131 == 0",
+                "CONDITION RTMP_251 0x1 0x12"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x12",
+            "instructions": [
+                "CLR_17 = m_ownerIndex[U]",
+                "REF_132 = CLR_17",
+                "RTMP_252 = REF_132 == 0",
+                "CONDITION RTMP_252 0x1 0xf"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xf",
+            "instructions": [
+                "CLR_18 = m_ownerIndex[U]",
+                "REF_128 = CLR_18",
+                "m_ownerIndex[0] = 0",
+                "m_ownerIndex[1] = 0",
+                "m_ownerIndex[2] = 0",
+                "m_ownerIndex[3] = 0",
+                "m_ownerIndex[4] = 0",
+                "m_ownerIndex[5] = 0",
+                "m_ownerIndex[6] = 0",
+                "m_ownerIndex[7] = 0",
+                "m_ownerIndex[8] = 0",
+                "m_ownerIndex[9] = 0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x14",
+            "instructions": [
+                "CLR_19 = m_pending[U]",
+                "REF_134 = CLR_19",
+                "CLR_20 = REF_134.yetNeeded",
+                "REF_135 = CLR_20",
+                "RTMP_253 = REF_135 <= 1",
+                "CONDITION RTMP_253 0x15 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x15",
+            "instructions": [
+                "CLR_21 = m_ownerIndex[U]",
+                "REF_136 = CLR_21",
+                "RTMP_254 = REF_136 == 0",
+                "CONDITION RTMP_254 0x1 0x16"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x16",
+            "instructions": [
+                "CLR_22 = m_ownerIndex[U]",
+                "REF_137 = CLR_22",
+                "RTMP_255 = REF_137 == 0",
+                "CONDITION RTMP_255 0x1 0x13"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x13",
+            "instructions": [
+                "CLR_23 = m_ownerIndex[U]",
+                "REF_133 = CLR_23",
+                "m_ownerIndex[0] = U",
+                "m_ownerIndex[1] = U",
+                "m_ownerIndex[2] = U",
+                "m_ownerIndex[3] = U",
+                "m_ownerIndex[4] = U",
+                "m_ownerIndex[5] = U",
+                "m_ownerIndex[6] = U",
+                "m_ownerIndex[7] = U",
+                "m_ownerIndex[8] = U",
+                "m_ownerIndex[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x21",
+            "instructions": [
+                "CLR_24 = m_pending[U]",
+                "REF_150 = CLR_24",
+                "CLR_25 = REF_150.yetNeeded",
+                "REF_151 = CLR_25",
+                "RTMP_269 = REF_151 <= 1",
+                "CONDITION RTMP_269 0x22 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x22",
+            "instructions": [
+                "CLR_26 = m_ownerIndex[U]",
+                "REF_152 = CLR_26",
+                "RTMP_270 = REF_152 == 0",
+                "CONDITION RTMP_270 0x1 0x23"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x23",
+            "instructions": [
+                "RTMP_271 = m_numOwners >= c_maxOwners",
+                "CONDITION RTMP_271 0x1 0x20"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x20",
+            "instructions": [
+                "TMP_268 = m_numOwners + 1",
+                "m_numOwners = TMP_268"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x25",
+            "instructions": [
+                "RTMP_214 = 1 < m_numOwners",
+                "RTMP_215 = 1 < m_numOwners",
+                "RTMP_216 = RTMP_214 || RTMP_215",
+                "CONDITION RTMP_216 0x1 0x26"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x26",
+            "instructions": [
+                "CLR_27 = m_owners[U]",
+                "REF_116 = CLR_27",
+                "RTMP_217 = REF_116 != 0",
+                "CONDITION RTMP_217 0x1 0x27"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x27",
+            "instructions": [
+                "RTMP_218 = m_numOwners > 1",
+                "CONDITION RTMP_218 0x1 0x28"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x28",
+            "instructions": [
+                "CLR_28 = m_owners[m_numOwners]",
+                "REF_117 = CLR_28",
+                "RTMP_219 = REF_117 == 0",
+                "CONDITION RTMP_219 0x1 0x29"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x29",
+            "instructions": [
+                "RTMP_220 = 1 < m_numOwners",
+                "RTMP_221 = 1 < m_numOwners",
+                "RTMP_222 = 1 < m_numOwners",
+                "RTMP_223 = RTMP_220 || RTMP_221",
+                "RTMP_224 = RTMP_223 || RTMP_222",
+                "CONDITION RTMP_224 0x2a 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2a",
+            "instructions": [
+                "CLR_29 = m_pending[U]",
+                "REF_141 = CLR_29",
+                "CLR_30 = REF_141.yetNeeded",
+                "REF_142 = CLR_30",
+                "RTMP_259 = REF_142 <= 1",
+                "CONDITION RTMP_259 0x2b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2b",
+            "instructions": [
+                "CLR_31 = m_ownerIndex[U]",
+                "REF_143 = CLR_31",
+                "RTMP_260 = REF_143 == 0",
+                "CONDITION RTMP_260 0x1 0x2c"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2c",
+            "instructions": [
+                "RTMP_261 = m_numOwners >= c_maxOwners",
+                "CONDITION RTMP_261 0x24 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x24",
+            "instructions": [
+                "CLR_32 = m_owners[U]",
+                "REF_115 = CLR_32",
+                "m_owners[0] = m_owners",
+                "m_owners[1] = m_owners",
+                "m_owners[2] = m_owners",
+                "m_owners[3] = m_owners",
+                "m_owners[4] = m_owners",
+                "m_owners[5] = m_owners",
+                "m_owners[6] = m_owners",
+                "m_owners[7] = m_owners",
+                "m_owners[8] = m_owners",
+                "m_owners[9] = m_owners"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2e",
+            "instructions": [
+                "RTMP_225 = 1 < m_numOwners",
+                "RTMP_226 = 1 < m_numOwners",
+                "RTMP_227 = RTMP_225 || RTMP_226",
+                "CONDITION RTMP_227 0x1 0x2f"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2f",
+            "instructions": [
+                "CLR_33 = m_owners[U]",
+                "REF_118 = CLR_33",
+                "RTMP_228 = REF_118 != 0",
+                "CONDITION RTMP_228 0x1 0x30"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x30",
+            "instructions": [
+                "RTMP_229 = m_numOwners > 1",
+                "CONDITION RTMP_229 0x1 0x31"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x31",
+            "instructions": [
+                "CLR_34 = m_owners[m_numOwners]",
+                "REF_119 = CLR_34",
+                "RTMP_230 = REF_119 == 0",
+                "CONDITION RTMP_230 0x1 0x32"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x32",
+            "instructions": [
+                "RTMP_231 = 1 < m_numOwners",
+                "RTMP_232 = 1 < m_numOwners",
+                "RTMP_233 = 1 < m_numOwners",
+                "RTMP_234 = RTMP_231 || RTMP_232",
+                "RTMP_235 = RTMP_234 || RTMP_233",
+                "CONDITION RTMP_235 0x33 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x33",
+            "instructions": [
+                "CLR_35 = m_pending[U]",
+                "REF_144 = CLR_35",
+                "CLR_36 = REF_144.yetNeeded",
+                "REF_145 = CLR_36",
+                "RTMP_262 = REF_145 <= 1",
+                "CONDITION RTMP_262 0x34 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x34",
+            "instructions": [
+                "CLR_37 = m_ownerIndex[U]",
+                "REF_146 = CLR_37",
+                "RTMP_263 = REF_146 == 0",
+                "CONDITION RTMP_263 0x1 0x35"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x35",
+            "instructions": [
+                "RTMP_264 = m_numOwners >= c_maxOwners",
+                "CONDITION RTMP_264 0x2d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2d",
+            "instructions": [
+                "CLR_38 = m_owners[U]",
+                "m_ownerIndex[CLR_38] = 1",
+                "CLR_39 = m_owners[U]",
+                "m_ownerIndex[CLR_39] = 1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x37",
+            "instructions": [
+                "RTMP_236 = 1 < m_numOwners",
+                "RTMP_237 = 1 < m_numOwners",
+                "RTMP_238 = RTMP_236 || RTMP_237",
+                "CONDITION RTMP_238 0x1 0x38"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x38",
+            "instructions": [
+                "CLR_40 = m_owners[U]",
+                "REF_121 = CLR_40",
+                "RTMP_239 = REF_121 != 0",
+                "CONDITION RTMP_239 0x1 0x39"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x39",
+            "instructions": [
+                "RTMP_240 = m_numOwners > 1",
+                "CONDITION RTMP_240 0x1 0x3a"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3a",
+            "instructions": [
+                "CLR_41 = m_owners[m_numOwners]",
+                "REF_122 = CLR_41",
+                "RTMP_241 = REF_122 == 0",
+                "CONDITION RTMP_241 0x1 0x3b"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3b",
+            "instructions": [
+                "RTMP_242 = 1 < m_numOwners",
+                "RTMP_243 = 1 < m_numOwners",
+                "RTMP_244 = 1 < m_numOwners",
+                "RTMP_245 = RTMP_242 || RTMP_243",
+                "RTMP_246 = RTMP_245 || RTMP_244",
+                "CONDITION RTMP_246 0x3c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3c",
+            "instructions": [
+                "CLR_42 = m_pending[U]",
+                "REF_147 = CLR_42",
+                "CLR_43 = REF_147.yetNeeded",
+                "REF_148 = CLR_43",
+                "RTMP_265 = REF_148 <= 1",
+                "CONDITION RTMP_265 0x3d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3d",
+            "instructions": [
+                "CLR_44 = m_ownerIndex[U]",
+                "REF_149 = CLR_44",
+                "RTMP_266 = REF_149 == 0",
+                "CONDITION RTMP_266 0x1 0x3e"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3e",
+            "instructions": [
+                "RTMP_267 = m_numOwners >= c_maxOwners",
+                "CONDITION RTMP_267 0x36 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x36",
+            "instructions": [
+                "CLR_45 = m_owners[m_numOwners]",
+                "REF_120 = CLR_45",
+                "m_owners[m_numOwners] = 0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x40",
+            "instructions": [
+                "CLR_46 = m_pending[U]",
+                "REF_154 = CLR_46",
+                "CLR_47 = REF_154.yetNeeded",
+                "REF_155 = CLR_47",
+                "RTMP_272 = REF_155 <= 1",
+                "CONDITION RTMP_272 0x41 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x41",
+            "instructions": [
+                "CLR_48 = m_ownerIndex[U]",
+                "REF_156 = CLR_48",
+                "RTMP_273 = REF_156 == 0",
+                "CONDITION RTMP_273 0x1 0x42"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x42",
+            "instructions": [
+                "RTMP_274 = m_numOwners >= c_maxOwners",
+                "CONDITION RTMP_274 0x1 0x3f"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3f",
+            "instructions": [
+                "CLR_49 = m_owners[m_numOwners]",
+                "REF_153 = CLR_49",
+                "m_owners[m_numOwners] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x44",
+            "instructions": [
+                "CLR_50 = m_pending[U]",
+                "REF_158 = CLR_50",
+                "CLR_51 = REF_158.yetNeeded",
+                "REF_159 = CLR_51",
+                "RTMP_275 = REF_159 <= 1",
+                "CONDITION RTMP_275 0x45 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x45",
+            "instructions": [
+                "CLR_52 = m_ownerIndex[U]",
+                "REF_160 = CLR_52",
+                "RTMP_276 = REF_160 == 0",
+                "CONDITION RTMP_276 0x1 0x46"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x46",
+            "instructions": [
+                "RTMP_277 = m_numOwners >= c_maxOwners",
+                "CONDITION RTMP_277 0x1 0x43"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x43",
+            "instructions": [
+                "CLR_53 = m_ownerIndex[U]",
+                "REF_157 = CLR_53",
+                "m_ownerIndex[0] = m_numOwners",
+                "m_ownerIndex[1] = m_numOwners",
+                "m_ownerIndex[2] = m_numOwners",
+                "m_ownerIndex[3] = m_numOwners",
+                "m_ownerIndex[4] = m_numOwners",
+                "m_ownerIndex[5] = m_numOwners",
+                "m_ownerIndex[6] = m_numOwners",
+                "m_ownerIndex[7] = m_numOwners",
+                "m_ownerIndex[8] = m_numOwners",
+                "m_ownerIndex[9] = m_numOwners"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x48",
+            "instructions": [
+                "RTMP_203 = 1 < m_numOwners",
+                "RTMP_204 = 1 < m_numOwners",
+                "RTMP_205 = RTMP_203 || RTMP_204",
+                "CONDITION RTMP_205 0x1 0x49"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x49",
+            "instructions": [
+                "CLR_54 = m_owners[U]",
+                "REF_113 = CLR_54",
+                "RTMP_206 = REF_113 != 0",
+                "CONDITION RTMP_206 0x1 0x4a"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4a",
+            "instructions": [
+                "RTMP_207 = m_numOwners > 1",
+                "CONDITION RTMP_207 0x1 0x4b"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4b",
+            "instructions": [
+                "CLR_55 = m_owners[m_numOwners]",
+                "REF_114 = CLR_55",
+                "RTMP_208 = REF_114 == 0",
+                "CONDITION RTMP_208 0x1 0x4c"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4c",
+            "instructions": [
+                "RTMP_209 = 1 < m_numOwners",
+                "RTMP_210 = 1 < m_numOwners",
+                "RTMP_211 = 1 < m_numOwners",
+                "RTMP_212 = RTMP_209 || RTMP_210",
+                "RTMP_213 = RTMP_212 || RTMP_211",
+                "CONDITION RTMP_213 0x4d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4d",
+            "instructions": [
+                "CLR_56 = m_ownerIndex[U]",
+                "REF_161 = CLR_56",
+                "RTMP_278 = REF_161 == 0",
+                "CONDITION RTMP_278 0x1 0x4e"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4e",
+            "instructions": [
+                "TMP_279 = m_numOwners - 1",
+                "RTMP_280 = m_required > TMP_279",
+                "CONDITION RTMP_280 0x1 0x4f"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4f",
+            "instructions": [
+                "CLR_57 = m_ownerIndex[U]",
+                "REF_162 = CLR_57",
+                "RTMP_281 = REF_162 == 0",
+                "CONDITION RTMP_281 0x1 0x50"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x50",
+            "instructions": [
+                "CLR_58 = m_pending[U]",
+                "REF_163 = CLR_58",
+                "CLR_59 = REF_163.yetNeeded",
+                "REF_164 = CLR_59",
+                "RTMP_282 = REF_164 <= 1",
+                "CONDITION RTMP_282 0x47 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x47",
+            "instructions": [
+                "TMP_202 = m_numOwners - 1",
+                "m_numOwners = TMP_202"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x52",
+            "instructions": [
+                "RTMP_214 = 1 < m_numOwners",
+                "RTMP_215 = 1 < m_numOwners",
+                "RTMP_216 = RTMP_214 || RTMP_215",
+                "CONDITION RTMP_216 0x1 0x53"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x53",
+            "instructions": [
+                "CLR_60 = m_owners[U]",
+                "REF_116 = CLR_60",
+                "RTMP_217 = REF_116 != 0",
+                "CONDITION RTMP_217 0x1 0x54"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x54",
+            "instructions": [
+                "RTMP_218 = m_numOwners > 1",
+                "CONDITION RTMP_218 0x1 0x55"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x55",
+            "instructions": [
+                "CLR_61 = m_owners[m_numOwners]",
+                "REF_117 = CLR_61",
+                "RTMP_219 = REF_117 == 0",
+                "CONDITION RTMP_219 0x1 0x56"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x56",
+            "instructions": [
+                "RTMP_220 = 1 < m_numOwners",
+                "RTMP_221 = 1 < m_numOwners",
+                "RTMP_222 = 1 < m_numOwners",
+                "RTMP_223 = RTMP_220 || RTMP_221",
+                "RTMP_224 = RTMP_223 || RTMP_222",
+                "CONDITION RTMP_224 0x57 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x57",
+            "instructions": [
+                "CLR_62 = m_ownerIndex[U]",
+                "REF_165 = CLR_62",
+                "RTMP_283 = REF_165 == 0",
+                "CONDITION RTMP_283 0x1 0x58"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x58",
+            "instructions": [
+                "TMP_284 = m_numOwners - 1",
+                "RTMP_285 = m_required > TMP_284",
+                "CONDITION RTMP_285 0x1 0x59"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x59",
+            "instructions": [
+                "CLR_63 = m_ownerIndex[U]",
+                "REF_166 = CLR_63",
+                "RTMP_286 = REF_166 == 0",
+                "CONDITION RTMP_286 0x1 0x5a"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5a",
+            "instructions": [
+                "CLR_64 = m_pending[U]",
+                "REF_167 = CLR_64",
+                "CLR_65 = REF_167.yetNeeded",
+                "REF_168 = CLR_65",
+                "RTMP_287 = REF_168 <= 1",
+                "CONDITION RTMP_287 0x51 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x51",
+            "instructions": [
+                "CLR_66 = m_owners[U]",
+                "REF_115 = CLR_66",
+                "m_owners[0] = m_owners",
+                "m_owners[1] = m_owners",
+                "m_owners[2] = m_owners",
+                "m_owners[3] = m_owners",
+                "m_owners[4] = m_owners",
+                "m_owners[5] = m_owners",
+                "m_owners[6] = m_owners",
+                "m_owners[7] = m_owners",
+                "m_owners[8] = m_owners",
+                "m_owners[9] = m_owners"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5c",
+            "instructions": [
+                "RTMP_225 = 1 < m_numOwners",
+                "RTMP_226 = 1 < m_numOwners",
+                "RTMP_227 = RTMP_225 || RTMP_226",
+                "CONDITION RTMP_227 0x1 0x5d"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5d",
+            "instructions": [
+                "CLR_67 = m_owners[U]",
+                "REF_118 = CLR_67",
+                "RTMP_228 = REF_118 != 0",
+                "CONDITION RTMP_228 0x1 0x5e"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5e",
+            "instructions": [
+                "RTMP_229 = m_numOwners > 1",
+                "CONDITION RTMP_229 0x1 0x5f"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5f",
+            "instructions": [
+                "CLR_68 = m_owners[m_numOwners]",
+                "REF_119 = CLR_68",
+                "RTMP_230 = REF_119 == 0",
+                "CONDITION RTMP_230 0x1 0x60"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x60",
+            "instructions": [
+                "RTMP_231 = 1 < m_numOwners",
+                "RTMP_232 = 1 < m_numOwners",
+                "RTMP_233 = 1 < m_numOwners",
+                "RTMP_234 = RTMP_231 || RTMP_232",
+                "RTMP_235 = RTMP_234 || RTMP_233",
+                "CONDITION RTMP_235 0x61 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x61",
+            "instructions": [
+                "CLR_69 = m_ownerIndex[U]",
+                "REF_169 = CLR_69",
+                "RTMP_288 = REF_169 == 0",
+                "CONDITION RTMP_288 0x1 0x62"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x62",
+            "instructions": [
+                "TMP_289 = m_numOwners - 1",
+                "RTMP_290 = m_required > TMP_289",
+                "CONDITION RTMP_290 0x1 0x63"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x63",
+            "instructions": [
+                "CLR_70 = m_ownerIndex[U]",
+                "REF_170 = CLR_70",
+                "RTMP_291 = REF_170 == 0",
+                "CONDITION RTMP_291 0x1 0x64"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x64",
+            "instructions": [
+                "CLR_71 = m_pending[U]",
+                "REF_171 = CLR_71",
+                "CLR_72 = REF_171.yetNeeded",
+                "REF_172 = CLR_72",
+                "RTMP_292 = REF_172 <= 1",
+                "CONDITION RTMP_292 0x5b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5b",
+            "instructions": [
+                "CLR_73 = m_owners[U]",
+                "m_ownerIndex[CLR_73] = 1",
+                "CLR_74 = m_owners[U]",
+                "m_ownerIndex[CLR_74] = 1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x66",
+            "instructions": [
+                "RTMP_236 = 1 < m_numOwners",
+                "RTMP_237 = 1 < m_numOwners",
+                "RTMP_238 = RTMP_236 || RTMP_237",
+                "CONDITION RTMP_238 0x1 0x67"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x67",
+            "instructions": [
+                "CLR_75 = m_owners[U]",
+                "REF_121 = CLR_75",
+                "RTMP_239 = REF_121 != 0",
+                "CONDITION RTMP_239 0x1 0x68"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x68",
+            "instructions": [
+                "RTMP_240 = m_numOwners > 1",
+                "CONDITION RTMP_240 0x1 0x69"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x69",
+            "instructions": [
+                "CLR_76 = m_owners[m_numOwners]",
+                "REF_122 = CLR_76",
+                "RTMP_241 = REF_122 == 0",
+                "CONDITION RTMP_241 0x1 0x6a"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6a",
+            "instructions": [
+                "RTMP_242 = 1 < m_numOwners",
+                "RTMP_243 = 1 < m_numOwners",
+                "RTMP_244 = 1 < m_numOwners",
+                "RTMP_245 = RTMP_242 || RTMP_243",
+                "RTMP_246 = RTMP_245 || RTMP_244",
+                "CONDITION RTMP_246 0x6b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6b",
+            "instructions": [
+                "CLR_77 = m_ownerIndex[U]",
+                "REF_173 = CLR_77",
+                "RTMP_293 = REF_173 == 0",
+                "CONDITION RTMP_293 0x1 0x6c"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6c",
+            "instructions": [
+                "TMP_294 = m_numOwners - 1",
+                "RTMP_295 = m_required > TMP_294",
+                "CONDITION RTMP_295 0x1 0x6d"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6d",
+            "instructions": [
+                "CLR_78 = m_ownerIndex[U]",
+                "REF_174 = CLR_78",
+                "RTMP_296 = REF_174 == 0",
+                "CONDITION RTMP_296 0x1 0x6e"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6e",
+            "instructions": [
+                "CLR_79 = m_pending[U]",
+                "REF_175 = CLR_79",
+                "CLR_80 = REF_175.yetNeeded",
+                "REF_176 = CLR_80",
+                "RTMP_297 = REF_176 <= 1",
+                "CONDITION RTMP_297 0x65 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x65",
+            "instructions": [
+                "CLR_81 = m_owners[m_numOwners]",
+                "REF_120 = CLR_81",
+                "m_owners[m_numOwners] = 0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x70",
+            "instructions": [
+                "CLR_82 = m_ownerIndex[U]",
+                "REF_178 = CLR_82",
+                "RTMP_298 = REF_178 == 0",
+                "CONDITION RTMP_298 0x1 0x71"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x71",
+            "instructions": [
+                "TMP_299 = m_numOwners - 1",
+                "RTMP_300 = m_required > TMP_299",
+                "CONDITION RTMP_300 0x1 0x72"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x72",
+            "instructions": [
+                "CLR_83 = m_ownerIndex[U]",
+                "REF_179 = CLR_83",
+                "RTMP_301 = REF_179 == 0",
+                "CONDITION RTMP_301 0x1 0x73"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x73",
+            "instructions": [
+                "CLR_84 = m_pending[U]",
+                "REF_180 = CLR_84",
+                "CLR_85 = REF_180.yetNeeded",
+                "REF_181 = CLR_85",
+                "RTMP_302 = REF_181 <= 1",
+                "CONDITION RTMP_302 0x6f 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6f",
+            "instructions": [
+                "CLR_86 = m_owners[U]",
+                "REF_177 = CLR_86",
+                "m_owners[0] = 0",
+                "m_owners[1] = 0",
+                "m_owners[2] = 0",
+                "m_owners[3] = 0",
+                "m_owners[4] = 0",
+                "m_owners[5] = 0",
+                "m_owners[6] = 0",
+                "m_owners[7] = 0",
+                "m_owners[8] = 0",
+                "m_owners[9] = 0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x75",
+            "instructions": [
+                "CLR_87 = m_ownerIndex[U]",
+                "REF_183 = CLR_87",
+                "RTMP_303 = REF_183 == 0",
+                "CONDITION RTMP_303 0x1 0x76"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x76",
+            "instructions": [
+                "TMP_304 = m_numOwners - 1",
+                "RTMP_305 = m_required > TMP_304",
+                "CONDITION RTMP_305 0x1 0x77"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x77",
+            "instructions": [
+                "CLR_88 = m_ownerIndex[U]",
+                "REF_184 = CLR_88",
+                "RTMP_306 = REF_184 == 0",
+                "CONDITION RTMP_306 0x1 0x78"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x78",
+            "instructions": [
+                "CLR_89 = m_pending[U]",
+                "REF_185 = CLR_89",
+                "CLR_90 = REF_185.yetNeeded",
+                "REF_186 = CLR_90",
+                "RTMP_307 = REF_186 <= 1",
+                "CONDITION RTMP_307 0x74 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x74",
+            "instructions": [
+                "CLR_91 = m_ownerIndex[U]",
+                "REF_182 = CLR_91",
+                "m_ownerIndex[0] = 0",
+                "m_ownerIndex[1] = 0",
+                "m_ownerIndex[2] = 0",
+                "m_ownerIndex[3] = 0",
+                "m_ownerIndex[4] = 0",
+                "m_ownerIndex[5] = 0",
+                "m_ownerIndex[6] = 0",
+                "m_ownerIndex[7] = 0",
+                "m_ownerIndex[8] = 0",
+                "m_ownerIndex[9] = 0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7a",
+            "instructions": [
+                "RTMP_308 = m_numOwners > 0",
+                "CONDITION RTMP_308 0x1 0x79"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x79",
+            "instructions": [
+                "m_dailyLimit = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7c",
+            "instructions": [
+                "RTMP_310 = m_numOwners > 0",
+                "CONDITION RTMP_310 0x1 0x7b"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7b",
+            "instructions": [
+                "TMP_309 = now \/ 86400",
+                "m_lastDay = TMP_309"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7e",
+            "instructions": [
+                "CLR_92 = m_pending[U]",
+                "REF_187 = CLR_92",
+                "CLR_93 = REF_187.yetNeeded",
+                "REF_188 = CLR_93",
+                "RTMP_316 = REF_188 <= 1",
+                "CONDITION RTMP_316 0x7f 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7f",
+            "instructions": [
+                "CLR_94 = m_ownerIndex[U]",
+                "REF_189 = CLR_94",
+                "RTMP_317 = REF_189 == 0",
+                "CONDITION RTMP_317 0x1 0x7d"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7d",
+            "instructions": [
+                "m_required = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x81",
+            "instructions": [
+                "RTMP_318 = m_numOwners > 0",
+                "CONDITION RTMP_318 0x1 0x80"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x80",
+            "instructions": [
+                "m_numOwners = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x83",
+            "instructions": [
+                "RTMP_319 = m_numOwners > 0",
+                "CONDITION RTMP_319 0x1 0x82"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x82",
+            "instructions": [
+                "CLR_95 = m_owners[1]",
+                "REF_190 = CLR_95",
+                "m_owners[1] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x85",
+            "instructions": [
+                "RTMP_320 = m_numOwners > 0",
+                "CONDITION RTMP_320 0x1 0x84"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x84",
+            "instructions": [
+                "CLR_96 = m_ownerIndex[U]",
+                "REF_191 = CLR_96",
+                "m_ownerIndex[0] = 1",
+                "m_ownerIndex[1] = 1",
+                "m_ownerIndex[2] = 1",
+                "m_ownerIndex[3] = 1",
+                "m_ownerIndex[4] = 1",
+                "m_ownerIndex[5] = 1",
+                "m_ownerIndex[6] = 1",
+                "m_ownerIndex[7] = 1",
+                "m_ownerIndex[8] = 1",
+                "m_ownerIndex[9] = 1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x87",
+            "instructions": [
+                "RTMP_321 = m_numOwners > 0",
+                "CONDITION RTMP_321 0x1 0x86"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x86",
+            "instructions": [
+                "CLR_97 = m_owners[U]",
+                "REF_192 = CLR_97",
+                "m_owners[0] = U",
+                "m_owners[1] = U",
+                "m_owners[2] = U",
+                "m_owners[3] = U",
+                "m_owners[4] = U",
+                "m_owners[5] = U",
+                "m_owners[6] = U",
+                "m_owners[7] = U",
+                "m_owners[8] = U",
+                "m_owners[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x89",
+            "instructions": [
+                "RTMP_322 = m_numOwners > 0",
+                "CONDITION RTMP_322 0x1 0x88"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x88",
+            "instructions": [
+                "m_required = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x8b",
+            "instructions": [
+                "RTMP_323 = m_numOwners > 0",
+                "CONDITION RTMP_323 0x1 0x8a"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x8a",
+            "instructions": [
+                "CLR_98 = m_ownerIndex[U]",
+                "REF_193 = CLR_98",
+                "m_ownerIndex[0] = 2",
+                "m_ownerIndex[1] = 2",
+                "m_ownerIndex[2] = 2",
+                "m_ownerIndex[3] = 2",
+                "m_ownerIndex[4] = 2",
+                "m_ownerIndex[5] = 2",
+                "m_ownerIndex[6] = 2",
+                "m_ownerIndex[7] = 2",
+                "m_ownerIndex[8] = 2",
+                "m_ownerIndex[9] = 2"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x8d",
+            "instructions": [
+                "CLR_99 = m_ownerIndex[U]",
+                "REF_194 = CLR_99",
+                "RTMP_324 = REF_194 == 0",
+                "CONDITION RTMP_324 0x1 0x8e"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x8e",
+            "instructions": [
+                "CLR_100 = m_pending[U]",
+                "REF_195 = CLR_100",
+                "CLR_101 = REF_195.yetNeeded",
+                "REF_196 = CLR_101",
+                "RTMP_325 = REF_196 <= 1",
+                "CONDITION RTMP_325 0x8c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x8c",
+            "instructions": [
+                "m_dailyLimit = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x90",
+            "instructions": [
+                "CLR_102 = m_pending[U]",
+                "REF_197 = CLR_102",
+                "CLR_103 = REF_197.yetNeeded",
+                "REF_198 = CLR_103",
+                "RTMP_326 = REF_198 <= 1",
+                "CONDITION RTMP_326 0x91 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x91",
+            "instructions": [
+                "CLR_104 = m_ownerIndex[U]",
+                "REF_199 = CLR_104",
+                "RTMP_327 = REF_199 == 0",
+                "CONDITION RTMP_327 0x1 0x8f"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x8f",
+            "instructions": [
+                "m_spentToday = 0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x94",
+            "instructions": [
+                "m_spentToday = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x96",
+            "instructions": [
+                "TMP_314 = now \/ 86400",
+                "RTMP_315 = TMP_314 > m_lastDay",
+                "CONDITION RTMP_315 0x95 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x95",
+            "instructions": [
+                "TMP_313 = now \/ 86400",
+                "m_lastDay = TMP_313"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x98",
+            "instructions": [
+                "RTMP_329 = true",
+                "CONDITION RTMP_329 0x99 0x99"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x99",
+            "instructions": [
+                "RTMP_328 = m_required == 1",
+                "CONDITION RTMP_328 0x1 0x9a"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x9a",
+            "instructions": [
+                "CLR_105 = m_txs[U]",
+                "REF_202 = CLR_105",
+                "CLR_106 = REF_202.to",
+                "REF_203 = CLR_106",
+                "RTMP_330 = REF_203 == 0",
+                "CONDITION RTMP_330 0x9b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x9b",
+            "instructions": [
+                "CLR_107 = m_txs[U]",
+                "REF_204 = CLR_107",
+                "CLR_108 = REF_204.value",
+                "REF_205 = CLR_108",
+                "RTMP_331 = REF_205 == 0",
+                "CONDITION RTMP_331 0x9c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x9c",
+            "instructions": [
+                "CLR_109 = m_txs.data",
+                "REF_206 = CLR_109",
+                "REF_207 = NEW_VAL integer",
+                "RTMP_332 = REF_207 == 0",
+                "CONDITION RTMP_332 0x97 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x97",
+            "instructions": [
+                "CLR_110 = m_txs[U]",
+                "REF_200 = CLR_110",
+                "CLR_111 = REF_200.to",
+                "REF_201 = CLR_111",
+                "REF_200.to = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x9e",
+            "instructions": [
+                "RTMP_334 = true",
+                "CONDITION RTMP_334 0x9f 0x9f"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x9f",
+            "instructions": [
+                "RTMP_333 = m_required == 1",
+                "CONDITION RTMP_333 0x1 0xa0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa0",
+            "instructions": [
+                "CLR_112 = m_txs[U]",
+                "REF_210 = CLR_112",
+                "CLR_113 = REF_210.to",
+                "REF_211 = CLR_113",
+                "RTMP_335 = REF_211 == 0",
+                "CONDITION RTMP_335 0xa1 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa1",
+            "instructions": [
+                "CLR_114 = m_txs[U]",
+                "REF_212 = CLR_114",
+                "CLR_115 = REF_212.value",
+                "REF_213 = CLR_115",
+                "RTMP_336 = REF_213 == 0",
+                "CONDITION RTMP_336 0xa2 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa2",
+            "instructions": [
+                "CLR_116 = m_txs.data",
+                "REF_214 = CLR_116",
+                "REF_215 = NEW_VAL integer",
+                "RTMP_337 = REF_215 == 0",
+                "CONDITION RTMP_337 0x9d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x9d",
+            "instructions": [
+                "CLR_117 = m_txs[U]",
+                "REF_208 = CLR_117",
+                "CLR_118 = REF_208.value",
+                "REF_209 = CLR_118",
+                "REF_208.value = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa4",
+            "instructions": [
+                "RTMP_339 = true",
+                "CONDITION RTMP_339 0xa5 0xa5"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa5",
+            "instructions": [
+                "RTMP_338 = m_required == 1",
+                "CONDITION RTMP_338 0x1 0xa6"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa6",
+            "instructions": [
+                "CLR_119 = m_txs[U]",
+                "REF_218 = CLR_119",
+                "CLR_120 = REF_218.to",
+                "REF_219 = CLR_120",
+                "RTMP_340 = REF_219 == 0",
+                "CONDITION RTMP_340 0xa7 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa7",
+            "instructions": [
+                "CLR_121 = m_txs[U]",
+                "REF_220 = CLR_121",
+                "CLR_122 = REF_220.value",
+                "REF_221 = CLR_122",
+                "RTMP_341 = REF_221 == 0",
+                "CONDITION RTMP_341 0xa8 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa8",
+            "instructions": [
+                "CLR_123 = m_txs.data",
+                "REF_222 = CLR_123",
+                "REF_223 = NEW_VAL integer",
+                "RTMP_342 = REF_223 == 0",
+                "CONDITION RTMP_342 0xa3 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa3",
+            "instructions": [
+                "CLR_124 = m_txs[U]",
+                "REF_216 = CLR_124",
+                "CLR_125 = REF_216.data",
+                "REF_217 = CLR_125",
+                "REF_216.data = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xaa",
+            "instructions": [
+                "RTMP_308 = m_numOwners > 0",
+                "CONDITION RTMP_308 0x1 0xab"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xab",
+            "instructions": [
+                "RTMP_343 = m_numOwners > 0",
+                "CONDITION RTMP_343 0x1 0xa9"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa9",
+            "instructions": [
+                "m_dailyLimit = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xad",
+            "instructions": [
+                "RTMP_310 = m_numOwners > 0",
+                "CONDITION RTMP_310 0x1 0xae"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xae",
+            "instructions": [
+                "RTMP_344 = m_numOwners > 0",
+                "CONDITION RTMP_344 0x1 0xac"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xac",
+            "instructions": [
+                "TMP_309 = now \/ 86400",
+                "m_lastDay = TMP_309"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb0",
+            "instructions": [
+                "RTMP_318 = m_numOwners > 0",
+                "CONDITION RTMP_318 0x1 0xb1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb1",
+            "instructions": [
+                "RTMP_345 = m_numOwners > 0",
+                "CONDITION RTMP_345 0x1 0xaf"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xaf",
+            "instructions": [
+                "m_numOwners = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb3",
+            "instructions": [
+                "RTMP_319 = m_numOwners > 0",
+                "CONDITION RTMP_319 0x1 0xb4"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb4",
+            "instructions": [
+                "RTMP_346 = m_numOwners > 0",
+                "CONDITION RTMP_346 0x1 0xb2"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb2",
+            "instructions": [
+                "CLR_126 = m_owners[1]",
+                "REF_190 = CLR_126",
+                "m_owners[1] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb6",
+            "instructions": [
+                "RTMP_320 = m_numOwners > 0",
+                "CONDITION RTMP_320 0x1 0xb7"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb7",
+            "instructions": [
+                "RTMP_347 = m_numOwners > 0",
+                "CONDITION RTMP_347 0x1 0xb5"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb5",
+            "instructions": [
+                "CLR_127 = m_ownerIndex[U]",
+                "REF_191 = CLR_127",
+                "m_ownerIndex[0] = 1",
+                "m_ownerIndex[1] = 1",
+                "m_ownerIndex[2] = 1",
+                "m_ownerIndex[3] = 1",
+                "m_ownerIndex[4] = 1",
+                "m_ownerIndex[5] = 1",
+                "m_ownerIndex[6] = 1",
+                "m_ownerIndex[7] = 1",
+                "m_ownerIndex[8] = 1",
+                "m_ownerIndex[9] = 1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb9",
+            "instructions": [
+                "RTMP_321 = m_numOwners > 0",
+                "CONDITION RTMP_321 0x1 0xba"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xba",
+            "instructions": [
+                "RTMP_348 = m_numOwners > 0",
+                "CONDITION RTMP_348 0x1 0xb8"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb8",
+            "instructions": [
+                "CLR_128 = m_owners[U]",
+                "REF_192 = CLR_128",
+                "m_owners[0] = U",
+                "m_owners[1] = U",
+                "m_owners[2] = U",
+                "m_owners[3] = U",
+                "m_owners[4] = U",
+                "m_owners[5] = U",
+                "m_owners[6] = U",
+                "m_owners[7] = U",
+                "m_owners[8] = U",
+                "m_owners[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xbc",
+            "instructions": [
+                "RTMP_322 = m_numOwners > 0",
+                "CONDITION RTMP_322 0x1 0xbd"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xbd",
+            "instructions": [
+                "RTMP_349 = m_numOwners > 0",
+                "CONDITION RTMP_349 0x1 0xbb"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xbb",
+            "instructions": [
+                "m_required = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xbf",
+            "instructions": [
+                "RTMP_323 = m_numOwners > 0",
+                "CONDITION RTMP_323 0x1 0xc0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xc0",
+            "instructions": [
+                "RTMP_350 = m_numOwners > 0",
+                "CONDITION RTMP_350 0x1 0xbe"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xbe",
+            "instructions": [
+                "CLR_129 = m_ownerIndex[U]",
+                "REF_193 = CLR_129",
+                "m_ownerIndex[0] = 2",
+                "m_ownerIndex[1] = 2",
+                "m_ownerIndex[2] = 2",
+                "m_ownerIndex[3] = 2",
+                "m_ownerIndex[4] = 2",
+                "m_ownerIndex[5] = 2",
+                "m_ownerIndex[6] = 2",
+                "m_ownerIndex[7] = 2",
+                "m_ownerIndex[8] = 2",
+                "m_ownerIndex[9] = 2"
+            ]
+        }
+    ],
+    "root_addr": "0xf33",
+    "dest_addrs": [],
+    "normal_blocks": [
+        {
+            "scope": "execute",
+            "addr": "0xf2d",
+            "instructions": [
+                "NOP",
+                "JUMP 0xf2e"
+            ]
+        },
+        {
+            "scope": "execute",
+            "addr": "0xf2e",
+            "instructions": [
+                "TMP_65 = NEW_VAL unknown",
+                "CLR_130 = m_ownerIndex[TMP_65]",
+                "REF_23 = CLR_130",
+                "TMP_66 = REF_23 > 0",
+                "TMP_169 = TMP_66",
+                "JUMP 0xf2f"
+            ]
+        },
+        {
+            "scope": "execute",
+            "addr": "0xf30",
+            "instructions": [
+                "CLR_131 = msg.sender",
+                "_addr = CLR_131",
+                "JUMP 0xf2d"
+            ]
+        },
+        {
+            "scope": "execute",
+            "addr": "0xf2f",
+            "instructions": [
+                "TMP_165 = TMP_169",
+                "JUMP 0xf31"
+            ]
+        },
+        {
+            "scope": "execute",
+            "addr": "0xf32",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "execute",
+            "addr": "0xf33",
+            "instructions": [
+                "NOP",
+                "_addr = NEW_VAL integer",
+                "_to = NEW_VAL integer",
+                "_h = NEW_VAL integer",
+                "ownerIndex = NEW_VAL integer",
+                "_value = NEW_VAL integer",
+                "created = NEW_VAL integer",
+                "_operation = NEW_VAL integer",
+                "created = NEW_VAL integer",
+                "_data = NEW_VAL integer",
+                "_value = NEW_VAL integer",
+                "pending = NEW_VAL PendingState",
+                "ownerIndexBit = NEW_VAL integer",
+                "_operation = NEW_VAL integer",
+                "o_hash = NEW_VAL integer",
+                "JUMP 0xf30"
+            ]
+        },
+        {
+            "scope": "execute",
+            "addr": "0xf31",
+            "instructions": [
+                "CONDITION TMP_165 0xf32 0xf34"
+            ]
+        },
+        {
+            "scope": "execute",
+            "addr": "0xf34",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

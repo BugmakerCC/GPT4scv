@@ -1,0 +1,21 @@
+The smart contract has a few vulnerabilities:
+
+1. Reentrancy: In the `Collect` function, the balance of the account is only updated after the external call. This could potentially allow for a reentrancy attack where the external contract called could call `Collect` again before the first invocation of `Collect` has finished executing, and thus withdraw more Ether than it should be allowed to.
+
+2. Arithmetic Issues: There are no safeguards against underflow when the balance is decreased with `acc.balance -= _am;`. If `_am` is greater than `acc.balance`, an underflow will occur, potentially leading to unexpected behavior.
+
+3. Unchecked Return Values For Low Level Calls: The low-level `.call` function is used without checking its return value. This could lead to fails silently, and can potentially cause the contract to behave in unexpected ways.
+
+4. Access Control: The `AddMessage` function in the `Log` contract is public, which means any account can call it and add messages to the log. This could lead to false information being logged.
+
+5. Denial of Service: If `acc.unlockTime` is set to a future time that is longer than the user expects, they may not be able to withdraw their funds when desired.
+
+6. Bad Randomness: The contract doesn't involve randomness but if it did, using `now` as a source of randomness could be manipulated by miners to some degree.
+
+7. Front-Running: Since Ethereum transactions are public, a malicious actor could observe a pending transaction and then issue their own transaction with a higher gas price to front-run the original transaction.
+
+8. Time manipulation: `now` is used in the contract which can be manipulated by miners to a certain degree. 
+
+9. Short Address Attack: Not applicable here as the contract does not take address inputs from users. However, if it did, and it did not check the length of the address, it could be vulnerable to a short address attack. 
+
+So, the contract should be updated to handle these vulnerabilities.

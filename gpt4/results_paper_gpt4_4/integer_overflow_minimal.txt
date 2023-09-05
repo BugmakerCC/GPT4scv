@@ -1,0 +1,11 @@
+The smart contract provided has an Arithmetic Issue, specifically an integer underflow vulnerability. 
+
+This contract has a public variable 'count' initialized with the value 1. The function 'run' subtracts an input value from 'count'. 
+
+In Solidity, uint (unsigned integer) variables must be greater than or equal to 0. If a subtraction operation results in a negative number, the uint variable will underflow and wrap around to a very large number (close to 2^256-1).
+
+This underflow can occur if the 'input' passed to the 'run' function is greater than 'count'. As 'count' is initially set to 1, any input greater than 1 will cause an underflow. 
+
+To avoid this, you should implement checks to ensure that the 'input' is not greater than 'count' before performing the subtraction operation. 
+
+There is no reentrancy, access control, unchecked return values, denial of service, bad randomness, front-running, time manipulation, or short address attack vulnerabilities detected in this contract. However, this does not mean that the contract is completely secure. Always consider the context of how the contract is being used and continue to monitor for new vulnerabilities.

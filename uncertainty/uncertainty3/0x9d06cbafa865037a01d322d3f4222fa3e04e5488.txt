@@ -1,0 +1,19 @@
+The smart contract has several potential vulnerabilities:
+
+1. Reentrancy: This contract does not seem to have a direct reentrancy vulnerability as it does not make external calls to untrusted contracts in the midst of state changes. However, it's always good to use patterns like Checks-Effects-Interactions to prevent this kind of vulnerability.
+
+2. Arithmetic Issues: There is a potential for underflow or overflow issues in the line where token_buy is calculated. Solidity does not handle these cases and they could lead to unexpected results. The SafeMath library should be used for arithmetic operations.
+
+3. Unchecked Return Values For Low Level Calls: The contract uses low-level calls such as '.call' and '.send' methods without checking their return values. These methods can fail silently, so it's recommended to check their return values and handle errors properly. 
+
+4. Access Control: The contract has an 'onlyOwner' modifier which is good for access control. However, the contract also has a public 'active' field which could be manipulated by anyone.
+
+5. Denial of Service: The contract has a potential for a denial of service attack. In the 'tokens_buy' function, if the 'transferFrom' function call fails, the function returns false and this could potentially block further transactions.
+
+6. Bad Randomness: This contract does not use any randomness, so this vulnerability doesn't apply.
+
+7. Front-Running: The contract could be vulnerable to front-running attacks, especially in the 'tokens_buy' function where attackers can see pending transactions and act on that information.
+
+8. Time manipulation: This contract does not rely on timestamps or block numbers, so this vulnerability doesn't apply.
+
+9. Short Address Attack: This contract does not seem to be vulnerable to a short address attack as it does not take addresses as input from the user. However, it's always good to verify the length of the address inputs to prevent this kind of attack.

@@ -1,0 +1,21 @@
+The smart contract has multiple vulnerabilities:
+
+1. Reentrancy: The fundPuppets function in the Splitter contract and the fallback function in the Puppet contract can be vulnerable to reentrancy attacks. This is because they are making external calls to unknown addresses using the low level .call function without adjusting the state beforehand.
+
+2. Access Control: The setExtra function in the Splitter contract does not check if the sender is the owner before executing. This can allow any address to change the extra mapping.
+
+3. Arithmetic Issues: Although the contract uses SafeMath for the division in the fundPuppets function, it does not use it for the subtraction and addition operations elsewhere in the contract.
+
+4. Unchecked Return Values: The contract uses .call for external calls but does not check the return value. If the external call fails, the contract will not be aware of it.
+
+5. Denial of Service: If an attacker can cause the contract to reach the gas limit in the fundPuppets function or the fallback function in the Puppet contract, they can freeze the contract.
+
+6. Bad Randomness: Not applicable in this contract.
+
+7. Front-Running: Not applicable in this contract.
+
+8. Time manipulation: Not applicable in this contract.
+
+9. Short Address Attack: Not applicable in this contract.
+
+In conclusion, the contract has vulnerabilities related to reentrancy, access control, arithmetic issues, unchecked return values and denial of service.

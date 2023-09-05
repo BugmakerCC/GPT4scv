@@ -1,0 +1,19 @@
+This smart contract is vulnerable to the Reentrancy attack. 
+
+In the `withdrawBalance()` function, it sends the user's balance back to the sender's address before setting the user's balance to zero in the contract's state. If the recipient of the funds is a malicious contract, it could call back into `withdrawBalance()` before the balance has been set to zero, causing more ether to be sent than the user actually had in their balance.
+
+This issue can be mitigated by updating the contract's state before making the external call. This way, even if the recipient contract calls back into `withdrawBalance()`, it will see that the user's balance has already been set to zero.
+
+Here is the corrected code:
+
+```
+function withdrawBalance(){
+    uint amount = userBalance[msg.sender];
+    userBalance[msg.sender] = 0;
+    if( ! (msg.sender.call.value(amount)() ) ){
+        throw;
+    }
+}
+```
+
+This contract does not seem to have any of the other vulnerabilities listed.

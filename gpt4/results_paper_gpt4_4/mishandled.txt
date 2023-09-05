@@ -1,0 +1,23 @@
+This smart contract has a Reentrancy vulnerability.
+
+In the `withdrawBalance()` function, the balance of the sender is set to 0 after the `send` function is called. This allows for a potential Reentrancy attack. 
+
+An attacker could create a contract that calls `withdrawBalance()`. If the `send` function call fails, the execution will still continue and the balance of the attacker contract will not be set to 0. This allows the attacker to call `withdrawBalance()` again to drain more funds than they should be able to.
+
+To fix this vulnerability, the state variable `userBalances[msg.sender]` should be set to 0 before the `send` function is called. This way, even if the `send` function fails, the balance of the sender will be set to 0, preventing a Reentrancy attack.
+
+Here's a corrected version of the contract:
+
+```
+pragma solidity ^0.4.0;
+contract SendBack {
+    mapping (address => uint) userBalances;
+    function withdrawBalance() {  
+        uint amountToWithdraw = userBalances[msg.sender];
+        userBalances[msg.sender] = 0;
+        
+        require(msg.sender.send(amountToWithdraw));
+    }
+}
+```
+In this corrected version, the `require` keyword is used to ensure that the `send` function call is successful. If the `send` call fails for any reason, the entire transaction will be reverted, and the state of the contract will be rolled back to its state before the transaction was executed.

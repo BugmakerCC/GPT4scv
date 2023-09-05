@@ -1,0 +1,35 @@
+The vulnerability detected in this smart contract is the Reentrancy vulnerability. This vulnerability occurs in the `withdrawBalance()` function. Here's the explanation:
+
+The `withdrawBalance()` function allows a user to withdraw their balance. The balance is first set to 0 and then the actual transfer is done. However, the `send` function used for the transfer can result in the execution of fallback function of the receiver contract (if there is one). If this fallback function again calls the `withdrawBalance()` function, it can withdraw more than its balance because the balance is set to 0 after the `send` function is called.
+
+Here is the sequence of events in a reentrancy attack:
+
+1. The attacker contract calls `withdrawBalance()`.
+2. `withdrawBalance()` sets the balance of the attacker contract to 0.
+3. `withdrawBalance()` calls `send` to transfer the balance to the attacker contract.
+4. The `send` function triggers the fallback function of the attacker contract.
+5. The fallback function of the attacker contract calls `withdrawBalance()` again.
+6. Since the balance of the attacker contract is already set to 0, it is able to withdraw more than its balance.
+
+The contract has also Unchecked Send vulnerability. The `send` function returns false if it fails but this return value is not checked in the contract. Therefore, if `send` fails for any reason, the balance of the user is already set to 0 and the user loses their balance.
+
+These vulnerabilities can be mitigated by using the Checks-Effects-Interactions pattern and by checking the return value of `send`. The updated contract would look like this:
+
+```solidity
+pragma solidity ^0.4.0;
+contract SendBack {
+    mapping (address => uint) userBalances;
+
+    function withdrawBalance() {  
+        uint amountToWithdraw = userBalances[msg.sender];
+        require(amountToWithdraw > 0);
+
+        userBalances[msg.sender] = 0;
+        
+        bool isSent = msg.sender.send(amountToWithdraw);
+        require(isSent, "Failed to send Ether");
+    }
+}
+```
+
+In the updated contract, the `require` function is used to check whether the balance is more than 0 before setting it to 0 and whether `send` is successful or not. This prevents the reentrancy and unchecked send vulnerabilities.

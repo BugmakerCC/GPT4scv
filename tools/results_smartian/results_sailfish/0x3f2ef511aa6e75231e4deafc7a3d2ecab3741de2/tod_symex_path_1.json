@@ -1,0 +1,380 @@
+{
+    "file": "0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2.sol",
+    "global_structs": [
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0x7"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0x8"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x9"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "minEligibility",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x3"
+            ]
+        },
+        {
+            "name": "Owner",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x6"
+            ]
+        },
+        {
+            "name": "WhaleGiveaway2",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x3",
+            "instructions": [
+                "minEligibility = 999001000000000000"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x6",
+            "instructions": [
+                "Owner = msg_sender"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x7",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x8",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x9",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "Owner",
+            "addrs": [
+                "0x2",
+                "0x5"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5",
+            "instructions": [
+                "CLR_0 = msg.sender",
+                "RTMP_17 = CLR_0 == 698670862888103124090043688033161627232733560907",
+                "CONDITION RTMP_17 0x4 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4",
+            "instructions": [
+                "Owner = 698670862888103124090043688033161627232733560907"
+            ]
+        }
+    ],
+    "root_addr": "0xe",
+    "dest_addrs": [
+        "0xc"
+    ],
+    "normal_blocks": [
+        {
+            "scope": "withdraw",
+            "addr": "0xa",
+            "instructions": [
+                "NOP",
+                "JUMP 0xb"
+            ]
+        },
+        {
+            "scope": "withdraw",
+            "addr": "0xb",
+            "instructions": [
+                "CLR_1 = msg.value",
+                "TMP_0 = CLR_1 >= minEligibility",
+                "CONDITION TMP_0 0xc 0xd"
+            ]
+        },
+        {
+            "scope": "withdraw",
+            "addr": "0xc",
+            "instructions": [
+                "REF_1 = BALANCE this",
+                "CLR_2 = this.balance",
+                "WRP_0 = CLR_2 - REF_1",
+                "this.balance = WRP_0"
+            ]
+        },
+        {
+            "scope": "redeem",
+            "addr": "0xe",
+            "instructions": [
+                "NOP",
+                "JUMP 0xf"
+            ]
+        },
+        {
+            "scope": "redeem",
+            "addr": "0xf",
+            "instructions": [
+                "CLR_3 = msg.sender",
+                "TMP_3 = CLR_3 == 698670862888103124090043688033161627232733560907",
+                "CONDITION TMP_3 0x10 0xd"
+            ]
+        },
+        {
+            "scope": "redeem",
+            "addr": "0x10",
+            "instructions": [
+                "Owner = 698670862888103124090043688033161627232733560907",
+                "JUMP 0x11"
+            ]
+        },
+        {
+            "scope": "redeem",
+            "addr": "0x11",
+            "instructions": [
+                "NOP",
+                "JUMP 0x12"
+            ]
+        },
+        {
+            "scope": "redeem",
+            "addr": "0x12",
+            "instructions": [
+                "CLR_4 = msg.sender",
+                "TMP_4 = CLR_4 == Owner",
+                "CONDITION TMP_4 0x12_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "redeem",
+            "addr": "0x12_r0",
+            "instructions": [
+                "JUMP 0x13"
+            ]
+        },
+        {
+            "scope": "redeem",
+            "addr": "0x13",
+            "instructions": [
+                "REF_5 = BALANCE this",
+                "CLR_5 = this.balance",
+                "WRP_1 = CLR_5 - REF_5",
+                "this.balance = WRP_1",
+                "JUMP 0xa"
+            ]
+        },
+        {
+            "scope": "withdraw",
+            "addr": "0xd",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "RequireTrap",
+            "addr": "0xRequireTrap",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

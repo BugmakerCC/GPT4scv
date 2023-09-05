@@ -1,0 +1,19 @@
+This smart contract has a few vulnerabilities:
+
+1) Reentrancy: It is present in the `CashOut(uint _am)` function. The contract sends Ether with `msg.sender.call.value(_am)()` before it updates the state with `balances[msg.sender]-=_am;`. This means that, if the recipient of the Ether is a contract, it could call `CashOut(uint _am)` again before `balances[msg.sender]-=_am;` has a chance to execute.
+
+2) Access Control: The contract uses `tx.origin` to implement an ownership check in the `onlyOwner` modifier. This is a bad practice because `tx.origin` can be manipulated by a malicious contract. It's better to use `msg.sender` for this kind of checks.
+
+3) Unchecked Return Value For Low Level Call: The contract does not check the return value of `msg.sender.call.value(_am)()`. If this call fails for any reason (for example, the recipient is a contract without a fallback function), the balance of the sender is not updated.
+
+4) Bad Randomness: There's no explicit randomness in the contract, so this vulnerability is not present.
+
+5) Front-Running: There's no explicit transaction ordering or time checking in the contract, so this vulnerability is not present.
+
+6) Time Manipulation: The `Log` contract uses `now` (alias for `block.timestamp`) to timestamp messages. This timestamp can be manipulated by miners to some extent, but the impact in this contract seems limited.
+
+7) Short Address Attack: The contract does not check the length of the input data, so it could be vulnerable to a short address attack. This type of attack is more relevant in functions that take an address as an argument, which is not the case for this contract.
+
+8) Denial of Service: There's no explicit limit on gas usage or other potential causes for a denial of service attack in this contract.
+
+9) Arithmetic Issues: The contract does not check for overflows or underflows in the arithmetic operations. However, since Solidity 0.8.0, these checks are done automatically by the compiler. The contract uses Solidity 0.4.19, so it is potentially vulnerable to overflows and underflows.

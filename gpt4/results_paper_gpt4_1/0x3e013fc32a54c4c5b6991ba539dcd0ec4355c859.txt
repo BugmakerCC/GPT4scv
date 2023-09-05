@@ -1,0 +1,19 @@
+1. Reentrancy: The contract is susceptible to reentrancy attacks. In the `multiplicate` function, external contract is called before the state (balance) is updated. An attacker could create a contract that calls back into `multiplicate` before `adr.transfer` has finished. 
+
+2. Access Control: The contract seems to have implemented access controls correctly as it uses `require(msg.sender == Owner)` for the `withdraw` and `Command` functions that should be restricted to the contract owner. 
+
+3. Arithmetic Issues: There doesn't seem to be an arithmetic issue here as no mathematical operations are performed that could potentially overflow/underflow. 
+
+4. Unchecked Return Values For Low Level Calls: The contract uses `adr.call.value` in the `Command` function without checking the return value. This could lead to unexpected behavior if the call fails. 
+
+5. Denial of Service: The contract seems to be vulnerable to DoS in the `multiplicate` function. An attacker could repeatedly call this function with enough ether to keep the contract's balance low, preventing others from using it.
+
+6. Bad Randomness: There doesn't appear to be any reliance on randomness in this contract.
+
+7. Front-Running: There doesn't appear to be any transaction ordering dependency which could make the contract vulnerable to Front-Running.
+
+8. Time manipulation: This contract does not rely on timestamps so it's not vulnerable to time manipulation attacks.
+
+9. Short Address Attack: The contract does not seem to be vulnerable to short address attacks as it does not manipulate input data based on length. 
+
+Please note that this analysis assumes that the contract interactions are taking place in a secure environment and does not account for any off-chain or client vulnerabilities.

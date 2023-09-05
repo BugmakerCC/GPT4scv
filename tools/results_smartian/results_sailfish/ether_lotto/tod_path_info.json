@@ -1,0 +1,32 @@
+{
+    "tod_symex_path_1.json": {
+        "file_name": "",
+        "from_function": "play",
+        "to_function": "play",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 23\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 35\nCall context: \nNone\nTMP_7 = pot - FEE_AMOUNT\nTransfer dest:msg.sender value:TMP_7\""
+        ],
+        "executable_instructions": 45,
+        "state_variable": "pot",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    },
+    "tod_symex_path_2.json": {
+        "file_name": "",
+        "from_function": "play",
+        "to_function": "play",
+        "bug_type": "tod_amount_or_receiver",
+        "src_node": "\"BlockID: 38\nCall context: \nNone\nENTRY_POINT None\"",
+        "dest_node": [
+            "\"BlockID: 50\nCall context: \nNone\nTMP_7 = pot - FEE_AMOUNT\nTransfer dest:msg.sender value:TMP_7\""
+        ],
+        "executable_instructions": 45,
+        "state_variable": "pot",
+        "error": "",
+        "result": "",
+        "execution_details": ""
+    }
+}

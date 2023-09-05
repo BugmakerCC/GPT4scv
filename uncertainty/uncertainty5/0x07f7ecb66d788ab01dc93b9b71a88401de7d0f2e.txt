@@ -1,0 +1,21 @@
+The smart contract may have the following vulnerabilities:
+
+1. Reentrancy: The "payout", "donateToWhale", and "loseWager" functions use the "transfer" and "call.value" methods to send ether which are potentially prone to reentrancy attacks. However, there is no state change after these calls, so reentrancy might not be exploitable.
+
+2. Access Control: The contract seems to have well-defined access controls using the "onlyOwner" and "isOpenToPublic" modifiers.
+
+3. Arithmetic Issues: The contract does not use the SafeMath library or any other mechanism to prevent overflows or underflows. This is potentially risky, but without a specific example of an arithmetic operation that could overflow or underflow, it's hard to say if this is exploitable.
+
+4. Unchecked Return Values: The "donateToWhale" and "loseWager" functions use the low-level "call.value" method without checking the return value. This could potentially allow a transfer to fail silently if the whale address is a contract that rejects incoming transactions.
+
+5. Denial of Service: The "play" function could potentially be used to drain the contract of ether, leaving it unable to pay out other winners.
+
+6. Bad Randomness: The "play" function uses the hash of the previous block and the player's address to determine a winning number. This is not secure, as miners can potentially manipulate the block hash.
+
+7. Front-Running: The "wager" and "play" functions could potentially be front-run, as they are based on public blockchain data.
+
+8. Time manipulation: The "play" function relies on the "block.number" for determining whether the player can play or not. Miners have slight control over this value, which can be manipulated.
+
+9. Short Address Attack: The contract does not seem to be vulnerable to short address attacks as it does not take address inputs from transactions, only from the contract deployer.
+
+Overall, the contract has potential vulnerabilities and risks associated with randomness, unchecked return values, possible DoS, and miner manipulations but not necessarily direct exploits.

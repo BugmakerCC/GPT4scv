@@ -1,0 +1,19 @@
+The given smart contract contains multiple vulnerabilities:
+
+1. Reentrancy: The CashOut function is susceptible to a Reentrancy attack because it calls an external contract (via the `call.value()`) before it updates the state (`balances[msg.sender]`).
+
+2. Access Control: There seems to be no access control mechanism for the CashOut function. Any account can invoke these functions and manipulate the contract's state.
+
+3. Arithmetic Issues: There are no checks for overflows or underflows when updating the balances in the Deposit function.
+
+4. Unchecked Return Values For Low Level Calls: The contract is using low level `call` for sending Ether in CashOut function. If this call fails, the contract will not be aware of it.
+
+5. Denial of Service: If the external call in the CashOut function fails for some reason, the user will be unable to withdraw their funds, creating a Denial of Service attack.
+
+6. Bad Randomness: The contract doesn't seem to be using any randomness.
+
+7. Front-Running: Given the public nature of transactions, a malicious actor can see a CashOut transaction and front-run it.
+
+8. Time manipulation: The contract is using `block.number` for ensuring that CashOut is only called once per block. A miner can manipulate this.
+
+9. Short Address Attack: This vulnerability is not a concern here because the contract does not take any address as an input from the user.

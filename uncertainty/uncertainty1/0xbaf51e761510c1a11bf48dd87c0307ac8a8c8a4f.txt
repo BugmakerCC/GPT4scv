@@ -1,0 +1,19 @@
+The smart contract contains the following vulnerabilities:
+
+1. Reentrancy: The `CashOut` function is vulnerable to a reentrancy attack because it calls `msg.sender.call.value(_am)()` before it reduces the balance of the sender (`balances[msg.sender]-=_am`). An attacker could recursively call the `CashOut` function and drain the contract's Ether.
+
+2. Arithmetic Issues: The `Deposit` function may lead to integer overflow vulnerabilities. When it executes `balances[msg.sender]+=msg.value`, if `msg.value` is large enough, it could cause the balance of the sender to overflow and become very small, which could lead to unexpected behavior in the `CashOut` function.
+
+3. Unchecked Return Values For Low Level Calls: The low-level call `msg.sender.call.value(_am)()` in the `CashOut` function does not check the return value. This could lead to unexpected behavior if the call fails.
+
+4. Access Control: There is no access control in the `AddMessage` function of the `Log` contract. This means that any address can call this function and add messages to the `History`.
+
+5. Denial of Service: If the call to `msg.sender.call.value(_am)()` in the `CashOut` function runs out of gas or throws an exception for any reason, then the transaction will fail and the user will be unable to cash out their balance. This could lead to a Denial of Service.
+
+6. Bad Randomness: Not applicable as no randomness is used in the contract.
+
+7. Front-Running: Not applicable as no operations in the contract are susceptible to front-running.
+
+8. Time manipulation: The `AddMessage` function of the `Log` contract uses `now` for timestamping messages. The `now` keyword in Solidity returns the timestamp of the current block, which can be manipulated by miners to some degree.
+
+9. Short Address Attack: Not applicable as the contract does not take address inputs from users to perform operations.

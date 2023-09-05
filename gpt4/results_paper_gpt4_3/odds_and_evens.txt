@@ -1,0 +1,13 @@
+The smart contract `OddsAndEvens` has the following potential vulnerabilities:
+
+1. Reentrancy Vulnerability: The `andTheWinnerIs()` function in the contract is prone to reentrancy attacks. After checking the winner, the contract sends ether to the winning address. If the receiving address is a contract, it could fallback to the `play()` function, pushing the `tot` variable to `2` again and re-calling `andTheWinnerIs()`.
+
+2. Arithmetic Issues: There is a possibility of an integer overflow when adding the numbers of the two players. If the sum of the numbers of the two players is larger than the maximum number that can be stored in a uint variable, it will overflow and revert back to a small number.
+
+3. Unchecked Return Values For Low Level Calls: The low-level `send()` function is used to transfer ether, but the return value isn't checked. If the `send()` function fails, ether will not be transferred, but the contract will continue to run. This could lead to unexpected behavior.
+
+4. Denial of Service: In the `getProfit()` function, if the owner's address is a contract that throws an error, it will prevent anyone from withdrawing profits. This is a Denial of Service (DoS) attack.
+
+5. Access Control: The `andTheWinnerIs()` function is set to private, but it can still be indirectly accessed through the `play()` function, which is public. If the contract's logic is not correct, it could be exploited.
+
+Fixes for these vulnerabilities include using the `transfer()` function instead of `send()`, implementing mutex to prevent re-entrancy, checking the return value of `send()`, and adding proper access control measures.

@@ -1,0 +1,46 @@
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Analysis started at: 2023-08-14 02:58:28 AM
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Version constraints: ['^0.4.25']
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | solc version: v0.4.25
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Callgraph generation started!
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Callgraph generation finished!
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Value Range Analysis started
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Generating return summary for insertNnumbers
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Return summary generated for insertNnumbers
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Range graph generated
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Processed function insertNnumbers
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Generating return summary for clear
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Return summary generated for clear
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Range graph generated
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Processed function clear
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Generating return summary for clearDOS
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Return summary generated for clearDOS
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Range graph generated
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Processed function clearDOS
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Generating return summary for getLengthArray
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Return summary generated for getLengthArray
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Processed function getLengthArray
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Generating return summary for getRealLengthArray
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Return summary generated for getRealLengthArray
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Processed function getRealLengthArray
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Generating return summary for slitherConstructorVariables
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Return summary generated for slitherConstructorVariables
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Range graph generated
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Processed function slitherConstructorVariables
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Value Range Analysis took 0.002219 seconds
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Value Range Analysis finished
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Dependency detection started!
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Dependency detection finished!
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Static Analysis took 0.190562 seconds
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Dependency does not exist
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Symbolic execution is not needed!
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Analysis finished!
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Analysis took 0.190772 seconds
+[INFO] | 2023-08-14 02:58:28 AM | analyzer.dos_number | Analysis finished at: 2023-08-14 02:58:28 AM

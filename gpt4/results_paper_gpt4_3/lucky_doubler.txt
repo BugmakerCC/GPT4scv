@@ -1,0 +1,19 @@
+Here are the potential vulnerabilities identified in the smart contract:
+
+1. Reentrancy: The function `join()` contains a potential reentrancy vulnerability. It sends ether with `theEntry.entryAddress.send(payout);` and then modifies the state of the contract with `theEntry.paid = true;`. An attacker could potentially cause the fallback function to be called again before `theEntry.paid = true;` is executed, allowing them to drain more ether than they should be able to.
+
+2. Bad Randomness: The `rand()` function relies on the block hash of the previous block to generate randomness. An attacker could potentially manipulate this by influencing the transactions mined in the previous block.
+
+3. Access Control: The `changeOwner`, `changeMultiplier`, and `changeFee` functions are only protected by the `onlyowner` modifier. If the owner's private key is compromised, these functions can be manipulated.
+
+4. Arithmetic Issues: The contract does not use SafeMath or similar to handle arithmetic operations. This could potentially lead to integer underflows or overflows.
+
+5. Unchecked Return Values: The contract uses `.send()`, which can fail silently. It's safer to use `.transfer()`, which throws an error if the transaction fails.
+
+6. Denial of Service: The contract could potentially be stuck if it tries to send ether to a contract that throws an error in its fallback function.
+
+7. Front-Running: Since the `join()` function determines who gets paid based on some randomness, an attacker could see a transaction that calls this function in the mempool and then front-run it by sending a transaction with a higher gas price.
+
+8. Time manipulation: The contract does not appear to be vulnerable to time manipulation.
+
+9. Short Address Attack: The contract does not appear to be vulnerable to short address attack as it does not take address inputs from transaction data. However, it's always safest to include checks for the length of addresses.

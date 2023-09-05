@@ -1,0 +1,19 @@
+This contract has several vulnerabilities:
+
+1. Reentrancy: The `GetPie()` and `withdraw()` functions are vulnerable to reentrancy attacks. Both functions call `transfer` on an externally owned account (EOA) and do not use a mutex or check-effects-interactions pattern to prevent reentrancy. An attacker could recursively call these functions during the `transfer` and drain the contract's Ether.
+
+2. Access Control: The contract does not restrict who can call the `GetPie()` function. This could lead to unauthorized withdrawals. Furthermore, the `withdraw()` function allows the `Owner` to be changed to a specific hardcoded address, which could lead to unauthorized control of the contract.
+
+3. Arithmetic Issues: This contract does not appear to have any arithmetic operations, so it is not vulnerable to integer overflow or underflow.
+
+4. Unchecked Return Values For Low Level Calls: The `Command()` function makes a low-level `.call()`, but it doesn't check the return value, which could lead to unexpected behavior if the call fails.
+
+5. Denial of Service: The `GetPie()` function could be used to perform a Denial of Service attack as it drains all Ether from the contract when called with more than 1 Ether. If the contract's balance is constantly drained, it could prevent other functions from completing successfully.
+
+6. Bad Randomness: The contract does not use any random numbers, so it is not vulnerable to bad randomness.
+
+7. Front-Running: The contract does not appear to be vulnerable to front-running as it doesn't depend on transaction ordering or time-of-check vs time-of-use vulnerabilities.
+
+8. Time manipulation: The contract does not use timestamps or block numbers, so it is not vulnerable to time manipulation.
+
+9. Short Address Attack: The contract does not take any address inputs from users, so it is not vulnerable to short address attacks. However, it does have a hardcoded address which could be problematic if the address was incorrectly copied or tampered with.

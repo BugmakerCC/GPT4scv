@@ -1,0 +1,58 @@
+{
+    "wallet_03_wrong_constructor.sol": [
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "withdraw",
+                "deposit"
+            ],
+            "First_function": "deposit",
+            "Second_function": "withdraw",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 5\nFunction: deposit\nNode: \nEXPRESSION balances[msg.sender] += msg.value\nIRS: \nREF_2 = REF_2 + msg.value\"",
+                        "\"BlockID: 7\nFunction: withdraw\nNode: \nEXPRESSION require(bool)(amount <= balances[msg.sender])\nIRS: \nTMP_4 = SOLIDITY_CALL require(bool)(TMP_3)\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "withdraw",
+                "withdraw"
+            ],
+            "First_function": "withdraw",
+            "Second_function": "withdraw",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 16\nFunction: withdraw\nNode: \nEXPRESSION balances[msg.sender] -= amount\nIRS: \nREF_5 = REF_5 - amount\"",
+                        "\"BlockID: 7\nFunction: withdraw\nNode: \nEXPRESSION require(bool)(amount <= balances[msg.sender])\nIRS: \nTMP_4 = SOLIDITY_CALL require(bool)(TMP_3)\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "migrateTo",
+                "initWallet"
+            ],
+            "First_function": "initWallet",
+            "Second_function": "migrateTo",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 2\nFunction: initWallet\nNode: \nEXPRESSION creator = msg.sender\nIRS: \ncreator := msg.sender\"",
+                        "\"BlockID: 11\nFunction: migrateTo\nNode: \nEXPRESSION require(bool)(creator == msg.sender)\nIRS: \nTMP_7 = SOLIDITY_CALL require(bool)(TMP_6)\""
+                    ],
+                    "state_variable": "creator"
+                }
+            ]
+        }
+    ]
+}

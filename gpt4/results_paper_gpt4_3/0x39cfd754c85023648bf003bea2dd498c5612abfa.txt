@@ -1,0 +1,23 @@
+The smart contract provided has the following potential vulnerabilities:
+
+1. Re-entrancy: The `WithdrawToHolder` function makes an external call to `_addr.call.value(_wei)`, which could potentially allow for a re-entrancy attack if `_addr` is a malicious contract. This could be mitigated by using the 'checks-effects-interactions' pattern, where the balance is deducted before the external call is made.
+
+2. Access Control: The contract uses the onlyOwner modifier for sensitive functions, which restricts access to only the contract owner. However, the modifier implementation is incorrect. The line `if(owner == msg.sender)_;` should be `require(msg.sender == owner);`.
+
+3. Arithmetic Issues: The contract does not use the SafeMath library or similar precautions to prevent arithmetic overflows or underflows. This could potentially lead to unexpected behavior in the `Deposit` and `WithdrawToHolder` functions.
+
+4. Unchecked Return Values For Low Level Calls: Low level calls such as `_addr.call.value(_wei)` and `token.call(bytes4(sha3("transfer(address,uint256)")),to,amount)` do not check the return value, which can lead to unexpected behavior if the calls fail.
+
+5. Denial of Service: The contract does not have protections against gas limit issues or unexpected behavior from external calls, which could lead to denial of service.
+
+6. Front-Running: The contract does not have protections against front-running attacks, which could allow malicious users to manipulate transaction ordering.
+
+7. Time manipulation: The contract does not rely on block.timestamp or now for any functionality.
+
+8. Bad Randomness: The contract does not use any randomness.
+
+9. Short Address Attack: The contract does not check the length of the input address, which leaves it vulnerable to short address attacks.
+
+10. The `changeOwner` function allows setting a new owner but the `confirmOwner` function does not have the `onlyOwner` modifier, meaning anyone can become the owner if they know the address set in `newOwner`. This is a severe vulnerability.
+
+Please note that this analysis is based on a quick review and a more in-depth analysis might reveal further potential vulnerabilities.

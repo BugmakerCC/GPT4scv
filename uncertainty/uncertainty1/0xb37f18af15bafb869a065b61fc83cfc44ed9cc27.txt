@@ -1,0 +1,11 @@
+This smart contract has several vulnerabilities:
+
+1. Reentrancy: The `sendMoney` function is vulnerable to reentrancy attacks because it uses the `call.value()` function which forwards all remaining gas and opens up the possibility for the recipient to perform other operations. An attacker could create a fallback function in their contract that calls `sendMoney` again causing a loop where the attacker can drain the contract’s funds.
+
+2. Access Control: The contract has an `onlyOwner` modifier that restricts access to some functions. However, there is no function to change the owner. If the owner's private key is compromised, there is no way to change the owner to protect the contract. 
+
+3. Unchecked Return Values For Low Level Calls: The `call.value()` function used in the `sendMoney` function doesn't check the return value. If the call fails for some reason, e.g., the recipient runs out of gas, the contract won't be aware of the failure.
+
+4. Denial of Service: The `withdraw` and `withdrawAll` functions transfer funds to `msg.sender`. If `msg.sender` is a contract that has a fallback function which consumes a lot of gas or always fails, the `withdraw` and `withdrawAll` functions could be permanently blocked.
+
+Other vulnerabilities such as Arithmetic Issues, Bad Randomness, Front-Running, Time manipulation, Short Address Attack doesn't seem to be present in this contract. However, it's always a good practice to use a linter and formal verification tools to ensure the contract's safety.

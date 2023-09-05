@@ -1,0 +1,30 @@
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Analysis started at: 2023-08-14 02:58:47 AM
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Version constraints: ['^0.4.18']
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | solc version: v0.4.18
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Callgraph generation started!
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Callgraph generation finished!
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Value Range Analysis started
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Generating return summary for transfer
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Return summary generated for transfer
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | State variable assignement do not exist
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Processed function transfer
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Generating return summary for slitherConstructorVariables
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Return summary generated for slitherConstructorVariables
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Range graph generated
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Processed function slitherConstructorVariables
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Value Range Analysis took 0.000473 seconds
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Value Range Analysis finished
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Dependency detection started!
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Dependency detection finished!
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Static Analysis took 0.202214 seconds
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Dependency does not exist
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Symbolic execution is not needed!
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Analysis finished!
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Analysis took 0.202401 seconds
+[INFO] | 2023-08-14 02:58:47 AM | analyzer.0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c | Analysis finished at: 2023-08-14 02:58:47 AM

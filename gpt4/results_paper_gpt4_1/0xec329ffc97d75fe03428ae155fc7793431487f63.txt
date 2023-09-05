@@ -1,0 +1,30 @@
+The smart contract has several potential vulnerabilities:
+
+1. Reentrancy:
+There doesn't seem to be a direct reentrancy issue. The contract does not make any external calls after changing its own state.
+
+2. Access Control:
+The contract has an appropriate access control in place using the `onlyOwner` modifier. However, there is no check or confirmation for the `changeOwner` function. It's possible that an owner could accidentally pass in the wrong address, resulting in loss of control over the contract.
+
+3. Arithmetic Issues:
+The contract does not handle potential overflow or underflow issues. This can occur in the `fill` function when calculating `acc += amount;` and `totalToDistribute += acc;`.
+
+4. Unchecked Return Values For Low Level Calls:
+The contract uses a low-level `.call` method in the `execute` function of the `Owned` contract without checking its return value. This could potentially lead to failed calls without the contract being aware.
+
+5. Denial of Service:
+The `run` function could be susceptible to a Block Gas Limit DoS if the `transfers` array is too large. If a transaction runs out of gas halfway, it will always fail because the function requires at least 150,000 gas.
+
+6. Bad Randomness:
+Not applicable, the contract does not use random numbers.
+
+7. Front-Running:
+Not applicable, the contract does not have any transaction ordering dependence.
+
+8. Time manipulation:
+Not applicable, the contract does not depend on timestamps or block numbers.
+
+9. Short Address Attack:
+Not directly applicable, the contract does not directly interact with user-supplied addresses. However, it does not verify if the `Token` contract address supplied is correct or safe.
+
+As a final note, it's generally unsafe to use the `throw` keyword in Solidity as it consumes all the remaining gas. Consider using `require` or `revert` instead.

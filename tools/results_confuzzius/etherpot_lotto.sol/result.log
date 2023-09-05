@@ -1,0 +1,123 @@
+2023-03-24 16:17:00,132 - Main     - INFO - [1mInitializing seed to 1427655.0[0m
+2023-03-24 16:17:00,216 - Fuzzer   - INFO - [1mFuzzing contract [1mLotto[0m[0m
+2023-03-24 16:17:00,282 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:17:00,282 - Detector - INFO - [1m[31m          !!! Integer overflow detected !!!          [0m
+2023-03-24 16:17:00,282 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:17:00,282 - Detector - INFO - [1m[31mSWC-ID:   101[0m
+2023-03-24 16:17:00,282 - Detector - INFO - [1m[31mSeverity: High[0m
+2023-03-24 16:17:00,282 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:17:00,282 - Detector - INFO - [1m[31mSource code line:[0m
+2023-03-24 16:17:00,283 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:17:00,283 - Detector - INFO - [1m[31m/sb/etherpot_lotto.sol:73:1[0m
+2023-03-24 16:17:00,283 - Detector - INFO - [1m[31m((roundIndex+1)*blocksPerRound)+subpotIndex[0m
+2023-03-24 16:17:00,283 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:17:00,283 - Detector - INFO - [1m[31mTransaction sequence:[0m
+2023-03-24 16:17:00,283 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:17:00,283 - Detector - INFO - [1m[31mTransaction - calculateWinner(uint256,uint256):[0m
+2023-03-24 16:17:00,283 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:17:00,284 - Detector - INFO - [1m[31mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:17:00,284 - Detector - INFO - [1m[31mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:17:00,284 - Detector - INFO - [1m[31mValue:     0 Wei[0m
+2023-03-24 16:17:00,284 - Detector - INFO - [1m[31mGas Limit: 4500000[0m
+2023-03-24 16:17:00,284 - Detector - INFO - [1m[31mInput:     0x6572ae139add879e0603b7d491a33f4f182c35f3[0m
+2023-03-24 16:17:00,284 - Detector - INFO - [1m[31m           d78ef64319fd0bc80913523c4b7856abffffffffff[0m
+2023-03-24 16:17:00,284 - Detector - INFO - [1m[31m           ffffffffffffffffffffffffffffffffffffffffff[0m
+2023-03-24 16:17:00,284 - Detector - INFO - [1m[31m           fffffffffffd[0m
+2023-03-24 16:17:00,284 - Detector - INFO - [1m[31m-----------------------------------------------------[0m
+2023-03-24 16:17:00,291 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:17:00,291 - Detector - INFO - [1m[32m          !!! Block dependency detected !!!          [0m
+2023-03-24 16:17:00,291 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:17:00,291 - Detector - INFO - [1m[32mSWC-ID:   120[0m
+2023-03-24 16:17:00,291 - Detector - INFO - [1m[32mSeverity: Low[0m
+2023-03-24 16:17:00,291 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:17:00,291 - Detector - INFO - [1m[32mSource code line:[0m
+2023-03-24 16:17:00,291 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:17:00,291 - Detector - INFO - [1m[32m/sb/etherpot_lotto.sol:52:1[0m
+2023-03-24 16:17:00,291 - Detector - INFO - [1m[32mblock.number[0m
+2023-03-24 16:17:00,291 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:17:00,291 - Detector - INFO - [1m[32mTransaction sequence:[0m
+2023-03-24 16:17:00,291 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:17:00,291 - Detector - INFO - [1m[32mTransaction - calculateWinner(uint256,uint256):[0m
+2023-03-24 16:17:00,292 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:17:00,292 - Detector - INFO - [1m[32mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:17:00,292 - Detector - INFO - [1m[32mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:17:00,292 - Detector - INFO - [1m[32mValue:     0 Wei[0m
+2023-03-24 16:17:00,292 - Detector - INFO - [1m[32mGas Limit: 4500000[0m
+2023-03-24 16:17:00,292 - Detector - INFO - [1m[32mInput:     0x6572ae139add879e0603b7d491a33f4f182c35f3[0m
+2023-03-24 16:17:00,292 - Detector - INFO - [1m[32m           d78ef64319fd0bc80913523c4b7856abffffffffff[0m
+2023-03-24 16:17:00,292 - Detector - INFO - [1m[32m           ffffffffffffffffffffffffffffffffffffffffff[0m
+2023-03-24 16:17:00,292 - Detector - INFO - [1m[32m           fffffffffffd[0m
+2023-03-24 16:17:00,292 - Detector - INFO - [1m[32m-----------------------------------------------------[0m
+2023-03-24 16:17:00,341 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:17:00,341 - Detector - INFO - [1m[33m          !!! Assertion failure detected !!!         [0m
+2023-03-24 16:17:00,341 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:17:00,341 - Detector - INFO - [1m[33mSWC-ID:   110[0m
+2023-03-24 16:17:00,341 - Detector - INFO - [1m[33mSeverity: Medium[0m
+2023-03-24 16:17:00,342 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:17:00,342 - Detector - INFO - [1m[33mSource code line:[0m
+2023-03-24 16:17:00,342 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:17:00,342 - Detector - INFO - [1m[33m/sb/etherpot_lotto.sol:86:1[0m
+2023-03-24 16:17:00,342 - Detector - INFO - [1m[33mrounds[roundIndex].pot/getSubpotsCount(roundIndex)[0m
+2023-03-24 16:17:00,342 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:17:00,342 - Detector - INFO - [1m[33mTransaction sequence:[0m
+2023-03-24 16:17:00,342 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:17:00,342 - Detector - INFO - [1m[33mTransaction - getSubpot(uint256):[0m
+2023-03-24 16:17:00,342 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:17:00,342 - Detector - INFO - [1m[33mFrom:      0xcafebabecafebabecafebabecafebabecafebabe[0m
+2023-03-24 16:17:00,342 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:17:00,342 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2023-03-24 16:17:00,342 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:17:00,342 - Detector - INFO - [1m[33mInput:     0x93dafba200000000000000000000000000000000[0m
+2023-03-24 16:17:00,342 - Detector - INFO - [1m[33m           00000000000000000000000000000002[0m
+2023-03-24 16:17:00,342 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:17:00,407 - Analysis - INFO - [1mGeneration number 0 	 Code coverage: 57.59% (823/1429) 	 Branch coverage: 69.81% (74/106) 	 Transactions: 35 (34 unique)   	 Time: 0.17997097969055176[0m
+2023-03-24 16:17:00,600 - Analysis - INFO - [1mGeneration number 1 	 Code coverage: 57.59% (823/1429) 	 Branch coverage: 70.75% (75/106) 	 Transactions: 67 (52 unique)   	 Time: 0.3724687099456787[0m
+2023-03-24 16:17:01,010 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:17:01,010 - Detector - INFO - [1m[33m          !!! Assertion failure detected !!!         [0m
+2023-03-24 16:17:01,010 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:17:01,010 - Detector - INFO - [1m[33mSWC-ID:   110[0m
+2023-03-24 16:17:01,010 - Detector - INFO - [1m[33mSeverity: Medium[0m
+2023-03-24 16:17:01,011 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:17:01,011 - Detector - INFO - [1m[33mSource code line:[0m
+2023-03-24 16:17:01,011 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:17:01,011 - Detector - INFO - [1m[33m/sb/etherpot_lotto.sol:57:1[0m
+2023-03-24 16:17:01,011 - Detector - INFO - [1m[33mdecisionBlockHash%rounds[roundIndex].ticketsCount[0m
+2023-03-24 16:17:01,011 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:17:01,011 - Detector - INFO - [1m[33mTransaction sequence:[0m
+2023-03-24 16:17:01,011 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:17:01,011 - Detector - INFO - [1m[33mTransaction - calculateWinner(uint256,uint256):[0m
+2023-03-24 16:17:01,011 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:17:01,011 - Detector - INFO - [1m[33mFrom:      0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef[0m
+2023-03-24 16:17:01,011 - Detector - INFO - [1m[33mTo:        0x2c5e8a3b3aad9df32339409534e64dfcabcd3a65[0m
+2023-03-24 16:17:01,011 - Detector - INFO - [1m[33mValue:     0 Wei[0m
+2023-03-24 16:17:01,011 - Detector - INFO - [1m[33mGas Limit: 4500000[0m
+2023-03-24 16:17:01,011 - Detector - INFO - [1m[33mInput:     0x6572ae13ffffffffffffffffffffffffffffffff[0m
+2023-03-24 16:17:01,011 - Detector - INFO - [1m[33m           ffffffffffffffffffffffffffffffffffffffffff[0m
+2023-03-24 16:17:01,011 - Detector - INFO - [1m[33m           ffffffffffffffffffffffffffffffffffffffffff[0m
+2023-03-24 16:17:01,011 - Detector - INFO - [1m[33m           fffffffffffd[0m
+2023-03-24 16:17:01,011 - Detector - INFO - [1m[33m-----------------------------------------------------[0m
+2023-03-24 16:17:01,165 - Analysis - INFO - [1mGeneration number 2 	 Code coverage: 59.69% (853/1429) 	 Branch coverage: 72.64% (77/106) 	 Transactions: 96 (70 unique)   	 Time: 0.9380829334259033[0m
+2023-03-24 16:17:01,371 - Analysis - INFO - [1mGeneration number 3 	 Code coverage: 59.69% (853/1429) 	 Branch coverage: 72.64% (77/106) 	 Transactions: 123 (82 unique)   	 Time: 1.143411636352539[0m
+2023-03-24 16:17:01,698 - Analysis - INFO - [1mGeneration number 4 	 Code coverage: 59.69% (853/1429) 	 Branch coverage: 72.64% (77/106) 	 Transactions: 151 (97 unique)   	 Time: 1.4711382389068604[0m
+2023-03-24 16:17:01,994 - Analysis - INFO - [1mGeneration number 5 	 Code coverage: 59.69% (853/1429) 	 Branch coverage: 72.64% (77/106) 	 Transactions: 176 (108 unique)   	 Time: 1.7670583724975586[0m
+2023-03-24 16:17:02,278 - Analysis - INFO - [1mGeneration number 6 	 Code coverage: 59.69% (853/1429) 	 Branch coverage: 72.64% (77/106) 	 Transactions: 201 (121 unique)   	 Time: 2.050388813018799[0m
+2023-03-24 16:17:02,602 - Analysis - INFO - [1mGeneration number 7 	 Code coverage: 59.69% (853/1429) 	 Branch coverage: 72.64% (77/106) 	 Transactions: 229 (135 unique)   	 Time: 2.37473201751709[0m
+2023-03-24 16:17:02,928 - Analysis - INFO - [1mGeneration number 8 	 Code coverage: 59.69% (853/1429) 	 Branch coverage: 72.64% (77/106) 	 Transactions: 255 (148 unique)   	 Time: 2.7010953426361084[0m
+2023-03-24 16:17:03,233 - Analysis - INFO - [1mGeneration number 9 	 Code coverage: 59.69% (853/1429) 	 Branch coverage: 72.64% (77/106) 	 Transactions: 280 (158 unique)   	 Time: 3.00541090965271[0m
+2023-03-24 16:17:03,574 - Analysis - INFO - [1mGeneration number 10 	 Code coverage: 59.69% (853/1429) 	 Branch coverage: 72.64% (77/106) 	 Transactions: 310 (168 unique)   	 Time: 3.346539258956909[0m
+2023-03-24 16:17:03,708 - Analysis - INFO - [1m-----------------------------------------------------[0m
+2023-03-24 16:17:03,708 - Analysis - INFO - Number of generations: 	 10
+2023-03-24 16:17:03,708 - Analysis - INFO - Number of transactions: 	 310 (168 unique)
+2023-03-24 16:17:03,708 - Analysis - INFO - Transactions per second: 	 89
+2023-03-24 16:17:03,708 - Analysis - INFO - Total code coverage: 	 59.69% (853/1429)
+2023-03-24 16:17:03,708 - Analysis - INFO - Total branch coverage: 	 72.64% (77/106)
+2023-03-24 16:17:03,708 - Analysis - INFO - Total execution time: 	 3.48 seconds
+2023-03-24 16:17:03,708 - Analysis - INFO - Total memory consumption: 	 104.11 MB
+
+     ______            ______                _           
+    / ____/___  ____  / ____/_  __________  (_)_  _______
+   / /   / __ \/ __ \/ /_  / / / /_  /_  / / / / / / ___/
+  / /___/ /_/ / / / / __/ / /_/ / / /_/ /_/ / /_/ (__  ) 
+  \____/\____/_/ /_/_/    \__,_/ /___/___/_/\__,_/____/  
+
+delteed file

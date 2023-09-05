@@ -1,0 +1,21 @@
+The smart contract provided has a Reentrancy vulnerability, which is one of the most common and critical security vulnerabilities in smart contracts. The reentrancy vulnerability allows an attacker to drain the contract of its Ether.
+
+Here's how it works in this contract: 
+
+In the function `withdrawBalance()`, first, the contract checks how much Ether the caller has in their balance with `uint amountToWithdraw = userBalances[msg.sender];`. Then, it sends the Ether to the caller with `msg.sender.call.value(amountToWithdraw)()`. Only after the Ether is sent, it sets the balance of the caller to 0 with `userBalances[msg.sender] = 0;`.
+
+The problem here is that the `call.value()` function can call another contract. If the called contract has a fallback function, that function can call `withdrawBalance()` again before `userBalances[msg.sender] = 0;` has had a chance to execute. This means the attacker can drain the contract of more Ether than they actually have in their balance.
+
+To fix this vulnerability, we should first set `userBalances[msg.sender] = 0;` and then attempt to transfer the funds. This way, even if a reentrancy attempt is made, the balance for the attacker is already zeroed and they cannot withdraw more than they should. 
+
+```solidity
+function withdrawBalance() {  
+	uint amountToWithdraw = userBalances[msg.sender];
+	userBalances[msg.sender] = 0;
+	if (!(msg.sender.call.value(amountToWithdraw)())) { throw; }    
+}
+```
+
+Please note that using `call.value()` is also discouraged due to the gas limit issues (it forwards all the remaining gas). A safer alternative would be to use the `transfer()` function or the `send()` function with proper error checking.
+
+Also, it's worth mentioning that this contract does not enforce any access control. The functions could be called by any account, not just the owner of the contract. Depending on the use case, this might be another vulnerability.

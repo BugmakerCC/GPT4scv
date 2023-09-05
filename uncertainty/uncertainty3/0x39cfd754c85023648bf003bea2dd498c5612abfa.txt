@@ -1,0 +1,22 @@
+The given contract has a few vulnerabilities:
+
+1. Reentrancy: 
+In the WithdrawToHolder function, there is a call to an external contract before the state of the Holders map is updated. If the called contract has a fallback function, it can re-enter the WithdrawToHolder function and drain the contract of its ether.
+
+2. Access Control: 
+The onlyOwner modifier is flawed. The if statement is supposed to revert if the condition is not met, but the way it is written now (if(owner == msg.sender)_;) it will do nothing and proceed with the function execution even if the caller is not the owner. This allows anyone to call functions that are supposed to be restricted to the owner only.
+
+3. Unchecked low-level calls: 
+The contract uses low-level calls such as ‘call.value(_wei)’ and ‘token.call(bytes4(sha3("transfer(address,uint256)")),to,amount);’ without checking their return value. If these calls fail for any reason, the contract will not be aware of it and it will continue execution as if they succeeded.
+
+4. Arithmetic issues: 
+While this contract does not perform any complex arithmetic operations that could lead to overflows or underflows, it is always a good practice to use SafeMath library for arithmetic operations in Solidity.
+
+5. Denial of Service: 
+If an attacker is able to become the owner of this contract, they can stop anyone from withdrawing their tokens by not confirming the transfer in the WitdrawTokenToHolder function.
+
+6. Bad Randomness, Front-running, Time manipulation, and Short address attack vulnerabilities are not present in this contract.
+
+7. Functions such as WitdrawTokenToHolder and WithdrawToHolder do not emit any events. This could lead to off-chain issues as it would be difficult for external entities to track the transactions initiated by these functions.
+
+The contract should be rewritten to address these issues.

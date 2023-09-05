@@ -1,0 +1,15 @@
+The given smart contract appears to contain the following vulnerabilities:
+
+1. Reentrancy: The 'CashOut' function is vulnerable to a reentrancy attack. The contract first sends ether with `msg.sender.call.value(_am)()` and after that, it updates the user's balance with `balances[msg.sender]-=_am;`. An attacker can recursively call the 'CashOut' function before `balances[msg.sender]-=_am;` is executed, which would allow the attacker to drain the contract's funds.
+
+2. Unchecked Return Values For Low-Level Calls: The return value of `msg.sender.call.value(_am)()` in the 'CashOut' function is not checked. If the call fails for any reason, the user's balance is not decreased.
+
+3. Access Control: The 'AddMessage' function in the 'Log' contract can be called by any address, which could lead to incorrect log entries.
+
+4. Denial of Service: If the address to which ether is being sent in the 'CashOut' function is a contract that has a fallback function which consumes a lot of gas or throws an exception, the 'CashOut' function could consistently fail, locking the funds of the user.
+
+5. Arithmetic Issue: Although not present, this contract could benefit from SafeMath library which could prevent any future arithmetic underflow/overflow.
+
+6. Front-running: Any user can see pending transactions and their details. This means a malicious actor could potentially intercept a transaction, and knowing the amount being withdrawn, they could adjust their own transactions to take advantage of this information.
+
+The contract does not appear to contain vulnerabilities related to Bad Randomness, Time Manipulation, or Short Address Attacks. However, these vulnerabilities should be considered in further contract development.

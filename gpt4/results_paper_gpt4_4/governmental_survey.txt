@@ -1,0 +1,24 @@
+This smart contract has several vulnerabilities:
+
+1. Reentrancy:
+The function `resetInvestment()` in `Governmental` contract has a reentrancy vulnerability. It sends value to the `lastInvestor` and `owner` before setting the state variables to the new values. This can potentially allow an attacker to re-enter the function and drain the contract's ether.
+
+2. Denial of Service:
+The `resetInvestment()` function is vulnerable to a Denial of Service attack. If the `lastInvestor` becomes a contract that always throws an exception in its fallback function, it can prevent the `resetInvestment()` function from ever successfully executing.
+
+3. Unchecked Return Values For Low Level Calls:
+The contract uses `send()` to transfer ether but doesn't check its return value. This function can fail silently, leaving the contract in an inconsistent state. 
+
+4. Access Control:
+The functions `resetInvestment()` and `invest()` lack access control mechanisms. They can be called by any address, which can potentially lead to unexpected behavior.
+
+5. Front-Running:
+The `invest()` function is vulnerable to a front-running attack since it updates the `lastInvestor` based on the `msg.sender` of the latest transaction. An attacker can watch the transaction pool and send a transaction with a higher gas price to become the `lastInvestor`.
+
+6. Time manipulation:
+The `resetInvestment()` function relies on `block.timestamp` for its logic. Miners have some control over this value which can be manipulated to their advantage.
+
+7. Integer Overflow and Underflow:
+The contract does not check for overflows or underflows in arithmetic operations, making it vulnerable to these types of attacks.
+
+The `Attacker` contract seems to be created for the purpose of exploiting the reentrancy vulnerability in the `Governmental` contract. It recursively calls its own `attack()` function and finally calls the `resetInvestment()` function of the `Governmental` contract.

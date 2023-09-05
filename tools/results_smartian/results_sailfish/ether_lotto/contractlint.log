@@ -1,0 +1,37 @@
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Analysis started at: 2023-08-14 02:55:55 AM
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Version constraints: ['^0.4.15']
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | solc version: v0.4.15
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Callgraph generation started!
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Callgraph generation finished!
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Value Range Analysis started
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Generating return summary for slitherConstructorConstantVariables
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Return summary generated for slitherConstructorConstantVariables
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Range graph generated
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Processed function slitherConstructorConstantVariables
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Generating return summary for EtherLotto
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Return summary generated for EtherLotto
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Range graph generated
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Processed function EtherLotto
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Generating return summary for play
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Return summary generated for play
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Range graph generated
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Processed function play
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Value Range Analysis took 0.000903 seconds
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Value Range Analysis finished
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Dependency detection started!
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | TOD dependency detected in file ether_lotto.sol in contract EtherLotto in by composing functions play and play
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Dependency detection finished!
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Static Analysis took 0.240124 seconds
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Dependency exists
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Invoking symbolic executor!
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Symbolic execution took 0.347140 seconds
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Symbolic execution finished!
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Analysis finished!
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Analysis took 0.587671 seconds
+[INFO] | 2023-08-14 02:55:55 AM | analyzer.ether_lotto | Analysis finished at: 2023-08-14 02:55:55 AM

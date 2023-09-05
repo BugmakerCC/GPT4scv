@@ -1,0 +1,29 @@
+This smart contract has an Arithmetic Issue vulnerability, specifically an integer overflow. 
+
+The contract maintains a balance mapping that keeps track of the number of tokens that each address owns. The `transfer` function allows a user to transfer tokens from their own balance to another address. 
+
+The function checks if the sender has enough balance to transfer the specified `_value` of tokens. Then it subtracts `_value` from the sender's balance and adds it to the `_to` address balance.
+
+The vulnerability lies in the line `balanceOf[_to] += _value;`. An attacker could cause an integer overflow by sending a large amount of tokens such that when they are added to the `_to` address balance, the total exceeds the maximum uint256 value. This would cause the balance to wrap around to a very small number, effectively stealing tokens.
+
+To fix this, you should use the SafeMath library for arithmetic operations to prevent overflows and underflows. 
+
+Here's how you can fix the code:
+
+```solidity
+import "@openzeppelin/contracts/math/SafeMath.sol";
+
+contract IntegerOverflowAdd {
+    using SafeMath for uint256;
+    mapping (address => uint256) public balanceOf;
+
+    function transfer(address _to, uint256 _value) public{
+        require(balanceOf[msg.sender] >= _value);
+
+        balanceOf[msg.sender] = balanceOf[msg.sender].sub(_value);
+        balanceOf[_to] = balanceOf[_to].add(_value);
+    }
+}
+```
+
+This contract doesn't seem to have other vulnerabilities from the list, like Reentrancy, Access Control, Unchecked Return Values For Low Level Calls, Denial of Service, Bad Randomness, Front-Running, Time manipulation, and Short Address Attack. But remember, always conduct a complete audit before deploying a smart contract.

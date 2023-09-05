@@ -1,0 +1,19 @@
+This contract has several vulnerabilities:
+
+1. Reentrancy: There are two functions in this contract that are vulnerable to reentrancy: `GetFreebie()` and `withdraw()`. Both functions call the `transfer()` function before all internal state changes have been made.
+
+2. Access Control: The contract has an access control issue in the `Command()` function. The `require(msg.sender == Owner)` check is good, but the owner can be altered in the `withdraw()` function, which could allow an attacker to gain control of the contract. 
+
+3. Unchecked Return Values For Low Level Calls: The `Command()` function uses a low level `call()` function without checking its return value. If the call fails, the contract will continue executing, which could lead to unexpected behavior.
+
+4. Denial of Service: There is a potential for a Denial of Service attack in the `GetFreebie()` function. If the contract balance is drained to less than 1 ether, the function will not be able to execute `msg.sender.transfer(this.balance)`, effectively blocking the function for all users.
+
+5. Bad Randomness: This contract does not contain any random number generation, therefore it is not vulnerable to this specific issue.
+
+6. Front-Running: The `withdraw()` function is susceptible to front-running. An attacker could see a transaction calling this function and quickly submit their own transaction with a higher gas price, getting it mined first.
+
+7. Time manipulation: This contract does not rely on block timestamps or block hashes, so it is not vulnerable to time manipulation.
+
+8. Short Address Attack: This contract does not appear to be vulnerable to a short address attack, as it does not take address input from users. However, it is important to note that any contract that does take address input from users could potentially be vulnerable to this type of attack.
+
+In conclusion, this contract should be revised to address the issues highlighted above.

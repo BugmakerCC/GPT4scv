@@ -1,0 +1,83 @@
+{
+    "0x806a6bd219f162442d992bdc4ee6eba1f2c5a707.sol": [
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "GetPie",
+                "withdraw"
+            ],
+            "First_function": "withdraw",
+            "Second_function": "GetPie",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 9\nFunction: withdraw\nNode: \nEXPRESSION Owner = 0x1Fb3acdBa788CA50Ce165E5A4151f05187C67cd6\nIRS: \nOwner := 180985605343785956359124651641875257890221489366\"",
+                        "\"BlockID: 4\nFunction: GetPie\nNode: \nEXPRESSION Owner.transfer(this.balance)\nIRS: \nTransfer dest:Owner value:REF_1\""
+                    ],
+                    "state_variable": "Owner"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "GetPie",
+                "withdraw"
+            ],
+            "First_function": "withdraw",
+            "Second_function": "GetPie",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 9\nFunction: withdraw\nNode: \nEXPRESSION Owner = 0x1Fb3acdBa788CA50Ce165E5A4151f05187C67cd6\nIRS: \nOwner := 180985605343785956359124651641875257890221489366\"",
+                        "\"BlockID: 4\nFunction: GetPie\nNode: \nEXPRESSION Owner.transfer(this.balance)\nIRS: \nTransfer dest:Owner value:REF_1\""
+                    ],
+                    "state_variable": "Owner"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "withdraw",
+                "withdraw"
+            ],
+            "First_function": "withdraw",
+            "Second_function": "withdraw",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 28\nFunction: withdraw\nNode: \nEXPRESSION Owner = 0x1Fb3acdBa788CA50Ce165E5A4151f05187C67cd6\nIRS: \nOwner := 180985605343785956359124651641875257890221489366\"",
+                        "\"BlockID: 11\nFunction: withdraw\nNode: \nEXPRESSION require(bool)(msg.sender == Owner)\nIRS: \nTMP_5 = SOLIDITY_CALL require(bool)(TMP_4)\""
+                    ],
+                    "state_variable": "Owner"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 28\nFunction: withdraw\nNode: \nEXPRESSION Owner = 0x1Fb3acdBa788CA50Ce165E5A4151f05187C67cd6\nIRS: \nOwner := 180985605343785956359124651641875257890221489366\"",
+                        "\"BlockID: 12\nFunction: withdraw\nNode: \nEXPRESSION Owner.transfer(this.balance)\nIRS: \nTransfer dest:Owner value:REF_5\""
+                    ],
+                    "state_variable": "Owner"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "Command",
+                "withdraw"
+            ],
+            "First_function": "withdraw",
+            "Second_function": "Command",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 9\nFunction: withdraw\nNode: \nEXPRESSION Owner = 0x1Fb3acdBa788CA50Ce165E5A4151f05187C67cd6\nIRS: \nOwner := 180985605343785956359124651641875257890221489366\"",
+                        "\"BlockID: 14\nFunction: Command\nNode: \nEXPRESSION require(bool)(msg.sender == Owner)\nIRS: \nTMP_8 = SOLIDITY_CALL require(bool)(TMP_7)\""
+                    ],
+                    "state_variable": "Owner"
+                }
+            ]
+        }
+    ]
+}

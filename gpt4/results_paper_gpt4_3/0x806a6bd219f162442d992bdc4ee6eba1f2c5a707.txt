@@ -1,0 +1,21 @@
+This contract may have several vulnerabilities:
+
+1. Reentrancy: The `GetPie()` function makes a call to `Owner.transfer(this.balance)` followed by `msg.sender.transfer(this.balance)`. The call to `msg.sender.transfer(this.balance)` may enable a reentrancy attack if the msg.sender is a contract that has a fallback function. 
+
+2. Access Control: The `Command()` function allows the `Owner` to execute arbitrary code on any contract. This is a major security risk if the `Owner` is compromised.
+
+3. Arithmetic Issues: Not present in this contract.
+
+4. Unchecked Return Values For Low Level Calls: The `adr.call.value(msg.value)(data)` is a low-level call that does not check for its return value. If this call fails for any reason, the contract will not be aware.
+
+5. Denial of Service: The `GetPie()` function could potentially be used to drain the contract of all its funds, effectively disabling it.
+
+6. Bad Randomness: Not present in this contract.
+
+7. Front-Running: Not present in this contract.
+
+8. Time manipulation: Not present in this contract.
+
+9. Short Address Attack: Not present in this contract.
+
+It's important to mention that having the `Owner` hard-coded as a specific address is a bad practice and could be seen as an access control vulnerability. It is better to have a system where ownership can be transferred in a secure way. Also, the `withdraw()` function allows the `Owner` to change if the `msg.sender` is a specific address, which is a huge access control risk.

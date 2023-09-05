@@ -1,0 +1,15 @@
+The given smart contract contains several vulnerabilities:
+
+1. Reentrancy: The CashOut function allows for reentrancy attack because it calls an external contract (with msg.sender.call.value(_am)()) before it updates the state (with balances[msg.sender]-=_am;). An attacker could recursively call the CashOut function before the state is updated and drain the contract's Ether.
+
+2. Access Control: The contract uses tx.origin in the onlyOwner modifier. This can lead to attacks where another contract that is called by the owner can execute owner-only functions. It's better to use msg.sender for access control.
+
+3. Unchecked Return Values For Low Level Calls: The contract uses a low level call (msg.sender.call.value(_am)()) in the CashOut function without checking its return value. This can lead to unexpected behavior if the call fails.
+
+4. Arithmetic Issues: While there is no explicit arithmetic issue in the contract, it's good to note that the contract does not use SafeMath library for arithmetic operations which can prevent overflow and underflow issues.
+
+5. Denial of Service: In the CashOut function, if the external call to msg.sender fails (due to the recipient contract throwing an exception), then the user would not be able to withdraw their Ether thus creating a potential Denial of Service attack.
+
+6. Bad randomness, Front-running, Time manipulation, and Short Address Attack vulnerabilities are not present in this contract.
+
+Remember, it's always good practice to use established patterns and libraries for common operations, and to keep up to date with the latest security recommendations and best practices in the Ethereum community.

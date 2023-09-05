@@ -1,0 +1,112 @@
+[INFO] | 2023-08-14 02:54:24 AM | analyzer.rubixi | Analysis started at: 2023-08-14 02:54:24 AM
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Version constraints: ['^0.4.15']
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | solc version: v0.4.15
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Callgraph generation started!
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Callgraph generation finished!
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Value Range Analysis started
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Generating return summary for DynamicPyramid
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Return summary generated for DynamicPyramid
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Range graph generated
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Processed function DynamicPyramid
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Generating return summary for addPayout
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Return summary generated for addPayout
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Range graph generated
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Processed function addPayout
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Generating return summary for currentMultiplier
+[WARNING] | 2023-08-14 02:54:25 AM | analyzer.rubixi | No lvalue eligible assignment, is this some bug!
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Return summary generated for currentMultiplier
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | State variable assignement do not exist
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Processed function currentMultiplier
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Generating return summary for currentFeePercentage
+[WARNING] | 2023-08-14 02:54:25 AM | analyzer.rubixi | No lvalue eligible assignment, is this some bug!
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Return summary generated for currentFeePercentage
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | State variable assignement do not exist
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Processed function currentFeePercentage
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Generating return summary for currentPyramidBalanceApproximately
+[WARNING] | 2023-08-14 02:54:25 AM | analyzer.rubixi | No lvalue eligible assignment, is this some bug!
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Return summary generated for currentPyramidBalanceApproximately
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | State variable assignement do not exist
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Processed function currentPyramidBalanceApproximately
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Generating return summary for nextPayoutWhenPyramidBalanceTotalsApproximately
+[WARNING] | 2023-08-14 02:54:25 AM | analyzer.rubixi | No lvalue eligible assignment, is this some bug!
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Return summary generated for nextPayoutWhenPyramidBalanceTotalsApproximately
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | State variable assignement do not exist
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Processed function nextPayoutWhenPyramidBalanceTotalsApproximately
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Generating return summary for feesSeperateFromBalanceApproximately
+[WARNING] | 2023-08-14 02:54:25 AM | analyzer.rubixi | No lvalue eligible assignment, is this some bug!
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Return summary generated for feesSeperateFromBalanceApproximately
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | State variable assignement do not exist
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Processed function feesSeperateFromBalanceApproximately
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Generating return summary for totalParticipants
+[WARNING] | 2023-08-14 02:54:25 AM | analyzer.rubixi | No lvalue eligible assignment, is this some bug!
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Return summary generated for totalParticipants
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | State variable assignement do not exist
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Processed function totalParticipants
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Generating return summary for numberOfParticipantsWaitingForPayout
+[WARNING] | 2023-08-14 02:54:25 AM | analyzer.rubixi | No lvalue eligible assignment, is this some bug!
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Return summary generated for numberOfParticipantsWaitingForPayout
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | State variable assignement do not exist
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Processed function numberOfParticipantsWaitingForPayout
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Generating return summary for participantDetails
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Return summary generated for participantDetails
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | State variable assignement do not exist
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Processed function participantDetails
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Generating return summary for slitherConstructorVariables
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Return summary generated for slitherConstructorVariables
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Range graph generated
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Processed function slitherConstructorVariables
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Generating return summary for onlyowner
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Return summary generated for onlyowner
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | State variable assignement do not exist
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Processed function onlyowner
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Generating return summary for init
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Return summary generated for init
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Range graph generated
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Processed function init
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Generating return summary for collectAllFees
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Return summary generated for collectAllFees
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Range graph generated
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Processed function collectAllFees
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Generating return summary for collectPercentOfFees
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Return summary generated for collectPercentOfFees
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Range graph generated
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Processed function collectPercentOfFees
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Generating return summary for changeOwner
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Return summary generated for changeOwner
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Range graph generated
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Processed function changeOwner
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Generating return summary for changeMultiplier
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Return summary generated for changeMultiplier
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Range graph generated
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Processed function changeMultiplier
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Generating return summary for changeFeePercentage
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Return summary generated for changeFeePercentage
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Range graph generated
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Processed function changeFeePercentage
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Generating return summary for fallback
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Return summary generated for fallback
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Range graph generated
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Processed function fallback
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Generating return summary for collectFeesInEther
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Return summary generated for collectFeesInEther
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Range graph generated
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Processed function collectFeesInEther
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Value Range Analysis took 0.007365 seconds
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Value Range Analysis finished
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Dependency detection started!
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | TOD dependency detected in file rubixi.sol in contract Rubixi in by composing functions fallback and fallback
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Dependency detection finished!
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Static Analysis took 0.741034 seconds
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Dependency exists
+[INFO] | 2023-08-14 02:54:25 AM | analyzer.rubixi | Invoking symbolic executor!
+[INFO] | 2023-08-14 02:54:26 AM | analyzer.rubixi | Symbolic execution took 1.240433 seconds
+[INFO] | 2023-08-14 02:54:26 AM | analyzer.rubixi | Symbolic execution finished!
+[INFO] | 2023-08-14 02:54:26 AM | analyzer.rubixi | Analysis finished!
+[INFO] | 2023-08-14 02:54:26 AM | analyzer.rubixi | Analysis took 1.981898 seconds
+[INFO] | 2023-08-14 02:54:26 AM | analyzer.rubixi | Analysis finished at: 2023-08-14 02:54:26 AM

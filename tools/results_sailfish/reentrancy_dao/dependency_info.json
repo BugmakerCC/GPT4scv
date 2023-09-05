@@ -1,0 +1,118 @@
+{
+    "reentrancy_dao.sol": [
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "withdrawAll",
+                "withdrawAll"
+            ],
+            "from_function": "withdrawAll",
+            "to_function": "withdrawAll",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 12\nFunction: withdrawAll\nNode: \nIF oCredit > 0\nIRS: \nCONDITION TMP_0\"",
+                        "\"BlockID: 7\nFunction: withdrawAll\nNode: \nEXPRESSION credit[msg.sender] = 0\nIRS: \nREF_3 := 0\""
+                    ],
+                    "state_variable": "credit"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 13\nFunction: withdrawAll\nNode: \nEXPRESSION balance -= oCredit\nIRS: \nbalance = balance - oCredit\"",
+                        "\"BlockID: 7\nFunction: withdrawAll\nNode: \nEXPRESSION credit[msg.sender] = 0\nIRS: \nREF_3 := 0\""
+                    ],
+                    "state_variable": "credit"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 14\nFunction: withdrawAll\nNode: \nNEW VARIABLE callResult = msg.sender.call.value(oCredit)()\nIRS: \nTMP_2(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:oCredit \"",
+                        "\"BlockID: 7\nFunction: withdrawAll\nNode: \nEXPRESSION credit[msg.sender] = 0\nIRS: \nREF_3 := 0\""
+                    ],
+                    "state_variable": "credit"
+                }
+            ]
+        },
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "withdrawAll",
+                "deposit"
+            ],
+            "from_function": "deposit",
+            "to_function": "withdrawAll",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 10\nFunction: deposit\nNode: \nEXPRESSION balance += msg.value\nIRS: \nbalance = balance + msg.value\"",
+                        "\"BlockID: 7\nFunction: withdrawAll\nNode: \nEXPRESSION credit[msg.sender] = 0\nIRS: \nREF_3 := 0\""
+                    ],
+                    "state_variable": "credit"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "withdrawAll",
+                "withdrawAll"
+            ],
+            "First_function": "withdrawAll",
+            "Second_function": "withdrawAll",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 24\nFunction: withdrawAll\nNode: \nEXPRESSION credit[msg.sender] = 0\nIRS: \nREF_3 := 0\"",
+                        "\"BlockID: 2\nFunction: withdrawAll\nNode: \nIF oCredit > 0\nIRS: \nCONDITION TMP_0\""
+                    ],
+                    "state_variable": "credit"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 24\nFunction: withdrawAll\nNode: \nEXPRESSION credit[msg.sender] = 0\nIRS: \nREF_3 := 0\"",
+                        "\"BlockID: 3\nFunction: withdrawAll\nNode: \nEXPRESSION balance -= oCredit\nIRS: \nbalance = balance - oCredit\""
+                    ],
+                    "state_variable": "credit"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 24\nFunction: withdrawAll\nNode: \nEXPRESSION credit[msg.sender] = 0\nIRS: \nREF_3 := 0\"",
+                        "\"BlockID: 4\nFunction: withdrawAll\nNode: \nNEW VARIABLE callResult = msg.sender.call.value(oCredit)()\nIRS: \nTMP_2(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:oCredit \""
+                    ],
+                    "state_variable": "credit"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "withdrawAll",
+                "deposit"
+            ],
+            "First_function": "deposit",
+            "Second_function": "withdrawAll",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 9\nFunction: deposit\nNode: \nEXPRESSION credit[msg.sender] += msg.value\nIRS: \nREF_4 = REF_4 + msg.value\"",
+                        "\"BlockID: 2\nFunction: withdrawAll\nNode: \nIF oCredit > 0\nIRS: \nCONDITION TMP_0\""
+                    ],
+                    "state_variable": "credit"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 9\nFunction: deposit\nNode: \nEXPRESSION credit[msg.sender] += msg.value\nIRS: \nREF_4 = REF_4 + msg.value\"",
+                        "\"BlockID: 3\nFunction: withdrawAll\nNode: \nEXPRESSION balance -= oCredit\nIRS: \nbalance = balance - oCredit\""
+                    ],
+                    "state_variable": "credit"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 9\nFunction: deposit\nNode: \nEXPRESSION credit[msg.sender] += msg.value\nIRS: \nREF_4 = REF_4 + msg.value\"",
+                        "\"BlockID: 4\nFunction: withdrawAll\nNode: \nNEW VARIABLE callResult = msg.sender.call.value(oCredit)()\nIRS: \nTMP_2(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:oCredit \""
+                    ],
+                    "state_variable": "credit"
+                }
+            ]
+        }
+    ]
+}

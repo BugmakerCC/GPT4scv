@@ -1,0 +1,43 @@
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Analysis started at: 2023-08-14 02:57:24 AM
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Version constraints: ['^0.4.24']
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | solc version: v0.4.24
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Callgraph generation started!
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Callgraph generation finished!
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Value Range Analysis started
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Generating return summary for initWallet
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Return summary generated for initWallet
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Range graph generated
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Processed function initWallet
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Generating return summary for deposit
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Return summary generated for deposit
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Range graph generated
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Processed function deposit
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Generating return summary for withdraw
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Return summary generated for withdraw
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Range graph generated
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Processed function withdraw
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Generating return summary for migrateTo
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Return summary generated for migrateTo
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Processed function migrateTo
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Value Range Analysis took 0.002353 seconds
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Value Range Analysis finished
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Dependency detection started!
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | TOD dependency detected in file wallet_03_wrong_constructor.sol in contract Wallet in by composing functions withdraw and deposit
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | TOD dependency detected in file wallet_03_wrong_constructor.sol in contract Wallet in by composing functions withdraw and withdraw
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | TOD dependency detected in file wallet_03_wrong_constructor.sol in contract Wallet in by composing functions migrateTo and initWallet
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Dependency detection finished!
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Static Analysis took 0.291350 seconds
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Dependency exists
+[INFO] | 2023-08-14 02:57:24 AM | analyzer.wallet_03_wrong_constructor | Invoking symbolic executor!
+[INFO] | 2023-08-14 02:57:25 AM | analyzer.wallet_03_wrong_constructor | Symbolic execution took 0.845152 seconds
+[INFO] | 2023-08-14 02:57:25 AM | analyzer.wallet_03_wrong_constructor | Symbolic execution finished!
+[INFO] | 2023-08-14 02:57:25 AM | analyzer.wallet_03_wrong_constructor | Analysis finished!
+[INFO] | 2023-08-14 02:57:25 AM | analyzer.wallet_03_wrong_constructor | Analysis took 1.137002 seconds
+[INFO] | 2023-08-14 02:57:25 AM | analyzer.wallet_03_wrong_constructor | Analysis finished at: 2023-08-14 02:57:25 AM

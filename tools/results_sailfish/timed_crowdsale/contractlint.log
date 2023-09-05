@@ -1,0 +1,26 @@
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Analysis started at: 2023-08-14 02:57:14 AM
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Version constraints: ['^0.4.25']
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | solc version: v0.4.25
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Callgraph generation started!
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Callgraph generation finished!
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Value Range Analysis started
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Generating return summary for isSaleFinished
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Return summary generated for isSaleFinished
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | State variable assignement do not exist
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Processed function isSaleFinished
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Value Range Analysis took 0.000351 seconds
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Value Range Analysis finished
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Dependency detection started!
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Dependency detection finished!
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Static Analysis took 0.063366 seconds
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Dependency does not exist
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Symbolic execution is not needed!
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Analysis finished!
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Analysis took 0.063530 seconds
+[INFO] | 2023-08-14 02:57:14 AM | analyzer.timed_crowdsale | Analysis finished at: 2023-08-14 02:57:14 AM

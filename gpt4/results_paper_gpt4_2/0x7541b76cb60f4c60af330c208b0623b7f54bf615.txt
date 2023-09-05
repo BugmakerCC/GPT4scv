@@ -1,0 +1,21 @@
+The given smart contract has several potential vulnerabilities.
+
+1. Reentrancy: The reentrancy vulnerability is present in the Collect() function. If a fallback function of a calling contract is malicious and makes a call to the Collect() function, it can withdraw more Ether than intended. This vulnerability is due to the state (acc.balance-=_am) being changed after the external call (msg.sender.call.value(_am)()). 
+
+2. Access Control: There is no access control mechanism in place. Any address can call any public function in the contract. For instance, Log contract's AddMessage function is public and allows arbitrary addresses to append messages to the log history. 
+
+3. Time Manipulation: The contract relies on block.timestamp (alias for "now") for the logic in the Put() and Collect() functions. Miners can manipulate this value to their advantage.
+
+4. Unchecked Return Values For Low-Level Calls: The return value of the low-level call in the Collect() function isn't checked. If this call fails, the contract will not be notified.
+
+5. Arithmetic Issues: The contract doesn't prevent potential overflows or underflows. This can be mitigated by using SafeMath library for arithmetic operations.
+
+6. Denial of Service: The contract is vulnerable to Denial of Service (DoS) attacks. If a malicious contract is used as the receiver, it can purposely fail to prevent the completion of transactions.
+
+7. Bad Randomness: Not applicable in this contract as it doesn't rely on any randomness.
+
+8. Front Running: Not directly applicable but a miner could potentially see a transaction in the mempool calling the Collect() function and manipulate the timestamp to their advantage.
+
+9. Short Address Attack: The contract doesn't check for the length of the input address, making it prone to a short address attack.
+
+Advice: To mitigate these vulnerabilities, consider implementing access control mechanisms, check the result of external calls, use SafeMath for arithmetic operations, and avoid using block.timestamp for business logic. Additionally, use Pull over Push for external calls to prevent DoS attacks, and ensure to validate input length to prevent short address attacks.

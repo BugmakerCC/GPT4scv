@@ -1,0 +1,5 @@
+The smart contract appears to have two main vulnerabilities:
+
+1. Reentrancy: The reentrancy vulnerability is present in the CashOut function. The contract sends Ether with a call.value()() call before it decreases the balance of the sender. This can allow an attacker to continuously call the CashOut function, draining the contract of funds. A possible fix to this issue would be to decrease the balance of the sender before the call.value()() call.
+
+2. Unchecked Return Values For Low Level Calls: The contract does not check the return value of the call.value()() call. This can allow for unexpected behavior if the call fails silently. The contract should handle the case where the call fails.

@@ -1,0 +1,31 @@
+The smart contract you provided has a major vulnerability related to Reentrancy.
+
+In the `CashOut` function, the contract sends Ether to an address before updating the internal balance (`balances[msg.sender]`). This is a classic example of a reentrancy vulnerability. An attacker can create a malicious contract that, when it receives Ether, immediately calls back into the `CashOut` function. This would result in the `CashOut` function being executed again, with the `balances[msg.sender]` not yet being updated, allowing the attacker to drain more Ether than they should.
+
+To fix this vulnerability, you should always update the state variables before calling external contracts. Here's a safer version of the `CashOut` function:
+
+```solidity
+function CashOut(uint _am)
+public
+payable
+{
+    require(_am <= balances[msg.sender]);
+            
+    balances[msg.sender] -= _am;
+            
+    (bool success, ) = msg.sender.call.value(_am)("");
+    require(success);
+            
+    TransferLog.AddMessage(msg.sender, _am, "CashOut");
+}
+```
+
+In this version, we first reduce the balance of the sender. Then we send the Ether. If the Ether transfer fails for any reason, we revert the entire transaction, including the balance reduction.
+
+Note: The use of `call.value()` is highly discouraged due to the possibility of reentrancy attacks. You should consider using `transfer()` or `send()` which are safer as they limit the amount of gas forwarded to the receiver, preventing reentrancy.
+
+Moreover, the contract does not check if the Log contract address passed to the ETH_VAULT constructor is a genuine Log contract. This can lead to potential issues if a malicious contract is passed. Always make sure to validate input addresses.
+
+The `Deposit` function does not have a revert condition if the value sent is less than or equal to `MinDeposit`. It should revert the transaction in such cases to avoid unnecessary gas consumption.
+
+Lastly, the `Log` contract's `AddMessage` function is public and doesn't have any access control mechanism. It allows anyone to add messages, which may lead to misuse and confusion. Consider adding appropriate access control.

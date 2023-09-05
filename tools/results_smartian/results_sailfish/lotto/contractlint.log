@@ -1,0 +1,38 @@
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Analysis started at: 2023-08-14 03:00:01 AM
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Version constraints: ['^0.4.18']
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | solc version: v0.4.18
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Callgraph generation started!
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Callgraph generation finished!
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Storage dependency graph generation started!
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Value Range Analysis started
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Generating return summary for sendToWinner
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Return summary generated for sendToWinner
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Range graph generated
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Processed function sendToWinner
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Generating return summary for withdrawLeftOver
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Return summary generated for withdrawLeftOver
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | State variable assignement do not exist
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Processed function withdrawLeftOver
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Generating return summary for slitherConstructorVariables
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Return summary generated for slitherConstructorVariables
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Range graph generated
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Processed function slitherConstructorVariables
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Value Range Analysis took 0.000735 seconds
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Value Range Analysis finished
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Dependency detection started!
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | TOD dependency detected in file lotto.sol in contract Lotto in by composing functions sendToWinner and sendToWinner
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | TOD dependency detected in file lotto.sol in contract Lotto in by composing functions withdrawLeftOver and sendToWinner
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Dependency detection finished!
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Static Analysis took 0.172982 seconds
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Dependency exists
+[INFO] | 2023-08-14 03:00:01 AM | analyzer.lotto  | Invoking symbolic executor!
+[INFO] | 2023-08-14 03:00:02 AM | analyzer.lotto  | Symbolic execution took 0.845286 seconds
+[INFO] | 2023-08-14 03:00:02 AM | analyzer.lotto  | Symbolic execution finished!
+[INFO] | 2023-08-14 03:00:02 AM | analyzer.lotto  | Analysis finished!
+[INFO] | 2023-08-14 03:00:02 AM | analyzer.lotto  | Analysis took 1.018703 seconds
+[INFO] | 2023-08-14 03:00:02 AM | analyzer.lotto  | Analysis finished at: 2023-08-14 03:00:02 AM

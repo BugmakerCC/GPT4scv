@@ -1,0 +1,13 @@
+The smart contract has several vulnerabilities:
+
+1. **Reentrancy**: There is a reentrancy vulnerability in the `WithdrawToHolder` function. If the `_addr` is a malicious contract, it can call back into `WithdrawToHolder` before `Holders[_addr]-=_wei;` is executed.
+
+2. **Unchecked return values**: The `token.call` in `WithdrawToken` and `_addr.call.value(_wei)` in `WithdrawToHolder` are low level calls where the return value is not checked. If these calls fail, the contract will not be aware of it.
+
+3. **Access Control**: The `onlyOwner` modifier is not correctly implemented. It should revert the transaction if `msg.sender` is not the owner, but in this case it does nothing. This means that any address can call functions marked with this modifier.
+
+4. **Arithmetic issues**: In the `Deposit` function, an attacker can repeatedly deposit 1 ether, causing an overflow in `Holders[msg.sender]`.
+
+5. **Denial of Service**: An attacker could use the reentrancy vulnerability to repeatedly call `WithdrawToHolder`, blocking other users from withdrawing their funds.
+
+6. **Bad randomness**, **Front-running**, **Time manipulation**, and **Short Address Attack** vulnerabilities are not applicable in this contract, as it does not use randomness, rely on transaction ordering, depend on timestamps, or handle external data in a way that could be exploited by a short address attack.

@@ -1,0 +1,19 @@
+The contract has several vulnerabilities:
+
+1. Reentrancy: The CashOut function is vulnerable to reentrancy attack. The contract updates the balance of the user after sending them the Ether. This allows the attacker to repeatedly call the CashOut function before the balance is updated, draining the contract of its funds. 
+
+2. Access Control: The contract uses `tx.origin` in the `onlyOwner` modifier instead of `msg.sender`. This can lead to serious security issues as `tx.origin` represents the original sender of the transaction, i.e., the address of the user interface contract. It does not change even if a contract call is forwarded via several contracts.
+
+3. Unchecked Return Values: The contract does not check the return values of `call.value` in the CashOut function. This can lead to unexpected behavior if the call fails silently.
+
+4. Denial of Service: An attacker may intentionally fail the `call.value` function in the CashOut function, by throwing an exception in their fallback function. This will then block all outgoing transactions to that address.
+
+5. Bad randomness: No bad randomness is present in this contract.
+
+6. Front-Running: No front-running is present in this contract.
+
+7. Time Manipulation: No time manipulation is present in this contract.
+
+8. Short Address Attack: No short address attack is present in this contract.
+
+9. Arithmetic Issues: No overflow or underflow is present in this contract. But it's always a good practice to use SafeMath library for arithmetic operations to avoid such issues.

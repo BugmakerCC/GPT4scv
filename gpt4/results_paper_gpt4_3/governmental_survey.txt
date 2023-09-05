@@ -1,0 +1,21 @@
+The smart contract provided has several vulnerabilities:
+
+1. Reentrancy: The contract is vulnerable to a reentrancy attack in the `resetInvestment` function. It first sends ether to `lastInvestor` and `owner`, and then resets the `lastInvestor`, `jackpot`, and `lastInvestmentTimestamp`. If the `send` function calls back into `resetInvestment`, it could drain the contract's balance.
+
+2. Denial of Service: The `resetInvestment` function depends on the `send` function to transfer ether. If the receiving contract's fallback function consumes a lot of gas or fails, it could render the `resetInvestment` function unable to complete, blocking further transactions.
+
+3. Access Control: The `resetInvestment` function could be called by anyone, not just the `lastInvestor` or the owner. This could allow an attacker to reset the investment at an inopportune moment.
+
+4. Arithmetic Issues: The `invest` function increases the `jackpot` by `msg.value/2`, which could potentially lead to integer overflow.
+
+5. Unchecked Return Values: The `send` function does not check the return value. If the send fails, the contract will continue to execute, possibly leading to unexpected behavior.
+
+6. Bad Randomness: None.
+
+7. Front-Running: None.
+
+8. Time manipulation: The `resetInvestment` function uses `block.timestamp`, which could be manipulated by a miner.
+
+9. Short Address Attack: None.
+
+The `Attacker` contract is designed to exploit the reentrancy vulnerability. The `attack` function recursively calls itself until `count` is not in the range of [0, 1023), and then calls `Governmental.resetInvestment`. If at this point the `jackpot` is greater than the contract's balance, the `send` function will fail, and the `lastInvestor`, `jackpot`, and `lastInvestmentTimestamp` will not be reset, enabling the attacker to drain the contract's balance.

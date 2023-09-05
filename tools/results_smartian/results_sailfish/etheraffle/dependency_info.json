@@ -1,0 +1,1501 @@
+{
+    "etheraffle.sol": [
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "fallback"
+            ],
+            "First_function": "fallback",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 112\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 6\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 119\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 6\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 112\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 8\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 119\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 8\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 118\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 16\nFunction: buyTickets\nNode: \nEXPRESSION contestants[currTicket] = Contestant(msg.sender,raffleId)\nIRS: \nREF_5 := TMP_9\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 118\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 18\nFunction: chooseWinner\nNode: \nNEW VARIABLE randHash = keccak256()(seed1,seed2,seed3)\nIRS: \nTMP_19 = SOLIDITY_CALL keccak256()(seed1,seed2,seed3)\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 118\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 23\nFunction: chooseWinner\nNode: \nEXPRESSION winningAddress.transfer(prize)\nIRS: \nTransfer dest:winningAddress value:prize\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "fallback"
+            ],
+            "First_function": "fallback",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 134\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 6\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 141\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 6\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 134\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 8\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 141\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 8\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 140\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 16\nFunction: buyTickets\nNode: \nEXPRESSION contestants[currTicket] = Contestant(msg.sender,raffleId)\nIRS: \nREF_5 := TMP_9\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 140\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 18\nFunction: chooseWinner\nNode: \nNEW VARIABLE randHash = keccak256()(seed1,seed2,seed3)\nIRS: \nTMP_19 = SOLIDITY_CALL keccak256()(seed1,seed2,seed3)\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 140\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 23\nFunction: chooseWinner\nNode: \nEXPRESSION winningAddress.transfer(prize)\nIRS: \nTransfer dest:winningAddress value:prize\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "fallback"
+            ],
+            "First_function": "fallback",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 156\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 6\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 163\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 6\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 156\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 8\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 163\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 8\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 162\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 16\nFunction: buyTickets\nNode: \nEXPRESSION contestants[currTicket] = Contestant(msg.sender,raffleId)\nIRS: \nREF_5 := TMP_9\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 162\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 18\nFunction: chooseWinner\nNode: \nNEW VARIABLE randHash = keccak256()(seed1,seed2,seed3)\nIRS: \nTMP_19 = SOLIDITY_CALL keccak256()(seed1,seed2,seed3)\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 162\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 23\nFunction: chooseWinner\nNode: \nEXPRESSION winningAddress.transfer(prize)\nIRS: \nTransfer dest:winningAddress value:prize\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "buyTickets"
+            ],
+            "First_function": "buyTickets",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 36\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 6\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 43\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 6\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 36\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 8\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 43\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 8\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 42\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 16\nFunction: buyTickets\nNode: \nEXPRESSION contestants[currTicket] = Contestant(msg.sender,raffleId)\nIRS: \nREF_5 := TMP_9\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 42\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 18\nFunction: chooseWinner\nNode: \nNEW VARIABLE randHash = keccak256()(seed1,seed2,seed3)\nIRS: \nTMP_19 = SOLIDITY_CALL keccak256()(seed1,seed2,seed3)\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 42\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 23\nFunction: chooseWinner\nNode: \nEXPRESSION winningAddress.transfer(prize)\nIRS: \nTransfer dest:winningAddress value:prize\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "buyTickets"
+            ],
+            "First_function": "buyTickets",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 36\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 6\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 43\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 6\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 36\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 8\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 43\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 8\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 42\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 16\nFunction: buyTickets\nNode: \nEXPRESSION contestants[currTicket] = Contestant(msg.sender,raffleId)\nIRS: \nREF_5 := TMP_9\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 42\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 18\nFunction: chooseWinner\nNode: \nNEW VARIABLE randHash = keccak256()(seed1,seed2,seed3)\nIRS: \nTMP_19 = SOLIDITY_CALL keccak256()(seed1,seed2,seed3)\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 42\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 23\nFunction: chooseWinner\nNode: \nEXPRESSION winningAddress.transfer(prize)\nIRS: \nTransfer dest:winningAddress value:prize\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "buyTickets"
+            ],
+            "First_function": "buyTickets",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 36\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 6\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 43\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 6\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 36\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 8\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 43\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 8\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 42\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 16\nFunction: buyTickets\nNode: \nEXPRESSION contestants[currTicket] = Contestant(msg.sender,raffleId)\nIRS: \nREF_5 := TMP_9\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 42\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 18\nFunction: chooseWinner\nNode: \nNEW VARIABLE randHash = keccak256()(seed1,seed2,seed3)\nIRS: \nTMP_19 = SOLIDITY_CALL keccak256()(seed1,seed2,seed3)\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 42\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 23\nFunction: chooseWinner\nNode: \nEXPRESSION winningAddress.transfer(prize)\nIRS: \nTransfer dest:winningAddress value:prize\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "getRefund"
+            ],
+            "First_function": "getRefund",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 54\nFunction: getRefund\nNode: \nEXPRESSION gaps.push(i)\nIRS: \nPUSH i in gaps\"",
+                        "\"BlockID: 7\nFunction: buyTickets\nNode: \nIF gaps.length > 0\nIRS: \nCONDITION TMP_5\""
+                    ],
+                    "state_variable": "gaps"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 54\nFunction: getRefund\nNode: \nEXPRESSION gaps.push(i)\nIRS: \nPUSH i in gaps\"",
+                        "\"BlockID: 13\nFunction: buyTickets\nNode: \nEXPRESSION gaps.length --\nIRS: \nREF_4 = REF_4 - 1\""
+                    ],
+                    "state_variable": "gaps"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "getRefund"
+            ],
+            "First_function": "getRefund",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 54\nFunction: getRefund\nNode: \nEXPRESSION gaps.push(i)\nIRS: \nPUSH i in gaps\"",
+                        "\"BlockID: 7\nFunction: buyTickets\nNode: \nIF gaps.length > 0\nIRS: \nCONDITION TMP_5\""
+                    ],
+                    "state_variable": "gaps"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 54\nFunction: getRefund\nNode: \nEXPRESSION gaps.push(i)\nIRS: \nPUSH i in gaps\"",
+                        "\"BlockID: 13\nFunction: buyTickets\nNode: \nEXPRESSION gaps.length --\nIRS: \nREF_4 = REF_4 - 1\""
+                    ],
+                    "state_variable": "gaps"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "getRefund"
+            ],
+            "First_function": "getRefund",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 54\nFunction: getRefund\nNode: \nEXPRESSION gaps.push(i)\nIRS: \nPUSH i in gaps\"",
+                        "\"BlockID: 7\nFunction: buyTickets\nNode: \nIF gaps.length > 0\nIRS: \nCONDITION TMP_5\""
+                    ],
+                    "state_variable": "gaps"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 54\nFunction: getRefund\nNode: \nEXPRESSION gaps.push(i)\nIRS: \nPUSH i in gaps\"",
+                        "\"BlockID: 13\nFunction: buyTickets\nNode: \nEXPRESSION gaps.length --\nIRS: \nREF_4 = REF_4 - 1\""
+                    ],
+                    "state_variable": "gaps"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "endRaffle"
+            ],
+            "First_function": "endRaffle",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 59\nFunction: endRaffle\nNode: \nEXPRESSION paused = true\nIRS: \npaused := true\"",
+                        "\"BlockID: 4\nFunction: buyTickets\nNode: \nIF paused\nIRS: \nCONDITION paused\""
+                    ],
+                    "state_variable": "paused"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "endRaffle"
+            ],
+            "First_function": "endRaffle",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 59\nFunction: endRaffle\nNode: \nEXPRESSION paused = true\nIRS: \npaused := true\"",
+                        "\"BlockID: 4\nFunction: buyTickets\nNode: \nIF paused\nIRS: \nCONDITION paused\""
+                    ],
+                    "state_variable": "paused"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 65\nFunction: endRaffle\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 6\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 65\nFunction: endRaffle\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 8\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 16\nFunction: buyTickets\nNode: \nEXPRESSION contestants[currTicket] = Contestant(msg.sender,raffleId)\nIRS: \nREF_5 := TMP_9\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 18\nFunction: chooseWinner\nNode: \nNEW VARIABLE randHash = keccak256()(seed1,seed2,seed3)\nIRS: \nTMP_19 = SOLIDITY_CALL keccak256()(seed1,seed2,seed3)\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 23\nFunction: chooseWinner\nNode: \nEXPRESSION winningAddress.transfer(prize)\nIRS: \nTransfer dest:winningAddress value:prize\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "endRaffle"
+            ],
+            "First_function": "endRaffle",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 59\nFunction: endRaffle\nNode: \nEXPRESSION paused = true\nIRS: \npaused := true\"",
+                        "\"BlockID: 4\nFunction: buyTickets\nNode: \nIF paused\nIRS: \nCONDITION paused\""
+                    ],
+                    "state_variable": "paused"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 65\nFunction: endRaffle\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 6\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 65\nFunction: endRaffle\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 8\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 16\nFunction: buyTickets\nNode: \nEXPRESSION contestants[currTicket] = Contestant(msg.sender,raffleId)\nIRS: \nREF_5 := TMP_9\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 18\nFunction: chooseWinner\nNode: \nNEW VARIABLE randHash = keccak256()(seed1,seed2,seed3)\nIRS: \nTMP_19 = SOLIDITY_CALL keccak256()(seed1,seed2,seed3)\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 23\nFunction: chooseWinner\nNode: \nEXPRESSION winningAddress.transfer(prize)\nIRS: \nTransfer dest:winningAddress value:prize\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "endRaffle"
+            ],
+            "First_function": "endRaffle",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 59\nFunction: endRaffle\nNode: \nEXPRESSION paused = true\nIRS: \npaused := true\"",
+                        "\"BlockID: 4\nFunction: buyTickets\nNode: \nIF paused\nIRS: \nCONDITION paused\""
+                    ],
+                    "state_variable": "paused"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 65\nFunction: endRaffle\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 6\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 65\nFunction: endRaffle\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 8\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 16\nFunction: buyTickets\nNode: \nEXPRESSION contestants[currTicket] = Contestant(msg.sender,raffleId)\nIRS: \nREF_5 := TMP_9\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 18\nFunction: chooseWinner\nNode: \nNEW VARIABLE randHash = keccak256()(seed1,seed2,seed3)\nIRS: \nTMP_19 = SOLIDITY_CALL keccak256()(seed1,seed2,seed3)\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 23\nFunction: chooseWinner\nNode: \nEXPRESSION winningAddress.transfer(prize)\nIRS: \nTransfer dest:winningAddress value:prize\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "togglePause"
+            ],
+            "First_function": "togglePause",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 73\nFunction: togglePause\nNode: \nEXPRESSION paused = ! paused\nIRS: \npaused := TMP_49\"",
+                        "\"BlockID: 4\nFunction: buyTickets\nNode: \nIF paused\nIRS: \nCONDITION paused\""
+                    ],
+                    "state_variable": "paused"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "togglePause"
+            ],
+            "First_function": "togglePause",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 73\nFunction: togglePause\nNode: \nEXPRESSION paused = ! paused\nIRS: \npaused := TMP_49\"",
+                        "\"BlockID: 4\nFunction: buyTickets\nNode: \nIF paused\nIRS: \nCONDITION paused\""
+                    ],
+                    "state_variable": "paused"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "togglePause"
+            ],
+            "First_function": "togglePause",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 73\nFunction: togglePause\nNode: \nEXPRESSION paused = ! paused\nIRS: \npaused := TMP_49\"",
+                        "\"BlockID: 4\nFunction: buyTickets\nNode: \nIF paused\nIRS: \nCONDITION paused\""
+                    ],
+                    "state_variable": "paused"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "fallback",
+                "togglePause"
+            ],
+            "First_function": "togglePause",
+            "Second_function": "fallback",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 73\nFunction: togglePause\nNode: \nEXPRESSION paused = ! paused\nIRS: \npaused := TMP_49\"",
+                        "\"BlockID: 4\nFunction: buyTickets\nNode: \nIF paused\nIRS: \nCONDITION paused\""
+                    ],
+                    "state_variable": "paused"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "buyTickets",
+                "fallback"
+            ],
+            "First_function": "fallback",
+            "Second_function": "buyTickets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 14\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 28\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 21\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 28\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 14\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 30\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 21\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 30\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 20\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 38\nFunction: buyTickets\nNode: \nEXPRESSION contestants[currTicket] = Contestant(msg.sender,raffleId)\nIRS: \nREF_5 := TMP_9\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 20\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 40\nFunction: chooseWinner\nNode: \nNEW VARIABLE randHash = keccak256()(seed1,seed2,seed3)\nIRS: \nTMP_19 = SOLIDITY_CALL keccak256()(seed1,seed2,seed3)\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 20\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 45\nFunction: chooseWinner\nNode: \nEXPRESSION winningAddress.transfer(prize)\nIRS: \nTransfer dest:winningAddress value:prize\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "buyTickets",
+                "fallback"
+            ],
+            "First_function": "fallback",
+            "Second_function": "buyTickets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 14\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 28\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 21\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 28\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 14\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 30\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 21\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 30\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 20\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 38\nFunction: buyTickets\nNode: \nEXPRESSION contestants[currTicket] = Contestant(msg.sender,raffleId)\nIRS: \nREF_5 := TMP_9\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 20\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 40\nFunction: chooseWinner\nNode: \nNEW VARIABLE randHash = keccak256()(seed1,seed2,seed3)\nIRS: \nTMP_19 = SOLIDITY_CALL keccak256()(seed1,seed2,seed3)\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 20\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 45\nFunction: chooseWinner\nNode: \nEXPRESSION winningAddress.transfer(prize)\nIRS: \nTransfer dest:winningAddress value:prize\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "buyTickets",
+                "fallback"
+            ],
+            "First_function": "fallback",
+            "Second_function": "buyTickets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 14\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 28\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 21\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 28\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 14\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 30\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 21\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 30\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 20\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 38\nFunction: buyTickets\nNode: \nEXPRESSION contestants[currTicket] = Contestant(msg.sender,raffleId)\nIRS: \nREF_5 := TMP_9\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 20\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 40\nFunction: chooseWinner\nNode: \nNEW VARIABLE randHash = keccak256()(seed1,seed2,seed3)\nIRS: \nTMP_19 = SOLIDITY_CALL keccak256()(seed1,seed2,seed3)\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 20\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 45\nFunction: chooseWinner\nNode: \nEXPRESSION winningAddress.transfer(prize)\nIRS: \nTransfer dest:winningAddress value:prize\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "buyTickets",
+                "buyTickets"
+            ],
+            "First_function": "buyTickets",
+            "Second_function": "buyTickets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 200\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 28\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 207\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 28\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 200\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 30\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 207\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 30\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 206\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 38\nFunction: buyTickets\nNode: \nEXPRESSION contestants[currTicket] = Contestant(msg.sender,raffleId)\nIRS: \nREF_5 := TMP_9\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 206\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 40\nFunction: chooseWinner\nNode: \nNEW VARIABLE randHash = keccak256()(seed1,seed2,seed3)\nIRS: \nTMP_19 = SOLIDITY_CALL keccak256()(seed1,seed2,seed3)\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 206\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 45\nFunction: chooseWinner\nNode: \nEXPRESSION winningAddress.transfer(prize)\nIRS: \nTransfer dest:winningAddress value:prize\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "buyTickets",
+                "buyTickets"
+            ],
+            "First_function": "buyTickets",
+            "Second_function": "buyTickets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 222\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 28\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 229\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 28\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 222\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 30\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 229\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 30\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 228\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 38\nFunction: buyTickets\nNode: \nEXPRESSION contestants[currTicket] = Contestant(msg.sender,raffleId)\nIRS: \nREF_5 := TMP_9\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 228\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 40\nFunction: chooseWinner\nNode: \nNEW VARIABLE randHash = keccak256()(seed1,seed2,seed3)\nIRS: \nTMP_19 = SOLIDITY_CALL keccak256()(seed1,seed2,seed3)\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 228\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 45\nFunction: chooseWinner\nNode: \nEXPRESSION winningAddress.transfer(prize)\nIRS: \nTransfer dest:winningAddress value:prize\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "buyTickets",
+                "buyTickets"
+            ],
+            "First_function": "buyTickets",
+            "Second_function": "buyTickets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 244\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 28\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 251\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 28\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 244\nFunction: buyTickets\nNode: \nEXPRESSION currTicket = nextTicket ++\nIRS: \nnextTicket = nextTicket + 1\"",
+                        "\"BlockID: 30\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 251\nFunction: chooseWinner\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 30\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 250\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 38\nFunction: buyTickets\nNode: \nEXPRESSION contestants[currTicket] = Contestant(msg.sender,raffleId)\nIRS: \nREF_5 := TMP_9\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 250\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 40\nFunction: chooseWinner\nNode: \nNEW VARIABLE randHash = keccak256()(seed1,seed2,seed3)\nIRS: \nTMP_19 = SOLIDITY_CALL keccak256()(seed1,seed2,seed3)\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 250\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 45\nFunction: chooseWinner\nNode: \nEXPRESSION winningAddress.transfer(prize)\nIRS: \nTransfer dest:winningAddress value:prize\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "buyTickets",
+                "getRefund"
+            ],
+            "First_function": "getRefund",
+            "Second_function": "buyTickets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 54\nFunction: getRefund\nNode: \nEXPRESSION gaps.push(i)\nIRS: \nPUSH i in gaps\"",
+                        "\"BlockID: 29\nFunction: buyTickets\nNode: \nIF gaps.length > 0\nIRS: \nCONDITION TMP_5\""
+                    ],
+                    "state_variable": "gaps"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 54\nFunction: getRefund\nNode: \nEXPRESSION gaps.push(i)\nIRS: \nPUSH i in gaps\"",
+                        "\"BlockID: 35\nFunction: buyTickets\nNode: \nEXPRESSION gaps.length --\nIRS: \nREF_4 = REF_4 - 1\""
+                    ],
+                    "state_variable": "gaps"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "buyTickets",
+                "getRefund"
+            ],
+            "First_function": "getRefund",
+            "Second_function": "buyTickets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 54\nFunction: getRefund\nNode: \nEXPRESSION gaps.push(i)\nIRS: \nPUSH i in gaps\"",
+                        "\"BlockID: 29\nFunction: buyTickets\nNode: \nIF gaps.length > 0\nIRS: \nCONDITION TMP_5\""
+                    ],
+                    "state_variable": "gaps"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 54\nFunction: getRefund\nNode: \nEXPRESSION gaps.push(i)\nIRS: \nPUSH i in gaps\"",
+                        "\"BlockID: 35\nFunction: buyTickets\nNode: \nEXPRESSION gaps.length --\nIRS: \nREF_4 = REF_4 - 1\""
+                    ],
+                    "state_variable": "gaps"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "buyTickets",
+                "getRefund"
+            ],
+            "First_function": "getRefund",
+            "Second_function": "buyTickets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 54\nFunction: getRefund\nNode: \nEXPRESSION gaps.push(i)\nIRS: \nPUSH i in gaps\"",
+                        "\"BlockID: 29\nFunction: buyTickets\nNode: \nIF gaps.length > 0\nIRS: \nCONDITION TMP_5\""
+                    ],
+                    "state_variable": "gaps"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 54\nFunction: getRefund\nNode: \nEXPRESSION gaps.push(i)\nIRS: \nPUSH i in gaps\"",
+                        "\"BlockID: 35\nFunction: buyTickets\nNode: \nEXPRESSION gaps.length --\nIRS: \nREF_4 = REF_4 - 1\""
+                    ],
+                    "state_variable": "gaps"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "buyTickets",
+                "endRaffle"
+            ],
+            "First_function": "endRaffle",
+            "Second_function": "buyTickets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 59\nFunction: endRaffle\nNode: \nEXPRESSION paused = true\nIRS: \npaused := true\"",
+                        "\"BlockID: 26\nFunction: buyTickets\nNode: \nIF paused\nIRS: \nCONDITION paused\""
+                    ],
+                    "state_variable": "paused"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "buyTickets",
+                "endRaffle"
+            ],
+            "First_function": "endRaffle",
+            "Second_function": "buyTickets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 59\nFunction: endRaffle\nNode: \nEXPRESSION paused = true\nIRS: \npaused := true\"",
+                        "\"BlockID: 26\nFunction: buyTickets\nNode: \nIF paused\nIRS: \nCONDITION paused\""
+                    ],
+                    "state_variable": "paused"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 65\nFunction: endRaffle\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 28\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 65\nFunction: endRaffle\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 30\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 38\nFunction: buyTickets\nNode: \nEXPRESSION contestants[currTicket] = Contestant(msg.sender,raffleId)\nIRS: \nREF_5 := TMP_9\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 40\nFunction: chooseWinner\nNode: \nNEW VARIABLE randHash = keccak256()(seed1,seed2,seed3)\nIRS: \nTMP_19 = SOLIDITY_CALL keccak256()(seed1,seed2,seed3)\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 45\nFunction: chooseWinner\nNode: \nEXPRESSION winningAddress.transfer(prize)\nIRS: \nTransfer dest:winningAddress value:prize\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "buyTickets",
+                "endRaffle"
+            ],
+            "First_function": "endRaffle",
+            "Second_function": "buyTickets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 59\nFunction: endRaffle\nNode: \nEXPRESSION paused = true\nIRS: \npaused := true\"",
+                        "\"BlockID: 26\nFunction: buyTickets\nNode: \nIF paused\nIRS: \nCONDITION paused\""
+                    ],
+                    "state_variable": "paused"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 65\nFunction: endRaffle\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 28\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 65\nFunction: endRaffle\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 30\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 38\nFunction: buyTickets\nNode: \nEXPRESSION contestants[currTicket] = Contestant(msg.sender,raffleId)\nIRS: \nREF_5 := TMP_9\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 40\nFunction: chooseWinner\nNode: \nNEW VARIABLE randHash = keccak256()(seed1,seed2,seed3)\nIRS: \nTMP_19 = SOLIDITY_CALL keccak256()(seed1,seed2,seed3)\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 45\nFunction: chooseWinner\nNode: \nEXPRESSION winningAddress.transfer(prize)\nIRS: \nTransfer dest:winningAddress value:prize\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "buyTickets",
+                "endRaffle"
+            ],
+            "First_function": "endRaffle",
+            "Second_function": "buyTickets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 59\nFunction: endRaffle\nNode: \nEXPRESSION paused = true\nIRS: \npaused := true\"",
+                        "\"BlockID: 26\nFunction: buyTickets\nNode: \nIF paused\nIRS: \nCONDITION paused\""
+                    ],
+                    "state_variable": "paused"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 65\nFunction: endRaffle\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 28\nFunction: buyTickets\nNode: \nIF_LOOP moneySent >= pricePerTicket && nextTicket < totalTickets\nIRS: \nCONDITION TMP_4\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 65\nFunction: endRaffle\nNode: \nEXPRESSION nextTicket = 0\nIRS: \nnextTicket := 0\"",
+                        "\"BlockID: 30\nFunction: buyTickets\nNode: \nIF nextTicket == totalTickets\nIRS: \nCONDITION TMP_11\""
+                    ],
+                    "state_variable": "nextTicket"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 38\nFunction: buyTickets\nNode: \nEXPRESSION contestants[currTicket] = Contestant(msg.sender,raffleId)\nIRS: \nREF_5 := TMP_9\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 40\nFunction: chooseWinner\nNode: \nNEW VARIABLE randHash = keccak256()(seed1,seed2,seed3)\nIRS: \nTMP_19 = SOLIDITY_CALL keccak256()(seed1,seed2,seed3)\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 45\nFunction: chooseWinner\nNode: \nEXPRESSION winningAddress.transfer(prize)\nIRS: \nTransfer dest:winningAddress value:prize\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "buyTickets",
+                "togglePause"
+            ],
+            "First_function": "togglePause",
+            "Second_function": "buyTickets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 73\nFunction: togglePause\nNode: \nEXPRESSION paused = ! paused\nIRS: \npaused := TMP_49\"",
+                        "\"BlockID: 26\nFunction: buyTickets\nNode: \nIF paused\nIRS: \nCONDITION paused\""
+                    ],
+                    "state_variable": "paused"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "buyTickets",
+                "togglePause"
+            ],
+            "First_function": "togglePause",
+            "Second_function": "buyTickets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 73\nFunction: togglePause\nNode: \nEXPRESSION paused = ! paused\nIRS: \npaused := TMP_49\"",
+                        "\"BlockID: 26\nFunction: buyTickets\nNode: \nIF paused\nIRS: \nCONDITION paused\""
+                    ],
+                    "state_variable": "paused"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "buyTickets",
+                "togglePause"
+            ],
+            "First_function": "togglePause",
+            "Second_function": "buyTickets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 73\nFunction: togglePause\nNode: \nEXPRESSION paused = ! paused\nIRS: \npaused := TMP_49\"",
+                        "\"BlockID: 26\nFunction: buyTickets\nNode: \nIF paused\nIRS: \nCONDITION paused\""
+                    ],
+                    "state_variable": "paused"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "buyTickets",
+                "togglePause"
+            ],
+            "First_function": "togglePause",
+            "Second_function": "buyTickets",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 73\nFunction: togglePause\nNode: \nEXPRESSION paused = ! paused\nIRS: \npaused := TMP_49\"",
+                        "\"BlockID: 26\nFunction: buyTickets\nNode: \nIF paused\nIRS: \nCONDITION paused\""
+                    ],
+                    "state_variable": "paused"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "getRefund",
+                "fallback"
+            ],
+            "First_function": "fallback",
+            "Second_function": "getRefund",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 20\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 49\nFunction: getRefund\nNode: \nIF msg.sender == contestants[i].addr && raffleId == contestants[i].raffleId\nIRS: \nCONDITION TMP_29\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "getRefund",
+                "buyTickets"
+            ],
+            "First_function": "buyTickets",
+            "Second_function": "getRefund",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 42\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 49\nFunction: getRefund\nNode: \nIF msg.sender == contestants[i].addr && raffleId == contestants[i].raffleId\nIRS: \nCONDITION TMP_29\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "getRefund",
+                "endRaffle"
+            ],
+            "First_function": "endRaffle",
+            "Second_function": "getRefund",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 64\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 49\nFunction: getRefund\nNode: \nIF msg.sender == contestants[i].addr && raffleId == contestants[i].raffleId\nIRS: \nCONDITION TMP_29\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "endRaffle",
+                "fallback"
+            ],
+            "First_function": "fallback",
+            "Second_function": "endRaffle",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 20\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 62\nFunction: endRaffle\nNode: \nIF raffleId == contestants[i].raffleId\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 20\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 70\nFunction: endRaffle\nNode: \nEXPRESSION contestants[i].addr.transfer(pricePerTicket)\nIRS: \nTransfer dest:REF_27 value:pricePerTicket\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "endRaffle",
+                "buyTickets"
+            ],
+            "First_function": "buyTickets",
+            "Second_function": "endRaffle",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 42\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 62\nFunction: endRaffle\nNode: \nIF raffleId == contestants[i].raffleId\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 42\nFunction: chooseWinner\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 70\nFunction: endRaffle\nNode: \nEXPRESSION contestants[i].addr.transfer(pricePerTicket)\nIRS: \nTransfer dest:REF_27 value:pricePerTicket\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "endRaffle",
+                "endRaffle"
+            ],
+            "First_function": "endRaffle",
+            "Second_function": "endRaffle",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 272\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 62\nFunction: endRaffle\nNode: \nIF raffleId == contestants[i].raffleId\nIRS: \nCONDITION TMP_39\""
+                    ],
+                    "state_variable": "raffleId"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 272\nFunction: endRaffle\nNode: \nEXPRESSION raffleId ++\nIRS: \nraffleId = raffleId + 1\"",
+                        "\"BlockID: 70\nFunction: endRaffle\nNode: \nEXPRESSION contestants[i].addr.transfer(pricePerTicket)\nIRS: \nTransfer dest:REF_27 value:pricePerTicket\""
+                    ],
+                    "state_variable": "raffleId"
+                }
+            ]
+        }
+    ]
+}

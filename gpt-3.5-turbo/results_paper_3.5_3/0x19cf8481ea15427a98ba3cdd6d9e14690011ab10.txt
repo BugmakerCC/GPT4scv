@@ -1,0 +1,7 @@
+Vulnerabilities found in the smart contract:
+
+1. Reentrancy: The contract does not have any code that allows an external contract to call back into it, so it is not vulnerable to reentrancy attacks.
+
+2. Access Control: The contract does not have any access control mechanisms implemented. This means that anyone can call the transfer, transferFrom, approve, and other functions that modify the contract's state.
+
+3. Arithmetic Issues: The contract uses the SafeMath library

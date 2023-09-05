@@ -1,0 +1,17 @@
+This contract has several vulnerabilities:
+
+1. Reentrancy: The `cash` function sends Ether to a user-controlled address `winner.send(subpot);` and then modifies the state `rounds[roundIndex].isCashed[subpotIndex] = true;`. This is a reentrancy attack vector where the recipient contract could call back into `cash` before the first call has a chance to finish.
+
+2. Bad Randomness: The `calculateWinner` function uses `block.blockhash` for randomness. This is insecure because miners can manipulate the block hash to a certain extent.
+
+3. Access Control: There is no check for who can call the `cash` function. Anybody can call it and potentially send the winnings to the winner even before the winner has a chance to claim it.
+
+4. Arithmetic Issues: While not directly present, there's no use of SafeMath library which could lead to potential overflow or underflow issues.
+
+5. Denial of Service: The `cash` function could fail if the `winner` address is a contract with a fallback function that consumes a lot of gas. This would block others from being able to call the `cash` function.
+
+6. Front-Running: Since Ethereum transactions are public, an attacker could see a transaction calling the `cash` function and quickly submit another transaction with a higher gas price to claim the reward first.
+
+7. Unchecked Return Values For Low Level Calls: While `send` is used to transfer funds, its return value is not checked which could lead to silent failures.
+
+8. Short Address Attack and Time manipulation vulnerabilities do not seem to be present in the code.

@@ -1,0 +1,30 @@
+The contract seems to have several security vulnerabilities:
+
+1. Reentrancy: The contract makes use of low-level calls (like `token.call` and `_addr.call.value`) which could potentially lead to reentrancy attacks if the called contract contains malicious code.
+
+2. Access Control: The contract uses a simplistic access control mechanism (`onlyOwner` modifier) but it doesn't properly restrict the access. In the `onlyOwner` modifier, the `_;` statement should be placed inside the if condition, like this:
+```solidity
+modifier onlyOwner
+    {
+        if(owner == msg.sender) {
+            _;
+        }
+    }
+```
+Without this, any address can call functions with the `onlyOwner` modifier and the check for `owner == msg.sender` is ineffective.
+
+3. Arithmetic Issues: This contract doesn't appear to have obvious arithmetic issues.
+
+4. Unchecked Return Values For Low Level Calls: The contract does not check the return value of the low-level calls (`token.call` and `_addr.call.value`), which could cause silent failing sends.
+
+5. Denial of Service: If a malicious contract is used for the `_addr` parameter in `WithdrawToHolder` function, it could purposely always throw errors and prevent other users from withdrawing their tokens.
+
+6. Bad Randomness: This contract doesn't appear to rely on randomness, so no related issue found.
+
+7. Front-Running: The contract does not seem to have front-running vulnerabilities.
+
+8. Time manipulation: The contract doesn't appear to use timestamps or block numbers, hence, there doesn't seem to be any vulnerability related to time manipulation.
+
+9. Short Address Attack: This contract does not seem to be vulnerable to short address attacks as it does not take the lengths of addresses from external input.
+
+Please note that this is a basic analysis and further in-depth security audit is recommended.

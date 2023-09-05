@@ -1,0 +1,21 @@
+The smart contract seems to be vulnerable to the following vulnerabilities:
+
+1. Reentrancy: In the `Collect` function, the contract interacts with an external contract (with `msg.sender.call.value(_am)()`) before it updates the state (`acc.balance-=_am;`). This may allow a malicious contract to repeatedly enter (re-enter) the `Collect` function before the original external call is finished.
+
+2. Arithmetic Issues (Integer Underflow): In the `Collect` function, if `_am` is zero, `acc.balance-=_am;` will not change `acc.balance`. However, if `_am` is greater than `acc.balance`, this will underflow and `acc.balance` will be a very large number.
+
+3. Unchecked Return Values For Low Level Calls: The return value of `msg.sender.call.value(_am)()` is not checked. If this call fails for any reason, the contract will not be aware of it.
+
+4. Denial of Service: If a user has a balance and sets `_unlockTime` to a time very far in the future, that user’s funds are locked until that time, effectively making the funds inaccessible.
+
+5. Access Control: There's no access control in the `Put` function and in the `Collect` function. This means that anyone can call these functions and possibly manipulate the contract's state.
+
+The contract seems to be free from the following vulnerabilities:
+
+1. Bad Randomness: The contract does not rely on randomness.
+
+2. Front-Running: There's no transaction ordering or time-of-check vs time-of-use issue.
+
+3. Time manipulation: The contract uses `now` for timestamps. But there's no critical operation that depends on it.
+
+4. Short Address Attack: The contract does not seem to have off-chain issues or client vulnerabilities related to short address attack.

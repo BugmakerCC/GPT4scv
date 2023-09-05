@@ -1,0 +1,26 @@
+This smart contract is vulnerable to the Reentrancy vulnerability. The vulnerability occurs in the `withdrawAll` function. Here is the step-by-step analysis of the vulnerability:
+
+1. The `withdrawAll` function is called by a user to withdraw their entire credit balance.
+2. The function first checks if the user has any credit (`oCredit > 0`).
+3. If the user has credit, the function subtracts the credit from the contract's balance (`balance -= oCredit`).
+4. Then, the function calls the `call` function on the `msg.sender` address with the value of `oCredit`.
+5. The `call` function allows the recipient to execute code in their contract. In this case, the recipient is the same contract (`msg.sender`) which means the `withdrawAll` function can be called again before it completes.
+6. This creates a recursive call vulnerability where an attacker can repeatedly call the `withdrawAll` function, draining the contract's balance multiple times before the balance is updated.
+7. After the `call` function, the function sets the user's credit to 0 (`credit[msg.sender] = 0`).
+
+To fix this vulnerability, the `withdrawAll` function should update the user's credit balance before executing the external call. This ensures that the balance is not drained multiple times in a recursive call scenario. The updated code should look like this:
+
+```
+function withdrawAll() public {
+    uint oCredit = credit[msg.sender];
+    if (oCredit > 0) {
+        credit[msg.sender] = 0;
+        balance -= oCredit;
+
+        bool callResult = msg.sender.call.value(oCredit)();
+        require(callResult);
+    }
+}
+```
+
+By moving the `credit[msg.sender] = 0` line before the external call, the vulnerability is mitigated as the user's credit balance is updated first, preventing reentrancy attacks.

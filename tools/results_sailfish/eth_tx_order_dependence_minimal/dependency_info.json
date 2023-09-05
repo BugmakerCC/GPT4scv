@@ -1,0 +1,76 @@
+{
+    "eth_tx_order_dependence_minimal.sol": [
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "setReward",
+                "setReward"
+            ],
+            "First_function": "setReward",
+            "Second_function": "setReward",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 17\nFunction: setReward\nNode: \nEXPRESSION reward = msg.value\nIRS: \nreward := msg.value\"",
+                        "\"BlockID: 6\nFunction: setReward\nNode: \nEXPRESSION owner.transfer(reward)\nIRS: \nTransfer dest:owner value:reward\""
+                    ],
+                    "state_variable": "reward"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "setReward",
+                "claimReward"
+            ],
+            "First_function": "claimReward",
+            "Second_function": "setReward",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 12\nFunction: claimReward\nNode: \nEXPRESSION claimed = true\nIRS: \nclaimed := true\"",
+                        "\"BlockID: 4\nFunction: setReward\nNode: \nEXPRESSION require(bool)(! claimed)\nIRS: \nTMP_1 = SOLIDITY_CALL require(bool)(TMP_0)\""
+                    ],
+                    "state_variable": "claimed"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "claimReward",
+                "setReward"
+            ],
+            "First_function": "setReward",
+            "Second_function": "claimReward",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 7\nFunction: setReward\nNode: \nEXPRESSION reward = msg.value\nIRS: \nreward := msg.value\"",
+                        "\"BlockID: 11\nFunction: claimReward\nNode: \nEXPRESSION msg.sender.transfer(reward)\nIRS: \nTransfer dest:msg.sender value:reward\""
+                    ],
+                    "state_variable": "reward"
+                }
+            ]
+        },
+        {
+            "attack_type": "TOD",
+            "composed_functions": [
+                "claimReward",
+                "claimReward"
+            ],
+            "First_function": "claimReward",
+            "Second_function": "claimReward",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 22\nFunction: claimReward\nNode: \nEXPRESSION claimed = true\nIRS: \nclaimed := true\"",
+                        "\"BlockID: 9\nFunction: claimReward\nNode: \nEXPRESSION require(bool)(! claimed)\nIRS: \nTMP_6 = SOLIDITY_CALL require(bool)(TMP_5)\""
+                    ],
+                    "state_variable": "claimed"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,425 @@
+{
+    "file": "old_blockhash.sol",
+    "global_structs": [
+        {
+            "name": "guess",
+            "fields": {
+                "block": [
+                    "integer"
+                ],
+                "guess": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0x19"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0x1a"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x1b"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "guesses",
+            "type": [
+                "array",
+                "integer",
+                "guess"
+            ],
+            "init": []
+        },
+        {
+            "name": "PredictTheBlockHashChallenge",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x19",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x1a",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x1b",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "guesses",
+            "addrs": [
+                "0x2",
+                "0x4",
+                "0x7",
+                "0xa"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4",
+            "instructions": [
+                "CLR_0 = msg.sender",
+                "CLR_1 = guesses[CLR_0]",
+                "REF_17 = CLR_1",
+                "CLR_2 = REF_17.block",
+                "REF_18 = CLR_2",
+                "RTMP_15 = REF_18 == 0",
+                "CONDITION RTMP_15 0x5 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5",
+            "instructions": [
+                "CLR_3 = msg.value",
+                "RTMP_16 = CLR_3 == 1000000000000000000",
+                "CONDITION RTMP_16 0x3 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3",
+            "instructions": [
+                "CLR_4 = msg.sender",
+                "CLR_5 = guesses[CLR_4]",
+                "REF_15 = CLR_5",
+                "CLR_6 = REF_15.guess",
+                "REF_16 = CLR_6",
+                "REF_15.guess = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7",
+            "instructions": [
+                "CLR_7 = msg.sender",
+                "CLR_8 = guesses[CLR_7]",
+                "REF_19 = CLR_8",
+                "CLR_9 = REF_19.block",
+                "REF_20 = CLR_9",
+                "RTMP_18 = REF_20 == 0",
+                "CONDITION RTMP_18 0x8 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x8",
+            "instructions": [
+                "CLR_10 = msg.value",
+                "RTMP_19 = CLR_10 == 1000000000000000000",
+                "CONDITION RTMP_19 0x6 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6",
+            "instructions": [
+                "CLR_11 = block.number",
+                "TMP_17 = CLR_11 + 1",
+                "CLR_12 = msg.sender",
+                "CLR_13 = guesses[CLR_12]",
+                "CLR_13.block = TMP_17"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa",
+            "instructions": [
+                "CLR_14 = msg.sender",
+                "CLR_15 = guesses[CLR_14]",
+                "REF_23 = CLR_15",
+                "CLR_16 = REF_23.block",
+                "REF_24 = CLR_16",
+                "CLR_17 = block.number",
+                "RTMP_20 = CLR_17 > REF_24",
+                "CONDITION RTMP_20 0x9 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x9",
+            "instructions": [
+                "CLR_18 = msg.sender",
+                "CLR_19 = guesses[CLR_18]",
+                "REF_21 = CLR_19",
+                "CLR_20 = REF_21.block",
+                "REF_22 = CLR_20",
+                "REF_21.block = 0"
+            ]
+        }
+    ],
+    "root_addr": "0x1c",
+    "dest_addrs": [
+        "0x1f"
+    ],
+    "normal_blocks": [
+        {
+            "scope": "settle",
+            "addr": "0x1c",
+            "instructions": [
+                "NOP",
+                "answer = NEW_VAL integer",
+                "JUMP 0x1d"
+            ]
+        },
+        {
+            "scope": "settle",
+            "addr": "0x1d",
+            "instructions": [
+                "CLR_21 = msg.sender",
+                "CLR_22 = guesses[CLR_21]",
+                "REF_6 = CLR_22",
+                "CLR_23 = REF_6.block",
+                "REF_7 = CLR_23",
+                "CLR_24 = block.number",
+                "TMP_7 = CLR_24 > REF_7",
+                "CONDITION TMP_7 0x1d_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "settle",
+            "addr": "0x1d_r0",
+            "instructions": [
+                "JUMP 0x1e"
+            ]
+        },
+        {
+            "scope": "settle",
+            "addr": "0x1e",
+            "instructions": [
+                "CLR_25 = msg.sender",
+                "CLR_26 = guesses[CLR_25]",
+                "REF_8 = CLR_26",
+                "CLR_27 = REF_8.block",
+                "REF_9 = CLR_27",
+                "TMP_9 = CALL1 blockhash REF_9",
+                "answer = TMP_9",
+                "CLR_28 = msg.sender",
+                "CLR_29 = guesses[CLR_28]",
+                "REF_10 = CLR_29",
+                "CLR_30 = REF_10.block",
+                "REF_11 = CLR_30",
+                "REF_10.block = 0",
+                "CLR_31 = msg.sender",
+                "CLR_32 = guesses[CLR_31]",
+                "REF_12 = CLR_32",
+                "CLR_33 = REF_12.guess",
+                "REF_13 = CLR_33",
+                "TMP_10 = REF_13 == answer",
+                "CONDITION TMP_10 0x1f 0x20"
+            ]
+        },
+        {
+            "scope": "settle",
+            "addr": "0x1f",
+            "instructions": [
+                "CLR_34 = this.balance",
+                "WRP_0 = CLR_34 - 2000000000000000000",
+                "this.balance = WRP_0"
+            ]
+        },
+        {
+            "scope": "settle",
+            "addr": "0x20",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "RequireTrap",
+            "addr": "0xRequireTrap",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

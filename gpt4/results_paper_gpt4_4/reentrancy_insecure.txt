@@ -1,0 +1,14 @@
+The given smart contract has a reentrancy vulnerability.
+
+In the `withdrawBalance` function, the contract is calling the fallback function of the msg.sender before it has a chance to set the sender's balance to zero. This means that the fallback function can call `withdrawBalance` again before the user's balance is set to zero, allowing the user to withdraw more Ether than they should be able to.
+
+Here's a step-by-step breakdown of the vulnerability:
+
+1. User A calls `withdrawBalance`.
+2. The contract sends the amount of Ether corresponding to A's balance to A's address.
+3. Before the contract has a chance to set A's balance to zero, A's fallback function is triggered by the incoming Ether.
+4. A's fallback function calls `withdrawBalance` again.
+5. Because A's balance has not been set to zero yet, the contract sends the same amount of Ether to A again.
+6. This can be repeated as many times as A wants, draining the contract of all its Ether.
+
+This vulnerability can be resolved by setting the user's balance to zero before transferring the corresponding amount of Ether.

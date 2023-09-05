@@ -1,0 +1,19 @@
+This smart contract has several vulnerabilities:
+
+1. Bad Randomness: The `shuffle()` function is used to generate a secret number. However, it utilizes `sha3(now, block.blockhash(block.number-1))` which is predictable and can be manipulated by the miner. This is because `now` is the timestamp of the current block which can be manipulated by the miner to a certain extent, and `block.blockhash(block.number-1)` is public information. This opens the contract to miner-front-running attacks.
+
+2. Reentrancy: The `play()` function sends ether with `msg.sender.transfer(this.balance);` and afterwards calls the `shuffle()` function. If the `msg.sender` is a malicious contract, it could fallback to the `play()` function when it receives ether, and because the state variable `secretNumber` is not yet updated, it could drain the contract.
+
+3. Access Control: The `kill()` function can only be called by the `ownerAddr` and only if no one has played for a day. However, there's no function to change the `ownerAddr` in case the ownership needs to be transferred.
+
+4. Time Manipulation: The contract uses `now` which is equivalent to `block.timestamp` for shuffling the secret number and for checking if it can be killed. This can be manipulated by the miner to some degree.
+
+5. Denial of Service: The `kill()` function can be used to permanently disable the contract. If the contract has a balance when it is killed, the funds will be sent to the owner and will be inaccessible to the users.
+
+6. Unchecked Return Values: The `msg.sender.transfer(this.balance)` call in the `play()` function doesn't check the return value. If the transfer fails, the contract will continue executing.
+
+7. Short Address Attack: This contract does not protect against short address attacks. If a user accidentally (or intentionally) truncates their address, the contract would still accept it and the funds could be lost forever.
+
+8. Arithmetic Issues: The contract does not use SafeMath or similar library to protect against potential overflow/underflow issues.
+
+9. Access Control: The contract's constructor sets the `ownerAddr` to `msg.sender`, but there is no functionality to prevent the owner from playing the game, which could lead to abuse.

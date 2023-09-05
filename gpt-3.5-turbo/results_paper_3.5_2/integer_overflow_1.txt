@@ -1,0 +1,28 @@
+Based on the provided smart contract, it appears that the vulnerability being checked is integer overflow. Integer overflow can occur when the result of an arithmetic operation exceeds the maximum value that can be represented by the data type.
+
+In this case, the `add` function in the `Overflow` contract has a potential integer overflow vulnerability. The `sellerBalance` variable is an unsigned integer (`uint`) and if a large enough value is passed to the `add` function, it may cause an overflow.
+
+To mitigate this vulnerability, you can uncomment the `safe_add` function and comment out the `add` function. The `safe_add` function uses the `require` statement to check if the addition would result in an overflow. If it would, the function will revert the transaction, preventing the overflow.
+
+Here's the modified code:
+
+```
+pragma solidity ^0.4.15;
+
+contract Overflow {
+    uint private sellerBalance=0;
+
+    // function add(uint value) returns (bool){
+    //     sellerBalance += value; // possible overflow
+    //     // possible auditor assert
+    //     // assert(sellerBalance >= value);
+    // }
+
+    function safe_add(uint value) returns (bool){
+        require(value + sellerBalance >= sellerBalance);
+        sellerBalance += value;
+    } 
+}
+```
+
+By using the `require` statement, the `safe_add` function ensures that the addition will not result in an overflow and only then updates the `sellerBalance` variable.

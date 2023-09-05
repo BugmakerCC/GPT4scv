@@ -1,0 +1,21 @@
+This smart contract has several vulnerabilities:
+
+1. Bad Randomness: The contract is using block.number for determining the result of a bet. This is a poor source of randomness and can be manipulated by miners. 
+
+2. Time Manipulation: Similar to the bad randomness issue, block.number is dependent on when a block is mined, thus it can be manipulated by miners, leading to potential time manipulation issues. 
+
+3. Access Control: The organizer is the only person who can call the getBets() and destroy() functions. However, there is no function to change the organizer if needed. Also, the organizer is not checked in the makeBet() function, allowing anyone to make a bet.
+
+4. Denial of Service: There's a potential denial of service attack. If the contract's fallback function is called, it will throw an exception and consume all the gas, potentially causing other transactions to fail due to gas limit. 
+
+5. Unchecked Return Values For Low Level Calls: The return value of the low-level call send() is not checked in the makeBet() function. If this send fails for some reason (for example, the fallback function of the receiver throws an exception), the contract will still continue execution. This can lead to unexpected behavior, especially since there is no way to recover funds if the send fails.
+
+6. Suicide: The destroy() function can make the contract unusable, which results in funds being permanently stuck if it has a balance when destroyed.
+
+7. Integer Overflow and Underflow: The contract does not check for potential overflow or underflow conditions. However, in this particular contract, it doesn't seem to be a pressing issue, but it's good to be aware of.
+
+8. Reentrancy: In this contract it doesn't seem to be a problem because the state is updated before the transfer function is called.
+
+9. Front-Running: Front-running attacks are possible due to the public nature of transactions on the blockchain. Attackers can see the bets made by users and then place their own bets with knowledge of these transactions.
+
+10. Short Address Attack: The contract doesn't seem susceptible to short address attacks because it doesn't take address as an input from external calls.

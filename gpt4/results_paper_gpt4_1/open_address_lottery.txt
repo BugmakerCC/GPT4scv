@@ -1,0 +1,19 @@
+This smart contract has several potential vulnerabilities:
+
+1. **Reentrancy:** The function 'participate' sends Ether with the 'transfer' function, but it does not have any mechanism to prevent reentrancy attacks. Although the 'transfer' function is generally considered safe against reentrancy because it only forwards a limited gas stipend, careful manipulation of the fallback function might still allow for a reentrancy attack. 
+
+2. **Access Control:** The contract's owner can kill the contract at any time, which could potentially be used maliciously. Furthermore, the owner can force the contract to reseed at any time, potentially manipulating the outcome of the lottery.
+
+3. **Arithmetic Issues:** There is a potential for underflow in the 'participate' function when calculating the win amount. If msg.value is very small, multiplying it by 7 could result in a value larger than the current balance of the contract. 
+
+4. **Unchecked Return Values For Low Level Calls:** There are no check on the return value of the 'transfer' function in the 'participate' function.
+
+5. **Bad Randomness:** The contract's randomness depends on block variables such as block.coinbase, block.difficulty, block.gaslimit, and block.timestamp. These are publicly accessible and can be manipulated by miners to a certain extent.
+
+6. **Timestamp Dependence:** The contract uses block.timestamp for seed generation in the constructor. This could be manipulated by the miner.
+
+7. **Denial of Service:** The contract can become stuck if the owner's account runs out of gas or if the contract's balance is empty. This could potentially lead to a denial of service.
+
+8. **Front-Running:** The 'participate' function is vulnerable to front-running because it involves a financial transaction based on the input data. A malicious miner could potentially include their own transaction before others to gain an advantage.
+
+9. **Short Address Attack:** There are no checks for short addresses. A malicious user could potentially pass in an address that is shorter than expected and cause unexpected behavior.

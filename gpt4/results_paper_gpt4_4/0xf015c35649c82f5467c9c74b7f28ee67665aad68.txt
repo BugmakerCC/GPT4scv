@@ -1,0 +1,21 @@
+This smart contract contains several vulnerabilities.
+
+1. Reentrancy: The `Collect` function is vulnerable to reentrancy attack because it first sends ethers to `msg.sender` and then decreases the balance of the account. An attacker could create a fallback function in their contract to repeatedly call the `Collect` function before `acc.balance-=_am;` is executed.
+
+2. Access Control: There doesn't appear to be proper access control mechanisms in place. For example, any address can call the `Put` function and add funds to the contract.
+
+3. Arithmetic Issues: There doesn't appear to be any protection against underflow or overflow. This is particularly risky in the `Put` function, where `acc.balance += msg.value;` could overflow.
+
+4. Unchecked Return Values For Low Level Calls: `msg.sender.call.value(_am)()` is a low-level call and its return value is not checked. If it fails, the contract continues execution as if nothing happened.
+
+5. Denial of Service: An attacker could call the `Put` function with a large `unlockTime` value to block the funds.
+
+6. Bad Randomness: Not applicable here, there is no randomness involved in this contract.
+
+7. Front-Running: Not applicable here, there is no transaction ordering dependence.
+
+8. Time manipulation: The contract is dependent on `now` (block.timestamp), which can be manipulated by miners to some degree.
+
+9. Short Address Attack: Not applicable here, as there's no external call that involves address length. 
+
+The contract needs to be updated to fix these vulnerabilities.

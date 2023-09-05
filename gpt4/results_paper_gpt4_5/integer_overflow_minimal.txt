@@ -1,0 +1,9 @@
+The smart contract has an Arithmetic Issue, specifically an integer underflow vulnerability. 
+
+In Solidity, uint (unsigned integer) variables cannot hold negative values. So, when you subtract a value greater than the current value of 'count', it underflows and wraps around to a very large number.
+
+In this contract, the 'run' function subtracts an input value from 'count' which is initially set to 1. If the input value is greater than 1, the subtraction would result in an underflow.
+
+To mitigate this vulnerability, checks can be added to ensure that the 'count' variable never goes below a certain value. This can be done using SafeMath library in Solidity which includes safety checks to prevent overflows and underflows.
+
+There are no reentrancy, access control, unchecked return values for low level calls, denial of service, bad randomness, front-running, time manipulation, or short address attack vulnerabilities found in the contract.

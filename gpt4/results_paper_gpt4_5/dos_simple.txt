@@ -1,0 +1,7 @@
+The contract has a Denial of Service (DoS) vulnerability due to the gas limit. 
+
+In the `ifillArray()` function, the contract is trying to add 350 addresses to the `listAddresses` array in a single transaction. This could potentially exceed the block gas limit if the array's length is large. Once the array's length is larger than about 1500, any call to `ifillArray()` would require more gas than the block gas limit, making the function uncallable and therefore freezing the contract.
+
+In addition, this contract does not have any Access Control mechanisms, meaning that anyone can call the `ifillArray()` function and potentially cause it to reach the gas limit.
+
+The other vulnerabilities listed (Reentrancy, Arithmetic Issues, Unchecked Return Values For Low Level Calls, Bad Randomness, Front-Running, Time manipulation, Short Address Attack) are not present in this contract.

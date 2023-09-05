@@ -1,0 +1,30 @@
+The provided smart contract is vulnerable to the Reentrancy attack. This vulnerability occurs when an external contract can call the `withdraw` function multiple times before it finishes executing, allowing it to drain the contract's balance.
+
+Here's the step-by-step analysis of the smart contract for the mentioned vulnerability:
+
+1. The contract has a mapping called `balances`, which stores the balance of each address.
+
+2. The `donate` function allows users to send Ether to the contract and increases the balance of the specified address.
+
+3. The `balanceOf` function returns the balance of a given address.
+
+4. The `withdraw` function allows users to withdraw a specified amount of Ether from their balance. If the user has enough balance, the function transfers the Ether to the user's address using `msg.sender.call.value(_amount)()`.
+
+5. The problem lies in the `withdraw` function, where the order of operations is incorrect. The contract first performs the external call to the user's address without reducing the balance, which can lead to a reentrancy attack.
+
+6. An attacker can create a malicious contract that repeatedly calls the `withdraw` function before it has a chance to reduce the balance. This allows the attacker to drain the contract's balance multiple times.
+
+To fix this vulnerability, the contract should reduce the balance before performing any external calls. The corrected `withdraw` function should look like this:
+
+```solidity
+function withdraw(uint _amount) public {
+  if(balances[msg.sender] >= _amount) {
+    balances[msg.sender] -= _amount;
+    if(msg.sender.call.value(_amount)()) {
+      // Handle successful withdrawal
+    }
+  }
+}
+```
+
+By reducing the balance before making the external call, the contract ensures that the user can only withdraw their available balance once per transaction.

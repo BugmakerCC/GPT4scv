@@ -1,0 +1,15 @@
+The smart contract has a couple of vulnerabilities. 
+
+1. Arithmetic Issues: In the 'buy' and 'sell' functions, calculations are done to determine the ether amount with respect to the token number. However, there is no check for integer overflow or underflow. An attacker can manipulate the inputs to cause these arithmetic issues, which could lead to unexpected results.
+
+2. Reentrancy: The 'sell' function is vulnerable to a reentrancy attack. After the user's balance is decreased, the contract sends Ether to the user. If the user is a malicious contract that invokes 'sell' again when it receives Ether, it could drain the contract's Ether.
+
+3. Unchecked Return Values: The 'transfer' function in 'sell' does not check for its return value. If the transfer fails, the contract would not be aware of it.
+
+4. Access Control: There is no access control in place. Any address can call the 'buy' and 'sell' functions. It means any user can buy or sell tokens even if they should not be able to.
+
+5. Denial of Service: If a malicious contract is used to buy tokens, and the fallback function of the contract consumes a lot of gas, the 'sell' function may fail due to gas limit, effectively locking all users' tokens.
+
+6. Front-Running: Since anyone can see transactions pending in the mempool before they are mined, an attacker can use this information to their advantage. For example, they can place a buy order with a higher gas price right after seeing a large purchase order, getting the tokens first and potentially affecting the token price.
+
+The contract does not seem to have vulnerabilities related to Bad Randomness, Time Manipulation, and Short Address Attack.

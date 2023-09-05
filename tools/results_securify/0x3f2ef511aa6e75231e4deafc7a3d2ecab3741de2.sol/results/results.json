@@ -1,0 +1,99 @@
+{
+  "/sb/0x3f2ef511aa6e75231e4deafc7a3d2ecab3741de2.sol:WhaleGiveaway2": {
+    "results": {
+      "TODReceiver": {
+        "violations": [
+          35,
+          25
+        ],
+        "warnings": [
+          26
+        ],
+        "safe": [
+          44
+        ],
+        "conflicts": []
+      },
+      "UnhandledException": {
+        "violations": [
+          44
+        ],
+        "warnings": [
+          35,
+          25,
+          26
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODTransfer": {
+        "violations": [],
+        "warnings": [
+          25
+        ],
+        "safe": [
+          44,
+          26
+        ],
+        "conflicts": [
+          35
+        ]
+      },
+      "DAO": {
+        "violations": [],
+        "warnings": [
+          44
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "TODAmount": {
+        "violations": [
+          35,
+          25,
+          26
+        ],
+        "warnings": [],
+        "safe": [
+          44
+        ],
+        "conflicts": []
+      },
+      "MissingInputValidation": {
+        "violations": [],
+        "warnings": [
+          30,
+          10,
+          11,
+          20
+        ],
+        "safe": [
+          38
+        ],
+        "conflicts": []
+      },
+      "DAOConstantGas": {
+        "violations": [],
+        "warnings": [
+          35,
+          25,
+          26
+        ],
+        "safe": [],
+        "conflicts": []
+      },
+      "UnrestrictedEtherFlow": {
+        "violations": [],
+        "warnings": [
+          35
+        ],
+        "safe": [
+          44,
+          25,
+          26
+        ],
+        "conflicts": []
+      }
+    }
+  }
+}

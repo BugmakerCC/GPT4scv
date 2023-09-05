@@ -1,0 +1,21 @@
+This smart contract has several vulnerabilities:
+
+1. Reentrancy: While this contract does not immediately appear to have a reentrancy vulnerability, due to the use of `transfer()`, which only forwards 2300 gas, it could still potentially be a problem in certain circumstances. 
+
+2. Access Control: This contract has a major access control issue. It uses `tx.origin` for authentication, which is a common mistake. `tx.origin` refers to the original address that initiated the contract call, and can be manipulated by a malicious contract. This could allow an attacker to call `withdrawAll` and drain the contract.
+
+3. Arithmetic Issues: There doesn't appear to be any arithmetic operations in this contract, so it's safe from integer overflow and underflow issues.
+
+4. Unchecked Return Values For Low Level Calls: `transfer()` automatically reverts on failure, so this isn't an issue here.
+
+5. Denial of Service: This contract doesn't have any loops or arrays, so there's no risk of hitting the gas limit. However, if the owner's address were to become a contract that always throws, then the `withdrawAll` function could be permanently blocked.
+
+6. Bad Randomness: This contract doesn't use any randomness, so it's not vulnerable to bad randomness issues.
+
+7. Front-Running: This contract doesn't seem to be vulnerable to front-running. There are no state changes before the `transfer()` that could be manipulated by miners.
+
+8. Time manipulation: This contract doesn't use block timestamps or now, hence it doesn't have time manipulation vulnerability.
+
+9. Short Address Attack: This contract doesn't take any address inputs from users other than the constructor, so it's not vulnerable to a short address attack.
+
+The main issue with this contract is the use of `tx.origin` for access control. This should be replaced with `msg.sender`, which refers to the immediate sender of the message, and can't be spoofed by a malicious contract.

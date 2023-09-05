@@ -1,0 +1,19 @@
+The contract seems to have several vulnerabilities:
+
+1. Reentrancy: This could occur in the `WithdrawTokenToHolder` and `WithdrawToHolder` functions. If the `_to` or `_addr` contract's fallback function calls back into these functions, it could cause the contract to send Ether or tokens without updating the `Holders[_to]` or `Holders[_addr]` balance properly.
+
+2. Access Control: The contract is vulnerable to access control issues because there isn't a secure mechanism for changing the contract owner. The changeOwner function allows the owner to set a new owner, but anyone can then call the confirmOwner function and take over as the owner if they are set as the newOwner.
+
+3. Arithmetic Issues: The Holders[_addr] -= _wei; could potentially underflow if the value of _wei is greater than Holders[_addr].
+
+4. Unchecked Return Values: The low-level call in `WithdrawToken` function does not check the return value. This can lead to unexpected behavior if the call fails.
+
+5. Denial of Service: If a contract with a complex fallback function is used as `_to` or `_addr`, it could potentially cause the contract to exceed the gas limit or throw an exception, blocking the execution of `WithdrawTokenToHolder` and `WithdrawToHolder` functions.
+
+6. Bad Randomness: Not applicable as the contract does not use randomness.
+
+7. Front-Running: Not applicable as the contract does not use transaction ordering dependence.
+
+8. Time manipulation: Not applicable as the contract does not use timestamp dependence.
+
+9. Short Address Attack: Not directly applicable, but care should be taken when interacting with the contract off-chain to ensure that the address arguments are of the correct length.

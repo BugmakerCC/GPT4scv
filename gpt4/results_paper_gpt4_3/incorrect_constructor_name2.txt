@@ -1,0 +1,9 @@
+The smart contract provided here has an Access Control vulnerability related to the incorrect constructor name.
+
+In Solidity versions before 0.4.22, constructors were defined by creating a function with the same name as the contract. Starting with Solidity 0.4.22, a new keyword, "constructor", was introduced for defining constructors, and the old way was deprecated. However, even in newer versions, if a function with the same name as the contract is defined, it will be treated as a normal function, not as a constructor.
+
+In this contract, the function "missing()" is supposed to be the constructor, and it is intended to set the contract's owner to the address that deploys the contract. However, because the function is not actually a constructor, it does not get called when the contract is deployed. As a result, the owner variable is never set, and remains at its default value of address(0). 
+
+This means that any function with the "onlyowner" modifier can only be called by the zero address. As it is impossible for a transaction to be sent from the zero address, this effectively locks out all functionality of the contract that is behind the "onlyowner" modifier.
+
+The fix for this vulnerability is simple: the constructor should be defined using the "constructor" keyword, not with a function that has the same name as the contract.

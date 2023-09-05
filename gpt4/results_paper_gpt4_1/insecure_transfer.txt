@@ -1,0 +1,27 @@
+The provided smart contract contains an Arithmetic Issue vulnerability, specifically an Integer Overflow/Underflow vulnerability.
+
+In the `transfer` function, there is no check to ensure that adding `_value` to `balanceOf[_to]` does not result in an Integer Overflow. If `_value` is large enough, this addition could cause the balance of `_to` to overflow and wrap around to a very small number, effectively stealing their balance.
+
+To prevent this, you should ensure that the balance of `_to` does not exceed the maximum possible uint256 value when `_value` is added. You can use the SafeMath library, which is included in the OpenZeppelin Solidity library, to perform safe arithmetic operations.
+
+Here's how you can modify the smart contract to fix this vulnerability:
+
+```solidity
+import "@openzeppelin/contracts/math/SafeMath.sol";
+
+pragma solidity ^0.4.0;
+
+contract IntegerOverflowAdd {
+    using SafeMath for uint256;
+    mapping (address => uint256) public balanceOf;
+
+    function transfer(address _to, uint256 _value) public{
+        require(balanceOf[msg.sender] >= _value);
+        balanceOf[msg.sender] = balanceOf[msg.sender].sub(_value);
+        
+        balanceOf[_to] = balanceOf[_to].add(_value);
+    }
+}
+```
+
+In the modified contract, the SafeMath library's `sub` and `add` functions are used instead of the `-` and `+` operators. These functions automatically check for overflows and underflows and revert the transaction if they occur, making the contract safe from this vulnerability.

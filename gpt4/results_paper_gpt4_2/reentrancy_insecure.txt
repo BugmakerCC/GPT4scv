@@ -1,0 +1,28 @@
+This smart contract has a Reentrancy vulnerability. The withdrawBalance function calls an external contract, msg.sender.call.value(amountToWithdraw)(""), before it sets the sender's balance to zero. 
+
+If the external contract also calls withdrawBalance, it can repeatedly drain the contract's Ether, since the balance is only set to zero after the external call. 
+
+This is exactly the kind of vulnerability that was exploited in the DAO attack. 
+
+To fix this, you should always avoid state changes after external calls. This includes transferring Ether, but also any writable storage.
+
+Here is a more secure version of the contract:
+
+```solidity
+pragma solidity ^0.5.0;
+
+contract Reentrancy_secure {
+
+    mapping (address => uint) private userBalances;
+
+    function withdrawBalance() public {
+        uint amountToWithdraw = userBalances[msg.sender];
+        userBalances[msg.sender] = 0;
+        
+        (bool success, ) = msg.sender.call.value(amountToWithdraw)("");
+        require(success);
+    }
+}
+```
+
+In this version, the balance is set to zero before the external call, avoiding the Reentrancy vulnerability.

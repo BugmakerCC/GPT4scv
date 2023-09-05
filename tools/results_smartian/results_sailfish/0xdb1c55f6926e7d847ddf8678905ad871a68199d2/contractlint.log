@@ -1,0 +1,48 @@
+[INFO] | 2023-08-14 02:55:50 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Analysis started at: 2023-08-14 02:55:50 AM
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Version constraints: ['^0.4.19']
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | solc version: v0.4.19
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Callgraph generation started!
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Callgraph generation finished!
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Value Range Analysis started
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Generating return summary for fallback
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Return summary generated for fallback
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Processed function fallback
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Generating return summary for GetFreebie
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Return summary generated for GetFreebie
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Processed function GetFreebie
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Generating return summary for withdraw
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Return summary generated for withdraw
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Range graph generated
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Processed function withdraw
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Generating return summary for Command
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Return summary generated for Command
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Processed function Command
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Generating return summary for slitherConstructorVariables
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Return summary generated for slitherConstructorVariables
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Range graph generated
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Processed function slitherConstructorVariables
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Value Range Analysis took 0.001189 seconds
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Value Range Analysis finished
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Dependency detection started!
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | TOD dependency detected in file 0xdb1c55f6926e7d847ddf8678905ad871a68199d2.sol in contract FreeEth in by composing functions GetFreebie and withdraw
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | TOD dependency detected in file 0xdb1c55f6926e7d847ddf8678905ad871a68199d2.sol in contract FreeEth in by composing functions GetFreebie and withdraw
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | TOD dependency detected in file 0xdb1c55f6926e7d847ddf8678905ad871a68199d2.sol in contract FreeEth in by composing functions withdraw and withdraw
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | TOD dependency detected in file 0xdb1c55f6926e7d847ddf8678905ad871a68199d2.sol in contract FreeEth in by composing functions Command and withdraw
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Dependency detection finished!
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Static Analysis took 0.247372 seconds
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Dependency exists
+[INFO] | 2023-08-14 02:55:51 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Invoking symbolic executor!
+[INFO] | 2023-08-14 02:55:52 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Symbolic execution took 0.842387 seconds
+[INFO] | 2023-08-14 02:55:52 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Symbolic execution finished!
+[INFO] | 2023-08-14 02:55:52 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Analysis finished!
+[INFO] | 2023-08-14 02:55:52 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Analysis took 1.090153 seconds
+[INFO] | 2023-08-14 02:55:52 AM | analyzer.0xdb1c55f6926e7d847ddf8678905ad871a68199d2 | Analysis finished at: 2023-08-14 02:55:52 AM

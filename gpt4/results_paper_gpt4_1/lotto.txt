@@ -1,0 +1,43 @@
+This smart contract has at least two vulnerabilities:
+
+1. **Unchecked Return Values For Low Level Calls**: The contract uses the `send` function to transfer ether. However, it does not check the return value of these calls. The `send` function returns false if the transfer fails, but this contract does not handle these failures, which could lead to loss of funds.
+
+   In the `sendToWinner` function, if the `send` call fails, `payedOut` is still set to true, potentially allowing leftover funds to be withdrawn by an attacker.
+
+   In the `withdrawLeftOver` function, if the `send` call fails, the function does not revert, potentially allowing an attacker to repeatedly call this function and drain the contract of gas.
+
+2. **Access Control**: The contract lacks any sort of access control on the `withdrawLeftOver` function, allowing any address to withdraw leftover funds from the contract, not just the winner of the lotto. This could allow an attacker to drain funds from the contract.
+
+To fix these vulnerabilities, consider the following changes:
+
+- Use the `transfer` function instead of `send`, since it throws an exception on failure, automatically reverting all changes.
+
+- Implement some sort of access control to prevent unauthorized addresses from calling sensitive functions. For example, only allow the winner to call the `withdrawLeftOver` function.
+
+```solidity
+pragma solidity ^0.4.18;
+
+contract Lotto {
+
+     bool public payedOut = false;
+     address public winner;
+     uint public winAmount;
+
+     // ... extra functionality here
+
+     function sendToWinner() public {
+         require(!payedOut);
+         
+         winner.transfer(winAmount);
+         payedOut = true;
+     }
+
+     function withdrawLeftOver() public {
+         require(payedOut && msg.sender == winner);
+         
+         msg.sender.transfer(this.balance);
+     }
+ }
+```
+
+This code still makes the assumption the `winner` address is correctly set by some omitted functionality. Be sure to carefully handle this as well.

@@ -1,0 +1,19 @@
+The contract appears to have a couple of vulnerabilities:
+
+1. Unchecked Return Values for Low Level Calls: The .send() function is used twice in this contract, but the return value of .send() is not verified. This function returns false if the transaction fails, but if you don't check the return value, you can't handle the failure. This can lead to funds being locked in the contract.
+
+2. Denial of Service: An attacker can make the sendToWinner() function always fail by forcing the fallback function to consume more than the 2300 gas stipend. This means the winAmount could potentially never be sent to the winner, causing a Denial of Service. 
+
+3. Access Control: The contract lacks proper access control mechanisms. Anybody can call sendToWinner() or withdrawLeftOver() and potentially manipulate the contract's behavior.
+
+4. Reentrancy: Although there is no direct reentrancy vulnerability in the provided code, if there is any function in the same contract that calls sendToWinner() and if that function is not guarded against reentrancy, then it could potentially introduce a reentrancy vulnerability.
+
+To fix these issues, consider the following:
+
+1. Always check the return value of .send() or better still, use .transfer() instead which throws on failure.
+
+2. Implement a withdrawal pattern where each participant can withdraw their funds from the contract. This pattern also mitigates potential reentrancy attacks.
+
+3. Implement proper access control mechanisms to restrict who can call sensitive functions in your contract.
+
+4. To prevent reentrancy, ensure that you reduce the contract  s state before calling external contracts, or use reentrancy guards.

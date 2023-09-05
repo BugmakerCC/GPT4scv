@@ -1,0 +1,48 @@
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Analysis started at: 2023-08-14 02:59:58 AM
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Version constraints: ['^0.4.19']
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | solc version: v0.4.19
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Callgraph generation started!
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Callgraph generation finished!
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Interprocedural CFG generation started!
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Interprocedural CFG generation finished!
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Storage dependency graph generation started!
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Storage dependency graph generation finished!
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Value Range Analysis started
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Generating return summary for fallback
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Return summary generated for fallback
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Processed function fallback
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Generating return summary for Get
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Return summary generated for Get
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Processed function Get
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Generating return summary for withdraw
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Return summary generated for withdraw
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Range graph generated
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Processed function withdraw
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Generating return summary for Command
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Return summary generated for Command
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | State variable assignement do not exist
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Processed function Command
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Generating return summary for slitherConstructorVariables
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Return summary generated for slitherConstructorVariables
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Range graph generated
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Processed function slitherConstructorVariables
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Value Range Analysis took 0.001109 seconds
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Value Range Analysis finished
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Storage dependency graph compostion started!
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Storage dependency graph compostion finished!
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Dependency detection started!
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | TOD dependency detected in file 0xd2018bfaa266a9ec0a1a84b061640faa009def76.sol in contract Pie in by composing functions Get and withdraw
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | TOD dependency detected in file 0xd2018bfaa266a9ec0a1a84b061640faa009def76.sol in contract Pie in by composing functions Get and withdraw
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | TOD dependency detected in file 0xd2018bfaa266a9ec0a1a84b061640faa009def76.sol in contract Pie in by composing functions withdraw and withdraw
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | TOD dependency detected in file 0xd2018bfaa266a9ec0a1a84b061640faa009def76.sol in contract Pie in by composing functions Command and withdraw
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Dependency detection finished!
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Static Analysis took 0.262117 seconds
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Dependency exists
+[INFO] | 2023-08-14 02:59:58 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Invoking symbolic executor!
+[INFO] | 2023-08-14 02:59:59 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Symbolic execution took 0.851616 seconds
+[INFO] | 2023-08-14 02:59:59 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Symbolic execution finished!
+[INFO] | 2023-08-14 02:59:59 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Analysis finished!
+[INFO] | 2023-08-14 02:59:59 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Analysis took 1.114703 seconds
+[INFO] | 2023-08-14 02:59:59 AM | analyzer.0xd2018bfaa266a9ec0a1a84b061640faa009def76 | Analysis finished at: 2023-08-14 02:59:59 AM

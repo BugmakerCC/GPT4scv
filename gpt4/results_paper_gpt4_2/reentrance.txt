@@ -1,0 +1,20 @@
+This contract is vulnerable to the Reentrancy attack. The issue arises from the withdrawal function. Here, the contract sends Ether with the call.value() function and only then it reduces the balance. If the recipient is a contract, it could call back the withdrawal function before the first call is finished and drain the contract's Ether.
+
+This is a classic example of a Reentrancy vulnerability. The contract first transfers the funds and then updates the balance. This allows the attacker to repeatedly call the withdraw function and drain the contract's Ether.
+
+In order to mitigate this vulnerability, you can use the Checks-Effects-Interactions pattern. First, you perform checks (in this case, checking whether the balance is sufficient), then you make any state changes (here, reducing the balance), and finally you interact with other contracts (sending Ether).
+
+So, the withdrawal function should instead be written as follows:
+
+```
+function withdraw(uint _amount) public {
+    require(balances[msg.sender] >= _amount, "Insufficient balance");
+    
+    balances[msg.sender] -= _amount;
+
+    (bool success, ) = msg.sender.call.value(_amount)("");
+    require(success, "Transfer failed");
+}
+```
+
+This way, if the recipient is a contract and tries to call the withdraw function again, it will fail because the balance has already been updated.

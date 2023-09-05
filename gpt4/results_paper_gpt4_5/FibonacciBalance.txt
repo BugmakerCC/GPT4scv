@@ -1,0 +1,21 @@
+Looking at the smart contract code, there are several potential vulnerabilities:
+
+1. Reentrancy: The `withdraw` function in the `FibonacciBalance` contract is vulnerable to a reentrancy attack. After the fibonacci number is calculated using the `delegatecall` to the `FibonacciLib` contract, the contract sends ether to `msg.sender` without reducing the balance first. An attacker can recursively call the `withdraw` function, draining the contract of its funds.
+
+2. Access Control: The `setStart` function in the `FibonacciLib` contract is vulnerable to an access control attack because it doesn't have any access control. This means that anyone can call this function and change the starting number for the Fibonacci sequence.
+
+3. Arithmetic Issues: The `setFibonacci` function in the `FibonacciLib` contract may suffer from integer overflow and underflow issues. This function calculates the Fibonacci number, which can easily grow beyond the limit of uint, causing an overflow. 
+
+4. Unchecked Return Values: The `delegatecall` in the `FibonacciBalance` contract does not check the return value. If the `delegatecall` fails for any reason (e.g. the `FibonacciLib` contract is not available), the execution will continue, potentially leading to unexpected behavior.
+
+5. Denial of Service: The `withdraw` function could potentially run out of gas if the Fibonacci number becomes too large, causing the function to revert.
+
+6. Bad Randomness: Not applicable in this contract.
+
+7. Front-Running: Not applicable in this contract.
+
+8. Time manipulation: Not applicable in this contract.
+
+9. Short Address Attack: Not applicable in this contract.
+  
+To mitigate these risks, the contract should include access control measures, check return values of external calls, avoid recursive calls, and manage potential arithmetic issues such as overflow and underflow.

@@ -1,0 +1,21 @@
+The provided smart contract appears to have the following vulnerabilities:
+
+1. Reentrancy: This vulnerability exists in the `Collect` function. The contract first sends Ether to the `msg.sender` using `call.value`, and then it updates the balance of the account. An attacker could recursively call the `Collect` function before the balance update, effectively draining the contract of more Ether than they were supposed to be able to withdraw.
+
+2. Access Control: There are no proper access control checks. Any address can call the `Put` and `Collect` functions. This could lead to unauthorized access or misuse of the contract functions.
+
+3. Arithmetic Issues: The operations for updating account balances in the `Put` and `Collect` functions do not check for integer overflows and underflows. Using SafeMath library could prevent these kinds of vulnerabilities.
+
+4. Unchecked Return Values For Low Level Calls: The return value of the `call.value()` method in the `Collect` function is not being checked. If the call fails for some reason, the contract will continue to execute, which may lead to unexpected behavior.
+
+5. Denial of Service: If an attacker purposely fails the `call.value()` in the `Collect` function, it could prevent others from collecting their balances.
+
+6. Bad Randomness: While not explicitly present, if randomness were to be used in this contract (e.g., in determining unlock times or amounts), it could be manipulated by miners.
+
+7. Front-Running: This contract is vulnerable to front-running attacks, where a malicious actor can see pending transactions and then issue their own transaction with a higher gas price to get it mined first.
+
+8. Time manipulation: The `Put` function is using the `now` keyword, which can be manipulated by miners to some extent.
+
+9. Short Address Attack: The contract does not validate the length of the address inputs. This could be exploited by supplying a short address, causing the EVM to read more data than intended.
+
+Lastly, the contract lacks event logging, which is a good practice for tracking contract activity. Implementing events could make any malicious activity more noticeable.

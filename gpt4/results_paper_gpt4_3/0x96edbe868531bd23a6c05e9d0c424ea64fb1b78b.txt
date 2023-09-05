@@ -1,0 +1,15 @@
+This smart contract contains several vulnerabilities:
+
+1. Reentrancy: The `Collect` function sends Ether using `call.value(_am)()`. This could potentially allow for reentrancy attacks as the state (i.e., `acc.balance-=_am;`) is updated after the call.
+
+2. Access Control: The `SetMinSum` and `SetLogFile` functions can be accessed by any address before the contract is initialized. This can lead to unauthorized changes.
+
+3. Denial of Service: If the `Put` function is called with a large `_lockTime`, it can lock up funds indefinitely, effectively causing a Denial of Service.
+
+4. Arithmetic Issues: There's an unchecked arithmetic operation in `acc.balance += msg.value;` and `acc.balance-=_am;`. If these operations result in underflow or overflow, it could lead to unexpected behavior.
+
+5. Unchecked Return Values: The return value of `msg.sender.call.value(_am)()` in the `Collect` function is not checked. If this call fails, the contract will not be able to handle the error.
+
+6. Time Manipulation: The unlock time in the `Put` function is based on `now` which can be manipulated by miners.
+
+Please consider to fix these vulnerabilities. For example, use a reentrancy guard for the `Collect` function, add appropriate access control for `SetMinSum` and `SetLogFile`, check for arithmetic underflows and overflows, handle potential failures of `call`, and avoid using `now` for critical logic.

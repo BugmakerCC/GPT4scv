@@ -1,0 +1,21 @@
+Here are the potential vulnerabilities detected in the provided smart contract:
+
+1. Reentrancy: No reentrancy vulnerability seems to be present in this contract. However, it's important to note that the contract makes use of a low level call which could potentially be a point of reentrancy if not handled properly.
+
+2. Access Control: There are no restrictions on who can call the 'transfer' function. Anyone can execute it which may be a security issue depending on the context.
+
+3. Arithmetic Issues: This contract doesn't have any arithmetic operations, so it's free from any arithmetic issues.
+
+4. Unchecked Return Values For Low Level Calls: The return value of the 'call' function is not checked, this can lead to silent failing sends.
+
+5. Denial of Service: No explicit signs of Denial of Service vulnerabilities were found, but the 'transfer' function could potentially run out of gas if _tos.length is very large.
+
+6. Bad Randomness: The contract does not use any randomness, so there is no bad randomness issue.
+
+7. Front-Running: There doesn't appear to be a front-running vulnerability in this contract.
+
+8. Time manipulation: There is no dependence on time or block variables in this contract, so it's free from time manipulation issues.
+
+9. Short Address Attack: The contract does not validate the length of the input addresses, so it could be vulnerable to short address attacks. 
+
+Overall, the code should be revised to handle the potential issues with unchecked return values, unrestricted access control, potential gas limit issues, and possible short address attacks. It's always a good practice to perform a thorough audit of the smart contract before deployment to ensure its security.

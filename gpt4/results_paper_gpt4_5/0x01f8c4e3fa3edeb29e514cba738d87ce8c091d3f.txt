@@ -1,0 +1,19 @@
+This smart contract has the following vulnerabilities:
+
+1. Reentrancy: The function `Collect(uint _am)` is vulnerable to reentrancy attacks. Inside this function, the contract sends Ether to an address using `call.value()()`. This method forwards all available gas (except for a stipend of 2300 gas which is not enough to perform a state change) to the external contract, which means that the external contract can perform a significant amount of computation including calling back into the calling contract before the `call.value()()` method returns. The contract then subtracts `_am` from `balances[msg.sender]`. If the external contract calls back into `Collect(uint _am)`, this could result in `balances[msg.sender]` being subtracted multiple times, allowing the attacker to drain Ether from the contract.
+
+2. Access Control: The contract has no access control checks, meaning anyone can call its public functions. For example, anyone can call `SetMinSum(uint _val)` and `SetLogFile(address _log)`, potentially disrupting the contract's normal operation.
+
+3. Arithmetic Issues: There are no checks for integer overflow or underflow. This could potentially lead to unexpected behavior if large or small values are used.
+
+4. Unchecked Return Values For Low Level Calls: The return value of `msg.sender.call.value(_am)()` is not checked, which means that if the call fails for any reason, the contract will not be aware of it.
+
+5. Denial of Service: If an attacker sets the `LogFile` address to a contract that throws an exception in `AddMessage`, this could prevent users from making deposits or collecting their balances, effectively causing a denial of service.
+
+6. Bad Randomness: Not applicable as the contract does not use randomness.
+
+7. Front-Running: Not applicable as the contract does not use transaction ordering.
+
+8. Time manipulation: The contract uses `now` (alias for `block.timestamp`) in `AddMessage`. Miners can slightly manipulate this value.
+
+9. Short Address Attack: Not applicable as the contract does not take address inputs from transaction senders.

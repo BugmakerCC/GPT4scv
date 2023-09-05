@@ -1,0 +1,17 @@
+The smart contract has two main vulnerabilities:
+
+1. Access Control:
+   The owner variable is not encapsulated and hence can be modified by anyone. It should be private to prevent unauthorized access. Moreover, the contract lacks a modifier or require statement to check that only the owner can invoke the forward function.
+
+2. Unchecked Return Values For Low Level Calls:
+   delegatecall is a low-level call that exposes the contract to reentrancy attacks. In this case, the return value of the delegatecall is not checked, which could lead to unexpected behavior if the call fails.
+
+There are also potential risks associated with these vulnerabilities:
+
+1. Reentrancy:
+   If the callee contract has a fallback function that calls back into the Proxy contract, it could lead to a reentrancy attack.
+
+2. Denial of Service:
+   If the callee contract's execution runs out of gas or throws an error, it could cause the Proxy contract to stop functioning.
+
+To fix these vulnerabilities, the owner variable should be declared as private and a modifier should be added to restrict function access to only the owner. Additionally, the return value of delegatecall should be checked to ensure it was successful, and reentrancy guards should be used to prevent recursive calls.

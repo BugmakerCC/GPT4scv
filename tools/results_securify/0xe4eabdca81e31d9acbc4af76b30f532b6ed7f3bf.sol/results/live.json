@@ -1,0 +1,162 @@
+{
+  "decompiled": true,
+  "finished": false,
+  "patternResults": {
+    "DAO": {
+      "completed": true,
+      "hasViolations": false,
+      "hasWarnings": false,
+      "hasSafe": true,
+      "hasConflicts": false,
+      "violations": [],
+      "warnings": [],
+      "safe": [
+        533,
+        533,
+        533
+      ],
+      "conflicts": []
+    },
+    "DAOConstantGas": {
+      "completed": true,
+      "hasViolations": false,
+      "hasWarnings": false,
+      "hasSafe": true,
+      "hasConflicts": false,
+      "violations": [],
+      "warnings": [],
+      "safe": [
+        270,
+        270,
+        333,
+        378
+      ],
+      "conflicts": []
+    },
+    "MissingInputValidation": {
+      "completed": true,
+      "hasViolations": false,
+      "hasWarnings": true,
+      "hasSafe": true,
+      "hasConflicts": false,
+      "violations": [],
+      "warnings": [
+        414,
+        414,
+        414
+      ],
+      "safe": [
+        400,
+        400,
+        400,
+        177,
+        400,
+        177,
+        291
+      ],
+      "conflicts": []
+    },
+    "TODAmount": {
+      "completed": true,
+      "hasViolations": true,
+      "hasWarnings": true,
+      "hasSafe": false,
+      "hasConflicts": false,
+      "violations": [
+        270,
+        270,
+        333,
+        378
+      ],
+      "warnings": [
+        533,
+        533,
+        533
+      ],
+      "safe": [],
+      "conflicts": []
+    },
+    "TODReceiver": {
+      "completed": true,
+      "hasViolations": true,
+      "hasWarnings": true,
+      "hasSafe": true,
+      "hasConflicts": false,
+      "violations": [
+        270,
+        270,
+        333
+      ],
+      "warnings": [
+        533,
+        533,
+        533
+      ],
+      "safe": [
+        378
+      ],
+      "conflicts": []
+    },
+    "TODTransfer": {
+      "completed": true,
+      "hasViolations": false,
+      "hasWarnings": true,
+      "hasSafe": true,
+      "hasConflicts": true,
+      "violations": [],
+      "warnings": [
+        533,
+        533,
+        533,
+        378
+      ],
+      "safe": [
+        333
+      ],
+      "conflicts": [
+        270,
+        270
+      ]
+    },
+    "UnhandledException": {
+      "completed": true,
+      "hasViolations": true,
+      "hasWarnings": false,
+      "hasSafe": true,
+      "hasConflicts": false,
+      "violations": [
+        533,
+        533,
+        533
+      ],
+      "warnings": [],
+      "safe": [
+        270,
+        270,
+        333,
+        378
+      ],
+      "conflicts": []
+    },
+    "UnrestrictedEtherFlow": {
+      "completed": true,
+      "hasViolations": false,
+      "hasWarnings": true,
+      "hasSafe": true,
+      "hasConflicts": false,
+      "violations": [],
+      "warnings": [
+        533,
+        533,
+        533,
+        333,
+        378
+      ],
+      "safe": [
+        270,
+        270
+      ],
+      "conflicts": []
+    }
+  }
+}

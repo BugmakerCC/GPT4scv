@@ -1,0 +1,17 @@
+1. Reentrancy - The contract does not seem to have any reentrancy vulnerabilities since there are no function calls to external contracts.
+
+2. Access Control - The contract lacks proper access control since the function `play()` is publicly accessible. However, this function is supposed to be public as it's the main function to play the lottery. 
+
+3. Arithmetic Issues - There seem to be no arithmetic vulnerabilities such as integer overflow and underflow.
+
+4. Unchecked Return Values For Low Level Calls - The contract uses `.transfer()`, which is safe against reentrancy and checks the return value of the call.
+
+5. Denial of Service - The contract does not contain any loops or other gas-draining operations, so it doesn't have a risk of reaching the gas limit.
+
+6. Bad Randomness - The contract uses `block.timestamp` for generating randomness, which can be manipulated by miners and hence is a security vulnerability.
+
+7. Front-Running - As the contract uses `block.timestamp` for randomness, it is vulnerable to front-running attacks. Miners can manipulate the transaction ordering to influence the outcome of the lottery.
+
+8. Time Manipulation - The contract is vulnerable to time manipulation, as it uses `block.timestamp` for generating randomness, which can be manipulated by miners.
+
+9. Short Address Attack - The contract does not seem to have any short address attack vulnerabilities as it does not directly interact with user-supplied addresses.

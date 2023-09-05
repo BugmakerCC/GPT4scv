@@ -1,0 +1,19 @@
+This smart contract seems to contain several vulnerabilities:
+
+1) Reentrancy: The `withdraw` function is susceptible to a reentrancy attack. After the `if` condition checks that `amount>0 && Deposits[msg.sender]>=amount`, the contract sends the amount to the sender. A malicious contract could reenter the `withdraw` function before the balance is updated, draining the contract's funds.
+
+2) Access Control: The `transferOwner` function in the `Proxy` contract allows the owner to be changed, but there is no function to view who the current owner is. This could potentially lead to unauthorized access if the owner is not careful.
+
+3) Unchecked Return Values For Low Level Calls: The `proxy` function in the `Proxy` contract uses a low level `.call` without checking its return value. If it fails, the contract will not be able to handle the error properly.
+
+4) Arithmetic Issues: The `deposit` function in the `DepositProxy` contract is vulnerable to an integer overflow. When adding the incoming `msg.value` to the current deposit of the sender, the sum could exceed the maximum value an `uint256` can hold, resetting it to zero.
+
+5) Denial of Service: The contract does not limit the number of payable calls that can be made to it. This could potentially lead to a denial of service attack if an attacker continuously sends transactions to it, filling up all the available gas.
+
+6) Bad Randomness: Not applicable here as the contract does not use any random number generators.
+
+7) Front-Running: Not directly applicable here as the contract does not deal with exchange orders or similar mechanisms. However, a user could potentially front-run another by watching the pending transactions and then setting a higher gas price to have their transaction included first.
+
+8) Time manipulation: Not applicable here as the contract does not depend on block timestamps.
+
+9) Short Address Attack: Not directly applicable here as the contract does not interact with user-supplied contract addresses. However, as a good practice, address inputs should be validated.

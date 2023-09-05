@@ -1,0 +1,17 @@
+The smart contract IntegerOverflowMappingSym1 has Arithmetic Issues vulnerability, more specifically, it suffers from Integer Underflow.
+
+The contract is very simple, it only contains a map that stores key-value pairs of unsigned integers, and a function init that subtracts a value v from the value of the map at position k.
+
+The vulnerability lies in the init function:
+
+```function init(uint256 k, uint256 v) public { map[k] -= v; }```
+
+This function subtracts v from the current value at map[k]. However, there are no checks to ensure that the current value at map[k] is greater than or equal to v. Thus, if map[k] is less than v, the subtraction will result in an integer underflow.
+
+For instance, if map[k] is 0 and v is 1, the result of the subtraction will not be -1 (since unsigned integers cannot be negative), but will wrap around to the maximum possible value of an uint256, which is 2^256 - 1.
+
+To fix this vulnerability, a check should be added to ensure that the value at map[k] is not less than v before performing the subtraction. For example:
+
+```function init(uint256 k, uint256 v) public { require(map[k] >= v); map[k] -= v; }```
+
+This will prevent the function from executing if map[k] is less than v, thereby preventing the integer underflow.

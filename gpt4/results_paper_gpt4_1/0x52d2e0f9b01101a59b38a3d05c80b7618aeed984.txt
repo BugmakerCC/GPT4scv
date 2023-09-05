@@ -1,0 +1,21 @@
+This contract has several potential vulnerabilities:
+
+1. Reentrancy: The `withdrawEther` function is exposed to a reentrancy attack. If the `owner` address is a contract, it could potentially call `withdrawEther` again before the first call is finished, draining the contract of its ether.
+
+2. Access Control: The contract's functions `withdrawTokens`, `withdrawEther`, and `getTokens` aren't restricted to a specific address or set of addresses. Anyone can call these functions, potentially leading to unauthorized withdrawals of tokens or ether.
+
+3. Unchecked Return Values For Low Level Calls: `addr.call.value(0 wei)()` in `getTokens` function is a low-level call without a check on its return value. If this call fails, the contract won't be able to catch the error.
+
+4. Arithmetic Issues: Although not directly visible, the contract could potentially be exposed to arithmetic issues if it interacts with other contracts that don't handle arithmetic operations correctly.
+
+5. Denial of Service: If the `Token` contract's `transfer` function isn't implemented correctly, it could potentially throw an error and halt execution of the `withdrawTokens` function, effectively locking up any tokens held by the contract.
+
+6. Bad Randomness: Not explicitly present in this contract.
+
+7. Front-Running: Not explicitly present in this contract.
+
+8. Time manipulation: Not explicitly present in this contract.
+
+9. Short Address Attack: The contract doesn't validate the length of the address inputs, so it could potentially be vulnerable to a short address attack. 
+
+Remember, it's crucial to always audit your smart contracts thoroughly, preferably with automated tools and manual code review, to ensure they're secure against all known vulnerabilities.

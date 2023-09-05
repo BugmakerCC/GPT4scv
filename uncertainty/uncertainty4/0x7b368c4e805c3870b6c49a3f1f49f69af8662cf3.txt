@@ -1,0 +1,21 @@
+The smart contract seems to have several potential vulnerabilities:
+
+1. Reentrancy: This is a common vulnerability in Ethereum smart contracts. In the `Collect` function, the external call `msg.sender.call.value(_am)()` is made before the state (balance) is updated. This could allow an attacker to reenter the contract before the state is updated and withdraw more Ether than they should.
+
+2. Access Control: There seems to be no access control mechanism in place. Any address can call any function of the contract. This could lead to unauthorized actions.
+
+3. Arithmetic Issues: The contract uses unsafe arithmetic operations (`acc.balance += msg.value;` and `acc.balance-=_am;`). This can lead to integer overflow and underflow issues if not properly handled.
+
+4. Unchecked Return Values For Low Level Calls: The contract uses low level `call` function but does not check its return value. This could lead to unexpected behavior if the call fails.
+
+5. Denial of Service: The contract could potentially become a victim of the Denial of Service attack if an attacker manages to create a condition in which contract functions cannot be executed.
+
+6. Bad Randomness: This contract doesn't seem to use random numbers, so it doesn't seem to have vulnerabilities related to bad randomness.
+
+7. Front-Running: This contract doesn't seem to have vulnerabilities related to front-running as it doesn't depend on transaction ordering.
+
+8. Time manipulation: The contract uses `now` (alias for `block.timestamp`), which can be manipulated by miners to some degree. 
+
+9. Short Address Attack: This contract doesn't seem to have vulnerabilities related to short address attack as it doesn't handle raw transfer of tokens.
+
+It is also important to note that the contract is using an outdated version of Solidity (0.4.25), which may have known bugs and vulnerabilities. It's recommended to always use the latest stable version of Solidity.
